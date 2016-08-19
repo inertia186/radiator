@@ -6,6 +6,10 @@ module Radiator
       @api = Radiator::Api.instance
     end
 
+    def test_assign_singleton
+      Radiator::Api.instance = @api
+    end
+
     def test_method_missing
       assert_raises NoMethodError do
         @api.bogus
@@ -35,6 +39,13 @@ module Radiator
           # success
         end
       end
+    end
+
+    def test_get_accounts_no_argument
+      stub_post_get_account
+      response = @api.get_accounts
+      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal response.result.first.owner.key_auths.first.first, 'STM7XicWKM8fQbG2WnGV74YmVFREyh3t9mvWuLEmogNqsuwKMmkMP'
     end
 
     def test_get_accounts

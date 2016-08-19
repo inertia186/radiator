@@ -1,4 +1,3 @@
-require 'radiator/utils/exceptions'
 require 'uri'
 require 'base64'
 require 'hashie'
@@ -93,8 +92,6 @@ module Radiator
       response = JSON[response]
       
       Hashie::Mash.new(response)
-    rescue JSON::ParserError
-      raise Radiator::Utils::Exceptions::RadiatorError.new(response)
     end
     
     def self.instance=(instance)
