@@ -5,5 +5,8 @@ rvm:
   - "2.2.1"
   - "2.3.0"
 script: TESTOPTS="--verbose" bundle exec rake test
+addons:
+  code_climate:
+    repo_token: fcda177928c42c93fd981f671305519ffb98b98c479198340ea67bc892ffd028
 notifications:
   slack: galacticaactual:rhAXgZ68aoikbxBBA05xIUVC
