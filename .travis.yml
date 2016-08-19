@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - "2.0.0"
+  - "2.1.5"
+  - "2.2.1"
+  - "2.3.0"
+script: TESTOPTS="--verbose" bundle exec rake test
+notifications:
+  slack: galacticaactual:rhAXgZ68aoikbxBBA05xIUVC
