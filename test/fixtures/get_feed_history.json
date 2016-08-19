@@ -1,0 +1,684 @@
+{
+  "id": 1,
+  "result": {
+    "id": "2.14.0",
+    "current_median_history": {
+      "base": "1.487 SBD",
+      "quote": "1.000 STEEM"
+    },
+    "price_history": [
+      {
+        "base": "1.471 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.471 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.444 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.471 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.444 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.419 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.444 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.440 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.434 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.436 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.429 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.436 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.436 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.398 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.408 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.408 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.410 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.418 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.436 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.488 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.508 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.500 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.464 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.509 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.527 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.533 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.569 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.546 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.530 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.524 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.607 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.585 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.569 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.554 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.554 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.518 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.542 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.542 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.537 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.534 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.515 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.515 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.495 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.493 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.493 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.493 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.493 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.483 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.491 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.483 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.493 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.493 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.480 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.480 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.480 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.480 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.475 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.475 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.475 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.471 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.471 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.476 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.478 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.480 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.478 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.476 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.476 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.495 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.509 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.487 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.487 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.487 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.480 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.483 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.475 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.474 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.474 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.473 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.473 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.473 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.473 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.487 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.475 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.469 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.467 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.468 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.469 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.469 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.469 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.468 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.468 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.451 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.451 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.451 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.450 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.383 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.391 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.393 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.398 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.403 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.405 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.398 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.390 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.410 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.441 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.410 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.427 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.429 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.511 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.519 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.520 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.511 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.518 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.520 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.512 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.500 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.500 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.501 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.545 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.549 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.549 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.549 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.542 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.541 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.532 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.542 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.538 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.532 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.541 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.542 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.546 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.543 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.546 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.549 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.549 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.554 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.550 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.554 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.557 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.548 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.538 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.532 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.530 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.509 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.509 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.470 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.478 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.478 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.487 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.488 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.481 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.463 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.445 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.463 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.464 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.461 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.463 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.492 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.492 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.495 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.504 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.535 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.532 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.535 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.510 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.510 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.486 SBD",
+        "quote": "1.000 STEEM"
+      },
+      {
+        "base": "1.481 SBD",
+        "quote": "1.000 STEEM"
+      }
+    ]
+  }
+}

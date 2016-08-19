@@ -1,0 +1,108 @@
+{
+  "id": 1,
+  "result": [
+    {
+      "id": "2.2.19155",
+      "name": "inertia",
+      "owner": {
+        "weight_threshold": 1,
+        "account_auths": [],
+        "key_auths": [
+          [
+            "STM7XicWKM8fQbG2WnGV74YmVFREyh3t9mvWuLEmogNqsuwKMmkMP",
+            1
+          ]
+        ]
+      },
+      "active": {
+        "weight_threshold": 1,
+        "account_auths": [],
+        "key_auths": [
+          [
+            "STM7bArVJa7RhxzssirikMf3wbeN6JdYkYX4NLBkUHCVtbeccZ1hS",
+            1
+          ]
+        ]
+      },
+      "posting": {
+        "weight_threshold": 1,
+        "account_auths": [],
+        "key_auths": [
+          [
+            "STM8BKFCdXcb6YfnZiN7Z8raYpA6Xou6TAExSs7jZfDt9sbAwW6VT",
+            1
+          ]
+        ]
+      },
+      "memo_key": "STM5CFHDoQs24vWX9p8UArFRxKuYi8AB4xRWneiH5JQFgKDVyNoFV",
+      "json_metadata": "",
+      "proxy": "",
+      "last_owner_update": "2016-07-21T05:49:33",
+      "last_account_update": "2016-07-21T05:49:36",
+      "created": "2016-07-13T06:44:33",
+      "mined": false,
+      "owner_challenged": false,
+      "active_challenged": false,
+      "last_owner_proved": "1970-01-01T00:00:00",
+      "last_active_proved": "1970-01-01T00:00:00",
+      "recovery_account": "steem",
+      "last_account_recovery": "2016-07-21T05:49:33",
+      "comment_count": 0,
+      "lifetime_vote_count": 0,
+      "post_count": 467,
+      "voting_power": 8246,
+      "last_vote_time": "2016-08-19T15:50:39",
+      "balance": "0.000 STEEM",
+      "sbd_balance": "1.283 SBD",
+      "sbd_seconds": "5902869555",
+      "sbd_seconds_last_update": "2016-08-19T14:46:12",
+      "sbd_last_interest_payment": "2016-08-14T09:46:39",
+      "vesting_shares": "13381455.581302 VESTS",
+      "vesting_withdraw_rate": "0.000000 VESTS",
+      "next_vesting_withdrawal": "1969-12-31T23:59:59",
+      "withdrawn": 0,
+      "to_withdraw": 0,
+      "withdraw_routes": 0,
+      "curation_rewards": 29222,
+      "posting_rewards": 589788,
+      "proxied_vsf_votes": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "witnesses_voted_for": 10,
+      "average_bandwidth": 323545886,
+      "lifetime_bandwidth": "852518000000",
+      "last_bandwidth_update": "2016-08-19T15:50:39",
+      "average_market_bandwidth": 133274861,
+      "last_market_bandwidth_update": "2016-08-19T04:04:51",
+      "last_post": "2016-08-19T14:52:51",
+      "last_root_post": "2016-08-19T05:59:15",
+      "post_bandwidth": 26642,
+      "last_active": "2016-08-19T15:50:39",
+      "activity_shares": "19183594185707926023",
+      "last_activity_payout": "1970-01-01T00:00:00",
+      "vesting_balance": "0.000 STEEM",
+      "reputation": "4004842138179",
+      "transfer_history": [],
+      "market_history": [],
+      "post_history": [],
+      "vote_history": [],
+      "other_history": [],
+      "witness_votes": [
+        "anyx",
+        "boatymcboatface",
+        "complexring",
+        "gtg",
+        "masteryoda",
+        "pfunk",
+        "riverhead",
+        "roadscape",
+        "smooth.witness",
+        "someguy123"
+      ],
+      "blog_category": {}
+    }
+  ]
+}
