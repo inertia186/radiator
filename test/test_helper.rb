@@ -16,7 +16,7 @@ require 'radiator'
 
 require 'minitest/autorun'
 
-require 'webmock/minitest'
+# require 'webmock/minitest'
 require 'vcr'
 require 'yaml'
 require 'pry'
@@ -147,7 +147,7 @@ class Radiator::Test < MiniTest::Test
           {status: 404}
         end
         
-        return stub_request(method, //).to_return(options)
+        stub = stub_request(method, //).to_return(options)
       end
         
       if !!block

@@ -3,11 +3,7 @@ require 'test_helper'
 module Radiator
   class ApiTest < Radiator::Test
     def setup
-      @api = Radiator::Api.instance
-    end
-
-    def test_assign_singleton
-      Radiator::Api.instance = @api
+      @api = Radiator::Api.new
     end
 
     def test_method_missing
@@ -17,17 +13,17 @@ module Radiator
     end
 
     def test_all_respond_to
-      Radiator::Api::VALID_ACTIONS.keys.each do |key|
+      @api.method_names.keys.each do |key|
         assert @api.respond_to?(key), "expect rpc respond to #{key}"
       end
     end
 
-    def test_all_valid_actions
+    def test_all_methods
       unless defined? WebMock
         skip 'This test cannot run against testnet.  It is only here to help locate newly added actions.'
       end
       
-      Radiator::Api::VALID_ACTIONS.keys.each do |key|
+      @api.method_names.keys.each do |key|
         begin
           assert @api.send key
           fail 'did not expect method with invalid argument to execute'
@@ -35,17 +31,16 @@ module Radiator
           # success
         rescue ArgumentError => _
           # success
-        rescue Radiator::Utils::Exceptions::RadiatorError => _
-          # success
         end
       end
     end
 
     def test_get_accounts_no_argument
-      stub_post_get_account
+      stub_post_error
       response = @api.get_accounts
       assert_equal response.class, Hashie::Mash, response.inspect
-      assert_equal response.result.first.owner.key_auths.first.first, 'STM7XicWKM8fQbG2WnGV74YmVFREyh3t9mvWuLEmogNqsuwKMmkMP'
+      assert_nil response.result
+      refute_nil response.error
     end
 
     def test_get_accounts

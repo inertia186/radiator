@@ -25,6 +25,32 @@ response.result.virtual_supply
 => "135377049.603 STEEM"
 ```
 
+### Follower API
+
+```ruby
+api = Radiator::FollowerApi.new
+response = @api.get_followers('inertia', 0, 'blog', 100)
+response.result.map(&:follower)
+=> ["a11at",
+ "abarefootpoet",
+ "abit",
+ "alexgr",
+ "alexoz",
+ "andressilvera",
+ "applecrisp",
+ "arrowj",
+ "artificial",
+ "ash",
+ "ausbitbank",
+ "beachbum",
+ "ben99",
+ "benadapt",
+ .
+ .
+ .
+"steemzine"]
+```
+
 ## Tests
 
 * Clone the client repository into a directory of your choice:
