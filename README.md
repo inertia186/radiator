@@ -29,7 +29,7 @@ response.result.virtual_supply
 
 ```ruby
 api = Radiator::FollowerApi.new
-response = @api.get_followers('inertia', 0, 'blog', 100)
+response = api.get_followers('inertia', 0, 'blog', 100)
 response.result.map(&:follower)
 => ["a11at",
  "abarefootpoet",
