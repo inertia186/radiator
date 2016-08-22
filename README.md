@@ -28,7 +28,7 @@ response.result.virtual_supply
 ### Follower API
 
 ```ruby
-api = Radiator::FollowerApi.new
+api = Radiator::FollowApi.new
 response = api.get_followers('inertia', 0, 'blog', 100)
 response.result.map(&:follower)
 => ["a11at",
@@ -48,7 +48,7 @@ response.result.map(&:follower)
  .
  .
  .
-"steemzine"]
+ "steemzine"]
 ```
 
 ## Tests
