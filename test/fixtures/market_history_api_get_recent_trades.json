@@ -1,0 +1,55 @@
+{
+   "id":1,
+   "result":[
+      {
+         "date":"2016-09-08T05:21:51",
+         "current_pays":"16.311 STEEM",
+         "open_pays":"15.000 SBD"
+      },
+      {
+         "date":"2016-09-08T05:17:18",
+         "current_pays":"5.316 STEEM",
+         "open_pays":"5.000 SBD"
+      },
+      {
+         "date":"2016-09-08T04:07:42",
+         "current_pays":"0.178 SBD",
+         "open_pays":"0.188 STEEM"
+      },
+      {
+         "date":"2016-09-08T03:41:21",
+         "current_pays":"0.535 SBD",
+         "open_pays":"0.567 STEEM"
+      },
+      {
+         "date":"2016-09-08T03:40:36",
+         "current_pays":"0.181 SBD",
+         "open_pays":"0.191 STEEM"
+      },
+      {
+         "date":"2016-09-08T03:09:51",
+         "current_pays":"0.064 SBD",
+         "open_pays":"0.081 STEEM"
+      },
+      {
+         "date":"2016-09-08T03:09:36",
+         "current_pays":"1.040 SBD",
+         "open_pays":"1.298 STEEM"
+      },
+      {
+         "date":"2016-09-08T03:09:24",
+         "current_pays":"1.021 SBD",
+         "open_pays":"1.274 STEEM"
+      },
+      {
+         "date":"2016-09-08T03:09:18",
+         "current_pays":"1.000 STEEM",
+         "open_pays":"0.801 SBD"
+      },
+      {
+         "date":"2016-09-08T03:09:18",
+         "current_pays":"2.000 STEEM",
+         "open_pays":"1.602 SBD"
+      }
+   ]
+}

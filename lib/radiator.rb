@@ -7,5 +7,6 @@ module Radiator
   require 'radiator/database_api'
   require 'radiator/follow_api'
   require 'radiator/tag_api'
+  require 'radiator/market_history_api'
   extend self
 end
