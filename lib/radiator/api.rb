@@ -7,7 +7,7 @@ module Radiator
     def initialize(options = {})
       @user = options[:user]
       @password = options[:password]
-      @url = options[:url] || 'https://this.piston.rocks:443'
+      @url = options[:url] || 'https://node.steem.ws:443'
       @debug = !!options[:debug]
     end
     
