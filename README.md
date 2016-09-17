@@ -51,6 +51,172 @@ response.result.map(&:follower)
  "steemzine"]
 ```
 
+Here's an example of how to use a streaming instance to listen for votes:
+
+```ruby
+require 'radiator'
+
+stream = Radiator::Stream.new
+
+stream.operations(:vote) do |op|
+  print "#{op.voter} voted for #{op.author}"
+  puts " (weight: #{op.weight / 100.0}%)"
+end
+```
+
+The output would look like this and continue until interrupted.
+
+```
+richman voted for krnel (weight: 100.0%)
+rainchen voted for rainchen (weight: 100.0%)
+richman voted for exploretraveler (weight: 100.0%)
+jlufer voted for michaelstobiersk (weight: 100.0%)
+jlufer voted for michaelstobiersk (weight: 100.0%)
+patelincho voted for borishaifa (weight: 100.0%)
+richman voted for vetvso (weight: 100.0%)
+jlufer voted for michaelstobiersk (weight: 100.0%)
+richman voted for orcish (weight: 100.0%)
+demotruk voted for skeptic (weight: -100.0%)
+photorealistic voted for oecp85 (weight: 100.0%)
+meesterboom voted for rubenalexander (weight: 100.0%)
+thecurator voted for robyneggs (weight: 40.0%)
+richman voted for originate (weight: 100.0%)
+helikopterben voted for etcmike (weight: 100.0%)
+.
+.
+.
+```
+
+You can also just stream all operations like this:
+
+```ruby
+stream.operations do |op|
+  puts op.to_json
+end
+```
+
+Example of the output:
+
+```json
+{
+   "vote":{
+      "voter":"abudar",
+      "author":"rangkangandroid",
+      "permlink":"the-kalinga-tattoo-maker",
+      "weight":10000
+   }
+}
+{
+   "vote":{
+      "voter":"shenburen",
+      "author":"masteryoda",
+      "permlink":"daily-payouts-leaderboards-september-16",
+      "weight":10000
+   }
+}
+{
+   "vote":{
+      "voter":"stiletto",
+      "author":"fyrstikken",
+      "permlink":"everybody-hating-me",
+      "weight":2500
+   }
+}
+{
+   "comment":{
+      "parent_author":"mariandavp",
+      "parent_permlink":"re-onceuponatime-re-mariandavp-the-bridge-original-artwork-by-mariandavp-20160906t182016608z",
+      "author":"onceuponatime",
+      "permlink":"re-mariandavp-re-onceuponatime-re-mariandavp-the-bridge-original-artwork-by-mariandavp-20160917t054726763z",
+      "title":"",
+      "body":"https://www.steemimg.com/images/2016/09/17/oldcomputerpics551cb14c.jpg",
+      "json_metadata":"{\"tags\":[\"art\"],\"image\":[\"https://www.steemimg.com/images/2016/09/17/oldcomputerpics551cb14c.jpg\"]}"
+   }
+}
+{
+   "vote":{
+      "voter":"abudar",
+      "author":"rangkangandroid",
+      "permlink":"the-journey-north-through-the-eyes-of-kalinga-tradition",
+      "weight":10000
+   }
+}
+{
+   "limit_order_cancel":{
+      "owner":"fnait",
+      "orderid":2755220300
+   }
+}
+.
+.
+.
+```
+
+Transactions are supported:
+
+```ruby
+stream.transactions do |tx|
+  puts tx.to_json
+end
+```
+
+Example of the output:
+
+```json
+{
+   "ref_block_num":59860,
+   "ref_block_prefix":2619183808,
+   "expiration":"2016-09-17T06:03:21",
+   "operations":[
+      [
+         "custom_json",
+         {
+            "required_auths":[
+
+            ],
+            "required_posting_auths":[
+               "acidpanda"
+            ],
+            "id":"follow",
+            "json":"[\"follow\",{\"follower\":\"acidpanda\",\"following\":\"gavvet\",\"what\":[\"blog\"]}]"
+         }
+      ]
+   ],
+   "extensions":[],
+   "signatures":[
+      "2048d7e32cc843adea0e11aa617dc9cdc773d0e9a0a0d0cd58d67a9fcd8fa2d2305d1bb611ac219fbd3b6a77ab60071df94fe193aae33591ee669cc7404d4e4ec4"
+   ]
+}
+.
+.
+.
+```
+
+Even whole blocks:
+
+```ruby
+stream.blocks do |bk|
+  puts bk.to_json
+end
+```
+
+Example of the output:
+
+```json
+{
+   "previous":"004cea0d46a4b91cffe7bb71763ad2ab854c6efd",
+   "timestamp":"2016-09-17T06:05:51",
+   "witness":"boatymcboatface",
+   "transaction_merkle_root":"0000000000000000000000000000000000000000",
+   "extensions":[],
+   "witness_signature":"2034b0d7398ed1c0d7511ac76c6dedaf227e609dc2676d13f926ddd1e9df7fa9cb254af122a4a82dc619a1091c87293cbd9e2db1b51404fdc8fb62f8e5f37b4625",
+   "transactions":[]
+}
+.
+.
+.
+```
+
 ## Tests
 
 * Clone the client repository into a directory of your choice:

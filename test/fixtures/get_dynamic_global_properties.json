@@ -1,1 +1,32 @@
-{"id":1,"result":{"id":"2.0.0","head_block_number":4226480,"head_block_id":"00407db0c20d92533cf6a5175c81224f6376aa86","time":"2016-08-19T19:52:39","current_witness":"abit","total_pow":201294,"num_pow_witnesses":87,"virtual_supply":"135377049.603 STEEM","current_supply":"133987721.868 STEEM","confidential_supply":"0.000 STEEM","current_sbd_supply":"2065930.343 SBD","confidential_sbd_supply":"0.000 SBD","total_vesting_fund_steem":"128648563.405 STEEM","total_vesting_shares":"450834910146.469411 VESTS","total_reward_fund_steem":"114112.620 STEEM","total_reward_shares2":"1396666187443234091202986951140","total_activity_fund_steem":"0.000 STEEM","total_activity_fund_shares":"1768648839854696736010959","sbd_interest_rate":1000,"average_block_size":1237,"maximum_block_size":65536,"current_aslot":4267053,"recent_slots_filled":"340199290012745505634349257636769169407","participation_count":123,"last_irreversible_block_num":4226470,"max_virtual_bandwidth":"5986734968066277376","current_reserve_ratio":20000}}
+{
+   "id":1,
+   "result":{
+      "id":"2.0.0",
+      "head_block_number":5052216,
+      "head_block_id":"004d1738d48a19af169ff1c4f182b04590370d6c",
+      "time":"2016-09-17T15:44:15",
+      "current_witness":"joseph",
+      "total_pow":240629,
+      "num_pow_witnesses":101,
+      "virtual_supply":"163174453.307 STEEM",
+      "current_supply":"159069984.744 STEEM",
+      "confidential_supply":"0.000 STEEM",
+      "current_sbd_supply":"2417531.984 SBD",
+      "confidential_sbd_supply":"0.000 SBD",
+      "total_vesting_fund_steem":"150699988.193 STEEM",
+      "total_vesting_shares":"448330073403.051471 VESTS",
+      "total_reward_fund_steem":"63681.202 STEEM",
+      "total_reward_shares2":"562840788118518909706564551635",
+      "total_activity_fund_steem":"0.000 STEEM",
+      "total_activity_fund_shares":"2230081108444165478341401",
+      "sbd_interest_rate":1000,
+      "average_block_size":1273,
+      "maximum_block_size":65536,
+      "current_aslot":5097285,
+      "recent_slots_filled":"340282366920938463463374607431768207359",
+      "participation_count":127,
+      "last_irreversible_block_num":5052206,
+      "max_virtual_bandwidth":"5986734968066277376",
+      "current_reserve_ratio":20000
+   }
+}

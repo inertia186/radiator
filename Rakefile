@@ -18,3 +18,7 @@ YARD::Rake::YardocTask.new do |t|
 end
 
 task default: :test
+
+task :console do
+  exec "irb -r radiator -I ./lib"
+end
