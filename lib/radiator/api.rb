@@ -84,6 +84,38 @@ module Radiator
       :database_api
     end
     
+    # Get a specific block or range of blocks.
+    # 
+    # @param block_number [Fixnum || Array<Fixnum>]
+    # @param block the block to execute for each result, optional.
+    # @return [Array]
+    def get_blocks(block_number, &block)
+      block_number = [*(block_number)].flatten
+      
+      if !!block
+        block_number.each do |i|
+          yield get_block(i).result, i
+        end
+      else
+        block_number.map do |i|
+          get_block(i).result
+        end
+      end
+    end
+    
+    # Find a specific block
+    # 
+    # @param block_number [Fixnum]
+    # @param block the block to execute for each result, optional.
+    # @return [Hash]
+    def find_block(block_number, &block)
+      if !!block
+        yield get_blocks(block_number).first
+      else
+        get_blocks(block_number).first
+      end
+    end
+    
     def respond_to_missing?(m, include_private = false)
       method_names.keys.include?(m.to_sym)
     end
