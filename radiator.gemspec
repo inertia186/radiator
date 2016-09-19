@@ -29,8 +29,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'codeclimate-test-reporter', '~> 0.5.2'
   spec.add_development_dependency 'yard', '~> 0.8.7.6'
   spec.add_development_dependency 'pry', '~> 0.10.3'
+  spec.add_development_dependency 'awesome_print', '~> 1.7.0'
 
-  spec.add_dependency('rest-client', '~> 1.8.0')
+  spec.add_dependency('net-http-persistent', '2.9.4')
   spec.add_dependency('logging', '~> 2.1.0')
   spec.add_dependency('hashie', '>= 1.1')
 end

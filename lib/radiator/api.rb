@@ -1,6 +1,8 @@
 require 'uri'
 require 'base64'
 require 'hashie'
+require 'openssl'
+require 'net/http/persistent'
 
 module Radiator
   class Api
@@ -10,8 +12,6 @@ module Radiator
       @url = options[:url] || 'https://node.steem.ws:443'
       @debug = !!options[:debug]
     end
-    
-    DEFAULT_TIMEOUT = 60 * 60 * 1
     
     def method_names
       @method_names ||= {
@@ -97,11 +97,28 @@ module Radiator
         id: 1,
         method: "call"
       }
-      
-      response = RestClient.post(@url, JSON[options], timeout: DEFAULT_TIMEOUT)
-      response = JSON[response]
+
+      response = JSON[request(options).body]
       
       Hashie::Mash.new(response)
+    end
+    
+    def shutdown
+      http.shutdown
+    end
+  private
+    def uri
+      @uri ||= URI.parse(@url)
+    end
+    
+    def http
+      @http ||= Net::HTTP::Persistent.new "radiator-#{Radiator::VERSION}-#{self.class.name.downcase}"
+    end
+    
+    def request(options)
+      request = Net::HTTP::Post.new uri.request_uri, 'Content-Type' => 'application/json'
+      request.body = JSON[options]
+      http.request(uri, request)
     end
   end
 end
