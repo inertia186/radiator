@@ -11,6 +11,7 @@ module Radiator
       @password = options[:password]
       @url = options[:url] || 'https://node.steem.ws:443'
       @debug = !!options[:debug]
+      @net_http_persistent_enabled = true
     end
     
     def method_names
@@ -110,10 +111,27 @@ module Radiator
     # @return [Hash]
     def find_block(block_number, &block)
       if !!block
-        yield get_blocks(block_number).first
+        yield get_blocks(block_number).result
       else
-        get_blocks(block_number).first
+        get_blocks(block_number).result
       end
+    end
+    
+    def find_account(id, &block)
+      if !!block
+        yield get_accounts([id]).result.first
+      else
+        get_accounts([id]).result.first
+      end
+    end
+    
+    def steem_per_mvest
+      properties = get_dynamic_global_properties.result
+      
+      total_vesting_fund_steem = properties.total_vesting_fund_steem.to_f
+      total_vesting_shares_mvest = properties.total_vesting_shares.to_f / 1e6
+      
+      total_vesting_fund_steem / total_vesting_shares_mvest
     end
     
     def respond_to_missing?(m, include_private = false)
@@ -126,19 +144,28 @@ module Radiator
       options = {
         jsonrpc: "2.0",
         params: [api_name, m, args],
-        id: 1,
+        id: rpc_id,
         method: "call"
       }
 
-      response = JSON[request(options).body]
+      response = request(options)
       
-      Hashie::Mash.new(response)
+      if !!response
+        response = JSON[response.body]
+        
+        Hashie::Mash.new(response)
+      end
     end
     
     def shutdown
       http.shutdown
     end
   private
+    def rpc_id
+      @rpc_id ||= 0
+      @rpc_id = @rpc_id + 1
+    end
+  
     def uri
       @uri ||= URI.parse(@url)
     end
@@ -148,9 +175,22 @@ module Radiator
     end
     
     def request(options)
-      request = Net::HTTP::Post.new uri.request_uri, 'Content-Type' => 'application/json'
-      request.body = JSON[options]
-      http.request(uri, request)
+      if !!@net_http_persistent_enabled
+        begin
+          request = Net::HTTP::Post.new uri.request_uri, 'Content-Type' => 'application/json'
+          request.body = JSON[options]
+          return http.request(uri, request)
+        rescue Net::HTTP::Persistent::Error
+          @net_http_persistent_enabled = false
+        end
+      end
+        
+      unless @net_http_persistent_enabled
+        @http = Net::HTTP.new(uri.host, uri.port)
+        request = Net::HTTP::Post.new uri.request_uri, 'Content-Type' => 'application/json'
+        request.body = JSON[options]
+        @http.request(request)
+      end
     end
   end
 end
