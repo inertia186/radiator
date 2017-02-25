@@ -112,6 +112,7 @@ module Radiator
     # @return [Hash]
     def transactions(&block)
       blocks do |b|
+        next if b.nil?
         next if (_transactions = b.transactions).nil?
         return _transactions unless !!block
         
