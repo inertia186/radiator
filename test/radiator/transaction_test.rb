@@ -6,7 +6,7 @@ module Radiator
     
     def setup
       options = {
-        wif: '5Khe9Sriho4ET9ijGdT6GMUqK1v7nEQkZwTLXfUtd4KZgUVtHBR',
+        wif: '5JLw5dgQAx6rhZEgNN5C2ds1V47RweGshynFSWFbaMohsYsBvE8',
         ref_block_num: 36029,
         ref_block_prefix: 1164960351,
         expiration: Time.parse('2016-08-08T12:24:17 Z'),
