@@ -71,7 +71,7 @@ module Radiator
       
       self
     end
-
+    
     def to_bytes
       bytes = unhexlify(@chain_id)
       bytes << pakS(@ref_block_num)
