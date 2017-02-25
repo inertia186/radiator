@@ -1,6 +1,7 @@
 require 'uri'
 require 'base64'
 require 'hashie'
+require 'hashie/logger'
 require 'openssl'
 require 'net/http/persistent'
 
@@ -12,6 +13,9 @@ module Radiator
       @url = options[:url] || 'https://node.steem.ws:443'
       @debug = !!options[:debug]
       @net_http_persistent_enabled = true
+      @logger = options[:logger] || Radiator.logger
+      
+      Hashie.logger = @logger
     end
     
     def method_names
