@@ -34,4 +34,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency('net-http-persistent', '2.9.4')
   spec.add_dependency('logging', '~> 2.1.0')
   spec.add_dependency('hashie', '>= 1.1')
+  spec.add_dependency('leon', '1.1.2')
+  spec.add_dependency('bitcoin-ruby', '0.0.10')
 end
