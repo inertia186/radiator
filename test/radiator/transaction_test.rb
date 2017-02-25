@@ -122,9 +122,9 @@ module Radiator
     def test_signature
       vote = {
         type: :vote,
-        voter: 'meanpeoplesuck',
-        author: 'shadowspub',
-        permlink: 'feb-23-steemit-ramble-76-don-t-you-hate-missing-good-posts',
+        voter: 'xeroc',
+        author: 'xeroc',
+        permlink: 'piston',
         weight: 10000
       }
       
