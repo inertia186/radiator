@@ -138,6 +138,18 @@ module Radiator
       total_vesting_fund_steem / total_vesting_shares_mvest
     end
     
+    def steem_per_usd
+      feed_history = get_feed_history.result
+
+      current_median_history = feed_history.current_median_history
+      base = current_median_history.base
+      base = base.split(' ').first.to_f
+      quote = current_median_history.quote
+      quote = quote.split(' ').first.to_f
+
+      (base / quote) * steem_per_mvest
+    end
+    
     def respond_to_missing?(m, include_private = false)
       method_names.keys.include?(m.to_sym)
     end
