@@ -6,7 +6,10 @@ module Radiator
         get_feed: 3,
         get_feed_entries: 2,
         get_followers: 0,
-        get_following: 1
+        get_following: 1,
+        get_follow_count: 5, # FIXME double-check these index values
+        get_blog_entries: 6,
+        get_blog: 7
       }.freeze
     end
     
