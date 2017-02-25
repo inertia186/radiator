@@ -15,6 +15,13 @@ module Radiator
       @transaction = Radiator::Transaction.new(options)
     end
     
+    def test_ref_block_prefix
+      stub_post_get_dynamic_global_properties
+      @transaction.process(false)
+      payload = @transaction.send(:payload)
+      assert_equal 2937686740, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
+    end
+    
     # This is a contrived transaction that mirrors the transaction documented
     # by the manual signing example written by xeroc:
     #
