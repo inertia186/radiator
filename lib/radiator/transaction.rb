@@ -54,7 +54,7 @@ module Radiator
         ref_block_prefix: @ref_block_prefix,
         operations: @operations.map { |op| op.payload },
         extensions: [],
-        signatures: [hexlify(signature).downcase]
+        signatures: [hexlify(signature)]
       }
     end
   

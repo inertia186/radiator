@@ -7,7 +7,7 @@ module Radiator
       else
         s.each { |b| a << sprintf('%02X', b) }
       end
-      a.join
+      a.join.downcase
     end
     
     def unhexlify(s)
