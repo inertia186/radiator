@@ -1,6 +1,5 @@
 require 'bitcoin'
 require 'digest'
-require 'leon'
 
 module Radiator
   #   * graphenej:
@@ -44,6 +43,8 @@ module Radiator
       
       if broadcast
         @network_broadcast_api.broadcast_transaction_synchronous(payload)
+      else
+        self
       end
     end
   private
@@ -61,12 +62,12 @@ module Radiator
     def prepare
       @properties = @api.get_dynamic_global_properties.result
       @ref_block_num = @properties.head_block_number & 0xFFFF
-      buf = LEON::StringBuffer.new(@properties.head_block_id, 'hex')
-      @ref_block_prefix = buf.readUInt32LE(4)
+      @ref_block_prefix = unhexlify(@properties.head_block_id)[4..7].unpack('L')[0]
       
       # The expiration allows for transactions to expire if they are not
-      # included into a block by that time.
-      @expiration ||= Time.parse(@properties.time + 'Z') + EXPIRE_IN_SECS
+      # included into a block by that time.  Always update it to the current
+      # time + EXPIRE_IN_SECS.
+      @expiration = Time.parse(@properties.time + 'Z') + EXPIRE_IN_SECS
       
       self
     end

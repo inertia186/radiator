@@ -4,7 +4,6 @@ PATH
     radiator (0.0.5)
       bitcoin-ruby (= 0.0.10)
       hashie (>= 1.1)
-      leon (= 1.1.2)
       logging (~> 2.1.0)
       net-http-persistent (= 2.9.4)
 
@@ -29,7 +28,6 @@ GEM
     hashdiff (0.3.2)
     hashie (3.5.4)
     json (1.8.6)
-    leon (1.1.2)
     little-plugger (1.1.4)
     logging (2.1.0)
       little-plugger (~> 1.1)
