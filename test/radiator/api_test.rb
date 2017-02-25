@@ -3,7 +3,7 @@ require 'test_helper'
 module Radiator
   class ApiTest < Radiator::Test
     def setup
-      @api = Radiator::Api.new
+      @api = Radiator::Api.new(logger: LOGGER)
     end
 
     def test_method_missing
@@ -38,7 +38,7 @@ module Radiator
     def test_get_accounts_no_argument
       stub_post_error
       response = @api.get_accounts
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
       assert_nil response.result
       refute_nil response.error
     end
@@ -46,38 +46,38 @@ module Radiator
     def test_get_accounts
       stub_post_get_account
       response = @api.get_accounts(['inertia'])
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
       assert_equal response.result.first.owner.key_auths.first.first, 'STM7XicWKM8fQbG2WnGV74YmVFREyh3t9mvWuLEmogNqsuwKMmkMP'
     end
 
     def test_get_feed_history
       stub_post_get_feed_history
       response = @api.get_feed_history(['inertia'])
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
     end
 
     def test_get_account_count
       stub_post_get_account_count
       response = @api.get_account_count
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
     end
 
     def test_get_account_references
       stub_post_get_account_references
       response = @api.get_account_references(["2.2.27007"])
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
     end
     
     def test_get_dynamic_global_properties
       stub_post_get_dynamic_global_properties
       response = @api.get_dynamic_global_properties
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
     end
     
     def test_get_hardfork_version
       stub_post_get_hardfork_version
       response = @api.get_hardfork_version
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
     end
   end
 end

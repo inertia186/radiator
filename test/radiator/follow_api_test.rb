@@ -38,7 +38,7 @@ module Radiator
     def test_get_followers
       stub_post_follow_api_get_followers
       response = @api.get_followers('inertia', 0, 'blog', 100)
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
       assert response.result
     end
   end

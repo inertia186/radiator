@@ -1,9 +1,9 @@
 require 'test_helper'
 
 module Radiator
-  class TagApiTest < Radiator::Test
+  class NetworkBroadcastApiTest < Radiator::Test
     def setup
-      @api = Radiator::TagApi.new
+      @api = Radiator::NetworkBroadcastApi.new
     end
 
     def test_method_missing
@@ -35,10 +35,10 @@ module Radiator
       end
     end
 
-    def test_get_tags
+    def test_broadcast_transaction
       stub_post_empty
-      response = @api.get_tags
-      assert_equal Hashie::Mash, response.class, response.inspect
+      response = @api.broadcast_transaction
+      assert_equal response.class, Hashie::Mash, response.inspect
     end
   end
 end

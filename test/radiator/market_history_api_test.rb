@@ -39,35 +39,35 @@ module Radiator
       skip "Need to research arguments"
       stub_post_market_history_api_get_market_history
       response = @api.get_market_history(nil, nil, nil)
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
       assert response.result
     end
     
     def test_get_market_history_buckets
       stub_post_market_history_api_get_market_history_buckets
       response = @api.get_market_history_buckets
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
       assert response.result
     end
     
     def test_get_order_book
       stub_post_market_history_api_get_order_book
       response = @api.get_order_book(10)
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
       assert response.result
     end
     
     def test_get_recent_trades
       stub_post_market_history_api_get_recent_trades
       response = @api.get_recent_trades(10)
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
       assert response.result
     end
     
     def test_get_ticker
       stub_post_market_history_api_get_ticker
       response = @api.get_ticker
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
       assert response.result
     end
     
@@ -75,14 +75,14 @@ module Radiator
       skip "Need to research arguments"
       stub_post_market_history_api_get_trade_history
       response = @api.get_trade_history(nil, nil, nil)
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
       assert response.result
     end
     
     def test_get_volume
       stub_post_market_history_api_get_volume
       response = @api.get_volume
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
       assert response.result
     end
   end

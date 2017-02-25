@@ -45,7 +45,7 @@ module Radiator
   
       skip "cannot execute an asynchronous request in tests"
       @api.operations
-      assert_equal response.class, Hashie::Mash, response.inspect
+      assert_equal Hashie::Mash, response.class, response.inspect
     end
   end
 end

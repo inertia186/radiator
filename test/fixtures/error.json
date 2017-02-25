@@ -1,1 +1,29 @@
-{"id":1,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0 != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165 call_generic","data":{"code":10,"name":"assert_exception","message":"Assert Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2016-08-20T18:15:07"},"format":"a0 != e: too few arguments passed to method","data":{}}]}}}
+{  
+   "id":1,
+   "error":{  
+      "code":1,
+      "message":"10 assert_exception: Assert Exception\na0 != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165 call_generic",
+      "data":{  
+         "code":10,
+         "name":"assert_exception",
+         "message":"Assert Exception",
+         "stack":[  
+            {  
+               "context":{  
+                  "level":"error",
+                  "file":"api_connection.hpp",
+                  "line":165,
+                  "method":"call_generic",
+                  "hostname":"",
+                  "thread_name":"th_a",
+                  "timestamp":"2016-08-20T18:15:07"
+               },
+               "format":"a0 != e: too few arguments passed to method",
+               "data":{  
+
+               }
+            }
+         ]
+      }
+   }
+}
