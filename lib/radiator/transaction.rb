@@ -87,17 +87,20 @@ module Radiator
       bytes
     end
     
+    def digest
+      Digest::SHA256.digest(to_bytes)
+    end
+    
     def signature
       public_key_hex = @private_key.pub
       ec = Bitcoin::OpenSSL_EC
+      digest_hex = digest.freeze
 
       loop do
         @expiration += 1
-        data = to_bytes
-        hash = Digest::SHA256.digest data
-        sig = ec.sign_compact(hash, @private_key.priv, public_key_hex)
+        sig = ec.sign_compact(digest_hex, @private_key.priv, public_key_hex)
         
-        next if public_key_hex != ec.recover_compact(hash, sig)
+        next if public_key_hex != ec.recover_compact(digest_hex, sig)
         
         return sig if canonical? sig
       end
