@@ -6,6 +6,7 @@ module Radiator
   #   * graphenej:
   #     * https://github.com/kenCode-de/graphenej/blob/master/graphenej/src/main/java/de/bitsharesmunich/graphenej/Transaction.java#L142
   class Transaction
+    include ChainConfig
     include Utils
     
     VALID_OPTIONS = %w(
@@ -23,7 +24,7 @@ module Radiator
         end
       end
 
-      @chain_id ||= ChainConfig::NETWORKS_STEEM_CHAIN_ID
+      @chain_id ||= NETWORKS_STEEM_CHAIN_ID
       @operations ||= []
       
       if !!@wif && !!@private_key
@@ -65,7 +66,7 @@ module Radiator
       
       # The expiration allows for transactions to expire if they are not
       # included into a block by that time.
-      @expiration ||= Time.parse(@properties.time + 'Z') + 30 # expires in 30 seconds
+      @expiration ||= Time.parse(@properties.time + 'Z') + EXPIRE_IN_SECS
       
       self
     end

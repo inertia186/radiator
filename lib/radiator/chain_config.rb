@@ -1,5 +1,5 @@
 module Radiator
-  class ChainConfig
+  module ChainConfig
     EXPIRE_IN_SECS = 15
     EXPIRE_IN_SECS_PROPOSAL = 24 * 60 * 60
     
