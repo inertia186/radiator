@@ -27,12 +27,12 @@ module Radiator
       @chain_id ||= NETWORKS_STEEM_CHAIN_ID
       @operations ||= []
       
-      if !!@wif && !!@private_key
+      if !!wif && !!private_key
         raise "Do not pass both wif and private_key.  That's confusing."
       end
       
-      if !!@wif
-        @private_key = Bitcoin::Key.from_base58 @wif
+      if !!wif
+        @private_key = Bitcoin::Key.from_base58 wif
       end
       
       @api = Api.new(options)
