@@ -45,8 +45,12 @@ module Radiator
       [@type, params]
     end
   private
+    def self.broadcast_operations_json_path
+      @broadcast_operations_json_path ||= "#{File.dirname(__FILE__)}/broadcast_operations.json"
+    end
+    
     def self.broadcast_operations
-      @broadcast_operations ||= JSON[File.read 'lib/radiator/broadcast_operations.json']
+      @broadcast_operations ||= JSON[File.read broadcast_operations_json_path]
     end
 
     def self.known_operation_names
