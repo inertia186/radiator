@@ -26,7 +26,7 @@ response.result.virtual_supply
 => "135377049.603 STEEM"
 ```
 
-### Follower API
+#### Follower API
 
 ```ruby
 api = Radiator::FollowApi.new
@@ -87,6 +87,8 @@ helikopterben voted for etcmike (weight: 100.0%)
 .
 .
 ```
+
+#### Streaming
 
 You can also just stream all operations like this:
 
@@ -217,6 +219,47 @@ Example of the output:
 .
 .
 ```
+
+#### Transaction Signing
+
+Radiator now supports transaction signing, so you can use it to vote:
+
+```ruby
+transaction = Radiator::Transaction.new(wif: '5JLw5dgQAx6rhZEgNN5C2ds1V47RweGshynFSWFbaMohsYsBvE8')
+vote = {
+  type: :vote,
+  voter: 'xeroc',
+  author: 'xeroc',
+  permlink: 'piston',
+  weight: 10000
+}
+
+operation = Radiator::Operation.new(vote)
+transaction.operations << operation
+transaction.process(true)
+```
+
+You can also post/comment:
+
+```ruby
+comment = {
+  type: :comment,
+  parent_permlink: 'test',
+  author: 'your-account',
+  permlink: 'something-unique',
+  title: 'Radiator Can Post Comments!',
+  body: 'Yep, this post was created by Radiator in `ruby`.',
+  json_metadata: '',
+  parent_author: ''
+}
+
+tx = Radiator::Transaction.new(wif: 'Your Wif Here')
+op = Radiator::Operation.new(comment)
+tx.operations << op
+tx.process(true)
+```
+
+There's a complete list of operations known to Radiator in [`broadcast_operations.json`](https://github.com/inertia186/radiator/blob/master/lib/radiator/broadcast_operations.json).  In the current version, only "flat" operations are broadcasted correctly.  These are individual operations with one level of nesting, like voting and commenting.  Operations that have nested datatypes, like `custom_json`, will probably be supported in the next release.
 
 ## Tests
 
