@@ -1,5 +1,6 @@
 require 'bitcoin'
 require 'digest'
+require 'time'
 
 module Radiator
   #   * graphenej:
