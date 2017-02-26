@@ -7,13 +7,13 @@ module Radiator
       options.each do |k, v|
         instance_variable_set("@#{k}", v)
       end
-    end
-    
-    def to_bytes
+      
       unless Operation::known_operation_names.include? @type
         raise "Unsupported type: #{@type}"
       end
-      
+    end
+    
+    def to_bytes
       bytes = [id(@type.to_sym)].pack('C')
       
       Operation::param_names(@type.to_sym).each do |p|
@@ -34,10 +34,6 @@ module Radiator
     end
     
     def payload
-      unless Operation::known_operation_names.include? @type
-        raise "Unsupported type: #{@type}"
-      end
-      
       params = {}
       
       Operation::param_names(@type.to_sym).each do |p|
