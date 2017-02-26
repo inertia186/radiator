@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module Radiator
-  class TransactionBuilderTest < Radiator::Test
+  class TransactionTest < Radiator::Test
     include Utils
     
     def setup
@@ -15,8 +15,15 @@ module Radiator
       @transaction = Radiator::Transaction.new(options)
     end
     
+    def test_wif_and_private_key
+      assert_raises 'expect transaction to freak when it sees both' do
+        Radiator::Transaction.new(wif: 'wif', private_key: 'private key')
+      end
+    end
+    
     def test_ref_block_prefix
       stub_post_get_dynamic_global_properties
+      @transaction.operations << Radiator::Operation.new(type: :vote)
       @transaction.process(false)
       payload = @transaction.send(:payload)
       assert_equal 2937686740, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
