@@ -11,7 +11,11 @@ module Radiator
   #     puts witness
   #   end
   class Stream < Api
+    INITIAL_TIMEOUT = 0.0200
+    MAX_TIMEOUT = 80
+    
     def initialize(options = {})
+      @logger = options[:logger] || Radiator.logger
       @api = Api.new(options)
     end
     
@@ -119,7 +123,6 @@ module Radiator
     # @return [Hash]
     def transactions(&block)
       blocks do |b|
-        next if b.nil?
         next if (_transactions = b.transactions).nil?
         return _transactions unless !!block
         
@@ -168,6 +171,13 @@ module Radiator
         end
         sleep 0.0200
       end
+    end
+    
+    def timeout
+      @timeout ||= INITIAL_TIMEOUT
+      @timeout *= 2
+      @timeout = INITIAL_TIMEOUT if @timeout > MAX_TIMEOUT
+      @timeout
     end
     
     # Stops the persistant http connections.
