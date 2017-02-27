@@ -1,11 +1,11 @@
 module Radiator
   class ChainStatsApi < Api
     def method_names
-      @method_names ||= {
-        get_stats_for_time: 0,
-        get_stats_for_interval: 1,
-        get_lifetime_stats: 2
-      }.freeze
+      @method_names ||= [
+        :get_stats_for_time,
+        :get_stats_for_interval,
+        :get_lifetime_stats
+      ].freeze
     end
     
     def api_name

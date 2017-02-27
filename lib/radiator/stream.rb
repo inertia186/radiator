@@ -16,37 +16,44 @@ module Radiator
     end
     
     def method_names
-      @method_names ||= {
-        head_block_number: nil,
-        head_block_id: nil,
-        time: nil,
-        current_witness: nil,
-        total_pow: nil,
-        num_pow_witnesses: nil,
-        virtual_supply: nil,
-        current_supply: nil,
-        confidential_supply: nil,
-        current_sbd_supply: nil,
-        confidential_sbd_supply: nil,
-        total_vesting_fund_steem: nil,
-        total_vesting_shares: nil,
-        total_reward_fund_steem: nil,
-        total_reward_shares2: nil,
-        total_activity_fund_steem: nil,
-        total_activity_fund_shares: nil,
-        sbd_interest_rate: nil,
-        average_block_size: nil,
-        maximum_block_size: nil,
-        current_aslot: nil,
-        recent_slots_filled: nil,
-        participation_count: nil,
-        last_irreversible_block_num: nil,
-        max_virtual_bandwidth: nil,
-        current_reserve_ratio: nil,
-        
-        block_numbers: {head_block_number: nil},
-        blocks: {get_block: :head_block_number}
-      }.freeze
+      @method_names ||= [
+        :head_block_number,
+        :head_block_id,
+        :time,
+        :current_witness,
+        :total_pow,
+        :num_pow_witnesses,
+        :virtual_supply,
+        :current_supply,
+        :confidential_supply,
+        :current_sbd_supply,
+        :confidential_sbd_supply,
+        :total_vesting_fund_steem,
+        :total_vesting_shares,
+        :total_reward_fund_steem,
+        :total_reward_shares2,
+        :total_activity_fund_steem,
+        :total_activity_fund_shares,
+        :sbd_interest_rate,
+        :average_block_size,
+        :maximum_block_size,
+        :current_aslot,
+        :recent_slots_filled,
+        :participation_count,
+        :last_irreversible_block_num,
+        :max_virtual_bandwidth,
+        :current_reserve_ratio,
+        :block_numbers,
+        :blocks
+      ].freeze
+    end
+    
+    def method_params(method)
+      case method
+      when :block_numbers then {head_block_number: nil}
+      when :blocks then {get_block: :head_block_number}
+      else; nil
+      end
     end
     
     # Returns the latest operations from the blockchain.
@@ -128,14 +135,25 @@ module Radiator
       @latest_values ||= []
       @latest_values.shift(5) if @latest_values.size > 20
       loop do
-        value = if (n = method_names[m]).nil?
+        value = if (n = method_params(m)).nil?
           key_value = @api.get_dynamic_global_properties.result[m]
         else
           key = n.keys.first
           if !!n[key]
             r = @api.get_dynamic_global_properties.result
             key_value = param = r[n[key]]
-            @api.send(key, param).result
+            result = nil
+            loop do
+              response = @api.send(key, param)
+              raise response.error.to_json if !!response.error
+              result = response.result
+              break if !!result
+              @logger.warn "#{key}: #{param} result missing, retrying with timeout: #{@timeout || INITIAL_TIMEOUT} seconds"
+              shutdown
+              sleep timeout
+            end
+            @timeout = INITIAL_TIMEOUT
+            result
           else
             key_value = @api.get_dynamic_global_properties.result[key]
           end

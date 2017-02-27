@@ -1,9 +1,7 @@
 module Radiator
   class TagApi < Api
     def method_names
-      @method_names ||= {
-        get_tags: 0
-      }.freeze
+      @method_names ||= [:get_tags].freeze
     end
     
     def api_name
