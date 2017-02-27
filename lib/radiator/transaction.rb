@@ -61,6 +61,8 @@ module Radiator
     end
   
     def prepare
+      raise "No wif or private key." unless !!@wif || !!@private_key
+      
       @properties = @api.get_dynamic_global_properties.result
       @ref_block_num = @properties.head_block_number & 0xFFFF
       @ref_block_prefix = unhexlify(@properties.head_block_id)[4..7].unpack('L')[0]
