@@ -15,6 +15,34 @@ module Radiator
       @transaction = Radiator::Transaction.new(options)
     end
     
+    def test_valid_chains
+      %w(steem golos test).each do |chain|
+        io = StringIO.new
+        log = Logger.new io
+        Radiator::Transaction.new(chain: chain, logger: log)
+        assert_equal '', io.string, 'expect empty log'
+      end
+    end
+    
+    def test_unknown_chain
+      io = StringIO.new
+      Radiator.logger = Logger.new(io) # side effect: increase code coverage
+      chain = 'ginger'
+      Radiator::Transaction.new(chain: chain)
+      refute_equal '', io.string, 'did not expect empty log'
+      assert io.string.include?('Unknown chain id'), 'expect log to mention unknown chain id'
+    end
+    
+    def test_unknown_chain_id
+      io = StringIO.new
+      log = Logger.new io
+      unknown_chain_id = 'F' * (256 / 4)
+      Radiator::Transaction.new(chain_id: unknown_chain_id, logger: log)
+      
+      refute_equal '', io.string, 'did not expect empty log'
+      assert io.string.include?(unknown_chain_id), 'expect log to mention unknown chain id'
+    end
+    
     def test_wif_and_private_key
       assert_raises 'expect transaction to freak when it sees both' do
         Radiator::Transaction.new(wif: 'wif', private_key: 'private key')

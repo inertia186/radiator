@@ -11,7 +11,7 @@ module Radiator
     
     VALID_OPTIONS = %w(
       wif private_key ref_block_num ref_block_prefix expiration operations
-      chain_id
+      chain
     ).map(&:to_sym)
     VALID_OPTIONS.each { |option| attr_accessor option }
     
@@ -23,9 +23,16 @@ module Radiator
           send("#{k}=", v)
         end
       end
-
-      @chain_id ||= NETWORKS_STEEM_CHAIN_ID
+      
+      @logger = options[:logger] || Radiator.logger
+      @chain ||= :steem
+      @chain_id = chain_id options[:chain_id]
+      @url = url
       @operations ||= []
+      
+      unless NETWORK_CHAIN_IDS.include? @chain_id
+        @logger.warn "Unknown chain id: #{@chain_id}"
+      end
       
       if !!wif && !!private_key
         raise "Do not pass both wif and private_key.  That's confusing."
@@ -35,8 +42,27 @@ module Radiator
         @private_key = Bitcoin::Key.from_base58 wif
       end
       
+      options = options.merge(url: url)
       @api = Api.new(options)
       @network_broadcast_api = NetworkBroadcastApi.new(options)
+    end
+    
+    def chain_id(chain_id = nil)
+      return chain_id if !!chain_id
+      
+      case chain.to_s.downcase.to_sym
+      when :steem then NETWORKS_STEEM_CHAIN_ID
+      when :golos then NETWORKS_GOLOS_CHAIN_ID
+      when :test then NETWORKS_TEST_CHAIN_ID
+      end
+    end
+    
+    def url
+      case chain.to_s.downcase.to_sym
+      when :steem then NETWORKS_STEEM_DEFAULT_NODE
+      when :golos then NETWORKS_GOLOS_DEFAULT_NODE
+      when :test then NETWORKS_TEST_DEFAULT_NODE
+      end
     end
     
     def process(broadcast = false)
