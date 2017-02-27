@@ -28,6 +28,18 @@ module Radiator
       operation.to_bytes
     end
     
+    def test_supported_true_class
+      operation = Radiator::Operation.new(type: :comment_options, allow_votes: true)
+      
+      operation.to_bytes
+    end
+    
+    def test_supported_false_class
+      operation = Radiator::Operation.new(type: :comment_options, allow_votes: false)
+      
+      operation.to_bytes
+    end
+    
     def test_supported_nil_class
       operation = Radiator::Operation.new(type: :comment, json_metadata: nil)
       
@@ -37,7 +49,7 @@ module Radiator
     def test_supported_array
       operation = Radiator::Operation.new(type: :custom_json, required_auths: [])
       
-      # operation.to_bytes
+      operation.to_bytes
     end
   end
 end

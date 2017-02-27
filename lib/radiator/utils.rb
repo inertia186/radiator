@@ -18,6 +18,10 @@ module Radiator
       [s.size].pack('C') + s
     end
     
+    def pakArr(a)
+      a.map { |v| pakStr(v) }.join
+    end
+    
     def pakC(i)
       [i].pack('C')
     end
