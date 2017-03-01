@@ -1,19 +1,47 @@
+<div class="pull-right">
+  [![Build Status](https://travis-ci.org/inertia186/radiator.svg?branch=master)](https://travis-ci.org/inertia186/radiator)
+  [![Code Climate](https://codeclimate.com/github/inertia186/radiator/badges/gpa.svg)](https://codeclimate.com/github/inertia186/radiator)
+  [![Test Coverage](https://codeclimate.com/github/inertia186/radiator/badges/coverage.svg)](https://codeclimate.com/github/inertia186/radiator)
+  ![radiator](http://www.steemimg.com/images/2016/08/19/RadiatorCoolingFan-54in-Webfdcb1.png)
+</div>
+
 radiator
 ========
 
-![radiator](http://www.steemimg.com/images/2016/08/19/RadiatorCoolingFan-54in-Webfdcb1.png)[![Build Status](https://travis-ci.org/inertia186/radiator.svg?branch=master)](https://travis-ci.org/inertia186/radiator) [![Code Climate](https://codeclimate.com/github/inertia186/radiator/badges/gpa.svg)](https://codeclimate.com/github/inertia186/radiator) [![Test Coverage](https://codeclimate.com/github/inertia186/radiator/badges/coverage.svg)](https://codeclimate.com/github/inertia186/radiator)
-
 STEEM Ruby API Client
 
-### Installation
+---
+
+### Quick Start
 
 Add the gem to your Gemfile:
 
-    gem 'radiator', github: 'inertia186/radiator'
-    
+```ruby
+gem 'radiator', github: 'inertia186/radiator'
+```
+
 Then:
 
-    $ bundle install
+```bash
+$ bundle install
+```
+
+If you don't have `bundler`, see the next section.
+    
+### Prerequisites
+
+#### Linux
+
+```bash
+$ sudo apt-get install ruby-full git openssl libssl1.0.0 libssl-dev
+$ gem install bundler
+```
+
+#### macOS
+
+```
+$ gem install bundler
+```
 
 ### Usage
 
@@ -225,7 +253,7 @@ Example of the output:
 Radiator now supports transaction signing, so you can use it to vote:
 
 ```ruby
-transaction = Radiator::Transaction.new(wif: '5JLw5dgQAx6rhZEgNN5C2ds1V47RweGshynFSWFbaMohsYsBvE8')
+tx = Radiator::Transaction.new(wif: 'Your Wif Here')
 vote = {
   type: :vote,
   voter: 'xeroc',
@@ -234,14 +262,15 @@ vote = {
   weight: 10000
 }
 
-operation = Radiator::Operation.new(vote)
-transaction.operations << operation
-transaction.process(true)
+op = Radiator::Operation.new(vote)
+tx.operations << op
+tx.process(true)
 ```
 
 You can also post/comment:
 
 ```ruby
+tx = Radiator::Transaction.new(wif: 'Your Wif Here')
 comment = {
   type: :comment,
   parent_permlink: 'test',
@@ -253,7 +282,6 @@ comment = {
   parent_author: ''
 }
 
-tx = Radiator::Transaction.new(wif: 'Your Wif Here')
 op = Radiator::Operation.new(comment)
 tx.operations << op
 tx.process(true)
