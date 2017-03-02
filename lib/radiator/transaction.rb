@@ -91,7 +91,7 @@ module Radiator
       
       @properties = @api.get_dynamic_global_properties.result
       @ref_block_num = @properties.head_block_number & 0xFFFF
-      @ref_block_prefix = unhexlify(@properties.head_block_id)[4..7].unpack('L')[0]
+      @ref_block_prefix = unhexlify(@properties.head_block_id[8..-1]).unpack('V*')[0]
       
       # The expiration allows for transactions to expire if they are not
       # included into a block by that time.  Always update it to the current

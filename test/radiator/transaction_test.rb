@@ -19,7 +19,17 @@ module Radiator
       %w(steem golos test).each do |chain|
         io = StringIO.new
         log = Logger.new io
-        Radiator::Transaction.new(chain: chain, logger: log)
+        transaction = Radiator::Transaction.new(chain: chain, logger: log)
+        case chain.to_sym
+        when :steem
+          assert_equal Radiator::Transaction::NETWORKS_STEEM_CHAIN_ID, transaction.chain_id, 'expect steem chain'
+        when :golos
+          assert_equal Radiator::Transaction::NETWORKS_GOLOS_CHAIN_ID, transaction.chain_id, 'expect golos chain'
+        when :test
+          assert_equal Radiator::Transaction::NETWORKS_TEST_CHAIN_ID, transaction.chain_id, 'expect test chain'
+        else
+          fail "did not expect chain: #{chain}"
+        end
         assert_equal '', io.string, 'expect empty log'
       end
     end
@@ -55,6 +65,14 @@ module Radiator
       @transaction.process(false)
       payload = @transaction.send(:payload)
       assert_equal 2937686740, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
+    end
+    
+    def test_golos_ref_block_prefix
+      stub_post_golos_get_dynamic_global_properties
+      @transaction.operations << Radiator::Operation.new(type: :vote)
+      @transaction.process(false)
+      payload = @transaction.send(:payload)
+      assert_equal 138299648, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
     end
     
     # This is a contrived transaction that mirrors the transaction documented

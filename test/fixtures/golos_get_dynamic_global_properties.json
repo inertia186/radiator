@@ -1,0 +1,32 @@
+{
+   "id":1,
+   "result":{
+      "id":0,
+      "head_block_number":3878003,
+      "head_block_id":"003b2c7300493e0863be73122a58bf850de5e4fa",
+      "time":"2017-03-02T07:51:45",
+      "current_witness":"arcange",
+      "total_pow":185409,
+      "num_pow_witnesses":172,
+      "virtual_supply":"120216782.774 GOLOS",
+      "current_supply":"118814713.727 GOLOS",
+      "confidential_supply":"0.000 GOLOS",
+      "current_sbd_supply":"935180.055 GBG",
+      "confidential_sbd_supply":"0.000 GBG",
+      "total_vesting_fund_steem":"117448867.189 GOLOS",
+      "total_vesting_shares":"454446464094.889234 GESTS",
+      "total_reward_fund_steem":"76791.358 GOLOS",
+      "total_reward_shares2":"1100131667315923575961150326399",
+      "sbd_interest_rate":1000,
+      "sbd_print_rate":10000,
+      "average_block_size":495,
+      "maximum_block_size":65536,
+      "current_aslot":3884235,
+      "recent_slots_filled":"340282366920938463463374607431768211455",
+      "participation_count":128,
+      "last_irreversible_block_num":3877988,
+      "max_virtual_bandwidth":"5986734968066277376",
+      "current_reserve_ratio":20000,
+      "vote_regeneration_per_day":40
+   }
+}
