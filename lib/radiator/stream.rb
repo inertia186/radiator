@@ -148,7 +148,7 @@ module Radiator
             result = nil
             loop do
               response = @api.send(key, param)
-              raise response.error.to_json if !!response.error
+              raise JSON[response.error] if !!response.error
               result = response.result
               break if !!result
               @logger.warn "#{key}: #{param} result missing, retrying with timeout: #{@timeout || INITIAL_TIMEOUT} seconds"

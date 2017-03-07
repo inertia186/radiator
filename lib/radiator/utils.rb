@@ -14,8 +14,21 @@ module Radiator
       s.split.pack('H*')
     end
     
+    def varint(n)
+      data = []
+      while n >= 0x80
+        data += [(n & 0x7f) | 0x80]
+        
+        n >>= 7
+      end
+      
+      data += [n]
+      
+      data.pack('C*')
+    end
+  
     def pakStr(s)
-      [s.size].pack('C') + s
+      varint(s.size) + s
     end
     
     def pakArr(a)

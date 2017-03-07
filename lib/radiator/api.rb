@@ -71,6 +71,7 @@ module Radiator
       end
     end
     
+    # TODO: Need to rename this to base_per_mvest and alias to steem_per_mvest
     def steem_per_mvest
       properties = get_dynamic_global_properties.result
       
@@ -80,6 +81,7 @@ module Radiator
       total_vesting_fund_steem / total_vesting_shares_mvest
     end
     
+    # TODO: Need to rename this to base_per_debt and alias to steem_per_debt
     def steem_per_usd
       feed_history = get_feed_history.result
 
