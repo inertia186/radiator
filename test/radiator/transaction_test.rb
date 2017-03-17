@@ -59,6 +59,14 @@ module Radiator
       end
     end
     
+    def test_ref_block_num
+      stub_post_get_dynamic_global_properties
+      @transaction.operations << Radiator::Operation.new(type: :vote)
+      @transaction.process(false)
+      payload = @transaction.send(:payload)
+      assert_equal 5944, payload[:ref_block_num], 'expect a certain ref_block_prefix'
+    end
+    
     def test_ref_block_prefix
       stub_post_get_dynamic_global_properties
       @transaction.operations << Radiator::Operation.new(type: :vote)

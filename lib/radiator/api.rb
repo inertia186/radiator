@@ -10,7 +10,7 @@ module Radiator
     def initialize(options = {})
       @user = options[:user]
       @password = options[:password]
-      @url = options[:url] || 'https://node.steem.ws:443'
+      @url = options[:url] || 'https://steemd.steemit.com'
       @debug = !!options[:debug]
       @net_http_persistent_enabled = true
       @logger = options[:logger] || Radiator.logger

@@ -27,7 +27,7 @@ module Radiator
       @logger = options[:logger] || Radiator.logger
       @chain ||= :steem
       @chain_id = chain_id options[:chain_id]
-      @url = url
+      @url = options[:url] || url
       @operations ||= []
       
       unless NETWORK_CHAIN_IDS.include? @chain_id
@@ -42,7 +42,7 @@ module Radiator
         @private_key = Bitcoin::Key.from_base58 wif
       end
       
-      options = options.merge(url: url)
+      options = options.merge(url: @url)
       @api = Api.new(options)
       @network_broadcast_api = NetworkBroadcastApi.new(options)
     end

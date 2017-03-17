@@ -36,7 +36,7 @@ module Radiator
     end
 
     def test_get_operations
-      url = "https://node.steem.ws/"
+      url = 'https://steemd.steemit.com'
       stubs = []
       stubs << stub_request(:post, url).with(body: /get_dynamic_global_properties/).
         to_return(status: 200, body: fixture('get_dynamic_global_properties.json'))
