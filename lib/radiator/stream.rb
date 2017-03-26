@@ -94,19 +94,23 @@ module Radiator
     #   custom
     #
     # @param type [symbol || Array<symbol>] the type(s) of operation, optional.
+    # @param start starting block
+    # @param mode we have the choice between
+    #   * :head the last block
+    #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
     # @param block the block to execute for each result, optional.
     # @return [Hash]
-    def operations(type = nil, &block)
-      transactions do |transaction|
-        next if (_operations = transactions.map(&:operations)).none?
-        ops = _operations.map do |operation|
-          t = operation.first.first.to_sym
+    def operations(type = nil, start = nil, mode = :irreversible, &block)
+      transactions(start, mode) do |transaction|
+        ops = transaction.operations.map do |t, op|
+          t = t.to_sym
           if type == t
-            operation.first.last
+            op
           elsif type.nil? || [type].flatten.include?(t)
-            {t => operation.first.last}
+            {t => op}
           end
-        end.reject(&:nil?)
+        end.compact
+        
         next if ops.none?
         
         return ops unless !!block
@@ -119,16 +123,64 @@ module Radiator
     
     # Returns the latest transactions from the blockchain.
     # 
+    # @param start starting block
+    # @param mode we have the choice between
+    #   * :head the last block
+    #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
     # @param block the block to execute for each result, optional.
     # @return [Hash]
-    def transactions(&block)
-      blocks do |b|
+    def transactions(start = nil, mode = :irreversible, &block)
+      blocks(start, mode) do |b|
         next if (_transactions = b.transactions).nil?
         return _transactions unless !!block
         
         _transactions.each.each do |transaction|
           yield transaction
         end
+      end
+    end
+    
+    # Returns the latest blocks from the blockchain.
+    # 
+    # @param start starting block
+    # @param mode we have the choice between
+    #   * :head the last block
+    #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
+    # @param block the block to execute for each result, optional.
+    # @return [Hash]
+    def blocks(start = nil, mode = :irreversible, &block)
+      if start.nil?
+        properties = @api.get_dynamic_global_properties.result
+        start = case mode.to_sym
+        when :head then properties.head_block_number
+        when :irreversible then properties.last_irreversible_block_num
+        else; raise '"mode" has to be "head" or "irreversible"'
+        end
+      end
+      
+      loop do
+        properties = @api.get_dynamic_global_properties.result
+        
+        head_block = case mode.to_sym
+        when :head then properties.head_block_number
+        when :irreversible then properties.last_irreversible_block_num
+        else; raise '"mode" has to be "head" or "irreversible"'
+        end
+        
+        [*(start..(head_block))].each do |n|
+          response = @api.send(:get_block, n)
+          raise JSON[response.error] if !!response.error
+          result = response.result
+        
+          if !!block
+            yield result
+          else
+            return result
+          end
+        end
+        
+        start = head_block + 1
+        sleep 3
       end
     end
     
