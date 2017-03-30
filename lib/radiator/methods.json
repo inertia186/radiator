@@ -146,6 +146,10 @@
   },
   {
     "api": "database_api",
+    "method": "get_reward_fund"
+  },
+  {
+    "api": "database_api",
     "method": "get_chain_properties"
   },
   {
