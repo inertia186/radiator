@@ -39,7 +39,9 @@ module Radiator
       custom_binary_operation: 35,
       decline_voting_rights_operation: 36,
       reset_account_operation: 37,
-      set_reset_account_operation: 38
+      set_reset_account_operation: 38,
+      claim_reward_balance: 39,
+      delegate_vesting_shares: 40
     }
     
     def id(key)

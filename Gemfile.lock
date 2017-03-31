@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    radiator (0.0.8a)
+    radiator (0.0.9)
       bitcoin-ruby (= 0.0.10)
       ffi (= 1.9.17)
       hashie (>= 1.1)
@@ -11,7 +11,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.0)
+    addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     awesome_print (1.7.0)
     bitcoin-ruby (0.0.10)

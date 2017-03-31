@@ -1,6 +1,7 @@
 module Radiator
   class Operation
     include OperationIds
+    include OperationTypes
     include Utils
     
     def initialize(options = {})
@@ -20,14 +21,17 @@ module Radiator
         next unless defined? p
         
         v = instance_variable_get("@#{p}")
-        k = v.class.name
-        bytes += case k
-        when 'String' then pakStr(v)
-        when 'Fixnum' then paks(v)
-        when 'TrueClass' then pakC(1)
-        when 'FalseClass' then pakC(0)
-        when 'Array' then pakArr(v)
-        when 'NilClass' then next
+        v = type(@type, p, v)
+        
+        bytes += v.to_bytes and next if v.respond_to? :to_bytes
+        
+        bytes += case v
+        when String then pakStr(v)
+        when Fixnum then paks(v)
+        when TrueClass then pakC(1)
+        when FalseClass then pakC(0)
+        when Array then pakArr(v)
+        when NilClass then next
         else
           raise "Unsupported type: #{k}"
         end
@@ -69,4 +73,3 @@ module Radiator
     end
   end
 end
-

@@ -285,6 +285,23 @@ tx.operations << op
 tx.process(true)
 ```
 
+Transfers:
+
+```ruby
+tx = Radiator::Transaction.new(wif: 'Your Wif Here')
+transfer = {
+  type: :transfer,
+  from: 'ned',
+  to: 'inertia',
+  amount: '100000.000 SBD',
+  memo: 'Wow, inertia!  Radiator is great!'
+}
+
+op = Radiator::Operation.new(comment)
+tx.operations << op
+tx.process(true)
+```
+
 #### Golos
 
 Radiator also supports Golos.  To use the Golos blockchain, provide a node and chain_id:
@@ -304,7 +321,7 @@ tx.operations << op
 tx.process(true)
 ```
 
-There's a complete list of operations known to Radiator in [`broadcast_operations.json`](https://github.com/inertia186/radiator/blob/master/lib/radiator/broadcast_operations.json).  In the current version, only "flat" operations are broadcasted correctly.  These are individual operations with one level of nesting, like voting and commenting.  Operations that have nested datatypes, like `custom_json`, will probably be supported in the next release.
+There's a complete list of operations known to Radiator in [`broadcast_operations.json`](https://github.com/inertia186/radiator/blob/master/lib/radiator/broadcast_operations.json).
 
 ## Tests
 

@@ -582,5 +582,17 @@
       "from",
       "request_id"
     ]
+  },
+  {
+    "roles": [
+      "active",
+      "owner"
+    ],
+    "operation": "delegate_vesting_shares",
+    "params": [
+      "delegator",
+      "delegatee",
+      "vesting_shares"
+    ]
   }
 ]

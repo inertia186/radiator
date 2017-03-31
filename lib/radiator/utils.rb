@@ -39,6 +39,10 @@ module Radiator
       [i].pack('C')
     end
     
+    def pakc(i)
+      [i].pack('c')
+    end
+    
     def paks(i)
       [i].pack('s')
     end
@@ -49,6 +53,10 @@ module Radiator
     
     def pakI(i)
       [i].pack('I')
+    end
+    
+    def pakL!(i)
+      [i].pack('L!')
     end
   end
 end
