@@ -6,7 +6,14 @@
 radiator
 ========
 
-STEEM Ruby API Client
+#### STEEM Ruby API Client
+
+Radiator is an API Client for interaction with the STEEM network using Ruby.
+
+#### Fixes in v0.1.0
+
+* Improved reliability of `Stream`.
+* Handling more broadcast datatypes.
 
 ---
 
@@ -248,7 +255,7 @@ Example of the output:
 
 #### Transaction Signing
 
-Radiator now supports transaction signing, so you can use it to vote:
+Radiator supports transaction signing, so you can use it to vote:
 
 ```ruby
 tx = Radiator::Transaction.new(wif: 'Your Wif Here')

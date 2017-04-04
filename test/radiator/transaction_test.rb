@@ -54,7 +54,7 @@ module Radiator
     end
     
     def test_wif_and_private_key
-      assert_raises 'expect transaction to freak when it sees both' do
+      assert_raises TransactionError, 'expect transaction to freak when it sees both' do
         Radiator::Transaction.new(wif: 'wif', private_key: 'private key')
       end
     end
@@ -200,7 +200,7 @@ module Radiator
       
       @transaction.operations << operation
 
-      refute_nil sig_data = @transaction.send(:signature)
+      refute_nil _sig_data = @transaction.send(:signature)
     end
   end
 end

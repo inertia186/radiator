@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    radiator (0.0.9)
+    radiator (0.1.0)
       bitcoin-ruby (= 0.0.10)
       ffi (= 1.9.17)
       hashie (>= 1.1)

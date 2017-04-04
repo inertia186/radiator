@@ -15,7 +15,7 @@ module Radiator
         when 'CORE' then 3
         when 'CESTS' then 6
         when 'TEST' then 3
-        else; raise "Asset #{@asset} unknown."
+        else; raise TypeError, "Asset #{@asset} unknown."
         end
       end
       

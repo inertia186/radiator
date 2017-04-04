@@ -154,7 +154,7 @@ module Radiator
         start = case mode.to_sym
         when :head then properties.head_block_number
         when :irreversible then properties.last_irreversible_block_num
-        else; raise '"mode" has to be "head" or "irreversible"'
+        else; raise StreamError, '"mode" has to be "head" or "irreversible"'
         end
       end
       
@@ -164,12 +164,12 @@ module Radiator
         head_block = case mode.to_sym
         when :head then properties.head_block_number
         when :irreversible then properties.last_irreversible_block_num
-        else; raise '"mode" has to be "head" or "irreversible"'
+        else; raise StreamError, '"mode" has to be "head" or "irreversible"'
         end
         
         [*(start..(head_block))].each do |n|
           response = @api.send(:get_block, n)
-          raise JSON[response.error] if !!response.error
+          raise StreamError, JSON[response.error] if !!response.error
           result = response.result
         
           if !!block
@@ -200,7 +200,7 @@ module Radiator
             result = nil
             loop do
               response = @api.send(key, param)
-              raise JSON[response.error] if !!response.error
+              raise StreamError, JSON[response.error] if !!response.error
               result = response.result
               break if !!result
               @logger.warn "#{key}: #{param} result missing, retrying with timeout: #{@timeout || INITIAL_TIMEOUT} seconds"

@@ -35,7 +35,7 @@ module Radiator
       end
       
       if !!wif && !!private_key
-        raise "Do not pass both wif and private_key.  That's confusing."
+        raise TransactionError, "Do not pass both wif and private_key.  That's confusing."
       end
       
       if !!wif
@@ -87,7 +87,7 @@ module Radiator
     end
   
     def prepare
-      raise "No wif or private key." unless !!@wif || !!@private_key
+      raise TransactionError, "No wif or private key." unless !!@wif || !!@private_key
       
       @properties = @api.get_dynamic_global_properties.result
       @ref_block_num = @properties.head_block_number & 0xFFFF

@@ -3,7 +3,7 @@ require 'test_helper'
 module Radiator
   class OperationTest < Radiator::Test
     def test_unsupported_operation_type
-      assert_raises 'expect operation type not to be supported' do
+      assert_raises OperationError, 'expect operation type not to be supported' do
         Radiator::Operation.new
       end
     end
@@ -11,7 +11,7 @@ module Radiator
     def test_unsupported_param_type
       operation = Radiator::Operation.new(type: :vote, voter: 0.0)
       
-      assert_raises 'expect operation type not to be supported' do
+      assert_raises OperationError, 'expect operation type not to be supported' do
         operation.to_bytes
       end
     end

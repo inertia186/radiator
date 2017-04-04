@@ -10,7 +10,7 @@ module Radiator
       end
       
       unless Operation::known_operation_names.include? @type
-        raise "Unsupported operation type: #{@type}"
+        raise OperationError, "Unsupported operation type: #{@type}"
       end
     end
     
@@ -27,13 +27,13 @@ module Radiator
         
         bytes += case v
         when String then pakStr(v)
-        when Fixnum then paks(v)
+        when Integer then paks(v)
         when TrueClass then pakC(1)
         when FalseClass then pakC(0)
         when Array then pakArr(v)
         when NilClass then next
         else
-          raise "Unsupported type: #{k}"
+          raise OperationError, "Unsupported type: #{v.class}"
         end
       end
       
