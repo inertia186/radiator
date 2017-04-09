@@ -118,7 +118,8 @@ module Radiator
     end
     
     def shutdown
-      http.shutdown
+      @http.shutdown if !!@http && defined?(@http.shutdown)
+      @http = nil
     end
   private
     def self.methods_json_path
