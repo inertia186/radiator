@@ -13,10 +13,15 @@ module Radiator
   class Stream < Api
     INITIAL_TIMEOUT = 0.0200
     MAX_TIMEOUT = 80
+    MAX_BLOCKS_PER_NODE = 100
     
     def initialize(options = {})
-      @logger = options[:logger] || Radiator.logger
-      @api = Api.new(options)
+      @api_options = options
+      @logger = @api_options[:logger] || Radiator.logger
+    end
+    
+    def api
+      @api ||= Api.new(@api_options)
     end
     
     def method_names
@@ -146,11 +151,14 @@ module Radiator
     # @param mode we have the choice between
     #   * :head the last block
     #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
+    #   * :max_blocks_per_node the number of blocks to read before trying a new node
     # @param block the block to execute for each result, optional.
     # @return [Hash]
-    def blocks(start = nil, mode = :irreversible, &block)
+    def blocks(start = nil, mode = :irreversible, max_blocks_per_node = MAX_BLOCKS_PER_NODE, &block)
+      counter = 0
+      
       if start.nil?
-        properties = @api.get_dynamic_global_properties.result
+        properties = api.get_dynamic_global_properties.result
         start = case mode.to_sym
         when :head then properties.head_block_number
         when :irreversible then properties.last_irreversible_block_num
@@ -159,7 +167,7 @@ module Radiator
       end
       
       loop do
-        properties = @api.get_dynamic_global_properties.result
+        properties = api.get_dynamic_global_properties.result
         
         head_block = case mode.to_sym
         when :head then properties.head_block_number
@@ -168,7 +176,12 @@ module Radiator
         end
         
         [*(start..(head_block))].each do |n|
-          response = @api.send(:get_block, n)
+          if (counter += 1) > max_blocks_per_node
+            shutdown
+            counter = 0
+          end
+
+          response = api.send(:get_block, n)
           raise StreamError, JSON[response.error] if !!response.error
           result = response.result
         
@@ -191,15 +204,15 @@ module Radiator
       @latest_values.shift(5) if @latest_values.size > 20
       loop do
         value = if (n = method_params(m)).nil?
-          key_value = @api.get_dynamic_global_properties.result[m]
+          key_value = api.get_dynamic_global_properties.result[m]
         else
           key = n.keys.first
           if !!n[key]
-            r = @api.get_dynamic_global_properties.result
+            r = api.get_dynamic_global_properties.result
             key_value = param = r[n[key]]
             result = nil
             loop do
-              response = @api.send(key, param)
+              response = api.send(key, param)
               raise StreamError, JSON[response.error] if !!response.error
               result = response.result
               break if !!result
@@ -210,7 +223,7 @@ module Radiator
             @timeout = INITIAL_TIMEOUT
             result
           else
-            key_value = @api.get_dynamic_global_properties.result[key]
+            key_value = api.get_dynamic_global_properties.result[key]
           end
         end
         unless @latest_values.include? key_value
@@ -235,8 +248,13 @@ module Radiator
     # Stops the persistant http connections.
     #
     def shutdown
-      @api.shutdown
-      http.shutdown
+      begin
+        @api.shutdown
+      rescue => e
+        @logger.warn("Unable to shut down: #{e}")
+      end
+      
+      @api = nil
     end
   end
 end
