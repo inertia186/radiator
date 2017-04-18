@@ -56,7 +56,7 @@ GEM
     typhoeus (1.0.2)
       ethon (>= 0.9.0)
     vcr (3.0.3)
-    webmock (3.0.1)
+    webmock (2.3.2)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
@@ -78,7 +78,7 @@ DEPENDENCIES
   simplecov (~> 0.13)
   typhoeus (~> 1.0.2)
   vcr (~> 3.0.3)
-  webmock (~> 3.0.1)
+  webmock (~> 2.3.2)
   yard (~> 0.9.8)
 
 BUNDLED WITH
