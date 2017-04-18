@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 11.2.2'
   spec.add_development_dependency 'minitest', '~> 5.10.1'
   spec.add_development_dependency 'minitest-line', '~> 0.6.3'
-  spec.add_development_dependency 'webmock', '~> 2.3.2'
+  spec.add_development_dependency 'webmock', '~> 3.0.1'
   spec.add_development_dependency 'vcr', '~> 3.0.3'
   spec.add_development_dependency 'faraday', '~> 0.9.2'
   spec.add_development_dependency 'typhoeus', '~> 1.0.2'
