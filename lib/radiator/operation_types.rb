@@ -42,8 +42,7 @@ module Radiator
         id: Type::Uint16
       },
       comment_options: {
-        max_accepted_payout: Type::Amount,
-        percent_steem_dollars: Type::Uint16
+        max_accepted_payout: Type::Amount
       },
       set_withdraw_vesting_route: {
         percent: Type::Uint16

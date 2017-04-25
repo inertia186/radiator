@@ -1,3 +1,3 @@
 module Radiator
-  VERSION = '0.1.2a'
+  VERSION = '0.1.3'
 end

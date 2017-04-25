@@ -32,7 +32,7 @@ module Radiator
     end
     
     def pakArr(a)
-      a.map { |v| pakStr(v) }.join
+      varint(a.size) + a.map { |v| pakStr(v) }.join
     end
     
     def pakC(i)
