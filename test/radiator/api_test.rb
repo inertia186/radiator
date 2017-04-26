@@ -47,7 +47,7 @@ module Radiator
       stub_post_get_account
       response = @api.get_accounts(['inertia'])
       assert_equal Hashie::Mash, response.class, response.inspect
-      assert_equal response.result.first.owner.key_auths.first.first, 'STM7XicWKM8fQbG2WnGV74YmVFREyh3t9mvWuLEmogNqsuwKMmkMP'
+      assert_equal response.result.first.owner.key_auths.first.first, 'STM7T5DRhNkp5RpiFrarPfLGXEnU6yk5jLFokfmyJThgRwtLpJuKM'
     end
 
     def test_get_feed_history

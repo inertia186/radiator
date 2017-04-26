@@ -16,7 +16,7 @@ require 'radiator'
 
 require 'minitest/autorun'
 
-require 'webmock/minitest'
+require 'webmock/minitest' unless ENV["TEST_NET"] == 'true'
 require 'vcr'
 require 'yaml'
 require 'pry'

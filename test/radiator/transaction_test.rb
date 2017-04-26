@@ -202,5 +202,20 @@ module Radiator
 
       refute_nil _sig_data = @transaction.send(:signature)
     end
+    
+    def test_signature_long_input
+      vote = {
+        type: :comment,
+        author: 'xeroc',
+        permlink: 'piston',
+        body: 'test' * 900
+      }
+      
+      operation = Radiator::Operation.new(vote)
+      
+      @transaction.operations << operation
+
+      refute_nil _sig_data = @transaction.send(:signature)
+    end
   end
 end
