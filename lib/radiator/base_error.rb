@@ -5,7 +5,7 @@ module Radiator
     end
     
     def to_s
-      JSON[@error]
+      JSON[@error] rescue @error
     end
   end
 end

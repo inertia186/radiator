@@ -33,6 +33,16 @@
   },
   {
     "api": "database_api",
+    "method": "get_post_discussions_by_payout",
+    "params": ["query"]
+  },
+  {
+    "api": "database_api",
+    "method": "get_comment_discussions_by_payout",
+    "params": ["query"]
+  },
+  {
+    "api": "database_api",
     "method": "get_discussions_by_trending",
     "params": ["query"]
   },
@@ -146,10 +156,6 @@
   },
   {
     "api": "database_api",
-    "method": "get_reward_fund"
-  },
-  {
-    "api": "database_api",
     "method": "get_chain_properties"
   },
   {
@@ -173,7 +179,7 @@
     "method": "get_next_scheduled_hardfork"
   },
   {
-    "api": "database_api",
+    "api": "account_by_key_api",
     "method": "get_key_references",
     "params": ["key"]
   },
@@ -442,5 +448,41 @@
     "api": "network_broadcast_api",
     "method": "set_max_block_age",
     "params": ["maxBlockAge"]
+  },
+  {
+    "api": "market_history_api",
+    "method": "get_ticker",
+    "params": []
+  },
+  {
+    "api": "market_history_api",
+    "method": "get_volume",
+    "params": []
+  },
+  {
+    "api": "market_history_api",
+    "method": "get_order_book",
+    "method_name": "getMarketOrderBook",
+    "params": ["limit"]
+  },
+  {
+    "api": "market_history_api",
+    "method": "get_trade_history",
+    "params": ["start", "end", "limit"]
+  },
+  {
+    "api": "market_history_api",
+    "method": "get_recent_trades",
+    "params": ["limit"]
+  },
+  {
+    "api": "market_history_api",
+    "method": "get_market_history",
+    "params": ["bucket_seconds" , "start", "end"]
+  },
+  {
+    "api": "market_history_api",
+    "method": "get_market_history_buckets",
+    "params": []
   }
 ]

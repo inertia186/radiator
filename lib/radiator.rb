@@ -18,6 +18,7 @@ module Radiator
   require 'radiator/market_history_api'
   require 'radiator/network_broadcast_api'
   require 'radiator/chain_stats_api'
+  require 'radiator/account_by_key_api'
   require 'radiator/stream'
   require 'radiator/operation_ids'
   require 'radiator/operation_types'
