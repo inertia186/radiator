@@ -4,7 +4,7 @@ rvm:
   - "2.1.5"
   - "2.2.1"
   - "2.3.0"
-script: rm Gemfile.lock && bundle install && TESTOPTS="--verbose" bundle exec rake test
+script: TESTOPTS="--verbose" bundle exec rake test
 addons:
   code_climate:
     repo_token: fcda177928c42c93fd981f671305519ffb98b98c479198340ea67bc892ffd028
