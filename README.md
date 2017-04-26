@@ -2,7 +2,7 @@
 [![Code Climate](https://codeclimate.com/github/inertia186/radiator/badges/gpa.svg)](https://codeclimate.com/github/inertia186/radiator)
 [![Test Coverage](https://codeclimate.com/github/inertia186/radiator/badges/coverage.svg)](https://codeclimate.com/github/inertia186/radiator)
 
-radiator
+[radiator](https://github.com/inertia186/radiator)
 ========
 
 #### STEEM Ruby API Client
