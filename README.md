@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/inertia186/radiator.svg?branch=master)](https://travis-ci.org/inertia186/radiator)
 [![Code Climate](https://codeclimate.com/github/inertia186/radiator/badges/gpa.svg)](https://codeclimate.com/github/inertia186/radiator)
 [![Test Coverage](https://codeclimate.com/github/inertia186/radiator/badges/coverage.svg)](https://codeclimate.com/github/inertia186/radiator)
-![radiator](http://www.steemimg.com/images/2016/08/19/RadiatorCoolingFan-54in-Webfdcb1.png)
 
 radiator
 ========
@@ -10,10 +9,15 @@ radiator
 
 Radiator is an API Client for interaction with the STEEM network using Ruby.
 
-#### Fixes in v0.1.0
+#### Fixes in v0.2.0
 
-* Improved reliability of `Stream`.
-* Handling more broadcast datatypes.
+* Updated to support all new methods in HF18.
+* Improved streaming reliability: added max blocks per node (default 100).
+* Gem updates
+  * corrected pessimistic dependencies
+  * development/testing
+  * windows related compatibility
+* Fixed support for array (set) parameters in broadcast operations.
 
 ---
 
@@ -22,7 +26,7 @@ Radiator is an API Client for interaction with the STEEM network using Ruby.
 Add the gem to your Gemfile:
 
 ```ruby
-gem 'radiator', github: 'inertia186/radiator'
+gem 'radiator'
 ```
 
 Then:
@@ -340,6 +344,14 @@ There's a complete list of operations known to Radiator in [`broadcast_operation
   * `rake`
 * To run tests with parallelization and local code coverage:
   * `HELL_ENABLED=true rake`
+
+---
+
+<center>
+  <img src="http://www.steemimg.com/images/2016/08/19/RadiatorCoolingFan-54in-Webfdcb1.png" />
+</center>
+
+See my previous Ruby How To posts in: [#radiator](https://steemit.com/created/radiator) [#ruby](https://steemit.com/created/ruby)
 
 ## Get in touch!
 
