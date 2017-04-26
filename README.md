@@ -9,7 +9,7 @@ radiator
 
 Radiator is an API Client for interaction with the STEEM network using Ruby.
 
-#### Fixes in v0.2.0
+#### Fixes in v0.2.0a
 
 * Updated to support all new methods in HF18.
 * Improved streaming reliability: added max blocks per node (default 100).
