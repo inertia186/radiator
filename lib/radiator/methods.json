@@ -484,5 +484,9 @@
     "api": "market_history_api",
     "method": "get_market_history_buckets",
     "params": []
+  },
+  {
+    "api": "database_api",
+    "method": "get_reward_fund"
   }
 ]
