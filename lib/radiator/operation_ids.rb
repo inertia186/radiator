@@ -70,7 +70,7 @@ module Radiator
       :hardfork,
       :comment_payout_update,
       :return_vesting_delegation,
-      :comment_benefactor_reward_operation
+      :comment_benefactor_reward
     ]
     
     def id(op)
