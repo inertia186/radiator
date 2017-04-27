@@ -98,6 +98,13 @@ module Radiator
       # time + EXPIRE_IN_SECS.
       @expiration = Time.parse(@properties.time + 'Z') + EXPIRE_IN_SECS
       
+      @operations = @operations.map do |op|
+        case op
+        when Operation then op
+        else; Operation.new(op)
+        end
+      end
+      
       self
     end
     
