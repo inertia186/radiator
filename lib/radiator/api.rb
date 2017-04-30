@@ -57,9 +57,9 @@ module Radiator
     # @return [Hash]
     def find_block(block_number, &block)
       if !!block
-        yield get_blocks(block_number)
+        yield get_blocks(block_number).first
       else
-        get_blocks(block_number)
+        get_blocks(block_number).first
       end
     end
     
