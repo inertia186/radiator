@@ -166,6 +166,8 @@ module Radiator
         
       unless @net_http_persistent_enabled
         @http = Net::HTTP.new(uri.host, uri.port)
+        @http.use_ssl = true
+        @http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         request = Net::HTTP::Post.new uri.request_uri, 'Content-Type' => 'application/json'
         request.body = JSON[options]
         @http.request(request)
