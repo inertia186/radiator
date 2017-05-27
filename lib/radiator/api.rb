@@ -143,7 +143,13 @@ module Radiator
     end
     
     def http
-      @http ||= Net::HTTP::Persistent.new "radiator-#{Radiator::VERSION}-#{self.class.name.downcase}"
+      @http_id ||= "radiator-#{Radiator::VERSION}-#{self.class.name.downcase}"
+      @http ||= Net::HTTP::Persistent.new(@http_id).tap do |http|
+        http.retry_change_requests = true
+        http.max_requests = 30
+        http.read_timeout = 10
+        http.open_timeout = 10
+      end
     end
     
     def request(options)
@@ -152,7 +158,8 @@ module Radiator
           request = Net::HTTP::Post.new uri.request_uri, 'Content-Type' => 'application/json'
           request.body = JSON[options]
           return http.request(uri, request)
-        rescue Net::HTTP::Persistent::Error
+        rescue Net::HTTP::Persistent::Error => e
+          @logger.warn "Unable to perform request: #{request} :: #{e}: #{e.backtrace}"
           @net_http_persistent_enabled = false
         end
       end
