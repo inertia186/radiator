@@ -9,15 +9,14 @@
 
 Radiator is an API Client for interaction with the STEEM network using Ruby.
 
-#### Fixes in v0.2.0
+#### Fixes in v0.2.2
 
-* Updated to support all new methods in HF18.
-* Improved streaming reliability: added max blocks per node (default 100).
 * Gem updates
-  * corrected pessimistic dependencies
-  * development/testing
-  * windows related compatibility
-* Fixed support for array (set) parameters in broadcast operations.
+* Improved support for datatypes and handlers.
+  * UTF-8 handled more smoothly.
+  * Simplified operation construction.
+* Improved keep-alive defaults.
+  * Better streaming reliability.
 
 ---
 
@@ -271,8 +270,7 @@ vote = {
   weight: 10000
 }
 
-op = Radiator::Operation.new(vote)
-tx.operations << op
+tx.operations << vote
 tx.process(true)
 ```
 
@@ -291,8 +289,7 @@ comment = {
   parent_author: ''
 }
 
-op = Radiator::Operation.new(comment)
-tx.operations << op
+tx.operations << comment
 tx.process(true)
 ```
 
@@ -308,8 +305,7 @@ transfer = {
   memo: 'Wow, inertia!  Radiator is great!'
 }
 
-op = Radiator::Operation.new(comment)
-tx.operations << op
+tx.operations << transfer
 tx.process(true)
 ```
 
@@ -327,8 +323,7 @@ vote = {
   weight: 10000
 }
 
-op = Radiator::Operation.new(vote)
-tx.operations << op
+tx.operations << vote
 tx.process(true)
 ```
 
