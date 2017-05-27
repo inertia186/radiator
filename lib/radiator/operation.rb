@@ -6,7 +6,7 @@ module Radiator
     
     def initialize(options = {})
       options.each do |k, v|
-        instance_variable_set("@#{k}", v)
+        instance_variable_set("@#{k}", type(@type, k, v))
       end
       
       unless Operation::known_operation_names.include? @type
@@ -21,16 +21,16 @@ module Radiator
         next unless defined? p
         
         v = instance_variable_get("@#{p}")
-        v = type(@type, p, v)
-        
         bytes += v.to_bytes and next if v.respond_to? :to_bytes
         
         bytes += case v
+        when Symbol then pakStr(v.to_s)
         when String then pakStr(v)
         when Integer then paks(v)
         when TrueClass then pakC(1)
         when FalseClass then pakC(0)
         when Array then pakArr(v)
+        when Hash then pakHash(v)
         when NilClass then next
         else
           raise OperationError, "Unsupported type: #{v.class}"
@@ -46,7 +46,14 @@ module Radiator
       Operation::param_names(@type.to_sym).each do |p|
         next unless defined? p
         
-        params[p] = instance_variable_get("@#{p}")
+        v = instance_variable_get("@#{p}")
+        next if v.nil?
+        next if v.class == Radiator::Type::Future
+        
+        params[p] = case v
+        when Radiator::Type::Beneficiaries then [[0, v.to_h]]
+        else; v
+        end
       end
       
       [@type, params]

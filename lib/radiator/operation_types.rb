@@ -21,6 +21,9 @@ module Radiator
       limit_order_cancel: {
         orderid: Type::Uint32
       },
+      feed_publish: {
+        exchange_rate: Type::Price
+      },
       convert: {
         requestid: Type::Uint32,
         amount: Type::Amount
@@ -42,10 +45,17 @@ module Radiator
         id: Type::Uint16
       },
       comment_options: {
-        max_accepted_payout: Type::Amount
+        max_accepted_payout: Type::Amount,
+        allow_replies: Type::Future
       },
       set_withdraw_vesting_route: {
         percent: Type::Uint16
+      },
+      limit_order_create2: {
+        orderid: Type::Uint32,
+        amount_to_sell: Type::Amount,
+        exchange_rate: Type::Price,
+        expiration: Type::PointInTime
       },
       request_account_recovery: {
         new_owner_Permission: Type::Permission
@@ -84,7 +94,7 @@ module Radiator
         request_id: Type::Uint32
       },
       reset_account: {
-        new_owner_Permission: Type::Amount
+        new_owner_permission: Type::Amount
       },
       set_reset_account: {
         reward_steem: Type::Amount,

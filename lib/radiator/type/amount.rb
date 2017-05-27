@@ -2,9 +2,11 @@ module Radiator
   module Type
     
     # See: https://github.com/xeroc/piston-lib/blob/34a7525cee119ec9b24a99577ede2d54466fca0e/steembase/operations.py
-    class Amount
+    class Amount < Serializer
       def initialize(value)
-        @amount, @asset = value.strip.split(' ')
+        super(:amount, value)
+        
+        @amount, @asset = @value.strip.split(' ')
         @precision = case @asset
         when 'STEEM' then 3
         when 'VESTS' then 6

@@ -74,18 +74,27 @@ module Radiator
         self
       end
     end
+    
+    def operations
+      @operations = @operations.map do |op|
+        case op
+        when Operation then op
+        else; Operation.new(op)
+        end
+      end
+    end
   private
     def payload
       {
         expiration: @expiration.strftime('%Y-%m-%dT%H:%M:%S'),
         ref_block_num: @ref_block_num,
         ref_block_prefix: @ref_block_prefix,
-        operations: @operations.map { |op| op.payload },
+        operations: operations.map { |op| op.payload },
         extensions: [],
         signatures: [hexlify(signature)]
       }
     end
-  
+    
     def prepare
       raise TransactionError, "No wif or private key." unless !!@wif || !!@private_key
       
@@ -98,13 +107,6 @@ module Radiator
       # time + EXPIRE_IN_SECS.
       @expiration = Time.parse(@properties.time + 'Z') + EXPIRE_IN_SECS
       
-      @operations = @operations.map do |op|
-        case op
-        when Operation then op
-        else; Operation.new(op)
-        end
-      end
-      
       self
     end
     
@@ -113,9 +115,9 @@ module Radiator
       bytes << pakS(@ref_block_num)
       bytes << pakI(@ref_block_prefix)
       bytes << pakI(@expiration.to_i)
-      bytes << pakC(@operations.size)
+      bytes << pakC(operations.size)
       
-      @operations.each do |op|
+      operations.each do |op|
         bytes << op.to_bytes
       end
       

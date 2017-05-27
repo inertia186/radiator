@@ -28,11 +28,46 @@ module Radiator
     end
   
     def pakStr(s)
-      varint(s.size) + s
+      s = s.dup.force_encoding('BINARY')
+      bytes = []
+      bytes << varint(s.size)
+      bytes << s
+      
+      bytes.join
     end
     
     def pakArr(a)
-      varint(a.size) + a.map { |v| pakStr(v) }.join
+      varint(a.size) + a.map do |v|
+        case v
+        when Symbol then pakStr(v.to_s)
+        when String then pakStr(v)
+        when Integer then paks(v)
+        when TrueClass then pakC(1)
+        when FalseClass then pakC(0)
+        when Array then pakArr(v)
+        when Hash then pakHash(v)
+        when NilClass then next
+        else
+          raise OperationError, "Unsupported type: #{v.class}"
+        end
+      end.join
+    end
+    
+    def pakHash(h)
+      varint(h.size) + h.map do |k, v|
+        pakStr(k.to_s) + case v
+        when Symbol then pakStr(v.to_s)
+        when String then pakStr(v)
+        when Integer then paks(v)
+        when TrueClass then pakC(1)
+        when FalseClass then pakC(0)
+        when Array then pakArr(v)
+        when Hash then pakHash(v)
+        when NilClass then next
+        else
+          raise OperationError, "Unsupported type: #{v.class}"
+        end
+      end.join
     end
     
     def pakC(i)
