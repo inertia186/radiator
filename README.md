@@ -194,8 +194,8 @@ Example of the output:
 Transactions are supported:
 
 ```ruby
-stream.transactions do |tx|
-  puts tx.to_json
+stream.transactions do |tx, trx_id|
+  puts "[#{trx_id}] #{tx.to_json}"
 end
 ```
 
@@ -234,8 +234,8 @@ Example of the output:
 Even whole blocks:
 
 ```ruby
-stream.blocks do |bk|
-  puts bk.to_json
+stream.blocks do |bk, num|
+  puts "[#{num}] #{bk.to_json}"
 end
 ```
 
