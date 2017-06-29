@@ -157,11 +157,17 @@ module Radiator
         begin
           request = Net::HTTP::Post.new uri.request_uri, 'Content-Type' => 'application/json'
           request.body = JSON[options]
-          return http.request(uri, request)
+          
+          if (response = http.request(uri, request)).kind_of? Net::HTTPSuccess
+            return response
+          else
+            @logger.warn "Unexpeced response: #{response}"
+          end
         rescue Net::HTTP::Persistent::Error => e
           @logger.warn "Unable to perform request: #{request} :: #{e}: #{e.backtrace}"
-          @net_http_persistent_enabled = false
         end
+        
+        @net_http_persistent_enabled = false
       end
         
       unless @net_http_persistent_enabled
