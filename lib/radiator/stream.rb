@@ -139,8 +139,8 @@ module Radiator
         next if (_transactions = b.transactions).nil?
         return _transactions unless !!block
         
-        _transactions.each.each do |transaction|
-          yield transaction
+        _transactions.each_with_index do |transaction, index|
+          yield transaction, b['transaction_ids'][index]
         end
       end
     end
@@ -186,9 +186,9 @@ module Radiator
           result = response.result
         
           if !!block
-            yield result
+            yield result, n
           else
-            return result
+            return result, n
           end
         end
         
