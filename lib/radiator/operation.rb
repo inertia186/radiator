@@ -5,7 +5,10 @@ module Radiator
     include Utils
     
     def initialize(options = {})
-      options.each do |k, v|
+      opt = options.dup
+      @type = opt.delete(:type)
+      
+      opt.each do |k, v|
         instance_variable_set("@#{k}", type(@type, k, v))
       end
       
