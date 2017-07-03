@@ -6,7 +6,7 @@ module Radiator
       def initialize(value)
         super(:amount, value)
         
-        @amount, @asset = @value.strip.split(' ')
+        @amount, @asset = value.strip.split(' ')
         @precision = case @asset
         when 'STEEM' then 3
         when 'VESTS' then 6
