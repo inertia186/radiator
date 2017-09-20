@@ -14,8 +14,9 @@ module Radiator
       @debug = !!options[:debug]
       @net_http_persistent_enabled = true
       @logger = options[:logger] || Radiator.logger
+      @hashie_logger = options[:hashie_logger] || Logger.new('/dev/null')
       
-      Hashie.logger = @logger
+      Hashie.logger = @hashie_logger
       @method_names = nil
     end
     
@@ -107,14 +108,68 @@ module Radiator
         id: rpc_id,
         method: "call"
       }
-
-      response = request(options)
       
-      if !!response
-        response = JSON[response.body]
-        
-        Hashie::Mash.new(response)
-      end
+      loop do
+        begin
+          response = request(options)
+          
+          if !!response
+            case response.code
+            when '200'
+              response = JSON[response.body]
+              
+              return Hashie::Mash.new(response)
+            when '400'
+              @logger.warn('Code 400: Bad Request, retrying ...')
+              backoff
+              redo
+            when '502'
+              @logger.warn('Code 502: Bad Gateway, retrying ...')
+              backoff
+              redo
+            when '503'
+              @logger.warn('Code 503: Service Unavailable, retrying ...')
+              backoff
+              redo
+            when '504'
+              @logger.warn('Code 504: Gateway Timeout, retrying ...')
+              backoff
+              redo
+            else
+              ap "Unknown code #{response.code}, retrying ..."
+              backoff
+              ap response
+            end
+          end
+          
+          @logger.error("No response.")
+          break
+        rescue Errno::ECONNREFUSED => e
+          @logger.warn('Connection refused, retrying ...')
+          backoff
+          redo
+        rescue Errno::EADDRNOTAVAIL => e
+          @logger.warn('Node not available, retrying ...')
+          backoff
+          redo
+        rescue Net::ReadTimeout => e
+          @logger.warn('Node read timeout, retrying ...')
+          backoff
+          redo
+        rescue Net::OpenTimeout => e
+          @logger.warn('Node timeout, retrying ...')
+          backoff
+          redo
+        rescue RangeError => e
+          @logger.warn('Range Error, retrying ...')
+          backoff
+          redo
+        rescue => e
+          puts "Unknown exception from request ..."
+          backoff
+          ap e
+        end
+      end # loop
     end
     
     def shutdown
@@ -152,16 +207,20 @@ module Radiator
       end
     end
     
+    def post_request
+      Net::HTTP::Post.new uri.request_uri, 'Content-Type' => 'application/json'
+    end
+    
     def request(options)
       if !!@net_http_persistent_enabled
         begin
-          request = Net::HTTP::Post.new uri.request_uri, 'Content-Type' => 'application/json'
+          request = post_request
           request.body = JSON[options]
           
           if (response = http.request(uri, request)).kind_of? Net::HTTPSuccess
             return response
           else
-            @logger.warn "Unexpeced response: #{response}"
+            @logger.warn "Unexpeced response: #{response.inspect}; temporarily falling back to non-persistent-http"
           end
         rescue Net::HTTP::Persistent::Error => e
           @logger.warn "Unable to perform request: #{request} :: #{e}: #{e.backtrace}"
@@ -171,12 +230,29 @@ module Radiator
       end
         
       unless @net_http_persistent_enabled
-        @http = Net::HTTP.new(uri.host, uri.port)
-        @http.use_ssl = true
-        @http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-        request = Net::HTTP::Post.new uri.request_uri, 'Content-Type' => 'application/json'
+        non_persistent_http = Net::HTTP.new(uri.host, uri.port)
+        non_persistent_http.use_ssl = true
+        non_persistent_http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        request = post_request
         request.body = JSON[options]
-        @http.request(request)
+        
+        # Try to go back to http persistent on next request.
+        @net_http_persistent_enabled = true
+        
+        non_persistent_http.request(request)
+      end
+    end
+    
+    def backoff
+      @backoff_at ||= Time.now
+      @backoff_sleep ||= 0.01
+      
+      @backoff_sleep *= 2
+      sleep @backoff_sleep
+      
+      if Time.now - @backoff_at > 300
+        @backoff_at = nil 
+        @backoff_sleep = nil
       end
     end
   end

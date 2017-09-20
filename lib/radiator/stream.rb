@@ -140,7 +140,11 @@ module Radiator
         return _transactions unless !!block
         
         _transactions.each_with_index do |transaction, index|
-          yield transaction, b['transaction_ids'][index]
+          trx_id = if !!b['transaction_ids']
+            b['transaction_ids'][index]
+          end
+          
+          yield transaction, trx_id
         end
       end
     end
