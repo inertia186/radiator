@@ -122,23 +122,19 @@ module Radiator
             when '400'
               @logger.warn('Code 400: Bad Request, retrying ...')
               backoff
-              redo
             when '502'
               @logger.warn('Code 502: Bad Gateway, retrying ...')
               backoff
-              redo
             when '503'
               @logger.warn('Code 503: Service Unavailable, retrying ...')
               backoff
-              redo
             when '504'
               @logger.warn('Code 504: Gateway Timeout, retrying ...')
               backoff
-              redo
             else
               ap "Unknown code #{response.code}, retrying ..."
-              backoff
               ap response
+              backoff
             end
           end
           
@@ -147,27 +143,28 @@ module Radiator
         rescue Errno::ECONNREFUSED => e
           @logger.warn('Connection refused, retrying ...')
           backoff
-          redo
         rescue Errno::EADDRNOTAVAIL => e
           @logger.warn('Node not available, retrying ...')
           backoff
-          redo
         rescue Net::ReadTimeout => e
           @logger.warn('Node read timeout, retrying ...')
           backoff
-          redo
         rescue Net::OpenTimeout => e
           @logger.warn('Node timeout, retrying ...')
           backoff
-          redo
         rescue RangeError => e
           @logger.warn('Range Error, retrying ...')
           backoff
-          redo
+        rescue OpenSSL::SSL::SSLError => e
+          @logger.warn("SSL Error (#{e.message}), retrying ...")
+          backoff
+        rescue SocketError => e
+          @logger.warn("Socket Error (#{e.message}), retrying ...")
+          backoff
         rescue => e
           puts "Unknown exception from request ..."
-          backoff
           ap e
+          backoff
         end
       end # loop
     end
@@ -223,7 +220,7 @@ module Radiator
             @logger.warn "Unexpeced response: #{response.inspect}; temporarily falling back to non-persistent-http"
           end
         rescue Net::HTTP::Persistent::Error => e
-          @logger.warn "Unable to perform request: #{request} :: #{e}: #{e.backtrace}"
+          @logger.warn "Unable to perform request: #{request} :: #{e} :: #{!!e.cause ? "cause: #{e.cause.message}" : ''}; temporarily falling back to non-persistent-http"
         end
         
         @net_http_persistent_enabled = false
