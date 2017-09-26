@@ -9,6 +9,15 @@
 
 Radiator is an API Client for interaction with the STEEM network using Ruby.
 
+#### Fixes in v0.2.3
+
+* Gem updates
+* Added low-level support for persistence and retrying API requests.
+* Now using exponential back-off for retries.
+* Detecting presence of `transaction_ids` (if enabled by the node).
+* Default for `Hashie` warnings now go to `/dev/null`, where they belong.
+* Added stray methods/operations.
+
 #### Fixes in v0.2.2
 
 * Gem updates
