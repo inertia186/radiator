@@ -1,9 +1,9 @@
 // Copied from:
-// https://raw.githubusercontent.com/steemit/steem-js/master/src/broadcast/operations.json
+// https://raw.githubusercontent.com/steemit/steem-js/master/src/broadcast/operations.js
 
 [
   {
-    "roles": ["posting"],
+    "roles": ["posting", "active", "owner"],
     "operation": "vote",
     "params": [
       "voter",
@@ -13,7 +13,7 @@
     ]
   },
   {
-    "roles": ["posting"],
+    "roles": ["posting", "active", "owner"],
     "operation": "comment",
     "params": [
       "parent_author",
@@ -36,7 +36,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "transfer_to_vesting",
     "params": [
       "from",
@@ -45,7 +45,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "withdraw_vesting",
     "params": [
       "account",
@@ -53,7 +53,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "limit_order_create",
     "params": [
       "owner",
@@ -65,7 +65,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "limit_order_cancel",
     "params": [
       "owner",
@@ -73,7 +73,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "price",
     "params": [
       "base",
@@ -81,7 +81,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "feed_publish",
     "params": [
       "publisher",
@@ -89,7 +89,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "convert",
     "params": [
       "owner",
@@ -98,7 +98,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "account_create",
     "params": [
       "fee",
@@ -112,7 +112,7 @@
     ]
   },
   {
-    "roles": ["owner", "active"],
+    "roles": ["active", "owner"],
     "operation": "account_update",
     "params": [
       "account",
@@ -124,7 +124,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "witness_update",
     "params": [
       "owner",
@@ -135,7 +135,7 @@
     ]
   },
   {
-    "roles": ["posting"],
+    "roles": ["active", "owner"],
     "operation": "account_witness_vote",
     "params": [
       "account",
@@ -144,7 +144,7 @@
     ]
   },
   {
-    "roles": ["posting"],
+    "roles": ["active", "owner"],
     "operation": "account_witness_proxy",
     "params": [
       "account",
@@ -152,7 +152,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "pow",
     "params": [
       "worker",
@@ -162,7 +162,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "custom",
     "params": [
       "required_auths",
@@ -171,7 +171,7 @@
     ]
   },
   {
-    "roles": ["posting"],
+    "roles": ["posting", "active", "owner"],
     "operation": "delete_comment",
     "params": [
       "author",
@@ -179,7 +179,7 @@
     ]
   },
   {
-    "roles": ["posting", "active"],
+    "roles": ["posting", "active", "owner"],
     "operation": "custom_json",
     "params": [
       "required_auths",
@@ -189,7 +189,7 @@
     ]
   },
   {
-    "roles": ["posting"],
+    "roles": ["posting", "active", "owner"],
     "operation": "comment_options",
     "params": [
       "author",
@@ -203,7 +203,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "set_withdraw_vesting_route",
     "params": [
       "from_account",
@@ -213,7 +213,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "limit_order_create2",
     "params": [
       "owner",
@@ -225,7 +225,7 @@
     ]
   },
   {
-    "roles": ["posting"],
+    "roles": ["posting", "active", "owner"],
     "operation": "challenge_authority",
     "params": [
       "challenger",
@@ -242,12 +242,22 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "request_account_recovery",
     "params": [
       "recovery_account",
       "account_to_recover",
       "new_owner_authority",
+      "extensions"
+    ]
+  },
+  {
+    "roles": ["owner"],
+    "operation": "recover_account",
+    "params": [
+      "account_to_recover",
+      "new_owner_authority",
+      "recent_owner_authority",
       "extensions"
     ]
   },
@@ -261,7 +271,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "escrow_transfer",
     "params": [
       "from",
@@ -277,7 +287,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "escrow_dispute",
     "params": [
       "from",
@@ -288,7 +298,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "escrow_release",
     "params": [
       "from",
@@ -302,7 +312,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "pow2",
     "params": [
       "input",
@@ -310,7 +320,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "escrow_approve",
     "params": [
       "from",
@@ -322,7 +332,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "transfer_to_savings",
     "params": [
       "from",
@@ -332,7 +342,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "transfer_from_savings",
     "params": [
       "from",
@@ -343,7 +353,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "cancel_transfer_from_savings",
     "params": [
       "from",
@@ -367,7 +377,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "reset_account",
     "params": [
       "reset_account",
@@ -385,7 +395,7 @@
     ]
   },
   {
-    "roles": ["posting"],
+    "roles": ["posting", "active", "owner"],
     "operation": "claim_reward_balance",
     "params": [
       "account",
@@ -395,7 +405,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "delegate_vesting_shares",
     "params": [
       "delegator",
@@ -404,7 +414,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "account_create_with_delegation",
     "params": [
       "fee",
@@ -420,7 +430,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "fill_convert_request",
     "params": [
       "owner",
@@ -430,7 +440,7 @@
     ]
   },
   {
-    "roles": ["posting"],
+    "roles": ["posting", "active", "owner"],
     "operation": "comment_reward",
     "params": [
       "author",
@@ -439,7 +449,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "liquidity_reward",
     "params": [
       "owner",
@@ -447,7 +457,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "interest",
     "params": [
       "owner",
@@ -455,7 +465,7 @@
     ]
   },
   {
-    "roles": ["active"],
+    "roles": ["active", "owner"],
     "operation": "fill_vesting_withdraw",
     "params": [
       "from_account",
@@ -465,7 +475,7 @@
     ]
   },
   {
-    "roles": ["posting"],
+    "roles": ["posting", "active", "owner"],
     "operation": "fill_order",
     "params": [
       "current_owner",
@@ -477,7 +487,7 @@
     ]
   },
   {
-    "roles": ["posting"],
+    "roles": ["posting", "active", "owner"],
     "operation": "fill_transfer_from_savings",
     "params": [
       "from",

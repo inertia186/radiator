@@ -1,5 +1,5 @@
 // Copied from:
-// https://raw.githubusercontent.com/steemit/steem-js/master/src/api/methods.json
+// https://raw.githubusercontent.com/steemit/steem-js/master/src/api/methods.js
 
 [
   {
@@ -315,7 +315,7 @@
   {
     "api": "database_api",
     "method": "get_content_replies",
-    "params": ["parent", "parentPermlink"]
+    "params": ["author", "permlink"]
   },
   {
     "api": "database_api",
@@ -358,6 +358,16 @@
   {
     "api": "database_api",
     "method": "get_miner_queue"
+  },
+  {
+    "api": "database_api",
+    "method": "get_reward_fund",
+    "params": ["name"]
+  },
+  {
+    "api": "database_api",
+    "method": "get_vesting_delegations",
+    "params": ["account", "from", "limit"]
   },
   {
     "api": "login_api",
@@ -484,9 +494,5 @@
     "api": "market_history_api",
     "method": "get_market_history_buckets",
     "params": []
-  },
-  {
-    "api": "database_api",
-    "method": "get_reward_fund"
   }
 ]

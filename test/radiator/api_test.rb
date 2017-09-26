@@ -79,5 +79,11 @@ module Radiator
       response = @api.get_hardfork_version
       assert_equal Hashie::Mash, response.class, response.inspect
     end
+    
+    def test_get_vesting_delegations
+      stub_post_get_vesting_delegation
+      response = @api.get_vesting_delegations('minnowbooster', -1000, 1000)
+      assert_equal Hashie::Mash, response.class, response.inspect
+    end
   end
 end

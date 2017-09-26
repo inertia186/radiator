@@ -1,0 +1,936 @@
+{
+   "id":2,
+   "result":[
+      {
+         "id":122792,
+         "delegator":"minnowbooster",
+         "delegatee":"agentsofmars",
+         "vesting_shares":"136500.000000 VESTS",
+         "min_delegation_time":"2017-07-07T22:23:48"
+      },
+      {
+         "id":257939,
+         "delegator":"minnowbooster",
+         "delegatee":"akashas",
+         "vesting_shares":"787500.000000 VESTS",
+         "min_delegation_time":"2017-09-20T15:12:15"
+      },
+      {
+         "id":235904,
+         "delegator":"minnowbooster",
+         "delegatee":"alamin7",
+         "vesting_shares":"157500.000000 VESTS",
+         "min_delegation_time":"2017-09-06T19:10:15"
+      },
+      {
+         "id":236728,
+         "delegator":"minnowbooster",
+         "delegatee":"albertvhons",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-09-07T03:05:06"
+      },
+      {
+         "id":233474,
+         "delegator":"minnowbooster",
+         "delegatee":"ana-maria",
+         "vesting_shares":"630000.000000 VESTS",
+         "min_delegation_time":"2017-09-05T06:44:27"
+      },
+      {
+         "id":258936,
+         "delegator":"minnowbooster",
+         "delegatee":"andalucia",
+         "vesting_shares":"1260000.000000 VESTS",
+         "min_delegation_time":"2017-09-21T10:34:30"
+      },
+      {
+         "id":213597,
+         "delegator":"minnowbooster",
+         "delegatee":"animus",
+         "vesting_shares":"240817.500000 VESTS",
+         "min_delegation_time":"2017-08-25T19:35:24"
+      },
+      {
+         "id":233676,
+         "delegator":"minnowbooster",
+         "delegatee":"anonimous",
+         "vesting_shares":"419974.800000 VESTS",
+         "min_delegation_time":"2017-09-05T11:35:12"
+      },
+      {
+         "id":235626,
+         "delegator":"minnowbooster",
+         "delegatee":"arini",
+         "vesting_shares":"226800.000000 VESTS",
+         "min_delegation_time":"2017-09-06T11:50:42"
+      },
+      {
+         "id":235907,
+         "delegator":"minnowbooster",
+         "delegatee":"awriter",
+         "vesting_shares":"817977.300000 VESTS",
+         "min_delegation_time":"2017-09-06T19:17:42"
+      },
+      {
+         "id":235172,
+         "delegator":"minnowbooster",
+         "delegatee":"bago",
+         "vesting_shares":"866250.000000 VESTS",
+         "min_delegation_time":"2017-09-06T01:42:27"
+      },
+      {
+         "id":234828,
+         "delegator":"minnowbooster",
+         "delegatee":"barbara-orenya",
+         "vesting_shares":"472500.000000 VESTS",
+         "min_delegation_time":"2017-09-05T20:39:33"
+      },
+      {
+         "id":253934,
+         "delegator":"minnowbooster",
+         "delegatee":"bigboysdream",
+         "vesting_shares":"675045.000000 VESTS",
+         "min_delegation_time":"2017-09-17T18:26:27"
+      },
+      {
+         "id":226587,
+         "delegator":"minnowbooster",
+         "delegatee":"brumest",
+         "vesting_shares":"590625.000000 VESTS",
+         "min_delegation_time":"2017-09-01T17:40:12"
+      },
+      {
+         "id":209988,
+         "delegator":"minnowbooster",
+         "delegatee":"cabbagepatch",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-08-23T19:26:15"
+      },
+      {
+         "id":247344,
+         "delegator":"minnowbooster",
+         "delegatee":"cannabiscurator",
+         "vesting_shares":"787500.000000 VESTS",
+         "min_delegation_time":"2017-09-13T08:30:36"
+      },
+      {
+         "id":220718,
+         "delegator":"minnowbooster",
+         "delegatee":"centerlink",
+         "vesting_shares":"2362500.000000 VESTS",
+         "min_delegation_time":"2017-08-30T01:50:06"
+      },
+      {
+         "id":234727,
+         "delegator":"minnowbooster",
+         "delegatee":"christheaudioguy",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-09-05T19:39:12"
+      },
+      {
+         "id":233057,
+         "delegator":"minnowbooster",
+         "delegatee":"cristo",
+         "vesting_shares":"78750.000000 VESTS",
+         "min_delegation_time":"2017-09-04T23:16:12"
+      },
+      {
+         "id":252902,
+         "delegator":"minnowbooster",
+         "delegatee":"cryptoblog",
+         "vesting_shares":"78750.000000 VESTS",
+         "min_delegation_time":"2017-09-15T22:05:30"
+      },
+      {
+         "id":235662,
+         "delegator":"minnowbooster",
+         "delegatee":"cryptomaker",
+         "vesting_shares":"157500.000000 VESTS",
+         "min_delegation_time":"2017-09-06T12:48:12"
+      },
+      {
+         "id":210025,
+         "delegator":"minnowbooster",
+         "delegatee":"d-pend",
+         "vesting_shares":"330897.000000 VESTS",
+         "min_delegation_time":"2017-08-23T19:43:09"
+      },
+      {
+         "id":176277,
+         "delegator":"minnowbooster",
+         "delegatee":"damla",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-08-03T21:21:36"
+      },
+      {
+         "id":247172,
+         "delegator":"minnowbooster",
+         "delegatee":"danieldoughty",
+         "vesting_shares":"2106169.800000 VESTS",
+         "min_delegation_time":"2017-09-13T00:57:48"
+      },
+      {
+         "id":243647,
+         "delegator":"minnowbooster",
+         "delegatee":"dbzfan4awhile",
+         "vesting_shares":"1049974.800000 VESTS",
+         "min_delegation_time":"2017-09-11T12:51:15"
+      },
+      {
+         "id":112637,
+         "delegator":"minnowbooster",
+         "delegatee":"deveerei",
+         "vesting_shares":"39083.333333 VESTS",
+         "min_delegation_time":"2017-06-30T09:41:54"
+      },
+      {
+         "id":266350,
+         "delegator":"minnowbooster",
+         "delegatee":"diebaasman",
+         "vesting_shares":"4221000.000000 VESTS",
+         "min_delegation_time":"2017-09-26T06:26:15"
+      },
+      {
+         "id":252892,
+         "delegator":"minnowbooster",
+         "delegatee":"digitalplayer",
+         "vesting_shares":"110722.500000 VESTS",
+         "min_delegation_time":"2017-09-15T21:51:06"
+      },
+      {
+         "id":131784,
+         "delegator":"minnowbooster",
+         "delegatee":"discordia",
+         "vesting_shares":"5209157.100000 VESTS",
+         "min_delegation_time":"2017-07-11T10:34:24"
+      },
+      {
+         "id":233766,
+         "delegator":"minnowbooster",
+         "delegatee":"divina156",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-09-05T13:53:21"
+      },
+      {
+         "id":226501,
+         "delegator":"minnowbooster",
+         "delegatee":"dolov",
+         "vesting_shares":"787500.000000 VESTS",
+         "min_delegation_time":"2017-09-01T15:03:12"
+      },
+      {
+         "id":237698,
+         "delegator":"minnowbooster",
+         "delegatee":"dragon40",
+         "vesting_shares":"367500.000000 VESTS",
+         "min_delegation_time":"2017-09-07T14:48:36"
+      },
+      {
+         "id":210020,
+         "delegator":"minnowbooster",
+         "delegatee":"dreamscape",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-08-23T19:42:09"
+      },
+      {
+         "id":119895,
+         "delegator":"minnowbooster",
+         "delegatee":"duckmast3r",
+         "vesting_shares":"643309.800000 VESTS",
+         "min_delegation_time":"2017-07-04T01:24:00"
+      },
+      {
+         "id":226622,
+         "delegator":"minnowbooster",
+         "delegatee":"emcvay",
+         "vesting_shares":"157500.000000 VESTS",
+         "min_delegation_time":"2017-09-01T18:38:33"
+      },
+      {
+         "id":262368,
+         "delegator":"minnowbooster",
+         "delegatee":"ew-and-patterns",
+         "vesting_shares":"3937500.000000 VESTS",
+         "min_delegation_time":"2017-09-23T17:25:12"
+      },
+      {
+         "id":235860,
+         "delegator":"minnowbooster",
+         "delegatee":"exploretraveler",
+         "vesting_shares":"5512500.000000 VESTS",
+         "min_delegation_time":"2017-09-06T17:25:51"
+      },
+      {
+         "id":221803,
+         "delegator":"minnowbooster",
+         "delegatee":"fahmidamti",
+         "vesting_shares":"157500.000000 VESTS",
+         "min_delegation_time":"2017-08-30T10:13:12"
+      },
+      {
+         "id":261544,
+         "delegator":"minnowbooster",
+         "delegatee":"feedyourminnows",
+         "vesting_shares":"926667.000000 VESTS",
+         "min_delegation_time":"2017-09-23T14:13:54"
+      },
+      {
+         "id":167973,
+         "delegator":"minnowbooster",
+         "delegatee":"followforupvotes",
+         "vesting_shares":"778759.800000 VESTS",
+         "min_delegation_time":"2017-07-30T17:16:54"
+      },
+      {
+         "id":253380,
+         "delegator":"minnowbooster",
+         "delegatee":"funnyquotes",
+         "vesting_shares":"147027.300000 VESTS",
+         "min_delegation_time":"2017-09-16T14:38:18"
+      },
+      {
+         "id":235853,
+         "delegator":"minnowbooster",
+         "delegatee":"gergi6a",
+         "vesting_shares":"3228750.000000 VESTS",
+         "min_delegation_time":"2017-09-06T17:13:36"
+      },
+      {
+         "id":253265,
+         "delegator":"minnowbooster",
+         "delegatee":"germansailor",
+         "vesting_shares":"1890000.000000 VESTS",
+         "min_delegation_time":"2017-09-16T11:19:06"
+      },
+      {
+         "id":191825,
+         "delegator":"minnowbooster",
+         "delegatee":"heimatliebe",
+         "vesting_shares":"88515.000000 VESTS",
+         "min_delegation_time":"2017-08-15T14:22:09"
+      },
+      {
+         "id":227146,
+         "delegator":"minnowbooster",
+         "delegatee":"hoddle4life",
+         "vesting_shares":"210027.300000 VESTS",
+         "min_delegation_time":"2017-09-01T21:13:48"
+      },
+      {
+         "id":225506,
+         "delegator":"minnowbooster",
+         "delegatee":"how2steemit",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-08-31T19:45:54"
+      },
+      {
+         "id":179526,
+         "delegator":"minnowbooster",
+         "delegatee":"hrsagar",
+         "vesting_shares":"419737.500000 VESTS",
+         "min_delegation_time":"2017-08-06T20:00:39"
+      },
+      {
+         "id":228057,
+         "delegator":"minnowbooster",
+         "delegatee":"hugobro",
+         "vesting_shares":"106864.800000 VESTS",
+         "min_delegation_time":"2017-09-02T06:21:33"
+      },
+      {
+         "id":251361,
+         "delegator":"minnowbooster",
+         "delegatee":"ijoel",
+         "vesting_shares":"1639890.000000 VESTS",
+         "min_delegation_time":"2017-09-15T00:32:12"
+      },
+      {
+         "id":239648,
+         "delegator":"minnowbooster",
+         "delegatee":"irwanumpal",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-09-08T15:09:39"
+      },
+      {
+         "id":237358,
+         "delegator":"minnowbooster",
+         "delegatee":"jackorobin",
+         "vesting_shares":"630000.000000 VESTS",
+         "min_delegation_time":"2017-09-07T09:11:24"
+      },
+      {
+         "id":253503,
+         "delegator":"minnowbooster",
+         "delegatee":"jbp",
+         "vesting_shares":"392727.300000 VESTS",
+         "min_delegation_time":"2017-09-16T19:10:15"
+      },
+      {
+         "id":233750,
+         "delegator":"minnowbooster",
+         "delegatee":"joulia",
+         "vesting_shares":"78750.000000 VESTS",
+         "min_delegation_time":"2017-09-05T13:33:18"
+      },
+      {
+         "id":200504,
+         "delegator":"minnowbooster",
+         "delegatee":"jpederson96",
+         "vesting_shares":"673077.300000 VESTS",
+         "min_delegation_time":"2017-08-19T18:19:09"
+      },
+      {
+         "id":244444,
+         "delegator":"minnowbooster",
+         "delegatee":"juliank",
+         "vesting_shares":"4094212.500000 VESTS",
+         "min_delegation_time":"2017-09-11T21:55:21"
+      },
+      {
+         "id":262400,
+         "delegator":"minnowbooster",
+         "delegatee":"katyusa",
+         "vesting_shares":"3150000.000000 VESTS",
+         "min_delegation_time":"2017-09-23T17:34:12"
+      },
+      {
+         "id":264220,
+         "delegator":"minnowbooster",
+         "delegatee":"kayleigh-alesta",
+         "vesting_shares":"1575000.000000 VESTS",
+         "min_delegation_time":"2017-09-25T12:36:18"
+      },
+      {
+         "id":262396,
+         "delegator":"minnowbooster",
+         "delegatee":"keks",
+         "vesting_shares":"787500.000000 VESTS",
+         "min_delegation_time":"2017-09-23T17:33:12"
+      },
+      {
+         "id":189232,
+         "delegator":"minnowbooster",
+         "delegatee":"kemal13",
+         "vesting_shares":"210000.000000 VESTS",
+         "min_delegation_time":"2017-08-12T15:22:12"
+      },
+      {
+         "id":172735,
+         "delegator":"minnowbooster",
+         "delegatee":"killerwhale",
+         "vesting_shares":"2993287.500000 VESTS",
+         "min_delegation_time":"2017-08-02T03:55:42"
+      },
+      {
+         "id":237269,
+         "delegator":"minnowbooster",
+         "delegatee":"kusadasi",
+         "vesting_shares":"756000.000000 VESTS",
+         "min_delegation_time":"2017-09-07T08:14:09"
+      },
+      {
+         "id":194698,
+         "delegator":"minnowbooster",
+         "delegatee":"lasper",
+         "vesting_shares":"1575000.000000 VESTS",
+         "min_delegation_time":"2017-08-16T13:46:12"
+      },
+      {
+         "id":260289,
+         "delegator":"minnowbooster",
+         "delegatee":"lavje",
+         "vesting_shares":"787500.000000 VESTS",
+         "min_delegation_time":"2017-09-22T19:08:36"
+      },
+      {
+         "id":234470,
+         "delegator":"minnowbooster",
+         "delegatee":"linuxmom",
+         "vesting_shares":"630000.000000 VESTS",
+         "min_delegation_time":"2017-09-05T18:07:18"
+      },
+      {
+         "id":243657,
+         "delegator":"minnowbooster",
+         "delegatee":"luismy",
+         "vesting_shares":"551250.000000 VESTS",
+         "min_delegation_time":"2017-09-11T13:02:27"
+      },
+      {
+         "id":258802,
+         "delegator":"minnowbooster",
+         "delegatee":"m11",
+         "vesting_shares":"3086687.100000 VESTS",
+         "min_delegation_time":"2017-09-21T07:09:12"
+      },
+      {
+         "id":209995,
+         "delegator":"minnowbooster",
+         "delegatee":"m31",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-08-23T19:29:09"
+      },
+      {
+         "id":224362,
+         "delegator":"minnowbooster",
+         "delegatee":"macbaren",
+         "vesting_shares":"945000.000000 VESTS",
+         "min_delegation_time":"2017-08-31T11:53:12"
+      },
+      {
+         "id":257913,
+         "delegator":"minnowbooster",
+         "delegatee":"madeve",
+         "vesting_shares":"1023750.000000 VESTS",
+         "min_delegation_time":"2017-09-20T14:04:15"
+      },
+      {
+         "id":118001,
+         "delegator":"minnowbooster",
+         "delegatee":"mahdiyari",
+         "vesting_shares":"840000.000000 VESTS",
+         "min_delegation_time":"2017-07-03T15:04:06"
+      },
+      {
+         "id":209992,
+         "delegator":"minnowbooster",
+         "delegatee":"mamadini",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-08-23T19:27:12"
+      },
+      {
+         "id":243016,
+         "delegator":"minnowbooster",
+         "delegatee":"marty-art",
+         "vesting_shares":"630000.000000 VESTS",
+         "min_delegation_time":"2017-09-10T15:08:18"
+      },
+      {
+         "id":213243,
+         "delegator":"minnowbooster",
+         "delegatee":"masummim50",
+         "vesting_shares":"126000.000000 VESTS",
+         "min_delegation_time":"2017-08-25T12:42:18"
+      },
+      {
+         "id":243401,
+         "delegator":"minnowbooster",
+         "delegatee":"masyl",
+         "vesting_shares":"538492.500000 VESTS",
+         "min_delegation_time":"2017-09-11T03:13:33"
+      },
+      {
+         "id":225483,
+         "delegator":"minnowbooster",
+         "delegatee":"medicalgrower",
+         "vesting_shares":"330750.000000 VESTS",
+         "min_delegation_time":"2017-08-31T19:34:48"
+      },
+      {
+         "id":238156,
+         "delegator":"minnowbooster",
+         "delegatee":"mikev",
+         "vesting_shares":"630000.000000 VESTS",
+         "min_delegation_time":"2017-09-08T03:23:51"
+      },
+      {
+         "id":179908,
+         "delegator":"minnowbooster",
+         "delegatee":"minknsa",
+         "vesting_shares":"401625.000000 VESTS",
+         "min_delegation_time":"2017-08-07T17:46:48"
+      },
+      {
+         "id":210062,
+         "delegator":"minnowbooster",
+         "delegatee":"minnowpowerup",
+         "vesting_shares":"1260000.000000 VESTS",
+         "min_delegation_time":"2017-08-23T20:01:12"
+      },
+      {
+         "id":118237,
+         "delegator":"minnowbooster",
+         "delegatee":"misty1z",
+         "vesting_shares":"2665267.500000 VESTS",
+         "min_delegation_time":"2017-07-03T15:47:45"
+      },
+      {
+         "id":222579,
+         "delegator":"minnowbooster",
+         "delegatee":"moyo9000",
+         "vesting_shares":"3805439.400000 VESTS",
+         "min_delegation_time":"2017-08-30T18:53:15"
+      },
+      {
+         "id":215770,
+         "delegator":"minnowbooster",
+         "delegatee":"mrsquiggle",
+         "vesting_shares":"1512000.000000 VESTS",
+         "min_delegation_time":"2017-08-28T11:26:24"
+      },
+      {
+         "id":246404,
+         "delegator":"minnowbooster",
+         "delegatee":"msp-creativebot",
+         "vesting_shares":"2743146.000000 VESTS",
+         "min_delegation_time":"2017-09-12T10:47:06"
+      },
+      {
+         "id":249990,
+         "delegator":"minnowbooster",
+         "delegatee":"msp-turkey",
+         "vesting_shares":"1224327.300000 VESTS",
+         "min_delegation_time":"2017-09-14T10:48:21"
+      },
+      {
+         "id":228390,
+         "delegator":"minnowbooster",
+         "delegatee":"nmotwani21",
+         "vesting_shares":"78750.000000 VESTS",
+         "min_delegation_time":"2017-09-02T13:03:30"
+      },
+      {
+         "id":243645,
+         "delegator":"minnowbooster",
+         "delegatee":"oluwataye",
+         "vesting_shares":"2362500.000000 VESTS",
+         "min_delegation_time":"2017-09-11T12:47:42"
+      },
+      {
+         "id":189072,
+         "delegator":"minnowbooster",
+         "delegatee":"orcheva",
+         "vesting_shares":"1260000.000000 VESTS",
+         "min_delegation_time":"2017-08-12T11:37:12"
+      },
+      {
+         "id":265339,
+         "delegator":"minnowbooster",
+         "delegatee":"oscarps",
+         "vesting_shares":"787500.000000 VESTS",
+         "min_delegation_time":"2017-09-25T20:47:27"
+      },
+      {
+         "id":231684,
+         "delegator":"minnowbooster",
+         "delegatee":"owner99",
+         "vesting_shares":"165375.000000 VESTS",
+         "min_delegation_time":"2017-09-04T10:18:06"
+      },
+      {
+         "id":243464,
+         "delegator":"minnowbooster",
+         "delegatee":"pennystockhelp",
+         "vesting_shares":"866250.000000 VESTS",
+         "min_delegation_time":"2017-09-11T06:00:36"
+      },
+      {
+         "id":179841,
+         "delegator":"minnowbooster",
+         "delegatee":"phunke",
+         "vesting_shares":"420000.000000 VESTS",
+         "min_delegation_time":"2017-08-07T14:34:42"
+      },
+      {
+         "id":257459,
+         "delegator":"minnowbooster",
+         "delegatee":"qurator",
+         "vesting_shares":"3981127.500000 VESTS",
+         "min_delegation_time":"2017-09-19T18:17:06"
+      },
+      {
+         "id":265672,
+         "delegator":"minnowbooster",
+         "delegatee":"ragnartheking",
+         "vesting_shares":"787500.000000 VESTS",
+         "min_delegation_time":"2017-09-25T22:56:06"
+      },
+      {
+         "id":263163,
+         "delegator":"minnowbooster",
+         "delegatee":"rajorajiten",
+         "vesting_shares":"630000.000000 VESTS",
+         "min_delegation_time":"2017-09-24T06:10:21"
+      },
+      {
+         "id":241248,
+         "delegator":"minnowbooster",
+         "delegatee":"ratul8940",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-09-09T07:54:15"
+      },
+      {
+         "id":112424,
+         "delegator":"minnowbooster",
+         "delegatee":"reggaemuffin",
+         "vesting_shares":"8400.000000 VESTS",
+         "min_delegation_time":"2017-06-30T07:18:12"
+      },
+      {
+         "id":134139,
+         "delegator":"minnowbooster",
+         "delegatee":"rtdcs",
+         "vesting_shares":"1260000.000000 VESTS",
+         "min_delegation_time":"2017-07-12T17:43:36"
+      },
+      {
+         "id":218727,
+         "delegator":"minnowbooster",
+         "delegatee":"rumplestiltskin",
+         "vesting_shares":"1102500.000000 VESTS",
+         "min_delegation_time":"2017-08-29T19:23:21"
+      },
+      {
+         "id":249046,
+         "delegator":"minnowbooster",
+         "delegatee":"russellbury",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-09-13T19:34:21"
+      },
+      {
+         "id":253161,
+         "delegator":"minnowbooster",
+         "delegatee":"saini11",
+         "vesting_shares":"630000.000000 VESTS",
+         "min_delegation_time":"2017-09-16T07:28:15"
+      },
+      {
+         "id":253501,
+         "delegator":"minnowbooster",
+         "delegatee":"samhenry",
+         "vesting_shares":"157500.000000 VESTS",
+         "min_delegation_time":"2017-09-16T18:42:09"
+      },
+      {
+         "id":257776,
+         "delegator":"minnowbooster",
+         "delegatee":"sanmi",
+         "vesting_shares":"1260000.000000 VESTS",
+         "min_delegation_time":"2017-09-20T08:08:09"
+      },
+      {
+         "id":113771,
+         "delegator":"minnowbooster",
+         "delegatee":"scooter77",
+         "vesting_shares":"210000.000000 VESTS",
+         "min_delegation_time":"2017-06-30T23:10:45"
+      },
+      {
+         "id":247291,
+         "delegator":"minnowbooster",
+         "delegatee":"serhanni",
+         "vesting_shares":"510142.500000 VESTS",
+         "min_delegation_time":"2017-09-13T06:57:06"
+      },
+      {
+         "id":261493,
+         "delegator":"minnowbooster",
+         "delegatee":"shehbaznawaz",
+         "vesting_shares":"1003827.300000 VESTS",
+         "min_delegation_time":"2017-09-23T13:23:27"
+      },
+      {
+         "id":194479,
+         "delegator":"minnowbooster",
+         "delegatee":"shmily77",
+         "vesting_shares":"492424.800000 VESTS",
+         "min_delegation_time":"2017-08-16T09:27:39"
+      },
+      {
+         "id":243178,
+         "delegator":"minnowbooster",
+         "delegatee":"silverstackeruk",
+         "vesting_shares":"393750.000000 VESTS",
+         "min_delegation_time":"2017-09-10T18:20:24"
+      },
+      {
+         "id":260696,
+         "delegator":"minnowbooster",
+         "delegatee":"skullsoccer",
+         "vesting_shares":"525027.300000 VESTS",
+         "min_delegation_time":"2017-09-22T22:15:09"
+      },
+      {
+         "id":226392,
+         "delegator":"minnowbooster",
+         "delegatee":"smyle",
+         "vesting_shares":"271215.000000 VESTS",
+         "min_delegation_time":"2017-09-01T12:10:45"
+      },
+      {
+         "id":264060,
+         "delegator":"minnowbooster",
+         "delegatee":"spaingaroo",
+         "vesting_shares":"630000.000000 VESTS",
+         "min_delegation_time":"2017-09-25T07:43:24"
+      },
+      {
+         "id":181810,
+         "delegator":"minnowbooster",
+         "delegatee":"stea90",
+         "vesting_shares":"787500.000000 VESTS",
+         "min_delegation_time":"2017-08-08T15:27:39"
+      },
+      {
+         "id":215219,
+         "delegator":"minnowbooster",
+         "delegatee":"steemchiller",
+         "vesting_shares":"2441250.000000 VESTS",
+         "min_delegation_time":"2017-08-27T08:18:27"
+      },
+      {
+         "id":231675,
+         "delegator":"minnowbooster",
+         "delegatee":"steeminfobot",
+         "vesting_shares":"1077300.000000 VESTS",
+         "min_delegation_time":"2017-09-04T10:08:12"
+      },
+      {
+         "id":235235,
+         "delegator":"minnowbooster",
+         "delegatee":"steeminformation",
+         "vesting_shares":"157500.000000 VESTS",
+         "min_delegation_time":"2017-09-06T02:45:33"
+      },
+      {
+         "id":243180,
+         "delegator":"minnowbooster",
+         "delegatee":"steemitdigest",
+         "vesting_shares":"252630.000000 VESTS",
+         "min_delegation_time":"2017-09-10T18:20:54"
+      },
+      {
+         "id":247290,
+         "delegator":"minnowbooster",
+         "delegatee":"steemitdotcom",
+         "vesting_shares":"2441250.000000 VESTS",
+         "min_delegation_time":"2017-09-13T06:54:27"
+      },
+      {
+         "id":254180,
+         "delegator":"minnowbooster",
+         "delegatee":"stoodkev",
+         "vesting_shares":"945000.000000 VESTS",
+         "min_delegation_time":"2017-09-18T10:48:18"
+      },
+      {
+         "id":110280,
+         "delegator":"minnowbooster",
+         "delegatee":"suesa",
+         "vesting_shares":"29312.500000 VESTS",
+         "min_delegation_time":"2017-06-29T14:40:27"
+      },
+      {
+         "id":235918,
+         "delegator":"minnowbooster",
+         "delegatee":"teamsouthafrica",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-09-06T19:36:09"
+      },
+      {
+         "id":193970,
+         "delegator":"minnowbooster",
+         "delegatee":"thecryptosphere",
+         "vesting_shares":"157500.000000 VESTS",
+         "min_delegation_time":"2017-08-16T01:18:24"
+      },
+      {
+         "id":168241,
+         "delegator":"minnowbooster",
+         "delegatee":"theduke",
+         "vesting_shares":"819000.000000 VESTS",
+         "min_delegation_time":"2017-07-31T13:34:45"
+      },
+      {
+         "id":246401,
+         "delegator":"minnowbooster",
+         "delegatee":"theleapingkoala",
+         "vesting_shares":"630000.000000 VESTS",
+         "min_delegation_time":"2017-09-12T10:45:03"
+      },
+      {
+         "id":184184,
+         "delegator":"minnowbooster",
+         "delegatee":"tipu",
+         "vesting_shares":"1325625.000000 VESTS",
+         "min_delegation_time":"2017-08-09T13:41:21"
+      },
+      {
+         "id":235225,
+         "delegator":"minnowbooster",
+         "delegatee":"twigg",
+         "vesting_shares":"420000.000000 VESTS",
+         "min_delegation_time":"2017-09-06T02:34:30"
+      },
+      {
+         "id":235638,
+         "delegator":"minnowbooster",
+         "delegatee":"upme",
+         "vesting_shares":"1575000.000000 VESTS",
+         "min_delegation_time":"2017-09-06T12:07:06"
+      },
+      {
+         "id":238305,
+         "delegator":"minnowbooster",
+         "delegatee":"uxair",
+         "vesting_shares":"708750.000000 VESTS",
+         "min_delegation_time":"2017-09-08T09:27:30"
+      },
+      {
+         "id":207196,
+         "delegator":"minnowbooster",
+         "delegatee":"vannfrik",
+         "vesting_shares":"1341427.500000 VESTS",
+         "min_delegation_time":"2017-08-22T22:37:09"
+      },
+      {
+         "id":210000,
+         "delegator":"minnowbooster",
+         "delegatee":"violetmed",
+         "vesting_shares":"945000.000000 VESTS",
+         "min_delegation_time":"2017-08-23T19:30:12"
+      },
+      {
+         "id":235568,
+         "delegator":"minnowbooster",
+         "delegatee":"vlemon",
+         "vesting_shares":"315000.000000 VESTS",
+         "min_delegation_time":"2017-09-06T10:13:36"
+      },
+      {
+         "id":210993,
+         "delegator":"minnowbooster",
+         "delegatee":"voter",
+         "vesting_shares":"1575000.000000 VESTS",
+         "min_delegation_time":"2017-08-24T11:24:06"
+      },
+      {
+         "id":243589,
+         "delegator":"minnowbooster",
+         "delegatee":"whalereward",
+         "vesting_shares":"3150000.000000 VESTS",
+         "min_delegation_time":"2017-09-11T10:09:03"
+      },
+      {
+         "id":156916,
+         "delegator":"minnowbooster",
+         "delegatee":"whiteblood",
+         "vesting_shares":"136500.000000 VESTS",
+         "min_delegation_time":"2017-07-24T14:20:18"
+      },
+      {
+         "id":235270,
+         "delegator":"minnowbooster",
+         "delegatee":"writemore",
+         "vesting_shares":"5389572.300000 VESTS",
+         "min_delegation_time":"2017-09-06T03:31:15"
+      },
+      {
+         "id":259931,
+         "delegator":"minnowbooster",
+         "delegatee":"zinovi",
+         "vesting_shares":"1050021.000000 VESTS",
+         "min_delegation_time":"2017-09-22T15:49:21"
+      }
+   ]
+}
