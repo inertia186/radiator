@@ -219,6 +219,11 @@
   },
   {
     "api": "database_api",
+    "method": "get_vesting_delegations",
+    "params": ["account", "from", "limit"]
+  },
+  {
+    "api": "database_api",
     "method": "get_owner_history",
     "params": ["account"]
   },
