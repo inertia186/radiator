@@ -16,6 +16,10 @@ module Radiator
       @logger = options[:logger] || Radiator.logger
       @hashie_logger = options[:hashie_logger] || Logger.new('/dev/null')
       
+      unless @hashie_logger.respond_to? :warn
+        @hashie_logger = Logger.new(@hashie_logger)
+      end
+      
       Hashie.logger = @hashie_logger
       @method_names = nil
     end

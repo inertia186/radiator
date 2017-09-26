@@ -5,6 +5,10 @@ module Radiator
     def setup
       @api = Radiator::Api.new(logger: LOGGER)
     end
+    
+    def test_hashie_logger
+      Radiator::Api.new(hashie_logger: 'hashie.log')
+    end
 
     def test_method_missing
       assert_raises NoMethodError do
