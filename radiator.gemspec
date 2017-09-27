@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest', '~> 5.9', '>= 5.9.0'
   spec.add_development_dependency 'minitest-line', '~> 0.6.3'
   spec.add_development_dependency 'webmock', '~> 2.1', '>= 2.1.0'
-  spec.add_development_dependency 'simplecov', '~> 0.11.2'
+  spec.add_development_dependency 'simplecov', '~> 0.15.1'
   spec.add_development_dependency 'codeclimate-test-reporter', '~> 0.5.2'
   spec.add_development_dependency 'vcr', '~> 2.9', '>= 2.9.2'
   spec.add_development_dependency 'faraday', '~> 0.9.2'

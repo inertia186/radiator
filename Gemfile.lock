@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    radiator (0.2.3a)
+    radiator (0.2.3b)
       bitcoin-ruby (= 0.0.11)
       ffi (= 1.9.18)
       hashie (~> 3.5, >= 3.5.5)
@@ -48,9 +48,9 @@ GEM
     public_suffix (3.0.0)
     rake (11.3.0)
     safe_yaml (1.0.4)
-    simplecov (0.11.2)
+    simplecov (0.15.1)
       docile (~> 1.1.0)
-      json (~> 1.8)
+      json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
     slop (3.6.0)
@@ -76,7 +76,7 @@ DEPENDENCIES
   pry (~> 0.10.3)
   radiator!
   rake (~> 11.2, >= 11.2.2)
-  simplecov (~> 0.11.2)
+  simplecov (~> 0.15.1)
   typhoeus (~> 1.0, >= 1.0.2)
   vcr (~> 2.9, >= 2.9.2)
   webmock (~> 2.1, >= 2.1.0)
