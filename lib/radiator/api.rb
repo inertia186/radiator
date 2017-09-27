@@ -14,7 +14,7 @@ module Radiator
       @debug = !!options[:debug]
       @net_http_persistent_enabled = true
       @logger = options[:logger] || Radiator.logger
-      @hashie_logger = options[:hashie_logger] || Logger.new('/dev/null')
+      @hashie_logger = options[:hashie_logger] || Logger.new(nil)
       
       Hashie.logger = @hashie_logger
       @method_names = nil
