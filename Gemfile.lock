@@ -5,7 +5,7 @@ PATH
       bitcoin-ruby (= 0.0.11)
       ffi (= 1.9.18)
       hashie (~> 3.5, >= 3.5.5)
-      json (~> 1.8, >= 1.8.6)
+      json (~> 2.0, >= 2.0.2)
       logging (~> 2.2, >= 2.2.0)
       net-http-persistent (~> 2.9, >= 2.9.4)
 
@@ -29,7 +29,7 @@ GEM
     ffi (1.9.18)
     hashdiff (0.3.6)
     hashie (3.5.6)
-    json (1.8.6)
+    json (2.0.2)
     little-plugger (1.1.4)
     logging (2.2.2)
       little-plugger (~> 1.1)
