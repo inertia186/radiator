@@ -7,10 +7,28 @@ require 'net/http/persistent'
 
 module Radiator
   class Api
+    DEFAULT_URL = 'https://steemd.steemit.com'
+    
+    DEFAULT_FAILOVER_URLS = [
+      DEFAULT_URL,
+      'https://steemd.steemitdev.com',
+      'https://steemd-int.steemit.com',
+      'https://steemd.steemitstage.com',
+      'https://gtg.steem.house:8090',
+      'https://rpc.steemliberator.com'
+    ]
+    
+    POST_HEADERS = {
+      'Content-Type' => 'application/json'
+    }
+    
     def initialize(options = {})
       @user = options[:user]
       @password = options[:password]
-      @url = options[:url] || 'https://steemd.steemit.com'
+      @url = options[:url] || DEFAULT_URL
+      @preferred_url = @url.dup
+      @failover_urls = options[:failover_urls] || (DEFAULT_FAILOVER_URLS - [@url])
+      @preferred_failover_urls = @failover_urls.dup
       @debug = !!options[:debug]
       @net_http_persistent_enabled = true
       @logger = options[:logger] || Radiator.logger
@@ -117,59 +135,53 @@ module Radiator
         begin
           response = request(options)
           
-          if !!response
-            case response.code
-            when '200'
-              response = JSON[response.body]
-              
-              return Hashie::Mash.new(response)
-            when '400'
-              @logger.warn('Code 400: Bad Request, retrying ...')
-              backoff
-            when '502'
-              @logger.warn('Code 502: Bad Gateway, retrying ...')
-              backoff
-            when '503'
-              @logger.warn('Code 503: Service Unavailable, retrying ...')
-              backoff
-            when '504'
-              @logger.warn('Code 504: Gateway Timeout, retrying ...')
-              backoff
-            else
-              ap "Unknown code #{response.code}, retrying ..."
-              ap response
-              backoff
-            end
+          if response.nil?
+            @logger.error "No response, retrying ..."
+            backoff
+            redo
           end
           
-          @logger.error("No response.")
-          break
+          case response.code
+          when '200'
+            response = JSON[response.body]
+            
+            return Hashie::Mash.new(response)
+          when '400'
+            @logger.warn 'Code 400: Bad Request, retrying ...'
+          when '502'
+            @logger.warn 'Code 502: Bad Gateway, retrying ...'
+          when '503'
+            @logger.warn 'Code 503: Service Unavailable, retrying ...'
+          when '504'
+            @logger.warn 'Code 504: Gateway Timeout, retrying ...'
+          else
+            @logger.warn "Unknown code #{response.code}, retrying ..."
+            ap response
+          end
+          
+          backoff
         rescue Errno::ECONNREFUSED => e
-          @logger.warn('Connection refused, retrying ...')
-          backoff
+          @logger.warn 'Connection refused, retrying ...'
         rescue Errno::EADDRNOTAVAIL => e
-          @logger.warn('Node not available, retrying ...')
-          backoff
+          @logger.warn 'Node not available, retrying ...'
         rescue Net::ReadTimeout => e
-          @logger.warn('Node read timeout, retrying ...')
-          backoff
+          @logger.warn 'Node read timeout, retrying ...'
         rescue Net::OpenTimeout => e
-          @logger.warn('Node timeout, retrying ...')
-          backoff
+          @logger.warn 'Node timeout, retrying ...'
         rescue RangeError => e
-          @logger.warn('Range Error, retrying ...')
-          backoff
+          @logger.warn 'Range Error, retrying ...'
         rescue OpenSSL::SSL::SSLError => e
-          @logger.warn("SSL Error (#{e.message}), retrying ...")
-          backoff
+          @logger.warn "SSL Error (#{e.message}), retrying ..."
         rescue SocketError => e
-          @logger.warn("Socket Error (#{e.message}), retrying ...")
-          backoff
+          @logger.warn "Socket Error (#{e.message}), retrying ..."
+        rescue JSON::ParserError => e
+          @logger.warn "JSON Parse Error (#{e.message}), retrying ..."
         rescue => e
-          puts "Unknown exception from request ..."
+          @logger.warn "Unknown exception from request ..."
           ap e
-          backoff
         end
+          
+        backoff
       end # loop
     end
     
@@ -188,12 +200,12 @@ module Radiator
         e if e['api'].to_sym == api_name
       end.compact.freeze
     end
-
+    
     def rpc_id
       @rpc_id ||= 0
       @rpc_id = @rpc_id + 1
     end
-  
+    
     def uri
       @uri ||= URI.parse(@url)
     end
@@ -209,7 +221,7 @@ module Radiator
     end
     
     def post_request
-      Net::HTTP::Post.new uri.request_uri, 'Content-Type' => 'application/json'
+      Net::HTTP::Post.new uri.request_uri, POST_HEADERS
     end
     
     def request(options)
@@ -217,17 +229,17 @@ module Radiator
         begin
           request = post_request
           request.body = JSON[options]
+          response = http.request(uri, request)
           
-          if (response = http.request(uri, request)).kind_of? Net::HTTPSuccess
-            return response
-          else
-            @logger.warn "Unexpeced response: #{response.inspect}; temporarily falling back to non-persistent-http"
-          end
+          return response if response.kind_of? Net::HTTPSuccess
+          @logger.warn "Unexpeced response: #{response.inspect}; temporarily falling back to non-persistent-http"
+          backoff
+          @net_http_persistent_enabled = false
         rescue Net::HTTP::Persistent::Error => e
           @logger.warn "Unable to perform request: #{request} :: #{e} :: #{!!e.cause ? "cause: #{e.cause.message}" : ''}; temporarily falling back to non-persistent-http"
+          backoff
+          @net_http_persistent_enabled = false
         end
-        
-        @net_http_persistent_enabled = false
       end
         
       unless @net_http_persistent_enabled
@@ -244,7 +256,27 @@ module Radiator
       end
     end
     
+    def reset_failover
+      @url = @preferred_url.dup
+      @failover_urls = @preferred_failover_urls.dup
+      @logger.warn "Failover reset, going back to #{@url} ..."
+    end
+    
+    def pop_failover_url
+      @failover_urls.delete(@failover_urls.sample) || @url
+    end
+    
+    def bump_failover
+      reset_failover if @failover_urls.none?
+      
+      @uri = nil
+      @url = pop_failover_url
+      @logger.warn "Failing over to #{@url} ..."
+    end
+    
     def backoff
+      shutdown
+      bump_failover if !!@backoff_at && Time.now - @backoff_at < 300
       @backoff_at ||= Time.now
       @backoff_sleep ||= 0.01
       
