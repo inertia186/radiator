@@ -41,53 +41,63 @@ module Radiator
 
     def test_get_accounts_no_argument
       stub_post_error
-      response = @api.get_accounts
-      assert_equal Hashie::Mash, response.class, response.inspect
-      assert_nil response.result
-      refute_nil response.error
+      @api.get_accounts do |accounts, error|
+        assert_equal NilClass, accounts.class, accounts.inspect
+        assert_nil accounts
+        refute_nil error
+      end
     end
 
     def test_get_accounts
       stub_post_get_account
-      response = @api.get_accounts(['inertia'])
-      assert_equal Hashie::Mash, response.class, response.inspect
-      assert_equal response.result.first.owner.key_auths.first.first, 'STM7T5DRhNkp5RpiFrarPfLGXEnU6yk5jLFokfmyJThgRwtLpJuKM'
+      @api.get_accounts(['inertia']) do |accounts|
+        assert_equal Hashie::Array, accounts.class, accounts.inspect
+        account = accounts.first
+        owner_key_auths = account.owner.key_auths.first
+        assert_equal owner_key_auths.first, 'STM7T5DRhNkp5RpiFrarPfLGXEnU6yk5jLFokfmyJThgRwtLpJuKM'
+      end
     end
 
     def test_get_feed_history
       stub_post_get_feed_history
-      response = @api.get_feed_history(['inertia'])
-      assert_equal Hashie::Mash, response.class, response.inspect
+      @api.get_feed_history(['inertia']) do |history|
+        assert_equal Hashie::Mash, history.class, history.inspect
+      end
     end
 
     def test_get_account_count
       stub_post_get_account_count
-      response = @api.get_account_count
-      assert_equal Hashie::Mash, response.class, response.inspect
+      @api.get_account_count do |count|
+        assert_equal Integer, count.class, count.inspect
+      end
     end
 
     def test_get_account_references
       stub_post_get_account_references
-      response = @api.get_account_references(["2.2.27007"])
-      assert_equal Hashie::Mash, response.class, response.inspect
+      @api.get_account_references(["2.2.27007"]) do |_, error|
+        assert_equal Hashie::Mash, error.class, error.inspect
+      end
     end
     
     def test_get_dynamic_global_properties
       stub_post_get_dynamic_global_properties
-      response = @api.get_dynamic_global_properties
-      assert_equal Hashie::Mash, response.class, response.inspect
+      @api.get_dynamic_global_properties do |properties|
+        assert_equal Hashie::Mash, properties.class, properties.inspect
+      end
     end
     
     def test_get_hardfork_version
       stub_post_get_hardfork_version
-      response = @api.get_hardfork_version
-      assert_equal Hashie::Mash, response.class, response.inspect
+      @api.get_hardfork_version do |version|
+        assert_equal String, version.class, version.inspect
+      end
     end
     
     def test_get_vesting_delegations
       stub_post_get_vesting_delegation
-      response = @api.get_vesting_delegations('minnowbooster', -1000, 1000)
-      assert_equal Hashie::Mash, response.class, response.inspect
+      @api.get_vesting_delegations('minnowbooster', -1000, 1000) do |delegation|
+        assert_equal Hashie::Array, delegation.class, delegation.inspect
+      end
     end
   end
 end

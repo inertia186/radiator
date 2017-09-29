@@ -38,52 +38,59 @@ module Radiator
     def test_get_market_history
       skip "Need to research arguments"
       stub_post_market_history_api_get_market_history
-      response = @api.get_market_history(nil, nil, nil)
-      assert_equal Hashie::Mash, response.class, response.inspect
-      assert response.result
+      @api.get_market_history(nil, nil, nil) do |history|
+        assert_equal Hashie::Mash, history.class, history.inspect
+        assert history
+      end
     end
     
     def test_get_market_history_buckets
       stub_post_market_history_api_get_market_history_buckets
-      response = @api.get_market_history_buckets
-      assert_equal Hashie::Mash, response.class, response.inspect
-      assert response.result
+      @api.get_market_history_buckets do |buckets|
+        assert_equal Hashie::Array, buckets.class, buckets.inspect
+        assert buckets
+      end
     end
     
     def test_get_order_book
       stub_post_market_history_api_get_order_book
-      response = @api.get_order_book(10)
-      assert_equal Hashie::Mash, response.class, response.inspect
-      assert response.result
+      @api.get_order_book(10) do |order_book|
+        assert_equal Hashie::Mash, order_book.class, order_book.inspect
+        assert order_book
+      end
     end
     
     def test_get_recent_trades
       stub_post_market_history_api_get_recent_trades
-      response = @api.get_recent_trades(10)
-      assert_equal Hashie::Mash, response.class, response.inspect
-      assert response.result
+      @api.get_recent_trades(10) do |trades|
+        assert_equal Hashie::Array, trades.class, trades.inspect
+        assert trades
+      end
     end
     
     def test_get_ticker
       stub_post_market_history_api_get_ticker
-      response = @api.get_ticker
-      assert_equal Hashie::Mash, response.class, response.inspect
-      assert response.result
+      @api.get_ticker do |ticker|
+        assert_equal Hashie::Mash, ticker.class, ticker.inspect
+        assert ticker
+      end
     end
     
     def test_get_trade_history
       skip "Need to research arguments"
       stub_post_market_history_api_get_trade_history
-      response = @api.get_trade_history(nil, nil, nil)
-      assert_equal Hashie::Mash, response.class, response.inspect
-      assert response.result
+      @api.get_trade_history(nil, nil, nil) do |history|
+        assert_equal Hashie::Mash, history.class, history.inspect
+        assert history
+      end
     end
     
     def test_get_volume
       stub_post_market_history_api_get_volume
-      response = @api.get_volume
-      assert_equal Hashie::Mash, response.class, response.inspect
-      assert response.result
+      @api.get_volume do |volume|
+        assert_equal Hashie::Mash, volume.class, volume.inspect
+        assert volume
+      end
     end
   end
 end

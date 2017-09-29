@@ -37,8 +37,10 @@ module Radiator
 
     def test_get_key_references
       stub_post_get_key_references
-      response = @api.get_key_references(['STM71f6yWztimJuREVyyMXNqAVbx1FzPVW6LLXNoQ35dHwKuszmHX'])
-      assert_equal response.class, Hashie::Mash, response.inspect
+      keys = ['STM71f6yWztimJuREVyyMXNqAVbx1FzPVW6LLXNoQ35dHwKuszmHX']
+      @api.get_key_references(keys) do |account_names|
+        assert_equal Hashie::Array, account_names.class, account_names.inspect
+      end
     end
   end
 end

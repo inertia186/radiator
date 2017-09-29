@@ -16,6 +16,7 @@ module Radiator
     VALID_OPTIONS.each { |option| attr_accessor option }
     
     def initialize(options = {})
+      options = options.dup
       options.each do |k, v|
         k = k.to_sym
         if VALID_OPTIONS.include?(k.to_sym)

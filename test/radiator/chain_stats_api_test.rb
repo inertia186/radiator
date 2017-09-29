@@ -37,8 +37,9 @@ module Radiator
 
     def test_get_stats_for_time
       stub_post_get_stats_for_time
-      response = @api.get_stats_for_time("20161031T235959", 1000)
-      assert_equal Hashie::Mash, response.class, response.inspect
+      @api.get_stats_for_time("20161031T235959", 1000) do |stats|
+        assert_equal Hashie::Mash, stats.class, stats.inspect
+      end
     end
   end
 end

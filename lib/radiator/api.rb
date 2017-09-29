@@ -15,6 +15,9 @@ module Radiator
       'https://steemd-int.steemit.com',
       'https://steemd.steemitstage.com',
       'https://gtg.steem.house:8090',
+      "https://seed.bitcoiner.me",
+      "https://steemd.minnowsupportproject.org",
+      "https://steemd.privex.io",
       'https://rpc.steemliberator.com'
     ]
     
@@ -30,7 +33,6 @@ module Radiator
       @failover_urls = options[:failover_urls] || (DEFAULT_FAILOVER_URLS - [@url])
       @preferred_failover_urls = @failover_urls.dup
       @debug = !!options[:debug]
-      @net_http_persistent_enabled = true
       @logger = options[:logger] || Radiator.logger
       @hashie_logger = options[:hashie_logger] || Logger.new(nil)
       
@@ -38,8 +40,15 @@ module Radiator
         @hashie_logger = Logger.new(@hashie_logger)
       end
       
+      @recover_transactions_on_error = if options.keys.include? :recover_transactions_on_error
+        options[:recover_transactions_on_error]
+      else
+        true
+      end
+      
       Hashie.logger = @hashie_logger
       @method_names = nil
+      @api_options = options.dup
     end
     
     def method_names
@@ -64,11 +73,11 @@ module Radiator
       
       if !!block
         block_number.each do |i|
-          yield get_block(i).result, i
+          yield api.get_block(i).result, i
         end
       else
         block_number.map do |i|
-          get_block(i).result
+          api.get_block(i).result
         end
       end
     end
@@ -80,42 +89,44 @@ module Radiator
     # @return [Hash]
     def find_block(block_number, &block)
       if !!block
-        yield get_blocks(block_number).first
+        yield api.get_blocks(block_number).first
       else
-        get_blocks(block_number).first
+        api.get_blocks(block_number).first
       end
     end
     
     def find_account(id, &block)
       if !!block
-        yield get_accounts([id]).result.first
+        yield api.get_accounts([id]).result.first
       else
-        get_accounts([id]).result.first
+        api.get_accounts([id]).result.first
       end
     end
     
-    # TODO: Need to rename this to base_per_mvest and alias to steem_per_mvest
-    def steem_per_mvest
-      properties = get_dynamic_global_properties.result
+    def base_per_mvest
+      api.get_dynamic_global_properties do |properties|
+        total_vesting_fund_steem = properties.total_vesting_fund_steem.to_f
+        total_vesting_shares_mvest = properties.total_vesting_shares.to_f / 1e6
       
-      total_vesting_fund_steem = properties.total_vesting_fund_steem.to_f
-      total_vesting_shares_mvest = properties.total_vesting_shares.to_f / 1e6
-      
-      total_vesting_fund_steem / total_vesting_shares_mvest
+        total_vesting_fund_steem / total_vesting_shares_mvest
+      end
     end
     
-    # TODO: Need to rename this to base_per_debt and alias to steem_per_debt
-    def steem_per_usd
-      feed_history = get_feed_history.result
+    alias steem_per_mvest base_per_mvest
+    
+    def base_per_debt
+      get_feed_history do |feed_history|
+        current_median_history = feed_history.current_median_history
+        base = current_median_history.base
+        base = base.split(' ').first.to_f
+        quote = current_median_history.quote
+        quote = quote.split(' ').first.to_f
 
-      current_median_history = feed_history.current_median_history
-      base = current_median_history.base
-      base = base.split(' ').first.to_f
-      quote = current_median_history.quote
-      quote = quote.split(' ').first.to_f
-
-      (base / quote) * steem_per_mvest
+        (base / quote) * steem_per_mvest
+      end
     end
+    
+    alias steem_per_usd base_per_debt
     
     def respond_to_missing?(m, include_private = false)
       method_names.include?(m.to_sym)
@@ -124,6 +135,7 @@ module Radiator
     def method_missing(m, *args, &block)
       super unless respond_to_missing?(m)
       
+      response = nil
       options = {
         jsonrpc: "2.0",
         params: [api_name, m, args],
@@ -131,35 +143,57 @@ module Radiator
         method: "call"
       }
       
+      tries = 0
+      timestamp = Time.now.utc
+      
       loop do
+        tries += 1
+        
         begin
+          if @recover_transactions_on_error
+            signatures = extract_signatures(options)
+            
+            if tries > 1 && !!signatures && signatures.any?
+              if !!(response = recover_transaction(signatures, rpc_id, timestamp))
+                @logger.warn 'Found recovered transaction after retry.'
+                response = Hashie::Mash.new(response)
+              end
+            end
+          end
+          
           response = request(options)
           
           if response.nil?
             @logger.error "No response, retrying ..."
             backoff
             redo
+          elsif !response.kind_of? Net::HTTPSuccess
+            @logger.warn "Unexpected response: #{response.inspect}"
+            backoff
+            redo
           end
           
-          case response.code
+          response = case response.code
           when '200'
-            response = JSON[response.body]
+            body = response.body
+            response = JSON[body]
             
-            return Hashie::Mash.new(response)
-          when '400'
-            @logger.warn 'Code 400: Bad Request, retrying ...'
-          when '502'
-            @logger.warn 'Code 502: Bad Gateway, retrying ...'
-          when '503'
-            @logger.warn 'Code 503: Service Unavailable, retrying ...'
-          when '504'
-            @logger.warn 'Code 504: Gateway Timeout, retrying ...'
+            if response.keys.include?('result') && response['result'].nil?
+              @logger.warn 'Invalid response from node, retrying ...'; nil
+            else
+              Hashie::Mash.new(response)
+            end
+          when '400' then @logger.warn 'Code 400: Bad Request, retrying ...'; nil
+          when '502' then @logger.warn 'Code 502: Bad Gateway, retrying ...'; nil
+          when '503' then @logger.warn 'Code 503: Service Unavailable, retrying ...'; nil
+          when '504' then @logger.warn 'Code 504: Gateway Timeout, retrying ...'; nil
           else
             @logger.warn "Unknown code #{response.code}, retrying ..."
             ap response
           end
-          
-          backoff
+        rescue Net::HTTP::Persistent::Error => e
+          @logger.warn "Unable to perform request: #{e} :: #{!!e.cause ? "cause: #{e.cause.message}" : ''}"
+          @wakka = true
         rescue Errno::ECONNREFUSED => e
           @logger.warn 'Connection refused, retrying ...'
         rescue Errno::EADDRNOTAVAIL => e
@@ -178,9 +212,17 @@ module Radiator
           @logger.warn "JSON Parse Error (#{e.message}), retrying ..."
         rescue => e
           @logger.warn "Unknown exception from request ..."
-          ap e
+          ap e if defined? ap
         end
-          
+        
+        if !!response
+          if !!block
+            return yield(response.result, response.error, response.id)
+          else
+            return response
+          end
+        end
+
         backoff
       end # loop
     end
@@ -201,6 +243,10 @@ module Radiator
       end.compact.freeze
     end
     
+    def api
+      @api ||= self.class == Api ? self : Api.new(@api_options)
+    end
+
     def rpc_id
       @rpc_id ||= 0
       @rpc_id = @rpc_id + 1
@@ -225,35 +271,59 @@ module Radiator
     end
     
     def request(options)
-      if !!@net_http_persistent_enabled
-        begin
-          request = post_request
-          request.body = JSON[options]
-          response = http.request(uri, request)
+      request = post_request
+      request.body = JSON[options]
+      http.request(uri, request)
+    end
+    
+    def extract_signatures(options)
+      return unless options[:params].include? :network_broadcast_api
+      
+      options[:params].map do |param|
+        next unless defined? param.map
+        
+        param.map { |tx| tx[:signatures] }
+      end.flatten.compact
+    end
+    
+    def recover_transaction(signatures, rpc_id, after)
+      now = Time.now.utc
+      block_range = api.get_dynamic_global_properties do |properties|
+        high = properties.head_block_number
+        low = high - 100
+        [*(low..(high))].reverse
+      end
+      
+      # It would be nice if Steemit, Inc. would add an API method like
+      # `get_transaction`, call it `get_transaction_by_signature`, so we didn't
+      # have to scan the latest blocks like this.  At most, we read 100 blocks
+      # but we also give up once the block time is before the `after` argument.
+      
+      api.get_blocks(block_range) do |block, block_num|
+        raise "Race condition detected at: #{block_num}" if block.nil?
+        
+        timestamp = Time.parse(block.timestamp + 'Z')
+        break if timestamp < after
+        
+        block.transactions.each_with_index do |tx, index|
+          next unless ((tx['signatures'] || []) & signatures).any?
           
-          return response if response.kind_of? Net::HTTPSuccess
-          @logger.warn "Unexpeced response: #{response.inspect}; temporarily falling back to non-persistent-http"
-          backoff
-          @net_http_persistent_enabled = false
-        rescue Net::HTTP::Persistent::Error => e
-          @logger.warn "Unable to perform request: #{request} :: #{e} :: #{!!e.cause ? "cause: #{e.cause.message}" : ''}; temporarily falling back to non-persistent-http"
-          backoff
-          @net_http_persistent_enabled = false
+          puts "Found matching signatures in #{(Time.now.utc - now)} seconds: #{signatures}"
+          ap tx
+          
+          return {
+            id: rpc_id,
+            result: {
+              id: block.transaction_ids[index],
+              block_num: block_num,
+              trx_num: index,
+              expired: false
+            }
+          }
         end
       end
-        
-      unless @net_http_persistent_enabled
-        non_persistent_http = Net::HTTP.new(uri.host, uri.port)
-        non_persistent_http.use_ssl = true
-        non_persistent_http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-        request = post_request
-        request.body = JSON[options]
-        
-        # Try to go back to http persistent on next request.
-        @net_http_persistent_enabled = true
-        
-        non_persistent_http.request(request)
-      end
+      
+      puts "Took #{(Time.now.utc - now)} seconds to scan for signatures."
     end
     
     def reset_failover

@@ -16,7 +16,7 @@ module Radiator
     MAX_BLOCKS_PER_NODE = 100
     
     def initialize(options = {})
-      @api_options = options
+      @api_options = options.dup
       @logger = @api_options[:logger] || Radiator.logger
     end
     

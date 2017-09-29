@@ -37,8 +37,9 @@ module Radiator
 
     def test_broadcast_transaction
       stub_post_empty
-      response = @api.broadcast_transaction
-      assert_equal response.class, Hashie::Mash, response.inspect
+      @api.broadcast_transaction do |result|
+        assert_equal Hashie::Array, result.class, result.inspect
+      end
     end
   end
 end

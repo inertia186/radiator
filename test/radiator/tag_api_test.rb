@@ -37,8 +37,9 @@ module Radiator
 
     def test_get_tags
       stub_post_empty
-      response = @api.get_tags
-      assert_equal Hashie::Mash, response.class, response.inspect
+      @api.get_tags do |tags|
+        assert_equal Hashie::Array, tags.class, tags.inspect
+      end
     end
   end
 end
