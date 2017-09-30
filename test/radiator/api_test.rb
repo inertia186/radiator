@@ -68,6 +68,7 @@ module Radiator
     def test_get_account_count
       stub_post_get_account_count
       @api.get_account_count do |count|
+        skip "Fixnum is deprecated." if count.class.to_s == 'Fixnum'
         assert_equal Integer, count.class, count.inspect
       end
     end

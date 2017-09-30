@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/inertia186/radiator.svg?branch=master)](https://travis-ci.org/inertia186/radiator)
 [![Code Climate](https://codeclimate.com/github/inertia186/radiator/badges/gpa.svg)](https://codeclimate.com/github/inertia186/radiator)
 [![Test Coverage](https://codeclimate.com/github/inertia186/radiator/badges/coverage.svg)](https://codeclimate.com/github/inertia186/radiator)
+[![Inline docs](http://inch-ci.org/github/inertia186/radiator.svg?branch=master&style=shields)](http://inch-ci.org/github/inertia186/radiator)
 
 [radiator](https://github.com/inertia186/radiator)
 ========
@@ -26,6 +27,10 @@ Radiator is an API Client for interaction with the STEEM network using Ruby.
   * Simplified operation construction.
 * Improved keep-alive defaults.
   * Better streaming reliability.
+
+---
+
+Also see: [Documentation](http://www.rubydoc.info/gems/radiator)
 
 ---
 

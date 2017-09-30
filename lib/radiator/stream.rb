@@ -10,9 +10,17 @@ module Radiator
   #   stream.current_witness do |witness|
   #     puts witness
   #   end
+  #
+  # More importantly, full blocks, transactions, and operations can be streamed.
   class Stream < Api
+    
+    # @private
     INITIAL_TIMEOUT = 0.0200
+    
+    # @private
     MAX_TIMEOUT = 80
+    
+    # @private
     MAX_BLOCKS_PER_NODE = 100
     
     def initialize(options = {})
@@ -20,52 +28,12 @@ module Radiator
       @logger = @api_options[:logger] || Radiator.logger
     end
     
-    def api
-      @api ||= Api.new(@api_options)
-    end
-    
-    def method_names
-      @method_names ||= [
-        :head_block_number,
-        :head_block_id,
-        :time,
-        :current_witness,
-        :total_pow,
-        :num_pow_witnesses,
-        :virtual_supply,
-        :current_supply,
-        :confidential_supply,
-        :current_sbd_supply,
-        :confidential_sbd_supply,
-        :total_vesting_fund_steem,
-        :total_vesting_shares,
-        :total_reward_fund_steem,
-        :total_reward_shares2,
-        :total_activity_fund_steem,
-        :total_activity_fund_shares,
-        :sbd_interest_rate,
-        :average_block_size,
-        :maximum_block_size,
-        :current_aslot,
-        :recent_slots_filled,
-        :participation_count,
-        :last_irreversible_block_num,
-        :max_virtual_bandwidth,
-        :current_reserve_ratio,
-        :block_numbers,
-        :blocks
-      ].freeze
-    end
-    
-    def method_params(method)
-      case method
-      when :block_numbers then {head_block_number: nil}
-      when :blocks then {get_block: :head_block_number}
-      else; nil
-      end
-    end
-    
     # Returns the latest operations from the blockchain.
+    #
+    #   stream = Radiator::Stream.new
+    #   stream.operations do |op|
+    #     puts op.to_json
+    #   end
     # 
     # If symbol are passed, then only that operation is returned.  Expected
     # symbols are:
@@ -98,6 +66,13 @@ module Radiator
     #   pow
     #   custom
     #
+    # For example, to stream only votes:
+    #
+    #   stream = Radiator::Stream.new
+    #   stream.operations(:vote) do |vote|
+    #     puts vote.to_json
+    #   end
+    #
     # @param type [symbol || Array<symbol>] the type(s) of operation, optional.
     # @param start starting block
     # @param mode we have the choice between
@@ -127,7 +102,12 @@ module Radiator
     end
     
     # Returns the latest transactions from the blockchain.
-    # 
+    #
+    #   stream = Radiator::Stream.new
+    #   stream.transactions do |tx, trx_id|
+    #     puts "[#{trx_id}] #{tx.to_json}"
+    #   end
+    #
     # @param start starting block
     # @param mode we have the choice between
     #   * :head the last block
@@ -150,6 +130,11 @@ module Radiator
     end
     
     # Returns the latest blocks from the blockchain.
+    #
+    #   stream = Radiator::Stream.new
+    #   stream.blocks do |bk, num|
+    #     puts "[#{num}] #{bk.to_json}"
+    #   end
     # 
     # @param start starting block
     # @param mode we have the choice between
@@ -201,6 +186,65 @@ module Radiator
       end
     end
     
+    # Stops the persistant http connections.
+    #
+    def shutdown
+      begin
+        @api.shutdown
+      rescue => e
+        @logger.warn("Unable to shut down: #{e}")
+      end
+      
+      @api = nil
+    end
+    
+    # @private
+    def method_names
+      @method_names ||= [
+        :head_block_number,
+        :head_block_id,
+        :time,
+        :current_witness,
+        :total_pow,
+        :num_pow_witnesses,
+        :virtual_supply,
+        :current_supply,
+        :confidential_supply,
+        :current_sbd_supply,
+        :confidential_sbd_supply,
+        :total_vesting_fund_steem,
+        :total_vesting_shares,
+        :total_reward_fund_steem,
+        :total_reward_shares2,
+        :total_activity_fund_steem,
+        :total_activity_fund_shares,
+        :sbd_interest_rate,
+        :average_block_size,
+        :maximum_block_size,
+        :current_aslot,
+        :recent_slots_filled,
+        :participation_count,
+        :last_irreversible_block_num,
+        :max_virtual_bandwidth,
+        :current_reserve_ratio,
+        :block_numbers,
+        :blocks
+      ].freeze
+    end
+    
+    # @private
+    def method_params(method)
+      case method
+      when :block_numbers then {head_block_number: nil}
+      when :blocks then {get_block: :head_block_number}
+      else; nil
+      end
+    end
+  private
+    def api
+      @api ||= Api.new(@api_options)
+    end
+    
     def method_missing(m, *args, &block)
       super unless respond_to_missing?(m)
       
@@ -247,18 +291,6 @@ module Radiator
       @timeout *= 2
       @timeout = INITIAL_TIMEOUT if @timeout > MAX_TIMEOUT
       @timeout
-    end
-    
-    # Stops the persistant http connections.
-    #
-    def shutdown
-      begin
-        @api.shutdown
-      rescue => e
-        @logger.warn("Unable to shut down: #{e}")
-      end
-      
-      @api = nil
     end
   end
 end

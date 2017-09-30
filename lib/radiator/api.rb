@@ -6,6 +6,130 @@ require 'openssl'
 require 'net/http/persistent'
 
 module Radiator
+  # Radiator::Api allows you to call remote methods to interact with the STEEM
+  # blockchain.  The `Api` class is a shortened name for
+  # `Radiator::DatabaseApi`.
+  #
+  # Examples:
+  #
+  #   api = Radiator::Api.new
+  #   response = api.get_dynamic_global_properties
+  #   virtual_supply = response.result.virtual_supply
+  #
+  # ... or ...
+  #
+  #   api = Radiator::Api.new
+  #   virtual_supply = api.get_dynamic_global_properties do |prop|
+  #     prop.virtual_supply
+  #   end
+  #
+  # If you need access to the `error` property, they can be accessed as follows:
+  #
+  #   api = Radiator::Api.new
+  #   response = api.get_dynamic_global_properties
+  #   if response.result.nil?
+  #     puts response.error
+  #     exit
+  #   end
+  #   
+  #   virtual_supply = response.result.virtual_supply
+  #
+  # ... or ...
+  #
+  #   api = Radiator::Api.new
+  #   virtual_supply = api.get_dynamic_global_properties do |prop, error|
+  #     if prop.nil?
+  #       puts error
+  #       exis
+  #     end
+  #     
+  #     prop.virtual_supply
+  #   end
+  #
+  # List of remote methods:
+  #
+  #   set_subscribe_callback
+  #   set_pending_transaction_callback
+  #   set_block_applied_callback
+  #   cancel_all_subscriptions
+  #   get_trending_tags
+  #   get_tags_used_by_author
+  #   get_post_discussions_by_payout
+  #   get_comment_discussions_by_payout
+  #   get_discussions_by_trending
+  #   get_discussions_by_trending30
+  #   get_discussions_by_created
+  #   get_discussions_by_active
+  #   get_discussions_by_cashout
+  #   get_discussions_by_payout
+  #   get_discussions_by_votes
+  #   get_discussions_by_children
+  #   get_discussions_by_hot
+  #   get_discussions_by_feed
+  #   get_discussions_by_blog
+  #   get_discussions_by_comments
+  #   get_discussions_by_promoted
+  #   get_block_header
+  #   get_block
+  #   get_ops_in_block
+  #   get_state
+  #   get_trending_categories
+  #   get_best_categories
+  #   get_active_categories
+  #   get_recent_categories
+  #   get_config
+  #   get_dynamic_global_properties
+  #   get_chain_properties
+  #   get_feed_history
+  #   get_current_median_history_price
+  #   get_witness_schedule
+  #   get_hardfork_version
+  #   get_next_scheduled_hardfork
+  #   get_accounts
+  #   get_account_references
+  #   lookup_account_names
+  #   lookup_accounts
+  #   get_account_count
+  #   get_conversion_requests
+  #   get_account_history
+  #   get_owner_history
+  #   get_recovery_request
+  #   get_escrow
+  #   get_withdraw_routes
+  #   get_account_bandwidth
+  #   get_savings_withdraw_from
+  #   get_savings_withdraw_to
+  #   get_order_book
+  #   get_open_orders
+  #   get_liquidity_queue
+  #   get_transaction_hex
+  #   get_transaction
+  #   get_required_signatures
+  #   get_potential_signatures
+  #   verify_authority
+  #   verify_account_authority
+  #   get_active_votes
+  #   get_account_votes
+  #   get_content
+  #   get_content_replies
+  #   get_discussions_by_author_before_date
+  #   get_replies_by_last_update
+  #   get_witnesses
+  #   get_witness_by_account
+  #   get_witnesses_by_vote
+  #   lookup_witness_accounts
+  #   get_witness_count
+  #   get_active_witnesses
+  #   get_miner_queue
+  #   get_reward_fund
+  #
+  # These methods and their characteristics are copied directly from methods
+  # marked as `database_api` in `steem-js`:
+  #
+  # https://raw.githubusercontent.com/steemit/steem-js/master/src/api/methods.js
+  #
+  # @see https://steemit.github.io/steemit-docs/#accounts
+  #
   class Api
     DEFAULT_URL = 'https://steemd.steemit.com'
     
@@ -21,10 +145,22 @@ module Radiator
       'https://rpc.steemliberator.com'
     ]
     
+    # @private
     POST_HEADERS = {
       'Content-Type' => 'application/json'
     }
     
+    # Cretes a new instance of Radiator::Api.
+    #
+    # Examples:
+    #
+    #   api = Radiator::Api.new(url: 'https://api.example.com')
+    #
+    # @param options [Hash] The attributes to initialize the Radiator::Api with.
+    # @option options [String] :url URL that points at a full node, like `https://steemd.steemit.com`.  Default from DEFAULT_URL.
+    # @option options [Array<String>] :failover_urls An array that contains one or more full nodes to fall back on.  Default from DEFAULT_FAILOVER_URLS.
+    # @option options [Logger] :logger An instance of `Logger` to send debug messages to.
+    # @option options [Boolean] :recover_transactions_on_error Have Radiator try to recover transactions that are accepted but could not be confirmed due to an error like network timeout.  Default: `true`
     def initialize(options = {})
       @user = options[:user]
       @password = options[:password]
@@ -51,20 +187,22 @@ module Radiator
       @api_options = options.dup
     end
     
-    def method_names
-      return @method_names if !!@method_names
-      
-      @method_names = Radiator::Api.methods(api_name).map do |e|
-        e['method'].to_sym
-      end
-    end
-    
-    def api_name
-      :database_api
-    end
-    
     # Get a specific block or range of blocks.
-    # 
+    #
+    # Example:
+    #
+    #   api = Radiator::Api.new
+    #   blocks = api.get_blocks(10..20)
+    #   transactions = blocks.flat_map(&:transactions)
+    #
+    # ... or ...
+    #
+    #   api = Radiator::Api.new
+    #   transactions = []
+    #   api.get_blocks(10..20) do |block|
+    #     transactions += block.transactions
+    #   end
+    #
     # @param block_number [Fixnum || Array<Fixnum>]
     # @param block the block to execute for each result, optional.
     # @return [Array]
@@ -82,7 +220,20 @@ module Radiator
       end
     end
     
-    # Find a specific block
+    # Find a specific block.
+    #
+    # Example:
+    #
+    #   api = Radiator::Api.new
+    #   block = api.find_block(12345678)
+    #   transactions = block.transactions
+    #
+    # ... or ...
+    #
+    #   api = Radiator::Api.new
+    #   transactions = api.find_block(12345678) do |block|
+    #     block.transactions
+    #   end
     # 
     # @param block_number [Fixnum]
     # @param block the block to execute for each result, optional.
@@ -95,6 +246,24 @@ module Radiator
       end
     end
     
+    # Find a specific account.
+    #
+    # Example:
+    #
+    #   api = Radiator::Api.new
+    #   ned = api.find_account('ned')
+    #   vesting_shares = ned.vesting_shares
+    #
+    # ... or ...
+    #
+    #   api = Radiator::Api.new
+    #   vesting_shares = api.find_account('ned') do |ned|
+    #     ned.vesting_shares
+    #   end
+    # 
+    # @param id [String] Name of the account to find.
+    # @param block the block to execute for each result, optional.
+    # @return [Hash]
     def find_account(id, &block)
       if !!block
         yield api.get_accounts([id]).result.first
@@ -103,6 +272,8 @@ module Radiator
       end
     end
     
+    # Returns the current base (STEEM) price in the vest asset (VESTS).
+    #
     def base_per_mvest
       api.get_dynamic_global_properties do |properties|
         total_vesting_fund_steem = properties.total_vesting_fund_steem.to_f
@@ -114,6 +285,8 @@ module Radiator
     
     alias steem_per_mvest base_per_mvest
     
+    # Returns the current base (STEEM) price in the debt asset (SBD).
+    #
     def base_per_debt
       get_feed_history do |feed_history|
         current_median_history = feed_history.current_median_history
@@ -121,17 +294,40 @@ module Radiator
         base = base.split(' ').first.to_f
         quote = current_median_history.quote
         quote = quote.split(' ').first.to_f
-
+        
         (base / quote) * steem_per_mvest
       end
     end
     
     alias steem_per_usd base_per_debt
     
+    # Stops the persistant http connections.
+    #
+    def shutdown
+      @http.shutdown if !!@http && defined?(@http.shutdown)
+      @http = nil
+    end
+    
+    # @private
+    def method_names
+      return @method_names if !!@method_names
+      
+      @method_names = Radiator::Api.methods(api_name).map do |e|
+        e['method'].to_sym
+      end
+    end
+    
+    # @private
+    def api_name
+      :database_api
+    end
+    
+    # @private
     def respond_to_missing?(m, include_private = false)
       method_names.include?(m.to_sym)
     end
     
+    # @private
     def method_missing(m, *args, &block)
       super unless respond_to_missing?(m)
       
@@ -161,39 +357,36 @@ module Radiator
             end
           end
           
-          response = request(options)
-          
           if response.nil?
-            @logger.error "No response, retrying ..."
-            backoff
-            redo
-          elsif !response.kind_of? Net::HTTPSuccess
-            @logger.warn "Unexpected response: #{response.inspect}"
-            backoff
-            redo
-          end
-          
-          response = case response.code
-          when '200'
-            body = response.body
-            response = JSON[body]
+            response = request(options)
             
-            if response.keys.include?('result') && response['result'].nil?
-              @logger.warn 'Invalid response from node, retrying ...'; nil
+            response = if response.nil?
+              @logger.error "No response, retrying ..."; nil
+            elsif !response.kind_of? Net::HTTPSuccess
+              @logger.warn "Unexpected response (code: #{response.code}): #{response.inspect}, retrying ..."; nil
             else
-              Hashie::Mash.new(response)
+              case response.code
+              when '200'
+                body = response.body
+                response = JSON[body]
+                
+                if response.keys.include?('result') && response['result'].nil?
+                  @logger.warn 'Invalid response from node, retrying ...'; nil
+                else
+                  Hashie::Mash.new(response)
+                end
+              when '400' then @logger.warn 'Code 400: Bad Request, retrying ...'; nil
+              when '502' then @logger.warn 'Code 502: Bad Gateway, retrying ...'; nil
+              when '503' then @logger.warn 'Code 503: Service Unavailable, retrying ...'; nil
+              when '504' then @logger.warn 'Code 504: Gateway Timeout, retrying ...'; nil
+              else
+                @logger.warn "Unknown code #{response.code}, retrying ..."
+                ap response
+              end
             end
-          when '400' then @logger.warn 'Code 400: Bad Request, retrying ...'; nil
-          when '502' then @logger.warn 'Code 502: Bad Gateway, retrying ...'; nil
-          when '503' then @logger.warn 'Code 503: Service Unavailable, retrying ...'; nil
-          when '504' then @logger.warn 'Code 504: Gateway Timeout, retrying ...'; nil
-          else
-            @logger.warn "Unknown code #{response.code}, retrying ..."
-            ap response
           end
         rescue Net::HTTP::Persistent::Error => e
-          @logger.warn "Unable to perform request: #{e} :: #{!!e.cause ? "cause: #{e.cause.message}" : ''}"
-          @wakka = true
+          @logger.warn "Unable to perform request: #{e} :: #{!!e.cause ? "cause: #{e.cause.message}" : ''}, retrying ..."
         rescue Errno::ECONNREFUSED => e
           @logger.warn 'Connection refused, retrying ...'
         rescue Errno::EADDRNOTAVAIL => e
@@ -211,7 +404,7 @@ module Radiator
         rescue JSON::ParserError => e
           @logger.warn "JSON Parse Error (#{e.message}), retrying ..."
         rescue => e
-          @logger.warn "Unknown exception from request ..."
+          @logger.warn "Unknown exception from request, retrying ..."
           ap e if defined? ap
         end
         
@@ -225,11 +418,6 @@ module Radiator
 
         backoff
       end # loop
-    end
-    
-    def shutdown
-      @http.shutdown if !!@http && defined?(@http.shutdown)
-      @http = nil
     end
   private
     def self.methods_json_path
