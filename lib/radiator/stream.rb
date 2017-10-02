@@ -38,33 +38,42 @@ module Radiator
     # If symbol are passed, then only that operation is returned.  Expected
     # symbols are:
     #
-    #   transfer_to_vesting
-    #   withdraw_vesting
-    #   interest
-    #   transfer
-    #   liquidity_reward
-    #   author_reward
-    #   curation_reward
-    #   transfer_to_savings
-    #   transfer_from_savings
+    #   account_create
+    #   account_create_with_delegation
+    #   account_update
+    #   account_witness_proxy
+    #   account_witness_vote
     #   cancel_transfer_from_savings
-    #   escrow_transfer
+    #   change_recovery_account
+    #   claim_reward_balance
+    #   comment
+    #   comment_options
+    #   convert
+    #   custom
+    #   custom_json
+    #   decline_voting_rights
+    #   delegate_vesting_shares
+    #   delete_comment
     #   escrow_approve
     #   escrow_dispute
     #   escrow_release
-    #   comment
-    #   limit_order_create
+    #   escrow_transfer
+    #   feed_publish
     #   limit_order_cancel
-    #   fill_convert_request
-    #   fill_order
-    #   vote
-    #   account_witness_vote
-    #   account_witness_proxy
-    #   account_create
-    #   account_update
-    #   witness_update
+    #   limit_order_create
+    #   limit_order_create2
     #   pow
-    #   custom
+    #   pow2
+    #   recover_account
+    #   request_account_recovery
+    #   set_withdraw_vesting_route
+    #   transfer
+    #   transfer_from_savings
+    #   transfer_to_savings
+    #   transfer_to_vesting
+    #   vote
+    #   withdraw_vesting
+    #   witness_update
     #
     # For example, to stream only votes:
     #
@@ -73,30 +82,93 @@ module Radiator
     #     puts vote.to_json
     #   end
     #
+    # You can also stream virtual operations:
+    #
+    #   stream = Radiator::Stream.new
+    #   stream.operations(:author_reward) do |vop|
+    #       puts "#{vop.author} got paid for #{vop.permlink}: #{[vop.sbd_payout, vop.steem_payout, vop.vesting_payout]}"
+    #   end
+    #
+    # ... or multiple virtual operation types;
+    #
+    #   stream = Radiator::Stream.new
+    #   stream.operations([:produer_reward, :author_reward]) do |vop|
+    #     puts vop
+    #   end
+    #
+    # ... or all types, inluding virtual operation types;
+    #
+    #   stream = Radiator::Stream.new
+    #   stream.operations(nil, nil, :head, include_virtual: true) do |vop|
+    #     puts vop
+    #   end
+    #
+    # Expected virtual operation types:
+    #
+    #   author_reward
+    #   curation_reward
+    #   fill_convert_request
+    #   fill_order
+    #   fill_vesting_withdraw
+    #   interest
+    #   shutdown_witness
+    #
     # @param type [symbol || Array<symbol>] the type(s) of operation, optional.
     # @param start starting block
     # @param mode we have the choice between
     #   * :head the last block
     #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
     # @param block the block to execute for each result, optional.
+    # @param options [Hash] additional options
+    # @option options [Boollean] :include_virtual Also stream virtual options.  Setting this true will impact performance.  Default: false.
     # @return [Hash]
-    def operations(type = nil, start = nil, mode = :irreversible, &block)
-      transactions(start, mode) do |transaction|
+    def operations(type = nil, start = nil, mode = :irreversible, options = {include_virtual: false}, &block)
+      type = [type].flatten.compact.map(&:to_sym)
+      include_virtual = !!options[:include_virtual]
+      
+      if virtual_op_type?(type)
+        include_virtual = true
+      end
+      
+      latest_block_number = -1
+      
+      transactions(start, mode) do |transaction, trx_id, block_number|
+        virtual_ops_collected = latest_block_number == block_number
+        latest_block_number = block_number
+        
         ops = transaction.operations.map do |t, op|
           t = t.to_sym
-          if type == t
+          if type.size == 1 && type.first == t
             op
-          elsif type.nil? || [type].flatten.include?(t)
+          elsif type.none? || type.include?(t)
             {t => op}
           end
         end.compact
+        
+        if include_virtual && !virtual_ops_collected
+          api.get_ops_in_block(block_number, true) do |vops|
+            vops.each do |vtx|
+              next unless defined? vtx.op
+              
+              t = vtx.op.first.to_sym
+              op = vtx.op.last
+              if type.size == 1 && type.first == t
+                ops << op
+              elsif type.none? || type.include?(t)
+                ops << {t => op}
+              end
+            end
+          end
+          
+          virtual_ops_collected = true
+        end
         
         next if ops.none?
         
         return ops unless !!block
         
         ops.each do |op|
-          yield op
+          yield op, trx_id, block_number
         end
       end
     end
@@ -115,7 +187,7 @@ module Radiator
     # @param block the block to execute for each result, optional.
     # @return [Hash]
     def transactions(start = nil, mode = :irreversible, &block)
-      blocks(start, mode) do |b|
+      blocks(start, mode) do |b, block_number|
         next if (_transactions = b.transactions).nil?
         return _transactions unless !!block
         
@@ -124,7 +196,7 @@ module Radiator
             b['transaction_ids'][index]
           end
           
-          yield transaction, trx_id
+          yield transaction, trx_id, block_number
         end
       end
     end
@@ -145,44 +217,72 @@ module Radiator
     # @return [Hash]
     def blocks(start = nil, mode = :irreversible, max_blocks_per_node = MAX_BLOCKS_PER_NODE, &block)
       counter = 0
-      
-      if start.nil?
-        properties = api.get_dynamic_global_properties.result
-        start = case mode.to_sym
-        when :head then properties.head_block_number
-        when :irreversible then properties.last_irreversible_block_num
-        else; raise StreamError, '"mode" has to be "head" or "irreversible"'
-        end
-      end
+      latest_block_number = -1
+      @api_options[:max_requests] = [max_blocks_per_node * 2, @api_options[:max_requests].to_i].max
       
       loop do
-        properties = api.get_dynamic_global_properties.result
-        
-        head_block = case mode.to_sym
-        when :head then properties.head_block_number
-        when :irreversible then properties.last_irreversible_block_num
-        else; raise StreamError, '"mode" has to be "head" or "irreversible"'
-        end
-        
-        [*(start..(head_block))].each do |n|
-          if (counter += 1) > max_blocks_per_node
-            shutdown
-            counter = 0
+        catch :sequence do; begin
+          head_block = api.get_dynamic_global_properties do |properties|
+            if properties.head_block_number.nil?
+              # This can happen if a reverse proxy is acting up.
+              @logger.warn "Bad block sequence after height: #{latest_block_number}"
+              throw :sequence
+            end
+                
+            case mode.to_sym
+            when :head then properties.head_block_number
+            when :irreversible then properties.last_irreversible_block_num
+            else; raise StreamError, '"mode" has to be "head" or "irreversible"'
+            end
           end
+            
+          if head_block == latest_block_number
+            # This can when there's a delay in block production.
+            sleep 0.5
+            throw :sequence
+          elsif head_block < latest_block_number
+            # This can happen if a reverse proxy is acting up.
+            @logger.warn "Invalid block sequence at height: #{head_block}"
+            sleep 0.5
+            throw :sequence
+          end
+          
+          start ||= head_block
+          range = (start..head_block)
+          
+          if range.size > 400
+            # When the range is 400 blocks, the stream will be behind by about
+            # 20 minutes.  Time to warn.
+            @logger.warn "Stream behind by #{range.size} blocks (about #{(range.size * 3) / 60.0} minutes)."
+          end
+          
+          [*range].each do |n|
+            if (counter += 1) > max_blocks_per_node
+              shutdown
+              counter = 0
+            end
 
-          response = api.send(:get_block, n)
-          raise StreamError, JSON[response.error] if !!response.error
-          result = response.result
-        
-          if !!block
-            yield result, n
-          else
-            return result, n
+            api.get_block(n) do |current_block, error|
+              if !!error
+                @logger.warn "Node responded with: #{error.message || 'unknown error'}"
+                ap error
+                throw :sequence
+              end
+              
+              latest_block_number = n
+              return current_block, n if block.nil?
+              yield current_block, n
+            end
+            
+            start = head_block + 1
+            sleep 3 / range.size
           end
-        end
-        
-        start = head_block + 1
-        sleep 3
+        rescue StreamError; raise
+        rescue => e
+          @logger.warn "Unknown streaming error: #{e.inspect}, retrying ...  "
+          ap e
+          redo
+        end; end
       end
     end
     
@@ -241,10 +341,6 @@ module Radiator
       end
     end
   private
-    def api
-      @api ||= Api.new(@api_options)
-    end
-    
     def method_missing(m, *args, &block)
       super unless respond_to_missing?(m)
       
@@ -291,6 +387,12 @@ module Radiator
       @timeout *= 2
       @timeout = INITIAL_TIMEOUT if @timeout > MAX_TIMEOUT
       @timeout
+    end
+    
+    def virtual_op_type?(type)
+      type = [type].flatten.compact.map(&:to_sym)
+      
+      (Radiator::OperationTypes::TYPES.keys && type).any?
     end
   end
 end

@@ -161,6 +161,7 @@ module Radiator
     # @option options [Array<String>] :failover_urls An array that contains one or more full nodes to fall back on.  Default from DEFAULT_FAILOVER_URLS.
     # @option options [Logger] :logger An instance of `Logger` to send debug messages to.
     # @option options [Boolean] :recover_transactions_on_error Have Radiator try to recover transactions that are accepted but could not be confirmed due to an error like network timeout.  Default: `true`
+    # @option options [Integer] :max_requests Maximum number of requests on a connection before it is considered expired and automatically closed.
     def initialize(options = {})
       @user = options[:user]
       @password = options[:password]
@@ -171,6 +172,7 @@ module Radiator
       @debug = !!options[:debug]
       @logger = options[:logger] || Radiator.logger
       @hashie_logger = options[:hashie_logger] || Logger.new(nil)
+      @max_requests = options[:max_requests] || 30
       
       unless @hashie_logger.respond_to? :warn
         @hashie_logger = Logger.new(@hashie_logger)
@@ -304,8 +306,11 @@ module Radiator
     # Stops the persistant http connections.
     #
     def shutdown
+      @http_id = nil
       @http.shutdown if !!@http && defined?(@http.shutdown)
       @http = nil
+      @api.shutdown if !!@api && @api != self
+      @api = nil
     end
     
     # @private
@@ -403,6 +408,9 @@ module Radiator
           @logger.warn "Socket Error (#{e.message}), retrying ..."
         rescue JSON::ParserError => e
           @logger.warn "JSON Parse Error (#{e.message}), retrying ..."
+          response = nil
+        rescue ApiError => e
+          @logger.warn "ApiError (#{e.message}), retrying ..."
         rescue => e
           @logger.warn "Unknown exception from request, retrying ..."
           ap e if defined? ap
@@ -444,13 +452,19 @@ module Radiator
       @uri ||= URI.parse(@url)
     end
     
+    def http_id
+      @http_id ||= "radiator-#{Radiator::VERSION}-#{api_name}-#{SecureRandom.uuid}"
+    end
+    
     def http
-      @http_id ||= "radiator-#{Radiator::VERSION}-#{self.class.name.downcase}"
-      @http ||= Net::HTTP::Persistent.new(@http_id).tap do |http|
-        http.retry_change_requests = true
-        http.max_requests = 30
+      @http ||= Net::HTTP::Persistent.new(http_id).tap do |http|
+        idempotent = api_name != :network_broadcast_api
+        http.keep_alive = 30
         http.read_timeout = 10
         http.open_timeout = 10
+        http.idle_timeout = idempotent ? 10 : nil
+        http.max_requests = @max_requests
+        http.retry_change_requests = idempotent
       end
     end
     
@@ -488,16 +502,13 @@ module Radiator
       # but we also give up once the block time is before the `after` argument.
       
       api.get_blocks(block_range) do |block, block_num|
-        raise "Race condition detected at: #{block_num}" if block.nil?
+        raise ApiError, "Race condition detected on remote node at: #{block_num}" if block.nil?
         
         timestamp = Time.parse(block.timestamp + 'Z')
         break if timestamp < after
         
         block.transactions.each_with_index do |tx, index|
           next unless ((tx['signatures'] || []) & signatures).any?
-          
-          puts "Found matching signatures in #{(Time.now.utc - now)} seconds: #{signatures}"
-          ap tx
           
           return {
             id: rpc_id,
@@ -510,8 +521,6 @@ module Radiator
           }
         end
       end
-      
-      puts "Took #{(Time.now.utc - now)} seconds to scan for signatures."
     end
     
     def reset_failover

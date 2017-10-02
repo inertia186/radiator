@@ -106,6 +106,11 @@ module Radiator
       # The expiration allows for transactions to expire if they are not
       # included into a block by that time.  Always update it to the current
       # time + EXPIRE_IN_SECS.
+      #
+      # Note, as of #1215, expiration exactly 'now' will be rejected:
+      # https://github.com/steemit/steem/blob/57451b80d2cf480dcce9b399e48e56aa7af1d818/libraries/chain/database.cpp#L2870
+      # https://github.com/steemit/steem/issues/1215
+      
       @expiration = Time.parse(@properties.time + 'Z') + EXPIRE_IN_SECS
       
       self
