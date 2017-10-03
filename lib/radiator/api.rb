@@ -336,6 +336,7 @@ module Radiator
     def method_missing(m, *args, &block)
       super unless respond_to_missing?(m)
       
+      method_name = [api_name, m].join('.')
       response = nil
       options = {
         jsonrpc: "2.0",
@@ -351,12 +352,12 @@ module Radiator
         tries += 1
         
         begin
-          if @recover_transactions_on_error
+          if @recover_transactions_on_error && api_name == :network_broadcast_api
             signatures = extract_signatures(options)
             
             if tries > 1 && !!signatures && signatures.any?
               if !!(response = recover_transaction(signatures, rpc_id, timestamp))
-                @logger.warn 'Found recovered transaction after retry.'
+                warning 'Found recovered transaction after retry.', method_name
                 response = Hashie::Mash.new(response)
               end
             end
@@ -366,54 +367,61 @@ module Radiator
             response = request(options)
             
             response = if response.nil?
-              @logger.error "No response, retrying ..."; nil
+              error "No response, retrying ...", method_name
             elsif !response.kind_of? Net::HTTPSuccess
-              @logger.warn "Unexpected response (code: #{response.code}): #{response.inspect}, retrying ..."; nil
+              warning "Unexpected response (code: #{response.code}): #{response.inspect}, retrying ...", method_name
             else
               case response.code
               when '200'
                 body = response.body
                 response = JSON[body]
                 
-                if response.keys.include?('result') && response['result'].nil?
-                  @logger.warn 'Invalid response from node, retrying ...'; nil
+                if response['id'] != options[:id]
+                  warning "Unexpected rpc_id (expected: #{options[:id]}, got: #{response['id']}), retrying ...", method_name
+                elsif response.keys.include?('error')
+                  case response['error']['code']
+                  when -32601 # Assert Exception:method_itr != api_itr->second.end(): Could not find method ...
+                    nil
+                  else
+                    Hashie::Mash.new(response)
+                  end
                 else
                   Hashie::Mash.new(response)
                 end
-              when '400' then @logger.warn 'Code 400: Bad Request, retrying ...'; nil
-              when '502' then @logger.warn 'Code 502: Bad Gateway, retrying ...'; nil
-              when '503' then @logger.warn 'Code 503: Service Unavailable, retrying ...'; nil
-              when '504' then @logger.warn 'Code 504: Gateway Timeout, retrying ...'; nil
+              when '400' then warning 'Code 400: Bad Request, retrying ...', method_name
+              when '502' then warning 'Code 502: Bad Gateway, retrying ...', method_name
+              when '503' then warning 'Code 503: Service Unavailable, retrying ...', method_name
+              when '504' then warning 'Code 504: Gateway Timeout, retrying ...', method_name
               else
-                @logger.warn "Unknown code #{response.code}, retrying ..."
+                warning "Unknown code #{response.code}, retrying ...", method_name
                 ap response
               end
             end
           end
         rescue Net::HTTP::Persistent::Error => e
-          @logger.warn "Unable to perform request: #{e} :: #{!!e.cause ? "cause: #{e.cause.message}" : ''}, retrying ..."
+          warning "Unable to perform request: #{e} :: #{!!e.cause ? "cause: #{e.cause.message}" : ''}, retrying ...", method_name
         rescue Errno::ECONNREFUSED => e
-          @logger.warn 'Connection refused, retrying ...'
+          warning 'Connection refused, retrying ...', method_name
         rescue Errno::EADDRNOTAVAIL => e
-          @logger.warn 'Node not available, retrying ...'
+          warning 'Node not available, retrying ...', method_name
         rescue Net::ReadTimeout => e
-          @logger.warn 'Node read timeout, retrying ...'
+          warning 'Node read timeout, retrying ...', method_name
         rescue Net::OpenTimeout => e
-          @logger.warn 'Node timeout, retrying ...'
+          warning 'Node timeout, retrying ...', method_name
         rescue RangeError => e
-          @logger.warn 'Range Error, retrying ...'
+          warning 'Range Error, retrying ...', method_name
         rescue OpenSSL::SSL::SSLError => e
-          @logger.warn "SSL Error (#{e.message}), retrying ..."
+          warning "SSL Error (#{e.message}), retrying ...", method_name
         rescue SocketError => e
-          @logger.warn "Socket Error (#{e.message}), retrying ..."
+          warning "Socket Error (#{e.message}), retrying ...", method_name
         rescue JSON::ParserError => e
-          @logger.warn "JSON Parse Error (#{e.message}), retrying ..."
+          warning "JSON Parse Error (#{e.message}), retrying ...", method_name
           response = nil
         rescue ApiError => e
-          @logger.warn "ApiError (#{e.message}), retrying ..."
-        rescue => e
-          @logger.warn "Unknown exception from request, retrying ..."
-          ap e if defined? ap
+          warning "ApiError (#{e.message}), retrying ...", method_name
+        # rescue => e
+        #   warning "Unknown exception from request, retrying ...", method_name
+        #   ap e if defined? ap
         end
         
         if !!response
@@ -479,8 +487,6 @@ module Radiator
     end
     
     def extract_signatures(options)
-      return unless options[:params].include? :network_broadcast_api
-      
       options[:params].map do |param|
         next unless defined? param.map
         
@@ -526,7 +532,7 @@ module Radiator
     def reset_failover
       @url = @preferred_url.dup
       @failover_urls = @preferred_failover_urls.dup
-      @logger.warn "Failover reset, going back to #{@url} ..."
+      warning "Failover reset, going back to #{@url} ..."
     end
     
     def pop_failover_url
@@ -538,7 +544,7 @@ module Radiator
       
       @uri = nil
       @url = pop_failover_url
-      @logger.warn "Failing over to #{@url} ..."
+      warning "Failing over to #{@url} ..."
     end
     
     def backoff
@@ -555,5 +561,18 @@ module Radiator
         @backoff_sleep = nil
       end
     end
+    
+    def send_log(level, message, prefix = nil)
+      if !!prefix
+        @logger.send level, "#{prefix} :: #{message}"
+      else
+        @logger.send level, "#{message}"
+      end
+      
+      nil
+    end
+    
+    def error(message, prefix = nil); send_log(:error, message, prefix); end
+    def warning(message, prefix = nil); send_log(:warn, message, prefix); end
   end
 end

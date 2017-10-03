@@ -225,7 +225,7 @@ module Radiator
           head_block = api.get_dynamic_global_properties do |properties|
             if properties.head_block_number.nil?
               # This can happen if a reverse proxy is acting up.
-              @logger.warn "Bad block sequence after height: #{latest_block_number}"
+              warning "Bad block sequence after height: #{latest_block_number}"
               throw :sequence
             end
                 
@@ -242,7 +242,7 @@ module Radiator
             throw :sequence
           elsif head_block < latest_block_number
             # This can happen if a reverse proxy is acting up.
-            @logger.warn "Invalid block sequence at height: #{head_block}"
+            warning "Invalid block sequence at height: #{head_block}"
             sleep 0.5
             throw :sequence
           end
@@ -253,7 +253,7 @@ module Radiator
           if range.size > 400
             # When the range is 400 blocks, the stream will be behind by about
             # 20 minutes.  Time to warn.
-            @logger.warn "Stream behind by #{range.size} blocks (about #{(range.size * 3) / 60.0} minutes)."
+            warning "Stream behind by #{range.size} blocks (about #{(range.size * 3) / 60.0} minutes)."
           end
           
           [*range].each do |n|
@@ -263,8 +263,11 @@ module Radiator
             end
 
             api.get_block(n) do |current_block, error|
-              if !!error
-                @logger.warn "Node responded with: #{error.message || 'unknown error'}"
+              if current_block.nil?
+                warning "Node responded with: empty block, retrying ..."
+                throw :sequence
+              elsif !!error
+                warning "Node responded with: #{error.message || 'unknown error'}, retrying ..."
                 ap error
                 throw :sequence
               end
@@ -278,10 +281,10 @@ module Radiator
             sleep 3 / range.size
           end
         rescue StreamError; raise
-        rescue => e
-          @logger.warn "Unknown streaming error: #{e.inspect}, retrying ...  "
-          ap e
-          redo
+        # rescue => e
+        #   warning "Unknown streaming error: #{e.inspect}, retrying ...  "
+        #   ap e
+        #   redo
         end; end
       end
     end
@@ -292,7 +295,7 @@ module Radiator
       begin
         @api.shutdown
       rescue => e
-        @logger.warn("Unable to shut down: #{e}")
+        warning("Unable to shut down: #{e}")
       end
       
       @api = nil
@@ -360,7 +363,7 @@ module Radiator
               raise StreamError, JSON[response.error] if !!response.error
               result = response.result
               break if !!result
-              @logger.warn "#{key}: #{param} result missing, retrying with timeout: #{@timeout || INITIAL_TIMEOUT} seconds"
+              warnning "#{key}: #{param} result missing, retrying with timeout: #{@timeout || INITIAL_TIMEOUT} seconds"
               shutdown
               sleep timeout
             end
