@@ -135,7 +135,6 @@ module Radiator
     
     DEFAULT_FAILOVER_URLS = [
       DEFAULT_URL,
-      'https://steemd.steemitdev.com',
       'https://steemd-int.steemit.com',
       'https://steemd.steemitstage.com',
       'https://gtg.steem.house:8090',
@@ -167,12 +166,18 @@ module Radiator
       @password = options[:password]
       @url = options[:url] || DEFAULT_URL
       @preferred_url = @url.dup
-      @failover_urls = options[:failover_urls] || (DEFAULT_FAILOVER_URLS - [@url])
-      @preferred_failover_urls = @failover_urls.dup
+      @failover_urls = options[:failover_urls]
       @debug = !!options[:debug]
       @logger = options[:logger] || Radiator.logger
       @hashie_logger = options[:hashie_logger] || Logger.new(nil)
       @max_requests = options[:max_requests] || 30
+      
+      if @failover_urls.nil?
+        @failover_urls = DEFAULT_FAILOVER_URLS - [@url]
+      end
+      
+      @failover_urls = [@failover_urls].flatten.compact
+      @preferred_failover_urls = @failover_urls.dup
       
       unless @hashie_logger.respond_to? :warn
         @hashie_logger = Logger.new(@hashie_logger)
