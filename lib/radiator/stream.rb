@@ -225,8 +225,9 @@ module Radiator
           head_block = api.get_dynamic_global_properties do |properties|
             if properties.head_block_number.nil?
               # This can happen if a reverse proxy is acting up.
-              warning "Bad block sequence after height: #{latest_block_number}"
-              throw :sequence
+              standby "Bad block sequence after height: #{latest_block_number}", {
+                and: {throw: :sequence}
+              }
             end
                 
             case mode.to_sym
@@ -242,9 +243,9 @@ module Radiator
             throw :sequence
           elsif head_block < latest_block_number
             # This can happen if a reverse proxy is acting up.
-            warning "Invalid block sequence at height: #{head_block}"
-            sleep 0.5
-            throw :sequence
+            standby "Invalid block sequence at height: #{head_block}", {
+              and: {backoff: api, throw: :sequence}
+            }
           end
           
           start ||= head_block
@@ -253,7 +254,7 @@ module Radiator
           if range.size > 400
             # When the range is 400 blocks, the stream will be behind by about
             # 20 minutes.  Time to warn.
-            warning "Stream behind by #{range.size} blocks (about #{(range.size * 3) / 60.0} minutes)."
+            standby "Stream behind by #{range.size} blocks (about #{(range.size * 3) / 60.0} minutes)."
           end
           
           [*range].each do |n|
@@ -262,14 +263,16 @@ module Radiator
               counter = 0
             end
 
-            api.get_block(n) do |current_block, error|
+            block_api.get_block(n) do |current_block, error|
               if current_block.nil?
-                warning "Node responded with: empty block, retrying ..."
-                throw :sequence
+                standby "Node responded with: empty block, retrying ...", {
+                  and: {throw: :sequence}
+                }
               elsif !!error
-                warning "Node responded with: #{error.message || 'unknown error'}, retrying ..."
-                ap error
-                throw :sequence
+                standby "Node responded with: #{error.message || 'unknown error'}, retrying ...", {
+                  error: error,
+                  and: {throw: :sequence}
+                }
               end
               
               latest_block_number = n
@@ -396,6 +399,19 @@ module Radiator
       type = [type].flatten.compact.map(&:to_sym)
       
       (Radiator::OperationTypes::TYPES.keys && type).any?
+    end
+    
+    def standby(message, options = {})
+      error = options[:error]
+      secondary = options[:and] || {}
+      backoff_api = secondary[:backoff]
+      throwable = secondary[:throw]
+      
+      warning message
+      
+      ap error if !!error
+      backoff_api.send :backoff if !!backoff_api
+      throw throwable if !!throwable
     end
   end
 end

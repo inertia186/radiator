@@ -213,11 +213,11 @@ module Radiator
       
       if !!block
         block_number.each do |i|
-          yield api.get_block(i).result, i
+          yield block_api.get_block(i).result, i
         end
       else
         block_number.map do |i|
-          api.get_block(i).result
+          block_api.get_block(i).result
         end
       end
     end
@@ -311,6 +311,8 @@ module Radiator
       @http = nil
       @api.shutdown if !!@api && @api != self
       @api = nil
+      @block_api.shutdown if !!@block_api && @block_api != self
+      @block_api = nil
     end
     
     # @private
@@ -450,7 +452,11 @@ module Radiator
     def api
       @api ||= self.class == Api ? self : Api.new(@api_options)
     end
-
+    
+    def block_api
+      @block_api ||= self.class == BlockApi ? self : BlockApi.new(@api_options)
+    end
+    
     def rpc_id
       @rpc_id ||= 0
       @rpc_id = @rpc_id + 1
