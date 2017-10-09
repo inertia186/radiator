@@ -52,6 +52,8 @@ If you don't have `bundler`, see the next section.
     
 ### Prerequisites
 
+`minimum ruby version: 2.2`
+
 #### Linux
 
 ```bash

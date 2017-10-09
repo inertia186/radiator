@@ -100,5 +100,12 @@ module Radiator
         assert_equal Hashie::Array, delegation.class, delegation.inspect
       end
     end
+    
+    def test_get_witness_by_account
+      stub_post_null
+      @api.get_witness_by_account('') do |witness|
+        assert_equal NilClass, witness.class, witness.inspect
+      end
+    end
   end
 end
