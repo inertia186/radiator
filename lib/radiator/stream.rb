@@ -92,7 +92,7 @@ module Radiator
     # ... or multiple virtual operation types;
     #
     #   stream = Radiator::Stream.new
-    #   stream.operations([:produer_reward, :author_reward]) do |vop|
+    #   stream.operations([:producer_reward, :author_reward]) do |vop|
     #     puts vop
     #   end
     #
@@ -105,6 +105,7 @@ module Radiator
     #
     # Expected virtual operation types:
     #
+    #   producer_reward
     #   author_reward
     #   curation_reward
     #   fill_convert_request

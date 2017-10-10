@@ -138,9 +138,9 @@ module Radiator
       'https://steemd-int.steemit.com',
       'https://steemd.steemitstage.com',
       'https://gtg.steem.house:8090',
-      "https://seed.bitcoiner.me",
-      "https://steemd.minnowsupportproject.org",
-      "https://steemd.privex.io",
+      'https://seed.bitcoiner.me',
+      'https://steemd.minnowsupportproject.org',
+      'https://steemd.privex.io',
       'https://rpc.steemliberator.com'
     ]
     

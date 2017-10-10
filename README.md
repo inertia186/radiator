@@ -10,6 +10,16 @@
 
 Radiator is an API Client for interaction with the STEEM network using Ruby.
 
+#### Changes in v0.3.0
+
+* Gem updates
+* Added failover subroutines (see Failover section, below).
+* Added method closures support (aka passing a block to yield).
+* You can now stream virtual operations (see Streaming section, below).
+* Added more [documentation](http://www.rubydoc.info/gems/radiator).
+* Added/expanded more api namespaces: `::BlockApi`, `::CondenserApi`, `::TagApi`
+* Addressed an issue with logging on certain Windows configurations.
+
 #### Fixes in v0.2.3
 
 * Gem updates
@@ -73,6 +83,18 @@ $ gem install bundler
 require 'radiator'
 
 api = Radiator::Api.new
+api.get_dynamic_global_properties do |properties|
+  properties.virtual_supply
+end
+=> "135377049.603 STEEM"
+```
+
+... or ...
+
+```ruby
+require 'radiator'
+
+api = Radiator::Api.new
 response = api.get_dynamic_global_properties
 response.result.virtual_supply
 => "135377049.603 STEEM"
@@ -82,8 +104,9 @@ response.result.virtual_supply
 
 ```ruby
 api = Radiator::FollowApi.new
-response = api.get_followers('inertia', 0, 'blog', 100)
-response.result.map(&:follower)
+api.get_followers('inertia', 0, 'blog', 100) do |followers|
+  followers.map(&:follower)
+end
 => ["a11at",
  "abarefootpoet",
  "abit",
@@ -103,6 +126,8 @@ response.result.map(&:follower)
  .
  "steemzine"]
 ```
+
+#### Streaming
 
 Here's an example of how to use a streaming instance to listen for votes:
 
@@ -139,8 +164,6 @@ helikopterben voted for etcmike (weight: 100.0%)
 .
 .
 ```
-
-#### Streaming
 
 You can also just stream all operations like this:
 
@@ -202,6 +225,29 @@ Example of the output:
       "orderid":2755220300
    }
 }
+.
+.
+.
+```
+
+You can also stream virtual operations:
+
+```ruby
+stream.operations(:producer_reward) do |op|
+  puts "#{op.producer} got a reward: #{op.vesting_shares}"
+end
+```
+
+Example of the output:
+
+```
+anyx got a reward: 390.974648 VESTS
+gtg got a reward: 390.974647 VESTS
+someguy123 got a reward: 390.974646 VESTS
+jesta got a reward: 390.974646 VESTS
+blocktrades got a reward: 390.974645 VESTS
+timcliff got a reward: 390.974644 VESTS
+bhuz got a reward: 1961.046504 VESTS
 .
 .
 .
@@ -344,6 +390,36 @@ tx.process(true)
 ```
 
 There's a complete list of operations known to Radiator in [`broadcast_operations.json`](https://github.com/inertia186/radiator/blob/master/lib/radiator/broadcast_operations.json).
+
+## Failover
+
+Radiator supports failover for situations where a node has, for example, become unresponsive.  When creating a new instance of `::Api`, `::Stream`, and `::Transaction`, you may provide a list of alternative nodes, or leave them out to use the default list.  For example:
+
+```ruby
+options = {
+  ur: 'https://steemd.steemit.com',
+  failover_urls: [
+    'https://steemd.steemitstage.com',
+    'https://gtg.steem.house:8090'
+  ]
+}
+
+api = Radiator::Api.new(options)
+```
+
+In a nutshell, the way this works is Radiator will try a node and proceed until it encounters an error, then retry the request.  If it encounters a second error within 5 minutes, it will abandon the node and try a random one from `failover_urls`.
+
+It'll keep doing this until it runs out of failovers, then it will reset the configuration and go back to the original node.
+
+Radiator uses an exponential back-off subroutine to avoid slamming nodes when they act up.
+
+There's an additional behavior in `::Stream`.  When a node responds with a block out of sequence, it will use the failover logic above.  Although this is not a network layer failure, it is a bad result that may indicate a problem on the node, so a new node is picked.
+
+There is another rare scenario involving `::Transaction` broadcasts that's handled by the failover logic: When a node responds with a network error *after* a signed transaction is accepted, Radiator will do a look-up to find the accepted signature in order to avoid triggering a `dupe_check` error from the blockchain.  This subroutine might take up to five minutes to execute in the worst possible situation.  To disable this behavior, use the `recover_transactions_on_error` and set it to `false`, e.g.:
+
+```ruby
+tx = Radiator::Transaction.new(wif: wif, recover_transactions_on_error: false)
+```
 
 ## Tests
 
