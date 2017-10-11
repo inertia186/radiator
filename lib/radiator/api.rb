@@ -311,6 +311,7 @@ module Radiator
     # Stops the persistant http connections.
     #
     def shutdown
+      @uri = nil
       @http_id = nil
       @http.shutdown if !!@http && defined?(@http.shutdown)
       @http = nil
