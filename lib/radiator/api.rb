@@ -485,6 +485,7 @@ module Radiator
         http.idle_timeout = idempotent ? 10 : nil
         http.max_requests = @max_requests
         http.retry_change_requests = idempotent
+        http.reuse_ssl_sessions = !flappy?
       end
     end
     
@@ -559,9 +560,13 @@ module Radiator
       warning "Failing over to #{@url} ..."
     end
     
+    def flappy?
+      !!@backoff_at && Time.now - @backoff_at < 300
+    end
+    
     def backoff
       shutdown
-      bump_failover if !!@backoff_at && Time.now - @backoff_at < 300
+      bump_failover if flappy?
       @backoff_at ||= Time.now
       @backoff_sleep ||= 0.01
       
