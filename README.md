@@ -421,6 +421,40 @@ There is another rare scenario involving `::Transaction` broadcasts that's handl
 tx = Radiator::Transaction.new(wif: wif, recover_transactions_on_error: false)
 ```
 
+## Troubleshooting
+
+## Problem: My log is full of `Unable to perform request ... retrying ...` messages.
+
+```
+W, [2017-10-10T11:38:30.035318 #6743]  WARN -- : database_api.get_dynamic_global_properties :: Unable to perform request: too many connection resets (due to Net::ReadTimeout - Net::ReadTimeout) after 0 requests on 26665356, last used 1507660710.035165 seconds ago :: cause: Net::ReadTimeout, retrying ...
+```
+
+This is caused by network interruptions.  If these messages happen once in a while, they can be ignored.  Radiator will retry the request and move on.  If there are more frequent warnings, this will trigger the failover logic and pick a new node, if one has been configured (which is true by default).  See the Failover section above.
+
+## Problem: My log is full of `Invalid block sequence` messages.
+
+```
+W, [2017-10-10T13:53:24.327177 #6938]  WARN -- : Invalid block sequence at height: 16217674
+```
+
+This is a similar situation to `Unable to perform request ... retrying ...`.  Radiator::Stream will retry and failover if needed.  It is happening because the node has responded with a block out of order and ::Stream is ignoring this block, then retrying.
+
+## Problem: What does the `Stream behind` error mean?
+
+```
+W, [2017-10-09T17:15:59.164484 #6231]  WARN -- : Stream behind by 6118 blocks (about 305.9 minutes).
+```
+
+## Solution:
+
+This is an error produced by `::Stream` when it notices that the current block is falling too far behind the head block.  One solution is to just restart the stream and see if it happens again.  If you see a message like this occasionally, but otherwise the stream seems to keep up, it probably was able to recover on its own.
+
+There can be several root causes. Resources like memory and CPU might be taxed.  The network connection might be too slow for what you're doing.  Remember, you're downloading each and every block, not just the operations you want.
+
+If you have excluded system resources as the root cause, then you should take a look at your code.  If you're doing anything that takes longer than 3 seconds per block, `::Stream` can fall behind.  When this happens, `::Stream` will try to catch up without displaying a warning.  But once you fall 400 blocks behind (~20 minutes), you'll start to get the warning messages.
+
+Verify your code is not doing too much between blocks.
+
 ## Tests
 
 * Clone the client repository into a directory of your choice:
