@@ -131,10 +131,12 @@ module Radiator
   # @see https://steemit.github.io/steemit-docs/#accounts
   #
   class Api
-    DEFAULT_URL = 'https://steemd.steemit.com'
+    DEFAULT_STEEM_URL = 'https://steemd.steemit.com'
     
-    DEFAULT_FAILOVER_URLS = [
-      DEFAULT_URL,
+    DEFAULT_GOLOS_URL = 'https://ws.golos.io'
+    
+    DEFAULT_STEEM_FAILOVER_URLS = [
+      DEFAULT_STEEM_URL,
       'https://steemd-int.steemit.com',
       'https://steemd.steemitstage.com',
       'https://gtg.steem.house:8090',
@@ -144,10 +146,34 @@ module Radiator
       'https://rpc.steemliberator.com'
     ]
     
+    DEFAULT_GOLOS_FAILOVER_URLS = [
+      DEFAULT_GOLOS_URL
+    ]
+    
     # @private
     POST_HEADERS = {
       'Content-Type' => 'application/json'
     }
+    
+    # These are known SSL versions supported by:
+    # https://github.com/ruby/openssl/blob/master/lib/openssl/ssl.rb
+    SSL_VERSIONS = [:TLSv1_2, :TLSv1_1, :TLSv1, :SSLv3, :SSLv2, :SSLv23]
+    
+    def self.default_url(chain)
+      case chain.to_sym
+      when :steem then DEFAULT_STEEM_URL
+      when :golos then DEFAULT_GOLOS_URL
+      else; raise ApiError, "Unsupported chain: #{chain}"
+      end
+    end
+    
+    def self.default_failover_urls(chain)
+      case chain.to_sym
+      when :steem then DEFAULT_STEEM_FAILOVER_URLS
+      when :golos then DEFAULT_GOLOS_FAILOVER_URLS
+      else; raise ApiError, "Unsupported chain: #{chain}"
+      end
+    end
     
     # Cretes a new instance of Radiator::Api.
     #
@@ -164,16 +190,18 @@ module Radiator
     def initialize(options = {})
       @user = options[:user]
       @password = options[:password]
-      @url = options[:url] || DEFAULT_URL
+      @chain = options[:chain] || :steem
+      @url = options[:url] || Api::default_url(@chain)
       @preferred_url = @url.dup
       @failover_urls = options[:failover_urls]
       @debug = !!options[:debug]
       @logger = options[:logger] || Radiator.logger
       @hashie_logger = options[:hashie_logger] || Logger.new(nil)
       @max_requests = options[:max_requests] || 30
+      @ssl_version = nil # default
       
       if @failover_urls.nil?
-        @failover_urls = DEFAULT_FAILOVER_URLS - [@url]
+        @failover_urls = Api::default_failover_urls(@chain) - [@url]
       end
       
       @failover_urls = [@failover_urls].flatten.compact
@@ -191,7 +219,7 @@ module Radiator
       
       Hashie.logger = @hashie_logger
       @method_names = nil
-      @api_options = options.dup
+      @api_options = options.dup.merge(chain: @chain)
     end
     
     # Get a specific block or range of blocks.
@@ -419,7 +447,8 @@ module Radiator
         rescue RangeError => e
           warning 'Range Error, retrying ...', method_name
         rescue OpenSSL::SSL::SSLError => e
-          warning "SSL Error (#{e.message}), retrying ...", method_name
+          @ssl_version = SSL_VERSIONS.sample
+          warning "SSL Error (#{e.message}), switching to #{@ssl_version} and retrying ...", method_name
         rescue SocketError => e
           warning "Socket Error (#{e.message}), retrying ...", method_name
         rescue JSON::ParserError => e
@@ -485,7 +514,13 @@ module Radiator
         http.idle_timeout = idempotent ? 10 : nil
         http.max_requests = @max_requests
         http.retry_change_requests = idempotent
-        http.reuse_ssl_sessions = !flappy?
+        
+        if flappy?
+          http.reuse_ssl_sessions = false
+          http.ssl_version = @ssl_version
+        else
+          http.reuse_ssl_sessions = true
+        end
       end
     end
     
@@ -573,7 +608,7 @@ module Radiator
       @backoff_sleep *= 2
       sleep @backoff_sleep
       
-      if Time.now - @backoff_at > 300
+      if !!@backoff_at && Time.now - @backoff_at > 300
         @backoff_at = nil 
         @backoff_sleep = nil
       end

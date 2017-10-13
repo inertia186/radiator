@@ -376,7 +376,7 @@ tx.process(true)
 Radiator also supports Golos.  To use the Golos blockchain, provide a node and chain_id:
 
 ```ruby
-tx = Radiator::Transaction.new(wif: 'Your Wif Here', chain: :golos, url: 'https://node.golos.ws')
+tx = Radiator::Transaction.new(wif: 'Your Wif Here', chain: :golos, url: 'https://ws.golos.io')
 vote = {
   type: :vote,
   voter: 'xeroc',

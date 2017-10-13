@@ -19,14 +19,17 @@ module Radiator
       %w(steem golos test).each do |chain|
         io = StringIO.new
         log = Logger.new io
-        transaction = Radiator::Transaction.new(chain: chain, logger: log)
         case chain.to_sym
         when :steem
+          transaction = Radiator::Transaction.new(chain: chain, logger: log)
           assert_equal Radiator::Transaction::NETWORKS_STEEM_CHAIN_ID, transaction.chain_id, 'expect steem chain'
         when :golos
+          transaction = Radiator::Transaction.new(chain: chain, logger: log)
           assert_equal Radiator::Transaction::NETWORKS_GOLOS_CHAIN_ID, transaction.chain_id, 'expect golos chain'
         when :test
-          assert_equal Radiator::Transaction::NETWORKS_TEST_CHAIN_ID, transaction.chain_id, 'expect test chain'
+          assert_raises ApiError do
+            transaction = Radiator::Transaction.new(chain: chain, logger: log)
+          end
         else
           fail "did not expect chain: #{chain}"
         end
@@ -38,7 +41,9 @@ module Radiator
       io = StringIO.new
       Radiator.logger = Logger.new(io) # side effect: increase code coverage
       chain = 'ginger'
-      Radiator::Transaction.new(chain: chain)
+      assert_raises ApiError do
+        Radiator::Transaction.new(chain: chain)
+      end
       refute_equal '', io.string, 'did not expect empty log'
       assert io.string.include?('Unknown chain id'), 'expect log to mention unknown chain id'
     end

@@ -43,7 +43,7 @@ module Radiator
         @private_key = Bitcoin::Key.from_base58 wif
       end
       
-      options = options.merge(url: @url)
+      options = options.merge(url: @url, chain: @chain)
       @api = Api.new(options)
       @network_broadcast_api = NetworkBroadcastApi.new(options)
     end
