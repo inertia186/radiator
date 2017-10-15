@@ -426,6 +426,7 @@ module Radiator
                   Hashie::Mash.new(response)
                 end
               when '400' then warning 'Code 400: Bad Request, retrying ...', method_name
+              when '429' then warning 'Code 429: Too Many Requests, retrying ...', method_name
               when '502' then warning 'Code 502: Bad Gateway, retrying ...', method_name
               when '503' then warning 'Code 503: Service Unavailable, retrying ...', method_name
               when '504' then warning 'Code 504: Gateway Timeout, retrying ...', method_name
