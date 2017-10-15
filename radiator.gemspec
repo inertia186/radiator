@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'yard', '~> 0.9.9'
   spec.add_development_dependency 'pry', '~> 0.11.1'
   
-  spec.add_dependency('net-http-persistent', '~> 3.0', '>= 3.0.0')
+  spec.add_dependency('net-http-persistent', '>= 2.5.2')
   spec.add_dependency('json', '~> 2.0', '>= 2.0.2')
   spec.add_dependency('logging', '~> 2.2', '>= 2.2.0')
   spec.add_dependency('hashie', '~> 3.5', '>= 3.5.5')

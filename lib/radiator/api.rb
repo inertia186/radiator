@@ -508,22 +508,30 @@ module Radiator
     end
     
     def http
-      @http ||= Net::HTTP::Persistent.new(name: http_id).tap do |http|
-        idempotent = api_name != :network_broadcast_api
-        http.keep_alive = 30
-        http.read_timeout = 10
-        http.open_timeout = 10
-        http.idle_timeout = idempotent ? 10 : nil
-        http.max_requests = @max_requests
-        http.retry_change_requests = idempotent
+      idempotent = api_name != :network_broadcast_api
         
-        if flappy?
-          http.reuse_ssl_sessions = false
-          http.ssl_version = @ssl_version
-        else
-          http.reuse_ssl_sessions = true
-        end
+      @http ||= if defined? Net::HTTP::Persistent::DEFAULT_POOL_SIZE
+        Net::HTTP::Persistent.new(name: http_id)
+      else
+        # net-http-persistent < 3.0
+        Net::HTTP::Persistent.new(http_id)
       end
+      
+      @http.keep_alive = 30
+      @http.read_timeout = 10
+      @http.open_timeout = 10
+      @http.idle_timeout = idempotent ? 10 : nil
+      @http.max_requests = @max_requests
+      @http.retry_change_requests = idempotent
+      
+      if flappy?
+        @http.reuse_ssl_sessions = false
+        @http.ssl_version = @ssl_version
+      else
+        @http.reuse_ssl_sessions = true
+      end
+      
+      @http
     end
     
     def post_request
