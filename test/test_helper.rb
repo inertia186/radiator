@@ -14,7 +14,6 @@ require 'webmock/minitest' unless ENV["TEST_NET"] == 'true'
 require 'vcr'
 require 'yaml'
 require 'pry'
-require 'typhoeus/adapters/faraday'
 
 if !!ENV['VCR']
   VCR.configure do |c|

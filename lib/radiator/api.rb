@@ -508,7 +508,7 @@ module Radiator
     end
     
     def http
-      @http ||= Net::HTTP::Persistent.new(http_id).tap do |http|
+      @http ||= Net::HTTP::Persistent.new(name: http_id).tap do |http|
         idempotent = api_name != :network_broadcast_api
         http.keep_alive = 30
         http.read_timeout = 10
