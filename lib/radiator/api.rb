@@ -147,7 +147,8 @@ module Radiator
     ]
     
     DEFAULT_GOLOS_FAILOVER_URLS = [
-      DEFAULT_GOLOS_URL
+      DEFAULT_GOLOS_URL,
+      'https://api.golos.cf'
     ]
     
     # @private
