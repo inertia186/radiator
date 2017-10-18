@@ -1,0 +1,297 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 502
+      message: Bad Gateway
+    headers:
+      Server:
+      - awselb/2.0
+      Date:
+      - Wed, 18 Oct 2017 19:54:04 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '138'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
+        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 19:54:04 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Host:
+      - steemd.steemit.com
+      Content-Length:
+      - '101'
+  response:
+    status:
+      code: 502
+      message: Bad Gateway
+    headers:
+      Server:
+      - awselb/2.0
+      Date:
+      - Wed, 18 Oct 2017 19:54:15 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '138'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
+        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 19:54:15 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 502
+      message: Bad Gateway
+    headers:
+      Server:
+      - awselb/2.0
+      Date:
+      - Wed, 18 Oct 2017 19:54:16 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '138'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
+        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 19:54:16 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 502
+      message: Bad Gateway
+    headers:
+      Server:
+      - awselb/2.0
+      Date:
+      - Wed, 18 Oct 2017 19:54:17 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '138'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
+        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 19:54:17 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 502
+      message: Bad Gateway
+    headers:
+      Server:
+      - awselb/2.0
+      Date:
+      - Wed, 18 Oct 2017 19:54:18 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '138'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
+        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 19:54:18 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 502
+      message: Bad Gateway
+    headers:
+      Server:
+      - awselb/2.0
+      Date:
+      - Wed, 18 Oct 2017 19:54:19 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '138'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
+        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 19:54:19 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 19:54:21 GMT
+      Content-Length:
+      - '1044'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"result":{"id":0,"head_block_number":16445149,"head_block_id":"00faeedde79cefae94231f5ae2b551352a7051bf","time":"2017-10-18T18:50:21","current_witness":"pfunk","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"261077889.897
+        STEEM","current_supply":"257735123.193 STEEM","confidential_supply":"0.000
+        STEEM","current_sbd_supply":"3453078.006 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"190720685.921 STEEM","total_vesting_shares":"392296800858.497754
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"370483010.534535
+        VESTS","pending_rewarded_vesting_steem":"179564.258 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":16505807,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":16445130,"vote_power_reserve_rate":10,"current_reserve_ratio":200000000,"average_block_size":5692,"max_virtual_bandwidth":"264241152000000000000"}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 19:54:21 GMT
+recorded_with: VCR 3.0.3

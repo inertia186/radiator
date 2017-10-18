@@ -10,6 +10,8 @@ module Radiator
         ref_block_num: 36029,
         ref_block_prefix: 1164960351,
         expiration: Time.parse('2016-08-08T12:24:17 Z'),
+        failover_urls: [],
+        logger: Logger.new(nil)
       }
       
       @transaction = Radiator::Transaction.new(options.dup)
@@ -65,27 +67,40 @@ module Radiator
     end
     
     def test_ref_block_num
-      stub_post_get_dynamic_global_properties
-      @transaction.operations << {type: :vote}
-      @transaction.process(false)
-      payload = @transaction.send(:payload)
-      assert_equal 5944, payload[:ref_block_num], 'expect a certain ref_block_prefix'
+      VCR.use_cassette('ref_block_num', record: VCR_RECORD_MODE) do
+        @transaction.operations << {type: :vote}
+        @transaction.process(false)
+        payload = @transaction.send(:payload)
+        assert_equal 58892, payload[:ref_block_num], 'expect a certain ref_block_prefix'
+      end
     end
     
     def test_ref_block_prefix
-      stub_post_get_dynamic_global_properties
-      @transaction.operations << {type: :vote}
-      @transaction.process(false)
-      payload = @transaction.send(:payload)
-      assert_equal 2937686740, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
+      VCR.use_cassette('ref_block_prefix', record: VCR_RECORD_MODE) do
+        @transaction.operations << {type: :vote}
+        @transaction.process(false)
+        payload = @transaction.send(:payload)
+        assert_equal 2934938855, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
+      end
     end
     
     def test_golos_ref_block_prefix
-      stub_post_golos_get_dynamic_global_properties
-      @transaction.operations << {type: :vote}
-      @transaction.process(false)
-      payload = @transaction.send(:payload)
-      assert_equal 138299648, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
+      options = {
+        chain: :golos,
+        wif: '5JLw5dgQAx6rhZEgNN5C2ds1V47RweGshynFSWFbaMohsYsBvE8',
+        ref_block_num: 36029,
+        ref_block_prefix: 1164960351,
+        expiration: Time.parse('2016-08-08T12:24:17 Z'),
+      }
+      
+      transaction = Radiator::Transaction.new(options)
+      
+      VCR.use_cassette('golos_ref_block_prefix', record: VCR_RECORD_MODE) do
+        transaction.operations << {type: :vote}
+        transaction.process(false)
+        payload = transaction.send(:payload)
+        assert_equal 3865350490, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
+      end
     end
     
     # This is a contrived transaction that mirrors the transaction documented

@@ -34,6 +34,8 @@ GEM
     minitest (5.10.3)
     minitest-line (0.6.4)
       minitest (~> 5.0)
+    minitest-proveit (1.0.0)
+      minitest (> 5, < 7)
     multi_json (1.12.2)
     net-http-persistent (3.0.0)
       connection_pool (~> 2.2)
@@ -62,6 +64,7 @@ DEPENDENCIES
   bundler (~> 1.15, >= 1.15.4)
   minitest (~> 5.9, >= 5.9.0)
   minitest-line (~> 0.6.3)
+  minitest-proveit (~> 1.0, >= 1.0.0)
   pry (~> 0.11.1)
   radiator!
   rake (~> 12.1, >= 12.1.0)
