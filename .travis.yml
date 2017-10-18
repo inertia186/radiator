@@ -6,9 +6,16 @@ rvm:
   - "2.3.0"
   - "2.4.2"
   # - "2.5.0" # dev
-script: TESTOPTS="--verbose" bundle exec rake test
-addons:
-  code_climate:
-    repo_token: fcda177928c42c93fd981f671305519ffb98b98c479198340ea67bc892ffd028
+env:
+  global:
+    - CC_TEST_REPORTER_ID=fcda177928c42c93fd981f671305519ffb98b98c479198340ea67bc892ffd028
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - TESTOPTS="--verbose" bundle exec rake test
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
   slack: galacticaactual:rhAXgZ68aoikbxBBA05xIUVC
