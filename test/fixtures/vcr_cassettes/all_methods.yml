@@ -1,0 +1,3753 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","set_subscribe_callback",[]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:23 GMT
+      Content-Length:
+      - '4801'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"error":{"code":1,"message":"10 assert_exception: Assert Exception\nitr
+        != _by_name.end(): no method with name ''set_subscribe_callback''\n    {\"name\":\"set_subscribe_callback\",\"api\":{\"get_account_bandwidth\":42,\"get_account_count\":35,\"get_account_history\":37,\"get_account_references\":32,\"get_account_votes\":57,\"get_accounts\":31,\"get_active_votes\":56,\"get_active_witnesses\":67,\"get_block\":18,\"get_block_header\":17,\"get_chain_properties\":23,\"get_comment_discussions_by_payout\":5,\"get_config\":21,\"get_content\":58,\"get_content_replies\":59,\"get_conversion_requests\":36,\"get_current_median_history_price\":25,\"get_discussions_by_active\":8,\"get_discussions_by_author_before_date\":60,\"get_discussions_by_blog\":14,\"get_discussions_by_cashout\":9,\"get_discussions_by_children\":11,\"get_discussions_by_comments\":15,\"get_discussions_by_created\":7,\"get_discussions_by_feed\":13,\"get_discussions_by_hot\":12,\"get_discussions_by_payout\":3,\"get_discussions_by_promoted\":16,\"get_discussions_by_trending\":6,\"get_discussions_by_votes\":10,\"get_dynamic_global_properties\":22,\"get_escrow\":40,\"get_expiring_vesting_delegations\":46,\"get_feed_history\":24,\"get_hardfork_version\":27,\"get_key_references\":30,\"get_liquidity_queue\":49,\"get_miner_queue\":68,\"get_next_scheduled_hardfork\":28,\"get_open_orders\":48,\"get_ops_in_block\":19,\"get_order_book\":47,\"get_owner_history\":38,\"get_post_discussions_by_payout\":4,\"get_potential_signatures\":53,\"get_recovery_request\":39,\"get_replies_by_last_update\":61,\"get_required_signatures\":52,\"get_reward_fund\":29,\"get_savings_withdraw_from\":43,\"get_savings_withdraw_to\":44,\"get_state\":20,\"get_tags_used_by_author\":2,\"get_transaction\":51,\"get_transaction_hex\":50,\"get_trending_tags\":1,\"get_vesting_delegations\":45,\"get_withdraw_routes\":41,\"get_witness_by_account\":63,\"get_witness_count\":66,\"get_witness_schedule\":26,\"get_witnesses\":62,\"get_witnesses_by_vote\":64,\"lookup_account_names\":33,\"lookup_accounts\":34,\"lookup_witness_accounts\":65,\"set_block_applied_callback\":0,\"verify_account_authority\":55,\"verify_authority\":54}}\n    th_a  api_connection.hpp:109
+        call\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"set_subscribe_callback\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":109,"method":"call","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:23"},"format":"itr
+        != _by_name.end(): no method with name ''${name}''","data":{"name":"set_subscribe_callback","api":{"get_account_bandwidth":42,"get_account_count":35,"get_account_history":37,"get_account_references":32,"get_account_votes":57,"get_accounts":31,"get_active_votes":56,"get_active_witnesses":67,"get_block":18,"get_block_header":17,"get_chain_properties":23,"get_comment_discussions_by_payout":5,"get_config":21,"get_content":58,"get_content_replies":59,"get_conversion_requests":36,"get_current_median_history_price":25,"get_discussions_by_active":8,"get_discussions_by_author_before_date":60,"get_discussions_by_blog":14,"get_discussions_by_cashout":9,"get_discussions_by_children":11,"get_discussions_by_comments":15,"get_discussions_by_created":7,"get_discussions_by_feed":13,"get_discussions_by_hot":12,"get_discussions_by_payout":3,"get_discussions_by_promoted":16,"get_discussions_by_trending":6,"get_discussions_by_votes":10,"get_dynamic_global_properties":22,"get_escrow":40,"get_expiring_vesting_delegations":46,"get_feed_history":24,"get_hardfork_version":27,"get_key_references":30,"get_liquidity_queue":49,"get_miner_queue":68,"get_next_scheduled_hardfork":28,"get_open_orders":48,"get_ops_in_block":19,"get_order_book":47,"get_owner_history":38,"get_post_discussions_by_payout":4,"get_potential_signatures":53,"get_recovery_request":39,"get_replies_by_last_update":61,"get_required_signatures":52,"get_reward_fund":29,"get_savings_withdraw_from":43,"get_savings_withdraw_to":44,"get_state":20,"get_tags_used_by_author":2,"get_transaction":51,"get_transaction_hex":50,"get_trending_tags":1,"get_vesting_delegations":45,"get_withdraw_routes":41,"get_witness_by_account":63,"get_witness_count":66,"get_witness_schedule":26,"get_witnesses":62,"get_witnesses_by_vote":64,"lookup_account_names":33,"lookup_accounts":34,"lookup_witness_accounts":65,"set_block_applied_callback":0,"verify_account_authority":55,"verify_authority":54}}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:23"},"format":"","data":{"call.method":"call","call.params":["database_api","set_subscribe_callback",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:23 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","set_pending_transaction_callback",[]],"id":2,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:24 GMT
+      Content-Length:
+      - '4851'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":2,"error":{"code":1,"message":"10 assert_exception: Assert Exception\nitr
+        != _by_name.end(): no method with name ''set_pending_transaction_callback''\n    {\"name\":\"set_pending_transaction_callback\",\"api\":{\"get_account_bandwidth\":42,\"get_account_count\":35,\"get_account_history\":37,\"get_account_references\":32,\"get_account_votes\":57,\"get_accounts\":31,\"get_active_votes\":56,\"get_active_witnesses\":67,\"get_block\":18,\"get_block_header\":17,\"get_chain_properties\":23,\"get_comment_discussions_by_payout\":5,\"get_config\":21,\"get_content\":58,\"get_content_replies\":59,\"get_conversion_requests\":36,\"get_current_median_history_price\":25,\"get_discussions_by_active\":8,\"get_discussions_by_author_before_date\":60,\"get_discussions_by_blog\":14,\"get_discussions_by_cashout\":9,\"get_discussions_by_children\":11,\"get_discussions_by_comments\":15,\"get_discussions_by_created\":7,\"get_discussions_by_feed\":13,\"get_discussions_by_hot\":12,\"get_discussions_by_payout\":3,\"get_discussions_by_promoted\":16,\"get_discussions_by_trending\":6,\"get_discussions_by_votes\":10,\"get_dynamic_global_properties\":22,\"get_escrow\":40,\"get_expiring_vesting_delegations\":46,\"get_feed_history\":24,\"get_hardfork_version\":27,\"get_key_references\":30,\"get_liquidity_queue\":49,\"get_miner_queue\":68,\"get_next_scheduled_hardfork\":28,\"get_open_orders\":48,\"get_ops_in_block\":19,\"get_order_book\":47,\"get_owner_history\":38,\"get_post_discussions_by_payout\":4,\"get_potential_signatures\":53,\"get_recovery_request\":39,\"get_replies_by_last_update\":61,\"get_required_signatures\":52,\"get_reward_fund\":29,\"get_savings_withdraw_from\":43,\"get_savings_withdraw_to\":44,\"get_state\":20,\"get_tags_used_by_author\":2,\"get_transaction\":51,\"get_transaction_hex\":50,\"get_trending_tags\":1,\"get_vesting_delegations\":45,\"get_withdraw_routes\":41,\"get_witness_by_account\":63,\"get_witness_count\":66,\"get_witness_schedule\":26,\"get_witnesses\":62,\"get_witnesses_by_vote\":64,\"lookup_account_names\":33,\"lookup_accounts\":34,\"lookup_witness_accounts\":65,\"set_block_applied_callback\":0,\"verify_account_authority\":55,\"verify_authority\":54}}\n    th_a  api_connection.hpp:109
+        call\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"set_pending_transaction_callback\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":109,"method":"call","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:24"},"format":"itr
+        != _by_name.end(): no method with name ''${name}''","data":{"name":"set_pending_transaction_callback","api":{"get_account_bandwidth":42,"get_account_count":35,"get_account_history":37,"get_account_references":32,"get_account_votes":57,"get_accounts":31,"get_active_votes":56,"get_active_witnesses":67,"get_block":18,"get_block_header":17,"get_chain_properties":23,"get_comment_discussions_by_payout":5,"get_config":21,"get_content":58,"get_content_replies":59,"get_conversion_requests":36,"get_current_median_history_price":25,"get_discussions_by_active":8,"get_discussions_by_author_before_date":60,"get_discussions_by_blog":14,"get_discussions_by_cashout":9,"get_discussions_by_children":11,"get_discussions_by_comments":15,"get_discussions_by_created":7,"get_discussions_by_feed":13,"get_discussions_by_hot":12,"get_discussions_by_payout":3,"get_discussions_by_promoted":16,"get_discussions_by_trending":6,"get_discussions_by_votes":10,"get_dynamic_global_properties":22,"get_escrow":40,"get_expiring_vesting_delegations":46,"get_feed_history":24,"get_hardfork_version":27,"get_key_references":30,"get_liquidity_queue":49,"get_miner_queue":68,"get_next_scheduled_hardfork":28,"get_open_orders":48,"get_ops_in_block":19,"get_order_book":47,"get_owner_history":38,"get_post_discussions_by_payout":4,"get_potential_signatures":53,"get_recovery_request":39,"get_replies_by_last_update":61,"get_required_signatures":52,"get_reward_fund":29,"get_savings_withdraw_from":43,"get_savings_withdraw_to":44,"get_state":20,"get_tags_used_by_author":2,"get_transaction":51,"get_transaction_hex":50,"get_trending_tags":1,"get_vesting_delegations":45,"get_withdraw_routes":41,"get_witness_by_account":63,"get_witness_count":66,"get_witness_schedule":26,"get_witnesses":62,"get_witnesses_by_vote":64,"lookup_account_names":33,"lookup_accounts":34,"lookup_witness_accounts":65,"set_block_applied_callback":0,"verify_account_authority":55,"verify_authority":54}}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:24"},"format":"","data":{"call.method":"call","call.params":["database_api","set_pending_transaction_callback",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:24 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","set_block_applied_callback",[]],"id":3,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:24 GMT
+      Content-Length:
+      - '898'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":3,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:150
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"set_block_applied_callback\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":150,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:24"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:24"},"format":"","data":{"call.method":"call","call.params":["database_api","set_block_applied_callback",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:24 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","cancel_all_subscriptions",[]],"id":4,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:24 GMT
+      Content-Length:
+      - '4811'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":4,"error":{"code":1,"message":"10 assert_exception: Assert Exception\nitr
+        != _by_name.end(): no method with name ''cancel_all_subscriptions''\n    {\"name\":\"cancel_all_subscriptions\",\"api\":{\"get_account_bandwidth\":42,\"get_account_count\":35,\"get_account_history\":37,\"get_account_references\":32,\"get_account_votes\":57,\"get_accounts\":31,\"get_active_votes\":56,\"get_active_witnesses\":67,\"get_block\":18,\"get_block_header\":17,\"get_chain_properties\":23,\"get_comment_discussions_by_payout\":5,\"get_config\":21,\"get_content\":58,\"get_content_replies\":59,\"get_conversion_requests\":36,\"get_current_median_history_price\":25,\"get_discussions_by_active\":8,\"get_discussions_by_author_before_date\":60,\"get_discussions_by_blog\":14,\"get_discussions_by_cashout\":9,\"get_discussions_by_children\":11,\"get_discussions_by_comments\":15,\"get_discussions_by_created\":7,\"get_discussions_by_feed\":13,\"get_discussions_by_hot\":12,\"get_discussions_by_payout\":3,\"get_discussions_by_promoted\":16,\"get_discussions_by_trending\":6,\"get_discussions_by_votes\":10,\"get_dynamic_global_properties\":22,\"get_escrow\":40,\"get_expiring_vesting_delegations\":46,\"get_feed_history\":24,\"get_hardfork_version\":27,\"get_key_references\":30,\"get_liquidity_queue\":49,\"get_miner_queue\":68,\"get_next_scheduled_hardfork\":28,\"get_open_orders\":48,\"get_ops_in_block\":19,\"get_order_book\":47,\"get_owner_history\":38,\"get_post_discussions_by_payout\":4,\"get_potential_signatures\":53,\"get_recovery_request\":39,\"get_replies_by_last_update\":61,\"get_required_signatures\":52,\"get_reward_fund\":29,\"get_savings_withdraw_from\":43,\"get_savings_withdraw_to\":44,\"get_state\":20,\"get_tags_used_by_author\":2,\"get_transaction\":51,\"get_transaction_hex\":50,\"get_trending_tags\":1,\"get_vesting_delegations\":45,\"get_withdraw_routes\":41,\"get_witness_by_account\":63,\"get_witness_count\":66,\"get_witness_schedule\":26,\"get_witnesses\":62,\"get_witnesses_by_vote\":64,\"lookup_account_names\":33,\"lookup_accounts\":34,\"lookup_witness_accounts\":65,\"set_block_applied_callback\":0,\"verify_account_authority\":55,\"verify_authority\":54}}\n    th_a  api_connection.hpp:109
+        call\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"cancel_all_subscriptions\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":109,"method":"call","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:24"},"format":"itr
+        != _by_name.end(): no method with name ''${name}''","data":{"name":"cancel_all_subscriptions","api":{"get_account_bandwidth":42,"get_account_count":35,"get_account_history":37,"get_account_references":32,"get_account_votes":57,"get_accounts":31,"get_active_votes":56,"get_active_witnesses":67,"get_block":18,"get_block_header":17,"get_chain_properties":23,"get_comment_discussions_by_payout":5,"get_config":21,"get_content":58,"get_content_replies":59,"get_conversion_requests":36,"get_current_median_history_price":25,"get_discussions_by_active":8,"get_discussions_by_author_before_date":60,"get_discussions_by_blog":14,"get_discussions_by_cashout":9,"get_discussions_by_children":11,"get_discussions_by_comments":15,"get_discussions_by_created":7,"get_discussions_by_feed":13,"get_discussions_by_hot":12,"get_discussions_by_payout":3,"get_discussions_by_promoted":16,"get_discussions_by_trending":6,"get_discussions_by_votes":10,"get_dynamic_global_properties":22,"get_escrow":40,"get_expiring_vesting_delegations":46,"get_feed_history":24,"get_hardfork_version":27,"get_key_references":30,"get_liquidity_queue":49,"get_miner_queue":68,"get_next_scheduled_hardfork":28,"get_open_orders":48,"get_ops_in_block":19,"get_order_book":47,"get_owner_history":38,"get_post_discussions_by_payout":4,"get_potential_signatures":53,"get_recovery_request":39,"get_replies_by_last_update":61,"get_required_signatures":52,"get_reward_fund":29,"get_savings_withdraw_from":43,"get_savings_withdraw_to":44,"get_state":20,"get_tags_used_by_author":2,"get_transaction":51,"get_transaction_hex":50,"get_trending_tags":1,"get_vesting_delegations":45,"get_withdraw_routes":41,"get_witness_by_account":63,"get_witness_count":66,"get_witness_schedule":26,"get_witnesses":62,"get_witnesses_by_vote":64,"lookup_account_names":33,"lookup_accounts":34,"lookup_witness_accounts":65,"set_block_applied_callback":0,"verify_account_authority":55,"verify_authority":54}}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:24"},"format":"","data":{"call.method":"call","call.params":["database_api","cancel_all_subscriptions",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:24 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_trending_tags",[]],"id":5,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:25 GMT
+      Content-Length:
+      - '880'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":5,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_trending_tags\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:25"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:25"},"format":"","data":{"call.method":"call","call.params":["database_api","get_trending_tags",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:25 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_tags_used_by_author",[]],"id":6,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:25 GMT
+      Content-Length:
+      - '892'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":6,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_tags_used_by_author\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:25"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:25"},"format":"","data":{"call.method":"call","call.params":["database_api","get_tags_used_by_author",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:25 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_post_discussions_by_payout",[]],"id":7,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:25 GMT
+      Content-Length:
+      - '906'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":7,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_post_discussions_by_payout\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:25"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:25"},"format":"","data":{"call.method":"call","call.params":["database_api","get_post_discussions_by_payout",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:25 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_comment_discussions_by_payout",[]],"id":8,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:26 GMT
+      Content-Length:
+      - '912'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":8,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_comment_discussions_by_payout\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:26"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:26"},"format":"","data":{"call.method":"call","call.params":["database_api","get_comment_discussions_by_payout",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:26 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_trending",[]],"id":9,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:26 GMT
+      Content-Length:
+      - '900'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":9,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_trending\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:26"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:26"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_trending",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:26 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_trending30",[]],"id":10,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:26 GMT
+      Content-Length:
+      - '4837'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":10,"error":{"code":1,"message":"10 assert_exception: Assert Exception\nitr
+        != _by_name.end(): no method with name ''get_discussions_by_trending30''\n    {\"name\":\"get_discussions_by_trending30\",\"api\":{\"get_account_bandwidth\":42,\"get_account_count\":35,\"get_account_history\":37,\"get_account_references\":32,\"get_account_votes\":57,\"get_accounts\":31,\"get_active_votes\":56,\"get_active_witnesses\":67,\"get_block\":18,\"get_block_header\":17,\"get_chain_properties\":23,\"get_comment_discussions_by_payout\":5,\"get_config\":21,\"get_content\":58,\"get_content_replies\":59,\"get_conversion_requests\":36,\"get_current_median_history_price\":25,\"get_discussions_by_active\":8,\"get_discussions_by_author_before_date\":60,\"get_discussions_by_blog\":14,\"get_discussions_by_cashout\":9,\"get_discussions_by_children\":11,\"get_discussions_by_comments\":15,\"get_discussions_by_created\":7,\"get_discussions_by_feed\":13,\"get_discussions_by_hot\":12,\"get_discussions_by_payout\":3,\"get_discussions_by_promoted\":16,\"get_discussions_by_trending\":6,\"get_discussions_by_votes\":10,\"get_dynamic_global_properties\":22,\"get_escrow\":40,\"get_expiring_vesting_delegations\":46,\"get_feed_history\":24,\"get_hardfork_version\":27,\"get_key_references\":30,\"get_liquidity_queue\":49,\"get_miner_queue\":68,\"get_next_scheduled_hardfork\":28,\"get_open_orders\":48,\"get_ops_in_block\":19,\"get_order_book\":47,\"get_owner_history\":38,\"get_post_discussions_by_payout\":4,\"get_potential_signatures\":53,\"get_recovery_request\":39,\"get_replies_by_last_update\":61,\"get_required_signatures\":52,\"get_reward_fund\":29,\"get_savings_withdraw_from\":43,\"get_savings_withdraw_to\":44,\"get_state\":20,\"get_tags_used_by_author\":2,\"get_transaction\":51,\"get_transaction_hex\":50,\"get_trending_tags\":1,\"get_vesting_delegations\":45,\"get_withdraw_routes\":41,\"get_witness_by_account\":63,\"get_witness_count\":66,\"get_witness_schedule\":26,\"get_witnesses\":62,\"get_witnesses_by_vote\":64,\"lookup_account_names\":33,\"lookup_accounts\":34,\"lookup_witness_accounts\":65,\"set_block_applied_callback\":0,\"verify_account_authority\":55,\"verify_authority\":54}}\n    th_a  api_connection.hpp:109
+        call\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_trending30\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":109,"method":"call","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:26"},"format":"itr
+        != _by_name.end(): no method with name ''${name}''","data":{"name":"get_discussions_by_trending30","api":{"get_account_bandwidth":42,"get_account_count":35,"get_account_history":37,"get_account_references":32,"get_account_votes":57,"get_accounts":31,"get_active_votes":56,"get_active_witnesses":67,"get_block":18,"get_block_header":17,"get_chain_properties":23,"get_comment_discussions_by_payout":5,"get_config":21,"get_content":58,"get_content_replies":59,"get_conversion_requests":36,"get_current_median_history_price":25,"get_discussions_by_active":8,"get_discussions_by_author_before_date":60,"get_discussions_by_blog":14,"get_discussions_by_cashout":9,"get_discussions_by_children":11,"get_discussions_by_comments":15,"get_discussions_by_created":7,"get_discussions_by_feed":13,"get_discussions_by_hot":12,"get_discussions_by_payout":3,"get_discussions_by_promoted":16,"get_discussions_by_trending":6,"get_discussions_by_votes":10,"get_dynamic_global_properties":22,"get_escrow":40,"get_expiring_vesting_delegations":46,"get_feed_history":24,"get_hardfork_version":27,"get_key_references":30,"get_liquidity_queue":49,"get_miner_queue":68,"get_next_scheduled_hardfork":28,"get_open_orders":48,"get_ops_in_block":19,"get_order_book":47,"get_owner_history":38,"get_post_discussions_by_payout":4,"get_potential_signatures":53,"get_recovery_request":39,"get_replies_by_last_update":61,"get_required_signatures":52,"get_reward_fund":29,"get_savings_withdraw_from":43,"get_savings_withdraw_to":44,"get_state":20,"get_tags_used_by_author":2,"get_transaction":51,"get_transaction_hex":50,"get_trending_tags":1,"get_vesting_delegations":45,"get_withdraw_routes":41,"get_witness_by_account":63,"get_witness_count":66,"get_witness_schedule":26,"get_witnesses":62,"get_witnesses_by_vote":64,"lookup_account_names":33,"lookup_accounts":34,"lookup_witness_accounts":65,"set_block_applied_callback":0,"verify_account_authority":55,"verify_authority":54}}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:26"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_trending30",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:26 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_created",[]],"id":11,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:26 GMT
+      Content-Length:
+      - '899'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":11,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_created\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:26"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:26"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_created",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:26 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_active",[]],"id":12,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:27 GMT
+      Content-Length:
+      - '897'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":12,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_active\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:27"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:27"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_active",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:27 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_cashout",[]],"id":13,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:27 GMT
+      Content-Length:
+      - '899'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":13,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_cashout\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:27"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:27"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_cashout",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:27 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_payout",[]],"id":14,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:27 GMT
+      Content-Length:
+      - '897'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":14,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_payout\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:27"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:27"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_payout",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:27 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_votes",[]],"id":15,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:27 GMT
+      Content-Length:
+      - '895'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":15,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_votes\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:27"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:27"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_votes",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:27 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_children",[]],"id":16,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:29 GMT
+      Content-Length:
+      - '901'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":16,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_children\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:29"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:29"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_children",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:29 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_hot",[]],"id":17,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:29 GMT
+      Content-Length:
+      - '891'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":17,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_hot\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:29"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:29"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_hot",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:29 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_feed",[]],"id":18,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:30 GMT
+      Content-Length:
+      - '893'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":18,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_feed\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:30"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:30"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_feed",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:30 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_blog",[]],"id":19,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:30 GMT
+      Content-Length:
+      - '893'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":19,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_blog\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:30"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:30"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_blog",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:30 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_comments",[]],"id":20,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:30 GMT
+      Content-Length:
+      - '901'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":20,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_comments\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:30"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:30"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_comments",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:30 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_promoted",[]],"id":21,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:31 GMT
+      Content-Length:
+      - '901'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":21,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_promoted\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:31"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:31"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_promoted",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:31 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_block_header",[]],"id":22,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:32 GMT
+      Content-Length:
+      - '879'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":22,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_block_header\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:32"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:32"},"format":"","data":{"call.method":"call","call.params":["database_api","get_block_header",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:32 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_block",[]],"id":23,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:32 GMT
+      Content-Length:
+      - '865'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":23,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_block\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:32"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:32"},"format":"","data":{"call.method":"call","call.params":["database_api","get_block",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:33 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_ops_in_block",[]],"id":24,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:33 GMT
+      Content-Length:
+      - '879'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":24,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_ops_in_block\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:33"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:33"},"format":"","data":{"call.method":"call","call.params":["database_api","get_ops_in_block",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:33 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_state",[]],"id":25,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:33 GMT
+      Content-Length:
+      - '865'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":25,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_state\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:33"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:33"},"format":"","data":{"call.method":"call","call.params":["database_api","get_state",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:34 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_trending_categories",[]],"id":26,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:34 GMT
+      Content-Length:
+      - '4807'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":26,"error":{"code":1,"message":"10 assert_exception: Assert Exception\nitr
+        != _by_name.end(): no method with name ''get_trending_categories''\n    {\"name\":\"get_trending_categories\",\"api\":{\"get_account_bandwidth\":42,\"get_account_count\":35,\"get_account_history\":37,\"get_account_references\":32,\"get_account_votes\":57,\"get_accounts\":31,\"get_active_votes\":56,\"get_active_witnesses\":67,\"get_block\":18,\"get_block_header\":17,\"get_chain_properties\":23,\"get_comment_discussions_by_payout\":5,\"get_config\":21,\"get_content\":58,\"get_content_replies\":59,\"get_conversion_requests\":36,\"get_current_median_history_price\":25,\"get_discussions_by_active\":8,\"get_discussions_by_author_before_date\":60,\"get_discussions_by_blog\":14,\"get_discussions_by_cashout\":9,\"get_discussions_by_children\":11,\"get_discussions_by_comments\":15,\"get_discussions_by_created\":7,\"get_discussions_by_feed\":13,\"get_discussions_by_hot\":12,\"get_discussions_by_payout\":3,\"get_discussions_by_promoted\":16,\"get_discussions_by_trending\":6,\"get_discussions_by_votes\":10,\"get_dynamic_global_properties\":22,\"get_escrow\":40,\"get_expiring_vesting_delegations\":46,\"get_feed_history\":24,\"get_hardfork_version\":27,\"get_key_references\":30,\"get_liquidity_queue\":49,\"get_miner_queue\":68,\"get_next_scheduled_hardfork\":28,\"get_open_orders\":48,\"get_ops_in_block\":19,\"get_order_book\":47,\"get_owner_history\":38,\"get_post_discussions_by_payout\":4,\"get_potential_signatures\":53,\"get_recovery_request\":39,\"get_replies_by_last_update\":61,\"get_required_signatures\":52,\"get_reward_fund\":29,\"get_savings_withdraw_from\":43,\"get_savings_withdraw_to\":44,\"get_state\":20,\"get_tags_used_by_author\":2,\"get_transaction\":51,\"get_transaction_hex\":50,\"get_trending_tags\":1,\"get_vesting_delegations\":45,\"get_withdraw_routes\":41,\"get_witness_by_account\":63,\"get_witness_count\":66,\"get_witness_schedule\":26,\"get_witnesses\":62,\"get_witnesses_by_vote\":64,\"lookup_account_names\":33,\"lookup_accounts\":34,\"lookup_witness_accounts\":65,\"set_block_applied_callback\":0,\"verify_account_authority\":55,\"verify_authority\":54}}\n    th_a  api_connection.hpp:109
+        call\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_trending_categories\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":109,"method":"call","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:34"},"format":"itr
+        != _by_name.end(): no method with name ''${name}''","data":{"name":"get_trending_categories","api":{"get_account_bandwidth":42,"get_account_count":35,"get_account_history":37,"get_account_references":32,"get_account_votes":57,"get_accounts":31,"get_active_votes":56,"get_active_witnesses":67,"get_block":18,"get_block_header":17,"get_chain_properties":23,"get_comment_discussions_by_payout":5,"get_config":21,"get_content":58,"get_content_replies":59,"get_conversion_requests":36,"get_current_median_history_price":25,"get_discussions_by_active":8,"get_discussions_by_author_before_date":60,"get_discussions_by_blog":14,"get_discussions_by_cashout":9,"get_discussions_by_children":11,"get_discussions_by_comments":15,"get_discussions_by_created":7,"get_discussions_by_feed":13,"get_discussions_by_hot":12,"get_discussions_by_payout":3,"get_discussions_by_promoted":16,"get_discussions_by_trending":6,"get_discussions_by_votes":10,"get_dynamic_global_properties":22,"get_escrow":40,"get_expiring_vesting_delegations":46,"get_feed_history":24,"get_hardfork_version":27,"get_key_references":30,"get_liquidity_queue":49,"get_miner_queue":68,"get_next_scheduled_hardfork":28,"get_open_orders":48,"get_ops_in_block":19,"get_order_book":47,"get_owner_history":38,"get_post_discussions_by_payout":4,"get_potential_signatures":53,"get_recovery_request":39,"get_replies_by_last_update":61,"get_required_signatures":52,"get_reward_fund":29,"get_savings_withdraw_from":43,"get_savings_withdraw_to":44,"get_state":20,"get_tags_used_by_author":2,"get_transaction":51,"get_transaction_hex":50,"get_trending_tags":1,"get_vesting_delegations":45,"get_withdraw_routes":41,"get_witness_by_account":63,"get_witness_count":66,"get_witness_schedule":26,"get_witnesses":62,"get_witnesses_by_vote":64,"lookup_account_names":33,"lookup_accounts":34,"lookup_witness_accounts":65,"set_block_applied_callback":0,"verify_account_authority":55,"verify_authority":54}}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:34"},"format":"","data":{"call.method":"call","call.params":["database_api","get_trending_categories",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:34 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_best_categories",[]],"id":27,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:34 GMT
+      Content-Length:
+      - '4787'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":27,"error":{"code":1,"message":"10 assert_exception: Assert Exception\nitr
+        != _by_name.end(): no method with name ''get_best_categories''\n    {\"name\":\"get_best_categories\",\"api\":{\"get_account_bandwidth\":42,\"get_account_count\":35,\"get_account_history\":37,\"get_account_references\":32,\"get_account_votes\":57,\"get_accounts\":31,\"get_active_votes\":56,\"get_active_witnesses\":67,\"get_block\":18,\"get_block_header\":17,\"get_chain_properties\":23,\"get_comment_discussions_by_payout\":5,\"get_config\":21,\"get_content\":58,\"get_content_replies\":59,\"get_conversion_requests\":36,\"get_current_median_history_price\":25,\"get_discussions_by_active\":8,\"get_discussions_by_author_before_date\":60,\"get_discussions_by_blog\":14,\"get_discussions_by_cashout\":9,\"get_discussions_by_children\":11,\"get_discussions_by_comments\":15,\"get_discussions_by_created\":7,\"get_discussions_by_feed\":13,\"get_discussions_by_hot\":12,\"get_discussions_by_payout\":3,\"get_discussions_by_promoted\":16,\"get_discussions_by_trending\":6,\"get_discussions_by_votes\":10,\"get_dynamic_global_properties\":22,\"get_escrow\":40,\"get_expiring_vesting_delegations\":46,\"get_feed_history\":24,\"get_hardfork_version\":27,\"get_key_references\":30,\"get_liquidity_queue\":49,\"get_miner_queue\":68,\"get_next_scheduled_hardfork\":28,\"get_open_orders\":48,\"get_ops_in_block\":19,\"get_order_book\":47,\"get_owner_history\":38,\"get_post_discussions_by_payout\":4,\"get_potential_signatures\":53,\"get_recovery_request\":39,\"get_replies_by_last_update\":61,\"get_required_signatures\":52,\"get_reward_fund\":29,\"get_savings_withdraw_from\":43,\"get_savings_withdraw_to\":44,\"get_state\":20,\"get_tags_used_by_author\":2,\"get_transaction\":51,\"get_transaction_hex\":50,\"get_trending_tags\":1,\"get_vesting_delegations\":45,\"get_withdraw_routes\":41,\"get_witness_by_account\":63,\"get_witness_count\":66,\"get_witness_schedule\":26,\"get_witnesses\":62,\"get_witnesses_by_vote\":64,\"lookup_account_names\":33,\"lookup_accounts\":34,\"lookup_witness_accounts\":65,\"set_block_applied_callback\":0,\"verify_account_authority\":55,\"verify_authority\":54}}\n    th_a  api_connection.hpp:109
+        call\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_best_categories\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":109,"method":"call","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:34"},"format":"itr
+        != _by_name.end(): no method with name ''${name}''","data":{"name":"get_best_categories","api":{"get_account_bandwidth":42,"get_account_count":35,"get_account_history":37,"get_account_references":32,"get_account_votes":57,"get_accounts":31,"get_active_votes":56,"get_active_witnesses":67,"get_block":18,"get_block_header":17,"get_chain_properties":23,"get_comment_discussions_by_payout":5,"get_config":21,"get_content":58,"get_content_replies":59,"get_conversion_requests":36,"get_current_median_history_price":25,"get_discussions_by_active":8,"get_discussions_by_author_before_date":60,"get_discussions_by_blog":14,"get_discussions_by_cashout":9,"get_discussions_by_children":11,"get_discussions_by_comments":15,"get_discussions_by_created":7,"get_discussions_by_feed":13,"get_discussions_by_hot":12,"get_discussions_by_payout":3,"get_discussions_by_promoted":16,"get_discussions_by_trending":6,"get_discussions_by_votes":10,"get_dynamic_global_properties":22,"get_escrow":40,"get_expiring_vesting_delegations":46,"get_feed_history":24,"get_hardfork_version":27,"get_key_references":30,"get_liquidity_queue":49,"get_miner_queue":68,"get_next_scheduled_hardfork":28,"get_open_orders":48,"get_ops_in_block":19,"get_order_book":47,"get_owner_history":38,"get_post_discussions_by_payout":4,"get_potential_signatures":53,"get_recovery_request":39,"get_replies_by_last_update":61,"get_required_signatures":52,"get_reward_fund":29,"get_savings_withdraw_from":43,"get_savings_withdraw_to":44,"get_state":20,"get_tags_used_by_author":2,"get_transaction":51,"get_transaction_hex":50,"get_trending_tags":1,"get_vesting_delegations":45,"get_withdraw_routes":41,"get_witness_by_account":63,"get_witness_count":66,"get_witness_schedule":26,"get_witnesses":62,"get_witnesses_by_vote":64,"lookup_account_names":33,"lookup_accounts":34,"lookup_witness_accounts":65,"set_block_applied_callback":0,"verify_account_authority":55,"verify_authority":54}}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:34"},"format":"","data":{"call.method":"call","call.params":["database_api","get_best_categories",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:35 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_active_categories",[]],"id":28,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:35 GMT
+      Content-Length:
+      - '4797'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":28,"error":{"code":1,"message":"10 assert_exception: Assert Exception\nitr
+        != _by_name.end(): no method with name ''get_active_categories''\n    {\"name\":\"get_active_categories\",\"api\":{\"get_account_bandwidth\":42,\"get_account_count\":35,\"get_account_history\":37,\"get_account_references\":32,\"get_account_votes\":57,\"get_accounts\":31,\"get_active_votes\":56,\"get_active_witnesses\":67,\"get_block\":18,\"get_block_header\":17,\"get_chain_properties\":23,\"get_comment_discussions_by_payout\":5,\"get_config\":21,\"get_content\":58,\"get_content_replies\":59,\"get_conversion_requests\":36,\"get_current_median_history_price\":25,\"get_discussions_by_active\":8,\"get_discussions_by_author_before_date\":60,\"get_discussions_by_blog\":14,\"get_discussions_by_cashout\":9,\"get_discussions_by_children\":11,\"get_discussions_by_comments\":15,\"get_discussions_by_created\":7,\"get_discussions_by_feed\":13,\"get_discussions_by_hot\":12,\"get_discussions_by_payout\":3,\"get_discussions_by_promoted\":16,\"get_discussions_by_trending\":6,\"get_discussions_by_votes\":10,\"get_dynamic_global_properties\":22,\"get_escrow\":40,\"get_expiring_vesting_delegations\":46,\"get_feed_history\":24,\"get_hardfork_version\":27,\"get_key_references\":30,\"get_liquidity_queue\":49,\"get_miner_queue\":68,\"get_next_scheduled_hardfork\":28,\"get_open_orders\":48,\"get_ops_in_block\":19,\"get_order_book\":47,\"get_owner_history\":38,\"get_post_discussions_by_payout\":4,\"get_potential_signatures\":53,\"get_recovery_request\":39,\"get_replies_by_last_update\":61,\"get_required_signatures\":52,\"get_reward_fund\":29,\"get_savings_withdraw_from\":43,\"get_savings_withdraw_to\":44,\"get_state\":20,\"get_tags_used_by_author\":2,\"get_transaction\":51,\"get_transaction_hex\":50,\"get_trending_tags\":1,\"get_vesting_delegations\":45,\"get_withdraw_routes\":41,\"get_witness_by_account\":63,\"get_witness_count\":66,\"get_witness_schedule\":26,\"get_witnesses\":62,\"get_witnesses_by_vote\":64,\"lookup_account_names\":33,\"lookup_accounts\":34,\"lookup_witness_accounts\":65,\"set_block_applied_callback\":0,\"verify_account_authority\":55,\"verify_authority\":54}}\n    th_a  api_connection.hpp:109
+        call\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_active_categories\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":109,"method":"call","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:35"},"format":"itr
+        != _by_name.end(): no method with name ''${name}''","data":{"name":"get_active_categories","api":{"get_account_bandwidth":42,"get_account_count":35,"get_account_history":37,"get_account_references":32,"get_account_votes":57,"get_accounts":31,"get_active_votes":56,"get_active_witnesses":67,"get_block":18,"get_block_header":17,"get_chain_properties":23,"get_comment_discussions_by_payout":5,"get_config":21,"get_content":58,"get_content_replies":59,"get_conversion_requests":36,"get_current_median_history_price":25,"get_discussions_by_active":8,"get_discussions_by_author_before_date":60,"get_discussions_by_blog":14,"get_discussions_by_cashout":9,"get_discussions_by_children":11,"get_discussions_by_comments":15,"get_discussions_by_created":7,"get_discussions_by_feed":13,"get_discussions_by_hot":12,"get_discussions_by_payout":3,"get_discussions_by_promoted":16,"get_discussions_by_trending":6,"get_discussions_by_votes":10,"get_dynamic_global_properties":22,"get_escrow":40,"get_expiring_vesting_delegations":46,"get_feed_history":24,"get_hardfork_version":27,"get_key_references":30,"get_liquidity_queue":49,"get_miner_queue":68,"get_next_scheduled_hardfork":28,"get_open_orders":48,"get_ops_in_block":19,"get_order_book":47,"get_owner_history":38,"get_post_discussions_by_payout":4,"get_potential_signatures":53,"get_recovery_request":39,"get_replies_by_last_update":61,"get_required_signatures":52,"get_reward_fund":29,"get_savings_withdraw_from":43,"get_savings_withdraw_to":44,"get_state":20,"get_tags_used_by_author":2,"get_transaction":51,"get_transaction_hex":50,"get_trending_tags":1,"get_vesting_delegations":45,"get_withdraw_routes":41,"get_witness_by_account":63,"get_witness_count":66,"get_witness_schedule":26,"get_witnesses":62,"get_witnesses_by_vote":64,"lookup_account_names":33,"lookup_accounts":34,"lookup_witness_accounts":65,"set_block_applied_callback":0,"verify_account_authority":55,"verify_authority":54}}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:35"},"format":"","data":{"call.method":"call","call.params":["database_api","get_active_categories",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:35 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_recent_categories",[]],"id":29,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:36 GMT
+      Content-Length:
+      - '4797'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":29,"error":{"code":1,"message":"10 assert_exception: Assert Exception\nitr
+        != _by_name.end(): no method with name ''get_recent_categories''\n    {\"name\":\"get_recent_categories\",\"api\":{\"get_account_bandwidth\":42,\"get_account_count\":35,\"get_account_history\":37,\"get_account_references\":32,\"get_account_votes\":57,\"get_accounts\":31,\"get_active_votes\":56,\"get_active_witnesses\":67,\"get_block\":18,\"get_block_header\":17,\"get_chain_properties\":23,\"get_comment_discussions_by_payout\":5,\"get_config\":21,\"get_content\":58,\"get_content_replies\":59,\"get_conversion_requests\":36,\"get_current_median_history_price\":25,\"get_discussions_by_active\":8,\"get_discussions_by_author_before_date\":60,\"get_discussions_by_blog\":14,\"get_discussions_by_cashout\":9,\"get_discussions_by_children\":11,\"get_discussions_by_comments\":15,\"get_discussions_by_created\":7,\"get_discussions_by_feed\":13,\"get_discussions_by_hot\":12,\"get_discussions_by_payout\":3,\"get_discussions_by_promoted\":16,\"get_discussions_by_trending\":6,\"get_discussions_by_votes\":10,\"get_dynamic_global_properties\":22,\"get_escrow\":40,\"get_expiring_vesting_delegations\":46,\"get_feed_history\":24,\"get_hardfork_version\":27,\"get_key_references\":30,\"get_liquidity_queue\":49,\"get_miner_queue\":68,\"get_next_scheduled_hardfork\":28,\"get_open_orders\":48,\"get_ops_in_block\":19,\"get_order_book\":47,\"get_owner_history\":38,\"get_post_discussions_by_payout\":4,\"get_potential_signatures\":53,\"get_recovery_request\":39,\"get_replies_by_last_update\":61,\"get_required_signatures\":52,\"get_reward_fund\":29,\"get_savings_withdraw_from\":43,\"get_savings_withdraw_to\":44,\"get_state\":20,\"get_tags_used_by_author\":2,\"get_transaction\":51,\"get_transaction_hex\":50,\"get_trending_tags\":1,\"get_vesting_delegations\":45,\"get_withdraw_routes\":41,\"get_witness_by_account\":63,\"get_witness_count\":66,\"get_witness_schedule\":26,\"get_witnesses\":62,\"get_witnesses_by_vote\":64,\"lookup_account_names\":33,\"lookup_accounts\":34,\"lookup_witness_accounts\":65,\"set_block_applied_callback\":0,\"verify_account_authority\":55,\"verify_authority\":54}}\n    th_a  api_connection.hpp:109
+        call\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_recent_categories\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":109,"method":"call","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:36"},"format":"itr
+        != _by_name.end(): no method with name ''${name}''","data":{"name":"get_recent_categories","api":{"get_account_bandwidth":42,"get_account_count":35,"get_account_history":37,"get_account_references":32,"get_account_votes":57,"get_accounts":31,"get_active_votes":56,"get_active_witnesses":67,"get_block":18,"get_block_header":17,"get_chain_properties":23,"get_comment_discussions_by_payout":5,"get_config":21,"get_content":58,"get_content_replies":59,"get_conversion_requests":36,"get_current_median_history_price":25,"get_discussions_by_active":8,"get_discussions_by_author_before_date":60,"get_discussions_by_blog":14,"get_discussions_by_cashout":9,"get_discussions_by_children":11,"get_discussions_by_comments":15,"get_discussions_by_created":7,"get_discussions_by_feed":13,"get_discussions_by_hot":12,"get_discussions_by_payout":3,"get_discussions_by_promoted":16,"get_discussions_by_trending":6,"get_discussions_by_votes":10,"get_dynamic_global_properties":22,"get_escrow":40,"get_expiring_vesting_delegations":46,"get_feed_history":24,"get_hardfork_version":27,"get_key_references":30,"get_liquidity_queue":49,"get_miner_queue":68,"get_next_scheduled_hardfork":28,"get_open_orders":48,"get_ops_in_block":19,"get_order_book":47,"get_owner_history":38,"get_post_discussions_by_payout":4,"get_potential_signatures":53,"get_recovery_request":39,"get_replies_by_last_update":61,"get_required_signatures":52,"get_reward_fund":29,"get_savings_withdraw_from":43,"get_savings_withdraw_to":44,"get_state":20,"get_tags_used_by_author":2,"get_transaction":51,"get_transaction_hex":50,"get_trending_tags":1,"get_vesting_delegations":45,"get_withdraw_routes":41,"get_witness_by_account":63,"get_witness_count":66,"get_witness_schedule":26,"get_witnesses":62,"get_witnesses_by_vote":64,"lookup_account_names":33,"lookup_accounts":34,"lookup_witness_accounts":65,"set_block_applied_callback":0,"verify_account_authority":55,"verify_authority":54}}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:57:36"},"format":"","data":{"call.method":"call","call.params":["database_api","get_recent_categories",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:36 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_config",[]],"id":30,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:36 GMT
+      Content-Length:
+      - '6434'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":30,"result":{"IS_TEST_NET":false,"SBD_SYMBOL":1145197315,"STEEMIT_100_PERCENT":10000,"STEEMIT_1_PERCENT":100,"STEEMIT_1_TENTH_PERCENT":10,"STEEMIT_ACCOUNT_RECOVERY_REQUEST_EXPIRATION_PERIOD":"86400000000","STEEMIT_ACTIVE_CHALLENGE_COOLDOWN":"86400000000","STEEMIT_ACTIVE_CHALLENGE_FEE":"2.000
+        STEEM","STEEMIT_ADDRESS_PREFIX":"STM","STEEMIT_APR_PERCENT_MULTIPLY_PER_BLOCK":"102035135585887","STEEMIT_APR_PERCENT_MULTIPLY_PER_HOUR":"119577151364285","STEEMIT_APR_PERCENT_MULTIPLY_PER_ROUND":"133921203762304","STEEMIT_APR_PERCENT_SHIFT_PER_BLOCK":87,"STEEMIT_APR_PERCENT_SHIFT_PER_HOUR":77,"STEEMIT_APR_PERCENT_SHIFT_PER_ROUND":83,"STEEMIT_BANDWIDTH_AVERAGE_WINDOW_SECONDS":604800,"STEEMIT_BANDWIDTH_PRECISION":1000000,"STEEMIT_BLOCKCHAIN_PRECISION":1000,"STEEMIT_BLOCKCHAIN_PRECISION_DIGITS":3,"STEEMIT_BLOCKCHAIN_HARDFORK_VERSION":"0.19.0","STEEMIT_BLOCKCHAIN_VERSION":"0.19.2","STEEMIT_BLOCK_INTERVAL":3,"STEEMIT_BLOCKS_PER_DAY":28800,"STEEMIT_BLOCKS_PER_HOUR":1200,"STEEMIT_BLOCKS_PER_YEAR":10512000,"STEEMIT_CASHOUT_WINDOW_SECONDS":604800,"STEEMIT_CASHOUT_WINDOW_SECONDS_PRE_HF12":86400,"STEEMIT_CASHOUT_WINDOW_SECONDS_PRE_HF17":43200,"STEEMIT_CHAIN_ID":"0000000000000000000000000000000000000000000000000000000000000000","STEEMIT_COMMENT_REWARD_FUND_NAME":"comment","STEEMIT_CONTENT_APR_PERCENT":3875,"STEEMIT_CONTENT_CONSTANT_HF0":"2000000000000","STEEMIT_CONTENT_REWARD_PERCENT":7500,"STEEMIT_CONVERSION_DELAY":"302400000000","STEEMIT_CONVERSION_DELAY_PRE_HF_16":"604800000000","STEEMIT_CREATE_ACCOUNT_DELEGATION_RATIO":5,"STEEMIT_CREATE_ACCOUNT_DELEGATION_TIME":"2592000000000","STEEMIT_CREATE_ACCOUNT_WITH_STEEM_MODIFIER":30,"STEEMIT_CURATE_APR_PERCENT":3875,"STEEMIT_DEFAULT_SBD_INTEREST_RATE":1000,"STEEMIT_EQUIHASH_K":6,"STEEMIT_EQUIHASH_N":140,"STEEMIT_FEED_HISTORY_WINDOW":84,"STEEMIT_FEED_HISTORY_WINDOW_PRE_HF_16":168,"STEEMIT_FEED_INTERVAL_BLOCKS":1200,"STEEMIT_FREE_TRANSACTIONS_WITH_NEW_ACCOUNT":100,"STEEMIT_GENESIS_TIME":"2016-03-24T16:00:00","STEEMIT_HARDFORK_REQUIRED_WITNESSES":17,"STEEMIT_INFLATION_NARROWING_PERIOD":250000,"STEEMIT_INFLATION_RATE_START_PERCENT":978,"STEEMIT_INFLATION_RATE_STOP_PERCENT":95,"STEEMIT_INIT_MINER_NAME":"initminer","STEEMIT_INIT_PUBLIC_KEY_STR":"STM8GC13uCZbP44HzMLV6zPZGwVQ8Nt4Kji8PapsPiNq1BK153XTX","STEEMIT_INIT_SUPPLY":0,"STEEMIT_INIT_TIME":"1970-01-01T00:00:00","STEEMIT_IRREVERSIBLE_THRESHOLD":7500,"STEEMIT_LIQUIDITY_APR_PERCENT":750,"STEEMIT_LIQUIDITY_REWARD_BLOCKS":1200,"STEEMIT_LIQUIDITY_REWARD_PERIOD_SEC":3600,"STEEMIT_LIQUIDITY_TIMEOUT_SEC":"604800000000","STEEMIT_MAX_ACCOUNT_NAME_LENGTH":16,"STEEMIT_MAX_ACCOUNT_WITNESS_VOTES":30,"STEEMIT_MAX_ASSET_WHITELIST_AUTHORITIES":10,"STEEMIT_MAX_AUTHORITY_MEMBERSHIP":10,"STEEMIT_MAX_BLOCK_SIZE":393216000,"STEEMIT_MAX_CASHOUT_WINDOW_SECONDS":1209600,"STEEMIT_MAX_COMMENT_DEPTH":65535,"STEEMIT_MAX_COMMENT_DEPTH_PRE_HF17":6,"STEEMIT_MAX_FEED_AGE_SECONDS":604800,"STEEMIT_MAX_INSTANCE_ID":"281474976710655","STEEMIT_MAX_MEMO_SIZE":2048,"STEEMIT_MAX_WITNESSES":21,"STEEMIT_MAX_MINER_WITNESSES_HF0":1,"STEEMIT_MAX_MINER_WITNESSES_HF17":0,"STEEMIT_MAX_PERMLINK_LENGTH":256,"STEEMIT_MAX_PROXY_RECURSION_DEPTH":4,"STEEMIT_MAX_RATION_DECAY_RATE":1000000,"STEEMIT_MAX_RESERVE_RATIO":20000,"STEEMIT_MAX_RUNNER_WITNESSES_HF0":1,"STEEMIT_MAX_RUNNER_WITNESSES_HF17":1,"STEEMIT_MAX_SHARE_SUPPLY":"1000000000000000","STEEMIT_MAX_SIG_CHECK_DEPTH":2,"STEEMIT_MAX_TIME_UNTIL_EXPIRATION":3600,"STEEMIT_MAX_TRANSACTION_SIZE":65536,"STEEMIT_MAX_UNDO_HISTORY":10000,"STEEMIT_MAX_URL_LENGTH":127,"STEEMIT_MAX_VOTE_CHANGES":5,"STEEMIT_MAX_VOTED_WITNESSES_HF0":19,"STEEMIT_MAX_VOTED_WITNESSES_HF17":20,"STEEMIT_MAX_WITHDRAW_ROUTES":10,"STEEMIT_MAX_WITNESS_URL_LENGTH":2048,"STEEMIT_MIN_ACCOUNT_CREATION_FEE":1,"STEEMIT_MIN_ACCOUNT_NAME_LENGTH":3,"STEEMIT_MIN_BLOCK_SIZE":115,"STEEMIT_MIN_BLOCK_SIZE_LIMIT":65536,"STEEMIT_MIN_CONTENT_REWARD":"1.000
+        STEEM","STEEMIT_MIN_CURATE_REWARD":"1.000 STEEM","STEEMIT_MIN_PERMLINK_LENGTH":0,"STEEMIT_MIN_REPLY_INTERVAL":20000000,"STEEMIT_MIN_ROOT_COMMENT_INTERVAL":300000000,"STEEMIT_MIN_VOTE_INTERVAL_SEC":3,"STEEMIT_MINER_ACCOUNT":"miners","STEEMIT_MINER_PAY_PERCENT":100,"STEEMIT_MIN_FEEDS":7,"STEEMIT_MINING_REWARD":"1.000
+        STEEM","STEEMIT_MINING_TIME":"2016-03-24T17:00:00","STEEMIT_MIN_LIQUIDITY_REWARD":"1200.000
+        STEEM","STEEMIT_MIN_LIQUIDITY_REWARD_PERIOD_SEC":60000000,"STEEMIT_MIN_PAYOUT_SBD":"0.020
+        SBD","STEEMIT_MIN_POW_REWARD":"1.000 STEEM","STEEMIT_MIN_PRODUCER_REWARD":"1.000
+        STEEM","STEEMIT_MIN_RATION":100000,"STEEMIT_MIN_TRANSACTION_EXPIRATION_LIMIT":15,"STEEMIT_MIN_TRANSACTION_SIZE_LIMIT":1024,"STEEMIT_MIN_UNDO_HISTORY":10,"STEEMIT_NULL_ACCOUNT":"null","STEEMIT_NUM_INIT_MINERS":1,"STEEMIT_ORIGINAL_MIN_ACCOUNT_CREATION_FEE":100000,"STEEMIT_OWNER_AUTH_HISTORY_TRACKING_START_BLOCK_NUM":3186477,"STEEMIT_OWNER_AUTH_RECOVERY_PERIOD":"2592000000000","STEEMIT_OWNER_CHALLENGE_COOLDOWN":"86400000000","STEEMIT_OWNER_CHALLENGE_FEE":"30.000
+        STEEM","STEEMIT_OWNER_UPDATE_LIMIT":3600000000,"STEEMIT_POST_AVERAGE_WINDOW":86400,"STEEMIT_POST_MAX_BANDWIDTH":40000,"STEEMIT_POST_REWARD_FUND_NAME":"post","STEEMIT_POST_WEIGHT_CONSTANT":1600000000,"STEEMIT_POW_APR_PERCENT":750,"STEEMIT_PRODUCER_APR_PERCENT":750,"STEEMIT_PROXY_TO_SELF_ACCOUNT":"","STEEMIT_SBD_INTEREST_COMPOUND_INTERVAL_SEC":2592000,"STEEMIT_SECONDS_PER_YEAR":31536000,"STEEMIT_RECENT_RSHARES_DECAY_RATE_HF19":"1296000000000","STEEMIT_RECENT_RSHARES_DECAY_RATE_HF17":"2592000000000","STEEMIT_REVERSE_AUCTION_WINDOW_SECONDS":1800,"STEEMIT_ROOT_POST_PARENT":"","STEEMIT_SAVINGS_WITHDRAW_REQUEST_LIMIT":100,"STEEMIT_SAVINGS_WITHDRAW_TIME":"259200000000","STEEMIT_SBD_START_PERCENT":200,"STEEMIT_SBD_STOP_PERCENT":500,"STEEMIT_SECOND_CASHOUT_WINDOW":2592000,"STEEMIT_SOFT_MAX_COMMENT_DEPTH":255,"STEEMIT_START_MINER_VOTING_BLOCK":864000,"STEEMIT_START_VESTING_BLOCK":201600,"STEEMIT_SYMBOL":"STEEM","STEEMIT_TEMP_ACCOUNT":"temp","STEEMIT_UPVOTE_LOCKOUT_HF7":60000000,"STEEMIT_UPVOTE_LOCKOUT_HF17":"43200000000","STEEMIT_VESTING_FUND_PERCENT":1500,"STEEMIT_VESTING_WITHDRAW_INTERVALS":13,"STEEMIT_VESTING_WITHDRAW_INTERVALS_PRE_HF_16":104,"STEEMIT_VESTING_WITHDRAW_INTERVAL_SECONDS":604800,"STEEMIT_VOTE_CHANGE_LOCKOUT_PERIOD":7200,"STEEMIT_VOTE_DUST_THRESHOLD":50000000,"STEEMIT_VOTE_REGENERATION_SECONDS":432000,"STEEM_SYMBOL":"84959911236355","STMD_SYMBOL":"293355148035","VESTS_SYMBOL":"91621639411206","VIRTUAL_SCHEDULE_LAP_LENGTH":"18446744073709551615","VIRTUAL_SCHEDULE_LAP_LENGTH2":"340282366920938463463374607431768211455"}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:36 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":31,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:37 GMT
+      Content-Length:
+      - '1051'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":31,"result":{"id":0,"head_block_number":16429694,"head_block_id":"00fab27e92d2520c1d2efc65645d997a3add23cd","time":"2017-10-18T05:57:36","current_witness":"blocktrades","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"261036692.783
+        STEEM","current_supply":"257687468.810 STEEM","confidential_supply":"0.000
+        STEEM","current_sbd_supply":"3466446.813 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"190693668.621 STEEM","total_vesting_shares":"392252034051.201799
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"365618420.186955
+        VESTS","pending_rewarded_vesting_steem":"177198.425 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":16490352,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":16429673,"vote_power_reserve_rate":10,"current_reserve_ratio":200000000,"average_block_size":4571,"max_virtual_bandwidth":"264241152000000000000"}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:37 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_chain_properties",[]],"id":32,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:37 GMT
+      Content-Length:
+      - '106'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":32,"result":{"account_creation_fee":"0.200 STEEM","maximum_block_size":65536,"sbd_interest_rate":0}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:38 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_feed_history",[]],"id":33,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:38 GMT
+      Content-Length:
+      - '3725'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":33,"result":{"id":0,"current_median_history":{"base":"1.035 SBD","quote":"1.000
+        STEEM"},"price_history":[{"base":"1.041 SBD","quote":"1.000 STEEM"},{"base":"1.040
+        SBD","quote":"1.000 STEEM"},{"base":"1.056 SBD","quote":"1.000 STEEM"},{"base":"1.056
+        SBD","quote":"1.000 STEEM"},{"base":"1.072 SBD","quote":"1.000 STEEM"},{"base":"1.086
+        SBD","quote":"1.000 STEEM"},{"base":"1.055 SBD","quote":"1.000 STEEM"},{"base":"1.053
+        SBD","quote":"1.000 STEEM"},{"base":"1.051 SBD","quote":"1.000 STEEM"},{"base":"1.041
+        SBD","quote":"1.000 STEEM"},{"base":"1.009 SBD","quote":"1.000 STEEM"},{"base":"1.009
+        SBD","quote":"1.000 STEEM"},{"base":"1.012 SBD","quote":"1.000 STEEM"},{"base":"1.015
+        SBD","quote":"1.000 STEEM"},{"base":"1.012 SBD","quote":"1.000 STEEM"},{"base":"1.009
+        SBD","quote":"1.000 STEEM"},{"base":"1.006 SBD","quote":"1.000 STEEM"},{"base":"1.005
+        SBD","quote":"1.000 STEEM"},{"base":"1.008 SBD","quote":"1.000 STEEM"},{"base":"1.007
+        SBD","quote":"1.000 STEEM"},{"base":"1.009 SBD","quote":"1.000 STEEM"},{"base":"1.017
+        SBD","quote":"1.000 STEEM"},{"base":"1.020 SBD","quote":"1.000 STEEM"},{"base":"1.020
+        SBD","quote":"1.000 STEEM"},{"base":"1.023 SBD","quote":"1.000 STEEM"},{"base":"1.024
+        SBD","quote":"1.000 STEEM"},{"base":"1.028 SBD","quote":"1.000 STEEM"},{"base":"1.052
+        SBD","quote":"1.000 STEEM"},{"base":"1.069 SBD","quote":"1.000 STEEM"},{"base":"1.078
+        SBD","quote":"1.000 STEEM"},{"base":"1.072 SBD","quote":"1.000 STEEM"},{"base":"1.062
+        SBD","quote":"1.000 STEEM"},{"base":"1.067 SBD","quote":"1.000 STEEM"},{"base":"1.073
+        SBD","quote":"1.000 STEEM"},{"base":"1.054 SBD","quote":"1.000 STEEM"},{"base":"1.033
+        SBD","quote":"1.000 STEEM"},{"base":"1.027 SBD","quote":"1.000 STEEM"},{"base":"1.023
+        SBD","quote":"1.000 STEEM"},{"base":"1.024 SBD","quote":"1.000 STEEM"},{"base":"1.037
+        SBD","quote":"1.000 STEEM"},{"base":"1.063 SBD","quote":"1.000 STEEM"},{"base":"1.057
+        SBD","quote":"1.000 STEEM"},{"base":"1.054 SBD","quote":"1.000 STEEM"},{"base":"1.052
+        SBD","quote":"1.000 STEEM"},{"base":"1.029 SBD","quote":"1.000 STEEM"},{"base":"1.028
+        SBD","quote":"1.000 STEEM"},{"base":"1.034 SBD","quote":"1.000 STEEM"},{"base":"1.027
+        SBD","quote":"1.000 STEEM"},{"base":"1.034 SBD","quote":"1.000 STEEM"},{"base":"1.040
+        SBD","quote":"1.000 STEEM"},{"base":"1.037 SBD","quote":"1.000 STEEM"},{"base":"1.034
+        SBD","quote":"1.000 STEEM"},{"base":"1.032 SBD","quote":"1.000 STEEM"},{"base":"1.034
+        SBD","quote":"1.000 STEEM"},{"base":"1.043 SBD","quote":"1.000 STEEM"},{"base":"1.043
+        SBD","quote":"1.000 STEEM"},{"base":"1.043 SBD","quote":"1.000 STEEM"},{"base":"1.043
+        SBD","quote":"1.000 STEEM"},{"base":"1.038 SBD","quote":"1.000 STEEM"},{"base":"1.038
+        SBD","quote":"1.000 STEEM"},{"base":"1.043 SBD","quote":"1.000 STEEM"},{"base":"1.043
+        SBD","quote":"1.000 STEEM"},{"base":"1.036 SBD","quote":"1.000 STEEM"},{"base":"1.055
+        SBD","quote":"1.000 STEEM"},{"base":"1.055 SBD","quote":"1.000 STEEM"},{"base":"1.031
+        SBD","quote":"1.000 STEEM"},{"base":"1.028 SBD","quote":"1.000 STEEM"},{"base":"1.026
+        SBD","quote":"1.000 STEEM"},{"base":"1.018 SBD","quote":"1.000 STEEM"},{"base":"1.016
+        SBD","quote":"1.000 STEEM"},{"base":"1.020 SBD","quote":"1.000 STEEM"},{"base":"1.029
+        SBD","quote":"1.000 STEEM"},{"base":"1.031 SBD","quote":"1.000 STEEM"},{"base":"1.031
+        SBD","quote":"1.000 STEEM"},{"base":"1.034 SBD","quote":"1.000 STEEM"},{"base":"1.034
+        SBD","quote":"1.000 STEEM"},{"base":"1.036 SBD","quote":"1.000 STEEM"},{"base":"1.035
+        SBD","quote":"1.000 STEEM"},{"base":"1.035 SBD","quote":"1.000 STEEM"},{"base":"1.035
+        SBD","quote":"1.000 STEEM"},{"base":"1.037 SBD","quote":"1.000 STEEM"},{"base":"1.038
+        SBD","quote":"1.000 STEEM"},{"base":"1.024 SBD","quote":"1.000 STEEM"},{"base":"1.024
+        SBD","quote":"1.000 STEEM"}]}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:38 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_current_median_history_price",[]],"id":34,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Host:
+      - steemd.steemit.com
+      Content-Length:
+      - '105'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:50 GMT
+      Content-Length:
+      - '61'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":34,"result":{"base":"1.035 SBD","quote":"1.000 STEEM"}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:50 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_witness_schedule",[]],"id":35,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:51 GMT
+      Content-Length:
+      - '1178'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":35,"result":{"id":0,"current_virtual_time":"244743023508879792439973197","next_shuffle_block_num":16429707,"current_shuffled_witnesses":"0000006b6e75667000000000000000006165687265766972000000000000006470646e616c656f72000000000000000000006c61646c6578000000000000000072616b2d646f6f67000000000000616d61627469627375610000000000006b6e696e61646e6f696c00000000000000000000000078796e61000000000000000000006e6f697275660000000000000000772e68746f6f6d7300007373656e746900000000006774670000000000000000000000007a756862000000000000000031797567656d6f7300000000000033326666696c636d697400000000000000000000000065796c6b00000000000000007470797263656874000065766972646f0000706f79616c6300000000000000006d6973657261687000000000000000006172746b636f6c6200000000007365640064656f726767610000000000000000000000617473656a0000000000000000","num_scheduled_witnesses":21,"top19_weight":1,"timeshare_weight":5,"miner_weight":1,"witness_pay_normalization_factor":25,"median_props":{"account_creation_fee":"0.200
+        STEEM","maximum_block_size":65536,"sbd_interest_rate":0},"majority_version":"0.19.2","max_voted_witnesses":20,"max_miner_witnesses":0,"max_runner_witnesses":1,"hardfork_required_witnesses":17}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:51 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_hardfork_version",[]],"id":36,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:57:56 GMT
+      Content-Length:
+      - '27'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":36,"result":"0.19.0"}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:57:56 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_next_scheduled_hardfork",[]],"id":37,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:04 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":37,"result":{"hf_version":"0.19.0","live_time":"2017-06-20T15:00:00"}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:04 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_accounts",[]],"id":38,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:09 GMT
+      Content-Length:
+      - '871'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":38,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_accounts\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:09"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:09"},"format":"","data":{"call.method":"call","call.params":["database_api","get_accounts",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:09 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_account_references",[]],"id":39,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:17 GMT
+      Content-Length:
+      - '891'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":39,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_account_references\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:17"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:17"},"format":"","data":{"call.method":"call","call.params":["database_api","get_account_references",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:17 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","lookup_account_names",[]],"id":40,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:17 GMT
+      Content-Length:
+      - '887'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":40,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"lookup_account_names\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:17"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:17"},"format":"","data":{"call.method":"call","call.params":["database_api","lookup_account_names",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:17 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","lookup_accounts",[]],"id":41,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:17 GMT
+      Content-Length:
+      - '877'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":41,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"lookup_accounts\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:17"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:17"},"format":"","data":{"call.method":"call","call.params":["database_api","lookup_accounts",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:18 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_account_count",[]],"id":42,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:20 GMT
+      Content-Length:
+      - '25'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":42,"result":411307}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:20 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_conversion_requests",[]],"id":43,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:20 GMT
+      Content-Length:
+      - '893'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":43,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_conversion_requests\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:20"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:20"},"format":"","data":{"call.method":"call","call.params":["database_api","get_conversion_requests",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:20 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_account_history",[]],"id":44,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:20 GMT
+      Content-Length:
+      - '885'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":44,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_account_history\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:20"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:20"},"format":"","data":{"call.method":"call","call.params":["database_api","get_account_history",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:20 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_owner_history",[]],"id":45,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:21 GMT
+      Content-Length:
+      - '881'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":45,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_owner_history\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:21"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:21"},"format":"","data":{"call.method":"call","call.params":["database_api","get_owner_history",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:21 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_recovery_request",[]],"id":46,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:21 GMT
+      Content-Length:
+      - '887'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":46,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_recovery_request\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:21"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:21"},"format":"","data":{"call.method":"call","call.params":["database_api","get_recovery_request",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:21 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_escrow",[]],"id":47,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:21 GMT
+      Content-Length:
+      - '867'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":47,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_escrow\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:21"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:21"},"format":"","data":{"call.method":"call","call.params":["database_api","get_escrow",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:21 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_withdraw_routes",[]],"id":48,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:22 GMT
+      Content-Length:
+      - '885'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":48,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_withdraw_routes\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:22"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:22"},"format":"","data":{"call.method":"call","call.params":["database_api","get_withdraw_routes",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:22 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_account_bandwidth",[]],"id":49,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:22 GMT
+      Content-Length:
+      - '889'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":49,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_account_bandwidth\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:22"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:22"},"format":"","data":{"call.method":"call","call.params":["database_api","get_account_bandwidth",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:22 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_savings_withdraw_from",[]],"id":50,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:22 GMT
+      Content-Length:
+      - '897'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":50,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_savings_withdraw_from\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:22"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:22"},"format":"","data":{"call.method":"call","call.params":["database_api","get_savings_withdraw_from",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:22 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_savings_withdraw_to",[]],"id":51,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:22 GMT
+      Content-Length:
+      - '893'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":51,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_savings_withdraw_to\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:22"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:22"},"format":"","data":{"call.method":"call","call.params":["database_api","get_savings_withdraw_to",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:22 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_order_book",[]],"id":52,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:23 GMT
+      Content-Length:
+      - '875'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":52,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_order_book\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:23"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:23"},"format":"","data":{"call.method":"call","call.params":["database_api","get_order_book",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:23 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_open_orders",[]],"id":53,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:23 GMT
+      Content-Length:
+      - '877'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":53,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_open_orders\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:23"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:23"},"format":"","data":{"call.method":"call","call.params":["database_api","get_open_orders",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:23 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_liquidity_queue",[]],"id":54,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:23 GMT
+      Content-Length:
+      - '885'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":54,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_liquidity_queue\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:23"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:23"},"format":"","data":{"call.method":"call","call.params":["database_api","get_liquidity_queue",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:23 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_transaction_hex",[]],"id":55,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:24 GMT
+      Content-Length:
+      - '885'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":55,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_transaction_hex\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:24"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:24"},"format":"","data":{"call.method":"call","call.params":["database_api","get_transaction_hex",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:24 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_transaction",[]],"id":56,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:24 GMT
+      Content-Length:
+      - '877'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":56,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_transaction\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:24"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:24"},"format":"","data":{"call.method":"call","call.params":["database_api","get_transaction",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:24 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_required_signatures",[]],"id":57,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:24 GMT
+      Content-Length:
+      - '893'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":57,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_required_signatures\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:24"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:24"},"format":"","data":{"call.method":"call","call.params":["database_api","get_required_signatures",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:24 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_potential_signatures",[]],"id":58,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:24 GMT
+      Content-Length:
+      - '895'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":58,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_potential_signatures\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:24"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:24"},"format":"","data":{"call.method":"call","call.params":["database_api","get_potential_signatures",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:24 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","verify_authority",[]],"id":59,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:25 GMT
+      Content-Length:
+      - '879'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":59,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"verify_authority\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:25"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:25"},"format":"","data":{"call.method":"call","call.params":["database_api","verify_authority",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:25 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","verify_account_authority",[]],"id":60,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:25 GMT
+      Content-Length:
+      - '895'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":60,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"verify_account_authority\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:25"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:25"},"format":"","data":{"call.method":"call","call.params":["database_api","verify_account_authority",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:25 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_active_votes",[]],"id":61,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:25 GMT
+      Content-Length:
+      - '879'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":61,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_active_votes\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:25"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:25"},"format":"","data":{"call.method":"call","call.params":["database_api","get_active_votes",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:25 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_account_votes",[]],"id":62,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:25 GMT
+      Content-Length:
+      - '881'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":62,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_account_votes\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:25"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:25"},"format":"","data":{"call.method":"call","call.params":["database_api","get_account_votes",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:25 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_content",[]],"id":63,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:26 GMT
+      Content-Length:
+      - '869'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":63,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_content\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:26"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:26"},"format":"","data":{"call.method":"call","call.params":["database_api","get_content",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:26 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_content_replies",[]],"id":64,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:26 GMT
+      Content-Length:
+      - '885'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":64,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_content_replies\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:26"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:26"},"format":"","data":{"call.method":"call","call.params":["database_api","get_content_replies",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:26 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_discussions_by_author_before_date",[]],"id":65,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:27 GMT
+      Content-Length:
+      - '921'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":65,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_discussions_by_author_before_date\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:27"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:27"},"format":"","data":{"call.method":"call","call.params":["database_api","get_discussions_by_author_before_date",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:27 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_replies_by_last_update",[]],"id":66,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:27 GMT
+      Content-Length:
+      - '899'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":66,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_replies_by_last_update\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:27"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:27"},"format":"","data":{"call.method":"call","call.params":["database_api","get_replies_by_last_update",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:27 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_witnesses",[]],"id":67,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:27 GMT
+      Content-Length:
+      - '873'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":67,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_witnesses\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:27"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:27"},"format":"","data":{"call.method":"call","call.params":["database_api","get_witnesses",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:27 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_witness_by_account",[]],"id":68,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:27 GMT
+      Content-Length:
+      - '891'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":68,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_witness_by_account\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:27"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:27"},"format":"","data":{"call.method":"call","call.params":["database_api","get_witness_by_account",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:28 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_witnesses_by_vote",[]],"id":69,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:28 GMT
+      Content-Length:
+      - '889'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":69,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_witnesses_by_vote\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:28"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:28"},"format":"","data":{"call.method":"call","call.params":["database_api","get_witnesses_by_vote",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:28 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","lookup_witness_accounts",[]],"id":70,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:28 GMT
+      Content-Length:
+      - '893'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":70,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"lookup_witness_accounts\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:28"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:28"},"format":"","data":{"call.method":"call","call.params":["database_api","lookup_witness_accounts",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:29 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_witness_count",[]],"id":71,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:29 GMT
+      Content-Length:
+      - '24'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":71,"result":14619}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:29 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_active_witnesses",[]],"id":72,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:30 GMT
+      Content-Length:
+      - '249'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":72,"result":["pfunk","anyx","liondani","gtg","au1nethyb1","ausbitbank","aggroed","someguy123","timcliff","clayop","klye","riverhead","furion","blocktrades","pharesim","smooth.witness","xeldal","roelandp","good-karma","jesta","thecryptodrive"]}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:30 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_miner_queue",[]],"id":73,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:30 GMT
+      Content-Length:
+      - '1939'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":73,"result":["gloin","aizen38","penelope12","remlaps","aizen50","kerstin17","bettina16","cressida","boba-184","jakedobki","perez.hilton","kartoffel11","aizen21","esther25","esther26","esther27","binaca","steeminnow","lomo-saltado","yme","moray","hare11","yme-00","nazca","aizen41","berit17","aizen13","timothy.sykes","kerstin10","galatea","birte16","penelope13","sling10","aizen25","kartoffel14","kartoffel15","bofur","rand.fishkin","aizen43","hedi11","twiggy10","bombur","kili","hedi14","birte17","tammy13","smallhands10","twiggy11","nori","birte18","yme-01","aizen14","kartoffel12","aizen22","tammy14","caliban","collis.taeed","bettina10","collistaeed","balin","atahualpa","aizen","aizen44","esther11","tammy15","penelope14","aizen19","aizen20","kerstin11","esther13","belinda","twiggy12","sling12","penelope15","berit18","sling13","aizen23","berit19","dwalin","tammy16","kartoffel16","birte12","esther12","birte19","aizen37","itsmine-00","chasqui","aizen39","aizen42","hamsterfreund-01","kerstin12","chicha","esther14","itsmine-01","itsmine-02","berit11","aizen45","tammy17","itsmine-03","boba-185","berit12","hare12","birte20","itsmine-04","birte21","aizen26","esther15","oin","itsmine-05","steeminer","aizen27","choclo","tammy18","itsmine","kerstin13","steeminion","penelope10","hare13","itsmine-06","esther16","smallhands11","aizen16","aizen28","hamsterfreund-02","birte11","aizen46","birte13","birte22","phoebe10","itsmine-07","chris.dunn","bettina11","cobain","hamsterfreund-03","aizen40","penelope11","huayna-capac","cryptocobain","aizen11","harveylevin","hedi10","phoebe11","bettina12","kartoffel10","aizen29","crypto.cobain","matt.marshall","cordelia","fili","pete.cashmore","manco-capac","kartoffel13","andrew.sullivan","berit10","aizen30","tammy10","bifur","kerstin14","brian.clark","birte14","hare10","boba-181","penelope16","aizen24","kartoffel17","hedi12","pachakutiq","sling11","yme-02","kartoffel18","kartoffel19"]}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:30 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_reward_fund",[]],"id":74,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:31 GMT
+      Content-Length:
+      - '877'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":74,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_reward_fund\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:31"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:31"},"format":"","data":{"call.method":"call","call.params":["database_api","get_reward_fund",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:31 GMT
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_vesting_delegations",[]],"id":75,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:58:31 GMT
+      Content-Length:
+      - '893'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":75,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_vesting_delegations\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:31"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:58:31"},"format":"","data":{"call.method":"call","call.params":["database_api","get_vesting_delegations",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:58:31 GMT
+recorded_with: VCR 3.0.3

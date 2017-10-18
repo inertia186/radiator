@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["network_broadcast_api","broadcast_transaction",[]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 06:51:22 GMT
+      Content-Length:
+      - '906'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
+        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"network_broadcast_api\",\"broadcast_transaction\",[]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T06:51:22"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T06:51:22"},"format":"","data":{"call.method":"call","call.params":["network_broadcast_api","broadcast_transaction",[]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 06:51:22 GMT
+recorded_with: VCR 3.0.3

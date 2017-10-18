@@ -19,27 +19,19 @@ module Radiator
     end
 
     def test_all_methods
-      unless defined? WebMock
-        skip 'This test cannot run against testnet.  It is only here to help locate newly added actions.'
-      end
-      
-      @api.method_names.each do |key|
-        begin
+      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE) do
+        @api.method_names.each do |key|
           assert @api.send key
-          fail 'did not expect method with invalid argument to execute'
-        rescue WebMock::NetConnectNotAllowedError => _
-          # success
-        rescue ArgumentError => _
-          # success
         end
       end
     end
 
     def test_get_followers
-      stub_post_follow_api_get_followers
-      @api.get_followers('inertia', 0, 'blog', 100) do |followers|
-        assert_equal Hashie::Array, followers.class, followers.inspect
-        assert followers
+      VCR.use_cassette('get_followers', record: VCR_RECORD_MODE) do
+        @api.get_followers('inertia', 0, 'blog', 100) do |followers|
+          assert_equal Hashie::Array, followers.class, followers.inspect
+          assert followers
+        end
       end
     end
   end

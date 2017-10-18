@@ -19,26 +19,18 @@ module Radiator
     end
 
     def test_all_methods
-      unless defined? WebMock
-        skip 'This test cannot run against testnet.  It is only here to help locate newly added actions.'
-      end
-      
-      @api.method_names.each do |key|
-        begin
+      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE) do
+        @api.method_names.each do |key|
           assert @api.send key
-          fail 'did not expect method with invalid argument to execute'
-        rescue WebMock::NetConnectNotAllowedError => _
-          # success
-        rescue ArgumentError => _
-          # success
         end
       end
     end
 
     def test_broadcast_transaction
-      stub_post_empty
-      @api.broadcast_transaction do |result|
-        assert_equal Hashie::Array, result.class, result.inspect
+      VCR.use_cassette('broadcast_transaction', record: VCR_RECORD_MODE) do
+        @api.broadcast_transaction do |result|
+          assert_equal NilClass, result.class, result.inspect
+        end
       end
     end
   end

@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["condenser_api","lookup_witness_accounts",["",19]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 06:45:38 GMT
+      Content-Length:
+      - '268'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"result":["a-0","a-h","a-pile-of-steem","a-z","a001","a01.cshrem","a02.cshrem","a0de6qzchbut","a1i-00ba0eb5","a1i-01e13986","a1i-03a7078f","a1i-04a70788","a1i-04ba0eb1","a1i-05a70789","a1i-06a7078a","a1i-06ba0eb3","a1i-06e13981","a1i-07a7078b","a1i-07ba0eb2"]}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 06:45:38 GMT
+recorded_with: VCR 3.0.3

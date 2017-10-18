@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://steemd.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_account_references",[["2.2.27007"]]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Oct 2017 05:53:50 GMT
+      Content-Length:
+      - '909'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"error":{"code":1,"message":"7 bad_cast_exception: Bad Cast\nInvalid
+        cast from array_type to int64\n    {\"type\":\"array_type\"}\n    th_a  variant.cpp:382
+        as_int64\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_account_references\",[[\"2.2.27007\"]]]}\n    th_a  websocket_api.cpp:124
+        on_message","data":{"code":7,"name":"bad_cast_exception","message":"Bad Cast","stack":[{"context":{"level":"error","file":"variant.cpp","line":382,"method":"as_int64","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:53:50"},"format":"Invalid
+        cast from ${type} to int64","data":{"type":"array_type"}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T05:53:50"},"format":"","data":{"call.method":"call","call.params":["database_api","get_account_references",[["2.2.27007"]]]}}]}}}'
+    http_version: 
+  recorded_at: Wed, 18 Oct 2017 05:53:50 GMT
+recorded_with: VCR 3.0.3

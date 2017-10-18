@@ -15,11 +15,9 @@ require 'vcr'
 require 'yaml'
 require 'pry'
 
-if !!ENV['VCR']
-  VCR.configure do |c|
-    c.cassette_library_dir = 'test/fixtures/vcr_cassettes'
-    c.hook_into :webmock
-  end
+VCR.configure do |c|
+  c.cassette_library_dir = 'test/fixtures/vcr_cassettes'
+  c.hook_into :webmock
 end
 
 if ENV["HELL_ENABLED"]
@@ -38,6 +36,9 @@ if defined? WebMock
 end
 
 class Radiator::Test < MiniTest::Test
+  VCR_RECORD_MODE = :once
+# VCR_RECORD_MODE = :new_episodes
+
   FIXTURE_PATH = 'test/fixtures'.freeze
   LOGGER = Logger.new(nil)
   
