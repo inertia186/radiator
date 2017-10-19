@@ -10,7 +10,7 @@ module Radiator
     include Utils
     
     VALID_OPTIONS = %w(
-      wif private_key ref_block_num ref_block_prefix expiration operations
+      wif private_key ref_block_num ref_block_prefix expiration
       chain
     ).map(&:to_sym)
     VALID_OPTIONS.each { |option| attr_accessor option }
@@ -29,7 +29,7 @@ module Radiator
       @chain ||= :steem
       @chain_id = chain_id options[:chain_id]
       @url = options[:url] || url
-      @operations ||= []
+      @operations = options[:operations] || []
       
       unless NETWORK_CHAIN_IDS.include? @chain_id
         @logger.warn "Unknown chain id: #{@chain_id}"

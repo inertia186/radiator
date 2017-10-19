@@ -221,6 +221,9 @@ module Radiator
       Hashie.logger = @hashie_logger
       @method_names = nil
       @api_options = options.dup.merge(chain: @chain)
+      @api = nil
+      @block_api = nil
+      @backoff_at = nil
     end
     
     # Get a specific block or range of blocks.
@@ -390,10 +393,12 @@ module Radiator
         
         begin
           if @recover_transactions_on_error && api_name == :network_broadcast_api
-            signatures = extract_signatures(options)
+            signatures, exp = extract_signatures(options)
             
             if tries > 1 && !!signatures && signatures.any?
-              if !!(response = recover_transaction(signatures, rpc_id, timestamp))
+              offset = [(exp - timestamp).abs, 300].min
+              
+              if !!(response = recover_transaction(signatures, rpc_id, timestamp - offset))
                 warning 'Found recovered transaction after retry.', method_name
                 response = Hashie::Mash.new(response)
               end
@@ -545,15 +550,24 @@ module Radiator
     end
     
     def extract_signatures(options)
-      options[:params].map do |param|
+      params = options[:params]
+      
+      signatures = params.map do |param|
         next unless defined? param.map
         
         param.map { |tx| tx[:signatures] }
       end.flatten.compact
+      
+      expirations = params.map do |param|
+        next unless defined? param.map
+        
+        param.map { |tx| Time.parse(tx[:expiration] + 'Z') }
+      end.flatten.compact
+      
+      [signatures, expirations.min]
     end
     
     def recover_transaction(signatures, rpc_id, after)
-      now = Time.now.utc
       block_range = api.get_dynamic_global_properties do |properties|
         high = properties.head_block_number
         low = high - 100
@@ -585,6 +599,8 @@ module Radiator
           }
         end
       end
+      
+      return nil
     end
     
     def reset_failover
