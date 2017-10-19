@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    radiator (0.3.3)
+    radiator (0.3.4)
       awesome_print (~> 1.7, >= 1.7.0)
       bitcoin-ruby (~> 0.0, >= 0.0.11)
       ffi (~> 1.9, >= 1.9.18)
@@ -17,7 +17,6 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     awesome_print (1.8.0)
     bitcoin-ruby (0.0.11)
-    coderay (1.1.2)
     connection_pool (2.2.1)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
@@ -30,7 +29,6 @@ GEM
     logging (2.2.2)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
-    method_source (0.9.0)
     minitest (5.10.3)
     minitest-line (0.6.4)
       minitest (~> 5.0)
@@ -39,9 +37,6 @@ GEM
     multi_json (1.12.2)
     net-http-persistent (3.0.0)
       connection_pool (~> 2.2)
-    pry (0.11.1)
-      coderay (~> 1.1.0)
-      method_source (~> 0.9.0)
     public_suffix (3.0.0)
     rake (12.1.0)
     safe_yaml (1.0.4)
@@ -65,7 +60,6 @@ DEPENDENCIES
   minitest (~> 5.9, >= 5.9.0)
   minitest-line (~> 0.6.3)
   minitest-proveit (~> 1.0, >= 1.0.0)
-  pry (~> 0.11.1)
   radiator!
   rake (~> 12.1, >= 12.1.0)
   simplecov (~> 0.15.1)
