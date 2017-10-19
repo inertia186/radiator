@@ -7,7 +7,7 @@ module Radiator
     end
     
     def test_hashie_logger
-      Radiator::Api.new(hashie_logger: 'hashie.log')
+      assert Radiator::Api.new(hashie_logger: 'hashie.log')
     end
 
     def test_method_missing
@@ -115,7 +115,7 @@ module Radiator
     end
     
     def test_backoff
-      @api.send(:backoff)
+      assert_nil @api.send(:backoff)
     end
   end
 end

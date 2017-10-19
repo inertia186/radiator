@@ -22,7 +22,8 @@ end
 
 if ENV["HELL_ENABLED"]
   require "minitest/hell"
-  
+  require 'minitest/proveit'
+
   class Minitest::Test
     # See: https://gist.github.com/chrisroos/b5da6c6a37ac8af5fe78
     parallelize_me! unless defined? WebMock
@@ -36,6 +37,8 @@ if defined? WebMock
 end
 
 class Radiator::Test < MiniTest::Test
+  defined? prove_it! and prove_it!
+  
   VCR_RECORD_MODE = :once
   # VCR_RECORD_MODE = :new_episodes
 
