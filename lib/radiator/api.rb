@@ -224,6 +224,7 @@ module Radiator
       
       Hashie.logger = @hashie_logger
       @method_names = nil
+      @http = nil
       @api_options = options.dup.merge(chain: @chain)
       @api = nil
       @block_api = nil
