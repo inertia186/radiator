@@ -27,6 +27,7 @@ module Radiator
       
       @logger = options[:logger] || Radiator.logger
       @chain ||= :steem
+      @chain = @chain.to_sym
       @chain_id = chain_id options[:chain_id]
       @url = options[:url] || url
       @operations = options[:operations] || []
@@ -121,7 +122,7 @@ module Radiator
         @properties = properties
         
         case @chain
-        when :steem || :test
+        when :steem, :test
           # You can actually go back as far as the TaPoS buffer will allow, which
           # is something like 50,000 blocks.
           
@@ -149,6 +150,8 @@ module Radiator
           
           @ref_block_num = @properties.head_block_number & 0xFFFF
           @ref_block_prefix = unhexlify(@properties.head_block_id[8..-1]).unpack('V*')[0]
+        else
+          raise TransactionError, "Unable to prepare transaction, unsupported chain: #{@chain}"
         end
         
         # The expiration allows for transactions to expire if they are not
