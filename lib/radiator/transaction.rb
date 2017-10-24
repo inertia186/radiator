@@ -32,7 +32,7 @@ module Radiator
       @operations = options[:operations] || []
       
       unless NETWORK_CHAIN_IDS.include? @chain_id
-        @logger.warn "Unknown chain id: #{@chain_id}"
+        warning "Unknown chain id: #{@chain_id}"
       end
       
       if !!wif && !!private_key
@@ -70,7 +70,21 @@ module Radiator
       prepare
       
       if broadcast
-        @network_broadcast_api.broadcast_transaction_synchronous(payload)
+        loop do
+          response = @network_broadcast_api.broadcast_transaction_synchronous(payload)
+          
+          if !!response.error
+            parser = ErrorParser.new(response)
+            
+            if parser.can_reprepare?
+              debug "Repreparing transaction ..."
+              prepare
+              redo 
+            end
+          end
+          
+          return response
+        end
       else
         self
       end
@@ -99,19 +113,54 @@ module Radiator
     def prepare
       raise TransactionError, "No wif or private key." unless !!@wif || !!@private_key
       
-      @properties = @api.get_dynamic_global_properties.result
-      @ref_block_num = @properties.head_block_number & 0xFFFF
-      @ref_block_prefix = unhexlify(@properties.head_block_id[8..-1]).unpack('V*')[0]
-      
-      # The expiration allows for transactions to expire if they are not
-      # included into a block by that time.  Always update it to the current
-      # time + EXPIRE_IN_SECS.
-      #
-      # Note, as of #1215, expiration exactly 'now' will be rejected:
-      # https://github.com/steemit/steem/blob/57451b80d2cf480dcce9b399e48e56aa7af1d818/libraries/chain/database.cpp#L2870
-      # https://github.com/steemit/steem/issues/1215
-      
-      @expiration = Time.parse(@properties.time + 'Z') + EXPIRE_IN_SECS
+      @api.get_dynamic_global_properties do |properties, error|
+        if !!error
+          raise TransactionError, "Unable to prepare transaction.", error
+        end
+        
+        @properties = properties
+        
+        case @chain
+        when :steem || :test
+          # You can actually go back as far as the TaPoS buffer will allow, which
+          # is something like 50,000 blocks.
+          
+          block_number = @properties.last_irreversible_block_num
+        
+          @api.get_block(block_number) do |block, error|
+            if !!error
+              raise TransactionError, "Unable to prepare transaction.", error
+            end
+            
+            if block.nil?
+              raise TransactionError, "Unable to prepare transaction, block missing."
+            end
+            
+            if block.block_id.nil?
+              raise TransactionError, "Unable to prepare transaction, block.block_id missing."
+            end
+
+            @ref_block_num = block_number & 0xFFFF
+            @ref_block_prefix = unhexlify(block.block_id[8..-1]).unpack('V*')[0]
+          end
+        when :golos
+          # No support for block_id in get_block on golos (yet), so just use the
+          # head block number.
+          
+          @ref_block_num = @properties.head_block_number & 0xFFFF
+          @ref_block_prefix = unhexlify(@properties.head_block_id[8..-1]).unpack('V*')[0]
+        end
+        
+        # The expiration allows for transactions to expire if they are not
+        # included into a block by that time.  Always update it to the current
+        # time + EXPIRE_IN_SECS.
+        #
+        # Note, as of #1215, expiration exactly 'now' will be rejected:
+        # https://github.com/steemit/steem/blob/57451b80d2cf480dcce9b399e48e56aa7af1d818/libraries/chain/database.cpp#L2870
+        # https://github.com/steemit/steem/issues/1215
+        
+        @expiration = Time.parse(@properties.time + 'Z') + EXPIRE_IN_SECS
+      end
       
       self
     end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://steemd.steemit.com/
+    uri: https://api.steemit.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","params":["market_history_api","get_ticker",[]],"id":1,"method":"call"}'
@@ -25,13 +25,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 18 Oct 2017 06:49:02 GMT
+      - Tue, 24 Oct 2017 16:59:08 GMT
+      Content-Type:
+      - application/json
       Content-Length:
-      - '220'
+      - '238'
       Connection:
       - keep-alive
       Server:
       - nginx
+      X-Jussi-Cache-Hit:
+      - steemd.market_history_api.get_ticker
+      X-Jussi-Response-Id:
+      - s5bed5372-19e0-4105-988b-475deba6f509->038aef16-0ef6-4604-8b0f-835f021b0dbb
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -40,10 +46,12 @@ http_interactions:
       - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
       Strict-Transport-Security:
       - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"id":1,"result":{"latest":"1.04215222883220582","lowest_ask":"1.04663506825555830","highest_bid":"1.04166666666666674","percent_change":"0.16424804492682479","steem_volume":"7704.155
-        STEEM","sbd_volume":"8096.382 SBD"}}'
+      string: '{"jsonrpc":"2.0","result":{"latest":"0.98992398797949432","lowest_ask":"0.99259101705129582","highest_bid":"0.98726429065060706","percent_change":"2.26487479127007818","steem_volume":"10434.183
+        STEEM","sbd_volume":"10343.502 SBD"},"id":1}'
     http_version: 
-  recorded_at: Wed, 18 Oct 2017 06:49:02 GMT
+  recorded_at: Tue, 24 Oct 2017 16:59:08 GMT
 recorded_with: VCR 3.0.3

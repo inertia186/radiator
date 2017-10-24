@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://steemd.steemit.com/
+    uri: https://api.steemit.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","params":["account_by_key_api","get_key_references",[["STM71f6yWztimJuREVyyMXNqAVbx1FzPVW6LLXNoQ35dHwKuszmHX"]]],"id":1,"method":"call"}'
@@ -25,13 +25,17 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 18 Oct 2017 06:43:01 GMT
+      - Tue, 24 Oct 2017 16:59:24 GMT
+      Content-Type:
+      - application/json
       Content-Length:
       - '117'
       Connection:
       - keep-alive
       Server:
       - nginx
+      X-Jussi-Response-Id:
+      - s7fb8155c-d40e-4802-a41a-e302c9f54c13->da4d5c93-c459-449b-b72d-d1820252622b
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -40,9 +44,11 @@ http_interactions:
       - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
       Strict-Transport-Security:
       - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"id":1,"result":[["misterdelegation","ned","steem","steemit","steemit1","steemit2","steemit60","therealslimshady"]]}'
+      string: '{"result":[["misterdelegation","ned","steem","steemit","steemit1","steemit2","steemit60","therealslimshady"]],"id":1}'
     http_version: 
-  recorded_at: Wed, 18 Oct 2017 06:43:01 GMT
+  recorded_at: Tue, 24 Oct 2017 16:59:24 GMT
 recorded_with: VCR 3.0.3

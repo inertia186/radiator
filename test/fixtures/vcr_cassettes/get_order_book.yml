@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://steemd.steemit.com/
+    uri: https://api.steemit.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","params":["market_history_api","get_order_book",[10]],"id":1,"method":"call"}'
@@ -25,13 +25,17 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 18 Oct 2017 06:49:02 GMT
-      Content-Length:
-      - '1165'
+      - Tue, 24 Oct 2017 16:59:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       Server:
       - nginx
+      X-Jussi-Response-Id:
+      - sff811add-d671-4197-8a8f-b1e7e1877bb4->3f804521-7e15-466e-a17a-e70d1740b45b
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -40,9 +44,11 @@ http_interactions:
       - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
       Strict-Transport-Security:
       - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
     body:
-      encoding: UTF-8
-      string: '{"id":1,"result":{"bids":[{"price":"1.04166666666666674","steem":480,"sbd":500},{"price":"1.04115538500438776","steem":134466,"sbd":140000},{"price":"1.03699999999999992","steem":1000,"sbd":1037},{"price":"1.03600000000000003","steem":1000,"sbd":1036},{"price":"1.03600000000000003","steem":1000,"sbd":1036},{"price":"1.03600000000000003","steem":1000,"sbd":1036},{"price":"1.03499999999999992","steem":1000,"sbd":1035},{"price":"1.03499999999999992","steem":1000,"sbd":1035},{"price":"1.03499999999999992","steem":1000,"sbd":1035},{"price":"1.03499999999999992","steem":1000,"sbd":1035}],"asks":[{"price":"1.04663506825555830","steem":133762,"sbd":140000},{"price":"1.05974842767295585","steem":1590,"sbd":1685},{"price":"1.06849315068493156","steem":73,"sbd":78},{"price":"1.06940063091482651","steem":1585,"sbd":1695},{"price":"1.07099768314289201","steem":139413,"sbd":149311},{"price":"1.07472231571861321","steem":2971,"sbd":3193},{"price":"1.07509626809052783","steem":69857,"sbd":75103},{"price":"1.07600000000000007","steem":1000,"sbd":1076},{"price":"1.07699999999999996","steem":1000,"sbd":1077},{"price":"1.07699999999999996","steem":1000,"sbd":1077}]}}'
+      encoding: ASCII-8BIT
+      string: '{"result":{"bids":[{"price":"0.98726429065060706","steem":141806,"sbd":140000},{"price":"0.98113207547169812","steem":106,"sbd":104},{"price":"0.98039215686274517","steem":102,"sbd":100},{"price":"0.97954705744063952","steem":102088,"sbd":100000},{"price":"0.97954271961492179","steem":1662,"sbd":1628},{"price":"0.97943192948090119","steem":1021,"sbd":1000},{"price":"0.97899999999999998","steem":1000,"sbd":979},{"price":"0.97899999999999998","steem":1000,"sbd":979},{"price":"0.97899999999999998","steem":1000,"sbd":979},{"price":"0.97899999999999998","steem":1000,"sbd":979}],"asks":[{"price":"0.99259101705129582","steem":141045,"sbd":140000},{"price":"1.00999596316872031","steem":52021,"sbd":52541},{"price":"1.00999663034932041","steem":71224,"sbd":71936},{"price":"1.01946087195708968","steem":14542,"sbd":14825},{"price":"1.02299999999999991","steem":1000,"sbd":1023},{"price":"1.02400000000000002","steem":1000,"sbd":1024},{"price":"1.02400000000000002","steem":1000,"sbd":1024},{"price":"1.02400000000000002","steem":1000,"sbd":1024},{"price":"1.02400000000000002","steem":1000,"sbd":1024},{"price":"1.02400000000000002","steem":1000,"sbd":1024}]},"id":1}'
     http_version: 
-  recorded_at: Wed, 18 Oct 2017 06:49:02 GMT
+  recorded_at: Tue, 24 Oct 2017 16:59:06 GMT
 recorded_with: VCR 3.0.3

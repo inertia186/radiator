@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://steemd.steemit.com/
+    uri: https://api.steemit.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","params":["market_history_api","get_trade_history",[null,null,null]],"id":1,"method":"call"}'
@@ -25,13 +25,17 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 18 Oct 2017 06:50:08 GMT
-      Content-Length:
-      - '1306'
+      - Tue, 24 Oct 2017 16:59:10 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       Server:
       - nginx
+      X-Jussi-Response-Id:
+      - sb79c22ac-9820-4b63-919e-41a34b7be829->ea6fd404-8a49-4b5f-ab21-2d327b34c4e8
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -40,16 +44,18 @@ http_interactions:
       - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
       Strict-Transport-Security:
       - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
     body:
-      encoding: UTF-8
-      string: '{"id":1,"error":{"code":1,"message":"13 N5boost16exception_detail10clone_implINS0_19error_info_injectorINS_9gregorian16bad_day_of_monthEEEEE:
+      encoding: ASCII-8BIT
+      string: '{"error":{"code":1,"message":"13 N5boost16exception_detail10clone_implINS0_19error_info_injectorINS_9gregorian16bad_day_of_monthEEEEE:
         Day of month value is out of range 1..31\nDay of month value is out of range
         1..31: unable to convert ISO-formatted string to fc::time_point_sec\n    {\"what\":\"Day
         of month value is out of range 1..31\"}\n    th_a  time.cpp:45 from_iso_string\n\n    {\"call.method\":\"call\",\"call.params\":[\"market_history_api\",\"get_trade_history\",[null,null,null]]}\n    th_a  websocket_api.cpp:124
         on_message","data":{"code":13,"name":"N5boost16exception_detail10clone_implINS0_19error_info_injectorINS_9gregorian16bad_day_of_monthEEEEE","message":"Day
-        of month value is out of range 1..31","stack":[{"context":{"level":"warn","file":"time.cpp","line":45,"method":"from_iso_string","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T06:50:08"},"format":"${what}:
+        of month value is out of range 1..31","stack":[{"context":{"level":"warn","file":"time.cpp","line":45,"method":"from_iso_string","hostname":"","thread_name":"th_a","timestamp":"2017-10-24T16:59:10"},"format":"${what}:
         unable to convert ISO-formatted string to fc::time_point_sec","data":{"what":"Day
-        of month value is out of range 1..31"}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-18T06:50:08"},"format":"","data":{"call.method":"call","call.params":["market_history_api","get_trade_history",[null,null,null]]}}]}}}'
+        of month value is out of range 1..31"}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-24T16:59:10"},"format":"","data":{"call.method":"call","call.params":["market_history_api","get_trade_history",[null,null,null]]}}]}},"id":1}'
     http_version: 
-  recorded_at: Wed, 18 Oct 2017 06:50:08 GMT
+  recorded_at: Tue, 24 Oct 2017 16:59:10 GMT
 recorded_with: VCR 3.0.3

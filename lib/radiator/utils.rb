@@ -1,5 +1,59 @@
 module Radiator
   module Utils
+    def extract_signatures(options)
+      params = options[:params]
+      
+      signatures = params.map do |param|
+        next unless defined? param.map
+        
+        param.map do |tx|
+          tx[:signatures] rescue nil
+        end
+      end.flatten.compact
+      
+      expirations = params.map do |param|
+        next unless defined? param.map
+        
+        param.map do |tx|
+          Time.parse(tx[:expiration] + 'Z') rescue nil
+        end
+      end.flatten.compact
+      
+      [signatures, expirations.min]
+    end
+    
+    def send_log(level, message, prefix = nil)
+      log_message = if !!prefix
+        "#{prefix} :: #{message}"
+      else
+        message
+      end
+      
+      if !!@logger
+        @logger.send level, log_message
+      else
+        puts "#{level}: #{log_message}"
+      end
+      
+      nil
+    end
+    
+    def error(message, prefix = nil)
+      send_log(:error, message, prefix)
+    end
+    
+    def warning(message, prefix = nil, log_debug_node = false)
+      debug("Current node: #{@url}", prefix) if !!log_debug_node && @url
+        
+      send_log(:warn, message, prefix)
+    end
+    
+    def debug(message, prefix = nil)
+      if ENV['LOG'] == 'DEBUG'
+        send_log(:debug, message, prefix)
+      end
+    end
+    
     def hexlify(s)
       a = []
       if s.respond_to? :each_byte

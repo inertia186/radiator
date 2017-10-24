@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://steemd.steemit.com/
+    uri: https://api.steemit.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","params":["database_api","get_account_count",[]],"id":1,"method":"call"}'
@@ -25,13 +25,17 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 18 Oct 2017 05:54:04 GMT
+      - Tue, 24 Oct 2017 16:59:35 GMT
+      Content-Type:
+      - application/json
       Content-Length:
       - '24'
       Connection:
       - keep-alive
       Server:
       - nginx
+      X-Jussi-Response-Id:
+      - sbc11bc54-dbe7-4ca3-941f-c871d4608c29->0e6153de-5de0-41f9-82b0-c8968f34185f
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -40,9 +44,11 @@ http_interactions:
       - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
       Strict-Transport-Security:
       - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"id":1,"result":411303}'
+      string: '{"result":423035,"id":1}'
     http_version: 
-  recorded_at: Wed, 18 Oct 2017 05:54:04 GMT
+  recorded_at: Tue, 24 Oct 2017 16:59:35 GMT
 recorded_with: VCR 3.0.3

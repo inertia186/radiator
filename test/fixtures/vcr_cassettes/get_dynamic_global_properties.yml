@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://steemd.steemit.com/
+    uri: https://api.steemit.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
@@ -25,13 +25,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 18 Oct 2017 05:54:04 GMT
-      Content-Length:
-      - '1049'
+      - Tue, 24 Oct 2017 16:59:31 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       Server:
       - nginx
+      X-Jussi-Cache-Hit:
+      - steemd.database_api.get_dynamic_global_properties
+      X-Jussi-Response-Id:
+      - s09311e49-b787-43d3-b063-ee27c6d61066->96307042-5396-47d2-be88-1d6af7788c15
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -40,14 +46,16 @@ http_interactions:
       - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
       Strict-Transport-Security:
       - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
     body:
-      encoding: UTF-8
-      string: '{"id":1,"result":{"id":0,"head_block_number":16429623,"head_block_id":"00fab23705747059b6979f9007333f99d78ce828","time":"2017-10-18T05:54:03","current_witness":"good-karma","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"261036531.416
-        STEEM","current_supply":"257687321.957 STEEM","confidential_supply":"0.000
-        STEEM","current_sbd_supply":"3466431.791 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"190693611.824 STEEM","total_vesting_shares":"392251966878.571250
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"365618291.805375
-        VESTS","pending_rewarded_vesting_steem":"177198.362 STEEM","sbd_interest_rate":1,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":16490281,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":16429608,"vote_power_reserve_rate":10,"current_reserve_ratio":200000000,"average_block_size":4650,"max_virtual_bandwidth":"264241152000000000000"}}'
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"id":0,"head_block_number":16615636,"head_block_id":"00fd88d497b9a446ab3cfbf372131e35b6cac671","time":"2017-10-24T16:59:03","current_witness":"aggroed","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"261701058.766
+        STEEM","current_supply":"258176217.220 STEEM","confidential_supply":"0.000
+        STEEM","current_sbd_supply":"3394422.409 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"190713140.942 STEEM","total_vesting_shares":"392162151124.802635
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"377674815.018668
+        VESTS","pending_rewarded_vesting_steem":"183074.120 STEEM","sbd_interest_rate":1,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":16676381,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":16615621,"vote_power_reserve_rate":10,"current_reserve_ratio":200000000,"average_block_size":5945,"max_virtual_bandwidth":"264241152000000000000"},"id":1}'
     http_version: 
-  recorded_at: Wed, 18 Oct 2017 05:54:04 GMT
+  recorded_at: Tue, 24 Oct 2017 16:59:31 GMT
 recorded_with: VCR 3.0.3

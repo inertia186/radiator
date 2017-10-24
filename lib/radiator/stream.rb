@@ -21,7 +21,7 @@ module Radiator
     MAX_TIMEOUT = 80
     
     # @private
-    MAX_BLOCKS_PER_NODE = 100
+    MAX_BLOCKS_PER_NODE = 1000
     
     def initialize(options = {})
       super

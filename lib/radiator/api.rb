@@ -3,6 +3,7 @@ require 'base64'
 require 'hashie'
 require 'hashie/logger'
 require 'openssl'
+require 'open-uri'
 require 'net/http/persistent'
 
 module Radiator
@@ -131,14 +132,15 @@ module Radiator
   # @see https://steemit.github.io/steemit-docs/#accounts
   #
   class Api
-    DEFAULT_STEEM_URL = 'https://steemd.steemit.com'
+    include Utils
+    
+    DEFAULT_STEEM_URL = 'https://api.steemit.com'
     
     DEFAULT_GOLOS_URL = 'https://ws.golos.io'
     
     DEFAULT_STEEM_FAILOVER_URLS = [
       DEFAULT_STEEM_URL,
-      'https://steemd-int.steemit.com',
-      'https://steemd.steemitstage.com',
+      'https://api.steemitstage.com',
       'https://gtg.steem.house:8090',
       'https://seed.bitcoiner.me',
       'https://steemd.minnowsupportproject.org',
@@ -156,9 +158,8 @@ module Radiator
       'Content-Type' => 'application/json'
     }
     
-    # These are known SSL versions supported by:
-    # https://github.com/ruby/openssl/blob/master/lib/openssl/ssl.rb
-    SSL_VERSIONS = [:TLSv1_2, :TLSv1_1, :TLSv1, :SSLv3, :SSLv2, :SSLv23]
+    # @private
+    HEALTH_URI = '/health'
     
     def self.default_url(chain)
       case chain.to_sym
@@ -183,11 +184,12 @@ module Radiator
     #   api = Radiator::Api.new(url: 'https://api.example.com')
     #
     # @param options [Hash] The attributes to initialize the Radiator::Api with.
-    # @option options [String] :url URL that points at a full node, like `https://steemd.steemit.com`.  Default from DEFAULT_URL.
+    # @option options [String] :url URL that points at a full node, like `https://api.steemit.com`.  Default from DEFAULT_URL.
     # @option options [Array<String>] :failover_urls An array that contains one or more full nodes to fall back on.  Default from DEFAULT_FAILOVER_URLS.
     # @option options [Logger] :logger An instance of `Logger` to send debug messages to.
     # @option options [Boolean] :recover_transactions_on_error Have Radiator try to recover transactions that are accepted but could not be confirmed due to an error like network timeout.  Default: `true`
     # @option options [Integer] :max_requests Maximum number of requests on a connection before it is considered expired and automatically closed.
+    # @option options [Boolean] :reuse_ssl_sessions Reuse a previously opened SSL session for a new connection.  There's a slight performance improvement by enabling this, but at the expense of reliability during long execution.  Default false.
     def initialize(options = {})
       @user = options[:user]
       @password = options[:password]
@@ -199,7 +201,9 @@ module Radiator
       @logger = options[:logger] || Radiator.logger
       @hashie_logger = options[:hashie_logger] || Logger.new(nil)
       @max_requests = options[:max_requests] || 30
-      @ssl_version = nil # default
+      @ssl_verify_mode = options[:ssl_verify_mode] || OpenSSL::SSL::VERIFY_PEER
+      @reuse_ssl_sessions = !!options[:reuse_ssl_sessions]
+      @ssl_version = options[:ssl_version]
       
       if @failover_urls.nil?
         @failover_urls = Api::default_failover_urls(@chain) - [@url]
@@ -376,12 +380,13 @@ module Radiator
     def method_missing(m, *args, &block)
       super unless respond_to_missing?(m)
       
+      current_rpc_id = rpc_id
       method_name = [api_name, m].join('.')
       response = nil
       options = {
         jsonrpc: "2.0",
         params: [api_name, m, args],
-        id: rpc_id,
+        id: current_rpc_id,
         method: "call"
       }
       
@@ -398,8 +403,8 @@ module Radiator
             if tries > 1 && !!signatures && signatures.any?
               offset = [(exp - timestamp).abs, 300].min
               
-              if !!(response = recover_transaction(signatures, rpc_id, timestamp - offset))
-                warning 'Found recovered transaction after retry.', method_name
+              if !!(response = recover_transaction(signatures, current_rpc_id, timestamp - offset))
+                warning 'Found recovered transaction after retry.', method_name, true
                 response = Hashie::Mash.new(response)
               end
             end
@@ -411,7 +416,7 @@ module Radiator
             response = if response.nil?
               error "No response, retrying ...", method_name
             elsif !response.kind_of? Net::HTTPSuccess
-              warning "Unexpected response (code: #{response.code}): #{response.inspect}, retrying ...", method_name
+              warning "Unexpected response (code: #{response.code}): #{response.inspect}, retrying ...", method_name, true
             else
               case response.code
               when '200'
@@ -419,52 +424,48 @@ module Radiator
                 response = JSON[body]
                 
                 if response['id'] != options[:id]
-                  warning "Unexpected rpc_id (expected: #{options[:id]}, got: #{response['id']}), retrying ...", method_name
+                  warning "Unexpected rpc_id (expected: #{options[:id]}, got: #{response['id']}), retrying ...", method_name, true
                 elsif response.keys.include?('error')
-                  case response['error']['code']
-                  when -32601 # Assert Exception:method_itr != api_itr->second.end(): Could not find method ...
-                    nil
-                  else
-                    Hashie::Mash.new(response)
-                  end
+                  handle_error(response, options, method_name, tries)
                 else
                   Hashie::Mash.new(response)
                 end
-              when '400' then warning 'Code 400: Bad Request, retrying ...', method_name
-              when '429' then warning 'Code 429: Too Many Requests, retrying ...', method_name
-              when '502' then warning 'Code 502: Bad Gateway, retrying ...', method_name
-              when '503' then warning 'Code 503: Service Unavailable, retrying ...', method_name
-              when '504' then warning 'Code 504: Gateway Timeout, retrying ...', method_name
+              when '400' then warning 'Code 400: Bad Request, retrying ...', method_name, true
+              when '429' then warning 'Code 429: Too Many Requests, retrying ...', method_name, true
+              when '502' then warning 'Code 502: Bad Gateway, retrying ...', method_name, true
+              when '503' then warning 'Code 503: Service Unavailable, retrying ...', method_name, true
+              when '504' then warning 'Code 504: Gateway Timeout, retrying ...', method_name, true
               else
-                warning "Unknown code #{response.code}, retrying ...", method_name
+                warning "Unknown code #{response.code}, retrying ...", method_name, true
                 ap response
               end
             end
           end
         rescue Net::HTTP::Persistent::Error => e
-          warning "Unable to perform request: #{e} :: #{!!e.cause ? "cause: #{e.cause.message}" : ''}, retrying ...", method_name
+          warning "Unable to perform request: #{e} :: #{!!e.cause ? "cause: #{e.cause.message}" : ''}, retrying ...", method_name, true
         rescue Errno::ECONNREFUSED => e
-          warning 'Connection refused, retrying ...', method_name
+          warning 'Connection refused, retrying ...', method_name, true
         rescue Errno::EADDRNOTAVAIL => e
-          warning 'Node not available, retrying ...', method_name
+          warning 'Node not available, retrying ...', method_name, true
+        rescue Errno::ECONNRESET => e
+          warning "Connection Reset (#{e.message}), retrying ...", method_name, true
         rescue Net::ReadTimeout => e
-          warning 'Node read timeout, retrying ...', method_name
+          warning 'Node read timeout, retrying ...', method_name, true
         rescue Net::OpenTimeout => e
-          warning 'Node timeout, retrying ...', method_name
+          warning 'Node timeout, retrying ...', method_name, true
         rescue RangeError => e
-          warning 'Range Error, retrying ...', method_name
+          warning 'Range Error, retrying ...', method_name, true
         rescue OpenSSL::SSL::SSLError => e
-          @ssl_version = SSL_VERSIONS.sample
-          warning "SSL Error (#{e.message}), switching to #{@ssl_version} and retrying ...", method_name
+          warning "SSL Error (#{e.message}), retrying ...", method_name, true
         rescue SocketError => e
-          warning "Socket Error (#{e.message}), retrying ...", method_name
+          warning "Socket Error (#{e.message}), retrying ...", method_name, true
         rescue JSON::ParserError => e
-          warning "JSON Parse Error (#{e.message}), retrying ...", method_name
+          warning "JSON Parse Error (#{e.message}), retrying ...", method_name, true
           response = nil
         rescue ApiError => e
-          warning "ApiError (#{e.message}), retrying ...", method_name
+          warning "ApiError (#{e.message}), retrying ...", method_name, true
         # rescue => e
-        #   warning "Unknown exception from request, retrying ...", method_name
+        #   warning "Unknown exception from request, retrying ...", method_name, true
         #   ap e if defined? ap
         end
         
@@ -528,13 +529,9 @@ module Radiator
       @http.idle_timeout = idempotent ? 10 : nil
       @http.max_requests = @max_requests
       @http.retry_change_requests = idempotent
-      
-      if flappy?
-        @http.reuse_ssl_sessions = false
-        @http.ssl_version = @ssl_version
-      else
-        @http.reuse_ssl_sessions = true
-      end
+      @http.verify_mode = @ssl_verify_mode
+      @http.reuse_ssl_sessions = @reuse_ssl_sessions
+      @http.ssl_version = @ssl_version
       
       @http
     end
@@ -549,25 +546,7 @@ module Radiator
       http.request(uri, request)
     end
     
-    def extract_signatures(options)
-      params = options[:params]
-      
-      signatures = params.map do |param|
-        next unless defined? param.map
-        
-        param.map { |tx| tx[:signatures] }
-      end.flatten.compact
-      
-      expirations = params.map do |param|
-        next unless defined? param.map
-        
-        param.map { |tx| Time.parse(tx[:expiration] + 'Z') }
-      end.flatten.compact
-      
-      [signatures, expirations.min]
-    end
-    
-    def recover_transaction(signatures, rpc_id, after)
+    def recover_transaction(signatures, expected_rpc_id, after)
       block_range = api.get_dynamic_global_properties do |properties|
         high = properties.head_block_number
         low = high - 100
@@ -589,7 +568,7 @@ module Radiator
           next unless ((tx['signatures'] || []) & signatures).any?
           
           return {
-            id: rpc_id,
+            id: expected_rpc_id,
             result: {
               id: block.transaction_ids[index],
               block_num: block_num,
@@ -610,12 +589,16 @@ module Radiator
     end
     
     def pop_failover_url
-      @failover_urls.delete(@failover_urls.sample) || @url
+      reset_failover if @failover_urls.none?
+      
+      until @failover_urls.none? || healthy?(url = @failover_urls.sample)
+        @failover_urls.delete(url)
+      end
+      
+      url || @url
     end
     
     def bump_failover
-      reset_failover if @failover_urls.none?
-      
       @uri = nil
       @url = pop_failover_url
       warning "Failing over to #{@url} ..."
@@ -625,9 +608,56 @@ module Radiator
       !!@backoff_at && Time.now - @backoff_at < 300
     end
     
+    def drop_current_failover_url(prefix)
+      if @preferred_failover_urls.size == 1
+        warning "Node #{@url} appears to be misconfigured but no other node is available, retrying ...", prefix
+      else
+        warning "Removing misconfigured node from failover urls: #{@url}, retrying ...", prefix
+        @preferred_failover_urls.delete(@url)
+        @failover_urls.delete(@url)
+      end
+    end
+   
+    def handle_error(response, request_options, method_name, tries)
+      parser = ErrorParser.new(response)
+      signatures, exp = extract_signatures(request_options)
+      
+      if (!!exp && exp < Time.now.utc) || tries > 2
+        # Whatever the error was, it is already expired or tried too much.  No
+        # need to try to recover.
+        
+        debug "Error code #{parser} but transaction already expired or too many tries, giving up (attempt: #{tries})."
+      elsif parser.can_retry?
+        drop_current_failover_url method_name if !!exp && parser.expiry?
+        debug "Error code #{parser} (attempt: #{tries}), retrying ..."
+        return nil
+      end
+      
+      Hashie::Mash.new(response)
+    end
+    
+    def healthy?(url)
+      begin
+        # Note, not all nodes support the /health uri.  But even if they don't,
+        # they'll respond status code 200 OK, even if the body shows an error.
+        
+        # But if the node supports the /health uri, it will do additional
+        # verifications on the block height.
+        # See: https://github.com/steemit/steem/blob/master/contrib/healthcheck.sh
+        
+        # Also note, this check is done **without** net-http-persistent.
+        
+        !!open(url + HEALTH_URI)
+      rescue => e
+        error "Health check failure for #{url}: #{e.inspect}"
+        sleep 0.2
+        false
+      end
+    end
+    
     def backoff
       shutdown
-      bump_failover if flappy?
+      bump_failover if flappy? || !healthy?(@url)
       @backoff_at ||= Time.now
       @backoff_sleep ||= 0.01
       
@@ -639,18 +669,5 @@ module Radiator
         @backoff_sleep = nil
       end
     end
-    
-    def send_log(level, message, prefix = nil)
-      if !!prefix
-        @logger.send level, "#{prefix} :: #{message}"
-      else
-        @logger.send level, "#{message}"
-      end
-      
-      nil
-    end
-    
-    def error(message, prefix = nil); send_log(:error, message, prefix); end
-    def warning(message, prefix = nil); send_log(:warn, message, prefix); end
   end
 end

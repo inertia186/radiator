@@ -71,7 +71,7 @@ module Radiator
         @transaction.operations << {type: :vote}
         @transaction.process(false)
         payload = @transaction.send(:payload)
-        assert_equal 58892, payload[:ref_block_num], 'expect a certain ref_block_prefix'
+        assert_equal 35019, payload[:ref_block_num], 'expect a certain ref_block_prefix'
       end
     end
     
@@ -80,7 +80,7 @@ module Radiator
         @transaction.operations << {type: :vote}
         @transaction.process(false)
         payload = @transaction.send(:payload)
-        assert_equal 2934938855, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
+        assert_equal 2923042957, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
       end
     end
     
@@ -99,7 +99,7 @@ module Radiator
         transaction.operations << {type: :vote}
         transaction.process(false)
         payload = transaction.send(:payload)
-        assert_equal 3865350490, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
+        assert_equal 2237044758, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
       end
     end
     

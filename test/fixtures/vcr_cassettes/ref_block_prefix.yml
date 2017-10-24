@@ -2,251 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://steemd.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
-    headers:
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-  response:
-    status:
-      code: 502
-      message: Bad Gateway
-    headers:
-      Server:
-      - awselb/2.0
-      Date:
-      - Wed, 18 Oct 2017 19:54:04 GMT
-      Content-Type:
-      - text/html
-      Content-Length:
-      - '138'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
-        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
-    http_version: 
-  recorded_at: Wed, 18 Oct 2017 19:54:04 GMT
-- request:
-    method: post
-    uri: https://steemd.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
-    headers:
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-      Host:
-      - steemd.steemit.com
-      Content-Length:
-      - '101'
-  response:
-    status:
-      code: 502
-      message: Bad Gateway
-    headers:
-      Server:
-      - awselb/2.0
-      Date:
-      - Wed, 18 Oct 2017 19:54:15 GMT
-      Content-Type:
-      - text/html
-      Content-Length:
-      - '138'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
-        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
-    http_version: 
-  recorded_at: Wed, 18 Oct 2017 19:54:15 GMT
-- request:
-    method: post
-    uri: https://steemd.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
-    headers:
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-  response:
-    status:
-      code: 502
-      message: Bad Gateway
-    headers:
-      Server:
-      - awselb/2.0
-      Date:
-      - Wed, 18 Oct 2017 19:54:16 GMT
-      Content-Type:
-      - text/html
-      Content-Length:
-      - '138'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
-        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
-    http_version: 
-  recorded_at: Wed, 18 Oct 2017 19:54:16 GMT
-- request:
-    method: post
-    uri: https://steemd.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
-    headers:
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-  response:
-    status:
-      code: 502
-      message: Bad Gateway
-    headers:
-      Server:
-      - awselb/2.0
-      Date:
-      - Wed, 18 Oct 2017 19:54:17 GMT
-      Content-Type:
-      - text/html
-      Content-Length:
-      - '138'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
-        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
-    http_version: 
-  recorded_at: Wed, 18 Oct 2017 19:54:17 GMT
-- request:
-    method: post
-    uri: https://steemd.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
-    headers:
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-  response:
-    status:
-      code: 502
-      message: Bad Gateway
-    headers:
-      Server:
-      - awselb/2.0
-      Date:
-      - Wed, 18 Oct 2017 19:54:18 GMT
-      Content-Type:
-      - text/html
-      Content-Length:
-      - '138'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
-        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
-    http_version: 
-  recorded_at: Wed, 18 Oct 2017 19:54:18 GMT
-- request:
-    method: post
-    uri: https://steemd.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
-    headers:
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-  response:
-    status:
-      code: 502
-      message: Bad Gateway
-    headers:
-      Server:
-      - awselb/2.0
-      Date:
-      - Wed, 18 Oct 2017 19:54:19 GMT
-      Content-Type:
-      - text/html
-      Content-Length:
-      - '138'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
-        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
-    http_version: 
-  recorded_at: Wed, 18 Oct 2017 19:54:19 GMT
-- request:
-    method: post
-    uri: https://steemd.steemit.com/
+    uri: https://api.steemit.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
@@ -269,13 +25,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 18 Oct 2017 19:54:21 GMT
-      Content-Length:
-      - '1044'
+      - Tue, 24 Oct 2017 16:59:35 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       Server:
       - nginx
+      X-Jussi-Cache-Hit:
+      - steemd.database_api.get_dynamic_global_properties
+      X-Jussi-Response-Id:
+      - s6e695ee5-daf8-4d98-96e1-7aebd8b537ba->2346a01f-7834-422f-ae5a-811a254d0e5d
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -284,14 +46,255 @@ http_interactions:
       - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
       Strict-Transport-Security:
       - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"id":0,"head_block_number":16615643,"head_block_id":"00fd88dbfa6e92d5090263305b6a9f3da60a5c3e","time":"2017-10-24T16:59:24","current_witness":"liondani","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"261701074.395
+        STEEM","current_supply":"258176226.002 STEEM","confidential_supply":"0.000
+        STEEM","current_sbd_supply":"3394429.003 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"190713145.331 STEEM","total_vesting_shares":"392162155255.908743
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"377694611.003698
+        VESTS","pending_rewarded_vesting_steem":"183083.747 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":16676388,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":16615626,"vote_power_reserve_rate":10,"current_reserve_ratio":200000000,"average_block_size":5759,"max_virtual_bandwidth":"264241152000000000000"},"id":1}'
+    http_version: 
+  recorded_at: Tue, 24 Oct 2017 16:59:35 GMT
+- request:
+    method: post
+    uri: https://api.steemit.com/
     body:
       encoding: UTF-8
-      string: '{"id":1,"result":{"id":0,"head_block_number":16445149,"head_block_id":"00faeedde79cefae94231f5ae2b551352a7051bf","time":"2017-10-18T18:50:21","current_witness":"pfunk","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"261077889.897
-        STEEM","current_supply":"257735123.193 STEEM","confidential_supply":"0.000
-        STEEM","current_sbd_supply":"3453078.006 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"190720685.921 STEEM","total_vesting_shares":"392296800858.497754
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"370483010.534535
-        VESTS","pending_rewarded_vesting_steem":"179564.258 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":16505807,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":16445130,"vote_power_reserve_rate":10,"current_reserve_ratio":200000000,"average_block_size":5692,"max_virtual_bandwidth":"264241152000000000000"}}'
+      string: '{"jsonrpc":"2.0","params":["database_api","get_block",[16615626]],"id":2,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 24 Oct 2017 16:59:35 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - steemd.database_api.get_block.params=[16615626]
+      X-Jussi-Response-Id:
+      - sf742caaa-c69d-4806-a797-545b4c0e3bad->a9b5e86f-e39d-468d-9133-f151a480a564
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"previous":"00fd88c96c26fb7bb0299f44397e6ac0041559f1","timestamp":"2017-10-24T16:58:33","witness":"xeldal","transaction_merkle_root":"d4a1f9c2669b430ca3232f1bae3c03e0374aeee4","extensions":[],"witness_signature":"1f4a5fc936aee99d07411dc2b73608303367337e9f927f8a172c5a54dbca2d112c3f610d956610d1ed037a37e4b3c1506d5183dd43a2258ab3e8e0065b7fc44645","transactions":[{"ref_block_num":35013,"ref_block_prefix":3301576526,"expiration":"2017-10-24T16:59:27","operations":[["vote",{"voter":"zohaib715","author":"gazur","permlink":"what-s-up-with-monero-xmr-have-we-bottomed-out","weight":10000}]],"extensions":[],"signatures":["2063236eddf426da8b398cc1885664d2ef357505ec4ee3d7529556bd3ce55f77b572a3452ab71515540632f7f1ddc8da2f80a4bcac400c6264417caf9c5b971ff7"]},{"ref_block_num":35009,"ref_block_prefix":3524830502,"expiration":"2017-10-24T16:59:15","operations":[["vote",{"voter":"rajjakkhan","author":"usaking","permlink":"re-stimp1024-uk-racing-newcastle-24th-oct-upvote-50-of-winnings-paid-in-steem-20171024t061455978z","weight":10000}]],"extensions":[],"signatures":["1f7f0af282e53c43f623dd3cfffc4db15e39dc8e74f67ab9278667ab96c2dfc7cb2beff1337ba91979c38afa87730089da5664b1a7ae7e9f35e81134222534a253"]},{"ref_block_num":35011,"ref_block_prefix":714979199,"expiration":"2017-10-24T16:59:21","operations":[["comment",{"parent_author":"","parent_permlink":"news","author":"rollsman","permlink":"a-parade-in-raqqa-and-the-kurdish-interests","title":"A
+        parade in raqqa and the Kurdish interests","body":"<html>\n<p>https:\/\/www.fondsk.ru\/images\/news\/2017\/10\/24\/or-44897.jpg<\/p>\n<p>The
+        Turkish leadership is furious. October 19, in the \"liberated completely\"
+        from the banned terrorist of the \"Islamic state\" (ISIS) in raqqa, a parade
+        of victory hung over the ruins of the city with huge banners with the picture
+        of Abdullah \u00f6calan. This figure, who heads operating in Turkey, the Kurdistan
+        workers '' party (PKK), for many years sitting in prison there. Openly, with
+        a call confirmed all the accusations of Ankara about the fact that Americans
+        led by the Syrian democratic forces (SDS) are fully controlled by the local
+        Kurds, and their democratic Union Party (VCP &nbsp;) is a branch of the PKK.
+        Given the presence in town of numerous American advisers, including the \"uncrowned
+        king Rozhava\", special envoy Brett Makhorka[1] (Brett McGurk), the Turks
+        felt that everything is done to feed Americans. In this case the PKK in the
+        United States, as Turkey officially recognized as a terrorist organization
+        and Ocalan as \"leader of the terrorists\".&nbsp;<\/p>\n<p>http:\/\/fondsk.ru\/images\/myfls\/ost2017\/dn24101701.jpg&nbsp;<\/p>\n<p>He
+        accused the United States that, recognizing the PKK as a terrorist organization,
+        they are long-armed and equipped her Syrian component in the face of PDS.
+        Erdogan said[2] about his disbelief that the West stands shoulder to shoulder
+        with Turkey in the fight against terrorism. Turkish Prime Minister B. Yildirim
+        stressed[3] that these events will inevitably \"damage\" the strategic Union
+        of the United States and Turkey. And the first Deputy Prime Minister of Turkey
+        B. Bordag noted[4] that the events in raqqa refute all done so far, the US
+        announced that \"terrorists, they do not cooperate\".<\/p>\n<p>\u041e\u0442\u0432\u0435\u0442\u044b
+        \u0430\u043c\u0435\u0440\u0438\u043a\u0430\u043d\u0441\u043a\u043e\u0439 \u0441\u0442\u043e\u0440\u043e\u043d\u044b
+        \u043d\u0430 \u0442\u0443\u0440\u0435\u0446\u043a\u0438\u0435 \u043e\u0431\u0432\u0438\u043d\u0435\u043d\u0438\u044f
+        \u0431\u044b\u043b\u0438 \u0443\u043a\u043b\u043e\u043d\u0447\u0438\u0432\u044b\u043c\u0438.
+        \u041f\u0435\u043d\u0442\u0430\u0433\u043e\u043d \u0441\u043e\u0433\u043b\u0430\u0441\u0438\u043b\u0441\u044f
+        \u0432 \u0442\u043e\u043c, \u0447\u0442\u043e \u0432\u044b\u0432\u0435\u0448\u0438\u0432\u0430\u043d\u0438\u0435
+        \u0431\u0430\u043d\u043d\u0435\u0440\u043e\u0432 \u0441 \u0443\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435\u043c
+        \"\u043d\u0435 \u0445\u043e\u0440\u043e\u0448\u0430\u044f \u0438\u0434\u0435\u044f\",
+        \u043d\u043e \u043e\u0442 \u0421\u043e\u044e\u0437\u0430 \u0441 \u0414\u0414\u0421
+        \u0438 \u041f\u0414\u0421 \u043d\u0435 \u043e\u0442\u0440\u0438\u0446\u0430\u043b,
+        \u043f\u043e\u0442\u043e\u043c\u0443 \u0447\u0442\u043e \u043e\u043d \"\u043f\u043e\u0437\u0432\u043e\u043b\u044f\u0435\u0442\"
+        \u0431\u043e\u0440\u043e\u0442\u044c\u0441\u044f \u0441 \u0418\u0413\u0418\u041b.
+        \u041f\u043e \u0434\u0430\u043d\u043d\u044b\u043c \u0430\u043c\u0435\u0440\u0438\u043a\u0430\u043d\u0441\u043a\u0438\u0445
+        \u0432\u043e\u0435\u043d\u043d\u044b\u0445, \u0421\u043e\u044e\u0437 \u043e\u0441\u0442\u0430\u043d\u0435\u0442\u0441\u044f[5]
+        \u0432 \u0431\u0443\u0434\u0443\u0449\u0435\u043c. &nbsp;<\/p>\n<p>This answer
+        hardly satisfy the Turks. It is known that the police Rakki in charge of the
+        parade and related activities, fully funded and controlled[6] Americans. Undeniable,
+        and the presence of American advisers.<\/p>\n<p>A little like the Kurdish
+        women participant of the parade in raqqa<\/p>\n<p>It''s not just the hypocrisy
+        and flagrant violation of us law. That''s what should attend to the Congress
+        of the United States. Representative for print SDS So Silo had to admit that
+        the Kurds cannot take any step without the approval of the American advisers.
+        They, for example, strictly forbidden to engage in any contacts with Russian
+        representatives, if it is not pre-agreed with the Americans. What can we say
+        about the parade under the banners of Ocalan.<\/p>\n<p>What is behind this
+        ostentatious piety on the part of the Syrian Kurds and what explains the blatant
+        connivance of the American command to this show? Partly it was promoted commander
+        of Mazlum kobani (Kobane Mazlum), real name Ferdi Sahin Abdi (Abdi Ferdi \u015eahin).
+        According to Arab and Turkish media, for many years he worked as chief personnel
+        officer in the KWP, headed the list of \"wanted terrorists\" in Turkey and
+        is the adopted son of Abdullah \u00f6calan.<\/p>\n<p>Mazlum Cob\u00e1n<\/p>\n<p>More
+        difficult to understand the motives of the us CENTCOM and its commander, a
+        specialist in subversive operations General Votel. The angry reaction of the
+        Turks was to be expected. No one is willing to \"pull the tiger''s whiskers\"
+        and show Erdogan his helplessness due to this action. It is logical to assume
+        that it was done deliberately, to provoke the Turkish President on ill-considered
+        and premature action. The organizers seem to want to pre-empt a possible rapprochement
+        between Ankara and Damascus, yet the latter is strongly opposed to any Turkish
+        presence on its territory. If Turkey will actively act against the Kurds now,
+        the Syrian government certainly will condemn her. And then international law
+        will be against Turkey, there are Americans unable to remember it. This will
+        complicate the rapprochement between Erdogan and Assad. Perhaps, however,
+        that the conductors of this play greatly underestimate the Turks. Not taken
+        into account, for example, a scenario where Turkey previously agreed acceptable
+        to both parties at least indirect cooperation with Damascus. The Turks contend,
+        but his mind kept.<\/p>\n<p><br><\/p>\n<p>In any case, the Syrian Kurds play
+        the role of extras in someone else''s game, and their brief triumph in raqqa
+        may be ephemeral. Is responsible Kurdish interests to bring the Turkey to
+        the boiling point, in General, will not leading symbolic gestures? Thus the
+        Kurds only rally their opponents, despite the fact that the rear of them all
+        is not well. The Washington Post believes that \"many Syrian Arabs also do
+        not like the prospect that they will control the Kurds. The vast majority
+        of residents of Raqqa \u2013 the Arabs, and pictures of \u00f6calan posters
+        that spread on the Internet caused an uproar with them.\" A resident of Raqqa,
+        Tareq sham (Sham Tareq) writes[1] on his page in Facebook: \"the Vast majority
+        of us think that we just replaced one occupier to another.\" CENTCOM is pushing
+        the Kurds to occupy new territory, but how to hold them?<\/p>\n<p>It would
+        seem that the behaviour of the US towards Iraqi Kurdistan was sober Syrian
+        Kurds, but so far it looks great. It is appropriate here to recall history,
+        as in US politics many moves on a single track. A similar situation occurred
+        in the 70-ies of the last century in Southeast Asia. Then the Americans are
+        actively used in Vietnam, a group of mountain peoples inhabiting the vast
+        plateau tainguen on the border with Laos and Cambodia. The apogee of military
+        cooperation between Americans and the small peoples of the plateau became
+        their connection to the joint raids in Cambodia in mid-1970. (1) After the
+        Americans left, only the tribal elite were able to cross into the United States;
+        all others had to pay for collaborating with the invaders.<\/p>\n<p>\u0412
+        \u041b\u0430\u043e\u0441\u0435 \u043f\u0440\u043e\u0442\u0438\u0432 \u043f\u043e\u0432\u0441\u0442\u0430\u043d\u0446\u0435\u0432
+        \u041f\u0430\u0442\u0435\u0442-\u041b\u0430\u043e, \u0430\u043c\u0435\u0440\u0438\u043a\u0430\u043d\u0446\u044b
+        \u0441\u043e\u0437\u0434\u0430\u043b\u0438 \u0430\u0440\u043c\u0438\u044e
+        \u0432 \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u043c \u0438\u0437 \u0433\u043e\u0440\u0446\u0435\u0432
+        \u041c\u044f\u043e \u0425\u043c\u043e\u043d\u0433 \u0432\u043e \u0433\u043b\u0430\u0432\u0435
+        \u0441 \u0433\u0435\u043d\u0435\u0440\u0430\u043b\u043e\u043c \u0412\u0430\u043d\u0433
+        \u041f\u0410\u041e. \u042d\u0442\u043e\u0442 \u043a\u043e\u043c\u0430\u043d\u0434\u0438\u0440
+        \u043f\u043e\u0447\u0442\u0438 \u043b\u0435\u0433\u0430\u043b\u044c\u043d\u043e
+        \u0437\u0430\u043d\u0438\u043c\u0430\u0435\u0442\u0441\u044f \u0442\u043e\u0440\u0433\u043e\u0432\u043b\u0435\u0439
+        \u043d\u0430\u0440\u043a\u043e\u0442\u0438\u043a\u0430\u043c\u0438 \u0438
+        \"\u043f\u0440\u043e\u0441\u043b\u0430\u0432\u0438\u043b\u0441\u044f\" \u0442\u0435\u043c,
+        \u0447\u0442\u043e \u0442\u0440\u0435\u0442\u044c \u0435\u0433\u043e \u0430\u0440\u043c\u0438\u0438
+        \u0431\u044b\u043b\u0438 \u0434\u0435\u0442\u044c\u043c\u0438. (2) \u0425\u043c\u043e\u043d\u0433\u043e\u0432
+        \u0442\u043e\u0436\u0435 \u0443\u043f\u0430\u043b\u0430. \u0421\u0430\u043c
+        \u0412\u0430\u043d\u0433 \u041f\u0410\u041e \u0434\u043e\u0436\u0438\u043b\u0438
+        \u0434\u043e \u0433\u043b\u0443\u0431\u043e\u043a\u043e\u0439 \u0441\u0442\u0430\u0440\u043e\u0441\u0442\u0438
+        \u0432 \u041a\u0430\u043b\u0438\u0444\u043e\u0440\u043d\u0438\u0438. \u041d\u0430
+        \u0435\u0433\u043e \u043f\u043e\u0445\u043e\u0440\u043e\u043d\u0430\u0445
+        \u043d\u0430 \u0410\u0440\u043b\u0438\u043d\u0433\u0442\u043e\u043d\u0441\u043a\u043e\u043c
+        \u043d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u043c \u043a\u043b\u0430\u0434\u0431\u0438\u0449\u0435
+        \u0432 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u0441\u043e\u044e\u0437\u043d\u0438\u043a\u0430
+        \u0421\u0428\u0410, \u043f\u0440\u0438\u0437\u0432\u0430\u043b \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0445
+        \u0432\u0435\u0442\u0435\u0440\u0430\u043d\u043e\u0432, \u0431\u044b\u043b\u043e
+        \u043e\u0442\u043a\u0430\u0437\u0430\u043d\u043e. \u041e\u0431\u0449\u0438\u043d\u0443
+        \u0445\u043c\u043e\u043d\u0433\u043e\u0432 \u0432 \u0434\u043e\u043c\u0435
+        \u0431\u044b\u043b\u043e \u043e\u0447\u0435\u043d\u044c \u0442\u044f\u0436\u0435\u043b\u043e.&nbsp;<\/p>\n<p>\u041d\u043e\u0432\u043e\u0441\u0442\u0438
+        \u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a: http:\/\/trueinform.ru\/modules.php?name=Laid&amp;username=fondsk
+        &nbsp;\u0424\u043e\u043d\u0434 \u0421\u041a<\/p>\n<p><br><\/p>\n<p><br><\/p>\n<\/html>","json_metadata":"{\"tags\":[\"news\",\"politics\",\"ru\",\"events\"],\"image\":[\"https:\/\/www.fondsk.ru\/images\/news\/2017\/10\/24\/or-44897.jpg\",\"http:\/\/fondsk.ru\/images\/myfls\/ost2017\/dn24101701.jpg\"],\"links\":[\"http:\/\/trueinform.ru\/modules.php?name=Laid&amp;username=fondsk\"],\"app\":\"steemit\/0.1\",\"format\":\"html\"}"}],["comment_options",{"author":"rollsman","permlink":"a-parade-in-raqqa-and-the-kurdish-interests","max_accepted_payout":"1000000.000
+        SBD","percent_steem_dollars":0,"allow_votes":true,"allow_curation_rewards":true,"extensions":[]}],["vote",{"voter":"rollsman","author":"rollsman","permlink":"a-parade-in-raqqa-and-the-kurdish-interests","weight":10000}]],"extensions":[],"signatures":["1f32d5c38ab800383c6fd3282ed8d30b6af64021eb86731311f030da2ca3cad78d5846580f9603655a3a17eb617ddedbd6cef9b4cb4c1b0eebfe60127865b5d0fb"]},{"ref_block_num":35013,"ref_block_prefix":3301576526,"expiration":"2017-10-24T16:59:27","operations":[["vote",{"voter":"evisanor","author":"sve","permlink":"sizigiya","weight":10000}]],"extensions":[],"signatures":["1f65d2572f11e3fda68577e41fd8e6018832aa5f157c63d4d6f21cd90dde013ac9521cddaf2a45b14452d36c81255b9872bb9b3fdd7aeb3014e15cf9241e8bf7b8"]},{"ref_block_num":35012,"ref_block_prefix":2651009294,"expiration":"2017-10-24T16:59:24","operations":[["vote",{"voter":"saxony","author":"saxony","permlink":"saxonstore-christmas-decoration-schwib-arches","weight":10000}]],"extensions":[],"signatures":["20096b8507aed44ad7aa7dec2738e99613ba14d89c9c207853bdc6b6dde4bfb4096190cfa55766314005f8cfaca6335c776fcce7698e24dc690f603310d73edd6a"]},{"ref_block_num":35012,"ref_block_prefix":2651009294,"expiration":"2017-10-24T16:59:24","operations":[["comment",{"parent_author":"tremendospercy","parent_permlink":"re-steveblack-addiction-what-do-you-think-moral-weakness-or-a-disease-health-or-criminal-issue-your-say-20171024t071934746z","author":"isaria","permlink":"re-tremendospercy-re-steveblack-addiction-what-do-you-think-moral-weakness-or-a-disease-health-or-criminal-issue-your-say-20171024t165828657z","title":"","body":"I
+        agree","json_metadata":"{\"tags\":[\"addiction\"],\"app\":\"steemit\/0.1\"}"}]],"extensions":[],"signatures":["2060f14ae765929d53c2035dfe9e702bd919f2b4ff828ee8fa59192912ad5057ff49600960d241df947cb816910638ef1ddc803c9c6fe93bb6d62f5cb528e7f5b5"]},{"ref_block_num":35011,"ref_block_prefix":714979199,"expiration":"2017-10-24T16:59:21","operations":[["vote",{"voter":"ghazanfar.ali","author":"ghazanfar.ali","permlink":"7l3b1j-quote-of-the-day","weight":10000}]],"extensions":[],"signatures":["1f31b1eba3fa26ac2eab09004e50a13fd35823457108596d37d4c53a30f58551e103eba24805646274ea5a6c00fd2f86c23f3aac2ad09e7f82b660e958bef9aa30"]},{"ref_block_num":35015,"ref_block_prefix":731175429,"expiration":"2017-10-24T16:58:56","operations":[["vote",{"voter":"selfishinvesting","author":"czechglobalhosts","permlink":"7-world-s-continents-photo-challenge-tuesday-of-antarctica-and-the-world-s-oceans-week-5-the-absolute-winner-takes-150-sbd","weight":10000}]],"extensions":[],"signatures":["1f48813c58b9a4ead037e14de0da9d7017042afd7ae25b34ede8e879dc30aac71a4b97421d51ed1f1467235899cb37044faeb3a8b7091976c921696c37ffff1e66"]},{"ref_block_num":35007,"ref_block_prefix":4058413618,"expiration":"2017-10-24T16:59:09","operations":[["vote",{"voter":"stillwater","author":"finnian","permlink":"re-stillwater-re-finnian-there-s-a-sucker-born-every-minute-20171024t161856048z","weight":10000}]],"extensions":[],"signatures":["200b5316603bfdd9495cec306c35cf3e49ef34ea13fae03fd7878bec2e4b8ef33b680e647db84e7b48881463d9f31d527fca9131368079b887bf332c5ef48e8cec"]},{"ref_block_num":35006,"ref_block_prefix":1922768482,"expiration":"2017-10-24T16:59:06","operations":[["comment",{"parent_author":"immetal6669","parent_permlink":"re-hendrix22-re-immetal6669-re-hendrix22-nhl-the-ultimate-lineup-contest-october-24th-2017-win-100-of-the-sbd-post-payout-closes-at-7pm-est-20171024t163804237z","author":"hendrix22","permlink":"re-immetal6669-re-hendrix22-re-immetal6669-re-hendrix22-nhl-the-ultimate-lineup-contest-october-24th-2017-win-100-of-the-sbd-post-payout-closes-at-7pm-est-20171024t165820487z","title":"","body":"Yes
+        me too! He''s incredible","json_metadata":"{\"tags\":[\"contest\"],\"app\":\"steemit\/0.1\"}"}]],"extensions":[],"signatures":["1f0c2c8675c2bc224cfb9c72350790cc35a5bd7c180669f3540921b23e1e83fcd17591b6605c9da5f7e3f60c56dd03272daa36e679ffc3850a937f3c18bbd4a639"]},{"ref_block_num":35008,"ref_block_prefix":3604351610,"expiration":"2017-10-24T16:59:12","operations":[["claim_reward_balance",{"account":"cryptochindian","reward_steem":"0.000
+        STEEM","reward_sbd":"5.213 SBD","reward_vests":"11135.075393 VESTS"}]],"extensions":[],"signatures":["1f381f8538e872f394691e1ff515bf34ed38fd4ceff37d6ab28dfd6fc9aa1747a54e64cc6ad0ed373bb56adf0c2a3ee98eac3ac7efedfbffd9e8d5d741e7057949"]},{"ref_block_num":35008,"ref_block_prefix":3604351610,"expiration":"2017-10-24T16:59:12","operations":[["comment",{"parent_author":"","parent_permlink":"ico","author":"jilliangodsil","permlink":"zloadr-ico-looking-for-articles-etc","title":"Zloadr
+        ICO - looking for articles etc","body":"Hi Guys\n\nI am doing a piece on the
+        Zlaodr ICO and am looking for articles etc for my research - anyone out there
+        following their progress?\n\ncheers\nJillian","json_metadata":"{\"tags\":[\"ico\",\"cryptocurrency\",\"blockchain\",\"news\",\"ireland\"],\"app\":\"steemit\/0.1\",\"format\":\"markdown\"}"}],["comment_options",{"author":"jilliangodsil","permlink":"zloadr-ico-looking-for-articles-etc","max_accepted_payout":"1000000.000
+        SBD","percent_steem_dollars":0,"allow_votes":true,"allow_curation_rewards":true,"extensions":[]}],["vote",{"voter":"jilliangodsil","author":"jilliangodsil","permlink":"zloadr-ico-looking-for-articles-etc","weight":10000}]],"extensions":[],"signatures":["1f5931a36dfa0e4daf38af3e57c66a31dc8de5ae4d2b9439b57ceab21a640b0aef62ea594f60058c7ac2f612f8c161c9f02ed25a9a47a35f4e5e5643597e616e97"]},{"ref_block_num":35015,"ref_block_prefix":731175429,"expiration":"2017-10-24T16:58:56","operations":[["vote",{"voter":"mrainp420","author":"amre","permlink":"transparansi-dalam-mengelola-dana-desa-transparency-in-managing-village-funds-20171024t22192683z","weight":200}]],"extensions":[],"signatures":["20100722da2bd508986ddd426ae11790b833632e163879e1bcbac8927031e31c9c17d87f233f7e8f6d9001fc5aa5dd78df25864dd6176e3d692e825e4ffb40c11e"]},{"ref_block_num":35013,"ref_block_prefix":3301576526,"expiration":"2017-10-24T16:59:27","operations":[["comment",{"parent_author":"sakib656","parent_permlink":"hello-steemit-i-am-sakib-from-dhaka-bangladesh","author":"fitinfun","permlink":"re-sakib656-hello-steemit-i-am-sakib-from-dhaka-bangladesh-20171024t165830523z","title":"","body":"Welcome
+        to steemit! This older post might help you get started here and start earning
+        money right away. I came over from Twitter, so keep tweeting your posts! Good
+        job :)\n\n[Make Money Blogging on Steemit Top Tips and Checklist for Better
+        Results!!](https:\/\/steemit.com\/money\/@fitinfun\/make-money-blogging-on-steemit-top-tips-and-checklist-for-better-results)\nhttps:\/\/steemitimages.com\/DQmfDtRXj2iXFj9PjM3QBHBkdrzNCDHGX8tSQqDTWJAnNTk\/fitinfun%20How%20to%20make%20money%20as%20a%20new%20minnow%20on%20steemit.jpg","json_metadata":"{\"tags\":[\"introduceyourself\"],\"image\":[\"https:\/\/steemitimages.com\/DQmfDtRXj2iXFj9PjM3QBHBkdrzNCDHGX8tSQqDTWJAnNTk\/fitinfun%20How%20to%20make%20money%20as%20a%20new%20minnow%20on%20steemit.jpg\"],\"links\":[\"https:\/\/steemit.com\/money\/@fitinfun\/make-money-blogging-on-steemit-top-tips-and-checklist-for-better-results\"],\"app\":\"steemit\/0.1\"}"}]],"extensions":[],"signatures":["20575228f1c23f8d1815b01d6f383cd47d7e2f0c37531d980891e6aaeb0a6e62cb617beb3e49fcd8ae003c46a1ce5e0377249cee4591661802c8bd30fe7e33f753"]},{"ref_block_num":35016,"ref_block_prefix":358879072,"expiration":"2017-10-24T16:59:09","operations":[["vote",{"voter":"kramer2k","author":"melissa-mccarthy","permlink":"shop-now-at-melissa-store-pajama-blouse","weight":10000}]],"extensions":[],"signatures":["20369c9deb4433455d226ccbab5ec396e96dd016cb5ff64d3f663bfc1ef0c1f1ef63ee6cbedfadc8a45c7693bfe423fb7c6557d8d3ea34642592995b8e84c02c7d"]},{"ref_block_num":35010,"ref_block_prefix":3436860638,"expiration":"2017-10-24T16:59:18","operations":[["vote",{"voter":"imranbsl","author":"syedamit","permlink":"poem-for-z","weight":10000}]],"extensions":[],"signatures":["2057598f0ea7e62eb57205ae9834519ef1790de815663d14c30036b74650fd72711ae7dfdd026755d29aa249066fb223851719e6ee67e00c21cf304b40f740359a"]},{"ref_block_num":35015,"ref_block_prefix":731175429,"expiration":"2017-10-24T16:58:58","operations":[["vote",{"voter":"minnowpondblue","author":"amre","permlink":"transparansi-dalam-mengelola-dana-desa-transparency-in-managing-village-funds-20171024t22192683z","weight":200}]],"extensions":[],"signatures":["1f27fe2af3ab7c176045cc1c99d800fa96a5a41f48aa1f58f5c4f9d1480d6582e857717b680faaa9f7516751d3af99071af970fca6466a816405cd2408080e7f12"]},{"ref_block_num":35015,"ref_block_prefix":731175429,"expiration":"2017-10-24T16:58:46","operations":[["vote",{"voter":"good-karma","author":"bcrafts","permlink":"steemitpoetrycontest-shackles-unchained-20171024t175410532z","weight":50}]],"extensions":[],"signatures":["20544c413cadc0a5de5722d1b3c8c0c79f06a489ab0c8d796bff990f2167666b3d4a28748382c44ce1fcce651759a384dc14edf0c9d01d4139667a616c2a764874"]},{"ref_block_num":35008,"ref_block_prefix":3604351610,"expiration":"2017-10-24T16:59:12","operations":[["custom_json",{"required_auths":[],"required_posting_auths":["jahidul322"],"id":"follow","json":"[\"follow\",{\"follower\":\"jahidul322\",\"following\":\"westonmills\",\"what\":[\"blog\"]}]"}]],"extensions":[],"signatures":["1f795549b15ee8884f88ee0e237489362c07638021a7914c72883552c9dba9a3f06160196de059b530e50418c6b275fbb1b927e13eb8b839e9c3b5bfe3d141ba33"]},{"ref_block_num":35008,"ref_block_prefix":3604351610,"expiration":"2017-10-24T16:59:12","operations":[["comment",{"parent_author":"","parent_permlink":"bitcoin","author":"changelly","permlink":"bitcoin-gold-explanation-and-changelly-s-statement","title":"Bitcoin
+        Gold: explanation and Changelly\u2019s statement","body":"<p id=\"8315\" class=\"graf
+        graf--p graf-after--figure\">Bitcoin Gold (BTG) is another Bitcoin fork that
+        locked in on October, 24 by taking the snapshot of the Bitcoin blockchain
+        at the block height 491 407. This block is considered to be the first genesis
+        block of the Bitcoin Gold new chain. All users who have had their savings
+        in BTC ever since are eligible for the equal amount of BTG, provided they
+        have private keys. At the present moment, however, BTG has lots of issues
+        to be concerned about.<\/p>\n\n<h2 class=\"graf graf--h3 graf-after--p\">What
+        is BTG<\/h2>\n<p id=\"28c7\" class=\"graf graf--p graf-after--h3\">Basically,
+        Bitcoin Gold stands for accessibility and an egalitarian approach to the network
+        aiming to \u201cMake Bitcoin decentralized again\u201d. It is an alternative
+        Bitcoin fork incompatible with the current version of the Bitcoin blockchain.
+        The new alt is positioned as an open-sourced project built by crypto volunteers.
+        Bitcoin Gold utilizes Equihash, a Proof of Work algorithm that enables mining
+        with GPUs. This is supposed to make ASICs no longer necessary, and hence significantly
+        decrease computing power required for mining. Bitcoin Gold has a private <a
+        class=\"markup--anchor markup--p-anchor\" href=\"https:\/\/github.com\/BTCGPU\/BTCGPU\/blob\/5a9f5b1d337babbbad53f787bc4914520266e1f0\/src\/chainparams.cpp#L89\"
+        rel=\"nofollow noopener\" data-href=\"https:\/\/github.com\/BTCGPU\/BTCGPU\/blob\/5a9f5b1d337babbbad53f787bc4914520266e1f0\/src\/chainparams.cpp#L89\">premine
+        of 8 000 blocks<\/a> (100 000 BTG).<\/p>\n\n<h2 id=\"c0fc\" class=\"graf graf--h3
+        graf-after--p\"><strong class=\"markup--strong markup--h3-strong\">Issues
+        unresolved<\/strong><\/h2>\n<p id=\"da9e\" class=\"graf graf--p graf-after--h3\">Regardless
+        of improvements and possible benefits, the network health and security of
+        Bitcoin Gold are still uncertain. Bitcoin Gold doesn\u2019t have replay protection
+        which means that all transactions in the original Bitcoin blockchain will
+        be automatically replayed in the blockchain of Bitcoin Gold. Further, the
+        team behind BTG is publicly unknown. Neither do they have an appropriate code
+        for testing and auditing, nor a fully formed consensus code. Currently, BTG
+        doesn\u2019t have a block explorer and remains unavailable for transferring
+        or withdrawing.<\/p>\n\n<h2 id=\"7189\" class=\"graf graf--h3 graf-after--p\"><strong
+        class=\"markup--strong markup--h3-strong\">Reaction<\/strong><\/h2>\n<p id=\"3009\"
+        class=\"graf graf--p graf-after--h3\">BTG as such causes lots of concerns
+        among exchanges and wallet providers. Large and reputable companies including
+        <a class=\"markup--anchor markup--p-anchor\" href=\"https:\/\/poloniex.com\/press-releases\/2017.10.24-Notice-About-Bitcoin-Gold\/\"
+        rel=\"nofollow noopener\" data-href=\"https:\/\/poloniex.com\/press-releases\/2017.10.24-Notice-About-Bitcoin-Gold\/\">Poloniex<\/a>,
+        <a class=\"markup--anchor markup--p-anchor\" href=\"https:\/\/blog.coinbase.com\/timeline-and-support-bitcoin-segwit2x-and-bitcoin-gold-eda72525efd\"
+        rel=\"nofollow noopener\" data-href=\"https:\/\/blog.coinbase.com\/timeline-and-support-bitcoin-segwit2x-and-bitcoin-gold-eda72525efd\">Coinbase<\/a>,
+        <a class=\"markup--anchor markup--p-anchor\" href=\"http:\/\/decentral.ca\/statement-bitcoin-gold\/\"
+        rel=\"nofollow noopener\" data-href=\"http:\/\/decentral.ca\/statement-bitcoin-gold\/\">Jaxx<\/a>
+        and others assert that BTG should be revised thoroughly before taking the
+        risks. On the other hand, <a class=\"markup--anchor markup--p-anchor\" href=\"https:\/\/blog.hitbtc.com\/bitcoin-gold-update\/\"
+        rel=\"nofollow noopener\" data-href=\"https:\/\/blog.hitbtc.com\/bitcoin-gold-update\/\">HitBTC<\/a>,
+        <a class=\"markup--anchor markup--p-anchor\" href=\"https:\/\/support.bittrex.com\/hc\/en-us\/articles\/115002320451-Statement-on-Bitcoin-Gold-BTG-\"
+        rel=\"nofollow noopener\" data-href=\"https:\/\/support.bittrex.com\/hc\/en-us\/articles\/115002320451-Statement-on-Bitcoin-Gold-BTG-\">Bittrex<\/a>
+        and other exchanges have already pre-launched BTG trading on their platforms.
+        All the exchanges supporting BTG have credited their BTC holders\u2019 accounts
+        with the equal amount of BTG.<\/p>\n\n<h2 id=\"9229\" class=\"graf graf--h3
+        graf-after--p\"><strong class=\"markup--strong markup--h3-strong\">Changelly\u2019s
+        statement<\/strong><\/h2>\n<p id=\"a47a\" class=\"graf graf--p graf-after--h3\">We
+        receive lots of requests from customers who want us to support BTG for trading.<\/p>\n<p
+        id=\"7236\" class=\"graf graf--p graf-after--p\">As we prioritize our users\u2019
+        security, currently, we have to abstain from listing BTG on Changelly, unless
+        the team releases a stable wallet build and implements the replay protection.
+        We keep an eye on the network state until we\u2019re confident that the Bitcoin
+        Gold network is totally safe. Once BTG is a stable and proven fork, Changelly
+        will likely support it for exchange against other coins.<\/p>\n<p id=\"53b6\"
+        class=\"graf graf--p graf-after--p graf--trailing\">For any questions, we
+        have a dedicated support line at <a class=\"markup--anchor markup--p-anchor\"
+        href=\"mailto:support@changelly.com\" rel=\"noopener\" data-href=\"mailto:support@changelly.com\">support@changelly.com<\/a><\/p>","json_metadata":"{\"tags\":[\"bitcoin\",\"cryptocurrency\",\"blockchain\",\"ethereum\"],\"links\":[\"https:\/\/github.com\/BTCGPU\/BTCGPU\/blob\/5a9f5b1d337babbbad53f787bc4914520266e1f0\/src\/chainparams.cpp#L89\",\"https:\/\/poloniex.com\/press-releases\/2017.10.24-Notice-About-Bitcoin-Gold\/\",\"https:\/\/blog.coinbase.com\/timeline-and-support-bitcoin-segwit2x-and-bitcoin-gold-eda72525efd\",\"http:\/\/decentral.ca\/statement-bitcoin-gold\/\",\"https:\/\/blog.hitbtc.com\/bitcoin-gold-update\/\",\"https:\/\/support.bittrex.com\/hc\/en-us\/articles\/115002320451-Statement-on-Bitcoin-Gold-BTG-\",\"mailto:support@changelly.com\"],\"app\":\"steemit\/0.1\",\"format\":\"markdown\"}"}]],"extensions":[],"signatures":["20091973300e795d9e4f9d0ae25c66d280d12a1c9521f9612f29242eefcab39162090f91b02ee274ce8ecab8fdfae903e7cf40b854e26267f5f9c60dfbd9919107"]},{"ref_block_num":35015,"ref_block_prefix":731175429,"expiration":"2017-10-24T16:58:46","operations":[["vote",{"voter":"demo","author":"bcrafts","permlink":"steemitpoetrycontest-shackles-unchained-20171024t175410532z","weight":100}]],"extensions":[],"signatures":["1f16f0f8f06e9e9dfb703b715077e1de5d0087fd41df14338f3d709aed341b959a4a44c8363661c9fdf97f0e2a6642916703ca3feb259217117bec7a07d53da09d"]},{"ref_block_num":35015,"ref_block_prefix":731175429,"expiration":"2017-10-24T16:58:56","operations":[["vote",{"voter":"andrei201323","author":"russkaya","permlink":"yellow-roses","weight":10000}]],"extensions":[],"signatures":["2074fbac626023702f45d11c25ed88db828cb24e09825f13fa6666a3e24c8fdee205972515ba0d76b1c8c19ce42e7b92c63772b8cf586d721b372285edfb631acf"]},{"ref_block_num":35015,"ref_block_prefix":731175429,"expiration":"2017-10-24T16:58:47","operations":[["vote",{"voter":"feruz","author":"bcrafts","permlink":"steemitpoetrycontest-shackles-unchained-20171024t175410532z","weight":100}]],"extensions":[],"signatures":["2069b1e2256cd260c92357a03cb67506051197e0813c1995c285a2ea302c1ba420741dd9d0e90fe071cce2537567ab25cbf0192ce2ce779723b55339aa77c525d2"]},{"ref_block_num":35014,"ref_block_prefix":357297792,"expiration":"2017-10-24T16:59:30","operations":[["vote",{"voter":"msp-lovebot","author":"arie.steem","permlink":"apa-itu-utopian-io-and-tutorial-penting-untuk-diketahui","weight":400}]],"extensions":[],"signatures":["1f07d2d0c314fc9fd36866f48916a5d665eca7cc5804ae8e26d89bd5afdeca4c980f727ccf77f92537f5339da229971fa5ac0cc5f4366bf0512b01cfb60a950f79"]},{"ref_block_num":35017,"ref_block_prefix":2080056940,"expiration":"2017-10-24T16:58:45","operations":[["vote",{"voter":"massive-pop","author":"enki74","permlink":"x2j4q8t4","weight":1000}]],"extensions":[],"signatures":["1c73e1cf543e33be73042d61174ab8621a4acc2a9dcade8fb5c430b234abbae35e7f5b7c4c041e4d54145728f4985a7f3d0b8c95aa9a5c355cafb1803e24228f6c"]}],"block_id":"00fd88ca8d183aaeef99e0346c17eedda995efa5","signing_key":"STM67LS8qbU37747iHFTz3z8yiqLgVjoL5cQFrFMLoZy7kLhnHqT7","transaction_ids":["12ead1e1ba48fb311ebc44683f808f8d288d8237","04fbaaf6a29743195f3588c5a77605b60de91255","badf70183054c97d2ebe1e63373af9366c0acb95","d79cd2ba33d7be6be37bf04e67770ae670c877ac","22854936314e776dac31f8f57a9f2c079c31f190","400a91b1e527c49fceccbe6ba6eb1bb9e0150dd5","06e3f051ee1f644b3f23a8f43c737790981bc626","c5a2bb1aeb0d177c7b6a4de7766e71b4dd9648c1","a08990973beb5a4173a22c564bd43275b4755821","7da7f75af8d0a24c9e2f6c6ce904de145c0ba23a","1d54476fd4651658b79c08b8b97d72d0a8d9c8d7","e79e4178ccd601cfa6a4f8cf09af4b70c5f550d0","81aaebc4ef447557dbfae62c2b59b8aa08956ebd","d15c5acdd6cabe65638f76d42b216a062a9c6c1a","c143172cfaedcc28c0ab3d44df0e06909b3d7288","eec825196a2d8c39242d62b524e539b2b5c48bd9","cbdd5ffb39daac57abd4837a5333d5dfe189fab3","2ccb3ae2ebaf2ce1bb7c38b3f45d5170d7cc204c","ec6084615e5e5ce126c31e02278082bedcd207c3","6408bc9f2d86cf7294c4cb86aaef1f779c193366","6b0cc7db736437797d15dcac7af665a8e92f643d","a8ec21855d650baed1e8839d566782a8e8266a5e","3304797ce5ef7da07a7b1f9b55b617496f16900b","d8ba03d93bae4acaa09cd1ff363a988359e9a2e0","6f1dea6a67f7f16bb3adaf5b0dfc187b6ffa2932"]},"id":2}'
     http_version: 
-  recorded_at: Wed, 18 Oct 2017 19:54:21 GMT
+  recorded_at: Tue, 24 Oct 2017 16:59:35 GMT
 recorded_with: VCR 3.0.3

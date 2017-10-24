@@ -13,6 +13,7 @@ require 'minitest/autorun'
 require 'webmock/minitest' unless ENV["TEST_NET"] == 'true'
 require 'vcr'
 require 'yaml'
+require 'awesome_print'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'test/fixtures/vcr_cassettes'

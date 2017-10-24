@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://steemd.steemit.com/
+    uri: https://api.steemit.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","params":["database_api","get_feed_history",[["inertia"]]],"id":1,"method":"call"}'
@@ -19,23 +19,23 @@ http_interactions:
       - keep-alive
       Keep-Alive:
       - '30'
-      Host:
-      - steemd.steemit.com
-      Content-Length:
-      - '99'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 18 Oct 2017 05:54:03 GMT
-      Content-Length:
-      - '3724'
+      - Tue, 24 Oct 2017 16:59:28 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       Server:
       - nginx
+      X-Jussi-Response-Id:
+      - s5f7f0774-d4f6-4676-915a-783e6f89015f->182fa0e4-a0f7-4ba1-b15a-e2667c14fc89
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -44,52 +44,54 @@ http_interactions:
       - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
       Strict-Transport-Security:
       - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
     body:
-      encoding: UTF-8
-      string: '{"id":1,"result":{"id":0,"current_median_history":{"base":"1.035 SBD","quote":"1.000
-        STEEM"},"price_history":[{"base":"1.041 SBD","quote":"1.000 STEEM"},{"base":"1.040
-        SBD","quote":"1.000 STEEM"},{"base":"1.056 SBD","quote":"1.000 STEEM"},{"base":"1.056
-        SBD","quote":"1.000 STEEM"},{"base":"1.072 SBD","quote":"1.000 STEEM"},{"base":"1.086
-        SBD","quote":"1.000 STEEM"},{"base":"1.055 SBD","quote":"1.000 STEEM"},{"base":"1.053
-        SBD","quote":"1.000 STEEM"},{"base":"1.051 SBD","quote":"1.000 STEEM"},{"base":"1.041
-        SBD","quote":"1.000 STEEM"},{"base":"1.009 SBD","quote":"1.000 STEEM"},{"base":"1.009
-        SBD","quote":"1.000 STEEM"},{"base":"1.012 SBD","quote":"1.000 STEEM"},{"base":"1.015
-        SBD","quote":"1.000 STEEM"},{"base":"1.012 SBD","quote":"1.000 STEEM"},{"base":"1.009
-        SBD","quote":"1.000 STEEM"},{"base":"1.006 SBD","quote":"1.000 STEEM"},{"base":"1.005
-        SBD","quote":"1.000 STEEM"},{"base":"1.008 SBD","quote":"1.000 STEEM"},{"base":"1.007
-        SBD","quote":"1.000 STEEM"},{"base":"1.009 SBD","quote":"1.000 STEEM"},{"base":"1.017
-        SBD","quote":"1.000 STEEM"},{"base":"1.020 SBD","quote":"1.000 STEEM"},{"base":"1.020
-        SBD","quote":"1.000 STEEM"},{"base":"1.023 SBD","quote":"1.000 STEEM"},{"base":"1.024
-        SBD","quote":"1.000 STEEM"},{"base":"1.028 SBD","quote":"1.000 STEEM"},{"base":"1.052
-        SBD","quote":"1.000 STEEM"},{"base":"1.069 SBD","quote":"1.000 STEEM"},{"base":"1.078
-        SBD","quote":"1.000 STEEM"},{"base":"1.072 SBD","quote":"1.000 STEEM"},{"base":"1.062
-        SBD","quote":"1.000 STEEM"},{"base":"1.067 SBD","quote":"1.000 STEEM"},{"base":"1.073
-        SBD","quote":"1.000 STEEM"},{"base":"1.054 SBD","quote":"1.000 STEEM"},{"base":"1.033
-        SBD","quote":"1.000 STEEM"},{"base":"1.027 SBD","quote":"1.000 STEEM"},{"base":"1.023
-        SBD","quote":"1.000 STEEM"},{"base":"1.024 SBD","quote":"1.000 STEEM"},{"base":"1.037
-        SBD","quote":"1.000 STEEM"},{"base":"1.063 SBD","quote":"1.000 STEEM"},{"base":"1.057
-        SBD","quote":"1.000 STEEM"},{"base":"1.054 SBD","quote":"1.000 STEEM"},{"base":"1.052
-        SBD","quote":"1.000 STEEM"},{"base":"1.029 SBD","quote":"1.000 STEEM"},{"base":"1.028
-        SBD","quote":"1.000 STEEM"},{"base":"1.034 SBD","quote":"1.000 STEEM"},{"base":"1.027
-        SBD","quote":"1.000 STEEM"},{"base":"1.034 SBD","quote":"1.000 STEEM"},{"base":"1.040
-        SBD","quote":"1.000 STEEM"},{"base":"1.037 SBD","quote":"1.000 STEEM"},{"base":"1.034
-        SBD","quote":"1.000 STEEM"},{"base":"1.032 SBD","quote":"1.000 STEEM"},{"base":"1.034
-        SBD","quote":"1.000 STEEM"},{"base":"1.043 SBD","quote":"1.000 STEEM"},{"base":"1.043
-        SBD","quote":"1.000 STEEM"},{"base":"1.043 SBD","quote":"1.000 STEEM"},{"base":"1.043
-        SBD","quote":"1.000 STEEM"},{"base":"1.038 SBD","quote":"1.000 STEEM"},{"base":"1.038
-        SBD","quote":"1.000 STEEM"},{"base":"1.043 SBD","quote":"1.000 STEEM"},{"base":"1.043
-        SBD","quote":"1.000 STEEM"},{"base":"1.036 SBD","quote":"1.000 STEEM"},{"base":"1.055
-        SBD","quote":"1.000 STEEM"},{"base":"1.055 SBD","quote":"1.000 STEEM"},{"base":"1.031
-        SBD","quote":"1.000 STEEM"},{"base":"1.028 SBD","quote":"1.000 STEEM"},{"base":"1.026
-        SBD","quote":"1.000 STEEM"},{"base":"1.018 SBD","quote":"1.000 STEEM"},{"base":"1.016
-        SBD","quote":"1.000 STEEM"},{"base":"1.020 SBD","quote":"1.000 STEEM"},{"base":"1.029
-        SBD","quote":"1.000 STEEM"},{"base":"1.031 SBD","quote":"1.000 STEEM"},{"base":"1.031
-        SBD","quote":"1.000 STEEM"},{"base":"1.034 SBD","quote":"1.000 STEEM"},{"base":"1.034
-        SBD","quote":"1.000 STEEM"},{"base":"1.036 SBD","quote":"1.000 STEEM"},{"base":"1.035
-        SBD","quote":"1.000 STEEM"},{"base":"1.035 SBD","quote":"1.000 STEEM"},{"base":"1.035
-        SBD","quote":"1.000 STEEM"},{"base":"1.037 SBD","quote":"1.000 STEEM"},{"base":"1.038
-        SBD","quote":"1.000 STEEM"},{"base":"1.024 SBD","quote":"1.000 STEEM"},{"base":"1.024
-        SBD","quote":"1.000 STEEM"}]}}'
+      encoding: ASCII-8BIT
+      string: '{"result":{"id":0,"current_median_history":{"base":"0.963 SBD","quote":"1.000
+        STEEM"},"price_history":[{"base":"0.979 SBD","quote":"1.000 STEEM"},{"base":"0.987
+        SBD","quote":"1.000 STEEM"},{"base":"0.987 SBD","quote":"1.000 STEEM"},{"base":"0.962
+        SBD","quote":"1.000 STEEM"},{"base":"0.963 SBD","quote":"1.000 STEEM"},{"base":"0.939
+        SBD","quote":"1.000 STEEM"},{"base":"0.938 SBD","quote":"1.000 STEEM"},{"base":"0.915
+        SBD","quote":"1.000 STEEM"},{"base":"0.941 SBD","quote":"1.000 STEEM"},{"base":"0.961
+        SBD","quote":"1.000 STEEM"},{"base":"0.950 SBD","quote":"1.000 STEEM"},{"base":"0.939
+        SBD","quote":"1.000 STEEM"},{"base":"0.932 SBD","quote":"1.000 STEEM"},{"base":"0.935
+        SBD","quote":"1.000 STEEM"},{"base":"0.937 SBD","quote":"1.000 STEEM"},{"base":"0.955
+        SBD","quote":"1.012 STEEM"},{"base":"0.941 SBD","quote":"1.000 STEEM"},{"base":"0.944
+        SBD","quote":"1.000 STEEM"},{"base":"0.969 SBD","quote":"1.000 STEEM"},{"base":"0.975
+        SBD","quote":"1.000 STEEM"},{"base":"0.978 SBD","quote":"1.000 STEEM"},{"base":"0.980
+        SBD","quote":"1.000 STEEM"},{"base":"0.980 SBD","quote":"1.000 STEEM"},{"base":"1.011
+        SBD","quote":"1.000 STEEM"},{"base":"0.996 SBD","quote":"1.000 STEEM"},{"base":"0.969
+        SBD","quote":"1.000 STEEM"},{"base":"0.971 SBD","quote":"1.000 STEEM"},{"base":"0.971
+        SBD","quote":"1.000 STEEM"},{"base":"0.966 SBD","quote":"1.000 STEEM"},{"base":"0.946
+        SBD","quote":"1.000 STEEM"},{"base":"0.954 SBD","quote":"1.000 STEEM"},{"base":"0.981
+        SBD","quote":"1.000 STEEM"},{"base":"0.971 SBD","quote":"1.000 STEEM"},{"base":"0.965
+        SBD","quote":"1.000 STEEM"},{"base":"0.967 SBD","quote":"1.000 STEEM"},{"base":"0.971
+        SBD","quote":"1.000 STEEM"},{"base":"0.970 SBD","quote":"1.000 STEEM"},{"base":"0.963
+        SBD","quote":"1.000 STEEM"},{"base":"0.963 SBD","quote":"1.000 STEEM"},{"base":"0.955
+        SBD","quote":"1.000 STEEM"},{"base":"0.960 SBD","quote":"1.000 STEEM"},{"base":"0.988
+        SBD","quote":"1.000 STEEM"},{"base":"0.988 SBD","quote":"1.000 STEEM"},{"base":"0.967
+        SBD","quote":"1.000 STEEM"},{"base":"0.966 SBD","quote":"1.000 STEEM"},{"base":"0.966
+        SBD","quote":"1.000 STEEM"},{"base":"0.966 SBD","quote":"1.000 STEEM"},{"base":"0.962
+        SBD","quote":"1.000 STEEM"},{"base":"0.959 SBD","quote":"1.000 STEEM"},{"base":"0.934
+        SBD","quote":"1.000 STEEM"},{"base":"0.931 SBD","quote":"1.000 STEEM"},{"base":"0.926
+        SBD","quote":"1.000 STEEM"},{"base":"0.918 SBD","quote":"1.000 STEEM"},{"base":"0.920
+        SBD","quote":"1.000 STEEM"},{"base":"0.924 SBD","quote":"1.000 STEEM"},{"base":"0.929
+        SBD","quote":"1.000 STEEM"},{"base":"0.918 SBD","quote":"1.000 STEEM"},{"base":"0.910
+        SBD","quote":"1.000 STEEM"},{"base":"0.907 SBD","quote":"1.000 STEEM"},{"base":"0.909
+        SBD","quote":"1.000 STEEM"},{"base":"0.909 SBD","quote":"1.000 STEEM"},{"base":"0.930
+        SBD","quote":"1.000 STEEM"},{"base":"0.930 SBD","quote":"1.000 STEEM"},{"base":"0.930
+        SBD","quote":"1.000 STEEM"},{"base":"0.930 SBD","quote":"1.000 STEEM"},{"base":"0.930
+        SBD","quote":"1.000 STEEM"},{"base":"0.928 SBD","quote":"1.000 STEEM"},{"base":"0.926
+        SBD","quote":"1.000 STEEM"},{"base":"0.911 SBD","quote":"1.000 STEEM"},{"base":"0.942
+        SBD","quote":"1.000 STEEM"},{"base":"0.959 SBD","quote":"1.000 STEEM"},{"base":"1.008
+        SBD","quote":"1.000 STEEM"},{"base":"1.011 SBD","quote":"1.000 STEEM"},{"base":"1.032
+        SBD","quote":"1.000 STEEM"},{"base":"1.033 SBD","quote":"1.000 STEEM"},{"base":"1.041
+        SBD","quote":"1.000 STEEM"},{"base":"1.040 SBD","quote":"1.000 STEEM"},{"base":"1.022
+        SBD","quote":"1.000 STEEM"},{"base":"1.018 SBD","quote":"1.000 STEEM"},{"base":"1.017
+        SBD","quote":"1.000 STEEM"},{"base":"1.001 SBD","quote":"1.000 STEEM"},{"base":"0.999
+        SBD","quote":"1.000 STEEM"},{"base":"0.999 SBD","quote":"1.000 STEEM"},{"base":"0.996
+        SBD","quote":"1.000 STEEM"}]},"id":1}'
     http_version: 
-  recorded_at: Wed, 18 Oct 2017 05:54:03 GMT
+  recorded_at: Tue, 24 Oct 2017 16:59:28 GMT
 recorded_with: VCR 3.0.3

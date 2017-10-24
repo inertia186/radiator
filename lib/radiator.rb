@@ -31,5 +31,6 @@ module Radiator
   require 'radiator/operation'
   require 'radiator/transaction'
   require 'radiator/base_error'
+  require 'radiator/error_parser'
   extend self
 end

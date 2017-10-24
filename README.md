@@ -397,9 +397,9 @@ Radiator supports failover for situations where a node has, for example, become 
 
 ```ruby
 options = {
-  ur: 'https://steemd.steemit.com',
+  ur: 'https://api.steemit.com',
   failover_urls: [
-    'https://steemd.steemitstage.com',
+    'https://api.steemitstage.com',
     'https://gtg.steem.house:8090'
   ]
 }
@@ -420,6 +420,16 @@ There is another rare scenario involving `::Transaction` broadcasts that's handl
 ```ruby
 tx = Radiator::Transaction.new(wif: wif, recover_transactions_on_error: false)
 ```
+
+## Debugging
+
+To enable debugging, set environment `LOG=DEBUG` before launching your app.  E.g.:
+
+```bash
+$ LOG=DEBUG irb -rradiator
+```
+
+This will enable debugging for the `irb` session.
 
 ## Troubleshooting
 
@@ -465,7 +475,10 @@ Verify your code is not doing too much between blocks.
   * `rake`
 * To run tests with parallelization and local code coverage:
   * `HELL_ENABLED=true rake`
-
+* To run a stream test on the live STEEM blockchain with debug logging enabled:
+  * `LOG=DEBUG rake test_live_stream`
+* To run a stream test on the live GOLOS blockchain with debug logging enabled:
+  * `LOG=DEBUG rake test_live_stream[golos]`
 ---
 
 <center>
