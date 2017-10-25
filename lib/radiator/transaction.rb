@@ -99,6 +99,10 @@ module Radiator
         end
       end
     end
+    
+    def operations=(operations)
+      @operations = operations
+    end
   private
     def payload
       {

@@ -189,6 +189,7 @@ module Radiator
     # @option options [Logger] :logger An instance of `Logger` to send debug messages to.
     # @option options [Boolean] :recover_transactions_on_error Have Radiator try to recover transactions that are accepted but could not be confirmed due to an error like network timeout.  Default: `true`
     # @option options [Integer] :max_requests Maximum number of requests on a connection before it is considered expired and automatically closed.
+    # @option options [Integer] :pool_size Maximum number of connections allowed.
     # @option options [Boolean] :reuse_ssl_sessions Reuse a previously opened SSL session for a new connection.  There's a slight performance improvement by enabling this, but at the expense of reliability during long execution.  Default false.
     def initialize(options = {})
       @user = options[:user]
@@ -201,6 +202,7 @@ module Radiator
       @logger = options[:logger] || Radiator.logger
       @hashie_logger = options[:hashie_logger] || Logger.new(nil)
       @max_requests = options[:max_requests] || 30
+      @pool_size = options[:pool_size] || Net::HTTP::Persistent::DEFAULT_POOL_SIZE
       @ssl_verify_mode = options[:ssl_verify_mode] || OpenSSL::SSL::VERIFY_PEER
       @reuse_ssl_sessions = !!options[:reuse_ssl_sessions]
       @ssl_version = options[:ssl_version]

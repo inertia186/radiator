@@ -693,6 +693,12 @@ module Radiator
       assert_equal '01', hex_segments[:allow_curation_rewards], 'expect allow_curation_rewards'
       assert_equal '000107696e6572746961f401', hex_segments[:op_extensions], 'expect op_extensions'
     end
+    
+    def test_operations_assignment
+      @transaction.operations = [{type: :vote}]
+      
+      assert_equal Operation, @transaction.operations.first.class
+    end
   private
     def seg(hex)
       seg = {
