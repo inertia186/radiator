@@ -286,7 +286,7 @@ module Radiator
         rescue StreamError; raise
         # rescue => e
         #   warning "Unknown streaming error: #{e.inspect}, retrying ...  "
-        #   ap e
+        #   warning e
         #   redo
         end; end
       end
@@ -408,8 +408,7 @@ module Radiator
       throwable = secondary[:throw]
       
       warning message
-      
-      ap error if !!error
+      warning error if !!error
       backoff_api.send :backoff if !!backoff_api
       throw throwable if !!throwable
     end

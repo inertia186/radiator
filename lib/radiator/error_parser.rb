@@ -4,17 +4,20 @@ module Radiator
     
     attr_reader :response, :error_code, :error_message,
       :api_name, :api_method, :api_params,
-      :expiry, :can_retry, :can_reprepare, :debug
+      :expiry, :can_retry, :can_reprepare, :trx_id, :debug
       
     alias expiry? expiry
     alias can_retry? can_retry
     alias can_reprepare? can_reprepare
     
-    REPREPARE = [
+    REPREPARE_WHITELIST = [
       'is_canonical( c ): signature is not canonical',
-      'now < trx.expiration: ',
-      '(skip & skip_transaction_dupe_check) || trx_idx.indices().get<by_trx_id>().find(trx_id) == trx_idx.indices().get<by_trx_id>().end(): Duplicate transaction check failed'
+      'now < trx.expiration: '
     ]
+    
+    DUPECHECK = '(skip & skip_transaction_dupe_check) || trx_idx.indices().get<by_trx_id>().find(trx_id) == trx_idx.indices().get<by_trx_id>().end(): Duplicate transaction check failed'
+      
+    REPREPARE_BLACKLIST = [DUPECHECK]
     
     def initialize(response)
       @response = response
@@ -28,6 +31,7 @@ module Radiator
       @expiry = nil
       @can_retry = nil
       @can_reprepare = nil
+      @trx_id = nil
       @debug = nil
       
       parse_error_response
@@ -48,12 +52,16 @@ module Radiator
         @api_name = data_call_method['call.params']
       end
       
+      # See if we can recover a transaction id out of this hot mess.
+      data_trx_ix = stack_datum.find { |data| !!data['trx_ix'] }
+      @trx_id = data_trx_ix['trx_ix'] if !!data_trx_ix
+      
       case @error_code
       when 10
         @expiry = false
         @can_retry = false
         @can_reprepare = if @api_name == 'network_broadcast_api'
-          (stack_formats & REPREPARE).any?
+          (stack_formats & REPREPARE_WHITELIST).any?
         else
           false
         end

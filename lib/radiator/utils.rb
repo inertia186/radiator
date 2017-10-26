@@ -22,35 +22,44 @@ module Radiator
       [signatures, expirations.min]
     end
     
-    def send_log(level, message, prefix = nil)
-      log_message = if !!prefix
-        "#{prefix} :: #{message}"
+    def send_log(level, obj, prefix = nil)
+      log_message = case obj
+      when String
+        log_message = if !!prefix
+          "#{prefix} :: #{obj}"
+        else
+          obj
+        end
+        
+        if !!@logger
+          @logger.send level, log_message
+        else
+          puts "#{level}: #{log_message}"
+        end
       else
-        message
-      end
-      
-      if !!@logger
-        @logger.send level, log_message
-      else
-        puts "#{level}: #{log_message}"
+        if !!prefix
+          @logger.ap log_level: level, prefix => obj
+        else
+          @logger.ap obj, level
+        end
       end
       
       nil
     end
     
-    def error(message, prefix = nil)
-      send_log(:error, message, prefix)
+    def error(obj, prefix = nil)
+      send_log(:error, obj, prefix)
     end
     
-    def warning(message, prefix = nil, log_debug_node = false)
+    def warning(obj, prefix = nil, log_debug_node = false)
       debug("Current node: #{@url}", prefix) if !!log_debug_node && @url
         
-      send_log(:warn, message, prefix)
+      send_log(:warn, obj, prefix)
     end
     
-    def debug(message, prefix = nil)
+    def debug(obj, prefix = nil)
       if ENV['LOG'] == 'DEBUG'
-        send_log(:debug, message, prefix)
+        send_log(:debug, obj, prefix)
       end
     end
     

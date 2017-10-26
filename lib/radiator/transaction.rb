@@ -44,6 +44,8 @@ module Radiator
         @private_key = Bitcoin::Key.from_base58 wif
       end
       
+      @immutable_expiration = !!@expiration
+      
       options = options.merge(url: @url, chain: @chain)
       @api = Api.new(options)
       @network_broadcast_api = NetworkBroadcastApi.new(options)
@@ -78,7 +80,7 @@ module Radiator
             parser = ErrorParser.new(response)
             
             if parser.can_reprepare?
-              debug "Repreparing transaction ..."
+              debug "Error code: #{parser}, repreparing transaction ..."
               prepare
               redo 
             end
@@ -105,7 +107,7 @@ module Radiator
     end
   private
     def payload
-      {
+      @payload ||= {
         expiration: @expiration.strftime('%Y-%m-%dT%H:%M:%S'),
         ref_block_num: @ref_block_num,
         ref_block_prefix: @ref_block_prefix,
@@ -118,55 +120,57 @@ module Radiator
     def prepare
       raise TransactionError, "No wif or private key." unless !!@wif || !!@private_key
       
-      @api.get_dynamic_global_properties do |properties, error|
-        if !!error
-          raise TransactionError, "Unable to prepare transaction.", error
-        end
-        
-        @properties = properties
-        
-        case @chain
-        when :steem, :test
-          # You can actually go back as far as the TaPoS buffer will allow, which
-          # is something like 50,000 blocks.
+      @payload = nil
+      
+      while @expiration.nil? && @ref_block_num.nil? && @ref_block_prefix.nil?
+        @api.get_dynamic_global_properties do |properties, error|
+          if !!error
+            raise TransactionError, "Unable to prepare transaction.", error
+          end
           
-          block_number = @properties.last_irreversible_block_num
+          @properties = properties
+        end
+          
+        # You can actually go back as far as the TaPoS buffer will allow, which
+        # is something like 50,000 blocks.
         
-          @api.get_block(block_number) do |block, error|
-            if !!error
-              raise TransactionError, "Unable to prepare transaction.", error
-            end
+        block_number = @properties.last_irreversible_block_num
+      
+        @api.get_block(block_number) do |block, error|
+          if !!error
+            raise TransactionError, "Unable to prepare transaction.", error
+          end
+          
+          if !!block && !!block.previous
+            @ref_block_num = (block_number - 1) & 0xFFFF
+            @ref_block_prefix = unhexlify(block.previous[8..-1]).unpack('V*')[0]
+          
+            # The expiration allows for transactions to expire if they are not
+            # included into a block by that time.  Always update it to the current
+            # time + EXPIRE_IN_SECS.
+            #
+            # Note, as of #1215, expiration exactly 'now' will be rejected:
+            # https://github.com/steemit/steem/blob/57451b80d2cf480dcce9b399e48e56aa7af1d818/libraries/chain/database.cpp#L2870
+            # https://github.com/steemit/steem/issues/1215
+            
+            block_time = Time.parse(@properties.time + 'Z')
+            @expiration ||= block_time + EXPIRE_IN_SECS
+          else
+            # Suspect this happens when there are microforks, but it should be
+            # rare, especially since we're asking for the last irreversible
+            # block.
             
             if block.nil?
-              raise TransactionError, "Unable to prepare transaction, block missing."
+              warning "Block missing while trying to prepare transaction, retrying ..."
+            else
+              debug block if ENV['LOG'] == 'DEBUG'
+              
+              warning "Block structure while trying to prepare transaction, retrying ..."
             end
             
-            if block.block_id.nil?
-              raise TransactionError, "Unable to prepare transaction, block.block_id missing."
-            end
-
-            @ref_block_num = block_number & 0xFFFF
-            @ref_block_prefix = unhexlify(block.block_id[8..-1]).unpack('V*')[0]
+            @expiration = nil unless @immutable_expiration
           end
-        when :golos
-          # No support for block_id in get_block on golos (yet), so just use the
-          # head block number.
-          
-          @ref_block_num = @properties.head_block_number & 0xFFFF
-          @ref_block_prefix = unhexlify(@properties.head_block_id[8..-1]).unpack('V*')[0]
-        else
-          raise TransactionError, "Unable to prepare transaction, unsupported chain: #{@chain}"
         end
-        
-        # The expiration allows for transactions to expire if they are not
-        # included into a block by that time.  Always update it to the current
-        # time + EXPIRE_IN_SECS.
-        #
-        # Note, as of #1215, expiration exactly 'now' will be rejected:
-        # https://github.com/steemit/steem/blob/57451b80d2cf480dcce9b399e48e56aa7af1d818/libraries/chain/database.cpp#L2870
-        # https://github.com/steemit/steem/issues/1215
-        
-        @expiration = Time.parse(@properties.time + 'Z') + EXPIRE_IN_SECS
       end
       
       self
@@ -198,7 +202,7 @@ module Radiator
       digest_hex = digest.freeze
 
       loop do
-        @expiration += 1
+        @expiration += 1 unless @immutable_expiration
         sig = ec.sign_compact(digest_hex, @private_key.priv, public_key_hex)
         
         next if public_key_hex != ec.recover_compact(digest_hex, sig)

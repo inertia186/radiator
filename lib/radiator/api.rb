@@ -400,14 +400,13 @@ module Radiator
         tries += 1
         
         begin
-          if @recover_transactions_on_error && api_name == :network_broadcast_api
+          if tries > 1 && @recover_transactions_on_error && api_name == :network_broadcast_api
             signatures, exp = extract_signatures(options)
             
-            if tries > 1 && !!signatures && signatures.any?
-              offset = [(exp - timestamp).abs, 300].min
+            if !!signatures && signatures.any?
+              offset = [(exp - timestamp).abs, 30].min
               
               if !!(response = recover_transaction(signatures, current_rpc_id, timestamp - offset))
-                warning 'Found recovered transaction after retry.', method_name, true
                 response = Hashie::Mash.new(response)
               end
             end
@@ -440,7 +439,7 @@ module Radiator
               when '504' then warning 'Code 504: Gateway Timeout, retrying ...', method_name, true
               else
                 warning "Unknown code #{response.code}, retrying ...", method_name, true
-                ap response
+                warning response
               end
             end
           end
@@ -469,7 +468,7 @@ module Radiator
           warning "ApiError (#{e.message}), retrying ...", method_name, true
         # rescue => e
         #   warning "Unknown exception from request, retrying ...", method_name, true
-        #   ap e if defined? ap
+        #   warning e
         end
         
         if !!response
@@ -550,6 +549,10 @@ module Radiator
     end
     
     def recover_transaction(signatures, expected_rpc_id, after)
+      debug "Looking for signatures: #{signatures.map{|s| s[0..5]}} since: #{after}"
+      
+      count = 0
+      start = Time.now.utc
       block_range = api.get_dynamic_global_properties do |properties|
         high = properties.head_block_number
         low = high - 100
@@ -562,6 +565,7 @@ module Radiator
       # but we also give up once the block time is before the `after` argument.
       
       api.get_blocks(block_range) do |block, block_num|
+        count += 1
         raise ApiError, "Race condition detected on remote node at: #{block_num}" if block.nil?
         
         timestamp = Time.parse(block.timestamp + 'Z')
@@ -570,8 +574,11 @@ module Radiator
         block.transactions.each_with_index do |tx, index|
           next unless ((tx['signatures'] || []) & signatures).any?
           
+          debug "Found transaction #{count} block(s) ago; took #{(Time.now.utc - start)} seconds to scan."
+          
           return {
             id: expected_rpc_id,
+            recovered_by: http_id,
             result: {
               id: block.transaction_ids[index],
               block_num: block_num,
@@ -581,6 +588,8 @@ module Radiator
           }
         end
       end
+      
+      debug "Could not find transaction in #{count} block(s); took #{(Time.now.utc - start)} seconds to scan."
       
       return nil
     end
@@ -608,7 +617,7 @@ module Radiator
     end
     
     def flappy?
-      !!@backoff_at && Time.now - @backoff_at < 300
+      !!@backoff_at && Time.now.utc - @backoff_at < 300
     end
     
     def drop_current_failover_url(prefix)
@@ -636,6 +645,34 @@ module Radiator
         return nil
       end
       
+      if !!parser.trx_id
+        # Turns out, the ErrorParser found a transaction id.  It might come in
+        # handy, so let's append this to the result along with the error.
+        
+        response[:result] = {
+          id: parser.trx_id,
+          block_num: -1,
+          trx_num: -1,
+          expired: false
+        }
+        
+        if @recover_transactions_on_error
+          begin
+            # Node operators often disable this operation.
+            api.get_transaction(parser.trx_id) do |tx|
+              if !!tx
+                response[:result][:block_num] = tx.block_num
+                response[:result][:trx_num] = tx.transaction_num
+                response[:recovered_by] = http_id
+                response.delete('error') # no need for this, now
+              end
+            end
+          rescue => e
+            debug "Couldn't find block for trx_id: #{parser.trx_id}, giving up."
+          end
+        end
+      end
+      
       Hashie::Mash.new(response)
     end
     
@@ -661,13 +698,13 @@ module Radiator
     def backoff
       shutdown
       bump_failover if flappy? || !healthy?(@url)
-      @backoff_at ||= Time.now
+      @backoff_at ||= Time.now.utc
       @backoff_sleep ||= 0.01
       
       @backoff_sleep *= 2
       sleep @backoff_sleep
       
-      if !!@backoff_at && Time.now - @backoff_at > 300
+      if !!@backoff_at && Time.now.utc - @backoff_at > 300
         @backoff_at = nil 
         @backoff_sleep = nil
       end
