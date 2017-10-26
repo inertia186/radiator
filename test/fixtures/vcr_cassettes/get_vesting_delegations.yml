@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 24 Oct 2017 16:59:32 GMT
+      - Wed, 25 Oct 2017 23:08:49 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,7 +35,7 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Response-Id:
-      - s3260be41-aea9-44e8-8b32-195ca5816745->6938e0fe-17d1-4c42-870f-55d0c67b51ca
+      - s6e39dcfa-44ba-49f4-ad9f-150bf024df2e->ab62cd7f-620d-4924-bda2-2a8a385c6220
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -63,8 +63,7 @@ http_interactions:
         VESTS","min_delegation_time":"2017-10-06T21:16:06"},{"id":226587,"delegator":"minnowbooster","delegatee":"brumest","vesting_shares":"590625.000000
         VESTS","min_delegation_time":"2017-09-01T17:40:12"},{"id":300433,"delegator":"minnowbooster","delegatee":"bulleth","vesting_shares":"1233944.303811
         VESTS","min_delegation_time":"2017-10-22T01:10:12"},{"id":209988,"delegator":"minnowbooster","delegatee":"cabbagepatch","vesting_shares":"315000.000000
-        VESTS","min_delegation_time":"2017-08-23T19:26:15"},{"id":247344,"delegator":"minnowbooster","delegatee":"cannabiscurator","vesting_shares":"882000.000000
-        VESTS","min_delegation_time":"2017-09-13T08:30:36"},{"id":292420,"delegator":"minnowbooster","delegatee":"cardinalemil","vesting_shares":"1182834.906074
+        VESTS","min_delegation_time":"2017-08-23T19:26:15"},{"id":292420,"delegator":"minnowbooster","delegatee":"cardinalemil","vesting_shares":"1182834.906074
         VESTS","min_delegation_time":"2017-10-17T00:49:45"},{"id":271320,"delegator":"minnowbooster","delegatee":"changeangels","vesting_shares":"772060.634267
         VESTS","min_delegation_time":"2017-09-30T15:59:27"},{"id":285554,"delegator":"minnowbooster","delegatee":"chiefmappster","vesting_shares":"1028946.604735
         VESTS","min_delegation_time":"2017-10-09T12:36:24"},{"id":289172,"delegator":"minnowbooster","delegatee":"christianchannel","vesting_shares":"532970.828011
@@ -93,8 +92,7 @@ http_interactions:
         VESTS","min_delegation_time":"2017-10-19T10:28:03"},{"id":235853,"delegator":"minnowbooster","delegatee":"gergi6a","vesting_shares":"3228750.000000
         VESTS","min_delegation_time":"2017-09-06T17:13:36"},{"id":293471,"delegator":"minnowbooster","delegatee":"goldenroom","vesting_shares":"848496.807579
         VESTS","min_delegation_time":"2017-10-18T08:50:24"},{"id":292303,"delegator":"minnowbooster","delegatee":"goldkey","vesting_shares":"3702868.038384
-        VESTS","min_delegation_time":"2017-10-16T14:19:24"},{"id":293634,"delegator":"minnowbooster","delegatee":"hassanabid","vesting_shares":"1234166.175133
-        VESTS","min_delegation_time":"2017-10-18T13:00:24"},{"id":289716,"delegator":"minnowbooster","delegatee":"hope777","vesting_shares":"1028801.614546
+        VESTS","min_delegation_time":"2017-10-16T14:19:24"},{"id":289716,"delegator":"minnowbooster","delegatee":"hope777","vesting_shares":"1028801.614546
         VESTS","min_delegation_time":"2017-10-11T19:20:06"},{"id":291618,"delegator":"minnowbooster","delegatee":"hornblende","vesting_shares":"1080128.191126
         VESTS","min_delegation_time":"2017-10-14T07:43:06"},{"id":293699,"delegator":"minnowbooster","delegatee":"howtostartablog","vesting_shares":"1591835.875661
         VESTS","min_delegation_time":"2017-10-18T15:23:09"},{"id":271172,"delegator":"minnowbooster","delegatee":"iliasdiamantis","vesting_shares":"5556716.139173
@@ -149,7 +147,7 @@ http_interactions:
         VESTS","min_delegation_time":"2017-10-14T03:42:18"},{"id":193970,"delegator":"minnowbooster","delegatee":"thecryptosphere","vesting_shares":"157500.000000
         VESTS","min_delegation_time":"2017-08-16T01:18:24"},{"id":168241,"delegator":"minnowbooster","delegatee":"theduke","vesting_shares":"819000.000000
         VESTS","min_delegation_time":"2017-07-31T13:34:45"},{"id":279796,"delegator":"minnowbooster","delegatee":"thelifestyler","vesting_shares":"617482.913385
-        VESTS","min_delegation_time":"2017-10-05T21:22:30"},{"id":268020,"delegator":"minnowbooster","delegatee":"theresteemer","vesting_shares":"2760370.564543
+        VESTS","min_delegation_time":"2017-10-05T21:22:30"},{"id":268020,"delegator":"minnowbooster","delegatee":"theresteemer","vesting_shares":"2130370.565000
         VESTS","min_delegation_time":"2017-09-26T21:56:15"},{"id":288077,"delegator":"minnowbooster","delegatee":"thomasduder","vesting_shares":"617325.468170
         VESTS","min_delegation_time":"2017-10-10T20:51:12"},{"id":184184,"delegator":"minnowbooster","delegatee":"tipu","vesting_shares":"590625.000000
         VESTS","min_delegation_time":"2017-08-09T13:41:21"},{"id":276896,"delegator":"minnowbooster","delegatee":"trenz","vesting_shares":"598387.021522
@@ -160,10 +158,8 @@ http_interactions:
         VESTS","min_delegation_time":"2017-08-24T11:24:06"},{"id":275900,"delegator":"minnowbooster","delegatee":"walt-e","vesting_shares":"7204599.075294
         VESTS","min_delegation_time":"2017-10-04T02:38:09"},{"id":243589,"delegator":"minnowbooster","delegatee":"whalereward","vesting_shares":"7136780.512027
         VESTS","min_delegation_time":"2017-09-11T10:09:03"},{"id":156916,"delegator":"minnowbooster","delegatee":"whiteblood","vesting_shares":"136500.000000
-        VESTS","min_delegation_time":"2017-07-24T14:20:18"},{"id":293717,"delegator":"minnowbooster","delegatee":"yahsa89","vesting_shares":"771349.067651
-        VESTS","min_delegation_time":"2017-10-18T15:54:24"},{"id":292577,"delegator":"minnowbooster","delegatee":"yusrizal08","vesting_shares":"617108.667421
-        VESTS","min_delegation_time":"2017-10-17T17:35:27"},{"id":259931,"delegator":"minnowbooster","delegatee":"zinovi","vesting_shares":"1050021.000000
+        VESTS","min_delegation_time":"2017-07-24T14:20:18"},{"id":259931,"delegator":"minnowbooster","delegatee":"zinovi","vesting_shares":"1050021.000000
         VESTS","min_delegation_time":"2017-09-22T15:49:21"}],"id":1}'
     http_version: 
-  recorded_at: Tue, 24 Oct 2017 16:59:32 GMT
+  recorded_at: Wed, 25 Oct 2017 23:08:49 GMT
 recorded_with: VCR 3.0.3

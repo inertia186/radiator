@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 24 Oct 2017 16:59:32 GMT
+      - Wed, 25 Oct 2017 23:08:49 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Response-Id:
-      - s67a4b030-b964-4802-a944-f5964ca611e1->cfb69a5b-9200-4c33-bab5-6922e8c7fd6d
+      - s30adeea0-3b18-41a1-9977-d7b95565c194->0a3895f3-4c6d-4b03-ae93-80d2fe3d5f6a
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -51,8 +51,8 @@ http_interactions:
       string: '{"error":{"code":1,"message":"7 bad_cast_exception: Bad Cast\nInvalid
         cast from array_type to int64\n    {\"type\":\"array_type\"}\n    th_a  variant.cpp:382
         as_int64\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_account_references\",[[\"2.2.27007\"]]]}\n    th_a  websocket_api.cpp:124
-        on_message","data":{"code":7,"name":"bad_cast_exception","message":"Bad Cast","stack":[{"context":{"level":"error","file":"variant.cpp","line":382,"method":"as_int64","hostname":"","thread_name":"th_a","timestamp":"2017-10-24T16:59:32"},"format":"Invalid
-        cast from ${type} to int64","data":{"type":"array_type"}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-24T16:59:32"},"format":"","data":{"call.method":"call","call.params":["database_api","get_account_references",[["2.2.27007"]]]}}]}},"id":1}'
+        on_message","data":{"code":7,"name":"bad_cast_exception","message":"Bad Cast","stack":[{"context":{"level":"error","file":"variant.cpp","line":382,"method":"as_int64","hostname":"","thread_name":"th_a","timestamp":"2017-10-25T23:08:49"},"format":"Invalid
+        cast from ${type} to int64","data":{"type":"array_type"}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-25T23:08:49"},"format":"","data":{"call.method":"call","call.params":["database_api","get_account_references",[["2.2.27007"]]]}}]}},"id":1}'
     http_version: 
-  recorded_at: Tue, 24 Oct 2017 16:59:32 GMT
+  recorded_at: Wed, 25 Oct 2017 23:08:49 GMT
 recorded_with: VCR 3.0.3

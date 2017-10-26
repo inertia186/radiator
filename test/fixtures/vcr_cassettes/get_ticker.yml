@@ -25,11 +25,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 24 Oct 2017 16:59:08 GMT
+      - Wed, 25 Oct 2017 23:09:07 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '238'
+      - '237'
       Connection:
       - keep-alive
       Server:
@@ -37,7 +37,7 @@ http_interactions:
       X-Jussi-Cache-Hit:
       - steemd.market_history_api.get_ticker
       X-Jussi-Response-Id:
-      - s5bed5372-19e0-4105-988b-475deba6f509->038aef16-0ef6-4604-8b0f-835f021b0dbb
+      - sf39127bd-2c26-4292-98df-f3bcb74cc5ab->c0323102-abcc-46fa-b092-641e4d4dab33
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,8 +50,8 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"latest":"0.98992398797949432","lowest_ask":"0.99259101705129582","highest_bid":"0.98726429065060706","percent_change":"2.26487479127007818","steem_volume":"10434.183
-        STEEM","sbd_volume":"10343.502 SBD"},"id":1}'
+      string: '{"jsonrpc":"2.0","result":{"latest":"0.96452489702132438","lowest_ask":"0.96832203624291047","highest_bid":"0.96306640342851635","percent_change":"-4.83426394189980790","steem_volume":"7386.969
+        STEEM","sbd_volume":"7059.894 SBD"},"id":1}'
     http_version: 
-  recorded_at: Tue, 24 Oct 2017 16:59:08 GMT
+  recorded_at: Wed, 25 Oct 2017 23:09:07 GMT
 recorded_with: VCR 3.0.3

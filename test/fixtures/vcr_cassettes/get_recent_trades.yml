@@ -25,17 +25,17 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 24 Oct 2017 16:59:12 GMT
+      - Wed, 25 Oct 2017 23:09:03 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '875'
+      - '871'
       Connection:
       - keep-alive
       Server:
       - nginx
       X-Jussi-Response-Id:
-      - s63f85ceb-ae03-481e-9a3f-ec4339d5ae28->5841f128-4e13-4c4e-8c7c-fbbd67dcd2e2
+      - s0e85b496-b463-43b2-a3a7-9acdc4af09d2->a360e14e-4af4-4dea-be91-cddc8f8f0c28
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -48,17 +48,17 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"result":[{"date":"2017-10-24T16:57:30","current_pays":"140.000 SBD","open_pays":"141.425
-        STEEM"},{"date":"2017-10-24T16:57:21","current_pays":"62.399 STEEM","open_pays":"61.511
-        SBD"},{"date":"2017-10-24T16:57:06","current_pays":"71.825 SBD","open_pays":"72.551
-        STEEM"},{"date":"2017-10-24T16:56:54","current_pays":"140.000 SBD","open_pays":"141.638
-        STEEM"},{"date":"2017-10-24T16:56:42","current_pays":"67.629 SBD","open_pays":"68.516
-        STEEM"},{"date":"2017-10-24T16:54:48","current_pays":"0.120 SBD","open_pays":"0.121
-        STEEM"},{"date":"2017-10-24T16:53:12","current_pays":"1.000 STEEM","open_pays":"0.981
-        SBD"},{"date":"2017-10-24T16:52:51","current_pays":"6.910 SBD","open_pays":"7.000
-        STEEM"},{"date":"2017-10-24T16:50:12","current_pays":"54.760 STEEM","open_pays":"53.826
-        SBD"},{"date":"2017-10-24T16:46:12","current_pays":"7.780 STEEM","open_pays":"7.647
+      string: '{"result":[{"date":"2017-10-25T23:08:18","current_pays":"71.374 STEEM","open_pays":"68.842
+        SBD"},{"date":"2017-10-25T23:08:18","current_pays":"3.260 STEEM","open_pays":"3.160
+        SBD"},{"date":"2017-10-25T23:08:06","current_pays":"10.465 STEEM","open_pays":"10.141
+        SBD"},{"date":"2017-10-25T23:06:21","current_pays":"9.368 SBD","open_pays":"9.739
+        STEEM"},{"date":"2017-10-25T23:06:18","current_pays":"10.520 SBD","open_pays":"10.936
+        STEEM"},{"date":"2017-10-25T23:06:15","current_pays":"136.207 SBD","open_pays":"140.821
+        STEEM"},{"date":"2017-10-25T23:04:36","current_pays":"0.189 SBD","open_pays":"0.196
+        STEEM"},{"date":"2017-10-25T23:03:24","current_pays":"1.224 SBD","open_pays":"1.271
+        STEEM"},{"date":"2017-10-25T23:02:51","current_pays":"0.823 SBD","open_pays":"0.854
+        STEEM"},{"date":"2017-10-25T23:01:12","current_pays":"56.987 STEEM","open_pays":"54.878
         SBD"}],"id":1}'
     http_version: 
-  recorded_at: Tue, 24 Oct 2017 16:59:12 GMT
+  recorded_at: Wed, 25 Oct 2017 23:09:03 GMT
 recorded_with: VCR 3.0.3

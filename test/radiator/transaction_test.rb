@@ -71,7 +71,7 @@ module Radiator
         @transaction.operations << {type: :vote}
         @transaction.process(false)
         payload = @transaction.send(:payload)
-        assert_equal 35019, payload[:ref_block_num], 'expect a certain ref_block_prefix'
+        assert_equal 36029, payload[:ref_block_num], 'expect a certain ref_block_prefix'
       end
     end
     
@@ -80,7 +80,7 @@ module Radiator
         @transaction.operations << {type: :vote}
         @transaction.process(false)
         payload = @transaction.send(:payload)
-        assert_equal 2923042957, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
+        assert_equal 1164960351, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
       end
     end
     
@@ -99,7 +99,7 @@ module Radiator
         transaction.operations << {type: :vote}
         transaction.process(false)
         payload = transaction.send(:payload)
-        assert_equal 2237044758, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
+        assert_equal 1164960351, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
       end
     end
     
@@ -698,6 +698,27 @@ module Radiator
       @transaction.operations = [{type: :vote}]
       
       assert_equal Operation, @transaction.operations.first.class
+    end
+    
+    def test_expiration_initialize
+      exp = Time.now.utc
+      tx = Transaction.new(expiration: exp)
+      
+      assert_equal exp, tx.expiration
+    end
+    
+    def test_expiration_initialize_nil
+      tx = Transaction.new
+      
+      assert_nil tx.expiration
+    end
+    
+    def test_payload_persists_until_reprepared
+      @transaction.send :prepare
+      expected_payload = @transaction.send :payload
+      assert_equal expected_payload, @transaction.send(:payload)
+      @transaction.send :prepare
+      refute_equal expected_payload, @transaction.send(:payload)
     end
   private
     def seg(hex)

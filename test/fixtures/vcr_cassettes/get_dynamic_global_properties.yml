@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 24 Oct 2017 16:59:31 GMT
+      - Wed, 25 Oct 2017 23:08:50 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -37,7 +37,7 @@ http_interactions:
       X-Jussi-Cache-Hit:
       - steemd.database_api.get_dynamic_global_properties
       X-Jussi-Response-Id:
-      - s09311e49-b787-43d3-b063-ee27c6d61066->96307042-5396-47d2-be88-1d6af7788c15
+      - s75ddff91-d7dd-4c87-9365-ea12f0a0c307->a495f01e-0f90-4795-90af-a1fc4372c884
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,12 +50,12 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"id":0,"head_block_number":16615636,"head_block_id":"00fd88d497b9a446ab3cfbf372131e35b6cac671","time":"2017-10-24T16:59:03","current_witness":"aggroed","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"261701058.766
-        STEEM","current_supply":"258176217.220 STEEM","confidential_supply":"0.000
-        STEEM","current_sbd_supply":"3394422.409 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"190713140.942 STEEM","total_vesting_shares":"392162151124.802635
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"377674815.018668
-        VESTS","pending_rewarded_vesting_steem":"183074.120 STEEM","sbd_interest_rate":1,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":16676381,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":16615621,"vote_power_reserve_rate":10,"current_reserve_ratio":200000000,"average_block_size":5945,"max_virtual_bandwidth":"264241152000000000000"},"id":1}'
+      string: '{"jsonrpc":"2.0","result":{"id":0,"head_block_number":16651821,"head_block_id":"00fe162d8a60ca70004bc53f156a813307ee2052","time":"2017-10-25T23:08:48","current_witness":"pfunk","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"261764153.776
+        STEEM","current_supply":"258287613.158 STEEM","confidential_supply":"0.000
+        STEEM","current_sbd_supply":"3365291.319 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"190492394.874 STEEM","total_vesting_shares":"391682950872.229174
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"382865906.819938
+        VESTS","pending_rewarded_vesting_steem":"185603.058 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":16712576,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":16651806,"vote_power_reserve_rate":10,"current_reserve_ratio":200000000,"average_block_size":5631,"max_virtual_bandwidth":"264241152000000000000"},"id":1}'
     http_version: 
-  recorded_at: Tue, 24 Oct 2017 16:59:31 GMT
+  recorded_at: Wed, 25 Oct 2017 23:08:50 GMT
 recorded_with: VCR 3.0.3

@@ -39,8 +39,8 @@ end
 class Radiator::Test < MiniTest::Test
   defined? prove_it! and prove_it!
   
-  VCR_RECORD_MODE = :once
-  # VCR_RECORD_MODE = :new_episodes
-
+  # Most likely modes: 'once' and 'new_episodes'
+  VCR_RECORD_MODE = (ENV['VCR_RECORD_MODE'] || 'once').to_sym
+  
   LOGGER = Logger.new(nil)
 end

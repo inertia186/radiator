@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 24 Oct 2017 16:59:28 GMT
+      - Wed, 25 Oct 2017 23:08:53 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Response-Id:
-      - s0467bbb6-2f5e-46e8-b16d-d84815c3e06f->9b2f9a0d-06ee-425a-a093-ead7bb59a216
+      - sdef82470-b880-4c49-8bc2-0bbbf5f07bd1->24d66c2c-240e-408c-93fb-06daa7afdd90
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -52,8 +52,8 @@ http_interactions:
         != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
         call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_accounts\",[]]}\n    th_a  websocket_api.cpp:124
         on_message","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-24T16:59:28"},"format":"a0
-        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-24T16:59:28"},"format":"","data":{"call.method":"call","call.params":["database_api","get_accounts",[]]}}]}},"id":1}'
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-25T23:08:53"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-25T23:08:53"},"format":"","data":{"call.method":"call","call.params":["database_api","get_accounts",[]]}}]}},"id":1}'
     http_version: 
-  recorded_at: Tue, 24 Oct 2017 16:59:28 GMT
+  recorded_at: Wed, 25 Oct 2017 23:08:53 GMT
 recorded_with: VCR 3.0.3

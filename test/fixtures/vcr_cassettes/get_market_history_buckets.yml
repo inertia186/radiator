@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 24 Oct 2017 16:59:07 GMT
+      - Wed, 25 Oct 2017 23:09:06 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Response-Id:
-      - s89c1e435-93fa-49df-bf23-18cf15470057->b1856d66-19fb-4a8d-979f-1200559201b7
+      - se127499e-3658-45ba-9578-9f6347a74129->2ffd5129-ed7a-4aff-9c18-2b6114e10265
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,5 +50,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"result":[15,60,300,3600,86400],"id":1}'
     http_version: 
-  recorded_at: Tue, 24 Oct 2017 16:59:07 GMT
+  recorded_at: Wed, 25 Oct 2017 23:09:06 GMT
 recorded_with: VCR 3.0.3

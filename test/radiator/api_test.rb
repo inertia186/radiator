@@ -110,7 +110,7 @@ module Radiator
     
     def test_recover_transaction
       VCR.use_cassette('recover_transaction', record: VCR_RECORD_MODE) do
-        assert_nil @api.send(:recover_transaction, [], 1, Time.now), 'expect nil response from recover_transaction'
+        assert_nil @api.send(:recover_transaction, [], 1, Time.now.utc), 'expect nil response from recover_transaction'
       end
     end
     

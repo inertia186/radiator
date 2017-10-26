@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 24 Oct 2017 16:59:28 GMT
+      - Wed, 25 Oct 2017 23:08:48 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,7 +35,7 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Response-Id:
-      - s5f7f0774-d4f6-4676-915a-783e6f89015f->182fa0e4-a0f7-4ba1-b15a-e2667c14fc89
+      - s28b6c9d8-4a14-45a6-b413-dd6bab6ddef8->346c0f64-d959-44ec-bd92-2c51d51872c3
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -48,23 +48,8 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"result":{"id":0,"current_median_history":{"base":"0.963 SBD","quote":"1.000
-        STEEM"},"price_history":[{"base":"0.979 SBD","quote":"1.000 STEEM"},{"base":"0.987
-        SBD","quote":"1.000 STEEM"},{"base":"0.987 SBD","quote":"1.000 STEEM"},{"base":"0.962
-        SBD","quote":"1.000 STEEM"},{"base":"0.963 SBD","quote":"1.000 STEEM"},{"base":"0.939
-        SBD","quote":"1.000 STEEM"},{"base":"0.938 SBD","quote":"1.000 STEEM"},{"base":"0.915
-        SBD","quote":"1.000 STEEM"},{"base":"0.941 SBD","quote":"1.000 STEEM"},{"base":"0.961
-        SBD","quote":"1.000 STEEM"},{"base":"0.950 SBD","quote":"1.000 STEEM"},{"base":"0.939
-        SBD","quote":"1.000 STEEM"},{"base":"0.932 SBD","quote":"1.000 STEEM"},{"base":"0.935
-        SBD","quote":"1.000 STEEM"},{"base":"0.937 SBD","quote":"1.000 STEEM"},{"base":"0.955
-        SBD","quote":"1.012 STEEM"},{"base":"0.941 SBD","quote":"1.000 STEEM"},{"base":"0.944
-        SBD","quote":"1.000 STEEM"},{"base":"0.969 SBD","quote":"1.000 STEEM"},{"base":"0.975
-        SBD","quote":"1.000 STEEM"},{"base":"0.978 SBD","quote":"1.000 STEEM"},{"base":"0.980
-        SBD","quote":"1.000 STEEM"},{"base":"0.980 SBD","quote":"1.000 STEEM"},{"base":"1.011
-        SBD","quote":"1.000 STEEM"},{"base":"0.996 SBD","quote":"1.000 STEEM"},{"base":"0.969
-        SBD","quote":"1.000 STEEM"},{"base":"0.971 SBD","quote":"1.000 STEEM"},{"base":"0.971
-        SBD","quote":"1.000 STEEM"},{"base":"0.966 SBD","quote":"1.000 STEEM"},{"base":"0.946
-        SBD","quote":"1.000 STEEM"},{"base":"0.954 SBD","quote":"1.000 STEEM"},{"base":"0.981
+      string: '{"result":{"id":0,"current_median_history":{"base":"0.968 SBD","quote":"1.000
+        STEEM"},"price_history":[{"base":"0.954 SBD","quote":"1.000 STEEM"},{"base":"0.981
         SBD","quote":"1.000 STEEM"},{"base":"0.971 SBD","quote":"1.000 STEEM"},{"base":"0.965
         SBD","quote":"1.000 STEEM"},{"base":"0.967 SBD","quote":"1.000 STEEM"},{"base":"0.971
         SBD","quote":"1.000 STEEM"},{"base":"0.970 SBD","quote":"1.000 STEEM"},{"base":"0.963
@@ -91,7 +76,22 @@ http_interactions:
         SBD","quote":"1.000 STEEM"},{"base":"1.018 SBD","quote":"1.000 STEEM"},{"base":"1.017
         SBD","quote":"1.000 STEEM"},{"base":"1.001 SBD","quote":"1.000 STEEM"},{"base":"0.999
         SBD","quote":"1.000 STEEM"},{"base":"0.999 SBD","quote":"1.000 STEEM"},{"base":"0.996
+        SBD","quote":"1.000 STEEM"},{"base":"1.001 SBD","quote":"1.000 STEEM"},{"base":"1.022
+        SBD","quote":"1.000 STEEM"},{"base":"1.012 SBD","quote":"1.000 STEEM"},{"base":"1.005
+        SBD","quote":"1.000 STEEM"},{"base":"1.005 SBD","quote":"1.000 STEEM"},{"base":"0.986
+        SBD","quote":"1.000 STEEM"},{"base":"0.989 SBD","quote":"1.000 STEEM"},{"base":"0.992
+        SBD","quote":"1.000 STEEM"},{"base":"0.993 SBD","quote":"1.000 STEEM"},{"base":"0.968
+        SBD","quote":"1.000 STEEM"},{"base":"0.967 SBD","quote":"1.000 STEEM"},{"base":"0.967
+        SBD","quote":"1.000 STEEM"},{"base":"0.967 SBD","quote":"1.000 STEEM"},{"base":"0.963
+        SBD","quote":"1.000 STEEM"},{"base":"0.966 SBD","quote":"1.000 STEEM"},{"base":"0.980
+        SBD","quote":"1.000 STEEM"},{"base":"0.984 SBD","quote":"1.000 STEEM"},{"base":"0.983
+        SBD","quote":"1.000 STEEM"},{"base":"0.978 SBD","quote":"1.000 STEEM"},{"base":"0.969
+        SBD","quote":"1.000 STEEM"},{"base":"0.968 SBD","quote":"1.000 STEEM"},{"base":"0.971
+        SBD","quote":"1.000 STEEM"},{"base":"0.966 SBD","quote":"1.000 STEEM"},{"base":"0.965
+        SBD","quote":"1.000 STEEM"},{"base":"0.981 SBD","quote":"1.000 STEEM"},{"base":"1.000
+        SBD","quote":"1.000 STEEM"},{"base":"1.004 SBD","quote":"1.000 STEEM"},{"base":"1.004
+        SBD","quote":"1.000 STEEM"},{"base":"1.007 SBD","quote":"1.000 STEEM"},{"base":"1.004
         SBD","quote":"1.000 STEEM"}]},"id":1}'
     http_version: 
-  recorded_at: Tue, 24 Oct 2017 16:59:28 GMT
+  recorded_at: Wed, 25 Oct 2017 23:08:48 GMT
 recorded_with: VCR 3.0.3

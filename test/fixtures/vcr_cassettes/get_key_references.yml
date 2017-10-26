@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 24 Oct 2017 16:59:24 GMT
+      - Wed, 25 Oct 2017 23:09:00 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Response-Id:
-      - s7fb8155c-d40e-4802-a41a-e302c9f54c13->da4d5c93-c459-449b-b72d-d1820252622b
+      - s9996143d-18e1-4680-bf22-b10cd8592552->63cdbe06-762b-4fc2-9399-5b2536754e0b
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,5 +50,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"result":[["misterdelegation","ned","steem","steemit","steemit1","steemit2","steemit60","therealslimshady"]],"id":1}'
     http_version: 
-  recorded_at: Tue, 24 Oct 2017 16:59:24 GMT
+  recorded_at: Wed, 25 Oct 2017 23:09:00 GMT
 recorded_with: VCR 3.0.3

@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 24 Oct 2017 16:59:07 GMT
+      - Wed, 25 Oct 2017 23:09:02 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,7 +35,7 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Response-Id:
-      - s13b3296d-d302-49ee-abf2-fc1902b940f4->71acadc2-fc23-48cf-b670-c60be5c4ee7c
+      - s04c2c9fc-95d6-4a1e-90f3-703d4a3cbdc6->91a650b4-a807-4b8c-ad18-2e51a7ab4033
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -53,9 +53,9 @@ http_interactions:
         1..31: unable to convert ISO-formatted string to fc::time_point_sec\n    {\"what\":\"Day
         of month value is out of range 1..31\"}\n    th_a  time.cpp:45 from_iso_string\n\n    {\"call.method\":\"call\",\"call.params\":[\"market_history_api\",\"get_market_history\",[null,null,null]]}\n    th_a  websocket_api.cpp:124
         on_message","data":{"code":13,"name":"N5boost16exception_detail10clone_implINS0_19error_info_injectorINS_9gregorian16bad_day_of_monthEEEEE","message":"Day
-        of month value is out of range 1..31","stack":[{"context":{"level":"warn","file":"time.cpp","line":45,"method":"from_iso_string","hostname":"","thread_name":"th_a","timestamp":"2017-10-24T16:59:07"},"format":"${what}:
+        of month value is out of range 1..31","stack":[{"context":{"level":"warn","file":"time.cpp","line":45,"method":"from_iso_string","hostname":"","thread_name":"th_a","timestamp":"2017-10-25T23:09:02"},"format":"${what}:
         unable to convert ISO-formatted string to fc::time_point_sec","data":{"what":"Day
-        of month value is out of range 1..31"}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-24T16:59:07"},"format":"","data":{"call.method":"call","call.params":["market_history_api","get_market_history",[null,null,null]]}}]}},"id":1}'
+        of month value is out of range 1..31"}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-25T23:09:02"},"format":"","data":{"call.method":"call","call.params":["market_history_api","get_market_history",[null,null,null]]}}]}},"id":1}'
     http_version: 
-  recorded_at: Tue, 24 Oct 2017 16:59:07 GMT
+  recorded_at: Wed, 25 Oct 2017 23:09:02 GMT
 recorded_with: VCR 3.0.3
