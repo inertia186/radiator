@@ -202,7 +202,6 @@ module Radiator
       @logger = options[:logger] || Radiator.logger
       @hashie_logger = options[:hashie_logger] || Logger.new(nil)
       @max_requests = options[:max_requests] || 30
-      @pool_size = options[:pool_size] || Net::HTTP::Persistent::DEFAULT_POOL_SIZE
       @ssl_verify_mode = options[:ssl_verify_mode] || OpenSSL::SSL::VERIFY_PEER
       @reuse_ssl_sessions = !!options[:reuse_ssl_sessions]
       @ssl_version = options[:ssl_version]
@@ -222,6 +221,10 @@ module Radiator
         options[:recover_transactions_on_error]
       else
         true
+      end
+      
+      if defined? Net::HTTP::Persistent::DEFAULT_POOL_SIZE
+        @pool_size = options[:pool_size] || Net::HTTP::Persistent::DEFAULT_POOL_SIZE
       end
       
       Hashie.logger = @hashie_logger
@@ -519,7 +522,7 @@ module Radiator
       idempotent = api_name != :network_broadcast_api
         
       @http ||= if defined? Net::HTTP::Persistent::DEFAULT_POOL_SIZE
-        Net::HTTP::Persistent.new(name: http_id)
+        Net::HTTP::Persistent.new(name: http_id, pool_size: @pool_size)
       else
         # net-http-persistent < 3.0
         Net::HTTP::Persistent.new(http_id)
