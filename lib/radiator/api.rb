@@ -632,7 +632,7 @@ module Radiator
    
     def handle_error(response, request_options, method_name, tries)
       parser = ErrorParser.new(response)
-      signatures, exp = extract_signatures(request_options)
+      _signatures, exp = extract_signatures(request_options)
       
       if (!!exp && exp < Time.now.utc) || tries > 2
         # Whatever the error was, it is already expired or tried too much.  No
@@ -667,7 +667,7 @@ module Radiator
                 response.delete('error') # no need for this, now
               end
             end
-          rescue => e
+          rescue
             debug "Couldn't find block for trx_id: #{parser.trx_id}, giving up."
           end
         end

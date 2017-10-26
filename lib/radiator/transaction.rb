@@ -44,6 +44,7 @@ module Radiator
         @private_key = Bitcoin::Key.from_base58 wif
       end
       
+      @expiration ||= nil
       @immutable_expiration = !!@expiration
       
       options = options.merge(url: @url, chain: @chain)
