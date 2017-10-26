@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    radiator (0.3.7)
+    radiator (0.3.8)
       awesome_print (~> 1.7, >= 1.7.0)
       bitcoin-ruby (~> 0.0, >= 0.0.11)
       ffi (~> 1.9, >= 1.9.18)
@@ -38,7 +38,7 @@ GEM
     net-http-persistent (3.0.0)
       connection_pool (~> 2.2)
     public_suffix (3.0.0)
-    rake (12.1.0)
+    rake (12.2.1)
     safe_yaml (1.0.4)
     simplecov (0.15.1)
       docile (~> 1.1.0)
