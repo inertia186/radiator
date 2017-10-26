@@ -70,8 +70,17 @@ task :test_live_stream, :chain do |t, args|
       o = t.map(&:operations)
       op_size = o.map(&:size).reduce(0, :+)
       total_ops += op_size
-      api.get_ops_in_block(n, true) do |vops|
-        vop_size = vops.size
+      api.get_ops_in_block(n, true) do |vops, error|
+        if !!error
+          puts "Error on get_ops_in_block for block #{n}"
+          ap error
+        end
+        
+        vop_size = if vops.nil?
+          0
+        else
+          vops.size
+        end
         total_vops += vop_size
         
         vop_ratio = if total_vops > 0

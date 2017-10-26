@@ -234,6 +234,7 @@ module Radiator
       @api = nil
       @block_api = nil
       @backoff_at = nil
+      @jussi_supported = []
     end
     
     # Get a specific block or range of blocks.
@@ -389,12 +390,21 @@ module Radiator
       current_rpc_id = rpc_id
       method_name = [api_name, m].join('.')
       response = nil
-      options = {
-        jsonrpc: "2.0",
-        params: [api_name, m, args],
-        id: current_rpc_id,
-        method: "call"
-      }
+      options = if jussi_supported? && api_name == :database_api
+        {
+          jsonrpc: "2.0",
+          params: [args],
+          id: current_rpc_id,
+          method: m
+        }
+      else
+        {
+          jsonrpc: "2.0",
+          params: [api_name, m, args],
+          id: current_rpc_id,
+          method: "call"
+        }
+      end
       
       tries = 0
       timestamp = Time.now.utc
@@ -423,6 +433,8 @@ module Radiator
             elsif !response.kind_of? Net::HTTPSuccess
               warning "Unexpected response (code: #{response.code}): #{response.inspect}, retrying ...", method_name, true
             else
+              detect_jussi(response)
+              
               case response.code
               when '200'
                 body = response.body
@@ -549,6 +561,21 @@ module Radiator
       request = post_request
       request.body = JSON[options]
       http.request(uri, request)
+    end
+    
+    def jussi_supported?(url = @url)
+      @jussi_supported.include? url
+    end
+    
+    def detect_jussi(response)
+      return if jussi_supported?(@url)
+      
+      jussi_response_id = response['x-jussi-response-id']
+      
+      if !!jussi_response_id
+        debug "Found a node that supports jussi: #{@url}"
+        @jussi_supported << @url
+      end
     end
     
     def recover_transaction(signatures, expected_rpc_id, after)
