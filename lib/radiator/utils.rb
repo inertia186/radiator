@@ -58,7 +58,7 @@ module Radiator
     end
     
     def debug(obj, prefix = nil)
-      if ENV['LOG'] == 'DEBUG'
+      if %w(DEBUG TRACE).include? ENV['LOG']
         send_log(:debug, obj, prefix)
       end
     end

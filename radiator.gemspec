@@ -27,11 +27,13 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'vcr', '~> 3.0', '>= 3.0.3'
   spec.add_development_dependency 'yard', '~> 0.9.9'
   
-  spec.add_dependency('net-http-persistent', '~> 3.0', '>= 2.5.2')
+  # net-http-persistent has an open-ended dependency because radiator directly
+  # supports net-http-persistent-3.0.0 as well as net-http-persistent-2.5.2.
+  spec.add_dependency('net-http-persistent', '>= 2.5.2')
   spec.add_dependency('json', '~> 2.0', '>= 2.0.2')
   spec.add_dependency('logging', '~> 2.2', '>= 2.2.0')
   spec.add_dependency('hashie', '~> 3.5', '>= 3.5.5')
   spec.add_dependency('bitcoin-ruby', '~> 0.0', '>= 0.0.11')
   spec.add_dependency('ffi', '~> 1.9', '>= 1.9.18')
-  spec.add_dependency 'awesome_print', '~> 1.7', '>= 1.7.0'
+  spec.add_dependency('awesome_print', '~> 1.7', '>= 1.7.0')
 end

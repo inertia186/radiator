@@ -32,5 +32,8 @@ module Radiator
   require 'radiator/transaction'
   require 'radiator/base_error'
   require 'radiator/error_parser'
+  require 'radiator/chain'
+  require 'steem'
+  require 'golos'
   extend self
 end

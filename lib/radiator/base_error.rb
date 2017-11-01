@@ -20,3 +20,4 @@ module Radiator; class StreamError < BaseError; end; end
 module Radiator; class TypeError < BaseError; end; end
 module Radiator; class OperationError < BaseError; end; end
 module Radiator; class TransactionError < BaseError; end; end
+module Radiator; class ChainError < BaseError; end; end

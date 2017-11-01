@@ -23,6 +23,8 @@ module Radiator
     # @private
     MAX_BLOCKS_PER_NODE = 1000
     
+    RANGE_BEHIND_WARNING = 400
+    
     def initialize(options = {})
       super
     end
@@ -212,17 +214,24 @@ module Radiator
     # @param mode we have the choice between
     #   * :head the last block
     #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
-    #   * :max_blocks_per_node the number of blocks to read before trying a new node
+    # @param max_blocks_per_node the number of blocks to read before trying a new node
     # @param block the block to execute for each result, optional.
     # @return [Hash]
     def blocks(start = nil, mode = :irreversible, max_blocks_per_node = MAX_BLOCKS_PER_NODE, &block)
+      reset_api
+      
+      replay = !!start
       counter = 0
       latest_block_number = -1
       @api_options[:max_requests] = [max_blocks_per_node * 2, @api_options[:max_requests].to_i].max
       
       loop do
+        break if stop?
+        
         catch :sequence do; begin
           head_block = api.get_dynamic_global_properties do |properties|
+            break if stop?
+            
             if properties.head_block_number.nil?
               # This can happen if a reverse proxy is acting up.
               standby "Bad block sequence after height: #{latest_block_number}", {
@@ -251,18 +260,27 @@ module Radiator
           start ||= head_block
           range = (start..head_block)
           
-          if range.size > 400
-            # When the range is 400 blocks, the stream will be behind by about
-            # 20 minutes.  Time to warn.
-            standby "Stream behind by #{range.size} blocks (about #{(range.size * 3) / 60.0} minutes)."
-          end
-          
-          [*range].each do |n|
+          for n in range
+            break if stop?
+
             if (counter += 1) > max_blocks_per_node
-              shutdown
+              reset_api
               counter = 0
             end
-
+            
+            if !replay && range.size > RANGE_BEHIND_WARNING
+              # When the range is above RANGE_BEHIND_WARNING blocks, it's time
+              # to warn, unless we're replaying.
+              
+              r = [*range]
+              index = r.index(n)
+              current_range = r[index..-1]
+              
+              if current_range.size % RANGE_BEHIND_WARNING == 0
+                standby "Stream behind by #{current_range.size} blocks (about #{(current_range.size * 3) / 60.0} minutes)."
+              end
+            end
+            
             block_api.get_block(n) do |current_block, error|
               if current_block.nil?
                 standby "Node responded with: empty block, retrying ...", {
@@ -295,13 +313,24 @@ module Radiator
     # Stops the persistant http connections.
     #
     def shutdown
+      flappy = false
+      
       begin
-        @api.shutdown
+        unless @api.nil?
+          flappy = @api.send(:flappy?)
+          @api.shutdown
+        end
+        
+        unless @block_api.nil?
+          flappy = @block_api.send(:flappy?) unless flappy
+          @block_api.shutdown
+        end
       rescue => e
         warning("Unable to shut down: #{e}")
       end
       
       @api = nil
+      @block_api = nil
     end
     
     # @private
@@ -353,6 +382,8 @@ module Radiator
       @latest_values ||= []
       @latest_values.shift(5) if @latest_values.size > 20
       loop do
+        break if stop?
+        
         value = if (n = method_params(m)).nil?
           key_value = api.get_dynamic_global_properties.result[m]
         else
@@ -362,12 +393,14 @@ module Radiator
             key_value = param = r[n[key]]
             result = nil
             loop do
+              break if stop?
+              
               response = api.send(key, param)
               raise StreamError, JSON[response.error] if !!response.error
               result = response.result
               break if !!result
               warnning "#{key}: #{param} result missing, retrying with timeout: #{@timeout || INITIAL_TIMEOUT} seconds"
-              shutdown
+              reset_api
               sleep timeout
             end
             @timeout = INITIAL_TIMEOUT
@@ -388,6 +421,11 @@ module Radiator
       end
     end
     
+    def reset_api
+      shutdown
+      !!api && !!block_api
+    end
+    
     def timeout
       @timeout ||= INITIAL_TIMEOUT
       @timeout *= 2
@@ -399,6 +437,10 @@ module Radiator
       type = [type].flatten.compact.map(&:to_sym)
       
       (Radiator::OperationTypes::TYPES.keys && type).any?
+    end
+    
+    def stop?
+      @api.nil? || @block_api.nil?
     end
     
     def standby(message, options = {})

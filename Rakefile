@@ -52,16 +52,21 @@ task :test_live_broadcast, [:account, :wif, :chain] do |t, args|
   end
 end
 
-desc 'Tests the ability to stream live data.'
-task :test_live_stream, :chain do |t, args|
+desc 'Tests the ability to stream live data. defaults: chain = steem; persist = true.'
+task :test_live_stream, [:chain, :persist] do |t, args|
   chain = args[:chain] || 'steem'
+  persist = (args[:persist] || 'true') == 'true'
   last_block_number = 0
-  options = {chain: chain}
+  options = {chain: chain, persist: persist}
   api = Radiator::Api.new(options)
   total_ops = 0.0
   total_vops = 0.0
+  elapsed = 0
+  count = 0
   
   Radiator::Stream.new(options).blocks do |b, n|
+    start = Time.now.utc
+    
     if last_block_number == 0
       # skip test
     elsif last_block_number + 1 == n
@@ -80,7 +85,9 @@ task :test_live_stream, :chain do |t, args|
           0
         end
         
-        puts "#{n}: #{b.witness}; transactions: #{t_size}; operations: #{op_size}, virtual operations: #{vop_size} (cumulative vop ratio: #{('%.2f' % (vop_ratio * 100))} %)"
+        elapsed += Time.now.utc - start
+        count += 1
+        puts "#{n}: #{b.witness}; trx: #{t_size}; op: #{op_size}, vop: #{vop_size} (cumulative vop ratio: #{('%.2f' % (vop_ratio * 100))} %; average #{((elapsed / count) * 1000).to_i}ms)"
       end
     else
       # This should not happen.  If it does, there's likely a bug in Radiator.
