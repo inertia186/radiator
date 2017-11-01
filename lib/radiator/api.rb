@@ -150,12 +150,17 @@ module Radiator
     
     DEFAULT_GOLOS_FAILOVER_URLS = [
       DEFAULT_GOLOS_URL,
-      'https://api.golos.cf'
+      'https://api.golos.cf',
+      # not recommended:
+      # 'http://golos-seed.arcange.eu',
+      # not recommended, requires option ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE
+      # 'https://golos-seed.arcange.eu',
     ]
     
     # @private
     POST_HEADERS = {
-      'Content-Type' => 'application/json'
+      'Content-Type' => 'application/json',
+      'User-Agent' => Radiator::AGENT_ID
     }
     
     # @private
@@ -203,7 +208,6 @@ module Radiator
       @hashie_logger = options[:hashie_logger] || Logger.new(nil)
       @max_requests = options[:max_requests] || 30
       @ssl_verify_mode = options[:ssl_verify_mode] || OpenSSL::SSL::VERIFY_PEER
-      @reuse_ssl_sessions = !!options[:reuse_ssl_sessions]
       @ssl_version = options[:ssl_version]
       
       if @failover_urls.nil?
@@ -223,18 +227,32 @@ module Radiator
         true
       end
       
+      @persist = if options.keys.include? :persist
+        options[:persist]
+      else
+        true
+      end
+      
+      @reuse_ssl_sessions = if options.keys.include? :reuse_ssl_sessions
+        options[:reuse_ssl_sessions]
+      else
+        true
+      end
+      
       if defined? Net::HTTP::Persistent::DEFAULT_POOL_SIZE
         @pool_size = options[:pool_size] || Net::HTTP::Persistent::DEFAULT_POOL_SIZE
       end
       
       Hashie.logger = @hashie_logger
       @method_names = nil
-      @http = nil
+      @http_memo = {}
       @api_options = options.dup.merge(chain: @chain)
       @api = nil
       @block_api = nil
       @backoff_at = nil
       @jussi_supported = []
+      
+      ObjectSpace.define_finalizer(self, self.class.finalize(self))
     end
     
     # Get a specific block or range of blocks.
@@ -356,8 +374,13 @@ module Radiator
     def shutdown
       @uri = nil
       @http_id = nil
-      @http.shutdown if !!@http && defined?(@http.shutdown)
-      @http = nil
+      @http_memo.each do |k|
+        v = @http_memo.delete(k)
+        if defined?(v.shutdown)
+          debug "Shutting down instance #{k} (#{v})"
+          v.shutdown
+        end
+      end
       @api.shutdown if !!@api && @api != self
       @api = nil
       @block_api.shutdown if !!@block_api && @block_api != self
@@ -393,7 +416,7 @@ module Radiator
       options = if jussi_supported? && api_name == :database_api
         {
           jsonrpc: "2.0",
-          params: [args],
+          params: args,
           id: current_rpc_id,
           method: m
         }
@@ -497,6 +520,19 @@ module Radiator
         backoff
       end # loop
     end
+    
+    def inspect
+      properties = %w(
+        chain url backoff_at max_requests ssl_verify_mode ssl_version persist
+        recover_transactions_on_error reuse_ssl_sessions pool_size
+      ).map do |prop|
+        if !!(v = instance_variable_get("@#{prop}"))
+          "@#{prop}=#{v}" 
+        end
+      end.compact.join(', ')
+      
+      "#<#{self.class.name} [#{properties}]>"
+    end
   private
     def self.methods_json_path
       @methods_json_path ||= "#{File.dirname(__FILE__)}/methods.json"
@@ -507,6 +543,14 @@ module Radiator
       @methods[api_name] ||= JSON[File.read methods_json_path].map do |e|
         e if e['api'].to_sym == api_name
       end.compact.freeze
+    end
+    
+    def self.apply_http_defaults(http, ssl_verify_mode)
+      http.read_timeout = 10
+      http.open_timeout = 10
+      http.verify_mode = ssl_verify_mode
+      http.ssl_timeout = 30
+      http
     end
     
     def api
@@ -531,26 +575,32 @@ module Radiator
     end
     
     def http
-      idempotent = api_name != :network_broadcast_api
+      return @http_memo[http_id] if @http_memo.keys.include? http_id
+      
+      @http_memo[http_id] = if @persist
+        idempotent = api_name != :network_broadcast_api
         
-      @http ||= if defined? Net::HTTP::Persistent::DEFAULT_POOL_SIZE
-        Net::HTTP::Persistent.new(name: http_id, pool_size: @pool_size)
+        http = if defined? Net::HTTP::Persistent::DEFAULT_POOL_SIZE
+          Net::HTTP::Persistent.new(name: http_id, pool_size: @pool_size)
+        else
+          # net-http-persistent < 3.0
+          Net::HTTP::Persistent.new(http_id)
+        end
+        
+        http.keep_alive = 30
+        http.idle_timeout = idempotent ? 10 : nil
+        http.max_requests = @max_requests
+        http.retry_change_requests = idempotent
+        http.reuse_ssl_sessions = @reuse_ssl_sessions
+        
+        http
       else
-        # net-http-persistent < 3.0
-        Net::HTTP::Persistent.new(http_id)
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = uri.scheme == 'https'
+        http
       end
       
-      @http.keep_alive = 30
-      @http.read_timeout = 10
-      @http.open_timeout = 10
-      @http.idle_timeout = idempotent ? 10 : nil
-      @http.max_requests = @max_requests
-      @http.retry_change_requests = idempotent
-      @http.verify_mode = @ssl_verify_mode
-      @http.reuse_ssl_sessions = @reuse_ssl_sessions
-      @http.ssl_version = @ssl_version
-      
-      @http
+      Api::apply_http_defaults(@http_memo[http_id], @ssl_verify_mode)
     end
     
     def post_request
@@ -560,7 +610,12 @@ module Radiator
     def request(options)
       request = post_request
       request.body = JSON[options]
-      http.request(uri, request)
+      
+      case http
+      when Net::HTTP::Persistent then http.request(uri, request)
+      when Net::HTTP then http.request(request)
+      else; raise ApiError, "Unsuppored scheme: #{http.inspect}"
+      end
     end
     
     def jussi_supported?(url = @url)
@@ -637,7 +692,7 @@ module Radiator
         @failover_urls.delete(url)
       end
       
-      url || @url
+      url || (uri || @url).to_s
     end
     
     def bump_failover
@@ -652,11 +707,11 @@ module Radiator
     
     def drop_current_failover_url(prefix)
       if @preferred_failover_urls.size == 1
-        warning "Node #{@url} appears to be misconfigured but no other node is available, retrying ...", prefix
+        warning "Node #{uri} appears to be misconfigured but no other node is available, retrying ...", prefix
       else
-        warning "Removing misconfigured node from failover urls: #{@url}, retrying ...", prefix
-        @preferred_failover_urls.delete(@url)
-        @failover_urls.delete(@url)
+        warning "Removing misconfigured node from failover urls: #{uri}, retrying ...", prefix
+        @preferred_failover_urls.delete(uri)
+        @failover_urls.delete(uri)
       end
     end
    
@@ -727,7 +782,7 @@ module Radiator
     
     def backoff
       shutdown
-      bump_failover if flappy? || !healthy?(@url)
+      bump_failover if flappy? || !healthy?(uri)
       @backoff_at ||= Time.now.utc
       @backoff_sleep ||= 0.01
       
@@ -738,6 +793,13 @@ module Radiator
         @backoff_at = nil 
         @backoff_sleep = nil
       end
+    end
+    
+    def self.finalize(obj)
+      proc {
+        puts "DESTROY OBJECT #{obj.inspect}" if ENV['LOG'] == 'TRACE'
+        obj.shutdown
+      }
     end
   end
 end

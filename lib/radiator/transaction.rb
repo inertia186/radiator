@@ -164,7 +164,7 @@ module Radiator
             if block.nil?
               warning "Block missing while trying to prepare transaction, retrying ..."
             else
-              debug block if ENV['LOG'] == 'DEBUG'
+              debug block if %w(DEBUG TRACE).include? ENV['LOG']
               
               warning "Block structure while trying to prepare transaction, retrying ..."
             end
@@ -197,14 +197,17 @@ module Radiator
       Digest::SHA256.digest(to_bytes)
     end
     
+    # May not find all non-canonicals, see: https://github.com/lian/bitcoin-ruby/issues/196
     def signature
       public_key_hex = @private_key.pub
       ec = Bitcoin::OpenSSL_EC
       digest_hex = digest.freeze
+      count = 0
 
       loop do
-        @expiration += 1 unless @immutable_expiration
-        sig = ec.sign_compact(digest_hex, @private_key.priv, public_key_hex)
+        count += 1
+        debug "#{count} attempts to find canonical signature" if count % 40 == 0
+        sig = ec.sign_compact(digest_hex, @private_key.priv, public_key_hex, false)
         
         next if public_key_hex != ec.recover_compact(digest_hex, sig)
         
