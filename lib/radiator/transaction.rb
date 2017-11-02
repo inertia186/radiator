@@ -50,6 +50,8 @@ module Radiator
       options = options.merge(url: @url, chain: @chain)
       @api = Api.new(options)
       @network_broadcast_api = NetworkBroadcastApi.new(options)
+      
+      ObjectSpace.define_finalizer(self, self.class.finalize(@api, @network_broadcast_api))
     end
     
     def chain_id(chain_id = nil)
@@ -224,6 +226,22 @@ module Radiator
         ((sig[32] & 0x80 ) != 0) || ( sig[32] == 0 ) ||
         ((sig[33] & 0x80 ) != 0)
       )
+    end
+    
+    def self.finalize(api, network_broadcast_api)
+      proc {
+        if !!api
+          puts "DESTROY: #{api.inspect}" if ENV['LOG'] == 'TRACE'
+          api.shutdown
+          api = nil
+        end
+        
+        if !!network_broadcast_api
+          puts "DESTROY: #{network_broadcast_api.inspect}" if ENV['LOG'] == 'TRACE'
+          network_broadcast_api.shutdown
+          network_broadcast_api = nil
+        end
+      }
     end
   end
 end

@@ -250,8 +250,6 @@ module Radiator
       @api = nil
       @block_api = nil
       @backoff_at = nil
-      
-      ObjectSpace.define_finalizer(self, self.class.finalize(self))
     end
     
     # Get a specific block or range of blocks.
@@ -766,13 +764,6 @@ module Radiator
         @backoff_at = nil 
         @backoff_sleep = nil
       end
-    end
-    
-    def self.finalize(obj)
-      proc {
-        puts "DESTROY OBJECT #{obj.inspect}" if ENV['LOG'] == 'TRACE'
-        obj.shutdown
-      }
     end
   end
 end
