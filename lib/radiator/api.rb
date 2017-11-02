@@ -537,7 +537,7 @@ module Radiator
       http.read_timeout = 10
       http.open_timeout = 10
       http.verify_mode = ssl_verify_mode
-      http.ssl_timeout = 30
+      http.ssl_timeout = 30 if defined? http.ssl_timeout
       http
     end
     
