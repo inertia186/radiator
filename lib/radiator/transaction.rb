@@ -47,7 +47,14 @@ module Radiator
       @expiration ||= nil
       @immutable_expiration = !!@expiration
       
-      options = options.merge(url: @url, chain: @chain)
+      options = options.merge(
+        url: @url,
+        chain: @chain,
+        pool_size: 1,
+        persist: false,
+        reuse_ssl_sessions: false
+      )
+      
       @api = Api.new(options)
       @network_broadcast_api = NetworkBroadcastApi.new(options)
       
@@ -94,6 +101,8 @@ module Radiator
       else
         self
       end
+    ensure
+      shutdown
     end
     
     def operations
@@ -107,6 +116,11 @@ module Radiator
     
     def operations=(operations)
       @operations = operations
+    end
+    
+    def shutdown
+      @api.shutdown if !!@api
+      @network_broadcast_api.shutdown if !!@network_broadcast_api
     end
   private
     def payload
@@ -230,13 +244,13 @@ module Radiator
     
     def self.finalize(api, network_broadcast_api)
       proc {
-        if !!api
+        if !!api && !api.stopped?
           puts "DESTROY: #{api.inspect}" if ENV['LOG'] == 'TRACE'
           api.shutdown
           api = nil
         end
         
-        if !!network_broadcast_api
+        if !!network_broadcast_api && !network_broadcast_api.stopped?
           puts "DESTROY: #{network_broadcast_api.inspect}" if ENV['LOG'] == 'TRACE'
           network_broadcast_api.shutdown
           network_broadcast_api = nil
