@@ -115,7 +115,7 @@ module Radiator
     end
     
     def test_backoff
-      assert_nil @api.send(:backoff)
+      assert_equal 0, @api.send(:backoff)
     end
   end
 end

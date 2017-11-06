@@ -533,6 +533,22 @@ module Radiator
       
       "#<#{self.class.name} [#{properties}]>"
     end
+    
+    def stopped?
+      http_active = if @http_memo.nil?
+        false
+      else
+        @http_memo.values.map do |http|
+          if defined?(http.active?)
+            http.active?
+          else
+            false
+          end
+        end.include?(true)
+      end
+      
+      @uri.nil? && @http_id.nil? && !http_active && @api.nil? && @block_api.nil?
+    end
   private
     def self.methods_json_path
       @methods_json_path ||= "#{File.dirname(__FILE__)}/methods.json"
@@ -549,7 +565,7 @@ module Radiator
       http.read_timeout = 10
       http.open_timeout = 10
       http.verify_mode = ssl_verify_mode
-      http.ssl_timeout = 30
+      http.ssl_timeout = 30 if defined? http.ssl_timeout
       http
     end
     
@@ -788,18 +804,11 @@ module Radiator
       
       @backoff_sleep *= 2
       sleep @backoff_sleep
-      
+    ensure
       if !!@backoff_at && Time.now.utc - @backoff_at > 300
         @backoff_at = nil 
         @backoff_sleep = nil
       end
-    end
-    
-    def self.finalize(obj)
-      proc {
-        puts "DESTROY OBJECT #{obj.inspect}" if ENV['LOG'] == 'TRACE'
-        obj.shutdown
-      }
     end
   end
 end
