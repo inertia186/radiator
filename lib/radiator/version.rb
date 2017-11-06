@@ -1,4 +1,4 @@
 module Radiator
-  VERSION = '0.3.11'
+  VERSION = '0.3.12'
   AGENT_ID = "radiator/#{VERSION}"
 end
