@@ -397,7 +397,7 @@ Radiator supports failover for situations where a node has, for example, become 
 
 ```ruby
 options = {
-  ur: 'https://api.steemit.com',
+  url: 'https://api.steemit.com',
   failover_urls: [
     'https://api.steemitstage.com',
     'https://gtg.steem.house:8090'
@@ -419,6 +419,22 @@ There is another rare scenario involving `::Transaction` broadcasts that's handl
 
 ```ruby
 tx = Radiator::Transaction.new(wif: wif, recover_transactions_on_error: false)
+```
+
+### Golos Failover Examples
+
+Typically, you only need to pass `chain: :golos` to enable Golos.  Failover is enabled by default.  If you want to provide your own full nodes, use this format:
+
+```ruby
+options = {
+  chain: :golos,
+  url: 'https://ws.golos.io',
+  failover_urls: [
+    'https://api.golos.cf'
+  ]
+}
+
+api = Radiator::Api.new(options)
 ```
 
 ## Debugging
@@ -485,7 +501,7 @@ Verify your code is not doing too much between blocks.
   <img src="http://www.steemimg.com/images/2016/08/19/RadiatorCoolingFan-54in-Webfdcb1.png" />
 </center>
 
-See my previous Ruby How To posts in: [#radiator](https://steemit.com/created/radiator) [#ruby](https://steemit.com/created/ruby)
+See my previous Ruby How To posts in: [/f/ruby](https://chainbb.com/f/ruby)
 
 ## Get in touch!
 
