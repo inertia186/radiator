@@ -1,5 +1,3 @@
-require 'awesome_print'
-
 module Radiator
   class ErrorParser
     include Utils
@@ -118,7 +116,11 @@ module Radiator
           @can_reprepare = false
         end
       rescue => e
-        ap error_perser_exception: e, original_response: response
+        if defined? ap
+          ap error_perser_exception: e, original_response: response
+        else
+          puts({error_perser_exception: e, original_response: response}.inspect)
+        end
         
         @expiry = false
         @can_retry = false

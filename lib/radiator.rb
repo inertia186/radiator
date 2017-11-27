@@ -1,5 +1,6 @@
 require 'radiator/version'
 require 'json'
+require 'awesome_print' if ENV['USE_AWESOME_PRINT'] == 'true'
 
 module Radiator
   require 'radiator/utils'

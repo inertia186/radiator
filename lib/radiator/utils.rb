@@ -37,10 +37,18 @@ module Radiator
           puts "#{level}: #{log_message}"
         end
       else
-        if !!prefix
-          @logger.ap log_level: level, prefix => obj
+        if defined? @logger.ap
+          if !!prefix
+            @logger.ap log_level: level, prefix => obj
+          else
+            @logger.ap obj, level
+          end
         else
-          @logger.ap obj, level
+          if !!prefix
+            @logger.send level, ({prefix => obj}).inspect
+          else
+            @logger.send level, obj.inspect
+          end
         end
       end
       
