@@ -423,6 +423,10 @@ module Radiator
       loop do
         tries += 1
         
+        if tries > 5 && flappy? && !check_file_open?
+          raise ApiError, 'PANIC: Out of file resources'
+        end
+        
         begin
           if tries > 1 && @recover_transactions_on_error && api_name == :network_broadcast_api
             signatures, exp = extract_signatures(options)
@@ -640,6 +644,16 @@ module Radiator
         count += 1
         raise ApiError, "Race condition detected on remote node at: #{block_num}" if block.nil?
         
+        # TODO Some blockchains (like Golos) do not have transaction_ids.  In
+        # the future, it would be better to decode the operation and signature
+        # into the transaction id.
+        # See: https://github.com/steemit/steem/issues/187
+        # See: https://github.com/GolosChain/golos/issues/281
+        unless defined? block.transaction_ids
+          @recover_transactions_on_error = false
+          return
+        end
+        
         timestamp = Time.parse(block.timestamp + 'Z')
         break if timestamp < after
         
@@ -765,6 +779,12 @@ module Radiator
         sleep 0.2
         false
       end
+    end
+    
+    def check_file_open?
+      File.exists?('.')
+    rescue
+      false
     end
     
     def backoff
