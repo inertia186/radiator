@@ -58,7 +58,7 @@ module Radiator
       @api = Api.new(options)
       @network_broadcast_api = NetworkBroadcastApi.new(options)
       
-      ObjectSpace.define_finalizer(self, self.class.finalize(@api, @network_broadcast_api))
+      ObjectSpace.define_finalizer(self, self.class.finalize(@api, @network_broadcast_api, @logger))
     end
     
     def chain_id(chain_id = nil)
@@ -242,7 +242,7 @@ module Radiator
       )
     end
     
-    def self.finalize(api, network_broadcast_api)
+    def self.finalize(api, network_broadcast_api, logger)
       proc {
         if !!api && !api.stopped?
           puts "DESTROY: #{api.inspect}" if ENV['LOG'] == 'TRACE'
@@ -254,6 +254,10 @@ module Radiator
           puts "DESTROY: #{network_broadcast_api.inspect}" if ENV['LOG'] == 'TRACE'
           network_broadcast_api.shutdown
           network_broadcast_api = nil
+        end
+        
+        if !!logger && defined?(logger.close) && !logger.closed?
+          logger.close
         end
       }
     end

@@ -250,6 +250,8 @@ module Radiator
       @api = nil
       @block_api = nil
       @backoff_at = nil
+      
+      ObjectSpace.define_finalizer(self, self.class.finalize(@logger, @hashie_logger))
     end
     
     # Get a specific block or range of blocks.
@@ -800,6 +802,18 @@ module Radiator
         @backoff_at = nil 
         @backoff_sleep = nil
       end
+    end
+    
+    def self.finalize(logger, hashie_logger)
+      proc {
+        if !!logger && defined?(logger.close) && !logger.closed?
+          logger.close
+        end
+        
+        if !!hashie_logger && defined?(hashie_logger.close) && !hashie_logger.closed?
+          hashie_logger.close
+        end
+      }
     end
   end
 end
