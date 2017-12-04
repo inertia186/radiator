@@ -481,6 +481,34 @@ If you have excluded system resources as the root cause, then you should take a 
 
 Verify your code is not doing too much between blocks.
 
+## Problem: I'm getting an endless loop: `#<OpenSSL::SSL::SSLError: SSL_connect SYSCALL returned=5 errno=0 state=error: certificate verify failed>`
+
+## Solution:
+
+You're probably creating too many threads or you don't have enough resources for what you're doing.  One option for you is to avoid persistent HTTP by passing `persist: false`.
+
+Doing this will impact performance because each API call will be a separate socket call.  All of the constructors accept `persist: false`., e.g.:
+
+```ruby
+api = Radiator::Api.new(persist: false)
+```
+
+... or ...
+
+```ruby
+stream = Radiator::Stream.new(persist: false)
+```
+
+... or ...
+
+```ruby
+tx = Radiator::Transaction.new(options.merge(persist: false, wif: wif))
+```
+
+Also see troubleshooting discussion about this situation:
+
+https://github.com/inertia186/radiator/issues/12
+
 ## Tests
 
 * Clone the client repository into a directory of your choice:

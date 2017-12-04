@@ -196,6 +196,7 @@ module Radiator
     # @option options [Integer] :max_requests Maximum number of requests on a connection before it is considered expired and automatically closed.
     # @option options [Integer] :pool_size Maximum number of connections allowed.
     # @option options [Boolean] :reuse_ssl_sessions Reuse a previously opened SSL session for a new connection.  There's a slight performance improvement by enabling this, but at the expense of reliability during long execution.  Default false.
+    # @option options [Boolean] :persist Enable or disable Persistent HTTP.  Using Persistent HTTP keeps the connection alive between API calls.  Default: `true`
     def initialize(options = {})
       @user = options[:user]
       @password = options[:password]
