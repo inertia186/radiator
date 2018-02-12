@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_accounts",[["ned"]]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.3.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 08 Nov 2017 02:08:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Urn:
+      - steemd.database_api.get_accounts.params=[['ned']]
+      X-Jussi-Response-Id:
+      - s26a97f95-c05a-4656-8c5c-a53b4ba4410a->325b3d7a-3b58-4f89-a796-48b34dc08f62
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":[{"id":497,"name":"ned","owner":{"weight_threshold":1,"account_auths":[],"key_auths":[["STM71f6yWztimJuREVyyMXNqAVbx1FzPVW6LLXNoQ35dHwKuszmHX",1]]},"active":{"weight_threshold":1,"account_auths":[],"key_auths":[["STM7RyrKG8e3fUtPD2JH9AB8K1p7ypsLUDPMuiV1gtD4DbNuk6nBw",1]]},"posting":{"weight_threshold":1,"account_auths":[],"key_auths":[["STM6rHZiAKHZS19RSJuRmn3mdukj95AYgUNFCEgnm8jhZE3rcH72P",1]]},"memo_key":"STM6sUWU9dtss1N8m7tQfUt7PacNHACrt3jBZNtkYkMMBv3e4CH3p","json_metadata":"{\"profile\":{\"profile_image\":\"https:\/\/s32.postimg.org\/oix1wvfp1\/ned_steem_steemit.jpg\",\"location\":\"Welcome
+        to Steemit!\",\"name\":\"ned\"}}","proxy":"","last_owner_update":"2017-03-02T00:20:39","last_account_update":"2017-09-08T02:47:03","created":"2016-03-31T14:21:45","mined":false,"owner_challenged":false,"active_challenged":false,"last_owner_proved":"1970-01-01T00:00:00","last_active_proved":"1970-01-01T00:00:00","recovery_account":"steem","last_account_recovery":"1970-01-01T00:00:00","reset_account":"null","comment_count":0,"lifetime_vote_count":0,"post_count":693,"can_vote":true,"voting_power":9800,"last_vote_time":"2017-11-08T00:11:30","balance":"141855.493
+        STEEM","savings_balance":"0.000 STEEM","sbd_balance":"5742.737 SBD","sbd_seconds":"3997893247884","sbd_seconds_last_update":"2017-11-07T20:42:21","sbd_last_interest_payment":"2017-10-30T19:16:09","savings_sbd_balance":"1249.949
+        SBD","savings_sbd_seconds":"0","savings_sbd_seconds_last_update":"2017-01-01T19:19:27","savings_sbd_last_interest_payment":"2017-01-01T19:19:27","savings_withdraw_requests":0,"reward_sbd_balance":"108.477
+        SBD","reward_steem_balance":"0.000 STEEM","reward_vesting_balance":"868265.403117
+        VESTS","reward_vesting_steem":"420.589 STEEM","vesting_shares":"7344140982.676874
+        VESTS","delegated_vesting_shares":"3094413610.000000 VESTS","received_vesting_shares":"0.000000
+        VESTS","vesting_withdraw_rate":"0.000000 VESTS","next_vesting_withdrawal":"1969-12-31T23:59:59","withdrawn":0,"to_withdraw":0,"withdraw_routes":0,"curation_rewards":734451117,"posting_rewards":8232503,"proxied_vsf_votes":["1158532265922910",0,0,0],"witnesses_voted_for":0,"average_bandwidth":"20469897797","lifetime_bandwidth":"3672059000000","last_bandwidth_update":"2017-11-08T01:56:24","average_market_bandwidth":1420000000,"lifetime_market_bandwidth":"116210000000","last_market_bandwidth_update":"2017-10-02T15:58:18","last_post":"2017-11-08T01:52:30","last_root_post":"2017-11-08T00:11:30","vesting_balance":"0.000
+        STEEM","reputation":"76276356588239","transfer_history":[],"market_history":[],"post_history":[],"vote_history":[],"other_history":[],"witness_votes":[],"tags_usage":[],"guest_bloggers":[]}],"id":1}'
+    http_version: 
+  recorded_at: Wed, 08 Nov 2017 02:08:08 GMT
+recorded_with: VCR 3.0.3

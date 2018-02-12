@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.3.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 08 Nov 2017 02:15:32 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - steemd.database_api.get_dynamic_global_properties
+      X-Jussi-Urn:
+      - steemd.database_api.get_dynamic_global_properties
+      X-Jussi-Response-Id:
+      - sd9ee926b-0497-435a-931d-15139629732f->279b9f98-1d2b-4367-9fc7-e6a9e2817bfb
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"id":0,"head_block_number":17029798,"head_block_id":"0103daa6b976d49693de1dbfd363db7f871a0336","time":"2017-11-08T02:15:30","current_witness":"timcliff","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"262930145.746
+        STEEM","current_supply":"259175722.679 STEEM","confidential_supply":"0.000
+        STEEM","current_sbd_supply":"3330173.261 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"190595534.108 STEEM","total_vesting_shares":"391630522785.774688
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"411208917.968051
+        VESTS","pending_rewarded_vesting_steem":"199432.858 STEEM","sbd_interest_rate":1,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":17090710,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":17029783,"vote_power_reserve_rate":10,"current_reserve_ratio":200000000,"average_block_size":6675,"max_virtual_bandwidth":"264241152000000000000"},"id":1}'
+    http_version: 
+  recorded_at: Wed, 08 Nov 2017 02:15:32 GMT
+- request:
+    method: post
+    uri: https://api.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["database_api","get_dynamic_global_properties",[]],"id":2,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.3.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 08 Nov 2017 02:18:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - steemd.database_api.get_dynamic_global_properties
+      X-Jussi-Urn:
+      - steemd.database_api.get_dynamic_global_properties
+      X-Jussi-Response-Id:
+      - s182c41d7-3318-47eb-bd08-75184b98ac29->245e944c-1872-489b-ac46-b657aede0c06
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"id":0,"head_block_number":17029849,"head_block_id":"0103dad9d096e96b84d4cd009b5fb9939b7b943a","time":"2017-11-08T02:18:03","current_witness":"fyrst-witness","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"262930261.093
+        STEEM","current_supply":"259175812.214 STEEM","confidential_supply":"0.000
+        STEEM","current_sbd_supply":"3330196.156 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"190595597.403 STEEM","total_vesting_shares":"391630617109.655298
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"411198570.170827
+        VESTS","pending_rewarded_vesting_steem":"199427.823 STEEM","sbd_interest_rate":1,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":17090761,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":17029831,"vote_power_reserve_rate":10,"current_reserve_ratio":200000000,"average_block_size":6708,"max_virtual_bandwidth":"264241152000000000000"},"id":2}'
+    http_version: 
+  recorded_at: Wed, 08 Nov 2017 02:18:06 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,321 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["follow_api","get_following",["inertia",null,"blog",100]],"id":1,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.3.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 08 Nov 2017 02:15:30 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Urn:
+      - steemd.follow_api.get_following.params=['inertia',None,'blog',100]
+      X-Jussi-Response-Id:
+      - sc8cc18de-9479-44fb-bd3f-4ef48a956581->30340a1a-7286-4e8a-9677-25709f24650f
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":[{"follower":"inertia","following":"aaronkoenig","what":["blog"]},{"follower":"inertia","following":"abarefootpoet","what":["blog"]},{"follower":"inertia","following":"abit","what":["blog"]},{"follower":"inertia","following":"ackza","what":["blog"]},{"follower":"inertia","following":"adept","what":["blog"]},{"follower":"inertia","following":"alexgr","what":["blog"]},{"follower":"inertia","following":"alexoz","what":["blog"]},{"follower":"inertia","following":"allasyummyfood","what":["blog"]},{"follower":"inertia","following":"almost-digital","what":["blog"]},{"follower":"inertia","following":"ana-maria","what":["blog"]},{"follower":"inertia","following":"anacristinasilva","what":["blog"]},{"follower":"inertia","following":"anarchyhasnogods","what":["blog"]},{"follower":"inertia","following":"andrarchy","what":["blog"]},{"follower":"inertia","following":"andrew0","what":["blog"]},{"follower":"inertia","following":"andu","what":["blog"]},{"follower":"inertia","following":"anonymint","what":["blog"]},{"follower":"inertia","following":"anotherjoe","what":["blog"]},{"follower":"inertia","following":"anthonyadavisii","what":["blog"]},{"follower":"inertia","following":"anwenbaumeister","what":["blog"]},{"follower":"inertia","following":"anyx","what":["blog"]},{"follower":"inertia","following":"applecrisp","what":["blog"]},{"follower":"inertia","following":"arhag","what":["blog"]},{"follower":"inertia","following":"arrowj","what":["blog"]},{"follower":"inertia","following":"asabovesobelow","what":["blog"]},{"follower":"inertia","following":"ash","what":["blog"]},{"follower":"inertia","following":"ats-david","what":["blog"]},{"follower":"inertia","following":"ausbitbank","what":["blog"]},{"follower":"inertia","following":"authornick","what":["blog"]},{"follower":"inertia","following":"autonomygarden","what":["blog"]},{"follower":"inertia","following":"baabeetaa","what":["blog"]},{"follower":"inertia","following":"bacchist","what":["blog"]},{"follower":"inertia","following":"badassmother","what":["blog"]},{"follower":"inertia","following":"bangking","what":["blog"]},{"follower":"inertia","following":"banjo","what":["blog"]},{"follower":"inertia","following":"barrycooper","what":["blog"]},{"follower":"inertia","following":"battleaxe","what":["blog"]},{"follower":"inertia","following":"bavak","what":["blog"]},{"follower":"inertia","following":"benjojo","what":["blog"]},{"follower":"inertia","following":"bimmerhead","what":["blog"]},{"follower":"inertia","following":"biophil","what":["blog"]},{"follower":"inertia","following":"bitcalm","what":["blog"]},{"follower":"inertia","following":"bitcoiner","what":["blog"]},{"follower":"inertia","following":"bitcoinparadise","what":["blog"]},{"follower":"inertia","following":"blakemiles84","what":["blog"]},{"follower":"inertia","following":"bleepcoin","what":["blog"]},{"follower":"inertia","following":"blockchaincat","what":["blog"]},{"follower":"inertia","following":"blocktardes","what":["blog"]},{"follower":"inertia","following":"blocktrades","what":["blog"]},{"follower":"inertia","following":"blueorgy","what":["blog"]},{"follower":"inertia","following":"boatymcboatface","what":["blog"]},{"follower":"inertia","following":"bookingteam.com","what":["blog"]},{"follower":"inertia","following":"boombastic","what":["blog"]},{"follower":"inertia","following":"bradydale","what":["blog"]},{"follower":"inertia","following":"breakingtonight","what":["blog"]},{"follower":"inertia","following":"bridgetbunchy","what":["blog"]},{"follower":"inertia","following":"brunopro","what":["blog"]},{"follower":"inertia","following":"btotherest","what":["blog"]},{"follower":"inertia","following":"budgetbucketlist","what":["blog"]},{"follower":"inertia","following":"burnin","what":["blog"]},{"follower":"inertia","following":"calaber24p","what":["blog"]},{"follower":"inertia","following":"cass","what":["blog"]},{"follower":"inertia","following":"cattyboy","what":["blog"]},{"follower":"inertia","following":"charlieshrem","what":["blog"]},{"follower":"inertia","following":"chester","what":["blog"]},{"follower":"inertia","following":"chitty","what":["blog"]},{"follower":"inertia","following":"chris4210","what":["blog"]},{"follower":"inertia","following":"chryspano","what":["blog"]},{"follower":"inertia","following":"cian.dafe","what":["blog"]},{"follower":"inertia","following":"clains","what":["blog"]},{"follower":"inertia","following":"clayford08","what":["blog"]},{"follower":"inertia","following":"clayop","what":["blog"]},{"follower":"inertia","following":"clement","what":["blog"]},{"follower":"inertia","following":"cloverme","what":["blog"]},{"follower":"inertia","following":"codydeeds","what":["blog"]},{"follower":"inertia","following":"coininterview","what":["blog"]},{"follower":"inertia","following":"comealong","what":["blog"]},{"follower":"inertia","following":"complexring","what":["blog"]},{"follower":"inertia","following":"condra","what":["blog"]},{"follower":"inertia","following":"contentjunkie","what":["blog"]},{"follower":"inertia","following":"corina","what":["blog"]},{"follower":"inertia","following":"corinnestokes","what":["blog"]},{"follower":"inertia","following":"crazymumzysa","what":["blog"]},{"follower":"inertia","following":"cristi","what":["blog"]},{"follower":"inertia","following":"crowdfundedwhale","what":["blog"]},{"follower":"inertia","following":"cryptochannel","what":["blog"]},{"follower":"inertia","following":"cryptocreme","what":["blog"]},{"follower":"inertia","following":"cryptoctopus","what":["blog"]},{"follower":"inertia","following":"cryptogee","what":["blog"]},{"follower":"inertia","following":"cryptomental","what":["blog"]},{"follower":"inertia","following":"cynetyc","what":["blog"]},{"follower":"inertia","following":"daisyd","what":["blog"]},{"follower":"inertia","following":"dajohns1420","what":["blog"]},{"follower":"inertia","following":"dan","what":["blog"]},{"follower":"inertia","following":"dan-wilson","what":["blog"]},{"follower":"inertia","following":"danstatus","what":["blog"]},{"follower":"inertia","following":"dantheman","what":["blog"]},{"follower":"inertia","following":"daowisp","what":["blog"]},{"follower":"inertia","following":"darkminded153","what":["blog"]},{"follower":"inertia","following":"dashpaymag","what":["blog"]},{"follower":"inertia","following":"dennygalindo","what":["blog"]}],"id":1}'
+    http_version: 
+  recorded_at: Wed, 08 Nov 2017 02:15:30 GMT
+- request:
+    method: post
+    uri: https://api.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["follow_api","get_following",["inertia","dennygalindo","blog",100]],"id":2,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.3.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 08 Nov 2017 02:15:30 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Urn:
+      - steemd.follow_api.get_following.params=['inertia','dennygalindo','blog',100]
+      X-Jussi-Response-Id:
+      - se0a85401-68fe-42a5-aeb7-ad156002c582->bc60cea2-aecb-4b45-979e-5dee0767e26e
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":[{"follower":"inertia","following":"dennygalindo","what":["blog"]},{"follower":"inertia","following":"develcuy","what":["blog"]},{"follower":"inertia","following":"dez1337","what":["blog"]},{"follower":"inertia","following":"dgiors","what":["blog"]},{"follower":"inertia","following":"diana.catherine","what":["blog"]},{"follower":"inertia","following":"doitvoluntarily","what":["blog"]},{"follower":"inertia","following":"domavila","what":["blog"]},{"follower":"inertia","following":"donkeypong","what":["blog"]},{"follower":"inertia","following":"doodrun","what":["blog"]},{"follower":"inertia","following":"dragonslayer109","what":["blog"]},{"follower":"inertia","following":"dragosroua","what":["blog"]},{"follower":"inertia","following":"drwasho","what":["blog"]},{"follower":"inertia","following":"dyvim","what":["blog"]},{"follower":"inertia","following":"edgarsart","what":["blog"]},{"follower":"inertia","following":"eeks","what":["blog"]},{"follower":"inertia","following":"ekitcho","what":["blog"]},{"follower":"inertia","following":"eliel","what":["blog"]},{"follower":"inertia","following":"elyaque","what":["blog"]},{"follower":"inertia","following":"endgame","what":["blog"]},{"follower":"inertia","following":"envisionva","what":["blog"]},{"follower":"inertia","following":"eosio","what":["blog"]},{"follower":"inertia","following":"eric-boucher","what":["blog"]},{"follower":"inertia","following":"eroche","what":["blog"]},{"follower":"inertia","following":"faddat","what":["blog"]},{"follower":"inertia","following":"faddy","what":["blog"]},{"follower":"inertia","following":"fairz","what":["blog"]},{"follower":"inertia","following":"fingolfin","what":["blog"]},{"follower":"inertia","following":"firepower","what":["blog"]},{"follower":"inertia","following":"fishmon","what":["blog"]},{"follower":"inertia","following":"fooblic","what":["blog"]},{"follower":"inertia","following":"forrestwillie","what":["blog"]},{"follower":"inertia","following":"foxxycat","what":["blog"]},{"follower":"inertia","following":"fredrikaa","what":["blog"]},{"follower":"inertia","following":"freedomengineer","what":["blog"]},{"follower":"inertia","following":"freeyourmind","what":["blog"]},{"follower":"inertia","following":"ftlian","what":["blog"]},{"follower":"inertia","following":"furion","what":["blog"]},{"follower":"inertia","following":"fydel","what":["blog"]},{"follower":"inertia","following":"fyrst-witness","what":["blog"]},{"follower":"inertia","following":"fyrstikken","what":["blog"]},{"follower":"inertia","following":"gardenlady","what":["blog"]},{"follower":"inertia","following":"gardenofeden","what":["blog"]},{"follower":"inertia","following":"garywilson","what":["blog"]},{"follower":"inertia","following":"gavvet","what":["blog"]},{"follower":"inertia","following":"georgedonnelly","what":["blog"]},{"follower":"inertia","following":"gingerninja","what":["blog"]},{"follower":"inertia","following":"gomeravibz","what":["blog"]},{"follower":"inertia","following":"gonzo","what":["blog"]},{"follower":"inertia","following":"good-karma","what":["blog"]},{"follower":"inertia","following":"greenman","what":["blog"]},{"follower":"inertia","following":"gtg","what":["blog"]},{"follower":"inertia","following":"guerrint","what":["blog"]},{"follower":"inertia","following":"gyanibilli","what":["blog"]},{"follower":"inertia","following":"gyzimo","what":["blog"]},{"follower":"inertia","following":"heiditravels","what":["blog"]},{"follower":"inertia","following":"heimindanger","what":["blog"]},{"follower":"inertia","following":"helikopterben","what":["blog"]},{"follower":"inertia","following":"hendrikdegrote","what":["blog"]},{"follower":"inertia","following":"heretickitten","what":["blog"]},{"follower":"inertia","following":"highlite","what":["blog"]},{"follower":"inertia","following":"hr1","what":["blog"]},{"follower":"inertia","following":"hswick","what":["blog"]},{"follower":"inertia","following":"htooms","what":["blog"]},{"follower":"inertia","following":"hugothepoet","what":["blog"]},{"follower":"inertia","following":"iamnotageek","what":["blog"]},{"follower":"inertia","following":"ibringawareness","what":["blog"]},{"follower":"inertia","following":"iceburst","what":["blog"]},{"follower":"inertia","following":"illestbambi","what":["blog"]},{"follower":"inertia","following":"infovore","what":["blog"]},{"follower":"inertia","following":"inkha","what":["blog"]},{"follower":"inertia","following":"instructor2121","what":["blog"]},{"follower":"inertia","following":"investors","what":["blog"]},{"follower":"inertia","following":"ivanli","what":["blog"]},{"follower":"inertia","following":"jacobts","what":["blog"]},{"follower":"inertia","following":"jacor","what":["blog"]},{"follower":"inertia","following":"james-show","what":["blog"]},{"follower":"inertia","following":"jamesc","what":["blog"]},{"follower":"inertia","following":"jamtaylor","what":["blog"]},{"follower":"inertia","following":"jazzyfish","what":["blog"]},{"follower":"inertia","following":"jbaker585","what":["blog"]},{"follower":"inertia","following":"jessamynorchard","what":["blog"]},{"follower":"inertia","following":"jesta","what":["blog"]},{"follower":"inertia","following":"jl777","what":["blog"]},{"follower":"inertia","following":"jneilschulman","what":["blog"]},{"follower":"inertia","following":"joelinux","what":["blog"]},{"follower":"inertia","following":"johnbradshaw","what":["blog"]},{"follower":"inertia","following":"jonny-clearwater","what":["blog"]},{"follower":"inertia","following":"jonnybitcoin","what":["blog"]},{"follower":"inertia","following":"joseph","what":["blog"]},{"follower":"inertia","following":"juanmiguelsalas","what":["blog"]},{"follower":"inertia","following":"justin","what":["blog"]},{"follower":"inertia","following":"juvyjabian","what":["blog"]},{"follower":"inertia","following":"jwest40","what":["blog"]},{"follower":"inertia","following":"kadavy","what":["blog"]},{"follower":"inertia","following":"kaptainkrayola","what":["blog"]},{"follower":"inertia","following":"karenmckersie","what":["blog"]},{"follower":"inertia","following":"kaylinart","what":["blog"]},{"follower":"inertia","following":"keiserreport","what":["blog"]},{"follower":"inertia","following":"keithsmih","what":["blog"]},{"follower":"inertia","following":"kencode","what":["blog"]}],"id":2}'
+    http_version: 
+  recorded_at: Wed, 08 Nov 2017 02:15:30 GMT
+- request:
+    method: post
+    uri: https://api.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["follow_api","get_following",["inertia","kencode","blog",100]],"id":3,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.3.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 08 Nov 2017 02:15:31 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Urn:
+      - steemd.follow_api.get_following.params=['inertia','kencode','blog',100]
+      X-Jussi-Response-Id:
+      - s7f8f0a07-2d3b-42eb-a062-b8466b656153->949f8bb7-6722-443f-8029-9bc8dea99e57
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":[{"follower":"inertia","following":"kencode","what":["blog"]},{"follower":"inertia","following":"kendewitt","what":["blog"]},{"follower":"inertia","following":"kennyrowe","what":["blog"]},{"follower":"inertia","following":"kingscrown","what":["blog"]},{"follower":"inertia","following":"kingsmind","what":["blog"]},{"follower":"inertia","following":"klye","what":["blog"]},{"follower":"inertia","following":"konti","what":["blog"]},{"follower":"inertia","following":"kooshikoo","what":["blog"]},{"follower":"inertia","following":"kralizec","what":["blog"]},{"follower":"inertia","following":"krnel","what":["blog"]},{"follower":"inertia","following":"krose","what":["blog"]},{"follower":"inertia","following":"kryptik","what":["blog"]},{"follower":"inertia","following":"kryshen","what":["blog"]},{"follower":"inertia","following":"krystle","what":["blog"]},{"follower":"inertia","following":"kuriko","what":["blog"]},{"follower":"inertia","following":"kurtbeil","what":["blog"]},{"follower":"inertia","following":"kyriacos","what":["blog"]},{"follower":"inertia","following":"l0k1","what":["blog"]},{"follower":"inertia","following":"ladyofliberty","what":["blog"]},{"follower":"inertia","following":"lantto","what":["blog"]},{"follower":"inertia","following":"laonie","what":["blog"]},{"follower":"inertia","following":"lapingvino","what":["blog"]},{"follower":"inertia","following":"larkenrose","what":["blog"]},{"follower":"inertia","following":"laurabanfield","what":["blog"]},{"follower":"inertia","following":"lenerdie","what":["blog"]},{"follower":"inertia","following":"liberosist","what":["blog"]},{"follower":"inertia","following":"little-peppers","what":["blog"]},{"follower":"inertia","following":"loganarchy","what":["blog"]},{"follower":"inertia","following":"logic","what":["blog"]},{"follower":"inertia","following":"lordvader","what":["blog"]},{"follower":"inertia","following":"lovejoy","what":["blog"]},{"follower":"inertia","following":"lukestokes","what":["blog"]},{"follower":"inertia","following":"lukewearechange","what":["blog"]},{"follower":"inertia","following":"maarnio","what":["blog"]},{"follower":"inertia","following":"macartem","what":["blog"]},{"follower":"inertia","following":"macksby","what":["blog"]},{"follower":"inertia","following":"magnebit","what":["blog"]},{"follower":"inertia","following":"mahnunchik","what":["blog"]},{"follower":"inertia","following":"maona","what":["blog"]},{"follower":"inertia","following":"marcstevens","what":["blog"]},{"follower":"inertia","following":"marketingmonk","what":["blog"]},{"follower":"inertia","following":"markrmorrisjr","what":["blog"]},{"follower":"inertia","following":"masteryoda","what":["blog"]},{"follower":"inertia","following":"matherly","what":["blog"]},{"follower":"inertia","following":"mathworksheets","what":["blog"]},{"follower":"inertia","following":"mctiller","what":["blog"]},{"follower":"inertia","following":"meesterboom","what":["blog"]},{"follower":"inertia","following":"menta","what":["blog"]},{"follower":"inertia","following":"michaeldodridge","what":["blog"]},{"follower":"inertia","following":"mikehere","what":["blog"]},{"follower":"inertia","following":"mikemacintire","what":["blog"]},{"follower":"inertia","following":"modprobe","what":["blog"]},{"follower":"inertia","following":"molovelly","what":["blog"]},{"follower":"inertia","following":"mrjozza","what":["blog"]},{"follower":"inertia","following":"mrs.steemit","what":["blog"]},{"follower":"inertia","following":"mrslauren","what":["blog"]},{"follower":"inertia","following":"mrwang","what":["blog"]},{"follower":"inertia","following":"msg768","what":["blog"]},{"follower":"inertia","following":"mughat","what":["blog"]},{"follower":"inertia","following":"naturalista","what":["blog"]},{"follower":"inertia","following":"ned","what":["blog"]},{"follower":"inertia","following":"ned-scott-videos","what":["blog"]},{"follower":"inertia","following":"nestinvas","what":["blog"]},{"follower":"inertia","following":"newhampshire","what":["blog"]},{"follower":"inertia","following":"nidolabz","what":["blog"]},{"follower":"inertia","following":"nikflossus","what":["blog"]},{"follower":"inertia","following":"nikolai","what":["blog"]},{"follower":"inertia","following":"noisy","what":["blog"]},{"follower":"inertia","following":"noisy2","what":["blog"]},{"follower":"inertia","following":"nonlinearone","what":["blog"]},{"follower":"inertia","following":"noodhoog","what":["blog"]},{"follower":"inertia","following":"norbu","what":["blog"]},{"follower":"inertia","following":"nphacker","what":["blog"]},{"follower":"inertia","following":"ntomaino","what":["blog"]},{"follower":"inertia","following":"officialfuzzy","what":["blog"]},{"follower":"inertia","following":"oldtimer","what":["blog"]},{"follower":"inertia","following":"ontofractal","what":["blog"]},{"follower":"inertia","following":"opheliafu","what":["blog"]},{"follower":"inertia","following":"originate","what":["blog"]},{"follower":"inertia","following":"orionsbelt","what":["blog"]},{"follower":"inertia","following":"pairmike","what":["blog"]},{"follower":"inertia","following":"papa-pepper","what":["blog"]},{"follower":"inertia","following":"patelincho","what":["blog"]},{"follower":"inertia","following":"patrice","what":["blog"]},{"follower":"inertia","following":"peugenio","what":["blog"]},{"follower":"inertia","following":"pevo","what":["blog"]},{"follower":"inertia","following":"pexpeppers","what":["blog"]},{"follower":"inertia","following":"pfunk","what":["blog"]},{"follower":"inertia","following":"phantomart","what":["blog"]},{"follower":"inertia","following":"pharesim","what":["blog"]},{"follower":"inertia","following":"phenom","what":["blog"]},{"follower":"inertia","following":"pheonike","what":["blog"]},{"follower":"inertia","following":"philodendron","what":["blog"]},{"follower":"inertia","following":"picokernel","what":["blog"]},{"follower":"inertia","following":"piedpiper","what":["blog"]},{"follower":"inertia","following":"pigeons","what":["blog"]},{"follower":"inertia","following":"pinkisland","what":["blog"]},{"follower":"inertia","following":"pjheinz","what":["blog"]},{"follower":"inertia","following":"poeticsnake","what":["blog"]},{"follower":"inertia","following":"positive","what":["blog"]}],"id":3}'
+    http_version: 
+  recorded_at: Wed, 08 Nov 2017 02:15:31 GMT
+- request:
+    method: post
+    uri: https://api.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["follow_api","get_following",["inertia","positive","blog",100]],"id":4,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.3.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 08 Nov 2017 02:15:31 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Urn:
+      - steemd.follow_api.get_following.params=['inertia','positive','blog',100]
+      X-Jussi-Response-Id:
+      - s257ecd5d-e4dc-46a5-b0e1-c14cc00bf03e->356722f7-9c0d-425a-83b6-505fa8db7565
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":[{"follower":"inertia","following":"positive","what":["blog"]},{"follower":"inertia","following":"pressfortruth","what":["blog"]},{"follower":"inertia","following":"procharts","what":["blog"]},{"follower":"inertia","following":"proskynneo","what":["blog"]},{"follower":"inertia","following":"puffin","what":["blog"]},{"follower":"inertia","following":"qamarpinkpanda","what":["blog"]},{"follower":"inertia","following":"radiosteem","what":["blog"]},{"follower":"inertia","following":"rampant","what":["blog"]},{"follower":"inertia","following":"randyclemens","what":["blog"]},{"follower":"inertia","following":"raymonjohnstone","what":["blog"]},{"follower":"inertia","following":"razvanelulmarin","what":["blog"]},{"follower":"inertia","following":"reneenouveau","what":["blog"]},{"follower":"inertia","following":"repholder","what":["blog"]},{"follower":"inertia","following":"rerez","what":["blog"]},{"follower":"inertia","following":"richardcrill","what":["blog"]},{"follower":"inertia","following":"roadscape","what":["blog"]},{"follower":"inertia","following":"robinhoodwhale","what":["blog"]},{"follower":"inertia","following":"robrigo","what":["blog"]},{"follower":"inertia","following":"robsteady","what":["blog"]},{"follower":"inertia","following":"rocking-dave","what":["blog"]},{"follower":"inertia","following":"roelandp","what":["blog"]},{"follower":"inertia","following":"rogerkver","what":["blog"]},{"follower":"inertia","following":"roguefighter420","what":["blog"]},{"follower":"inertia","following":"romanskv","what":["blog"]},{"follower":"inertia","following":"rossco99","what":["blog"]},{"follower":"inertia","following":"royaltiffany","what":["blog"]},{"follower":"inertia","following":"rseixas","what":["blog"]},{"follower":"inertia","following":"rubellitefae","what":["blog"]},{"follower":"inertia","following":"runridefly","what":["blog"]},{"follower":"inertia","following":"rwl4","what":["blog"]},{"follower":"inertia","following":"sammie","what":["blog"]},{"follower":"inertia","following":"samupaha","what":["blog"]},{"follower":"inertia","following":"satire","what":["blog"]},{"follower":"inertia","following":"scaredycatguide","what":["blog"]},{"follower":"inertia","following":"scarlet-rain","what":["blog"]},{"follower":"inertia","following":"seablue","what":["blog"]},{"follower":"inertia","following":"serejandmyself","what":["blog"]},{"follower":"inertia","following":"shadowspub","what":["blog"]},{"follower":"inertia","following":"shenanigator","what":["blog"]},{"follower":"inertia","following":"sherlockholmes","what":["blog"]},{"follower":"inertia","following":"shneakysquirrel","what":["blog"]},{"follower":"inertia","following":"sigmajin","what":["blog"]},{"follower":"inertia","following":"silversteem","what":["blog"]},{"follower":"inertia","following":"sincedutch","what":["blog"]},{"follower":"inertia","following":"sirlunchthehost","what":["blog"]},{"follower":"inertia","following":"sisterholics","what":["blog"]},{"follower":"inertia","following":"skeptic","what":["blog"]},{"follower":"inertia","following":"skyefox","what":["blog"]},{"follower":"inertia","following":"smailer","what":["blog"]},{"follower":"inertia","following":"smooth","what":["blog"]},{"follower":"inertia","following":"sneak","what":["blog"]},{"follower":"inertia","following":"solidgold","what":["blog"]},{"follower":"inertia","following":"someguy123","what":["blog"]},{"follower":"inertia","following":"spbesner","what":["blog"]},{"follower":"inertia","following":"spookypooky","what":["blog"]},{"follower":"inertia","following":"sqube","what":["blog"]},{"follower":"inertia","following":"stakepool","what":["blog"]},{"follower":"inertia","following":"stan","what":["blog"]},{"follower":"inertia","following":"steem-meme","what":["blog"]},{"follower":"inertia","following":"steemcenterwiki","what":["blog"]},{"follower":"inertia","following":"steemed","what":["blog"]},{"follower":"inertia","following":"steemhorizon","what":["blog"]},{"follower":"inertia","following":"steemingnow","what":["blog"]},{"follower":"inertia","following":"steemit","what":["blog"]},{"follower":"inertia","following":"steemitblog","what":["blog"]},{"follower":"inertia","following":"steemitdev","what":["blog"]},{"follower":"inertia","following":"steemitguide","what":["blog"]},{"follower":"inertia","following":"steemitpatina","what":["blog"]},{"follower":"inertia","following":"steemitqa","what":["blog"]},{"follower":"inertia","following":"steemittalk","what":["blog"]},{"follower":"inertia","following":"steemj","what":["blog"]},{"follower":"inertia","following":"steemleak","what":["blog"]},{"follower":"inertia","following":"steempower","what":["blog"]},{"follower":"inertia","following":"steempowerwhale","what":["blog"]},{"follower":"inertia","following":"steemrollin","what":["blog"]},{"follower":"inertia","following":"steemsmart","what":["blog"]},{"follower":"inertia","following":"steemstars-gtc","what":["blog"]},{"follower":"inertia","following":"steemtrail","what":["blog"]},{"follower":"inertia","following":"steemverify","what":["blog"]},{"follower":"inertia","following":"steemychicken1","what":["blog"]},{"follower":"inertia","following":"steve-walschot","what":["blog"]},{"follower":"inertia","following":"strangerarray","what":["blog"]},{"follower":"inertia","following":"streetstyle","what":["blog"]},{"follower":"inertia","following":"summon","what":["blog"]},{"follower":"inertia","following":"sws8964","what":["blog"]},{"follower":"inertia","following":"sykochica","what":["blog"]},{"follower":"inertia","following":"tarekadam","what":["blog"]},{"follower":"inertia","following":"tatianamoroz","what":["blog"]},{"follower":"inertia","following":"teamsmooth","what":["blog"]},{"follower":"inertia","following":"tee-em","what":["blog"]},{"follower":"inertia","following":"terrycraft","what":["blog"]},{"follower":"inertia","following":"the-alien","what":["blog"]},{"follower":"inertia","following":"the-future","what":["blog"]},{"follower":"inertia","following":"thebatchman","what":["blog"]},{"follower":"inertia","following":"thebluepanda","what":["blog"]},{"follower":"inertia","following":"thecryptofiend","what":["blog"]},{"follower":"inertia","following":"thedashguy","what":["blog"]},{"follower":"inertia","following":"thedegensloth","what":["blog"]},{"follower":"inertia","following":"thedevchick","what":["blog"]},{"follower":"inertia","following":"thehulk","what":["blog"]}],"id":4}'
+    http_version: 
+  recorded_at: Wed, 08 Nov 2017 02:15:31 GMT
+- request:
+    method: post
+    uri: https://api.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["follow_api","get_following",["inertia","thehulk","blog",100]],"id":5,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.3.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 08 Nov 2017 02:15:31 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Urn:
+      - steemd.follow_api.get_following.params=['inertia','thehulk','blog',100]
+      X-Jussi-Response-Id:
+      - s6041d77a-8a63-43b8-b57e-395994c280f7->c1771851-a2c2-4b79-979f-c07f680c069d
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":[{"follower":"inertia","following":"thehulk","what":["blog"]},{"follower":"inertia","following":"thekyle","what":["blog"]},{"follower":"inertia","following":"theshadowbrokers","what":["blog"]},{"follower":"inertia","following":"thj","what":["blog"]},{"follower":"inertia","following":"timcliff","what":["blog"]},{"follower":"inertia","following":"titin","what":["blog"]},{"follower":"inertia","following":"toddemaher1","what":["blog"]},{"follower":"inertia","following":"tombstone","what":["blog"]},{"follower":"inertia","following":"toyblackhat","what":["blog"]},{"follower":"inertia","following":"toyman","what":["blog"]},{"follower":"inertia","following":"transhuman","what":["blog"]},{"follower":"inertia","following":"transisto","what":["blog"]},{"follower":"inertia","following":"trogdor","what":["blog"]},{"follower":"inertia","following":"tuck-fheman","what":["blog"]},{"follower":"inertia","following":"twinner","what":["blog"]},{"follower":"inertia","following":"unclemusclez","what":["blog"]},{"follower":"inertia","following":"unrealisback","what":["blog"]},{"follower":"inertia","following":"val-a","what":["blog"]},{"follower":"inertia","following":"vandeberg","what":["blog"]},{"follower":"inertia","following":"verelst","what":["blog"]},{"follower":"inertia","following":"victoriart","what":["blog"]},{"follower":"inertia","following":"vikaspoonia","what":["blog"]},{"follower":"inertia","following":"virtualgrowth","what":["blog"]},{"follower":"inertia","following":"void","what":["blog"]},{"follower":"inertia","following":"wang","what":["blog"]},{"follower":"inertia","following":"webdeals","what":["blog"]},{"follower":"inertia","following":"whatageek","what":["blog"]},{"follower":"inertia","following":"whatsup","what":["blog"]},{"follower":"inertia","following":"williambanks","what":["blog"]},{"follower":"inertia","following":"wingz","what":["blog"]},{"follower":"inertia","following":"winstonwolfe","what":["blog"]},{"follower":"inertia","following":"witness.svk","what":["blog"]},{"follower":"inertia","following":"xanoxt","what":["blog"]},{"follower":"inertia","following":"xeldal","what":["blog"]},{"follower":"inertia","following":"xeroc","what":["blog"]},{"follower":"inertia","following":"xtar","what":["blog"]},{"follower":"inertia","following":"xtester","what":["blog"]},{"follower":"inertia","following":"zaebars","what":["blog"]},{"follower":"inertia","following":"zorro","what":["blog"]},{"follower":"inertia","following":"zuch.media","what":["blog"]},{"follower":"inertia","following":"zymer","what":["blog"]}],"id":5}'
+    http_version: 
+  recorded_at: Wed, 08 Nov 2017 02:15:31 GMT
+- request:
+    method: post
+    uri: https://api.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","params":["follow_api","get_following",["inertia","zymer","blog",100]],"id":6,"method":"call"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.3.12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 08 Nov 2017 02:15:31 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '78'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Urn:
+      - steemd.follow_api.get_following.params=['inertia','zymer','blog',100]
+      X-Jussi-Response-Id:
+      - se9d066b9-c40a-47db-a86b-7bc46e9b2e29->bcdf674c-cc6b-4b08-8069-011504c7b670
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"result":[{"follower":"inertia","following":"zymer","what":["blog"]}],"id":6}'
+    http_version: 
+  recorded_at: Wed, 08 Nov 2017 02:15:31 GMT
+recorded_with: VCR 3.0.3

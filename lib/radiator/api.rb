@@ -151,7 +151,8 @@ module Radiator
     DEFAULT_GOLOS_FAILOVER_URLS = [
       DEFAULT_GOLOS_URL,
       'https://api.golos.cf',
-      # not recommended:
+      # not recommended, not all plug-ins enabled:
+      # 'https://ws.goldvoice.club',
       # 'http://golos-seed.arcange.eu',
       # not recommended, requires option ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE
       # 'https://golos-seed.arcange.eu',
@@ -245,6 +246,8 @@ module Radiator
       
       Hashie.logger = @hashie_logger
       @method_names = nil
+      @uri = nil
+      @http_id = nil
       @http_memo = {}
       @api_options = options.dup.merge(chain: @chain)
       @api = nil
@@ -288,87 +291,6 @@ module Radiator
       end
     end
     
-    # Find a specific block.
-    #
-    # Example:
-    #
-    #   api = Radiator::Api.new
-    #   block = api.find_block(12345678)
-    #   transactions = block.transactions
-    #
-    # ... or ...
-    #
-    #   api = Radiator::Api.new
-    #   transactions = api.find_block(12345678) do |block|
-    #     block.transactions
-    #   end
-    # 
-    # @param block_number [Fixnum]
-    # @param block the block to execute for each result, optional.
-    # @return [Hash]
-    def find_block(block_number, &block)
-      if !!block
-        yield api.get_blocks(block_number).first
-      else
-        api.get_blocks(block_number).first
-      end
-    end
-    
-    # Find a specific account.
-    #
-    # Example:
-    #
-    #   api = Radiator::Api.new
-    #   ned = api.find_account('ned')
-    #   vesting_shares = ned.vesting_shares
-    #
-    # ... or ...
-    #
-    #   api = Radiator::Api.new
-    #   vesting_shares = api.find_account('ned') do |ned|
-    #     ned.vesting_shares
-    #   end
-    # 
-    # @param id [String] Name of the account to find.
-    # @param block the block to execute for each result, optional.
-    # @return [Hash]
-    def find_account(id, &block)
-      if !!block
-        yield api.get_accounts([id]).result.first
-      else
-        api.get_accounts([id]).result.first
-      end
-    end
-    
-    # Returns the current base (STEEM) price in the vest asset (VESTS).
-    #
-    def base_per_mvest
-      api.get_dynamic_global_properties do |properties|
-        total_vesting_fund_steem = properties.total_vesting_fund_steem.to_f
-        total_vesting_shares_mvest = properties.total_vesting_shares.to_f / 1e6
-      
-        total_vesting_fund_steem / total_vesting_shares_mvest
-      end
-    end
-    
-    alias steem_per_mvest base_per_mvest
-    
-    # Returns the current base (STEEM) price in the debt asset (SBD).
-    #
-    def base_per_debt
-      get_feed_history do |feed_history|
-        current_median_history = feed_history.current_median_history
-        base = current_median_history.base
-        base = base.split(' ').first.to_f
-        quote = current_median_history.quote
-        quote = quote.split(' ').first.to_f
-        
-        (base / quote) * steem_per_mvest
-      end
-    end
-    
-    alias steem_per_usd base_per_debt
-    
     # Stops the persistant http connections.
     #
     def shutdown
@@ -385,6 +307,14 @@ module Radiator
       @api = nil
       @block_api.shutdown if !!@block_api && @block_api != self
       @block_api = nil
+      
+      if !!@logger && defined?(@logger.close) && !@logger.closed?
+        @logger.close
+      end
+      
+      if !!@hashie_logger && defined?(@hashie_logger.close) && !@hashie_logger.closed?
+        @hashie_logger.close
+      end
     end
     
     # @private
@@ -666,6 +596,12 @@ module Radiator
       # but we also give up once the block time is before the `after` argument.
       
       api.get_blocks(block_range) do |block, block_num|
+        unless defined? block.transaction_ids
+          # Happens on Golos, see: https://github.com/GolosChain/golos/issues/281
+          error "Blockchain does not provide transaction ids in blocks, giving up."
+          return nil
+        end
+        
         count += 1
         raise ApiError, "Race condition detected on remote node at: #{block_num}" if block.nil?
         
@@ -674,7 +610,7 @@ module Radiator
         
         block.transactions.each_with_index do |tx, index|
           next unless ((tx['signatures'] || []) & signatures).any?
-          
+
           debug "Found transaction #{count} block(s) ago; took #{(Time.now.utc - start)} seconds to scan."
           
           return {
