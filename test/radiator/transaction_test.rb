@@ -11,7 +11,9 @@ module Radiator
         ref_block_prefix: 1164960351,
         expiration: Time.parse('2016-08-08T12:24:17 Z'),
         failover_urls: [],
-        logger: Logger.new(nil)
+        logger: Logger.new(nil).tap do |logger|
+          logger.progname = 'transction-test'
+        end
       }
       
       @transaction = Radiator::Transaction.new(options.dup)
@@ -20,7 +22,10 @@ module Radiator
     def test_valid_chains
       %w(steem golos test).each do |chain|
         io = StringIO.new
-        log = Logger.new io
+        log = Logger.new(io).tap do |logger|
+          logger.progname = 'test-valid-chains'
+        end
+        
         case chain.to_sym
         when :steem
           transaction = Radiator::Transaction.new(chain: chain, logger: log)
@@ -41,7 +46,9 @@ module Radiator
     
     def test_unknown_chain
       io = StringIO.new
-      Radiator.logger = Logger.new(io) # side effect: increase code coverage
+      Radiator.logger = Logger.new(io).tap do |logger| # side effect: increase code coverage
+        logger.progname = 'test-unknown-chain'
+      end
       chain = 'ginger'
       assert_raises ApiError do
         Radiator::Transaction.new(chain: chain)
@@ -52,7 +59,9 @@ module Radiator
     
     def test_unknown_chain_id
       io = StringIO.new
-      log = Logger.new io
+      log = Logger.new(io).tap do |logger|
+        logger.progname = 'test-unknown-chain-id'
+      end
       unknown_chain_id = 'F' * (256 / 4)
       Radiator::Transaction.new(chain_id: unknown_chain_id, logger: log)
       

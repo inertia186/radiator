@@ -42,5 +42,7 @@ class Radiator::Test < MiniTest::Test
   # Most likely modes: 'once' and 'new_episodes'
   VCR_RECORD_MODE = (ENV['VCR_RECORD_MODE'] || 'once').to_sym
   
-  LOGGER = Logger.new(nil)
+  LOGGER = Logger.new(nil).tap do |logger|
+    logger.progname = 'nil-logger'
+  end
 end
