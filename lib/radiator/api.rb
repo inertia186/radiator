@@ -254,8 +254,6 @@ module Radiator
       @block_api = nil
       @backoff_at = nil
       @jussi_supported = []
-      
-      ObjectSpace.define_finalizer(self, self.class.finalize(self))
     end
     
     # Get a specific block or range of blocks.
@@ -308,12 +306,16 @@ module Radiator
       @block_api.shutdown if !!@block_api && @block_api != self
       @block_api = nil
       
-      if !!@logger && defined?(@logger.close) && !@logger.closed?
-        @logger.close
+      if !!@logger && defined?(@logger.close)
+        if defined?(@logger.closed?)
+          @logger.close unless @logger.closed?
+        end
       end
       
-      if !!@hashie_logger && defined?(@hashie_logger.close) && !@hashie_logger.closed?
-        @hashie_logger.close
+      if !!@hashie_logger && defined?(@hashie_logger.close)
+        if defined?(@hashie_logger.closed?)
+          @hashie_logger.close unless @hashie_logger.closed?
+        end
       end
     end
     
@@ -413,12 +415,18 @@ module Radiator
           end
         rescue Net::HTTP::Persistent::Error => e
           warning "Unable to perform request: #{e} :: #{!!e.cause ? "cause: #{e.cause.message}" : ''}, retrying ...", method_name, true
+        rescue ConnectionPool::Error => e
+          warning "Connection Pool Error (#{e.message}), retrying ...", method_name, true
         rescue Errno::ECONNREFUSED => e
           warning 'Connection refused, retrying ...', method_name, true
         rescue Errno::EADDRNOTAVAIL => e
           warning 'Node not available, retrying ...', method_name, true
         rescue Errno::ECONNRESET => e
           warning "Connection Reset (#{e.message}), retrying ...", method_name, true
+        rescue Errno::EBUSY => e
+          warning "Resource busy (#{e.message}), retrying ...", method_name, true
+        rescue Errno::ENETDOWN => e
+          warning "Network down (#{e.message}), retrying ...", method_name, true
         rescue Net::ReadTimeout => e
           warning 'Node read timeout, retrying ...', method_name, true
         rescue Net::OpenTimeout => e

@@ -124,8 +124,10 @@ module Radiator
       @api.shutdown if !!@api
       @network_broadcast_api.shutdown if !!@network_broadcast_api
 
-      if !!@logger && defined?(@logger.close) && !@logger.closed?
-        @logger.close
+      if !!@logger && defined?(@logger.close)
+        if defined?(@logger.closed?)
+          @logger.close unless @logger.closed?
+        end
       end
     end
   private
@@ -236,7 +238,8 @@ module Radiator
         return sig if canonical? sig
       end
     end
-
+    
+    # See: https://github.com/steemit/steem/issues/1944
     def canonical?(sig)
       sig = sig.unpack('C*')
 
@@ -262,9 +265,13 @@ module Radiator
           network_broadcast_api = nil
         end
 
-        if !!logger && defined?(logger.close) && !logger.closed?
-          logger.close
-        end
+        begin
+          if !!logger && defined?(logger.close)
+            if defined?(logger.closed?)
+              logger.close unless logger.closed?
+            end
+          end
+        rescue IOError, NoMethodError => _; end
       }
     end
   end
