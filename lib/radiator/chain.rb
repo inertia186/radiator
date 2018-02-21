@@ -35,6 +35,19 @@ module Radiator
     ).map(&:to_sym)
     VALID_OPTIONS.each { |option| attr_accessor option }
     
+    def self.parse_slug(*args)
+      args = [args].flatten
+      
+      if args.size == 1
+        case args[0]
+        when String then split_slug(args[0])
+        when Hash then [args[0]['author'], args[0]['permlink']]
+        end
+      else
+        args
+      end
+    end
+    
     def initialize(options = {})
       options = options.dup
       options.each do |k, v|
@@ -98,7 +111,7 @@ module Radiator
     # @param args [String || Array<String>] Slug or author, permlink of comment.
     # @return [Hash]
     def find_comment(*args)
-      author, permlink = normalize_author_permlink(args)
+      author, permlink = Chain.parse_slug(args)
       
       api.get_content(author, permlink) do |comment, err|
         raise ChainError, ErrorParser.new(err) if !!err
@@ -241,6 +254,15 @@ module Radiator
       end
     end
   private
+    def self.split_slug(slug)
+      slug = slug.split('@').last
+      author = slug.split('/')[0]
+      permlink = slug.split('/')[1..-1].join('/')
+      permlink = permlink.split('#')[0]
+      
+      [author, permlink]
+    end
+    
     def build_options
       {
         chain: chain,
@@ -260,23 +282,6 @@ module Radiator
     
     def follow_api
       @follow_api ||= FollowApi.new(build_options)
-    end
-    
-    def parse_slug(slug)
-      slug = slug.split('@').last
-      author = slug.split('/')[0]
-      [author, slug.split('/')[1..-1].join('/')]
-    end
-    
-    def normalize_author_permlink(args)
-      if args.size == 1
-        case args[0]
-        when String then parse_slug(args[0])
-        when Hash then [args[0]['author'], args[0]['permlink']]
-        end
-      else
-        args
-      end
     end
     
     def default_max_acepted_payout

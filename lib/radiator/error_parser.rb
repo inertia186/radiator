@@ -58,6 +58,14 @@ module Radiator
       end
 
       begin
+        if @error['data'].nil?
+          @expiry = false
+          @can_retry = false
+          @can_reprepare = false
+          
+          return
+        end
+
         @error_code = @error['data']['code']
         stacks = @error['data']['stack']
         stack_formats = stacks.map { |s| s['format'] }
