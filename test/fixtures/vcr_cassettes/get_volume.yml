@@ -9,12 +9,12 @@ http_interactions:
     headers:
       Content-Type:
       - application/json
+      User-Agent:
+      - radiator/0.4.0pre1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
       Connection:
       - keep-alive
       Keep-Alive:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 25 Oct 2017 23:09:02 GMT
+      - Sun, 18 Feb 2018 04:35:48 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -34,8 +34,10 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Response-Id:
-      - s26b40649-bdbb-4af8-b508-06f45751e28b->d19a424c-5e29-4bab-b6bf-71960927bfc2
+      X-Jussi-Request-Id:
+      - '000512112406466824'
+      X-Amzn-Trace-Id:
+      - Root=1-5a8902a4-024e362b11e7f8d9207697c4
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -48,7 +50,8 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"result":{"steem_volume":"7386.969 STEEM","sbd_volume":"7059.894 SBD"},"id":1}'
+      string: '{"id":1,"result":{"steem_volume":"6157.521 STEEM","sbd_volume":"5194.584
+        SBD"}}'
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 23:09:02 GMT
+  recorded_at: Sun, 18 Feb 2018 04:35:48 GMT
 recorded_with: VCR 3.0.3

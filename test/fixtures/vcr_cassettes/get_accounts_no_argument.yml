@@ -9,12 +9,12 @@ http_interactions:
     headers:
       Content-Type:
       - application/json
+      User-Agent:
+      - radiator/0.4.0pre1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
       Connection:
       - keep-alive
       Keep-Alive:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 25 Oct 2017 23:08:53 GMT
+      - Sun, 18 Feb 2018 04:35:23 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -34,8 +34,10 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Response-Id:
-      - sdef82470-b880-4c49-8bc2-0bbbf5f07bd1->24d66c2c-240e-408c-93fb-06daa7afdd90
+      X-Jussi-Request-Id:
+      - '001020103620323117'
+      X-Amzn-Trace-Id:
+      - Root=1-5a89028b-637bb33567e02e9a1dc64408
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -48,12 +50,12 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
+      string: '{"id":1,"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
         != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
         call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_accounts\",[]]}\n    th_a  websocket_api.cpp:124
         on_message","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-25T23:08:53"},"format":"a0
-        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-25T23:08:53"},"format":"","data":{"call.method":"call","call.params":["database_api","get_accounts",[]]}}]}},"id":1}'
+        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2018-02-18T04:35:23"},"format":"a0
+        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2018-02-18T04:35:23"},"format":"","data":{"call.method":"call","call.params":["database_api","get_accounts",[]]}}]}}}'
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 23:08:53 GMT
+  recorded_at: Sun, 18 Feb 2018 04:35:23 GMT
 recorded_with: VCR 3.0.3

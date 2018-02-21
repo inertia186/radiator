@@ -12,6 +12,52 @@ module Radiator
       @chain = Radiator::Chain.new(options)
     end
     
+    def test_parse_slug
+      author, permlink = Radiator::Chain.parse_slug '@author/permlink'
+      
+      assert_equal 'author', author
+      assert_equal 'permlink', permlink
+    end
+    
+    def test_parse_slug_no_at
+      author, permlink = Radiator::Chain.parse_slug 'author/permlink'
+      
+      assert_equal 'author', author
+      assert_equal 'permlink', permlink
+    end
+    
+    def test_parse_slug_to_comment_with_comments_anchor
+      url = 'https://steemit.com/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-sbd-contest#comments'
+      author, permlink = Radiator::Chain.parse_slug url
+      
+      assert_equal 'howtostartablog', author
+      assert_equal 'the-joke-is-always-in-the-comments-8-sbd-contest', permlink
+    end
+    
+    def test_parse_slug_to_comment_with_apache_slash
+      url = 'https://steemit.com/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-sbd-contest/'
+      author, permlink = Radiator::Chain.parse_slug url
+      
+      assert_equal 'howtostartablog', author
+      assert_equal 'the-joke-is-always-in-the-comments-8-sbd-contest', permlink
+    end
+    
+    def test_parse_slug_to_comment
+      url = 'https://steemit.com/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-sbd-contest#@btcvenom/re-howtostartablog-the-joke-is-always-in-the-comments-8-sbd-contest-20170624t115213474z'
+      author, permlink = Radiator::Chain.parse_slug url
+      
+      assert_equal 'btcvenom', author
+      assert_equal 're-howtostartablog-the-joke-is-always-in-the-comments-8-sbd-contest-20170624t115213474z', permlink
+    end
+    
+    def test_parse_slug_to_comment_no_at
+      url = 'btcvenom/re-howtostartablog-the-joke-is-always-in-the-comments-8-sbd-contest-20170624t115213474z'
+      author, permlink = Radiator::Chain.parse_slug url
+      
+      assert_equal 'btcvenom', author
+      assert_equal 're-howtostartablog-the-joke-is-always-in-the-comments-8-sbd-contest-20170624t115213474z', permlink
+    end
+    
     def test_find_block
       VCR.use_cassette('find_block', record: VCR_RECORD_MODE) do
         refute_nil @chain.find_block(424377)
@@ -27,6 +73,18 @@ module Radiator
     def test_find_comment
       VCR.use_cassette('find_comment', record: VCR_RECORD_MODE) do
         refute_nil @chain.find_comment('inertia', 'kinda-spooky')
+      end
+    end
+    
+    def test_find_comment_with_slug
+      VCR.use_cassette('find_comment', record: VCR_RECORD_MODE) do
+        refute_nil @chain.find_comment('@inertia/kinda-spooky')
+      end
+    end
+    
+    def test_find_comment_with_slug_and_comments_anchor
+      VCR.use_cassette('find_comment', record: VCR_RECORD_MODE) do
+        refute_nil @chain.find_comment('@inertia/kinda-spooky#comments')
       end
     end
     

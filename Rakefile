@@ -57,14 +57,13 @@ task :test_live_stream, [:chain, :persist] do |t, args|
   chain = args[:chain] || 'steem'
   persist = (args[:persist] || 'true') == 'true'
   last_block_number = 0
-  options = {chain: chain, persist: persist}
-  api = Radiator::Api.new(options)
+  options = {chain: chain, persist: persist, url: 'https://api.steemitstage.com'}
   total_ops = 0.0
   total_vops = 0.0
   elapsed = 0
   count = 0
   
-  Radiator::Stream.new(options).blocks do |b, n|
+  Radiator::Stream.new(options).blocks do |b, n, api|
     start = Time.now.utc
     
     if last_block_number == 0
@@ -75,6 +74,7 @@ task :test_live_stream, [:chain, :persist] do |t, args|
       o = t.map(&:operations)
       op_size = o.map(&:size).reduce(0, :+)
       total_ops += op_size
+      
       api.get_ops_in_block(n, true) do |vops, error|
         if !!error
           puts "Error on get_ops_in_block for block #{n}"

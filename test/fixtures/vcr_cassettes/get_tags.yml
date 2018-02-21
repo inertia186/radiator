@@ -9,12 +9,12 @@ http_interactions:
     headers:
       Content-Type:
       - application/json
+      User-Agent:
+      - radiator/0.4.0pre1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
       Connection:
       - keep-alive
       Keep-Alive:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 25 Oct 2017 23:08:43 GMT
+      - Sun, 18 Feb 2018 04:35:48 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -34,8 +34,10 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Response-Id:
-      - s5e0290b0-b269-4acf-b4d2-598e4a1e53c7->51f479ec-6996-4307-88bf-da3af105a080
+      X-Jussi-Request-Id:
+      - '000942622548834473'
+      X-Amzn-Trace-Id:
+      - Root=1-5a8902a3-1d65e19d1c8eeffa0ba6018f
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -48,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"result":[],"id":1}'
+      string: '{"id":1,"result":[]}'
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 23:08:43 GMT
+  recorded_at: Sun, 18 Feb 2018 04:35:48 GMT
 recorded_with: VCR 3.0.3

@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.3.12
+      - radiator/0.4.0pre1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 08 Nov 2017 02:11:25 GMT
+      - Sun, 18 Feb 2018 04:35:47 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,11 +35,11 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Cache-Hit:
-      - steemd.database_api.get_dynamic_global_properties
-      X-Jussi-Urn:
-      - steemd.database_api.get_dynamic_global_properties
-      X-Jussi-Response-Id:
-      - saf54297e-30fb-45fb-8d06-ba7f88c66e88->22899f0d-466a-4241-ab50-cb01224a0499
+      - steemd.database_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '000250012949254120'
+      X-Amzn-Trace-Id:
+      - Root=1-5a8902a3-078b3ff56cb9a29712d14f33
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -52,12 +52,12 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"id":0,"head_block_number":17029716,"head_block_id":"0103da546eba844a22311f0c4b62184b2107fb2b","time":"2017-11-08T02:11:24","current_witness":"followbtcnews","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"262929959.106
-        STEEM","current_supply":"259175567.141 STEEM","confidential_supply":"0.000
-        STEEM","current_sbd_supply":"3330145.673 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"190595458.357 STEEM","total_vesting_shares":"391630424587.647654
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"411169774.716196
-        VESTS","pending_rewarded_vesting_steem":"199413.807 STEEM","sbd_interest_rate":1,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":17090628,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":17029701,"vote_power_reserve_rate":10,"current_reserve_ratio":200000000,"average_block_size":6471,"max_virtual_bandwidth":"264241152000000000000"},"id":1}'
+      string: '{"id":1,"jsonrpc":"2.0","result":{"id":0,"head_block_number":19967979,"head_block_id":"0130afeb47b65bdd8d46776408914d98e98a6ad5","time":"2018-02-18T04:35:45","current_witness":"curie","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"266377770.361
+        STEEM","current_supply":"264263638.804 STEEM","confidential_supply":"0.000
+        STEEM","current_sbd_supply":"9090765.698 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"185476004.707 STEEM","total_vesting_shares":"379151586890.674500
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"320064924.656560
+        VESTS","pending_rewarded_vesting_steem":"155672.568 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":20031115,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":19967961,"vote_power_reserve_rate":10,"current_reserve_ratio":200000000,"average_block_size":16024,"max_virtual_bandwidth":"264241152000000000000"}}'
     http_version: 
-  recorded_at: Wed, 08 Nov 2017 02:11:25 GMT
+  recorded_at: Sun, 18 Feb 2018 04:35:47 GMT
 recorded_with: VCR 3.0.3
