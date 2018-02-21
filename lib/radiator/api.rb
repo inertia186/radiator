@@ -205,11 +205,25 @@ module Radiator
       @preferred_url = @url.dup
       @failover_urls = options[:failover_urls]
       @debug = !!options[:debug]
-      @logger = options[:logger] || Radiator.logger
-      @hashie_logger = options[:hashie_logger] || Logger.new(nil)
       @max_requests = options[:max_requests] || 30
       @ssl_verify_mode = options[:ssl_verify_mode] || OpenSSL::SSL::VERIFY_PEER
       @ssl_version = options[:ssl_version]
+
+      @self_logger = false
+      @logger = if options[:logger].nil?
+        @self_logger = true
+        Radiator.logger
+      else
+        options[:logger]
+      end
+      
+      @self_hashie_logger = false
+      @hashie_logger = if options[:hashie_logger].nil?
+        @self_hashie_logger = true
+        Logger.new(nil)
+      else
+        options[:hashie_logger]
+      end
       
       if @failover_urls.nil?
         @failover_urls = Api::default_failover_urls(@chain) - [@url]
@@ -306,15 +320,19 @@ module Radiator
       @block_api.shutdown if !!@block_api && @block_api != self
       @block_api = nil
       
-      if !!@logger && defined?(@logger.close)
-        if defined?(@logger.closed?)
-          @logger.close unless @logger.closed?
+      if @self_logger
+        if !!@logger && defined?(@logger.close)
+          if defined?(@logger.closed?)
+            @logger.close unless @logger.closed?
+          end
         end
       end
       
-      if !!@hashie_logger && defined?(@hashie_logger.close)
-        if defined?(@hashie_logger.closed?)
-          @hashie_logger.close unless @hashie_logger.closed?
+      if @self_hashie_logger
+        if !!@hashie_logger && defined?(@hashie_logger.close)
+          if defined?(@hashie_logger.closed?)
+            @hashie_logger.close unless @hashie_logger.closed?
+          end
         end
       end
     end
@@ -747,6 +765,7 @@ module Radiator
       @backoff_sleep ||= 0.01
       
       @backoff_sleep *= 2
+      GC.start
       sleep @backoff_sleep
     ensure
       if !!@backoff_at && Time.now.utc - @backoff_at > 300

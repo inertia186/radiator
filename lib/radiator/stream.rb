@@ -21,7 +21,7 @@ module Radiator
     MAX_TIMEOUT = 80
     
     # @private
-    MAX_BLOCKS_PER_NODE = 1000
+    MAX_BLOCKS_PER_NODE = 10000
     
     RANGE_BEHIND_WARNING = 400
     
@@ -120,7 +120,7 @@ module Radiator
     # @param mode we have the choice between
     #   * :head the last block
     #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
-    # @param block the block to execute for each result, optional.
+    # @param block the block to execute for each result, optional.  Yields: |op, trx_id, block_num, api|
     # @param options [Hash] additional options
     # @option options [Boollean] :include_virtual Also stream virtual options.  Setting this true will impact performance.  Default: false.
     # @return [Hash]
@@ -148,19 +148,28 @@ module Radiator
         end.compact
         
         if include_virtual && !virtual_ops_collected
-          api.get_ops_in_block(block_number, true) do |vops|
-            vops.each do |vtx|
-              next unless defined? vtx.op
+          catch :pop_vops do; begin
+            api.get_ops_in_block(block_number, true) do |vops, error|
+              if !!error
+                standby "Node responded with: #{error.message || 'unknown error'}, retrying ...", {
+                  error: error,
+                  and: {throw: :pop_vops}
+                }
+              end
               
-              t = vtx.op.first.to_sym
-              op = vtx.op.last
-              if type.size == 1 && type.first == t
-                ops << op
-              elsif type.none? || type.include?(t)
-                ops << {t => op}
+              vops.each do |vtx|
+                next unless defined? vtx.op
+                
+                t = vtx.op.first.to_sym
+                op = vtx.op.last
+                if type.size == 1 && type.first == t
+                  ops << op
+                elsif type.none? || type.include?(t)
+                  ops << {t => op}
+                end
               end
             end
-          end
+          end; end
           
           virtual_ops_collected = true
         end
@@ -170,7 +179,7 @@ module Radiator
         return ops unless !!block
         
         ops.each do |op|
-          yield op, trx_id, block_number
+          yield op, trx_id, block_number, api
         end
       end
     end
@@ -186,7 +195,7 @@ module Radiator
     # @param mode we have the choice between
     #   * :head the last block
     #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
-    # @param block the block to execute for each result, optional.
+    # @param block the block to execute for each result, optional.  Yields: |tx, trx_id, api|
     # @return [Hash]
     def transactions(start = nil, mode = :irreversible, &block)
       blocks(start, mode) do |b, block_number|
@@ -198,7 +207,7 @@ module Radiator
             b['transaction_ids'][index]
           end
           
-          yield transaction, trx_id, block_number
+          yield transaction, trx_id, block_number, api
         end
       end
     end
@@ -209,13 +218,27 @@ module Radiator
     #   stream.blocks do |bk, num|
     #     puts "[#{num}] #{bk.to_json}"
     #   end
-    # 
+    #
+    # For convenience and memory management, the api used to poll the current
+    # block data is also available inside the block, e.g.:
+    #
+    #   stream = Radiator::Stream.new
+    #   stream.blocks do |bk, num, api|
+    #     puts "[#{num}] #{bk.to_json}"
+    #     
+    #     api.get_ops_in_block(num, true) do |vops, error|
+    #       puts vops
+    #     end
+    #   end
+    #
+    # This idiom is useful for very long running scripts.
+    #
     # @param start starting block
     # @param mode we have the choice between
     #   * :head the last block
     #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
     # @param max_blocks_per_node the number of blocks to read before trying a new node
-    # @param block the block to execute for each result, optional.
+    # @param block the block to execute for each result, optional.  Yields: |bk, num, api|
     # @return [Hash]
     def blocks(start = nil, mode = :irreversible, max_blocks_per_node = MAX_BLOCKS_PER_NODE, &block)
       reset_api
@@ -229,7 +252,14 @@ module Radiator
         break if stop?
         
         catch :sequence do; begin
-          head_block = api.get_dynamic_global_properties do |properties|
+          head_block = api.get_dynamic_global_properties do |properties, error|
+            if !!error
+              standby "Node responded with: #{error.message || 'unknown error'}, retrying ...", {
+                error: error,
+                and: {throw: :sequence}
+              }
+            end
+            
             break if stop?
             
             if properties.head_block_number.nil?
@@ -295,7 +325,7 @@ module Radiator
               
               latest_block_number = n
               return current_block, n if block.nil?
-              yield current_block, n
+              yield current_block, n, api
             end
             
             start = head_block + 1
@@ -331,6 +361,7 @@ module Radiator
       
       @api = nil
       @block_api = nil
+      GC.start
     end
     
     # @private

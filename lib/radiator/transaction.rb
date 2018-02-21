@@ -25,13 +25,20 @@ module Radiator
         end
       end
 
-      @logger = options[:logger] || Radiator.logger
       @chain ||= :steem
       @chain = @chain.to_sym
       @chain_id = chain_id options[:chain_id]
       @url = options[:url] || url
       @operations = options[:operations] || []
-
+      
+      @self_logger = false
+      @logger = if options[:logger].nil?
+        @self_logger = true
+        Radiator.logger
+      else
+        options[:logger]
+      end
+      
       unless NETWORK_CHAIN_IDS.include? @chain_id
         warning "Unknown chain id: #{@chain_id}"
       end
@@ -60,7 +67,7 @@ module Radiator
       @api = Api.new(options)
       @network_broadcast_api = NetworkBroadcastApi.new(options)
 
-      ObjectSpace.define_finalizer(self, self.class.finalize(@api, @network_broadcast_api, @logger))
+      ObjectSpace.define_finalizer(self, self.class.finalize(@api, @network_broadcast_api, @self_logger, @logger))
     end
 
     def chain_id(chain_id = nil)
@@ -124,9 +131,11 @@ module Radiator
       @api.shutdown if !!@api
       @network_broadcast_api.shutdown if !!@network_broadcast_api
 
-      if !!@logger && defined?(@logger.close)
-        if defined?(@logger.closed?)
-          @logger.close unless @logger.closed?
+      if @self_logger
+        if !!@logger && defined?(@logger.close)
+          if defined?(@logger.closed?)
+            @logger.close unless @logger.closed?
+          end
         end
       end
     end
@@ -251,7 +260,7 @@ module Radiator
       )
     end
 
-    def self.finalize(api, network_broadcast_api, logger)
+    def self.finalize(api, network_broadcast_api, self_logger, logger)
       proc {
         if !!api && !api.stopped?
           puts "DESTROY: #{api.inspect}" if ENV['LOG'] == 'TRACE'
@@ -266,9 +275,11 @@ module Radiator
         end
 
         begin
-          if !!logger && defined?(logger.close)
-            if defined?(logger.closed?)
-              logger.close unless logger.closed?
+          if self_logger
+            if !!logger && defined?(logger.close)
+              if defined?(logger.closed?)
+                logger.close unless logger.closed?
+              end
             end
           end
         rescue IOError, NoMethodError => _; end
