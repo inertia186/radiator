@@ -177,7 +177,7 @@ module Radiator
 
       until count == followers.size
         count = followers.size
-        follow_api.get_followers(account_name, followers.last, 'blog', 1000) do |follows, err|
+        follow_api.get_followers(account: account_name, start: followers.last, type: 'blog', limit: 1000) do |follows, err|
           raise ChainError, ErrorParser.new(err) if !!err
           
           followers += follows.map(&:follower)
@@ -200,7 +200,7 @@ module Radiator
 
       until count == following.size
         count = following.size
-        follow_api.get_following(account_name, following.last, 'blog', 100) do |follows, err|
+        follow_api.get_following(account: account_name, start: following.last, type: 'blog', limit: 100) do |follows, err|
           raise ChainError, ErrorParser.new(err) if !!err
           
           following += follows.map(&:following)

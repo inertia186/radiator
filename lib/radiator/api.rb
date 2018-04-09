@@ -141,11 +141,18 @@ module Radiator
     DEFAULT_STEEM_FAILOVER_URLS = [
       DEFAULT_STEEM_URL,
       'https://api.steemitstage.com',
+      'https://appbasetest.timcliff.com',
       'https://gtg.steem.house:8090',
+      'https://api.steem.house',
       'https://seed.bitcoiner.me',
       'https://steemd.minnowsupportproject.org',
       'https://steemd.privex.io',
-      'https://rpc.steemliberator.com'
+      'https://rpc.steemliberator.com',
+      'https://rpc.curiesteem.com',
+      'https://rpc.buildteam.io',
+      'https://steemd.pevo.science',
+      'https://rpc.steemviz.com',
+      'https://steemd.steemgigs.org'
     ]
     
     DEFAULT_GOLOS_FAILOVER_URLS = [
@@ -294,11 +301,11 @@ module Radiator
       
       if !!block
         block_number.each do |i|
-          yield block_api.get_block(i).result, i
+          yield block_api.get_block(block_num: i).result, i
         end
       else
         block_number.map do |i|
-          block_api.get_block(i).result
+          block_api.get_block(block_num: i).result
         end
       end
     end
@@ -340,7 +347,8 @@ module Radiator
     # @private
     def method_names
       return @method_names if !!@method_names
-      
+      return CondenserApi::METHOD_NAMES if api_name == :condenser_api
+
       @method_names = Radiator::Api.methods(api_name).map do |e|
         e['method'].to_sym
       end
@@ -348,12 +356,12 @@ module Radiator
     
     # @private
     def api_name
-      :database_api
+      :condenser_api
     end
     
     # @private
     def respond_to_missing?(m, include_private = false)
-      method_names.include?(m.to_sym)
+      method_names.nil? ? false : method_names.include?(m.to_sym)
     end
     
     # @private
@@ -363,19 +371,25 @@ module Radiator
       current_rpc_id = rpc_id
       method_name = [api_name, m].join('.')
       response = nil
-      options = if jussi_supported? && api_name == :database_api
+      options = if api_name == :condenser_api
         {
           jsonrpc: "2.0",
+          method: method_name,
           params: args,
           id: current_rpc_id,
-          method: m
         }
       else
+        rpc_args = if args.empty?
+          {}
+        else
+          args.first
+        end
+        
         {
           jsonrpc: "2.0",
-          params: [api_name, m, args],
+          method: method_name,
+          params: rpc_args,
           id: current_rpc_id,
-          method: "call"
         }
       end
       
@@ -467,7 +481,18 @@ module Radiator
         
         if !!response
           if !!block
-            return yield(response.result, response.error, response.id)
+            if api_name == :condenser_api
+              return yield(response.result, response.error, response.id)
+            else
+              if (
+                defined?(response.result.size) && response.result.size == 1 &&
+                defined?(response.result.values)
+              )
+                return yield(response.result.values.first, response.error, response.id)
+              else
+                return yield(response.result, response.error, response.id)
+              end
+            end
           else
             return response
           end
@@ -696,14 +721,16 @@ module Radiator
     def handle_error(response, request_options, method_name, tries)
       parser = ErrorParser.new(response)
       _signatures, exp = extract_signatures(request_options)
+      node_degraded = parser.can_retry? && method_name.start_with?('condenser_api.')
       
-      if (!!exp && exp < Time.now.utc) || tries > 2
+      if (!!exp && exp < Time.now.utc) || (tries > 2 && !node_degraded)
         # Whatever the error was, it is already expired or tried too much.  No
         # need to try to recover.
         
         debug "Error code #{parser} but transaction already expired or too many tries, giving up (attempt: #{tries})."
       elsif parser.can_retry?
         drop_current_failover_url method_name if !!exp && parser.expiry?
+        drop_current_failover_url method_name if node_degraded
         debug "Error code #{parser} (attempt: #{tries}), retrying ..."
         return nil
       end

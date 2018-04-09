@@ -93,7 +93,7 @@ module Radiator
 
       if broadcast
         loop do
-          response = @network_broadcast_api.broadcast_transaction_synchronous(payload)
+          response = @network_broadcast_api.broadcast_transaction_synchronous(trx: payload)
 
           if !!response.error
             parser = ErrorParser.new(response)

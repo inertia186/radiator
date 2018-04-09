@@ -57,7 +57,7 @@ task :test_live_stream, [:chain, :persist] do |t, args|
   chain = args[:chain] || 'steem'
   persist = (args[:persist] || 'true') == 'true'
   last_block_number = 0
-  options = {chain: chain, persist: persist, url: 'https://api.steemitstage.com'}
+  options = {chain: chain, persist: persist}
   total_ops = 0.0
   total_vops = 0.0
   elapsed = 0

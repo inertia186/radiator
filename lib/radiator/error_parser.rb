@@ -68,24 +68,30 @@ module Radiator
 
         @error_code = @error['data']['code']
         stacks = @error['data']['stack']
-        stack_formats = stacks.map { |s| s['format'] }
-        stack_datum = stacks.map { |s| s['data'] }
-        data_call_method = stack_datum.find { |data| data['call.method'] == 'call' }
         
-        @error_message = stack_formats.reject(&:empty?).join('; ')
+        @error_message = if !!stacks
+          stack_formats = stacks.map { |s| s['format'] }
+          stack_datum = stacks.map { |s| s['data'] }
+          data_call_method = stack_datum.find { |data| data['call.method'] == 'call' }
+          
+          # See if we can recover a transaction id out of this hot mess.
+          data_trx_ix = stack_datum.find { |data| !!data['trx_ix'] }
+          @trx_id = data_trx_ix['trx_ix'] if !!data_trx_ix
+          
+          stack_formats.reject(&:empty?).join('; ')
+        else
+          @error_code ||= @error['code']
+          @error['message']
+        end
         
         @api_name, @api_method, @api_params = if !!data_call_method
           @api_name = data_call_method['call.params']
         end
         
-        # See if we can recover a transaction id out of this hot mess.
-        data_trx_ix = stack_datum.find { |data| !!data['trx_ix'] }
-        @trx_id = data_trx_ix['trx_ix'] if !!data_trx_ix
-        
         case @error_code
         when 10
           @expiry = false
-          @can_retry = false
+          @can_retry = @error['code'] == 1 && @error_message.include?('no method with')
           @can_reprepare = if @api_name == 'network_broadcast_api'
             (stack_formats & REPREPARE_WHITELIST).any?
           else
@@ -126,7 +132,7 @@ module Radiator
           @can_reprepare = false
         end
       rescue => e
-        ap error_perser_exception: e, original_response: response
+        ap error_parser_exception: e, original_response: response#, backtrace: e.backtrace
         
         @expiry = false
         @can_retry = false

@@ -311,7 +311,7 @@ module Radiator
               end
             end
             
-            block_api.get_block(n) do |current_block, error|
+            block_api.get_block(block_num: n) do |current_block, error|
               if current_block.nil?
                 standby "Node responded with: empty block, retrying ...", {
                   and: {throw: :sequence}

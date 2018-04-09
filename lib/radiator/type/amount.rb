@@ -30,6 +30,15 @@ module Radiator
         asset
       end
       
+      def to_a
+        case @asset
+        when 'STEEM' then [(@amount.to_f * 1000).to_i.to_s, 3, '@@000000021']
+        when 'VESTS' then [(@amount.to_f * 1000000).to_i.to_s, 6, '@@000000037']
+        when 'SBD' then [(@amount.to_f * 1000).to_i.to_s, 3, '@@000000013']
+        else; raise TypeError, "Asset #{@asset} unknown."
+        end
+      end
+      
       def to_s
         "#{@amount} #{@asset}"
       end
