@@ -23,6 +23,7 @@ module Radiator
   require 'radiator/network_broadcast_api'
   require 'radiator/chain_stats_api'
   require 'radiator/account_by_key_api'
+  require 'radiator/account_history_api'
   require 'radiator/condenser_api'
   require 'radiator/block_api'
   require 'radiator/stream'
