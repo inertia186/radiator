@@ -249,6 +249,7 @@ module Radiator
         true
       end
       
+      @persist_error_count = 0
       @persist = if options.keys.include? :persist
         options[:persist]
       else
@@ -428,7 +429,15 @@ module Radiator
                 response = JSON[body]
                 
                 if response['id'] != options[:id]
-                  warning "Unexpected rpc_id (expected: #{options[:id]}, got: #{response['id']}), retrying ...", method_name, true
+                  if !!response['id']
+                    warning "Unexpected rpc_id (expected: #{options[:id]}, got: #{response['id']}), retrying ...", method_name, true
+                  else
+                    # The node has broken the jsonrpc spec.
+                    warning "Node did not provide jsonrpc id (expected: #{options[:id]}, got: nothing, retrying ...", method_name, true
+                  end
+                  if response.keys.include?('error')
+                    handle_error(response, options, method_name, tries)
+                  end
                 elsif response.keys.include?('error')
                   handle_error(response, options, method_name, tries)
                 else
@@ -447,6 +456,12 @@ module Radiator
           end
         rescue Net::HTTP::Persistent::Error => e
           warning "Unable to perform request: #{e} :: #{!!e.cause ? "cause: #{e.cause.message}" : ''}, retrying ...", method_name, true
+          if e.cause.class == Net::HTTPMethodNotAllowed
+            warning 'Node upstream is misconfigured.'
+            drop_current_failover_url method_name
+          end
+          
+          @persist_error_count += 1
         rescue ConnectionPool::Error => e
           warning "Connection Pool Error (#{e.message}), retrying ...", method_name, true
         rescue Errno::ECONNREFUSED => e
@@ -471,6 +486,7 @@ module Radiator
           warning "Socket Error (#{e.message}), retrying ...", method_name, true
         rescue JSON::ParserError => e
           warning "JSON Parse Error (#{e.message}), retrying ...", method_name, true
+          drop_current_failover_url method_name if tries > 5
           response = nil
         rescue ApiError => e
           warning "ApiError (#{e.message}), retrying ...", method_name, true
@@ -480,11 +496,15 @@ module Radiator
         end
         
         if !!response
+          @persist_error_count = 0
+          
           if !!block
             if api_name == :condenser_api
               return yield(response.result, response.error, response.id)
             else
-              if (
+              if defined?(response.result.size) && response.result.size == 0
+                return yield(nil, response.error, response.id)
+              elsif (
                 defined?(response.result.size) && response.result.size == 1 &&
                 defined?(response.result.values)
               )
@@ -550,12 +570,16 @@ module Radiator
       http
     end
     
+    def api_options
+      @api_options.merge(failover_urls: @failover_urls, logger: @logger, hashie_logger: @hashie_logger)
+    end
+    
     def api
-      @api ||= self.class == Api ? self : Api.new(@api_options)
+      @api ||= self.class == Api ? self : Api.new(api_options)
     end
     
     def block_api
-      @block_api ||= self.class == BlockApi ? self : BlockApi.new(@api_options)
+      @block_api ||= self.class == BlockApi ? self : BlockApi.new(api_options)
     end
     
     def rpc_id
@@ -574,7 +598,7 @@ module Radiator
     def http
       return @http_memo[http_id] if @http_memo.keys.include? http_id
       
-      @http_memo[http_id] = if @persist
+      @http_memo[http_id] = if @persist && @persist_error_count < 10
         idempotent = api_name != :network_broadcast_api
         
         http = if defined? Net::HTTP::Persistent::DEFAULT_POOL_SIZE
@@ -708,29 +732,30 @@ module Radiator
       !!@backoff_at && Time.now.utc - @backoff_at < 300
     end
     
+    # Note, this methods only removes the uri.to_s if present but it does not
+    # call bump_failover, in order to avoid a race condition.
     def drop_current_failover_url(prefix)
       if @preferred_failover_urls.size == 1
         warning "Node #{uri} appears to be misconfigured but no other node is available, retrying ...", prefix
       else
         warning "Removing misconfigured node from failover urls: #{uri}, retrying ...", prefix
-        @preferred_failover_urls.delete(uri)
-        @failover_urls.delete(uri)
+        @preferred_failover_urls.delete(uri.to_s)
+        @failover_urls.delete(uri.to_s)
       end
     end
    
     def handle_error(response, request_options, method_name, tries)
       parser = ErrorParser.new(response)
       _signatures, exp = extract_signatures(request_options)
-      node_degraded = parser.can_retry? && method_name.start_with?('condenser_api.')
       
-      if (!!exp && exp < Time.now.utc) || (tries > 2 && !node_degraded)
+      if (!!exp && exp < Time.now.utc) || (tries > 2 && !parser.node_degraded?)
         # Whatever the error was, it is already expired or tried too much.  No
         # need to try to recover.
         
         debug "Error code #{parser} but transaction already expired or too many tries, giving up (attempt: #{tries})."
       elsif parser.can_retry?
         drop_current_failover_url method_name if !!exp && parser.expiry?
-        drop_current_failover_url method_name if node_degraded
+        drop_current_failover_url method_name if parser.node_degraded?
         debug "Error code #{parser} (attempt: #{tries}), retrying ..."
         return nil
       end
@@ -777,7 +802,32 @@ module Radiator
         
         # Also note, this check is done **without** net-http-persistent.
         
-        !!open(url + HEALTH_URI)
+        response = open(url + HEALTH_URI)
+        response = JSON[response.read]
+        
+        if !!response['error']
+          if !!response['error']['data']
+            if !!response['error']['data']['message']
+              error "#{url} error: #{response['error']['data']['message']}"
+            end
+          elsif !!response['error']['message']
+            error "#{url} error: #{response['error']['message']}"
+          else
+            error "#{url} error: #{response['error']}"
+          end
+          
+          false
+        elsif response['status'] == 'OK'
+          true
+        else
+          error "#{url} status: #{response['status']}"
+          
+          false
+        end
+      rescue JSON::ParserError
+        # No JSON, but also no HTTP error code, so we're OK.
+        
+        true
       rescue => e
         error "Health check failure for #{url}: #{e.inspect}"
         sleep 0.2

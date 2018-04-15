@@ -17,6 +17,12 @@ module Radiator
     # @private
     INITIAL_TIMEOUT = 0.0200
     
+    # Note, even though block production is advertised at 3 seconds, often
+    # blocks are available in 1.5 seconds.  However, we still keep our
+    # expectations at 3 seconds.
+    # @private
+    BLOCK_PRODUCTION = 3.0
+    
     # @private
     MAX_TIMEOUT = 80
     
@@ -277,9 +283,17 @@ module Radiator
           end
             
           if head_block == latest_block_number
-            # This can when there's a delay in block production.
-            sleep 0.5
-            throw :sequence
+            # This can happen when there's a delay in block production.
+            
+            if current_timeout > BLOCK_PRODUCTION * 6
+              standby "Stream has stalled severely ...", {
+                and: {backoff: api, throw: :sequence}
+              }
+            elsif current_timeout > BLOCK_PRODUCTION * 3
+              warning "Stream has stalled ..."
+            end
+            
+            timeout and throw :sequence
           elsif head_block < latest_block_number
             # This can happen if a reverse proxy is acting up.
             standby "Invalid block sequence at height: #{head_block}", {
@@ -287,6 +301,7 @@ module Radiator
             }
           end
           
+          reset_timeout
           start ||= head_block
           range = (start..head_block)
           
@@ -307,18 +322,26 @@ module Radiator
               current_range = r[index..-1]
               
               if current_range.size % RANGE_BEHIND_WARNING == 0
-                standby "Stream behind by #{current_range.size} blocks (about #{(current_range.size * 3) / 60.0} minutes)."
+                warning "Stream behind by #{current_range.size} blocks (about #{(current_range.size * 3) / 60.0} minutes)."
               end
             end
             
             block_api.get_block(block_num: n) do |current_block, error|
-              if current_block.nil?
+              if !!error
+                if error.message == 'Unable to acquire database lock'
+                  start = n
+                  timeout
+                  standby "Node was unable to acquire database lock, retrying ...", {
+                    and: {throw: :sequence}
+                  }
+                else
+                  standby "Node responded with: #{error.message || 'unknown error'}, retrying ...", {
+                    error: error,
+                    and: {throw: :sequence}
+                  }
+                end
+              elsif current_block.nil?
                 standby "Node responded with: empty block, retrying ...", {
-                  and: {throw: :sequence}
-                }
-              elsif !!error
-                standby "Node responded with: #{error.message || 'unknown error'}, retrying ...", {
-                  error: error,
                   and: {throw: :sequence}
                 }
               end
@@ -329,7 +352,7 @@ module Radiator
             end
             
             start = head_block + 1
-            sleep 3 / range.size
+            sleep BLOCK_PRODUCTION / range.size
           end
         rescue StreamError; raise
         # rescue => e
@@ -430,11 +453,11 @@ module Radiator
               raise StreamError, JSON[response.error] if !!response.error
               result = response.result
               break if !!result
-              warnning "#{key}: #{param} result missing, retrying with timeout: #{@timeout || INITIAL_TIMEOUT} seconds"
+              warning "#{key}: #{param} result missing, retrying with timeout: #{current_timeout} seconds"
               reset_api
-              sleep timeout
+              timeout
             end
-            @timeout = INITIAL_TIMEOUT
+            reset_timeout
             result
           else
             key_value = api.get_dynamic_global_properties.result[key]
@@ -448,7 +471,7 @@ module Radiator
             return value
           end
         end
-        sleep 0.0200
+        sleep current_timeout
       end
     end
     
@@ -460,8 +483,17 @@ module Radiator
     def timeout
       @timeout ||= INITIAL_TIMEOUT
       @timeout *= 2
-      @timeout = INITIAL_TIMEOUT if @timeout > MAX_TIMEOUT
+      reset_timeout if @timeout > MAX_TIMEOUT
+      sleep @timeout || INITIAL_TIMEOUT
       @timeout
+    end
+    
+    def current_timeout
+      @timeout || INITIAL_TIMEOUT
+    end
+    
+    def reset_timeout
+      @timeout = nil
     end
     
     def virtual_op_type?(type)

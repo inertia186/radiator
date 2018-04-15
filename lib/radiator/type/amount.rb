@@ -6,18 +6,31 @@ module Radiator
       def initialize(value)
         super(:amount, value)
         
-        @amount, @asset = value.strip.split(' ')
-        @precision = case @asset
-        when 'STEEM' then 3
-        when 'VESTS' then 6
-        when 'SBD' then 3
-        when 'GOLOS' then 3
-        when 'GESTS' then 6
-        when 'GBG' then 3
-        when 'CORE' then 3
-        when 'CESTS' then 6
-        when 'TEST' then 3
-        else; raise TypeError, "Asset #{@asset} unknown."
+        case value
+        when Array
+          a, p, t = value
+          @asset = case t
+          when '@@000000013' then 'SBD'
+          when '@@000000021' then 'STEEM'
+          when '@@000000037' then 'VESTS'
+          else; raise TypeError, "Asset #{@asset} unknown."
+          end
+          @precision = p
+          @amount = "%.#{p}f" % (a.to_f / 10 ** p)
+        else
+          @amount, @asset = value.strip.split(' ')
+          @precision = case @asset
+          when 'STEEM' then 3
+          when 'VESTS' then 6
+          when 'SBD' then 3
+          when 'GOLOS' then 3
+          when 'GESTS' then 6
+          when 'GBG' then 3
+          when 'CORE' then 3
+          when 'CESTS' then 6
+          when 'TEST' then 3
+          else; raise TypeError, "Asset #{@asset} unknown."
+          end
         end
       end
       

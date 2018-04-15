@@ -6,11 +6,12 @@ module Radiator
     
     attr_reader :response, :error, :error_code, :error_message,
       :api_name, :api_method, :api_params,
-      :expiry, :can_retry, :can_reprepare, :trx_id, :debug
+      :expiry, :can_retry, :can_reprepare, :node_degraded, :trx_id, :debug
       
     alias expiry? expiry
     alias can_retry? can_retry
     alias can_reprepare? can_reprepare
+    alias node_degraded? node_degraded
     
     REPREPARE_WHITELIST = [
       'is_canonical( c ): signature is not canonical',
@@ -56,47 +57,62 @@ module Radiator
       else
         response
       end
-
+      
       begin
-        if @error['data'].nil?
+        if !!@error['data']
+          # These are, by far, the more interesting errors, so we try to pull
+          # them out first, if possible.
+          
+          @error_code = @error['data']['code']
+          stacks = @error['data']['stack']
+          stack_formats = nil
+          
+          @error_message = if !!stacks
+            stack_formats = stacks.map { |s| s['format'] }
+            stack_datum = stacks.map { |s| s['data'] }
+            data_call_method = stack_datum.find { |data| data['call.method'] == 'call' }
+            data_name = stack_datum.find { |data| !!data['name'] }
+            
+            # See if we can recover a transaction id out of this hot mess.
+            data_trx_ix = stack_datum.find { |data| !!data['trx_ix'] }
+            @trx_id = data_trx_ix['trx_ix'] if !!data_trx_ix
+            
+            stack_formats.reject(&:empty?).join('; ')
+          else
+            @error_code ||= @error['code']
+            @error['message']
+          end
+          
+          @api_name, @api_method, @api_params = if !!data_call_method
+            @api_name = data_call_method['call.params']
+          end
+        else
+          @error_code = ['code']
+          @error_message = ['message']
           @expiry = false
           @can_retry = false
           @can_reprepare = false
-          
-          return
-        end
-
-        @error_code = @error['data']['code']
-        stacks = @error['data']['stack']
-        
-        @error_message = if !!stacks
-          stack_formats = stacks.map { |s| s['format'] }
-          stack_datum = stacks.map { |s| s['data'] }
-          data_call_method = stack_datum.find { |data| data['call.method'] == 'call' }
-          
-          # See if we can recover a transaction id out of this hot mess.
-          data_trx_ix = stack_datum.find { |data| !!data['trx_ix'] }
-          @trx_id = data_trx_ix['trx_ix'] if !!data_trx_ix
-          
-          stack_formats.reject(&:empty?).join('; ')
-        else
-          @error_code ||= @error['code']
-          @error['message']
-        end
-        
-        @api_name, @api_method, @api_params = if !!data_call_method
-          @api_name = data_call_method['call.params']
         end
         
         case @error_code
-        when 10
+        when -32003
+          if error_match?('Unable to acquire database lock')
+            @expiry = false
+            @can_retry = true
+            @can_reprepare = true
+          end
+        when -32000
           @expiry = false
-          @can_retry = @error['code'] == 1 && @error_message.include?('no method with')
+          @can_retry = coerce_backtrace
           @can_reprepare = if @api_name == 'network_broadcast_api'
-            (stack_formats & REPREPARE_WHITELIST).any?
+            error_match(REPREPARE_WHITELIST)
           else
             false
           end
+        when 10
+          @expiry = false
+          @can_retry = coerce_backtrace
+          @can_reprepare = !!stack_formats && (stack_formats & REPREPARE_WHITELIST).any?
         when 13
           @error_message = @error['data']['message']
           @expiry = false
@@ -137,6 +153,41 @@ module Radiator
         @expiry = false
         @can_retry = false
         @can_reprepare = false
+      end
+    end
+    
+    def coerce_backtrace
+      can_retry = false
+      
+      case @error['code']
+      when -32003
+        can_retry = error_match?('Unable to acquire database lock')
+        can_retry = if !can_retry && error_match?('Internal Error"')
+          can_retry = true
+          @node_degraded = true
+        else
+          @node_degraded = false
+        end
+      when -32002
+        can_retry = @node_degraded = error_match?('Could not find API')
+      when 1
+        can_retry = @node_degraded = error_match?('no method with name \'condenser_api')
+      end
+        
+      can_retry
+    end
+    
+    def error_match?(match)
+      case match
+      when String
+        @error['message'] && @error['message'].include?(match)
+      when Array
+        if @error['message']
+          match.map { |m| @error['message'].include?(m) }.include? true
+        else
+          false
+        end
+      else; false
       end
     end
     
