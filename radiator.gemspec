@@ -19,13 +19,14 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 1.15', '>= 1.15.4'
   spec.add_development_dependency 'rake', '~> 12.1', '>= 12.1.0'
-  spec.add_development_dependency 'minitest', '~> 5.9', '>= 5.9.0'
+  spec.add_development_dependency 'minitest', '~> 5.10', '>= 5.10.3'
   spec.add_development_dependency 'minitest-line', '~> 0.6.3'
   spec.add_development_dependency 'minitest-proveit', '~> 1.0', '>= 1.0.0'
   spec.add_development_dependency 'webmock', '~> 3.1', '>= 3.1.0'
   spec.add_development_dependency 'simplecov', '~> 0.15.1'
   spec.add_development_dependency 'vcr', '~> 3.0', '>= 3.0.3'
   spec.add_development_dependency 'yard', '~> 0.9.9'
+  spec.add_development_dependency 'pry', '~> 0.11', '>= 0.11.3'
   
   # net-http-persistent has an open-ended dependency because radiator directly
   # supports net-http-persistent-3.0.0 as well as net-http-persistent-2.5.2.

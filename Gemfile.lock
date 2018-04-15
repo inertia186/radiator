@@ -17,6 +17,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     awesome_print (1.8.0)
     bitcoin-ruby (0.0.18)
+    coderay (1.1.2)
     connection_pool (2.2.1)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
@@ -29,6 +30,7 @@ GEM
     logging (2.2.2)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
+    method_source (0.9.0)
     minitest (5.11.3)
     minitest-line (0.6.4)
       minitest (~> 5.0)
@@ -37,6 +39,9 @@ GEM
     multi_json (1.13.1)
     net-http-persistent (3.0.0)
       connection_pool (~> 2.2)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     public_suffix (3.0.2)
     rake (12.3.1)
     safe_yaml (1.0.4)
@@ -57,9 +62,10 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.15, >= 1.15.4)
-  minitest (~> 5.9, >= 5.9.0)
+  minitest (~> 5.10, >= 5.10.3)
   minitest-line (~> 0.6.3)
   minitest-proveit (~> 1.0, >= 1.0.0)
+  pry (~> 0.11, >= 0.11.3)
   radiator!
   rake (~> 12.1, >= 12.1.0)
   simplecov (~> 0.15.1)

@@ -3,6 +3,7 @@ require 'rake/testtask'
 require 'yard'
 require 'radiator'
 require 'awesome_print'
+require 'pry'
 
 Rake::TestTask.new(:test) do |t|
   t.libs << 'test'
@@ -21,9 +22,11 @@ end
 
 task default: :test
 
-desc 'Deletes test/fixtures/vcr_cassettes/*.yml so they can be rebuilt fresh.'
-task :dump_vcr do |t|
-  exec 'rm -v test/fixtures/vcr_cassettes/*.yml'
+namespace :clean do
+  desc 'Deletes test/fixtures/vcr_cassettes/*.yml so they can be rebuilt fresh.'
+  task :vcr do |t|
+    exec 'rm -v test/fixtures/vcr_cassettes/*.yml'
+  end
 end
 
 desc 'Tests the ability to broadcast live data.  This task broadcasts a claim_reward_balance of 0.0000001 VESTS.'
@@ -101,7 +104,7 @@ task :test_live_stream, [:chain, :persist] do |t, args|
     else
       # This should not happen.  If it does, there's likely a bug in Radiator.
       
-      puts "Error, last block nunber was #{last_block_number}, did not expect #{n}."
+      puts "Error, last block number was #{last_block_number}, did not expect #{n}."
     end
     
     last_block_number = n
