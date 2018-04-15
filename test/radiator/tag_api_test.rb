@@ -19,7 +19,7 @@ module Radiator
     end
 
     def test_all_methods
-      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.method_names.each do |key|
           assert @api.send key
         end
@@ -27,9 +27,9 @@ module Radiator
     end
 
     def test_get_tags
-      VCR.use_cassette('get_tags', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('get_tags', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.get_tags do |tags|
-          assert_equal Hashie::Array, tags.class, tags.inspect
+          assert_equal NilClass, tags.class, tags.inspect
         end
       end
     end

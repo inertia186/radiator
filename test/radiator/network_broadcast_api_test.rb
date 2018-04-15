@@ -19,7 +19,7 @@ module Radiator
     end
 
     def test_all_methods
-      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.method_names.each do |key|
           assert @api.send key
         end
@@ -27,7 +27,7 @@ module Radiator
     end
 
     def test_broadcast_transaction
-      VCR.use_cassette('broadcast_transaction', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('broadcast_transaction', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.broadcast_transaction do |result|
           assert_equal NilClass, result.class, result.inspect
         end

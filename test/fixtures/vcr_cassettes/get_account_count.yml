@@ -5,12 +5,12 @@ http_interactions:
     uri: https://api.steemit.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["database_api","get_account_count",[]],"id":1,"method":"call"}'
+      string: '{"jsonrpc":"2.0","method":"condenser_api.get_account_count","params":[],"id":1}'
     headers:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.0pre1
+      - radiator/0.4.0pre3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,19 +25,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 18 Feb 2018 04:35:26 GMT
+      - Sun, 15 Apr 2018 16:44:20 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '24'
+      - '40'
       Connection:
       - keep-alive
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000030756441573030'
+      - '001082393378320029'
       X-Amzn-Trace-Id:
-      - Root=1-5a89028e-14802f4f1bed873e51134495
+      - Root=1-5ad38164-cbd13211f63c364f0e500d90
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"id":1,"result":766901}'
+      string: '{"jsonrpc":"2.0","result":943978,"id":1}'
     http_version: 
-  recorded_at: Sun, 18 Feb 2018 04:35:26 GMT
+  recorded_at: Sun, 15 Apr 2018 16:44:20 GMT
 recorded_with: VCR 3.0.3

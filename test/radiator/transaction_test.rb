@@ -76,7 +76,7 @@ module Radiator
     end
     
     def test_ref_block_num
-      VCR.use_cassette('ref_block_num', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('ref_block_num', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @transaction.operations << {type: :vote}
         @transaction.process(false)
         payload = @transaction.send(:payload)
@@ -85,7 +85,7 @@ module Radiator
     end
     
     def test_ref_block_prefix
-      VCR.use_cassette('ref_block_prefix', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('ref_block_prefix', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @transaction.operations << {type: :vote}
         @transaction.process(false)
         payload = @transaction.send(:payload)
@@ -104,7 +104,7 @@ module Radiator
       
       transaction = Radiator::Transaction.new(options)
       
-      VCR.use_cassette('golos_ref_block_prefix', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('golos_ref_block_prefix', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         transaction.operations << {type: :vote}
         transaction.process(false)
         payload = transaction.send(:payload)

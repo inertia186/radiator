@@ -23,7 +23,7 @@ module Radiator
     end
 
     def test_all_methods
-      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.method_names.each do |key|
           assert @api.send key
         end
@@ -31,7 +31,7 @@ module Radiator
     end
 
     def test_get_accounts_no_argument
-      VCR.use_cassette('get_accounts_no_argument', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('get_accounts_no_argument', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.get_accounts do |accounts, error|
           assert_equal NilClass, accounts.class, accounts.inspect
           assert_nil accounts
@@ -41,7 +41,7 @@ module Radiator
     end
 
     def test_get_accounts
-      VCR.use_cassette('get_accounts', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('get_accounts', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.get_accounts(['inertia']) do |accounts|
           assert_equal Hashie::Array, accounts.class, accounts.inspect
           account = accounts.first
@@ -52,15 +52,15 @@ module Radiator
     end
 
     def test_get_feed_history
-      VCR.use_cassette('get_feed_history', record: VCR_RECORD_MODE) do
-        @api.get_feed_history(['inertia']) do |history|
+      VCR.use_cassette('get_feed_history', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+        @api.get_feed_history() do |history|
           assert_equal Hashie::Mash, history.class, history.inspect
         end
       end
     end
 
     def test_get_account_count
-      VCR.use_cassette('get_account_count', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('get_account_count', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.get_account_count do |count|
           skip "Fixnum is deprecated." if count.class.to_s == 'Fixnum'
           assert_equal Integer, count.class, count.inspect
@@ -69,7 +69,7 @@ module Radiator
     end
 
     def test_get_account_references
-      VCR.use_cassette('get_account_references', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('get_account_references', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.get_account_references(["2.2.27007"]) do |_, error|
           assert_equal Hashie::Mash, error.class, error.inspect
         end
@@ -77,7 +77,7 @@ module Radiator
     end
     
     def test_get_dynamic_global_properties
-      VCR.use_cassette('get_dynamic_global_properties', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('get_dynamic_global_properties', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.get_dynamic_global_properties do |properties|
           assert_equal Hashie::Mash, properties.class, properties.inspect
         end
@@ -85,7 +85,7 @@ module Radiator
     end
     
     def test_get_hardfork_version
-      VCR.use_cassette('get_hardfork_version', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('get_hardfork_version', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.get_hardfork_version do |version|
           assert_equal String, version.class, version.inspect
         end
@@ -93,7 +93,7 @@ module Radiator
     end
     
     def test_get_vesting_delegations
-      VCR.use_cassette('get_vesting_delegations', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('get_vesting_delegations', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.get_vesting_delegations('minnowbooster', -1000, 1000) do |delegation|
           assert_equal Hashie::Array, delegation.class, delegation.inspect
         end
@@ -101,7 +101,7 @@ module Radiator
     end
     
     def test_get_witness_by_account
-      VCR.use_cassette('get_witness_by_account', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('get_witness_by_account', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         @api.get_witness_by_account('') do |witness|
           assert_equal NilClass, witness.class, witness.inspect
         end
@@ -109,7 +109,7 @@ module Radiator
     end
     
     def test_recover_transaction
-      VCR.use_cassette('recover_transaction', record: VCR_RECORD_MODE) do
+      VCR.use_cassette('recover_transaction', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
         assert_nil @api.send(:recover_transaction, [], 1, Time.now.utc), 'expect nil response from recover_transaction'
       end
     end
