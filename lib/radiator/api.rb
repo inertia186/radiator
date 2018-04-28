@@ -429,12 +429,15 @@ module Radiator
                 response = JSON[body]
                 
                 if response['id'] != options[:id]
+                  debug_payload(options, body) if ENV['DEBUG'] == 'true'
+                  
                   if !!response['id']
                     warning "Unexpected rpc_id (expected: #{options[:id]}, got: #{response['id']}), retrying ...", method_name, true
                   else
                     # The node has broken the jsonrpc spec.
                     warning "Node did not provide jsonrpc id (expected: #{options[:id]}, got: nothing, retrying ...", method_name, true
                   end
+                  
                   if response.keys.include?('error')
                     handle_error(response, options, method_name, tries)
                   end
@@ -833,6 +836,20 @@ module Radiator
         sleep 0.2
         false
       end
+    end
+    
+    def debug_payload(request, response)
+      request = JSON.pretty_generate(request)
+      response = JSON.parse(response) rescue response
+      response = JSON.pretty_generate(response) rescue response
+      
+      puts '=' * 80
+      puts "Request:"
+      puts request
+      puts '=' * 80
+      puts "Response:"
+      puts response
+      puts '=' * 80
     end
     
     def backoff
