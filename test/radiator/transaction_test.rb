@@ -38,7 +38,9 @@ module Radiator
             transaction = Radiator::Transaction.new(chain: chain, logger: log)
           end
         else
+          # :nocov:
           fail "did not expect chain: #{chain}"
+          # :nocov:
         end
         assert_equal '', io.string, 'expect empty log'
       end
@@ -76,7 +78,7 @@ module Radiator
     end
     
     def test_ref_block_num
-      VCR.use_cassette('ref_block_num', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('ref_block_num') do
         @transaction.operations << {type: :vote}
         @transaction.process(false)
         payload = @transaction.send(:payload)
@@ -85,7 +87,7 @@ module Radiator
     end
     
     def test_ref_block_prefix
-      VCR.use_cassette('ref_block_prefix', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('ref_block_prefix') do
         @transaction.operations << {type: :vote}
         @transaction.process(false)
         payload = @transaction.send(:payload)
@@ -104,7 +106,7 @@ module Radiator
       
       transaction = Radiator::Transaction.new(options)
       
-      VCR.use_cassette('golos_ref_block_prefix', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('golos_ref_block_prefix') do
         transaction.operations << {type: :vote}
         transaction.process(false)
         payload = transaction.send(:payload)

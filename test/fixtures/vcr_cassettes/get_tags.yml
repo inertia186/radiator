@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.0pre3
+      - radiator/0.4.0pre4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 15 Apr 2018 16:43:59 GMT
+      - Sat, 28 Apr 2018 17:42:10 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,9 +35,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000089621720226017'
+      - '000820463053451666'
       X-Amzn-Trace-Id:
-      - Root=1-5ad3814f-2c401c1422cc078c78f20fd0
+      - Root=1-5ae4b272-5ad997f8d451c190cdeccb28
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -52,8 +52,8 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32002,"message":"Assert Exception:method_itr
         != api_itr->second.end(): Could not find method get_tags","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"json_rpc_plugin.cpp","line":206,"method":"find_api_method","hostname":"","timestamp":"2018-04-15T16:43:59"},"format":"method_itr
+        Exception","stack":[{"context":{"level":"error","file":"json_rpc_plugin.cpp","line":206,"method":"find_api_method","hostname":"","timestamp":"2018-04-28T17:42:10"},"format":"method_itr
         != api_itr->second.end(): Could not find method ${method}","data":{"method":"get_tags"}}]}},"id":1}'
     http_version: 
-  recorded_at: Sun, 15 Apr 2018 16:43:59 GMT
+  recorded_at: Sat, 28 Apr 2018 17:42:10 GMT
 recorded_with: VCR 3.0.3

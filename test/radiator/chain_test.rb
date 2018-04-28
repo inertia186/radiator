@@ -59,67 +59,67 @@ module Radiator
     end
     
     def test_find_block
-      VCR.use_cassette('find_block', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('find_block') do
         refute_nil @chain.find_block(424377)
       end
     end
     
     def test_find_account
-      VCR.use_cassette('find_account', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('find_account') do
         refute_nil @chain.find_account('ned')
       end
     end
     
     def test_find_comment
-      VCR.use_cassette('find_comment', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('find_comment') do
         refute_nil @chain.find_comment('inertia', 'kinda-spooky')
       end
     end
     
     def test_find_comment_with_slug
-      VCR.use_cassette('find_comment', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('find_comment') do
         refute_nil @chain.find_comment('@inertia/kinda-spooky')
       end
     end
     
     def test_find_comment_with_slug_and_comments_anchor
-      VCR.use_cassette('find_comment', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('find_comment') do
         refute_nil @chain.find_comment('@inertia/kinda-spooky#comments')
       end
     end
     
     def test_properties
-      VCR.use_cassette('properties', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('properties') do
         refute_nil @chain.properties
       end
     end
     
     def test_block_time
-      VCR.use_cassette('block_time', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('block_time') do
         refute_nil @chain.block_time
       end
     end
     
     def test_base_per_mvest
-      VCR.use_cassette('base_per_mvest', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('base_per_mvest') do
         refute_nil @chain.base_per_mvest
       end
     end
     
     def test_base_per_debt
-      VCR.use_cassette('base_per_debt', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('base_per_debt') do
         refute_nil @chain.base_per_debt
       end
     end
     
     def test_followed_by
-      VCR.use_cassette('followed_by', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('followed_by') do
         refute_nil @chain.followed_by('inertia')
       end
     end
     
     def test_following
-      VCR.use_cassette('following', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('following') do
         refute_nil @chain.following('inertia')
       end
     end
@@ -129,13 +129,13 @@ module Radiator
       
       options = {
         title: 'title of my post',
-        body: 'body of my post',
+        body: 'body of my post (archive: edited)',
         tags: ['tag'],
         self_upvote: 10000,
         percent_steem_dollars: 0
       }
       
-      VCR.use_cassette('post!', record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      vcr_cassette('post!') do
         result = @chain.post!(options)
         refute_nil result
         assert_equal ErrorParser, result.class, "expect ErrorParser, got result: #{result}"

@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.0pre3
+      - radiator/0.4.0pre4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 15 Apr 2018 16:44:20 GMT
+      - Sat, 28 Apr 2018 17:41:17 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,9 +35,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000527347471453779'
+      - '000132087832963564'
       X-Amzn-Trace-Id:
-      - Root=1-5ad38164-56e3b80f282af1569a250d53
+      - Root=1-5ae4b23d-07540d55a470f769e1dc91f3
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -52,8 +52,8 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":867,"method":"get_account_references","hostname":"","timestamp":"2018-04-15T16:44:20"},"format":"false:
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":867,"method":"get_account_references","hostname":"","timestamp":"2018-04-28T17:41:17"},"format":"false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":1}'
     http_version: 
-  recorded_at: Sun, 15 Apr 2018 16:44:20 GMT
+  recorded_at: Sat, 28 Apr 2018 17:41:18 GMT
 recorded_with: VCR 3.0.3

@@ -39,9 +39,27 @@ end
 class Radiator::Test < MiniTest::Test
   defined? prove_it! and prove_it!
   
+  def chain_options
+    {
+      chain: :steem,
+      url: 'https://api.steemit.com',
+      failover_urls: [
+        'https://api.steemitstage.com',
+        'https://api.steemitdev.com',
+        'https://api.steem.house',
+      ]
+    }
+  end
+  
   # Most likely modes: 'once' and 'new_episodes'
   VCR_RECORD_MODE = (ENV['VCR_RECORD_MODE'] || 'once').to_sym
   
+  def vcr_cassette(name, &block)
+    VCR.use_cassette(name, record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
+      yield
+    end
+  end
+
   LOGGER = Logger.new(nil).tap do |logger|
     logger.progname = 'nil-logger'
   end
