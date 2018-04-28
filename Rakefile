@@ -34,7 +34,9 @@ task :test_live_broadcast, [:account, :wif, :chain] do |t, args|
   account_name = args[:account] || 'social'
   posting_wif = args[:wif] || '5JrvPrQeBBvCRdjv29iDvkwn3EQYZ9jqfAHzrCyUvfbEbRkrYFC'
   chain = args[:chain] || 'steem'
-  options = {chain: chain, wif: posting_wif}
+  # url = 'https://testnet.steemitdev.com/' # use testnet
+  url = nil # use default
+  options = {chain: chain, wif: posting_wif, url: url}
   tx = Radiator::Transaction.new(options)
   tx.operations << {
     type: :claim_reward_balance,
@@ -60,7 +62,9 @@ task :test_live_stream, [:chain, :persist] do |t, args|
   chain = args[:chain] || 'steem'
   persist = (args[:persist] || 'true') == 'true'
   last_block_number = 0
-  options = {chain: chain, persist: persist}
+  # url = 'https://testnet.steemitdev.com/'
+  url = nil # use default
+  options = {chain: chain, persist: persist, url: url}
   total_ops = 0.0
   total_vops = 0.0
   elapsed = 0
@@ -84,11 +88,13 @@ task :test_live_stream, [:chain, :persist] do |t, args|
           ap error
         end
         
-        vop_size = if vops.nil?
-          0
-        else
-          vops.size
-        end
+        puts "Problem: vops is nil!" if vops.nil?
+        
+        # Did we reach this point with an unhandled error that wasn't retried?
+        # If so, vops might be nil and we might need this error to get handled
+        # instead of checking for vops.nil?.
+        
+        vop_size = vops.size
         total_vops += vop_size
         
         vop_ratio = if total_vops > 0
