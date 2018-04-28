@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    radiator (0.4.0pre3)
+    radiator (0.4.0pre4)
       awesome_print (~> 1.7, >= 1.7.0)
       bitcoin-ruby (~> 0.0, >= 0.0.11)
       ffi (~> 1.9, >= 1.9.18)
