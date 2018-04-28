@@ -87,14 +87,20 @@ module Radiator
             @api_name = data_call_method['call.params']
           end
         else
-          @error_code = ['code']
-          @error_message = ['message']
+          @error_code = @error['code']
+          @error_message = @error['message']
           @expiry = false
           @can_retry = false
           @can_reprepare = false
         end
         
         case @error_code
+        when -32603
+          if error_match?('Internal Error')
+            @expiry = false
+            @can_retry = true
+            @can_reprepare = true
+          end
         when -32003
           if error_match?('Unable to acquire database lock')
             @expiry = false
@@ -148,7 +154,11 @@ module Radiator
           @can_reprepare = false
         end
       rescue => e
-        ap error_parser_exception: e, original_response: response#, backtrace: e.backtrace
+        if ENV['DEBUG'] == 'true'
+          ap error_parser_exception: e, original_response: response, backtrace: e.backtrace
+        else
+          ap error_parser_exception: e, original_response: response
+        end
         
         @expiry = false
         @can_retry = false
@@ -161,8 +171,14 @@ module Radiator
       
       case @error['code']
       when -32003
+        any_of = [
+          'Internal Error"',
+          '_api_plugin not enabled.'
+        ]
+        
         can_retry = error_match?('Unable to acquire database lock')
-        can_retry = if !can_retry && error_match?('Internal Error"')
+        
+        if !can_retry && error_match?(any_of)
           can_retry = true
           @node_degraded = true
         else
@@ -177,18 +193,24 @@ module Radiator
       can_retry
     end
     
-    def error_match?(match)
-      case match
-      when String
-        @error['message'] && @error['message'].include?(match)
-      when Array
-        if @error['message']
-          match.map { |m| @error['message'].include?(m) }.include? true
-        else
-          false
+    def error_match?(matches)
+      matches = [matches].flatten
+      
+      any = matches.map do |match|
+        case match
+        when String
+          @error['message'] && @error['message'].include?(match)
+        when Array
+          if @error['message']
+            match.map { |m| m.include?(match) }.include? true
+          else
+            false
+          end
+        else; false
         end
-      else; false
       end
+      
+      any.include?(true)
     end
     
     def to_s
