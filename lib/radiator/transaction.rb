@@ -172,7 +172,8 @@ module Radiator
 
         @api.get_block(block_number) do |block, error|
           if !!error
-            raise TransactionError, "Unable to prepare transaction.", error
+            ap error if ENV['DEBUG'] == 'true'
+            raise TransactionError, "Unable to prepare transaction: #{error.message || 'Unknown cause.'}"
           end
 
           if !!block && !!block.previous
