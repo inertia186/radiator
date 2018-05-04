@@ -435,7 +435,7 @@ module Radiator
                     warning "Unexpected rpc_id (expected: #{options[:id]}, got: #{response['id']}), retrying ...", method_name, true
                   else
                     # The node has broken the jsonrpc spec.
-                    warning "Node did not provide jsonrpc id (expected: #{options[:id]}, got: nothing, retrying ...", method_name, true
+                    warning "Node did not provide jsonrpc id (expected: #{options[:id]}, got: nothing), retrying ...", method_name, true
                   end
                   
                   if response.keys.include?('error')
