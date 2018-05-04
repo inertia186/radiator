@@ -142,7 +142,6 @@ module Radiator
       DEFAULT_STEEM_URL,
       'https://api.steemitstage.com',
       'https://appbasetest.timcliff.com',
-      'https://gtg.steem.house:8090',
       'https://api.steem.house',
       'https://seed.bitcoiner.me',
       'https://steemd.minnowsupportproject.org',
