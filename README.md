@@ -541,13 +541,14 @@ https://github.com/inertia186/radiator/issues/12
   * `HELL_ENABLED=true rake`
 * To run a stream test on the live STEEM blockchain with debug logging enabled:
   * `LOG=DEBUG rake test_live_stream`
+
 ---
 
 <center>
   <img src="http://www.steemimg.com/images/2016/08/19/RadiatorCoolingFan-54in-Webfdcb1.png" />
 </center>
 
-See my previous Ruby How To posts in: [/f/ruby](https://chainbb.com/f/ruby)
+See my previous Ruby How To posts in: [#radiator](https://steemit.com/created/radiator) [#ruby](https://steemit.com/created/ruby)
 
 ## Get in touch!
 
