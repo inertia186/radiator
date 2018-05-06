@@ -13,7 +13,7 @@ Radiator is an API Client for interaction with the STEEM network using Ruby.
 #### Changes in v0.4.0
 
 * Gem updates
-* AppBase Support
+* **AppBase Support**
   * Defaulting to `condenser_api.*` in `Radiator::Api` (see below)
   * Handle/recover from new `AppBase` errors.
 * `Radiator::Stream` now detects if it's stalled and takes action if it has to wait too long for a new block.
@@ -436,7 +436,7 @@ options = {
   ur: 'https://api.steemit.com',
   failover_urls: [
     'https://api.steemitstage.com',
-    'https://gtg.steem.house:8090'
+    'https://api.steem.house'
   ]
 }
 
