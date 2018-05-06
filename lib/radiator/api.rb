@@ -837,6 +837,12 @@ module Radiator
       end
     end
     
+    def check_file_open?
+      File.exists?('.')
+    rescue
+      false
+    end
+    
     def debug_payload(request, response)
       request = JSON.pretty_generate(request)
       response = JSON.parse(response) rescue response

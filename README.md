@@ -140,7 +140,7 @@ api = Radiator::Api.new
 api.get_dynamic_global_properties do |properties|
   properties.virtual_supply
 end
-=> "135377049.603 STEEM"
+=> "271342874.337 STEEM"
 ```
 
 ... or ...
@@ -151,14 +151,14 @@ require 'radiator'
 api = Radiator::Api.new
 response = api.get_dynamic_global_properties
 response.result.virtual_supply
-=> "135377049.603 STEEM"
+=> "271342874.337 STEEM"
 ```
 
 #### Follower API
 
 ```ruby
 api = Radiator::FollowApi.new
-api.get_followers('inertia', 0, 'blog', 100) do |followers|
+api.get_followers(account: 'inertia', start: 0, type: 'blog', limit: 100) do |followers|
   followers.map(&:follower)
 end
 => ["a11at",
