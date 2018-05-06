@@ -38,6 +38,5 @@ module Radiator
   require 'radiator/mixins/acts_as_wallet'
   require 'radiator/chain'
   require 'steem'
-  require 'golos'
   extend self
 end

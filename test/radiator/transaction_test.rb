@@ -20,7 +20,7 @@ module Radiator
     end
     
     def test_valid_chains
-      %w(steem golos test).each do |chain|
+      %w(steem test).each do |chain|
         io = StringIO.new
         log = Logger.new(io).tap do |logger|
           logger.progname = 'test-valid-chains'
@@ -30,9 +30,6 @@ module Radiator
         when :steem
           transaction = Radiator::Transaction.new(chain: chain, logger: log)
           assert_equal Radiator::Transaction::NETWORKS_STEEM_CHAIN_ID, transaction.chain_id, 'expect steem chain'
-        when :golos
-          transaction = Radiator::Transaction.new(chain: chain, logger: log)
-          assert_equal Radiator::Transaction::NETWORKS_GOLOS_CHAIN_ID, transaction.chain_id, 'expect golos chain'
         when :test
           assert_raises ApiError do
             transaction = Radiator::Transaction.new(chain: chain, logger: log)
@@ -91,25 +88,6 @@ module Radiator
         @transaction.operations << {type: :vote}
         @transaction.process(false)
         payload = @transaction.send(:payload)
-        assert_equal 1164960351, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
-      end
-    end
-    
-    def test_golos_ref_block_prefix
-      options = {
-        chain: :golos,
-        wif: '5JLw5dgQAx6rhZEgNN5C2ds1V47RweGshynFSWFbaMohsYsBvE8',
-        ref_block_num: 36029,
-        ref_block_prefix: 1164960351,
-        expiration: Time.parse('2016-08-08T12:24:17 Z'),
-      }
-      
-      transaction = Radiator::Transaction.new(options)
-      
-      vcr_cassette('golos_ref_block_prefix') do
-        transaction.operations << {type: :vote}
-        transaction.process(false)
-        payload = transaction.send(:payload)
         assert_equal 1164960351, payload[:ref_block_prefix], 'expect a certain ref_block_prefix'
       end
     end

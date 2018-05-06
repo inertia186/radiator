@@ -291,7 +291,6 @@ module Radiator
     def default_debt_asset
       case chain
       when :steem then ChainConfig::NETWORKS_STEEM_DEBT_ASSET
-      when :golos then ChainConfig::NETWORKS_GOLOS_DEBT_ASSET
       when :test then ChainConfig::NETWORKS_TEST_DEBT_ASSET
       else; raise ChainError, "Unknown chain: #{chain}"
       end

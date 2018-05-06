@@ -75,7 +75,6 @@ module Radiator
 
       case chain.to_s.downcase.to_sym
       when :steem then NETWORKS_STEEM_CHAIN_ID
-      when :golos then NETWORKS_GOLOS_CHAIN_ID
       when :test then NETWORKS_TEST_CHAIN_ID
       end
     end
@@ -83,7 +82,6 @@ module Radiator
     def url
       case chain.to_s.downcase.to_sym
       when :steem then NETWORKS_STEEM_DEFAULT_NODE
-      when :golos then NETWORKS_GOLOS_DEFAULT_NODE
       when :test then NETWORKS_TEST_DEFAULT_NODE
       end
     end

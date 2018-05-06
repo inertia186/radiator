@@ -23,9 +23,6 @@ module Radiator
           when 'STEEM' then 3
           when 'VESTS' then 6
           when 'SBD' then 3
-          when 'GOLOS' then 3
-          when 'GESTS' then 6
-          when 'GBG' then 3
           when 'CORE' then 3
           when 'CESTS' then 6
           when 'TEST' then 3

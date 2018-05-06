@@ -425,24 +425,6 @@ tx.operations << transfer
 tx.process(true)
 ```
 
-#### Golos
-
-Radiator also supports Golos.  To use the Golos blockchain, provide a node and chain_id:
-
-```ruby
-tx = Radiator::Transaction.new(wif: 'Your Wif Here', chain: :golos, url: 'https://ws.golos.io')
-vote = {
-  type: :vote,
-  voter: 'xeroc',
-  author: 'xeroc',
-  permlink: 'piston',
-  weight: 10000
-}
-
-tx.operations << vote
-tx.process(true)
-```
-
 There's a complete list of operations known to Radiator in [`broadcast_operations.json`](https://github.com/inertia186/radiator/blob/master/lib/radiator/broadcast_operations.json).
 
 ## Failover
@@ -531,8 +513,6 @@ Verify your code is not doing too much between blocks.
   * `HELL_ENABLED=true rake`
 * To run a stream test on the live STEEM blockchain with debug logging enabled:
   * `LOG=DEBUG rake test_live_stream`
-* To run a stream test on the live GOLOS blockchain with debug logging enabled:
-  * `LOG=DEBUG rake test_live_stream[golos]`
 ---
 
 <center>

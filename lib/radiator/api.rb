@@ -136,8 +136,6 @@ module Radiator
     
     DEFAULT_STEEM_URL = 'https://api.steemit.com'
     
-    DEFAULT_GOLOS_URL = 'https://ws.golos.io'
-    
     DEFAULT_STEEM_FAILOVER_URLS = [
       DEFAULT_STEEM_URL,
       'https://api.steemitstage.com',
@@ -154,16 +152,6 @@ module Radiator
       'https://steemd.steemgigs.org'
     ]
     
-    DEFAULT_GOLOS_FAILOVER_URLS = [
-      DEFAULT_GOLOS_URL,
-      'https://api.golos.cf',
-      # not recommended, not all plug-ins enabled:
-      # 'https://ws.goldvoice.club',
-      # 'http://golos-seed.arcange.eu',
-      # not recommended, requires option ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE
-      # 'https://golos-seed.arcange.eu',
-    ]
-    
     # @private
     POST_HEADERS = {
       'Content-Type' => 'application/json',
@@ -176,7 +164,6 @@ module Radiator
     def self.default_url(chain)
       case chain.to_sym
       when :steem then DEFAULT_STEEM_URL
-      when :golos then DEFAULT_GOLOS_URL
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end
@@ -184,7 +171,6 @@ module Radiator
     def self.default_failover_urls(chain)
       case chain.to_sym
       when :steem then DEFAULT_STEEM_FAILOVER_URLS
-      when :golos then DEFAULT_GOLOS_FAILOVER_URLS
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end
@@ -674,7 +660,6 @@ module Radiator
       
       api.get_blocks(block_range) do |block, block_num|
         unless defined? block.transaction_ids
-          # Happens on Golos, see: https://github.com/GolosChain/golos/issues/281
           error "Blockchain does not provide transaction ids in blocks, giving up."
           return nil
         end
