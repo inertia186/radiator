@@ -55,6 +55,7 @@ module Radiator
         
         params[p] = case v
         when Radiator::Type::Beneficiaries then [[0, v.to_h]]
+        when Radiator::Type::Amount then v.to_a
         else; v
         end
       end

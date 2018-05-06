@@ -5,16 +5,16 @@ http_interactions:
     uri: https://api.steemit.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["market_history_api","get_order_book",[10]],"id":1,"method":"call"}'
+      string: '{"jsonrpc":"2.0","method":"market_history_api.get_order_book","params":{"limit":10},"id":1}'
     headers:
       Content-Type:
       - application/json
+      User-Agent:
+      - radiator/0.4.0pre4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
       Connection:
       - keep-alive
       Keep-Alive:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 25 Oct 2017 23:09:03 GMT
+      - Sat, 28 Apr 2018 17:42:11 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -34,8 +34,10 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Response-Id:
-      - s36eca2aa-1b97-4892-9af1-223cc2a10fcb->f3b40194-1546-4fc7-9a31-10d41a0c77e3
+      X-Jussi-Request-Id:
+      - '001067091065953133'
+      X-Amzn-Trace-Id:
+      - Root=1-5ae4b273-52573f965cd4b2ecd8282712
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -48,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"result":{"bids":[{"price":"0.96306640342851635","steem":145369,"sbd":140000},{"price":"0.95573741114628763","steem":64864,"sbd":61993},{"price":"0.95039188566159516","steem":21690,"sbd":20614},{"price":"0.94999999999999996","steem":5000,"sbd":4750},{"price":"0.94984802431610937","steem":5264,"sbd":5000},{"price":"0.94581280788177335","steem":203,"sbd":192},{"price":"0.94298765014379970","steem":5911,"sbd":5574},{"price":"0.94295302013422833","steem":298,"sbd":281},{"price":"0.93999999999999995","steem":100000,"sbd":94000},{"price":"0.93602693602693621","steem":297,"sbd":278}],"asks":[{"price":"0.96832203624291047","steem":144580,"sbd":140000},{"price":"0.96999999999999997","steem":36678,"sbd":35577},{"price":"0.97471783295711056","steem":2215,"sbd":2159},{"price":"0.97599999999999998","steem":1000,"sbd":976},{"price":"0.97699999999999998","steem":1000,"sbd":977},{"price":"0.97699999999999998","steem":1000,"sbd":977},{"price":"0.97799999999999998","steem":1000,"sbd":978},{"price":"0.97799999999999998","steem":1000,"sbd":978},{"price":"0.97799999999999998","steem":1000,"sbd":978},{"price":"0.97899999999999998","steem":1000,"sbd":979}]},"id":1}'
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":["7000",3,"@@000000013"],"quote":["5869",3,"@@000000021"]},"real_price":"1.19270744590219802","steem":5751,"sbd":6860,"created":"2018-04-28T17:38:18"},{"order_price":{"base":["4286",3,"@@000000013"],"quote":["3600",3,"@@000000021"]},"real_price":"1.19055555555555559","steem":3600,"sbd":4286,"created":"2018-04-28T17:33:30"},{"order_price":{"base":["500",3,"@@000000013"],"quote":["420",3,"@@000000021"]},"real_price":"1.19047619047619047","steem":420,"sbd":500,"created":"2018-04-28T17:34:15"},{"order_price":{"base":["500",3,"@@000000013"],"quote":["420",3,"@@000000021"]},"real_price":"1.19047619047619047","steem":420,"sbd":500,"created":"2018-04-28T17:36:45"},{"order_price":{"base":["5400",3,"@@000000013"],"quote":["4536",3,"@@000000021"]},"real_price":"1.19047619047619047","steem":4536,"sbd":5400,"created":"2018-04-28T17:41:51"},{"order_price":{"base":["33328",3,"@@000000013"],"quote":["28000",3,"@@000000021"]},"real_price":"1.19028571428571439","steem":26483,"sbd":31523,"created":"2018-04-28T17:25:09"},{"order_price":{"base":["30500",3,"@@000000013"],"quote":["25627",3,"@@000000021"]},"real_price":"1.19015101260389433","steem":1512,"sbd":1800,"created":"2018-04-28T16:55:42"},{"order_price":{"base":["67764",3,"@@000000013"],"quote":["57292",3,"@@000000021"]},"real_price":"1.18278293653564193","steem":57292,"sbd":67764,"created":"2018-04-28T17:21:39"},{"order_price":{"base":["1830",3,"@@000000013"],"quote":["1548",3,"@@000000021"]},"real_price":"1.18217054263565902","steem":1548,"sbd":1830,"created":"2018-04-28T16:16:39"},{"order_price":{"base":["1260",3,"@@000000013"],"quote":["1066",3,"@@000000021"]},"real_price":"1.18198874296435275","steem":1066,"sbd":1260,"created":"2018-04-28T14:12:27"}],"asks":[{"order_price":{"base":["27064",3,"@@000000021"],"quote":["32281",3,"@@000000013"]},"real_price":"1.19276529707360335","steem":15802,"sbd":18848,"created":"2018-04-28T17:41:48"},{"order_price":{"base":["1570",3,"@@000000021"],"quote":["1873",3,"@@000000013"]},"real_price":"1.19299363057324848","steem":1570,"sbd":1873,"created":"2018-04-28T17:33:36"},{"order_price":{"base":["43000",3,"@@000000021"],"quote":["51311",3,"@@000000013"]},"real_price":"1.19327906976744180","steem":43000,"sbd":51311,"created":"2018-04-28T17:25:06"},{"order_price":{"base":["200000",3,"@@000000021"],"quote":["239000",3,"@@000000013"]},"real_price":"1.19500000000000006","steem":199877,"sbd":238853,"created":"2018-04-28T17:06:00"},{"order_price":{"base":["100000",3,"@@000000021"],"quote":["119515",3,"@@000000013"]},"real_price":"1.19514999999999993","steem":64677,"sbd":77298,"created":"2018-04-28T16:59:39"},{"order_price":{"base":["270",3,"@@000000021"],"quote":["323",3,"@@000000013"]},"real_price":"1.19629629629629619","steem":270,"sbd":323,"created":"2018-04-28T17:04:00"},{"order_price":{"base":["37000",3,"@@000000021"],"quote":["44294",3,"@@000000013"]},"real_price":"1.19713513513513514","steem":37000,"sbd":44294,"created":"2018-04-28T17:03:21"},{"order_price":{"base":["100000",3,"@@000000021"],"quote":["119718",3,"@@000000013"]},"real_price":"1.19717999999999991","steem":63481,"sbd":75998,"created":"2018-04-28T16:57:24"},{"order_price":{"base":["215414",3,"@@000000021"],"quote":["257893",3,"@@000000013"]},"real_price":"1.19719702526298200","steem":44663,"sbd":53470,"created":"2018-04-28T16:21:33"},{"order_price":{"base":["695453",3,"@@000000021"],"quote":["832596",3,"@@000000013"]},"real_price":"1.19719952318848288","steem":629593,"sbd":753748,"created":"2018-04-28T16:15:48"}]},"id":1}'
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 23:09:04 GMT
+  recorded_at: Sat, 28 Apr 2018 17:42:12 GMT
 recorded_with: VCR 3.0.3

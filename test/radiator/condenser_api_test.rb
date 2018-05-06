@@ -3,7 +3,8 @@ require 'test_helper'
 module Radiator
   class CondenserApiTest < Radiator::Test
     def setup
-      @api = Radiator::CondenserApi.new
+      @api = Radiator::CondenserApi.new(chain_options)
+      @silent_api = Radiator::CondenserApi.new(chain_options.merge(logger: LOGGER))
     end
     
     def test_method_missing
@@ -19,15 +20,15 @@ module Radiator
     end
     
     def test_all_methods
-      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE) do
-        @api.method_names.each do |key|
-          assert @api.send key
+      vcr_cassette('all_methods') do
+        @silent_api.method_names.each do |key|
+          assert @silent_api.send key
         end
       end
     end
     
     def test_look_up_witnesses
-      VCR.use_cassette('look_up_witnesses', record: VCR_RECORD_MODE) do
+      vcr_cassette('look_up_witnesses') do
         @api.lookup_witness_accounts('', 19) do |witnesses|
           assert_equal Hashie::Array, witnesses.class, witnesses.inspect
         end

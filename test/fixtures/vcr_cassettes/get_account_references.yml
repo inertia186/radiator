@@ -5,16 +5,16 @@ http_interactions:
     uri: https://api.steemit.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["database_api","get_account_references",[["2.2.27007"]]],"id":1,"method":"call"}'
+      string: '{"jsonrpc":"2.0","method":"condenser_api.get_account_references","params":[["2.2.27007"]],"id":1}'
     headers:
       Content-Type:
       - application/json
+      User-Agent:
+      - radiator/0.4.0pre4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
       Connection:
       - keep-alive
       Keep-Alive:
@@ -25,17 +25,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 25 Oct 2017 23:08:49 GMT
+      - Sat, 28 Apr 2018 17:41:17 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '909'
+      - '498'
       Connection:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Response-Id:
-      - s30adeea0-3b18-41a1-9977-d7b95565c194->0a3895f3-4c6d-4b03-ae93-80d2fe3d5f6a
+      X-Jussi-Request-Id:
+      - '000132087832963564'
+      X-Amzn-Trace-Id:
+      - Root=1-5ae4b23d-07540d55a470f769e1dc91f3
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -48,11 +50,10 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"error":{"code":1,"message":"7 bad_cast_exception: Bad Cast\nInvalid
-        cast from array_type to int64\n    {\"type\":\"array_type\"}\n    th_a  variant.cpp:382
-        as_int64\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_account_references\",[[\"2.2.27007\"]]]}\n    th_a  websocket_api.cpp:124
-        on_message","data":{"code":7,"name":"bad_cast_exception","message":"Bad Cast","stack":[{"context":{"level":"error","file":"variant.cpp","line":382,"method":"as_int64","hostname":"","thread_name":"th_a","timestamp":"2017-10-25T23:08:49"},"format":"Invalid
-        cast from ${type} to int64","data":{"type":"array_type"}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-25T23:08:49"},"format":"","data":{"call.method":"call","call.params":["database_api","get_account_references",[["2.2.27007"]]]}}]}},"id":1}'
+      string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":867,"method":"get_account_references","hostname":"","timestamp":"2018-04-28T17:41:17"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":1}'
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 23:08:49 GMT
+  recorded_at: Sat, 28 Apr 2018 17:41:18 GMT
 recorded_with: VCR 3.0.3

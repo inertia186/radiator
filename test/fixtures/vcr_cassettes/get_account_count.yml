@@ -5,16 +5,16 @@ http_interactions:
     uri: https://api.steemit.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["database_api","get_account_count",[]],"id":1,"method":"call"}'
+      string: '{"jsonrpc":"2.0","method":"condenser_api.get_account_count","params":[],"id":1}'
     headers:
       Content-Type:
       - application/json
+      User-Agent:
+      - radiator/0.4.0pre4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
       Connection:
       - keep-alive
       Keep-Alive:
@@ -25,17 +25,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 25 Oct 2017 23:08:54 GMT
+      - Sat, 28 Apr 2018 17:41:19 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '24'
+      - '40'
       Connection:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Response-Id:
-      - s4299b0c0-9ce0-47fa-b947-1f7d34b272e2->234ded50-b0cb-4d08-863d-08cd87a89c3e
+      X-Jussi-Request-Id:
+      - '000711954728564207'
+      X-Amzn-Trace-Id:
+      - Root=1-5ae4b23f-35f464efabd4aa57f1f9ff8e
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -48,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"result":425389,"id":1}'
+      string: '{"jsonrpc":"2.0","result":965207,"id":1}'
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 23:08:54 GMT
+  recorded_at: Sat, 28 Apr 2018 17:41:19 GMT
 recorded_with: VCR 3.0.3

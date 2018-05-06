@@ -24,6 +24,7 @@ module Radiator
   require 'radiator/network_broadcast_api'
   require 'radiator/chain_stats_api'
   require 'radiator/account_by_key_api'
+  require 'radiator/account_history_api'
   require 'radiator/condenser_api'
   require 'radiator/block_api'
   require 'radiator/stream'
@@ -33,8 +34,10 @@ module Radiator
   require 'radiator/transaction'
   require 'radiator/base_error'
   require 'radiator/error_parser'
+  require 'radiator/mixins/acts_as_poster'
+  require 'radiator/mixins/acts_as_voter'
+  require 'radiator/mixins/acts_as_wallet'
   require 'radiator/chain'
   require 'steem'
-  require 'golos'
   extend self
 end

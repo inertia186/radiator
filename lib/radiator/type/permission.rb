@@ -5,13 +5,14 @@ module Radiator
     class Permission < Serializer
       def initialize(value)
         super(:permission, value)
-        raise NotImplementedError, 'stub'
       end
       
       def to_bytes
+        pakHash(@value)
       end
       
       def to_s
+        @value.to_json
       end
     end
   end

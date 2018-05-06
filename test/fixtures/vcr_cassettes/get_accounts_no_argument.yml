@@ -5,16 +5,16 @@ http_interactions:
     uri: https://api.steemit.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["database_api","get_accounts",[]],"id":1,"method":"call"}'
+      string: '{"jsonrpc":"2.0","method":"condenser_api.get_accounts","params":[],"id":1}'
     headers:
       Content-Type:
       - application/json
+      User-Agent:
+      - radiator/0.4.0pre4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
       Connection:
       - keep-alive
       Keep-Alive:
@@ -25,17 +25,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 25 Oct 2017 23:08:53 GMT
+      - Sat, 28 Apr 2018 17:41:16 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '870'
+      - '428'
       Connection:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Response-Id:
-      - sdef82470-b880-4c49-8bc2-0bbbf5f07bd1->24d66c2c-240e-408c-93fb-06daa7afdd90
+      X-Jussi-Request-Id:
+      - '000486679741442564'
+      X-Amzn-Trace-Id:
+      - Root=1-5ae4b23c-52d9f6322ecbf1b8c60ca3b6
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -48,12 +50,10 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"error":{"code":1,"message":"10 assert_exception: Assert Exception\na0
-        != e: too few arguments passed to method\n    {}\n    th_a  api_connection.hpp:165
-        call_generic\n\n    {\"call.method\":\"call\",\"call.params\":[\"database_api\",\"get_accounts\",[]]}\n    th_a  websocket_api.cpp:124
-        on_message","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"api_connection.hpp","line":165,"method":"call_generic","hostname":"","thread_name":"th_a","timestamp":"2017-10-25T23:08:53"},"format":"a0
-        != e: too few arguments passed to method","data":{}},{"context":{"level":"warn","file":"websocket_api.cpp","line":124,"method":"on_message","hostname":"","thread_name":"th_a","timestamp":"2017-10-25T23:08:53"},"format":"","data":{"call.method":"call","call.params":["database_api","get_accounts",[]]}}]}},"id":1}'
+      string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:args.size()
+        == 1: Expected #s argument(s), was 0","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":814,"method":"get_accounts","hostname":"","timestamp":"2018-04-28T17:41:16"},"format":"args.size()
+        == 1: Expected #s argument(s), was ${n}","data":{"n":0}}]}},"id":1}'
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 23:08:53 GMT
+  recorded_at: Sat, 28 Apr 2018 17:41:16 GMT
 recorded_with: VCR 3.0.3

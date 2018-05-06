@@ -21,9 +21,11 @@ end
 
 task default: :test
 
-desc 'Deletes test/fixtures/vcr_cassettes/*.yml so they can be rebuilt fresh.'
-task :dump_vcr do |t|
-  exec 'rm -v test/fixtures/vcr_cassettes/*.yml'
+namespace :clean do
+  desc 'Deletes test/fixtures/vcr_cassettes/*.yml so they can be rebuilt fresh.'
+  task :vcr do |t|
+    exec 'rm -v test/fixtures/vcr_cassettes/*.yml'
+  end
 end
 
 desc 'Tests the ability to broadcast live data.  This task broadcasts a claim_reward_balance of 0.0000001 VESTS.'
@@ -31,7 +33,9 @@ task :test_live_broadcast, [:account, :wif, :chain] do |t, args|
   account_name = args[:account] || 'social'
   posting_wif = args[:wif] || '5JrvPrQeBBvCRdjv29iDvkwn3EQYZ9jqfAHzrCyUvfbEbRkrYFC'
   chain = args[:chain] || 'steem'
-  options = {chain: chain, wif: posting_wif}
+  # url = 'https://testnet.steemitdev.com/' # use testnet
+  url = nil # use default
+  options = {chain: chain, wif: posting_wif, url: url}
   tx = Radiator::Transaction.new(options)
   tx.operations << {
     type: :claim_reward_balance,
@@ -57,14 +61,15 @@ task :test_live_stream, [:chain, :persist] do |t, args|
   chain = args[:chain] || 'steem'
   persist = (args[:persist] || 'true') == 'true'
   last_block_number = 0
-  options = {chain: chain, persist: persist}
-  api = Radiator::Api.new(options)
+  # url = 'https://testnet.steemitdev.com/'
+  url = nil # use default
+  options = {chain: chain, persist: persist, url: url}
   total_ops = 0.0
   total_vops = 0.0
   elapsed = 0
   count = 0
   
-  Radiator::Stream.new(options).blocks do |b, n|
+  Radiator::Stream.new(options).blocks do |b, n, api|
     start = Time.now.utc
     
     if last_block_number == 0
@@ -75,7 +80,19 @@ task :test_live_stream, [:chain, :persist] do |t, args|
       o = t.map(&:operations)
       op_size = o.map(&:size).reduce(0, :+)
       total_ops += op_size
-      api.get_ops_in_block(n, true) do |vops|
+      
+      api.get_ops_in_block(n, true) do |vops, error|
+        if !!error
+          puts "Error on get_ops_in_block for block #{n}"
+          ap error if defined? ap
+        end
+        
+        puts "Problem: vops is nil!" if vops.nil?
+        
+        # Did we reach this point with an unhandled error that wasn't retried?
+        # If so, vops might be nil and we might need this error to get handled
+        # instead of checking for vops.nil?.
+        
         vop_size = vops.size
         total_vops += vop_size
         
@@ -92,7 +109,7 @@ task :test_live_stream, [:chain, :persist] do |t, args|
     else
       # This should not happen.  If it does, there's likely a bug in Radiator.
       
-      puts "Error, last block nunber was #{last_block_number}, did not expect #{n}."
+      puts "Error, last block number was #{last_block_number}, did not expect #{n}."
     end
     
     last_block_number = n

@@ -3,7 +3,7 @@ require 'test_helper'
 module Radiator
   class AccountByKeyApiTest < Radiator::Test
     def setup
-      @api = Radiator::AccountByKeyApi.new
+      @api = Radiator::AccountByKeyApi.new(chain_options)
     end
 
     def test_method_missing
@@ -19,7 +19,7 @@ module Radiator
     end
 
     def test_all_methods
-      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE) do
+      vcr_cassette('all_methods') do
         @api.method_names.each do |key|
           assert @api.send key
         end
@@ -27,9 +27,9 @@ module Radiator
     end
 
     def test_get_key_references
-      VCR.use_cassette('get_key_references', record: VCR_RECORD_MODE) do
+      vcr_cassette('get_key_references') do
         keys = ['STM71f6yWztimJuREVyyMXNqAVbx1FzPVW6LLXNoQ35dHwKuszmHX']
-        @api.get_key_references(keys) do |account_names|
+        @api.get_key_references(keys: keys) do |account_names|
           assert_equal Hashie::Array, account_names.class, account_names.inspect
         end
       end

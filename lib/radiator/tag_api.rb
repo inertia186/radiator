@@ -27,7 +27,7 @@ module Radiator
     end
     
     def api_name
-      :tag_api
+      :tags_api
     end
   end
 end

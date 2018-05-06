@@ -21,7 +21,7 @@ module Radiator
     def test_all_methods
       skip "cannot execute an asynchronous request in tests"
       
-      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE) do
+      vcr_cassette('all_methods') do
         @api.method_names.each do |key|
           assert @api.send key
         end
@@ -31,7 +31,7 @@ module Radiator
     def test_get_operations
       skip "cannot execute an asynchronous request in tests"
       
-      VCR.use_cassette('get_operations', record: VCR_RECORD_MODE) do
+      vcr_cassette('get_operations') do
         @api.operations
         assert_equal Hashie::Mash, response.class, response.inspect
       end

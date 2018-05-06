@@ -5,7 +5,9 @@ module Radiator
   #
   # @return [Logger]
   def self.logger
-    @logger ||= Logger.new(STDOUT)
+    @@logger ||= Logger.new(STDOUT).tap do |logger|
+      logger.progname = 'radiator'
+    end
   end
 
   # Sets the logger that Radiator uses for reporting errors.
@@ -13,6 +15,6 @@ module Radiator
   # @param logger [Logger] The logger to set as Radiator's logger.
   # @return [void]
   def self.logger=(logger)
-    @logger = logger
+    @@logger = logger
   end
 end

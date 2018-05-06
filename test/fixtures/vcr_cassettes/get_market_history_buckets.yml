@@ -5,16 +5,16 @@ http_interactions:
     uri: https://api.steemit.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["market_history_api","get_market_history_buckets",[]],"id":1,"method":"call"}'
+      string: '{"jsonrpc":"2.0","method":"market_history_api.get_market_history_buckets","params":{},"id":1}'
     headers:
       Content-Type:
       - application/json
+      User-Agent:
+      - radiator/0.4.0pre4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
       Connection:
       - keep-alive
       Keep-Alive:
@@ -25,17 +25,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 25 Oct 2017 23:09:06 GMT
+      - Sat, 28 Apr 2018 17:42:10 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '40'
+      - '73'
       Connection:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Response-Id:
-      - se127499e-3658-45ba-9578-9f6347a74129->2ffd5129-ed7a-4aff-9c18-2b6114e10265
+      X-Jussi-Request-Id:
+      - '000658527084783963'
+      X-Amzn-Trace-Id:
+      - Root=1-5ae4b272-0b9071c0fa8197ba94270f96
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -48,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"result":[15,60,300,3600,86400],"id":1}'
+      string: '{"jsonrpc":"2.0","result":{"bucket_sizes":[15,60,300,3600,86400]},"id":1}'
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 23:09:06 GMT
+  recorded_at: Sat, 28 Apr 2018 17:42:10 GMT
 recorded_with: VCR 3.0.3

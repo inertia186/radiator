@@ -5,16 +5,16 @@ http_interactions:
     uri: https://api.steemit.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["tag_api","get_tags",[]],"id":1,"method":"call"}'
+      string: '{"jsonrpc":"2.0","method":"tags_api.get_tags","params":{},"id":1}'
     headers:
       Content-Type:
       - application/json
+      User-Agent:
+      - radiator/0.4.0pre4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
       Connection:
       - keep-alive
       Keep-Alive:
@@ -25,17 +25,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 25 Oct 2017 23:08:43 GMT
+      - Sat, 28 Apr 2018 17:42:10 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '20'
+      - '483'
       Connection:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Response-Id:
-      - s5e0290b0-b269-4acf-b4d2-598e4a1e53c7->51f479ec-6996-4307-88bf-da3af105a080
+      X-Jussi-Request-Id:
+      - '000820463053451666'
+      X-Amzn-Trace-Id:
+      - Root=1-5ae4b272-5ad997f8d451c190cdeccb28
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -48,7 +50,10 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"result":[],"id":1}'
+      string: '{"jsonrpc":"2.0","error":{"code":-32002,"message":"Assert Exception:method_itr
+        != api_itr->second.end(): Could not find method get_tags","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"json_rpc_plugin.cpp","line":206,"method":"find_api_method","hostname":"","timestamp":"2018-04-28T17:42:10"},"format":"method_itr
+        != api_itr->second.end(): Could not find method ${method}","data":{"method":"get_tags"}}]}},"id":1}'
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 23:08:43 GMT
+  recorded_at: Sat, 28 Apr 2018 17:42:10 GMT
 recorded_with: VCR 3.0.3

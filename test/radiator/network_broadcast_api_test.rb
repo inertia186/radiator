@@ -3,7 +3,8 @@ require 'test_helper'
 module Radiator
   class NetworkBroadcastApiTest < Radiator::Test
     def setup
-      @api = Radiator::NetworkBroadcastApi.new
+      @api = Radiator::NetworkBroadcastApi.new(chain_options)
+      @silent_api = Radiator::NetworkBroadcastApi.new(chain_options.merge(logger: LOGGER))
     end
 
     def test_method_missing
@@ -19,16 +20,16 @@ module Radiator
     end
 
     def test_all_methods
-      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE) do
-        @api.method_names.each do |key|
-          assert @api.send key
+      vcr_cassette('all_methods') do
+        @silent_api.method_names.each do |key|
+          assert @silent_api.send key
         end
       end
     end
 
     def test_broadcast_transaction
-      VCR.use_cassette('broadcast_transaction', record: VCR_RECORD_MODE) do
-        @api.broadcast_transaction do |result|
+      vcr_cassette('broadcast_transaction') do
+        @silent_api.broadcast_transaction do |result|
           assert_equal NilClass, result.class, result.inspect
         end
       end

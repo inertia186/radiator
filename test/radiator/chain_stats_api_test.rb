@@ -3,7 +3,7 @@ require 'test_helper'
 module Radiator
   class ChainStatsApiTest < Radiator::Test
     def setup
-      @api = Radiator::ChainStatsApi.new
+      @api = Radiator::ChainStatsApi.new(chain_options)
     end
 
     def test_method_missing
@@ -19,7 +19,9 @@ module Radiator
     end
 
     def test_all_methods
-      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE) do
+      skip 'This plugin is not typically enabled.'
+      
+      vcr_cassette('all_methods') do
         @api.method_names.each do |key|
           assert @api.send key
         end
@@ -27,7 +29,9 @@ module Radiator
     end
 
     def test_get_stats_for_time
-      VCR.use_cassette('get_stats_for_time', record: VCR_RECORD_MODE) do
+      skip 'This plugin is not typically enabled.'
+      
+      vcr_cassette('get_stats_for_time') do
         @api.get_stats_for_time("20161031T235959", 1000) do |stats|
           assert_equal NilClass, stats.class, stats.inspect
         end

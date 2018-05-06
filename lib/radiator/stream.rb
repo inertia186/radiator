@@ -17,11 +17,17 @@ module Radiator
     # @private
     INITIAL_TIMEOUT = 0.0200
     
+    # Note, even though block production is advertised at 3 seconds, often
+    # blocks are available in 1.5 seconds.  However, we still keep our
+    # expectations at 3 seconds.
+    # @private
+    BLOCK_PRODUCTION = 3.0
+    
     # @private
     MAX_TIMEOUT = 80
     
     # @private
-    MAX_BLOCKS_PER_NODE = 1000
+    MAX_BLOCKS_PER_NODE = 10000
     
     RANGE_BEHIND_WARNING = 400
     
@@ -120,7 +126,7 @@ module Radiator
     # @param mode we have the choice between
     #   * :head the last block
     #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
-    # @param block the block to execute for each result, optional.
+    # @param block the block to execute for each result, optional.  Yields: |op, trx_id, block_num, api|
     # @param options [Hash] additional options
     # @option options [Boollean] :include_virtual Also stream virtual options.  Setting this true will impact performance.  Default: false.
     # @return [Hash]
@@ -148,19 +154,28 @@ module Radiator
         end.compact
         
         if include_virtual && !virtual_ops_collected
-          api.get_ops_in_block(block_number, true) do |vops|
-            vops.each do |vtx|
-              next unless defined? vtx.op
+          catch :pop_vops do; begin
+            api.get_ops_in_block(block_number, true) do |vops, error|
+              if !!error
+                standby "Node responded with: #{error.message || 'unknown error'}, retrying ...", {
+                  error: error,
+                  and: {throw: :pop_vops}
+                }
+              end
               
-              t = vtx.op.first.to_sym
-              op = vtx.op.last
-              if type.size == 1 && type.first == t
-                ops << op
-              elsif type.none? || type.include?(t)
-                ops << {t => op}
+              vops.each do |vtx|
+                next unless defined? vtx.op
+                
+                t = vtx.op.first.to_sym
+                op = vtx.op.last
+                if type.size == 1 && type.first == t
+                  ops << op
+                elsif type.none? || type.include?(t)
+                  ops << {t => op}
+                end
               end
             end
-          end
+          end; end
           
           virtual_ops_collected = true
         end
@@ -170,7 +185,7 @@ module Radiator
         return ops unless !!block
         
         ops.each do |op|
-          yield op, trx_id, block_number
+          yield op, trx_id, block_number, api
         end
       end
     end
@@ -186,7 +201,7 @@ module Radiator
     # @param mode we have the choice between
     #   * :head the last block
     #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
-    # @param block the block to execute for each result, optional.
+    # @param block the block to execute for each result, optional.  Yields: |tx, trx_id, api|
     # @return [Hash]
     def transactions(start = nil, mode = :irreversible, &block)
       blocks(start, mode) do |b, block_number|
@@ -198,7 +213,7 @@ module Radiator
             b['transaction_ids'][index]
           end
           
-          yield transaction, trx_id, block_number
+          yield transaction, trx_id, block_number, api
         end
       end
     end
@@ -209,13 +224,27 @@ module Radiator
     #   stream.blocks do |bk, num|
     #     puts "[#{num}] #{bk.to_json}"
     #   end
-    # 
+    #
+    # For convenience and memory management, the api used to poll the current
+    # block data is also available inside the block, e.g.:
+    #
+    #   stream = Radiator::Stream.new
+    #   stream.blocks do |bk, num, api|
+    #     puts "[#{num}] #{bk.to_json}"
+    #     
+    #     api.get_ops_in_block(num, true) do |vops, error|
+    #       puts vops
+    #     end
+    #   end
+    #
+    # This idiom is useful for very long running scripts.
+    #
     # @param start starting block
     # @param mode we have the choice between
     #   * :head the last block
     #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
     # @param max_blocks_per_node the number of blocks to read before trying a new node
-    # @param block the block to execute for each result, optional.
+    # @param block the block to execute for each result, optional.  Yields: |bk, num, api|
     # @return [Hash]
     def blocks(start = nil, mode = :irreversible, max_blocks_per_node = MAX_BLOCKS_PER_NODE, &block)
       reset_api
@@ -229,7 +258,14 @@ module Radiator
         break if stop?
         
         catch :sequence do; begin
-          head_block = api.get_dynamic_global_properties do |properties|
+          head_block = api.get_dynamic_global_properties do |properties, error|
+            if !!error
+              standby "Node responded with: #{error.message || 'unknown error'}, retrying ...", {
+                error: error,
+                and: {throw: :sequence}
+              }
+            end
+            
             break if stop?
             
             if properties.head_block_number.nil?
@@ -247,9 +283,17 @@ module Radiator
           end
             
           if head_block == latest_block_number
-            # This can when there's a delay in block production.
-            sleep 0.5
-            throw :sequence
+            # This can happen when there's a delay in block production.
+            
+            if current_timeout > BLOCK_PRODUCTION * 6
+              standby "Stream has stalled severely ...", {
+                and: {backoff: api, throw: :sequence}
+              }
+            elsif current_timeout > BLOCK_PRODUCTION * 3
+              warning "Stream has stalled ..."
+            end
+            
+            timeout and throw :sequence
           elsif head_block < latest_block_number
             # This can happen if a reverse proxy is acting up.
             standby "Invalid block sequence at height: #{head_block}", {
@@ -257,6 +301,7 @@ module Radiator
             }
           end
           
+          reset_timeout
           start ||= head_block
           range = (start..head_block)
           
@@ -277,29 +322,37 @@ module Radiator
               current_range = r[index..-1]
               
               if current_range.size % RANGE_BEHIND_WARNING == 0
-                standby "Stream behind by #{current_range.size} blocks (about #{(current_range.size * 3) / 60.0} minutes)."
+                warning "Stream behind by #{current_range.size} blocks (about #{(current_range.size * 3) / 60.0} minutes)."
               end
             end
             
-            block_api.get_block(n) do |current_block, error|
-              if current_block.nil?
+            block_api.get_block(block_num: n) do |current_block, error|
+              if !!error
+                if error.message == 'Unable to acquire database lock'
+                  start = n
+                  timeout
+                  standby "Node was unable to acquire database lock, retrying ...", {
+                    and: {throw: :sequence}
+                  }
+                else
+                  standby "Node responded with: #{error.message || 'unknown error'}, retrying ...", {
+                    error: error,
+                    and: {throw: :sequence}
+                  }
+                end
+              elsif current_block.nil?
                 standby "Node responded with: empty block, retrying ...", {
-                  and: {throw: :sequence}
-                }
-              elsif !!error
-                standby "Node responded with: #{error.message || 'unknown error'}, retrying ...", {
-                  error: error,
                   and: {throw: :sequence}
                 }
               end
               
               latest_block_number = n
               return current_block, n if block.nil?
-              yield current_block, n
+              yield current_block, n, api
             end
             
             start = head_block + 1
-            sleep 3 / range.size
+            sleep BLOCK_PRODUCTION / range.size
           end
         rescue StreamError; raise
         # rescue => e
@@ -331,6 +384,7 @@ module Radiator
       
       @api = nil
       @block_api = nil
+      GC.start
     end
     
     # @private
@@ -399,11 +453,11 @@ module Radiator
               raise StreamError, JSON[response.error] if !!response.error
               result = response.result
               break if !!result
-              warnning "#{key}: #{param} result missing, retrying with timeout: #{@timeout || INITIAL_TIMEOUT} seconds"
+              warning "#{key}: #{param} result missing, retrying with timeout: #{current_timeout} seconds"
               reset_api
-              sleep timeout
+              timeout
             end
-            @timeout = INITIAL_TIMEOUT
+            reset_timeout
             result
           else
             key_value = api.get_dynamic_global_properties.result[key]
@@ -417,7 +471,7 @@ module Radiator
             return value
           end
         end
-        sleep 0.0200
+        sleep current_timeout
       end
     end
     
@@ -429,8 +483,17 @@ module Radiator
     def timeout
       @timeout ||= INITIAL_TIMEOUT
       @timeout *= 2
-      @timeout = INITIAL_TIMEOUT if @timeout > MAX_TIMEOUT
+      reset_timeout if @timeout > MAX_TIMEOUT
+      sleep @timeout || INITIAL_TIMEOUT
       @timeout
+    end
+    
+    def current_timeout
+      @timeout || INITIAL_TIMEOUT
+    end
+    
+    def reset_timeout
+      @timeout = nil
     end
     
     def virtual_op_type?(type)

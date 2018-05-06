@@ -5,16 +5,16 @@ http_interactions:
     uri: https://api.steemit.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","params":["condenser_api","lookup_witness_accounts",["",19]],"id":1,"method":"call"}'
+      string: '{"jsonrpc":"2.0","method":"condenser_api.lookup_witness_accounts","params":["",19],"id":1}'
     headers:
       Content-Type:
       - application/json
+      User-Agent:
+      - radiator/0.4.0pre4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
       Connection:
       - keep-alive
       Keep-Alive:
@@ -25,17 +25,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 25 Oct 2017 23:08:59 GMT
+      - Sat, 28 Apr 2018 17:41:58 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '268'
+      - '284'
       Connection:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Response-Id:
-      - sed66d707-31e7-4cf0-8bd6-46355319ce69->0e8c24ba-7d6a-43b8-a25f-7080379e3d38
+      X-Jussi-Request-Id:
+      - '000570345727054658'
+      X-Amzn-Trace-Id:
+      - Root=1-5ae4b266-f0b0ef4ac732406e207d07c1
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -48,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"result":["a-0","a-h","a-pile-of-steem","a-z","a001","a01.cshrem","a02.cshrem","a0de6qzchbut","a1i-00ba0eb5","a1i-01e13986","a1i-03a7078f","a1i-04a70788","a1i-04ba0eb1","a1i-05a70789","a1i-06a7078a","a1i-06ba0eb3","a1i-06e13981","a1i-07a7078b","a1i-07ba0eb2"],"id":1}'
+      string: '{"jsonrpc":"2.0","result":["a-0","a-h","a-pile-of-steem","a-z","a001","a01.cshrem","a02.cshrem","a0de6qzchbut","a1i-00ba0eb5","a1i-01e13986","a1i-03a7078f","a1i-04a70788","a1i-04ba0eb1","a1i-05a70789","a1i-06a7078a","a1i-06ba0eb3","a1i-06e13981","a1i-07a7078b","a1i-07ba0eb2"],"id":1}'
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 23:08:59 GMT
+  recorded_at: Sat, 28 Apr 2018 17:41:58 GMT
 recorded_with: VCR 3.0.3

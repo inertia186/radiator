@@ -3,7 +3,7 @@ require 'test_helper'
 module Radiator
   class TagApiTest < Radiator::Test
     def setup
-      @api = Radiator::TagApi.new
+      @api = Radiator::TagApi.new(chain_options)
     end
 
     def test_method_missing
@@ -19,7 +19,7 @@ module Radiator
     end
 
     def test_all_methods
-      VCR.use_cassette('all_methods', record: VCR_RECORD_MODE) do
+      vcr_cassette('all_methods') do
         @api.method_names.each do |key|
           assert @api.send key
         end
@@ -27,9 +27,9 @@ module Radiator
     end
 
     def test_get_tags
-      VCR.use_cassette('get_tags', record: VCR_RECORD_MODE) do
+      vcr_cassette('get_tags') do
         @api.get_tags do |tags|
-          assert_equal Hashie::Array, tags.class, tags.inspect
+          assert_equal NilClass, tags.class, tags.inspect
         end
       end
     end

@@ -1,6 +1,8 @@
 module Radiator
   module Utils
     def extract_signatures(options)
+      return [] unless defined? options[:params].map
+      
       params = options[:params]
       
       signatures = params.map do |param|
