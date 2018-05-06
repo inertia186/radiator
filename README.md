@@ -457,22 +457,6 @@ There is another rare scenario involving `::Transaction` broadcasts that's handl
 tx = Radiator::Transaction.new(wif: wif, recover_transactions_on_error: false)
 ```
 
-### Golos Failover Examples
-
-Typically, you only need to pass `chain: :golos` to enable Golos.  Failover is enabled by default.  If you want to provide your own full nodes, use this format:
-
-```ruby
-options = {
-  chain: :golos,
-  url: 'https://ws.golos.io',
-  failover_urls: [
-    'https://api.golos.cf'
-  ]
-}
-
-api = Radiator::Api.new(options)
-```
-
 ## Debugging
 
 To enable debugging, set environment `LOG=DEBUG` before launching your app.  E.g.:
