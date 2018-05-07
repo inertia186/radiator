@@ -18,6 +18,6 @@ before_script:
 script:
   - TESTOPTS="--verbose" bundle exec rake test
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT --coverage-input-type simplecov
 notifications:
   slack: galacticaactual:rhAXgZ68aoikbxBBA05xIUVC
