@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.0pre4
+      - radiator/0.4.2pre1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 28 Apr 2018 17:41:17 GMT
+      - Sat, 19 May 2018 20:50:23 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,9 +35,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '001056298827046348'
+      - '000845440023680266'
       X-Amzn-Trace-Id:
-      - Root=1-5ae4b23d-a94520c0fa4d11e0c81b4b78
+      - Root=1-5b008e0f-5e2951d5ae742a84dbe21c0c
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -54,5 +54,5 @@ http_interactions:
         VESTS","min_delegation_time":"2018-01-29T11:44:39"},{"id":333643,"delegator":"minnowbooster","delegatee":"utopian-io","vesting_shares":"20539024.967918
         VESTS","min_delegation_time":"2017-11-16T08:27:03"}],"id":1}'
     http_version: 
-  recorded_at: Sat, 28 Apr 2018 17:41:17 GMT
+  recorded_at: Sat, 19 May 2018 20:50:23 GMT
 recorded_with: VCR 3.0.3

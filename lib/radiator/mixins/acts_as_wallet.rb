@@ -5,7 +5,7 @@ module Radiator
       #
       # Examples:
       #
-      #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+      #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
       #     steem.claim_reward_balance(reward_sbd: '100.000 SBD')
       #     steem.broadcast!
       #
@@ -33,7 +33,7 @@ module Radiator
       #
       # Examples:
       #
-      #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+      #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
       #     steem.claim_reward_balance!(reward_sbd: '100.000 SBD')
       #
       # @see claim_reward_balance
@@ -41,7 +41,7 @@ module Radiator
       
       # Create a transfer operation.
       #
-      #     steem = Steem.new(account_name: 'your account name', wif: 'your active wif')
+      #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your active wif')
       #     steem.transfer(amount: '1.000 SBD', to: 'account name', memo: 'this is a memo')
       #     steem.broadcast!
       #
@@ -57,7 +57,7 @@ module Radiator
       
       # Create a transfer operation and broadcasts it right away.
       #
-      #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+      #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
       #     steem.transfer!(amount: '1.000 SBD', to: 'account name', memo: 'this is a memo')
       #
       # @see transfer

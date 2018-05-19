@@ -46,7 +46,7 @@ module Radiator
           assert_equal Hashie::Array, accounts.class, accounts.inspect
           account = accounts.first
           owner_key_auths = account.owner.key_auths.first
-          assert_equal owner_key_auths.first, 'STM6Xi6tS8Pm9bZFZybUohLRe1EXPbaYpvKS9YAFc92MjWRnGjktX'
+          assert_equal 'STM5LC8uBiiaihoPhM16CKktPnfb1Yop7fLicuNVgZm6JvU8yCZ7v', owner_key_auths.first
         end
       end
     end

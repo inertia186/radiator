@@ -3,7 +3,7 @@ module Radiator
     module ActsAsPoster
       # Creates a post operation.
       #
-      #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+      #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
       #     options = {
       #       title: 'This is my fancy post title.',
       #       body: 'This is my fancy post body.',
@@ -80,7 +80,7 @@ module Radiator
       
       # Create a vote operation and broadcasts it right away.
       #
-      #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+      #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
       #     options = {
       #       title: 'This is my fancy post title.',
       #       body: 'This is my fancy post body.',
@@ -95,7 +95,7 @@ module Radiator
       #
       # Examples:
       #
-      #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+      #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
       #     steem.delete_comment('permlink')
       #     steem.broadcast!
       #
@@ -114,7 +114,7 @@ module Radiator
       #
       # Examples:
       #
-      #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+      #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
       #     steem.delete_comment!('permlink')
       #
       # @see delete_comment

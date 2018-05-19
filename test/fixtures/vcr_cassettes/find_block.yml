@@ -5,12 +5,12 @@ http_interactions:
     uri: https://api.steemit.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","method":"block_api.get_block","params":{"block_num":424377},"id":1}'
+      string: '{"jsonrpc":"2.0","method":"condenser_api.get_block","params":[424377],"id":1}'
     headers:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.0pre4
+      - radiator/0.4.2pre1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,19 +25,21 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 28 Apr 2018 17:42:06 GMT
+      - Sat, 19 May 2018 20:57:53 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '560'
+      - '550'
       Connection:
       - keep-alive
       Server:
       - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_block.params=[424377]
       X-Jussi-Request-Id:
-      - '000559810912792461'
+      - '000934501583375109'
       X-Amzn-Trace-Id:
-      - Root=1-5ae4b26e-68f11f4e16edb1186d140763
+      - Root=1-5b008fd1-062745a351d7b135cbb3bcca
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,7 +52,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"block":{"previous":"000679b8ca84a49ff305bca87b5940a67390eac8","timestamp":"2016-04-08T15:18:00","witness":"coldstorage20","transaction_merkle_root":"0000000000000000000000000000000000000000","extensions":[],"witness_signature":"1f330401100b39841f91e44976dd163f5fce4d0bb2c066c15c83ea1490ae91465442dace00a0f30afe4763816be0962f913a37ddd91d101ff1fd4c2a427b04d545","transactions":[],"block_id":"000679b94f18e9d523d84b7228928ce8526f2b55","signing_key":"STM7hKj2K3uyk4DwF8cLJiw14KsHYLgAUDi4n4ckrneL5geenuYjX","transaction_ids":[]}},"id":1}'
+      string: '{"id":1,"jsonrpc":"2.0","result":{"previous":"000679b8ca84a49ff305bca87b5940a67390eac8","timestamp":"2016-04-08T15:18:00","witness":"coldstorage20","transaction_merkle_root":"0000000000000000000000000000000000000000","extensions":[],"witness_signature":"1f330401100b39841f91e44976dd163f5fce4d0bb2c066c15c83ea1490ae91465442dace00a0f30afe4763816be0962f913a37ddd91d101ff1fd4c2a427b04d545","transactions":[],"block_id":"000679b94f18e9d523d84b7228928ce8526f2b55","signing_key":"STM7hKj2K3uyk4DwF8cLJiw14KsHYLgAUDi4n4ckrneL5geenuYjX","transaction_ids":[]}}'
     http_version: 
-  recorded_at: Sat, 28 Apr 2018 17:42:06 GMT
+  recorded_at: Sat, 19 May 2018 20:57:53 GMT
 recorded_with: VCR 3.0.3

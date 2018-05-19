@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.0pre4
+      - radiator/0.4.2pre1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 28 Apr 2018 17:42:11 GMT
+      - Sat, 19 May 2018 20:55:38 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,9 +35,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000326247915580711'
+      - '000803101450737746'
       X-Amzn-Trace-Id:
-      - Root=1-5ae4b273-9dd586107fbe19589d2ee560
+      - Root=1-5b008f4a-0b92a5d284897335d8a863a6
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"trades":[{"date":"2018-04-28T17:41:51","current_pays":["118",3,"@@000000021"],"open_pays":["140",3,"@@000000013"]},{"date":"2018-04-28T17:41:48","current_pays":["11262",3,"@@000000021"],"open_pays":["13434",3,"@@000000013"]},{"date":"2018-04-28T17:40:42","current_pays":["4807",3,"@@000000013"],"open_pays":["4029",3,"@@000000021"]},{"date":"2018-04-28T17:40:24","current_pays":["3544",3,"@@000000021"],"open_pays":["4227",3,"@@000000013"]},{"date":"2018-04-28T17:39:57","current_pays":["2",3,"@@000000013"],"open_pays":["1",3,"@@000000021"]},{"date":"2018-04-28T17:38:42","current_pays":["16002",3,"@@000000013"],"open_pays":["13416",3,"@@000000021"]},{"date":"2018-04-28T17:37:12","current_pays":["6654",3,"@@000000021"],"open_pays":["7938",3,"@@000000013"]},{"date":"2018-04-28T17:37:06","current_pays":["602",3,"@@000000013"],"open_pays":["504",3,"@@000000021"]},{"date":"2018-04-28T17:36:57","current_pays":["192",3,"@@000000021"],"open_pays":["229",3,"@@000000013"]},{"date":"2018-04-28T17:36:54","current_pays":["336",3,"@@000000021"],"open_pays":["400",3,"@@000000013"]}]},"id":1}'
+      string: '{"jsonrpc":"2.0","result":{"trades":[{"date":"2018-05-19T20:55:21","current_pays":["901",3,"@@000000013"],"open_pays":["643",3,"@@000000021"]},{"date":"2018-05-19T20:55:18","current_pays":["302",3,"@@000000013"],"open_pays":["215",3,"@@000000021"]},{"date":"2018-05-19T20:54:48","current_pays":["25",3,"@@000000013"],"open_pays":["17",3,"@@000000021"]},{"date":"2018-05-19T20:54:36","current_pays":["803",3,"@@000000013"],"open_pays":["573",3,"@@000000021"]},{"date":"2018-05-19T20:54:06","current_pays":["4416",3,"@@000000013"],"open_pays":["3154",3,"@@000000021"]},{"date":"2018-05-19T20:53:51","current_pays":["1055",3,"@@000000013"],"open_pays":["753",3,"@@000000021"]},{"date":"2018-05-19T20:53:51","current_pays":["627",3,"@@000000013"],"open_pays":["448",3,"@@000000021"]},{"date":"2018-05-19T20:53:45","current_pays":["612",3,"@@000000013"],"open_pays":["437",3,"@@000000021"]},{"date":"2018-05-19T20:53:15","current_pays":["55762",3,"@@000000013"],"open_pays":["39840",3,"@@000000021"]},{"date":"2018-05-19T20:53:15","current_pays":["14238",3,"@@000000013"],"open_pays":["10173",3,"@@000000021"]}]},"id":1}'
     http_version: 
-  recorded_at: Sat, 28 Apr 2018 17:42:11 GMT
+  recorded_at: Sat, 19 May 2018 20:55:38 GMT
 recorded_with: VCR 3.0.3

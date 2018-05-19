@@ -5,13 +5,13 @@ module Radiator
       #
       # Examples:
       #
-      #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+      #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
       #     steem.vote(10000, 'author', 'permlink')
       #     steem.broadcast!
       #
       # ... or ...
       #
-      #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+      #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
       #     steem.vote(10000, '@author/permlink')
       #     steem.broadcast!
       #
@@ -35,12 +35,12 @@ module Radiator
       #
       # Examples:
       #
-      #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+      #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
       #     steem.vote!(10000, 'author', 'permlink')
       #
       # ... or ...
       #
-      #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+      #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
       #     steem.vote!(10000, '@author/permlink')
       #
       # @see vote
