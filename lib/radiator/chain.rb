@@ -3,17 +3,17 @@ module Radiator
   # 
   # To vote on a post/comment:
   # 
-  #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+  #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
   #     steem.vote!(10000, 'author', 'post-or-comment-permlink')
   # 
   # To post and vote in the same transaction:
   # 
-  #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+  #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
   #     steem.post!(title: 'title of my post', body: 'body of my post', tags: ['tag'], self_upvote: 10000)
   #
   # To post and vote with declined payout:
   #
-  #     steem = Steem.new(account_name: 'your account name', wif: 'your wif')
+  #     steem = Radiator::Chain.new(chain: :steem, account_name: 'your account name', wif: 'your wif')
   #     
   #     options = {
   #       title: 'title of my post',
@@ -68,7 +68,7 @@ module Radiator
     #
     # Example:
     #
-    #     steem = Steem.new
+    #     steem = Radiator::Chain.new(chain: :steem)
     #     block = steem.find_block(12345678)
     #     transactions = block.transactions
     #
@@ -82,7 +82,7 @@ module Radiator
     #
     # Example:
     #
-    #     steem = Steem.new
+    #     steem = Radiator::Chain.new(chain: :steem)
     #     ned = steem.find_account('ned')
     #     vesting_shares = ned.vesting_shares
     #
@@ -100,7 +100,7 @@ module Radiator
     #
     # Example:
     #
-    #     steem = Steem.new
+    #     steem = Radiator::Chain.new(chain: :steem)
     #     comment = steem.find_comment('inertia', 'kinda-spooky') # by account, permlink
     #     active_votes = comment.active_votes
     #
