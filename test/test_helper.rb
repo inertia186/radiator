@@ -52,7 +52,7 @@ class Radiator::Test < MiniTest::Test
   end
   
   # Most likely modes: 'once' and 'new_episodes'
-  VCR_RECORD_MODE = (ENV['VCR_RECORD_MODE'] || 'once').to_sym
+  VCR_RECORD_MODE = (ENV['VCR_RECORD_MODE'] || 'new_episodes').to_sym
   
   def vcr_cassette(name, &block)
     VCR.use_cassette(name, record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :body]) do
