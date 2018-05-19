@@ -12,6 +12,12 @@ module Radiator
         instance_variable_set("@#{k}", type(@type, k, v))
       end
       
+      @use_condenser_namespace = if options.keys.include? :use_condenser_namespace
+        options.delete(:use_condenser_namespace)
+      else
+        true
+      end
+      
       unless Operation::known_operation_names.include? @type
         raise OperationError, "Unsupported operation type: #{@type}"
       end
@@ -55,7 +61,12 @@ module Radiator
         
         params[p] = case v
         when Radiator::Type::Beneficiaries then [[0, v.to_h]]
-        when Radiator::Type::Amount then v.to_a
+        when Radiator::Type::Amount
+          if use_condenser_namespace?
+            v.to_s
+          else
+            v.to_a
+          end
         else; v
         end
       end
@@ -82,5 +93,9 @@ module Radiator
         end
       end
     end
+    
+    def use_condenser_namespace?
+      @use_condenser_namespace
+    end    
   end
 end

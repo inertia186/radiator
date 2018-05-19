@@ -9,7 +9,7 @@ require 'net/http/persistent'
 module Radiator
   # Radiator::Api allows you to call remote methods to interact with the STEEM
   # blockchain.  The `Api` class is a shortened name for
-  # `Radiator::DatabaseApi`.
+  # `Radiator::CondenserApi`.
   #
   # Examples:
   #
@@ -248,6 +248,12 @@ module Radiator
         true
       end
       
+      @use_condenser_namespace = if options.keys.include? :use_condenser_namespace
+        options[:use_condenser_namespace]
+      else
+        true
+      end
+      
       if defined? Net::HTTP::Persistent::DEFAULT_POOL_SIZE
         @pool_size = options[:pool_size] || Net::HTTP::Persistent::DEFAULT_POOL_SIZE
       end
@@ -288,11 +294,19 @@ module Radiator
       
       if !!block
         block_number.each do |i|
-          yield block_api.get_block(block_num: i).result, i
+          if use_condenser_namespace?
+            yield api.get_block(i)
+          else
+            yield block_api.get_block(block_num: i).result, i
+          end
         end
       else
         block_number.map do |i|
-          block_api.get_block(block_num: i).result
+          if use_condenser_namespace?
+            api.get_block(i)
+          else
+            block_api.get_block(block_num: i).result
+          end
         end
       end
     end
@@ -519,6 +533,7 @@ module Radiator
       properties = %w(
         chain url backoff_at max_requests ssl_verify_mode ssl_version persist
         recover_transactions_on_error reuse_ssl_sessions pool_size
+        use_condenser_namespace
       ).map do |prop|
         if !!(v = instance_variable_get("@#{prop}"))
           "@#{prop}=#{v}" 
@@ -542,6 +557,10 @@ module Radiator
       end
       
       @uri.nil? && @http_id.nil? && !http_active && @api.nil? && @block_api.nil?
+    end
+    
+    def use_condenser_namespace?
+      @use_condenser_namespace
     end
   private
     def self.methods_json_path

@@ -11,7 +11,7 @@ module Radiator
 
     VALID_OPTIONS = %w(
       wif private_key ref_block_num ref_block_prefix expiration
-      chain
+      chain use_condenser_namespace
     ).map(&:to_sym)
     VALID_OPTIONS.each { |option| attr_accessor option }
 
@@ -66,7 +66,13 @@ module Radiator
 
       @api = Api.new(options)
       @network_broadcast_api = NetworkBroadcastApi.new(options)
-
+      
+      @use_condenser_namespace = if options.keys.include? :use_condenser_namespace
+        options[:use_condenser_namespace]
+      else
+        true
+      end
+      
       ObjectSpace.define_finalizer(self, self.class.finalize(@api, @network_broadcast_api, @self_logger, @logger))
     end
 
@@ -91,7 +97,7 @@ module Radiator
 
       if broadcast
         loop do
-          response = @network_broadcast_api.broadcast_transaction_synchronous(trx: payload)
+          response = broadcast_payload(payload)
 
           if !!response.error
             parser = ErrorParser.new(response)
@@ -137,7 +143,19 @@ module Radiator
         end
       end
     end
+    
+    def use_condenser_namespace?
+      !!@use_condenser_namespace
+    end
   private
+    def broadcast_payload(payload)
+      if use_condenser_namespace?
+        @api.broadcast_transaction_synchronous(payload)
+      else
+        @network_broadcast_api.broadcast_transaction_synchronous(trx: payload)
+      end
+    end
+    
     def payload
       @payload ||= {
         expiration: @expiration.strftime('%Y-%m-%dT%H:%M:%S'),

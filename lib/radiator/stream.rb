@@ -326,7 +326,13 @@ module Radiator
               end
             end
             
-            block_api.get_block(block_num: n) do |current_block, error|
+            scoped_api, block_options = if use_condenser_namespace?
+              [api, n]
+            else
+              [block_api, {block_num: n}]
+            end
+              
+            scoped_api.get_block(n) do |current_block, error|
               if !!error
                 if error.message == 'Unable to acquire database lock'
                   start = n
