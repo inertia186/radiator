@@ -9,7 +9,7 @@ module Radiator
       #     steem.claim_reward_balance(reward_sbd: '100.000 SBD')
       #     steem.broadcast!
       #
-      # @param options [Hash] options
+      # @param options [::Hash] options
       # @option options [String] :reward_steem The amount of STEEM to claim, like: `100.000 STEEM`
       # @option options [String] :reward_sbd The amount of SBD to claim, like: `100.000 SBD`
       # @option options [String] :reward_vests The amount of VESTS to claim, like: `100.000000 VESTS`
@@ -45,7 +45,7 @@ module Radiator
       #     steem.transfer(amount: '1.000 SBD', to: 'account name', memo: 'this is a memo')
       #     steem.broadcast!
       #
-      # @param options [Hash] options
+      # @param options [::Hash] options
       # @option options [String] :amount The amount to transfer, like: `100.000 STEEM`
       # @option options [String] :to The account receiving the transfer.
       # @option options [String] :memo ('') The memo for the transfer.

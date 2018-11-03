@@ -13,6 +13,8 @@ module Radiator
   require 'radiator/type/public_key'
   require 'radiator/type/beneficiaries'
   require 'radiator/type/price'
+  require 'radiator/type/array'
+  require 'radiator/type/hash'
   require 'radiator/type/future'
   require 'radiator/logger'
   require 'radiator/chain_config'

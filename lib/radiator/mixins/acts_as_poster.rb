@@ -12,10 +12,10 @@ module Radiator
       #     steem.post(options)
       #     steem.broadcast!
       #
-      # @param options [Hash] options
+      # @param options [::Hash] options
       # @option options [String] :title Title of the post.
       # @option options [String] :body Body of the post.
-      # @option options [Array<String>] :tags Tags of the post.
+      # @option options [::Array<String>] :tags Tags of the post.
       # @option options [String] :permlink (automatic) Permlink of the post, defaults to formatted title.
       # @option options [String] :parent_permlink (automatic) Parent permlink of the post, defaults to first tag.
       # @option options [String] :parent_author (optional) Parent author of the post (only used if reply).

@@ -117,8 +117,8 @@ module Radiator
         when Integer then paks(v)
         when TrueClass then pakC(1)
         when FalseClass then pakC(0)
-        when Array then pakArr(v)
-        when Hash then pakHash(v)
+        when ::Array then pakArr(v)
+        when ::Hash then pakHash(v)
         when NilClass then next
         else
           raise OperationError, "Unsupported type: #{v.class}"
@@ -134,8 +134,8 @@ module Radiator
         when Integer then paks(v)
         when TrueClass then pakC(1)
         when FalseClass then pakC(0)
-        when Array then pakArr(v)
-        when Hash then pakHash(v)
+        when ::Array then pakArr(v)
+        when ::Hash then pakHash(v)
         when NilClass then next
         else
           raise OperationError, "Unsupported type: #{v.class}"

@@ -121,15 +121,15 @@ module Radiator
     #   interest
     #   shutdown_witness
     #
-    # @param type [symbol || Array<symbol>] the type(s) of operation, optional.
+    # @param type [symbol || ::Array<symbol>] the type(s) of operation, optional.
     # @param start starting block
     # @param mode we have the choice between
     #   * :head the last block
     #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
     # @param block the block to execute for each result, optional.  Yields: |op, trx_id, block_num, api|
-    # @param options [Hash] additional options
+    # @param options [::Hash] additional options
     # @option options [Boollean] :include_virtual Also stream virtual options.  Setting this true will impact performance.  Default: false.
-    # @return [Hash]
+    # @return [::Hash]
     def operations(type = nil, start = nil, mode = :irreversible, options = {include_virtual: false}, &block)
       type = [type].flatten.compact.map(&:to_sym)
       include_virtual = !!options[:include_virtual]
@@ -202,7 +202,7 @@ module Radiator
     #   * :head the last block
     #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
     # @param block the block to execute for each result, optional.  Yields: |tx, trx_id, api|
-    # @return [Hash]
+    # @return [::Hash]
     def transactions(start = nil, mode = :irreversible, &block)
       blocks(start, mode) do |b, block_number|
         next if (_transactions = b.transactions).nil?
@@ -245,7 +245,7 @@ module Radiator
     #   * :irreversible the block that is confirmed by 2/3 of all block producers and is thus irreversible!
     # @param max_blocks_per_node the number of blocks to read before trying a new node
     # @param block the block to execute for each result, optional.  Yields: |bk, num, api|
-    # @return [Hash]
+    # @return [::Hash]
     def blocks(start = nil, mode = :irreversible, max_blocks_per_node = MAX_BLOCKS_PER_NODE, &block)
       reset_api
       

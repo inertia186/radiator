@@ -41,7 +41,7 @@ module Radiator
       if args.size == 1
         case args[0]
         when String then split_slug(args[0])
-        when Hash then [args[0]['author'], args[0]['permlink']]
+        when ::Hash then [args[0]['author'], args[0]['permlink']]
         end
       else
         args
@@ -73,7 +73,7 @@ module Radiator
     #     transactions = block.transactions
     #
     # @param block_number [Fixnum]
-    # @return [Hash]
+    # @return [::Hash]
     def find_block(block_number)
       api.get_blocks(block_number).first
     end
@@ -87,7 +87,7 @@ module Radiator
     #     vesting_shares = ned.vesting_shares
     #
     # @param account_name [String] Name of the account to find.
-    # @return [Hash]
+    # @return [::Hash]
     def find_account(account_name)
       api.get_accounts([account_name]) do |accounts, err|
         raise ChainError, ErrorParser.new(err) if !!err
@@ -108,8 +108,8 @@ module Radiator
     #
     #     comment = steem.find_comment('@inertia/kinda-spooky') # by slug
     #
-    # @param args [String || Array<String>] Slug or author, permlink of comment.
-    # @return [Hash]
+    # @param args [String || ::Array<String>] Slug or author, permlink of comment.
+    # @return [::Hash]
     def find_comment(*args)
       author, permlink = Chain.parse_slug(args)
       
@@ -168,7 +168,7 @@ module Radiator
     # List of accounts followed by account.
     #
     # @param account_name String Name of the account.
-    # @return [Array<String>]
+    # @return [::Array<String>]
     def followed_by(account_name)
       return [] if account_name.nil?
       
@@ -191,7 +191,7 @@ module Radiator
     # List of accounts following account.
     #
     # @param account_name String Name of the account.
-    # @return [Array<String>]
+    # @return [::Array<String>]
     def following(account_name)
       return [] if account_name.nil?
       

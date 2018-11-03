@@ -200,7 +200,7 @@ module Radiator
         case match
         when String
           @error['message'] && @error['message'].include?(match)
-        when Array
+        when ::Array
           if @error['message']
             match.map { |m| m.include?(match) }.include? true
           else

@@ -7,7 +7,7 @@ module Radiator
         super(:amount, value)
         
         case value
-        when Array
+        when ::Array
           a, p, t = value
           @asset = case t
           when '@@000000013' then 'SBD'

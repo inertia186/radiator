@@ -181,9 +181,9 @@ module Radiator
     #
     #   api = Radiator::Api.new(url: 'https://api.example.com')
     #
-    # @param options [Hash] The attributes to initialize the Radiator::Api with.
+    # @param options [::Hash] The attributes to initialize the Radiator::Api with.
     # @option options [String] :url URL that points at a full node, like `https://api.steemit.com`.  Default from DEFAULT_URL.
-    # @option options [Array<String>] :failover_urls An array that contains one or more full nodes to fall back on.  Default from DEFAULT_FAILOVER_URLS.
+    # @option options [::Array<String>] :failover_urls An array that contains one or more full nodes to fall back on.  Default from DEFAULT_FAILOVER_URLS.
     # @option options [Logger] :logger An instance of `Logger` to send debug messages to.
     # @option options [Boolean] :recover_transactions_on_error Have Radiator try to recover transactions that are accepted but could not be confirmed due to an error like network timeout.  Default: `true`
     # @option options [Integer] :max_requests Maximum number of requests on a connection before it is considered expired and automatically closed.
@@ -286,9 +286,9 @@ module Radiator
     #     transactions += block.transactions
     #   end
     #
-    # @param block_number [Fixnum || Array<Fixnum>]
+    # @param block_number [Fixnum || ::Array<Fixnum>]
     # @param block the block to execute for each result, optional.
-    # @return [Array]
+    # @return [::Array]
     def get_blocks(block_number, &block)
       block_number = [*(block_number)].flatten
       

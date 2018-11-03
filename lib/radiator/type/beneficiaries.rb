@@ -13,7 +13,7 @@ module Radiator
       def to_h
         v = @value.map do |b|
           case b
-          when Array then {account: b.first, weight: b.last}
+          when ::Array then {account: b.first, weight: b.last}
           else; {account: b.keys.first, weight: b.values.first}
           end
         end

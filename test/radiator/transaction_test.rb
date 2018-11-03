@@ -249,7 +249,8 @@ module Radiator
       )
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
-      assert_equal Radiator::OperationIds::IDS.find_index(op[:type]), decoded_op_id
+      op_type = "#{op[:type]}_operation".to_sym
+      assert_equal Radiator::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '01', hex_segments[:op_id], 'expect op_id'
       assert_equal '00', hex_segments[:parent_author], 'expect parent_author'
@@ -439,7 +440,8 @@ module Radiator
       )
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
-      assert_equal Radiator::OperationIds::IDS.find_index(op[:type]), decoded_op_id
+      op_type = "#{op[:type]}_operation".to_sym
+      assert_equal Radiator::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '07', hex_segments[:op_id], 'expect op_id'
       assert_equal '057865726f63', hex_segments[:publisher], 'expect publisher'
@@ -475,7 +477,8 @@ module Radiator
       )
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
-      assert_equal Radiator::OperationIds::IDS.find_index(op[:type]), decoded_op_id
+      op_type = "#{op[:type]}_operation".to_sym
+      assert_equal Radiator::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '0c', hex_segments[:op_id], 'expect op_id'
       assert_equal '057865726f63', hex_segments[:account], 'expect account'
@@ -514,7 +517,8 @@ module Radiator
       )
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
-      assert_equal Radiator::OperationIds::IDS.find_index(op[:type]), decoded_op_id
+      op_type = "#{op[:type]}_operation".to_sym
+      assert_equal Radiator::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '12', hex_segments[:op_id], 'expect op_id'
       assert_equal '00', hex_segments[:required_auths], 'expect required_auths'
@@ -565,7 +569,8 @@ module Radiator
       )
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
-      assert_equal Radiator::OperationIds::IDS.find_index(op[:type]), decoded_op_id
+      op_type = "#{op[:type]}_operation".to_sym
+      assert_equal Radiator::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '13', hex_segments[:op_id], 'expect op_id'
       assert_equal '057865726f63', hex_segments[:author], 'expect author'
@@ -616,7 +621,8 @@ module Radiator
       )
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
-      assert_equal Radiator::OperationIds::IDS.find_index(op[:type]), decoded_op_id
+      op_type = "#{op[:type]}_operation".to_sym
+      assert_equal Radiator::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '13', hex_segments[:op_id], 'expect op_id'
       assert_equal '057865726f63', hex_segments[:author], 'expect author'
@@ -670,7 +676,8 @@ module Radiator
       )
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
-      assert_equal Radiator::OperationIds::IDS.find_index(op[:type]), decoded_op_id
+      op_type = "#{op[:type]}_operation".to_sym
+      assert_equal Radiator::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '13', hex_segments[:op_id], 'expect op_id'
       assert_equal '06736f6369616c', hex_segments[:author], 'expect author'

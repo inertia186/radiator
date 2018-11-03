@@ -33,7 +33,13 @@ module Radiator
         owner: Type::Permission,
         active: Type::Permission,
         posting: Type::Permission,
-        memo: Type::Permission
+        memo: Type::PublicKey
+      },
+      create_claimed_account: {
+        owner: Type::Permission,
+        active: Type::Permission,
+        posting: Type::Permission,
+        memo: Type::PublicKey
       },
       account_update: {
         owner: Type::Permission,
@@ -108,6 +114,16 @@ module Radiator
       },
       delegate_vesting_shares: {
         vesting_shares: Type::Amount
+      },
+      claim_account: {
+        fee: Type::Amount
+      },
+      witness_update: {
+        block_signing_key: Type::PublicKey,
+        props: Type::Array
+      },
+      witness_set_properties: {
+        props: Type::Hash
       }
     }
     
