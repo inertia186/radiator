@@ -23,8 +23,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest-line', '~> 0.6.3'
   spec.add_development_dependency 'minitest-proveit', '~> 1.0', '>= 1.0.0'
   spec.add_development_dependency 'webmock', '~> 3.1', '>= 3.1.0'
-  spec.add_development_dependency 'simplecov', '~> 0.15.1'
-  spec.add_development_dependency 'vcr', '~> 3.0', '>= 3.0.3'
+  spec.add_development_dependency 'simplecov', '~> 0.16.1'
+  spec.add_development_dependency 'vcr', '~> 4.0', '>= 4.0.0'
   spec.add_development_dependency 'yard', '~> 0.9.9'
   spec.add_development_dependency 'pry', '~> 0.11', '>= 0.11.3'
   
