@@ -18975,4 +18975,604 @@ http_interactions:
       string: '{"jsonrpc":"2.0","result":{"accounts":[]},"id":1}'
     http_version: 
   recorded_at: Sat, 03 Nov 2018 18:06:43 GMT
-recorded_with: VCR 3.0.3
+- request:
+    method: get
+    uri: https://api.steemitdev.com/health
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:19:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '157'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000939366022530319'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde699-b630a19e243d28202dd024c8
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"status":"OK","datetime":"2018-11-03T18:19:05.801593","source_commit":"d67c679b8248a3c299d35db131089bfa4eb0048a","docker_tag":"latest","jussi_num":27382857}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:19:05 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"condenser_api.broadcast_transaction_synchronous","params":[],"id":3}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:19:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Error-Id:
+      - fec5ee6a-f605-4382-a7fb-6d08689b703c
+      X-Jussi-Request-Id:
+      - '001093841170446845'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde69a-561974eb4122046eb658fd9c
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":3,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"fec5ee6a-f605-4382-a7fb-6d08689b703c","jussi_request_id":"000845880507440349"}}}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:19:06 GMT
+- request:
+    method: post
+    uri: https://api.steemitstage.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction","params":{},"id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:19:08 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Error-Id:
+      - 3e1a477d-e471-4858-bb1e-fe5554567150
+      X-Jussi-Request-Id:
+      - '000881410043420703'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde69c-0eac119c6fc5afe87c8f37c0
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":1,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"3e1a477d-e471-4858-bb1e-fe5554567150","jussi_request_id":"000160810941981919"}}}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:19:08 GMT
+- request:
+    method: post
+    uri: https://api.steemitstage.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction_with_callback","params":{},"id":2}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:19:08 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '537'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000355845587505764'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde69c-68c148f4a1db69868bdfa4fc
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","error":{"code":-32002,"message":"Assert Exception:method_itr
+        != api_itr->second.end(): Could not find method broadcast_transaction_with_callback","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"json_rpc_plugin.cpp","line":209,"method":"find_api_method","hostname":"","timestamp":"2018-11-03T18:19:08"},"format":"method_itr
+        != api_itr->second.end(): Could not find method ${method}","data":{"method":"broadcast_transaction_with_callback"}}]}},"id":2}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:19:08 GMT
+- request:
+    method: post
+    uri: https://api.steemitstage.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction_synchronous","params":{},"id":3}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:19:08 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Error-Id:
+      - b9eaf708-1cc0-4e23-8163-1d391143de63
+      X-Jussi-Request-Id:
+      - '000233481791656234'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde69c-eaa4f908619ffb7f60b9e0d9
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":3,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"b9eaf708-1cc0-4e23-8163-1d391143de63","jussi_request_id":"000514926155051887"}}}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:19:08 GMT
+- request:
+    method: get
+    uri: https://api.steemitstage.com/health
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:19:09 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '157'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000003522327761008'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde69d-8b2b5fefb2546f220aa89250
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"status":"OK","datetime":"2018-11-03T18:19:09.322582","source_commit":"d67c679b8248a3c299d35db131089bfa4eb0048a","docker_tag":"latest","jussi_num":27382938}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:19:09 GMT
+- request:
+    method: post
+    uri: https://api.steemitstage.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction_synchronous","params":{},"id":3}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:19:09 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Error-Id:
+      - 34b1c368-e776-490d-aa5b-97b6bca913aa
+      X-Jussi-Request-Id:
+      - '000718856251024595'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde69d-56914f4d4f1a4944355ae61d
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":3,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"34b1c368-e776-490d-aa5b-97b6bca913aa","jussi_request_id":"000976911263672922"}}}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:19:09 GMT
+- request:
+    method: post
+    uri: https://api.steemitstage.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_block","params":{},"id":4}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:19:10 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000915044461930284'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde69e-b9bfabb974aa8b441fffdf25
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","error":{"code":-32000,"message":"Assert Exception:item->num
+        > std::max<int64_t>( 0, int64_t(_head->num) - (_max_size) ): attempting to
+        push a block that is too old","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"fork_database.cpp","line":57,"method":"_push_block","hostname":"","timestamp":"2018-11-03T18:19:10"},"format":"item->num
+        > std::max<int64_t>( 0, int64_t(_head->num) - (_max_size) ): attempting to
+        push a block that is too old","data":{"item->num":1,"head":27382963,"max_size":23}},{"context":{"level":"warn","file":"database.cpp","line":782,"method":"_push_block","hostname":"","timestamp":"2018-11-03T18:19:10"},"format":"","data":{}},{"context":{"level":"warn","file":"database.cpp","line":666,"method":"operator()","hostname":"","timestamp":"2018-11-03T18:19:10"},"format":"","data":{"new_block":{"previous":"0000000000000000000000000000000000000000","timestamp":"1970-01-01T00:00:00","witness":"","transaction_merkle_root":"0000000000000000000000000000000000000000","extensions":[],"witness_signature":"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","transactions":[]}}}]}},"id":4}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:19:10 GMT
+- request:
+    method: post
+    uri: https://api.steemitstage.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"network_broadcast_api.set_max_block_age","params":{},"id":5}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:19:10 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000338534592954997'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde69e-d0ad11a17b3d717ad9a8a790
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","error":{"code":-32002,"message":"Assert Exception:method_itr
+        != api_itr->second.end(): Could not find method set_max_block_age","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"json_rpc_plugin.cpp","line":209,"method":"find_api_method","hostname":"","timestamp":"2018-11-03T18:19:10"},"format":"method_itr
+        != api_itr->second.end(): Could not find method ${method}","data":{"method":"set_max_block_age"}}]}},"id":5}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:19:10 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction_synchronous","params":{},"id":3}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 17 Nov 2018 19:17:55 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Error-Id:
+      - e6cb60e4-5e4c-4ccf-933d-1cff1fb014c3
+      X-Jussi-Request-Id:
+      - '000035922778234007'
+      X-Amzn-Trace-Id:
+      - Root=1-5bf06963-c642a460a5bb272c98c32260
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":3,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"e6cb60e4-5e4c-4ccf-933d-1cff1fb014c3","jussi_request_id":"000528805528570992"}}}'
+    http_version: 
+  recorded_at: Sat, 17 Nov 2018 19:17:55 GMT
+- request:
+    method: post
+    uri: https://api.steemitstage.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"condenser_api.broadcast_transaction_synchronous","params":[],"id":3}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 17 Nov 2018 19:19:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Error-Id:
+      - c317b380-371e-447e-a924-5d4236e8c18c
+      X-Jussi-Request-Id:
+      - '001099150710810147'
+      X-Amzn-Trace-Id:
+      - Root=1-5bf069d3-7b8d75803099a1600936e360
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":3,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"c317b380-371e-447e-a924-5d4236e8c18c","jussi_request_id":"001121005012410473"}}}'
+    http_version: 
+  recorded_at: Sat, 17 Nov 2018 19:19:47 GMT
+recorded_with: VCR 4.0.0
