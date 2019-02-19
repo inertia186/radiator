@@ -40,6 +40,6 @@ module Radiator
   require 'radiator/mixins/acts_as_voter'
   require 'radiator/mixins/acts_as_wallet'
   require 'radiator/chain'
-  require 'steem'
+  require 'steem' unless defined? Steem
   extend self
 end

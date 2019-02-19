@@ -2,7 +2,6 @@ module Radiator
   class TagApi < Api
     def method_names
       @method_names ||= [
-        :get_tags, # deprecated
         :get_trending_tags,
         :get_tags_used_by_author,
         :get_discussion,
