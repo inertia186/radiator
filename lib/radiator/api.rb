@@ -138,18 +138,13 @@ module Radiator
     
     DEFAULT_STEEM_FAILOVER_URLS = [
       DEFAULT_STEEM_URL,
-      'https://api.steemitstage.com',
       'https://appbasetest.timcliff.com',
       'https://api.steem.house',
-      'https://seed.bitcoiner.me',
       'https://steemd.minnowsupportproject.org',
       'https://steemd.privex.io',
-      'https://rpc.steemliberator.com',
-      'https://rpc.curiesteem.com',
-      'https://rpc.buildteam.io',
-      'https://steemd.pevo.science',
       'https://rpc.steemviz.com',
-      'https://steemd.steemgigs.org'
+      'https://anyx.io',
+      'httpd://rpc.usesteem.com'
     ]
     
     # @private
