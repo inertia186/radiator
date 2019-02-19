@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"market_history_api.get_recent_trades","params":{"limit":10},"id":1}'
@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.3rc1
+      - radiator/0.4.4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Nov 2018 18:05:17 GMT
+      - Tue, 19 Feb 2019 19:59:50 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,9 +35,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '001032337715987666'
+      - '000055146182132964'
       X-Amzn-Trace-Id:
-      - Root=1-5bdde35d-b3859d029394b45801c8eadc
+      - Root=1-5c6c6036-568733c8071fe2cf8f57d407
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"trades":[{"date":"2018-11-03T18:05:09","current_pays":{"amount":"3044","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"3831","precision":3,"nai":"@@000000021"}},{"date":"2018-11-03T18:04:57","current_pays":{"amount":"43670","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"55016","precision":3,"nai":"@@000000021"}},{"date":"2018-11-03T18:04:48","current_pays":{"amount":"10462","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"8270","precision":3,"nai":"@@000000013"}},{"date":"2018-11-03T18:04:18","current_pays":{"amount":"11378","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"8996","precision":3,"nai":"@@000000013"}},{"date":"2018-11-03T18:04:15","current_pays":{"amount":"9686","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"12200","precision":3,"nai":"@@000000021"}},{"date":"2018-11-03T18:04:06","current_pays":{"amount":"9072","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"7173","precision":3,"nai":"@@000000013"}},{"date":"2018-11-03T18:04:06","current_pays":{"amount":"1000","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"791","precision":3,"nai":"@@000000013"}},{"date":"2018-11-03T18:03:57","current_pays":{"amount":"18260","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"14447","precision":3,"nai":"@@000000013"}},{"date":"2018-11-03T18:03:48","current_pays":{"amount":"15285","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"12093","precision":3,"nai":"@@000000013"}},{"date":"2018-11-03T18:03:48","current_pays":{"amount":"238","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"189","precision":3,"nai":"@@000000013"}}]},"id":1}'
+      string: '{"jsonrpc":"2.0","result":{"trades":[{"date":"2019-02-19T19:59:03","current_pays":{"amount":"337","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"973","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:58:33","current_pays":{"amount":"54","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"155","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:57:21","current_pays":{"amount":"1564","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"4515","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:57:15","current_pays":{"amount":"773","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"2231","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:57:06","current_pays":{"amount":"1000","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"2887","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:57:00","current_pays":{"amount":"333","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"961","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:56:27","current_pays":{"amount":"1289","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"3721","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:56:06","current_pays":{"amount":"114","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"329","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:55:24","current_pays":{"amount":"5833","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"2015","precision":3,"nai":"@@000000013"}},{"date":"2019-02-19T19:55:24","current_pays":{"amount":"2006","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"694","precision":3,"nai":"@@000000013"}}]},"id":1}'
     http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:05:17 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Tue, 19 Feb 2019 19:59:51 GMT
+recorded_with: VCR 4.0.0

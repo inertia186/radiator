@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"condenser_api.get_accounts","params":[],"id":1}'
@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.3rc1
+      - radiator/0.4.4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Nov 2018 18:06:00 GMT
+      - Tue, 19 Feb 2019 19:59:42 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,9 +35,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000835867145023737'
+      - '000830604016871841'
       X-Amzn-Trace-Id:
-      - Root=1-5bdde388-c89b0d404c95df049324a0d4
+      - Root=1-5c6c602e-7ba8a200731603d88edfa570
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -52,8 +52,8 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:args.size()
         == 1: Expected #s argument(s), was 0","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":850,"method":"get_accounts","hostname":"","timestamp":"2018-11-03T18:06:00"},"format":"args.size()
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":850,"method":"get_accounts","hostname":"","timestamp":"2019-02-19T19:59:42"},"format":"args.size()
         == 1: Expected #s argument(s), was ${n}","data":{"n":0}}]}},"id":1}'
     http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:06:00 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Tue, 19 Feb 2019 19:59:42 GMT
+recorded_with: VCR 4.0.0

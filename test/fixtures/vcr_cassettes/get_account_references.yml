@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"condenser_api.get_account_references","params":[["2.2.27007"]],"id":1}'
@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.3rc1
+      - radiator/0.4.4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Nov 2018 18:06:01 GMT
+      - Tue, 19 Feb 2019 19:59:10 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,9 +35,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000218651995159304'
+      - '000337224741527828'
       X-Amzn-Trace-Id:
-      - Root=1-5bdde389-0369f833fb09e9b59845f9a7
+      - Root=1-5c6c600e-49360c621fa8585eeb2f0163
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -52,8 +52,8 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":887,"method":"get_account_references","hostname":"","timestamp":"2018-11-03T18:06:01"},"format":"false:
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":887,"method":"get_account_references","hostname":"","timestamp":"2019-02-19T19:59:10"},"format":"false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":1}'
     http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:06:01 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Tue, 19 Feb 2019 19:59:10 GMT
+recorded_with: VCR 4.0.0

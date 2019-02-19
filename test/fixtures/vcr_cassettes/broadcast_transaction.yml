@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction","params":{},"id":1}'
@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.3rc1
+      - radiator/0.4.4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Nov 2018 18:05:02 GMT
+      - Tue, 19 Feb 2019 19:59:56 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,11 +35,11 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Error-Id:
-      - 31601c4c-c3fe-43d5-8dd7-9cbbad65f59d
+      - 78247cd9-769f-4638-bf35-66c8ea80c122
       X-Jussi-Request-Id:
-      - '000173158143109553'
+      - '000226766343580419'
       X-Amzn-Trace-Id:
-      - Root=1-5bdde34e-69cb6bb8b71a5588297f7b1d
+      - Root=1-5c6c603c-f7448288e0b354b566169878
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -53,255 +53,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","id":1,"error":{"code":-32603,"message":"Internal
-        Error","data":{"error_id":"31601c4c-c3fe-43d5-8dd7-9cbbad65f59d","jussi_request_id":"000793153017981603"}}}'
+        Error","data":{"error_id":"78247cd9-769f-4638-bf35-66c8ea80c122","jussi_request_id":"000942980625423289"}}}'
     http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:05:02 GMT
-- request:
-    method: get
-    uri: https://api.steemit.com/health
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 03 Nov 2018 18:05:02 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '157'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000688600702300018'
-      X-Amzn-Trace-Id:
-      - Root=1-5bdde34e-78c936904a879a70bcbcb3b0
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"status":"OK","datetime":"2018-11-03T18:05:02.795384","source_commit":"d67c679b8248a3c299d35db131089bfa4eb0048a","docker_tag":"latest","jussi_num":27382662}'
-    http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:05:02 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction","params":{},"id":1}'
-    headers:
-      Content-Type:
-      - application/json
-      User-Agent:
-      - radiator/0.4.3rc1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 03 Nov 2018 18:05:03 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '174'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Error-Id:
-      - 9284fb8f-e854-4c43-a5eb-1a3519559de1
-      X-Jussi-Request-Id:
-      - '000017747552780935'
-      X-Amzn-Trace-Id:
-      - Root=1-5bdde34f-7cef0584d9ccf7ad292cde09
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":1,"error":{"code":-32603,"message":"Internal
-        Error","data":{"error_id":"9284fb8f-e854-4c43-a5eb-1a3519559de1","jussi_request_id":"000569327558678356"}}}'
-    http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:05:03 GMT
-- request:
-    method: get
-    uri: https://api.steem.house/health
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Sat, 03 Nov 2018 18:05:04 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '483'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","error":{"code":-32000,"message":"End Of File:stringstream","data":{"code":11,"name":"eof_exception","message":"End
-        Of File","stack":[{"context":{"level":"error","file":"sstream.cpp","line":109,"method":"peek","hostname":"","timestamp":"2018-11-03T18:05:04"},"format":"stringstream","data":{}},{"context":{"level":"warn","file":"json.cpp","line":479,"method":"from_string","hostname":"","timestamp":"2018-11-03T18:05:04"},"format":"","data":{"str":""}}]}},"id":null}'
-    http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:05:04 GMT
-- request:
-    method: get
-    uri: https://api.steemitstage.com/health
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 03 Nov 2018 18:05:04 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '157'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000454182926044871'
-      X-Amzn-Trace-Id:
-      - Root=1-5bdde350-49a5675089d60898ff249f10
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"status":"OK","datetime":"2018-11-03T18:05:04.612472","source_commit":"d67c679b8248a3c299d35db131089bfa4eb0048a","docker_tag":"latest","jussi_num":27382662}'
-    http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:05:04 GMT
-- request:
-    method: post
-    uri: https://api.steemitstage.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction","params":{},"id":1}'
-    headers:
-      Content-Type:
-      - application/json
-      User-Agent:
-      - radiator/0.4.3rc1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 03 Nov 2018 18:05:05 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '174'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Error-Id:
-      - de9f14f8-1b8a-48bb-8ead-e77fcf42fe6e
-      X-Jussi-Request-Id:
-      - '000397426995997451'
-      X-Amzn-Trace-Id:
-      - Root=1-5bdde351-dba8b516b17e43f4ee6f83c7
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":1,"error":{"code":-32603,"message":"Internal
-        Error","data":{"error_id":"de9f14f8-1b8a-48bb-8ead-e77fcf42fe6e","jussi_request_id":"001075971380222632"}}}'
-    http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:05:05 GMT
+  recorded_at: Tue, 19 Feb 2019 19:59:56 GMT
 - request:
     method: get
     uri: https://api.steemitdev.com/health
@@ -321,7 +75,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Nov 2018 18:18:49 GMT
+      - Tue, 19 Feb 2019 19:59:56 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -331,9 +85,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000893321244786927'
+      - '000083188100162283'
       X-Amzn-Trace-Id:
-      - Root=1-5bdde689-9185b8cecabc96becb8dc5f6
+      - Root=1-5c6c603c-456dba553562cbd278f05cf3
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -346,9 +100,9 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"status":"OK","datetime":"2018-11-03T18:18:49.746361","source_commit":"d67c679b8248a3c299d35db131089bfa4eb0048a","docker_tag":"latest","jussi_num":27382923}'
+      string: '{"status":"OK","datetime":"2019-02-19T19:59:56.426566","source_commit":"6e3bafce3ee68b2daf249fdd0e47eed309282817","docker_tag":"latest","jussi_num":30493032}'
     http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:18:49 GMT
+  recorded_at: Tue, 19 Feb 2019 19:59:56 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
@@ -359,7 +113,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.3rc2
+      - radiator/0.4.4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -374,7 +128,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Nov 2018 18:18:50 GMT
+      - Tue, 19 Feb 2019 19:59:56 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -384,11 +138,11 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Error-Id:
-      - 9a4b44d7-6961-4bc1-aaec-ea2d965ceca1
+      - b367659a-5d6e-4f02-93cf-69c03a31f6fc
       X-Jussi-Request-Id:
-      - '001018933322183947'
+      - '000421462074884027'
       X-Amzn-Trace-Id:
-      - Root=1-5bdde68a-ab3b9972dfed2b4a6149ac8c
+      - Root=1-5c6c603c-fc2a1f7b5ae6057d64838e6b
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -402,7 +156,110 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","id":1,"error":{"code":-32603,"message":"Internal
-        Error","data":{"error_id":"9a4b44d7-6961-4bc1-aaec-ea2d965ceca1","jussi_request_id":"000313737241964289"}}}'
+        Error","data":{"error_id":"b367659a-5d6e-4f02-93cf-69c03a31f6fc","jussi_request_id":"000191705864767062"}}}'
     http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:18:50 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Tue, 19 Feb 2019 19:59:56 GMT
+- request:
+    method: get
+    uri: https://api.steemitdev.com/health
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 19 Feb 2019 19:59:57 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '157'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000162867377000855'
+      X-Amzn-Trace-Id:
+      - Root=1-5c6c603d-9406cd90fd8080384bda32f8
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"status":"OK","datetime":"2019-02-19T19:59:57.193911","source_commit":"6e3bafce3ee68b2daf249fdd0e47eed309282817","docker_tag":"latest","jussi_num":30493032}'
+    http_version: 
+  recorded_at: Tue, 19 Feb 2019 19:59:57 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction","params":{},"id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 19 Feb 2019 19:59:57 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Error-Id:
+      - 0a5c2035-03b6-44e8-aece-ea8c28f032f5
+      X-Jussi-Request-Id:
+      - '001120662556657574'
+      X-Amzn-Trace-Id:
+      - Root=1-5c6c603d-44a750f85241b7189aee9818
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":1,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"0a5c2035-03b6-44e8-aece-ea8c28f032f5","jussi_request_id":"000227366211991694"}}}'
+    http_version: 
+  recorded_at: Tue, 19 Feb 2019 19:59:57 GMT
+recorded_with: VCR 4.0.0

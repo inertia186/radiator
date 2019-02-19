@@ -113,12 +113,14 @@ module Radiator
     end
     
     def test_followed_by
+      skip
       vcr_cassette('followed_by') do
         refute_nil @chain.followed_by('inertia')
       end
     end
     
     def test_following
+      skip
       vcr_cassette('following') do
         refute_nil @chain.following('inertia')
       end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"market_history_api.get_market_history","params":null,"id":1}'
@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.3rc1
+      - radiator/0.4.4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Nov 2018 18:05:15 GMT
+      - Tue, 19 Feb 2019 19:59:47 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,9 +35,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000516492152823108'
+      - '000480413465563827'
       X-Amzn-Trace-Id:
-      - Root=1-5bdde35b-f43fa77d98fb14f7743846e4
+      - Root=1-5c6c6033-17b9b6ce37715fb24778864e
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -52,8 +52,8 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32000,"message":"Bad Cast:Invalid
         cast from type ''null_type'' to Object","data":{"code":7,"name":"bad_cast_exception","message":"Bad
-        Cast","stack":[{"context":{"level":"error","file":"variant.cpp","line":575,"method":"get_object","hostname":"","timestamp":"2018-11-03T18:05:15"},"format":"Invalid
+        Cast","stack":[{"context":{"level":"error","file":"variant.cpp","line":575,"method":"get_object","hostname":"","timestamp":"2019-02-19T19:59:47"},"format":"Invalid
         cast from type ''${type}'' to Object","data":{"type":"null_type"}}]}},"id":1}'
     http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:05:15 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Tue, 19 Feb 2019 19:59:47 GMT
+recorded_with: VCR 4.0.0

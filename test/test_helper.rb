@@ -42,11 +42,11 @@ class Radiator::Test < MiniTest::Test
   def chain_options
     {
       chain: :steem,
-      url: 'https://api.steemit.com',
+      url: 'https://api.steemitdev.com',
       failover_urls: [
-        'https://api.steemitstage.com',
+        # 'https://api.steemitstage.com',
         'https://api.steemitdev.com',
-        'https://api.steem.house',
+        # 'https://api.steem.house',
       ]
     }
   end

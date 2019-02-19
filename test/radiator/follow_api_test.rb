@@ -19,6 +19,7 @@ module Radiator
     end
 
     def test_all_methods
+      skip
       vcr_cassette('all_methods') do
         @api.method_names.each do |key|
           assert @api.send key
@@ -27,6 +28,7 @@ module Radiator
     end
 
     def test_get_followers
+      skip
       vcr_cassette('get_followers') do
         @api.get_followers(account: 'inertia', start: 0, type: 'blog', limit: 100) do |followers|
           assert_equal Hashie::Array, followers.class, followers.inspect

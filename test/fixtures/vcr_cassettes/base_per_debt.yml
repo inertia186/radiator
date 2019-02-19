@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.3rc1
+      - radiator/0.4.4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Nov 2018 18:05:56 GMT
+      - Tue, 19 Feb 2019 19:59:53 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -37,9 +37,9 @@ http_interactions:
       X-Jussi-Cache-Hit:
       - appbase.condenser_api.get_feed_history.params=[]
       X-Jussi-Request-Id:
-      - '000624806721746715'
+      - '000479262525599314'
       X-Amzn-Trace-Id:
-      - Root=1-5bdde384-386f37c053ad5bb49378d7c8
+      - Root=1-5c6c6039-8214fc6c19c35d9898c3a397
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -52,52 +52,52 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"id":1,"jsonrpc":"2.0","result":{"id":0,"current_median_history":{"base":"0.803
-        SBD","quote":"1.000 STEEM"},"price_history":[{"base":"0.769 SBD","quote":"1.000
-        STEEM"},{"base":"0.768 SBD","quote":"1.000 STEEM"},{"base":"0.768 SBD","quote":"1.000
-        STEEM"},{"base":"0.768 SBD","quote":"1.000 STEEM"},{"base":"0.782 SBD","quote":"1.000
-        STEEM"},{"base":"0.800 SBD","quote":"1.000 STEEM"},{"base":"0.800 SBD","quote":"1.000
-        STEEM"},{"base":"0.800 SBD","quote":"1.000 STEEM"},{"base":"0.799 SBD","quote":"1.000
-        STEEM"},{"base":"0.794 SBD","quote":"1.000 STEEM"},{"base":"0.786 SBD","quote":"1.000
-        STEEM"},{"base":"0.790 SBD","quote":"1.000 STEEM"},{"base":"0.794 SBD","quote":"1.000
-        STEEM"},{"base":"0.795 SBD","quote":"1.000 STEEM"},{"base":"0.795 SBD","quote":"1.000
-        STEEM"},{"base":"0.795 SBD","quote":"1.000 STEEM"},{"base":"0.795 SBD","quote":"1.000
-        STEEM"},{"base":"0.797 SBD","quote":"1.000 STEEM"},{"base":"0.800 SBD","quote":"1.000
-        STEEM"},{"base":"0.800 SBD","quote":"1.000 STEEM"},{"base":"0.799 SBD","quote":"1.000
-        STEEM"},{"base":"0.799 SBD","quote":"1.000 STEEM"},{"base":"0.799 SBD","quote":"1.000
-        STEEM"},{"base":"0.798 SBD","quote":"1.000 STEEM"},{"base":"0.798 SBD","quote":"1.000
-        STEEM"},{"base":"0.809 SBD","quote":"1.000 STEEM"},{"base":"0.822 SBD","quote":"1.000
-        STEEM"},{"base":"0.826 SBD","quote":"1.000 STEEM"},{"base":"0.822 SBD","quote":"1.000
-        STEEM"},{"base":"0.821 SBD","quote":"1.000 STEEM"},{"base":"0.814 SBD","quote":"1.000
-        STEEM"},{"base":"0.814 SBD","quote":"1.000 STEEM"},{"base":"0.818 SBD","quote":"1.000
-        STEEM"},{"base":"0.817 SBD","quote":"1.000 STEEM"},{"base":"0.817 SBD","quote":"1.000
-        STEEM"},{"base":"0.818 SBD","quote":"1.000 STEEM"},{"base":"0.816 SBD","quote":"1.000
-        STEEM"},{"base":"0.814 SBD","quote":"1.000 STEEM"},{"base":"0.815 SBD","quote":"1.000
-        STEEM"},{"base":"0.815 SBD","quote":"1.000 STEEM"},{"base":"0.815 SBD","quote":"1.000
-        STEEM"},{"base":"0.814 SBD","quote":"1.000 STEEM"},{"base":"0.813 SBD","quote":"1.000
-        STEEM"},{"base":"0.811 SBD","quote":"1.000 STEEM"},{"base":"0.812 SBD","quote":"1.000
-        STEEM"},{"base":"0.812 SBD","quote":"1.000 STEEM"},{"base":"0.812 SBD","quote":"1.000
-        STEEM"},{"base":"0.811 SBD","quote":"1.000 STEEM"},{"base":"0.810 SBD","quote":"1.000
-        STEEM"},{"base":"0.810 SBD","quote":"1.000 STEEM"},{"base":"0.809 SBD","quote":"1.000
-        STEEM"},{"base":"0.809 SBD","quote":"1.000 STEEM"},{"base":"0.809 SBD","quote":"1.000
-        STEEM"},{"base":"0.809 SBD","quote":"1.000 STEEM"},{"base":"0.809 SBD","quote":"1.000
-        STEEM"},{"base":"0.810 SBD","quote":"1.000 STEEM"},{"base":"0.809 SBD","quote":"1.000
-        STEEM"},{"base":"0.809 SBD","quote":"1.000 STEEM"},{"base":"0.808 SBD","quote":"1.000
-        STEEM"},{"base":"0.806 SBD","quote":"1.000 STEEM"},{"base":"0.803 SBD","quote":"1.000
-        STEEM"},{"base":"0.804 SBD","quote":"1.000 STEEM"},{"base":"0.803 SBD","quote":"1.000
-        STEEM"},{"base":"0.803 SBD","quote":"1.000 STEEM"},{"base":"0.803 SBD","quote":"1.000
-        STEEM"},{"base":"0.803 SBD","quote":"1.000 STEEM"},{"base":"0.803 SBD","quote":"1.000
-        STEEM"},{"base":"0.803 SBD","quote":"1.000 STEEM"},{"base":"0.797 SBD","quote":"1.000
-        STEEM"},{"base":"0.795 SBD","quote":"1.000 STEEM"},{"base":"0.793 SBD","quote":"1.000
-        STEEM"},{"base":"0.791 SBD","quote":"1.000 STEEM"},{"base":"0.789 SBD","quote":"1.000
-        STEEM"},{"base":"0.789 SBD","quote":"1.000 STEEM"},{"base":"0.788 SBD","quote":"1.000
-        STEEM"},{"base":"0.790 SBD","quote":"1.000 STEEM"},{"base":"0.787 SBD","quote":"1.000
-        STEEM"},{"base":"0.786 SBD","quote":"1.000 STEEM"},{"base":"0.785 SBD","quote":"1.000
-        STEEM"},{"base":"0.786 SBD","quote":"1.000 STEEM"},{"base":"0.786 SBD","quote":"1.000
-        STEEM"},{"base":"0.785 SBD","quote":"1.000 STEEM"},{"base":"0.785 SBD","quote":"1.000
-        STEEM"},{"base":"0.785 SBD","quote":"1.000 STEEM"}]}}'
+      string: '{"id":1,"jsonrpc":"2.0","result":{"id":0,"current_median_history":{"base":"0.324
+        SBD","quote":"1.000 STEEM"},"price_history":[{"base":"0.322 SBD","quote":"1.000
+        STEEM"},{"base":"0.321 SBD","quote":"1.000 STEEM"},{"base":"0.322 SBD","quote":"1.000
+        STEEM"},{"base":"0.319 SBD","quote":"1.000 STEEM"},{"base":"0.319 SBD","quote":"1.000
+        STEEM"},{"base":"0.323 SBD","quote":"1.000 STEEM"},{"base":"0.322 SBD","quote":"1.000
+        STEEM"},{"base":"0.320 SBD","quote":"1.000 STEEM"},{"base":"0.322 SBD","quote":"1.000
+        STEEM"},{"base":"0.322 SBD","quote":"1.000 STEEM"},{"base":"0.321 SBD","quote":"1.000
+        STEEM"},{"base":"0.321 SBD","quote":"1.000 STEEM"},{"base":"0.321 SBD","quote":"1.000
+        STEEM"},{"base":"0.322 SBD","quote":"1.000 STEEM"},{"base":"0.322 SBD","quote":"1.000
+        STEEM"},{"base":"0.323 SBD","quote":"1.000 STEEM"},{"base":"0.326 SBD","quote":"1.000
+        STEEM"},{"base":"0.324 SBD","quote":"1.000 STEEM"},{"base":"0.322 SBD","quote":"1.000
+        STEEM"},{"base":"0.319 SBD","quote":"1.000 STEEM"},{"base":"0.324 SBD","quote":"1.000
+        STEEM"},{"base":"0.321 SBD","quote":"1.000 STEEM"},{"base":"0.321 SBD","quote":"1.000
+        STEEM"},{"base":"0.321 SBD","quote":"1.000 STEEM"},{"base":"0.321 SBD","quote":"1.000
+        STEEM"},{"base":"0.322 SBD","quote":"1.000 STEEM"},{"base":"0.322 SBD","quote":"1.000
+        STEEM"},{"base":"0.321 SBD","quote":"1.000 STEEM"},{"base":"0.319 SBD","quote":"1.000
+        STEEM"},{"base":"0.313 SBD","quote":"1.000 STEEM"},{"base":"0.313 SBD","quote":"1.000
+        STEEM"},{"base":"0.314 SBD","quote":"1.000 STEEM"},{"base":"0.316 SBD","quote":"1.000
+        STEEM"},{"base":"0.317 SBD","quote":"1.000 STEEM"},{"base":"0.317 SBD","quote":"1.000
+        STEEM"},{"base":"0.317 SBD","quote":"1.000 STEEM"},{"base":"0.317 SBD","quote":"1.000
+        STEEM"},{"base":"0.317 SBD","quote":"1.000 STEEM"},{"base":"0.318 SBD","quote":"1.000
+        STEEM"},{"base":"0.321 SBD","quote":"1.000 STEEM"},{"base":"0.321 SBD","quote":"1.000
+        STEEM"},{"base":"0.322 SBD","quote":"1.000 STEEM"},{"base":"0.322 SBD","quote":"1.000
+        STEEM"},{"base":"0.323 SBD","quote":"1.000 STEEM"},{"base":"0.325 SBD","quote":"1.000
+        STEEM"},{"base":"0.324 SBD","quote":"1.000 STEEM"},{"base":"0.325 SBD","quote":"1.000
+        STEEM"},{"base":"0.325 SBD","quote":"1.000 STEEM"},{"base":"0.325 SBD","quote":"1.000
+        STEEM"},{"base":"0.324 SBD","quote":"1.000 STEEM"},{"base":"0.325 SBD","quote":"1.000
+        STEEM"},{"base":"0.324 SBD","quote":"1.000 STEEM"},{"base":"0.324 SBD","quote":"1.000
+        STEEM"},{"base":"0.326 SBD","quote":"1.000 STEEM"},{"base":"0.329 SBD","quote":"1.000
+        STEEM"},{"base":"0.330 SBD","quote":"1.000 STEEM"},{"base":"0.330 SBD","quote":"1.000
+        STEEM"},{"base":"0.332 SBD","quote":"1.000 STEEM"},{"base":"0.332 SBD","quote":"1.000
+        STEEM"},{"base":"0.332 SBD","quote":"1.000 STEEM"},{"base":"0.332 SBD","quote":"1.000
+        STEEM"},{"base":"0.331 SBD","quote":"1.000 STEEM"},{"base":"0.331 SBD","quote":"1.000
+        STEEM"},{"base":"0.334 SBD","quote":"1.000 STEEM"},{"base":"0.334 SBD","quote":"1.000
+        STEEM"},{"base":"0.334 SBD","quote":"1.000 STEEM"},{"base":"0.333 SBD","quote":"1.000
+        STEEM"},{"base":"0.330 SBD","quote":"1.000 STEEM"},{"base":"0.328 SBD","quote":"1.000
+        STEEM"},{"base":"0.328 SBD","quote":"1.000 STEEM"},{"base":"0.328 SBD","quote":"1.000
+        STEEM"},{"base":"0.328 SBD","quote":"1.000 STEEM"},{"base":"0.330 SBD","quote":"1.000
+        STEEM"},{"base":"0.330 SBD","quote":"1.000 STEEM"},{"base":"0.331 SBD","quote":"1.000
+        STEEM"},{"base":"0.330 SBD","quote":"1.000 STEEM"},{"base":"0.330 SBD","quote":"1.000
+        STEEM"},{"base":"0.332 SBD","quote":"1.000 STEEM"},{"base":"0.335 SBD","quote":"1.000
+        STEEM"},{"base":"0.335 SBD","quote":"1.000 STEEM"},{"base":"0.336 SBD","quote":"1.000
+        STEEM"},{"base":"0.337 SBD","quote":"1.000 STEEM"},{"base":"0.337 SBD","quote":"1.000
+        STEEM"},{"base":"0.336 SBD","quote":"1.000 STEEM"}]}}'
     http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:05:56 GMT
+  recorded_at: Tue, 19 Feb 2019 19:59:53 GMT
 - request:
     method: post
     uri: https://api.steemit.com/
@@ -108,7 +108,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.3rc1
+      - radiator/0.4.4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -123,7 +123,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Nov 2018 18:05:56 GMT
+      - Tue, 19 Feb 2019 19:59:53 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -135,9 +135,9 @@ http_interactions:
       X-Jussi-Cache-Hit:
       - appbase.condenser_api.get_dynamic_global_properties.params=[]
       X-Jussi-Request-Id:
-      - '000230298839311592'
+      - '000276094575670870'
       X-Amzn-Trace-Id:
-      - Root=1-5bdde384-58c522ba69ca79dc837a335b
+      - Root=1-5c6c6039-e6036810784889b74d6b05ac
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -150,14 +150,14 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"id":2,"jsonrpc":"2.0","result":{"head_block_number":27382698,"head_block_id":"01a1d3aaff285629a48f7fe29431fdbca7852bdb","time":"2018-11-03T18:05:54","current_witness":"timcliff","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"298803369.527
-        STEEM","current_supply":"279838987.070 STEEM","confidential_supply":"0.000
-        STEEM","current_sbd_supply":"15228399.113 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"198432601.839 STEEM","total_vesting_shares":"400139705141.779328
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"477734903.484666
-        VESTS","pending_rewarded_vesting_steem":"234404.449 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":27477718,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":27382683,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":900,"sbd_stop_percent":1000,"sbd_start_percent":900}}'
+      string: '{"id":2,"jsonrpc":"2.0","result":{"head_block_number":30493049,"head_block_id":"01d14979aa693804252165a0456b757ed99a73ae","time":"2019-02-19T19:59:51","current_witness":"bobinson","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"331276858.460
+        STEEM","current_supply":"300766953.945 STEEM","confidential_supply":"0.000
+        STEEM","current_sbd_supply":"9885209.063 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"200493737.999 STEEM","total_vesting_shares":"401859015092.095918
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"595713783.599116
+        VESTS","pending_rewarded_vesting_steem":"293569.898 STEEM","sbd_interest_rate":0,"sbd_print_rate":8000,"maximum_block_size":65536,"current_aslot":30590397,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":30493034,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":900,"sbd_stop_percent":1000,"sbd_start_percent":900}}'
     http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:05:56 GMT
+  recorded_at: Tue, 19 Feb 2019 19:59:54 GMT
 - request:
     method: post
     uri: https://api.steemit.com/
@@ -168,7 +168,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.3rc2
+      - radiator/0.4.4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -183,7 +183,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Nov 2018 18:18:43 GMT
+      - Tue, 19 Feb 2019 19:59:54 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -195,9 +195,9 @@ http_interactions:
       X-Jussi-Cache-Hit:
       - appbase.condenser_api.get_dynamic_global_properties.params=[]
       X-Jussi-Request-Id:
-      - '000063928901746968'
+      - '000245494937120550'
       X-Amzn-Trace-Id:
-      - Root=1-5bdde683-0521443852c32569fc65fc6e
+      - Root=1-5c6c603a-be25a9ce0b5054dc0f275a17
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -210,12 +210,12 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"id":3,"jsonrpc":"2.0","result":{"head_block_number":27382954,"head_block_id":"01a1d4aa65f71c04d0311fbae814a1a0b93e281b","time":"2018-11-03T18:18:42","current_witness":"xeldal","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"298803993.505
-        STEEM","current_supply":"279839397.456 STEEM","confidential_supply":"0.000
-        STEEM","current_sbd_supply":"15228570.628 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"198431545.348 STEEM","total_vesting_shares":"400137383788.659991
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"477538679.186207
-        VESTS","pending_rewarded_vesting_steem":"234307.181 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":27477974,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":27382935,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":900,"sbd_stop_percent":1000,"sbd_start_percent":900}}'
+      string: '{"id":3,"jsonrpc":"2.0","result":{"head_block_number":30493050,"head_block_id":"01d1497a8a6539c0a3be6aab53c1f02ce352ed86","time":"2019-02-19T19:59:54","current_witness":"someguy123","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"331276861.113
+        STEEM","current_supply":"300766955.376 STEEM","confidential_supply":"0.000
+        STEEM","current_sbd_supply":"9885209.459 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"200493739.733 STEEM","total_vesting_shares":"401859017756.006057
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"595716649.774301
+        VESTS","pending_rewarded_vesting_steem":"293571.328 STEEM","sbd_interest_rate":0,"sbd_print_rate":8000,"maximum_block_size":65536,"current_aslot":30590398,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":30493035,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":900,"sbd_stop_percent":1000,"sbd_start_percent":900}}'
     http_version: 
-  recorded_at: Sat, 03 Nov 2018 18:18:43 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Tue, 19 Feb 2019 19:59:54 GMT
+recorded_with: VCR 4.0.0

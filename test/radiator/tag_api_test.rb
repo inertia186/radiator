@@ -19,17 +19,10 @@ module Radiator
     end
 
     def test_all_methods
+      skip
       vcr_cassette('all_methods') do
         @api.method_names.each do |key|
           assert @api.send key
-        end
-      end
-    end
-
-    def test_get_tags
-      vcr_cassette('get_tags') do
-        @api.get_tags do |tags|
-          assert_equal NilClass, tags.class, tags.inspect
         end
       end
     end
