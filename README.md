@@ -10,6 +10,13 @@
 
 Radiator is an API Client for interaction with the STEEM network using Ruby.
 
+#### Changes in v0.4.5
+
+* Added support to query and stream a Steem Smart Contract backed side-chains like Steem Engine.
+  * [Blockchain](https://www.rubydoc.info/gems/radiator/radiator/doc/Radiator/SSC/Blockchain.html)
+    * [Stream](https://www.rubydoc.info/gems/radiator/radiator/doc/Radiator/SSC/Stream.html)
+  * [Contracts](https://www.rubydoc.info/gems/radiator/radiator/doc/Radiator/SSC/Contracts.html)
+
 #### Changes in v0.4.0
 
 * Gem updates
@@ -180,6 +187,63 @@ end
  .
  "steemzine"]
 ```
+
+#### Side Chain Support
+
+Steem Smart Contract side-chains are supported by Radiator.  The default side-chain is Steem Engine.
+
+This will fetch the latest block from the side-chain ...
+
+```ruby
+rpc = Radiator::SSC::Blockchain.new
+rpc.latest_block_info
+```
+
+This will fetch block 1 ...
+
+```ruby
+rpc.block_info(1)
+```
+
+Or a specific transaction ...
+
+```ruby
+rpc.transaction_info('9d288aab2eb66064dc0d4492cb281512386e2293')
+```
+
+You can also do contract queries.  This will look up the `tokens` contract:
+
+```ruby
+rpc = Radiator::SSC::Contracts.new
+rpc.contract('tokens')
+```
+
+This will look up a specific record in a contract result ...
+
+```ruby
+rpc.find_one(
+  contract: "tokens",
+  table: "balances",
+  query: {
+    symbol: "STINGY",
+    account: "inertia"
+  }
+)
+```
+
+Or get multiple results ...
+
+```ruby
+rpc.find(
+  contract: "tokens",
+  table: "balances",
+  query: {
+    symbol: "STINGY"
+  }
+)
+```
+
+
 
 #### Streaming
 
@@ -370,6 +434,26 @@ Example of the output:
 .
 .
 .
+```
+
+#### Side-chain Streaming
+
+Streaming side-chain transactions are supported:
+
+```ruby
+# Default side-chain is Steem Engine.
+stream = Radiator::SSC::Stream.new
+stream.transactions do |tx, trx_id|
+  puts "[#{trx_id}] #{tx.to_json}"
+end
+```
+
+Even whole side-chain blocks:
+
+```ruby
+stream.blocks do |bk, num|
+  puts "[#{num}] #{bk.to_json}"
+end
 ```
 
 #### Transaction Signing

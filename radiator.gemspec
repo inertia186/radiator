@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'yard', '~> 0.9.9'
   spec.add_development_dependency 'pry', '~> 0.11', '>= 0.11.3'
   spec.add_development_dependency 'rb-readline', '~> 0.5', '>= 0.5.5'
+  spec.add_development_dependency 'irb', '~> 1.0', '>= 1.0.0'
   
   # net-http-persistent has an open-ended dependency because radiator directly
   # supports net-http-persistent-3.0.0 as well as net-http-persistent-2.5.2.
