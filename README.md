@@ -13,9 +13,9 @@ Radiator is an API Client for interaction with the STEEM network using Ruby.
 #### Changes in v0.4.5
 
 * Added support to query and stream a Steem Smart Contract backed side-chains like Steem Engine.
-  * [Blockchain](https://www.rubydoc.info/gems/radiator/radiator/doc/Radiator/SSC/Blockchain.html)
-    * [Stream](https://www.rubydoc.info/gems/radiator/radiator/doc/Radiator/SSC/Stream.html)
-  * [Contracts](https://www.rubydoc.info/gems/radiator/radiator/doc/Radiator/SSC/Contracts.html)
+  * [Blockchain](https://www.rubydoc.info/gems/radiator/0.4.5/Radiator/SSC/Blockchain.html)
+    * [Stream](https://www.rubydoc.info/gems/radiator/0.4.5/Radiator/SSC/Stream.html)
+  * [Contracts](https://www.rubydoc.info/gems/radiator/0.4.5/Radiator/SSC/Contracts.html)
 
 #### Changes in v0.4.0
 
@@ -629,7 +629,7 @@ https://github.com/inertia186/radiator/issues/12
 ---
 
 <center>
-  <img src="http://www.steemimg.com/images/2016/08/19/RadiatorCoolingFan-54in-Webfdcb1.png" />
+  <img src="https://steemitimages.com/0x0/http://www.steemimg.com/images/2016/08/19/RadiatorCoolingFan-54in-Webfdcb1.png" />
 </center>
 
 See my previous Ruby How To posts in: [#radiator](https://steemit.com/created/radiator) [#ruby](https://steemit.com/created/ruby)
