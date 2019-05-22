@@ -7,6 +7,8 @@ module Radiator
         'User-Agent' => Radiator::AGENT_ID
       }
       
+      MAX_BACKOFF = 60.0
+      
       def initialize(options = {})
         @root_url = options[:root_url] || 'https://api.steem-engine.com/rpc'
         
@@ -26,6 +28,12 @@ module Radiator
           options[:reuse_ssl_sessions]
         else
           true
+        end
+        
+        @persist = if options[:persist].nil?
+          true
+        else
+          options[:persist]
         end
         
         if defined? Net::HTTP::Persistent::DEFAULT_POOL_SIZE
@@ -61,18 +69,24 @@ module Radiator
       end
       
       def http
-        @http ||= if defined? Net::HTTP::Persistent::DEFAULT_POOL_SIZE
-          Net::HTTP::Persistent.new(name: http_id, pool_size: @pool_size).tap do |http|
-            http.keep_alive = 30
-            http.idle_timeout = 10
-            http.max_requests = @max_requests
-            http.retry_change_requests = true
-            http.reuse_ssl_sessions = @reuse_ssl_sessions
+        @http ||= if persist?
+          if defined? Net::HTTP::Persistent::DEFAULT_POOL_SIZE
+            Net::HTTP::Persistent.new(name: http_id, pool_size: @pool_size).tap do |http|
+              http.keep_alive = 30
+              http.idle_timeout = 10
+              http.max_requests = @max_requests
+              http.retry_change_requests = true
+              http.reuse_ssl_sessions = @reuse_ssl_sessions
+            end
+          else
+            # net-http-persistent < 3.0
+            Net::HTTP::Persistent.new(http_id) do |http|
+              http = Net::HTTP.new(uri.host, uri.port)
+              http.use_ssl = uri.scheme == 'https'
+            end
           end
         else
-          # net-http-persistent < 3.0
-          Net::HTTP::Persistent.new(http_id) do |http|
-            http = Net::HTTP.new(uri.host, uri.port)
+          Net::HTTP.new(uri.host, uri.port).tap do |http|
             http.use_ssl = uri.scheme == 'https'
           end
         end
@@ -84,7 +98,26 @@ module Radiator
       
       def request(options)
         request = post_request
+        skip_health_check = options.delete(:skip_health_check)
         request.body = JSON[options.merge(jsonrpc: '2.0', id: rpc_id)]
+        
+        unless skip_health_check
+          unless healthy?
+            @backoff ||= 0.1
+            
+            backoff = @backoff
+            
+            if !!backoff
+              raise "Too many failures on #{url}" if backoff >= MAX_BACKOFF
+              
+              backoff *= backoff
+              @backoff = backoff
+              sleep backoff
+            end
+          end
+          
+          @backoff = nil
+        end
         
         response = case http
         when Net::HTTP::Persistent then http.request(uri, request)
@@ -99,6 +132,15 @@ module Radiator
         end
         
         response.result
+      end
+      
+      def healthy?
+        warn("Health check not defined for: #{uri}")
+        true
+      end
+      
+      def persist?
+        !!@persist
       end
     end
   end

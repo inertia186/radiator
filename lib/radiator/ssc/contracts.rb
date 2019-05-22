@@ -66,6 +66,23 @@ module Radiator
       def find(options = {})
         request(method: 'find', params: options)
       end
+    protected
+      def healthy?
+        begin
+          request(method: 'find', params: {
+            contract: 'tokens',
+            table: 'transfers',
+            query: {
+              symbol: ''
+            },
+            limit: 0
+          }, skip_health_check: true).nil?
+        rescue => e
+          warn("Health check for #{uri.inspect} failed: #{e.inspect}")
+          
+          !!shutdown
+        end
+      end
     end
   end
 end

@@ -42,6 +42,16 @@ module Radiator
       def transaction_info(trx_id)
         request(method: 'getTransactionInfo', params: {txid: trx_id})
       end
+    protected
+      def healthy?
+        begin
+          request(method: 'getBlockInfo', params: {blockNumber: -1}, skip_health_check: true).nil?
+        rescue => e
+          warn("Health check for #{uri.inspect} failed: #{e.inspect}")
+          
+          !!shutdown
+        end
+      end
     end
   end
 end
