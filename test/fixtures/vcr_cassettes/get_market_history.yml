@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.4
+      - radiator/0.4.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 19 Feb 2019 19:59:47 GMT
+      - Thu, 23 May 2019 01:24:08 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,9 +35,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000480413465563827'
+      - '000736999428595670'
       X-Amzn-Trace-Id:
-      - Root=1-5c6c6033-17b9b6ce37715fb24778864e
+      - Root=1-5ce5f638-0aab59227c5e7ce6c89fdd06
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -52,8 +52,8 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32000,"message":"Bad Cast:Invalid
         cast from type ''null_type'' to Object","data":{"code":7,"name":"bad_cast_exception","message":"Bad
-        Cast","stack":[{"context":{"level":"error","file":"variant.cpp","line":575,"method":"get_object","hostname":"","timestamp":"2019-02-19T19:59:47"},"format":"Invalid
+        Cast","stack":[{"context":{"level":"error","file":"variant.cpp","line":575,"method":"get_object","hostname":"","timestamp":"2019-05-23T01:24:08"},"format":"Invalid
         cast from type ''${type}'' to Object","data":{"type":"null_type"}}]}},"id":1}'
     http_version: 
-  recorded_at: Tue, 19 Feb 2019 19:59:47 GMT
+  recorded_at: Thu, 23 May 2019 01:24:08 GMT
 recorded_with: VCR 4.0.0

@@ -42,6 +42,17 @@ module Radiator
           assert_equal trx_id, transaction_info.transactionId
         end
       end
+      
+      def test_no_persist_transaction_info
+        rpc = Radiator::SSC::Blockchain.new(persist: false)
+        
+        vcr_cassette('ssc_blockchain_transaction_info') do
+          trx_id = 'df846ffdbd87f3fae2a60993dae9d16d44c814e3'
+          transaction_info = rpc.transaction_info(trx_id)
+          assert transaction_info
+          assert_equal trx_id, transaction_info.transactionId
+        end
+      end
     end
   end
 end

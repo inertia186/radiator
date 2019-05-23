@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.4
+      - radiator/0.4.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 19 Feb 2019 19:59:10 GMT
+      - Thu, 23 May 2019 01:24:56 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,9 +35,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000143498782757718'
+      - '000802509086319001'
       X-Amzn-Trace-Id:
-      - Root=1-5c6c600e-ac3454a89f5fa098b0ca9db8
+      - Root=1-5ce5f668-4dcee2024e8a106c658e7999
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":1223231,"id":1}'
+      string: '{"jsonrpc":"2.0","result":1276738,"id":1}'
     http_version: 
-  recorded_at: Tue, 19 Feb 2019 19:59:10 GMT
+  recorded_at: Thu, 23 May 2019 01:24:56 GMT
 recorded_with: VCR 4.0.0

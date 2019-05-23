@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.4
+      - radiator/0.4.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,19 +25,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 19 Feb 2019 19:59:50 GMT
+      - Thu, 23 May 2019 01:24:08 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '315'
+      - '316'
       Connection:
       - keep-alive
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000039285034465745'
+      - '000209192040078640'
       X-Amzn-Trace-Id:
-      - Root=1-5c6c6036-a133fc95347e5dbaea584f35
+      - Root=1-5ce5f638-11e0df52b89c2a2f05284aa6
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"latest":"0.34137291280148424","lowest_ask":"0.34625059998496421","highest_bid":"0.34557220708446867","percent_change":"0.00000000000000000","steem_volume":{"amount":"17815045","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"6111805","precision":3,"nai":"@@000000013"}},"id":1}'
+      string: '{"jsonrpc":"2.0","result":{"latest":"0.38704088704088702","lowest_ask":"0.39176573786398250","highest_bid":"0.39149888143176736","percent_change":"0.00000000000000000","steem_volume":{"amount":"36647875","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"14247578","precision":3,"nai":"@@000000013"}},"id":1}'
     http_version: 
-  recorded_at: Tue, 19 Feb 2019 19:59:50 GMT
+  recorded_at: Thu, 23 May 2019 01:24:08 GMT
 recorded_with: VCR 4.0.0

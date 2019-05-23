@@ -5,6 +5,49 @@ http_interactions:
     uri: https://api.steem-engine.com/rpc/blockchain
     body:
       encoding: UTF-8
+      string: '{"method":"getBlockInfo","params":{"blockNumber":-1},"jsonrpc":"2.0","id":2}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Date:
+      - Thu, 23 May 2019 01:24:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '38'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":2,"result":null}'
+    http_version: 
+  recorded_at: Thu, 23 May 2019 01:24:47 GMT
+- request:
+    method: post
+    uri: https://api.steem-engine.com/rpc/blockchain
+    body:
+      encoding: UTF-8
       string: '{"method":"getBlockInfo","params":{"blockNumber":"WRONG"},"jsonrpc":"2.0","id":1}'
     headers:
       Content-Type:
@@ -27,7 +70,7 @@ http_interactions:
       Server:
       - nginx/1.10.3 (Ubuntu)
       Date:
-      - Sat, 30 Mar 2019 23:35:31 GMT
+      - Thu, 23 May 2019 01:24:48 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -43,5 +86,5 @@ http_interactions:
       string: '{"jsonrpc":"2.0","id":1,"error":{"code":400,"message":"missing or wrong
         parameters: blockNumber is required"}}'
     http_version: 
-  recorded_at: Sat, 30 Mar 2019 23:35:31 GMT
+  recorded_at: Thu, 23 May 2019 01:24:48 GMT
 recorded_with: VCR 4.0.0

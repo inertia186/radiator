@@ -25,7 +25,7 @@ module Radiator
           }
           result = @rpc.find_one(params)
           assert result
-          assert_equal 3.75137479, result.balance.to_f
+          assert_equal 7.8721968, result.balance.to_f
         end
       end
       
@@ -40,7 +40,24 @@ module Radiator
           }
           result = @rpc.find(params)
           assert result
-          assert_equal 19, result.size
+          assert_equal 21, result.size
+        end
+      end
+      
+      def test_no_persist_find
+        rpc = Radiator::SSC::Contracts.new(persist: false)
+        
+        vcr_cassette('ssc_contracts_find') do
+          params = {
+            contract: 'tokens',
+            table: 'balances',
+            query: {
+              symbol: 'STINGY'
+            }
+          }
+          result = rpc.find(params)
+          assert result
+          assert_equal 21, result.size
         end
       end
     end

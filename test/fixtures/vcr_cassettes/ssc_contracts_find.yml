@@ -5,6 +5,49 @@ http_interactions:
     uri: https://api.steem-engine.com/rpc/contracts
     body:
       encoding: UTF-8
+      string: '{"method":"find","params":{"contract":"tokens","table":"transfers","query":{"symbol":""},"limit":0},"jsonrpc":"2.0","id":2}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Date:
+      - Thu, 23 May 2019 01:24:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '38'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":2,"result":null}'
+    http_version: 
+  recorded_at: Thu, 23 May 2019 01:24:05 GMT
+- request:
+    method: post
+    uri: https://api.steem-engine.com/rpc/contracts
+    body:
+      encoding: UTF-8
       string: '{"method":"find","params":{"contract":"tokens","table":"balances","query":{"symbol":"STINGY"}},"jsonrpc":"2.0","id":1}'
     headers:
       Content-Type:
@@ -27,11 +70,11 @@ http_interactions:
       Server:
       - nginx/1.10.3 (Ubuntu)
       Date:
-      - Sat, 30 Mar 2019 23:35:35 GMT
+      - Thu, 23 May 2019 01:24:05 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '1506'
+      - '1669'
       Connection:
       - keep-alive
       X-Powered-By:
@@ -40,7 +83,7 @@ http_interactions:
       - "*"
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":1,"result":[{"account":"inertia","symbol":"STINGY","balance":"3.75137479","$loki":363},{"account":"ausbitbank","symbol":"STINGY","balance":1.50151746,"$loki":364},{"account":"anthonyadavisii","symbol":"STINGY","balance":"3.10722987","$loki":386},{"account":"noflyzoe","symbol":"STINGY","balance":"0.00000000","$loki":436},{"account":"eonwarped","symbol":"STINGY","balance":"6.26772496","$loki":501},{"account":"freebornangel","symbol":"STINGY","balance":"0.00000000","$loki":509},{"account":"flagawhale","symbol":"STINGY","balance":"0.86309339","$loki":526},{"account":"admiralbot","symbol":"STINGY","balance":"1.20916382","$loki":527},{"account":"whatsup","symbol":"STINGY","balance":1.13050874,"$loki":943},{"account":"pjau","symbol":"STINGY","balance":"0.11617238","$loki":1013},{"account":"themarkymark","symbol":"STINGY","balance":"0.00000000","$loki":1088},{"account":"enforcer48","symbol":"STINGY","balance":2.6366208,"$loki":1189},{"account":"ackza","symbol":"STINGY","balance":"2.17000000","$loki":1436},{"account":"aneilpatel","symbol":"STINGY","balance":"0.001","$loki":14375},{"account":"ipromote","symbol":"STINGY","balance":"0.00000000","$loki":14873},{"account":"boinger","symbol":"STINGY","balance":"0.00860834","$loki":14874},{"account":"mrkebab","symbol":"STINGY","balance":"0.06047863","$loki":14875},{"account":"gamblingman","symbol":"STINGY","balance":"0.00000000","$loki":14876},{"account":"rollingbones","symbol":"STINGY","balance":"0.00000000","$loki":14877}]}'
+      string: '{"jsonrpc":"2.0","id":1,"result":[{"account":"inertia","symbol":"STINGY","balance":"7.87219680","$loki":363},{"account":"ausbitbank","symbol":"STINGY","balance":1.50151746,"$loki":364},{"account":"anthonyadavisii","symbol":"STINGY","balance":"4.03886590","$loki":386},{"account":"noflyzoe","symbol":"STINGY","balance":"0.00000000","$loki":436},{"account":"eonwarped","symbol":"STINGY","balance":"6.47409135","$loki":501},{"account":"freebornangel","symbol":"STINGY","balance":"0.41489045","$loki":509},{"account":"flagawhale","symbol":"STINGY","balance":"1.14773700","$loki":526},{"account":"admiralbot","symbol":"STINGY","balance":"1.31001823","$loki":527},{"account":"whatsup","symbol":"STINGY","balance":"1.42528884","$loki":943},{"account":"pjau","symbol":"STINGY","balance":"1.60260316","$loki":1013},{"account":"themarkymark","symbol":"STINGY","balance":"0.00000000","$loki":1088},{"account":"enforcer48","symbol":"STINGY","balance":"9.21750110","$loki":1189},{"account":"ackza","symbol":"STINGY","balance":"0.01996500","$loki":1436},{"account":"aneilpatel","symbol":"STINGY","balance":"0.001","$loki":14375},{"account":"ipromote","symbol":"STINGY","balance":"0.00000000","$loki":14873},{"account":"boinger","symbol":"STINGY","balance":"0.00000000","$loki":14874},{"account":"mrkebab","symbol":"STINGY","balance":"6.26738196","$loki":14875},{"account":"gamblingman","symbol":"STINGY","balance":"0.00000000","$loki":14876},{"account":"rollingbones","symbol":"STINGY","balance":"0.00000000","$loki":14877},{"account":"beggars","symbol":"STINGY","balance":"0.24527928","$loki":27031},{"account":"sbi-booster","symbol":"STINGY","balance":"0.03719185","$loki":32967}]}'
     http_version: 
-  recorded_at: Sat, 30 Mar 2019 23:35:35 GMT
+  recorded_at: Thu, 23 May 2019 01:24:05 GMT
 recorded_with: VCR 4.0.0

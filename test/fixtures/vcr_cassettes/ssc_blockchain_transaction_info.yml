@@ -5,6 +5,45 @@ http_interactions:
     uri: https://api.steem-engine.com/rpc/blockchain
     body:
       encoding: UTF-8
+      string: '{"method":"getBlockInfo","params":{"blockNumber":-1},"jsonrpc":"2.0","id":2}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Date:
+      - Thu, 23 May 2019 01:24:51 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '38'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":2,"result":null}'
+    http_version: 
+  recorded_at: Thu, 23 May 2019 01:24:51 GMT
+- request:
+    method: post
+    uri: https://api.steem-engine.com/rpc/blockchain
+    body:
+      encoding: UTF-8
       string: '{"method":"getTransactionInfo","params":{"txid":"df846ffdbd87f3fae2a60993dae9d16d44c814e3"},"jsonrpc":"2.0","id":1}'
     headers:
       Content-Type:
@@ -15,10 +54,6 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
   response:
     status:
       code: 200
@@ -27,7 +62,7 @@ http_interactions:
       Server:
       - nginx/1.10.3 (Ubuntu)
       Date:
-      - Sat, 30 Mar 2019 23:35:32 GMT
+      - Thu, 23 May 2019 01:24:52 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -41,7 +76,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","id":1,"result":{"blockNumber":1,"refSteemBlockNumber":29866321,"transactionId":"df846ffdbd87f3fae2a60993dae9d16d44c814e3","sender":"yabapmatt","contract":"sscstore","action":"buy","payload":"{\"recipient\":\"steemsc\",\"amountSTEEMSBD\":\"100.000
-        STEEM\",\"isSignedWithActiveKey\":true}","executedCodeHash":"a6a8460b16cfaeb69f032a238c952d401d82c239cc0fa949e0078f9e4cfbd6e6f9996567107c3aae15ed1927052751c06be6c9aa8028a4b9d977f629dc7b0079","hash":"3f394a3e323f80d2489beee60925a4c95406b9e4f64826b493bbe45b98aec909","databaseHash":"da3bfa00893f4a2c763fe60cd01184e655bb46766ecb601ba68d428c7df119b6","logs":"{\"events\":[{\"contract\":\"tokens\",\"event\":\"transfer\",\"data\":{\"from\":\"steemsc\",\"to\":\"yabapmatt\",\"symbol\":\"ENG\",\"quantity\":100}}]}"}}'
+        STEEM\",\"isSignedWithActiveKey\":true}","executedCodeHash":"95c00a6546835e79c2ab57b899d07ed3735df9ee3daac2f7528a89b50ce4c0836ab0a60d88f646ba11b9f85ef90e1470719d02aaf0f8899b7232109604d39e02","hash":"a2d3cf6b6307dfff12f4bc7ee8050365b2465c7dc6637e5c64f8517be9621514","databaseHash":"da3bfa00893f4a2c763fe60cd01184e655bb46766ecb601ba68d428c7df119b6","logs":"{\"events\":[{\"contract\":\"tokens\",\"event\":\"transfer\",\"data\":{\"from\":\"steemsc\",\"to\":\"yabapmatt\",\"symbol\":\"ENG\",\"quantity\":100}}]}"}}'
     http_version: 
-  recorded_at: Sat, 30 Mar 2019 23:35:32 GMT
+  recorded_at: Thu, 23 May 2019 01:24:52 GMT
 recorded_with: VCR 4.0.0

@@ -5,6 +5,49 @@ http_interactions:
     uri: https://api.steem-engine.com/rpc/blockchain
     body:
       encoding: UTF-8
+      string: '{"method":"getBlockInfo","params":{"blockNumber":-1},"jsonrpc":"2.0","id":2}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Date:
+      - Thu, 23 May 2019 01:24:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '38'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":2,"result":null}'
+    http_version: 
+  recorded_at: Thu, 23 May 2019 01:24:49 GMT
+- request:
+    method: post
+    uri: https://api.steem-engine.com/rpc/blockchain
+    body:
+      encoding: UTF-8
       string: '{"method":"getLatestBlockInfo","jsonrpc":"2.0","id":1}'
     headers:
       Content-Type:
@@ -27,11 +70,11 @@ http_interactions:
       Server:
       - nginx/1.10.3 (Ubuntu)
       Date:
-      - Sat, 30 Mar 2019 23:35:30 GMT
+      - Thu, 23 May 2019 01:24:49 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '1538'
+      - '1544'
       Connection:
       - keep-alive
       X-Powered-By:
@@ -40,8 +83,7 @@ http_interactions:
       - "*"
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":1,"result":{"blockNumber":39255,"refSteemBlockNumber":31619662,"refSteemBlockId":"01e27a4ea944024af92d78c49dfbed7b6b105918","prevRefSteemBlockId":"01e27a4d5f466b40803e913f765376d33158d0a4","previousHash":"575525294bcee94797e6349efcea9c3cb8cd402aad9ec8783528d104ab7108cc","previousDatabaseHash":"89b5e6189376104097e3a212f50d51d60983d6e9a2f4a8e5211d851a7395d736","timestamp":"2019-03-30T23:28:03","transactions":[{"refSteemBlockNumber":31619662,"transactionId":"78f44bf415f1b2b2141b785748714203813be404","sender":"artzone","contract":"tokens","action":"transfer","payload":"{\"symbol\":\"MULA\",\"to\":\"surfyogi\",\"quantity\":\"25.0\",\"memo\":\"Thanks
-        for working surfyogi\",\"isSignedWithActiveKey\":true}","executedCodeHash":"f9996567107c3aae15ed1927052751c06be6c9aa8028a4b9d977f629dc7b0079","hash":"6c1f3ca3e6d74e704ad2615fe2f8c8fa5a847bc708115d8b6868cb38216f1bd1","databaseHash":"55fe5320010d2ce86fc9b800ec6eb7aabef21bca8bb688d61829c3c70dab1dfd","logs":"{\"events\":[{\"contract\":\"tokens\",\"event\":\"transfer\",\"data\":{\"from\":\"artzone\",\"to\":\"surfyogi\",\"symbol\":\"MULA\",\"quantity\":\"25.0\"}}]}"}],"hash":"bc13be907223e9cb7003dfd9ac695b8563bbc197b33af2684cc45e3b6f741f9a","databaseHash":"330f5613e40a01972343ffbf265eaa4a7da9e9a7d45ba7db4052a8f0bdff2cba","merkleRoot":"40c8a395746028494a71cbcb56e40b2bd8bbea0800f344ea2d0fa2c43359fc10","signature":"1f25ae27e9ea4b7c3640ce4b79d571ad88775693d0b24c462bc42fc3dfb65cc14e2fdaa19e0478a4a664eb6e78a2427620b96112e877affff24748fd5c6e63ba05","$loki":39256}}'
+      string: '{"jsonrpc":"2.0","id":1,"result":{"blockNumber":181603,"refSteemBlockNumber":33145896,"refSteemBlockId":"01f9c4284fb4a9e57371cf6fa35d0815fdb5985b","prevRefSteemBlockId":"01f9c427ed67130680170093275bd3ac996c3d79","previousHash":"5a7d6c30015bfcd704e6a3430d8203a7511533387be28a258277e26870f9e360","previousDatabaseHash":"e46d8cc68c18328ffd87ba8eb8f009ad3440c483798a5f6ab8236f5455bd4333","timestamp":"2019-05-23T01:24:12","transactions":[{"refSteemBlockNumber":33145896,"transactionId":"de6191d148f084cf1d46601b6051f083ff8473cd","sender":"brasan","contract":"tokens","action":"transfer","payload":"{\"symbol\":\"DEC\",\"to\":\"steemmonsters\",\"quantity\":\"1998\",\"memo\":\"\",\"isSignedWithActiveKey\":true}","executedCodeHash":"e0a3b534ed5aab40a62a7339a6a0de03ecb5932034972aa6548608f70ea5a9fc","hash":"d26169e4caf3bf1f1762e5873f77d50fa7830a403df27530d95158fbc637e0e5","databaseHash":"067f47dc36c6ca549f826cff2686097f39709deb084bd3f9c0e894680dba56e5","logs":"{\"events\":[{\"contract\":\"tokens\",\"event\":\"transfer\",\"data\":{\"from\":\"brasan\",\"to\":\"steemmonsters\",\"symbol\":\"DEC\",\"quantity\":\"1998\"}}]}"}],"virtualTransactions":[],"hash":"b1f7e1dce69debad2592b69d672581e5cef3a9fed28dbcdafde2f9c69273c70a","databaseHash":"c778652f35a52514d492068c5746665b31b9a272efbadb213d7bd73977d455ca","merkleRoot":"3604eb10dd052057595180866ce065dac7964ef54d589240e915f40f28b2d2e5","signature":"1f429ce8bbe7c946ef2d11f03c98ac1c4a5be9155711b59c47de944a75662c034d1e8c9c4a72f6516b25e568e94db8d12b2faf6c45fea814375033fd162ed890b3","$loki":181604}}'
     http_version: 
-  recorded_at: Sat, 30 Mar 2019 23:35:30 GMT
+  recorded_at: Thu, 23 May 2019 01:24:49 GMT
 recorded_with: VCR 4.0.0

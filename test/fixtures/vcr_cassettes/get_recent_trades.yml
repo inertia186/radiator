@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.4
+      - radiator/0.4.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 19 Feb 2019 19:59:50 GMT
+      - Thu, 23 May 2019 01:24:13 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,9 +35,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000055146182132964'
+      - '000253823892994840'
       X-Amzn-Trace-Id:
-      - Root=1-5c6c6036-568733c8071fe2cf8f57d407
+      - Root=1-5ce5f63d-e1503f46ad42c2b488d4355a
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"trades":[{"date":"2019-02-19T19:59:03","current_pays":{"amount":"337","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"973","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:58:33","current_pays":{"amount":"54","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"155","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:57:21","current_pays":{"amount":"1564","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"4515","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:57:15","current_pays":{"amount":"773","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"2231","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:57:06","current_pays":{"amount":"1000","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"2887","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:57:00","current_pays":{"amount":"333","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"961","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:56:27","current_pays":{"amount":"1289","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"3721","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:56:06","current_pays":{"amount":"114","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"329","precision":3,"nai":"@@000000021"}},{"date":"2019-02-19T19:55:24","current_pays":{"amount":"5833","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"2015","precision":3,"nai":"@@000000013"}},{"date":"2019-02-19T19:55:24","current_pays":{"amount":"2006","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"694","precision":3,"nai":"@@000000013"}}]},"id":1}'
+      string: '{"jsonrpc":"2.0","result":{"trades":[{"date":"2019-05-23T01:24:06","current_pays":{"amount":"379","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"967","precision":3,"nai":"@@000000021"}},{"date":"2019-05-23T01:23:33","current_pays":{"amount":"801","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"2044","precision":3,"nai":"@@000000021"}},{"date":"2019-05-23T01:21:54","current_pays":{"amount":"143","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"365","precision":3,"nai":"@@000000021"}},{"date":"2019-05-23T01:20:57","current_pays":{"amount":"129","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"329","precision":3,"nai":"@@000000021"}},{"date":"2019-05-23T01:20:30","current_pays":{"amount":"800","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"2042","precision":3,"nai":"@@000000021"}},{"date":"2019-05-23T01:19:30","current_pays":{"amount":"203","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"518","precision":3,"nai":"@@000000021"}},{"date":"2019-05-23T01:16:18","current_pays":{"amount":"111","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"283","precision":3,"nai":"@@000000021"}},{"date":"2019-05-23T01:15:33","current_pays":{"amount":"2387","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"6092","precision":3,"nai":"@@000000021"}},{"date":"2019-05-23T01:15:24","current_pays":{"amount":"3","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"7","precision":3,"nai":"@@000000021"}},{"date":"2019-05-23T01:15:12","current_pays":{"amount":"1","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"2","precision":3,"nai":"@@000000021"}}]},"id":1}'
     http_version: 
-  recorded_at: Tue, 19 Feb 2019 19:59:51 GMT
+  recorded_at: Thu, 23 May 2019 01:24:13 GMT
 recorded_with: VCR 4.0.0
