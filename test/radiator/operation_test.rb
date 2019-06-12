@@ -87,7 +87,7 @@ module Radiator
         extensions: Radiator::Type::Beneficiaries.new('good-karma' => 2000, 'null' => 5000)
       )
       
-      expected_bytes = "\x13\x05xeroc\x06piston\x00\xCA\x9A;\x00\x00\x00\x00\x03SBD\x00\x00\x00\x00\x10'\x01\x01\x00\x02\ngood-karma\xD0\a\x04null\x88\x13"
+      expected_bytes = "\x13\x05xeroc\x06piston\x00\xCA\x9A;\x00\x00\x00\x00\x03SBD\x00\x00\x00\x00\x10'\x01\x01\x01\x00\x02\ngood-karma\xD0\a\x04null\x88\x13"
       expected_bytes = expected_bytes.force_encoding('ASCII-8BIT')
       
       assert_equal expected_bytes, operation.to_bytes
