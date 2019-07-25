@@ -147,6 +147,19 @@ module Radiator
     def use_condenser_namespace?
       !!@use_condenser_namespace
     end
+    
+    def inspect
+      properties = %w(
+        url ref_block_num ref_block_prefix expiration chain
+        use_condenser_namespace immutable_expiration payload
+      ).map do |prop|
+        if !!(v = instance_variable_get("@#{prop}"))
+          "@#{prop}=#{v}" 
+        end
+      end.compact.join(', ')
+      
+      "#<#{self.class.name} [#{properties}]>"
+    end
   private
     def broadcast_payload(payload)
       if use_condenser_namespace?

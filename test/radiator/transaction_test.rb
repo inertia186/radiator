@@ -643,7 +643,6 @@ module Radiator
         '0907b2e2213940f34f2c'
           
       op_hex = sub_hex(hex_segments)
-      puts op_hex
       assert compare.include?(op_hex), 'expect final comparison from original test'
     end
     
