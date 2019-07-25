@@ -3,20 +3,21 @@ module Radiator
     
     # See: https://github.com/xeroc/piston-lib/blob/34a7525cee119ec9b24a99577ede2d54466fca0e/steembase/operations.py
     class Amount < Serializer
+      attr_reader :amount, :precision, :nai, :asset
+      
       def initialize(value)
         super(:amount, value)
         
         case value
         when ::Array
-          a, p, t = value
-          @asset = case t
+          a, @precision, @nai = value
+          @asset = case @nai
           when '@@000000013' then 'SBD'
           when '@@000000021' then 'STEEM'
           when '@@000000037' then 'VESTS'
           else; raise TypeError, "Asset #{@asset} unknown."
           end
-          @precision = p
-          @amount = "%.#{p}f" % (a.to_f / 10 ** p)
+          @amount = "%.#{@precision}f" % (a.to_f / 10 ** @precision)
         else
           @amount, @asset = value.strip.split(' ')
           @precision = case @asset
