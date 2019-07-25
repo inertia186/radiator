@@ -60,4 +60,64 @@ http_interactions:
         VESTS","pending_rewarded_vesting_steem":"330770.467 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":33246500,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":33145897,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":900,"sbd_stop_percent":1000,"sbd_start_percent":900}}'
     http_version: 
   recorded_at: Thu, 23 May 2019 01:25:01 GMT
-recorded_with: VCR 4.0.0
+- request:
+    method: post
+    uri: https://api.steemit.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"condenser_api.get_dynamic_global_properties","params":[],"id":2}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 12 Jun 2019 03:09:51 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '001005384531611216'
+      X-Amzn-Trace-Id:
+      - Root=1-5d006cff-cc17ce030bcc32bf7687d0e9
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":2,"jsonrpc":"2.0","result":{"head_block_number":33723359,"head_block_id":"020293df15a84de985c545cf747a4b355bd45e04","time":"2019-06-12T03:09:48","current_witness":"themarkymark","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"334051032.224
+        STEEM","current_supply":"312182194.342 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"8900617.018 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"199129308.014 STEEM","total_vesting_shares":"396541225246.545084
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"692761065.273752
+        VESTS","pending_rewarded_vesting_steem":"343345.594 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"current_aslot":33824596,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":33723339,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":900,"sbd_stop_percent":1000,"sbd_start_percent":900}}'
+    http_version: 
+  recorded_at: Wed, 12 Jun 2019 03:09:51 GMT
+recorded_with: VCR 3.0.3

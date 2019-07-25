@@ -632,17 +632,18 @@ module Radiator
       assert_equal '01', hex_segments[:allow_replies], 'expect allow_replies'
       assert_equal '01', hex_segments[:allow_votes], 'expect allow_votes'
       assert_equal '01', hex_segments[:allow_curation_rewards], 'expect allow_curation_rewards'
-      assert_equal '00020a676f6f642d6b61726d61d007046e756c6c8813',
+      assert_equal '0100020a676f6f642d6b61726d61d007046e756c6c88',
         hex_segments[:op_extensions], 'expect op_extensions'
       
       compare = 'f68585abf4dce7c804570113057865726f6306706973746f6e' +
-        '00ca9a3b000000000353424400000000102701010100020a67' +
-        '6f6f642d6b61726d61d007046e756c6c881300011f59634e65' +
+        '00ca9a3b00000000035342440000000010270101010100020a676f6f64' +
+        '2d6b61726d61d007046e756c6c8800011f59634e65' +
         '55fec7c01cb7d4921601c37c250c6746022cc35eaefdd90405' +
         'd7771b2f65b44e97b7f3159a6d52cb20640502d2503437215f' +
         '0907b2e2213940f34f2c'
           
       op_hex = sub_hex(hex_segments)
+      puts op_hex
       assert compare.include?(op_hex), 'expect final comparison from original test'
     end
     
@@ -687,7 +688,7 @@ module Radiator
       assert_equal '01', hex_segments[:allow_replies], 'expect allow_replies'
       assert_equal '01', hex_segments[:allow_votes], 'expect allow_votes'
       assert_equal '01', hex_segments[:allow_curation_rewards], 'expect allow_curation_rewards'
-      assert_equal '000107696e6572746961f401', hex_segments[:op_extensions], 'expect op_extensions'
+      assert_equal '01000107696e6572746961f4', hex_segments[:op_extensions], 'expect op_extensions'
     end
     
     def test_operations_assignment
