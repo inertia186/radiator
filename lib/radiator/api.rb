@@ -147,6 +147,8 @@ module Radiator
       'httpd://rpc.usesteem.com'
     ]
     
+    DEFAULT_RESTFUL_URL = 'https://anyx.io/v1'
+    
     # @private
     POST_HEADERS = {
       'Content-Type' => 'application/json',
@@ -159,6 +161,13 @@ module Radiator
     def self.default_url(chain)
       case chain.to_sym
       when :steem then DEFAULT_STEEM_URL
+      else; raise ApiError, "Unsupported chain: #{chain}"
+      end
+    end
+    
+    def self.default_restful_url(chain)
+      case chain.to_sym
+      when :steem then DEFAULT_RESTFUL_URL
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end
@@ -190,6 +199,7 @@ module Radiator
       @password = options[:password]
       @chain = options[:chain] || :steem
       @url = options[:url] || Api::default_url(@chain)
+      @restful_url = options[:restful_url] || Api::default_restful_url(@chain)
       @preferred_url = @url.dup
       @failover_urls = options[:failover_urls]
       @debug = !!options[:debug]
@@ -789,15 +799,23 @@ module Radiator
         
         if @recover_transactions_on_error
           begin
-            # Node operators often disable this operation.
-            api.get_transaction(parser.trx_id) do |tx|
-              if !!tx
-                response[:result][:block_num] = tx.block_num
-                response[:result][:trx_num] = tx.transaction_num
-                response[:recovered_by] = http_id
-                response.delete('error') # no need for this, now
+            if !!@restful_url
+              JSON[open("#{@restful_url}/account_history_api/get_transaction?id=#{parser.trx_id}").read].tap do |tx|
+                response[:result][:block_num] = tx['block_num']
+                response[:result][:trx_num] = tx['transaction_num']
+              end
+            else
+              # Node operators often disable this operation.
+              api.get_transaction(parser.trx_id) do |tx|
+                if !!tx
+                  response[:result][:block_num] = tx.block_num
+                  response[:result][:trx_num] = tx.transaction_num
+                end
               end
             end
+            
+            response[:recovered_by] = http_id
+            response.delete('error') # no need for this, now
           rescue
             debug "Couldn't find block for trx_id: #{parser.trx_id}, giving up."
           end
