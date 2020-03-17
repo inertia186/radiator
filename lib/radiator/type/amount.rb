@@ -6,10 +6,17 @@ module Radiator
       attr_reader :amount, :precision, :nai, :asset
       
       def initialize(value)
-        super(:amount, value)
-        
         case value
+        when ::Radiator::Type::Amount
+          super(:amount, value.to_s)
+
+          @amount    = value.amount
+          @precision = value.precision
+          @nai       = value.nai
+          @asset     = value.asset
         when ::Array
+          super(:amount, value)
+
           a, @precision, @nai = value
           @asset = case @nai
           when '@@000000013' then 'SBD'
@@ -19,6 +26,8 @@ module Radiator
           end
           @amount = "%.#{@precision}f" % (a.to_f / 10 ** @precision)
         else
+          super(:amount, value)
+
           @amount, @asset = value.strip.split(' ')
           @precision = case @asset
           when 'STEEM' then 3
