@@ -5,6 +5,7 @@ require 'hashie/logger'
 require 'openssl'
 require 'open-uri'
 require 'net/http/persistent'
+require 'radiator/chain_config'
 
 module Radiator
   # Radiator::Api allows you to call remote methods to interact with the STEEM
@@ -134,21 +135,27 @@ module Radiator
   class Api
     include Utils
     
-    DEFAULT_STEEM_URL = 'https://api.steemit.com'
-    
+    DEFAULT_STEEM_URL = Radiator::ChainConfig::NETWORKS_STEEM_DEFAULT_NODE
+    DEFAULT_HIVE_URL  = Radiator::ChainConfig::NETWORKS_HIVE_DEFAULT_NODE
+
     DEFAULT_STEEM_FAILOVER_URLS = [
-      DEFAULT_STEEM_URL,
-      'https://appbasetest.timcliff.com',
-      'https://api.steem.house',
-      'https://steemd.minnowsupportproject.org',
-      'https://steemd.privex.io',
-      'https://rpc.steemviz.com',
-      'https://anyx.io',
-      'httpd://rpc.usesteem.com'
+       DEFAULT_STEEM_URL,
+       'https://appbasetest.timcliff.com',
+       'https://api.steem.house',
+       'https://steemd.minnowsupportproject.org',
+       'https://steemd.privex.io',
+       'https://rpc.steemviz.com',
+       'https://anyx.io',
+       'httpd://rpc.usesteem.com'
+    ]
+
+    DEFAULT_HIVE_FAILOVER_URLS = [
+      DEFAULT_HIVE_URL
     ]
     
-    DEFAULT_RESTFUL_URL = 'https://anyx.io/v1'
-    
+    DEFAULT_STEEM_RESTFUL_URL = 'https://anyx.io/v1'
+    DEFAULT_HIVE_RESTFUL_URL = ''
+
     # @private
     POST_HEADERS = {
       'Content-Type' => 'application/json',
@@ -161,13 +168,15 @@ module Radiator
     def self.default_url(chain)
       case chain.to_sym
       when :steem then DEFAULT_STEEM_URL
+      when :hive then DEFAULT_HIVE_URL
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end
     
     def self.default_restful_url(chain)
       case chain.to_sym
-      when :steem then DEFAULT_RESTFUL_URL
+      when :steem then DEFAULT_STEEM_RESTFUL_URL
+      when :hive then DEFAULT_HIVE_RESTFUL_URL
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end
@@ -175,6 +184,7 @@ module Radiator
     def self.default_failover_urls(chain)
       case chain.to_sym
       when :steem then DEFAULT_STEEM_FAILOVER_URLS
+      when :hive then DEFAULT_HIVE_FAILOVER_URLS
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end

@@ -292,6 +292,7 @@ module Radiator
       case chain
       when :steem then ChainConfig::NETWORKS_STEEM_DEBT_ASSET
       when :test then ChainConfig::NETWORKS_TEST_DEBT_ASSET
+      when :hive then ChainConfig::NETWORKS_HIVE_DEBT_ASSET
       else; raise ChainError, "Unknown chain: #{chain}"
       end
     end
