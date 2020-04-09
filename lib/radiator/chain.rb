@@ -290,9 +290,9 @@ module Radiator
     
     def default_debt_asset
       case chain
-      when :steem then ChainConfig::NETWORKS_STEEM_DEBT_ASSET
-      when :test then ChainConfig::NETWORKS_TEST_DEBT_ASSET
-      when :hive then ChainConfig::NETWORKS_HIVE_DEBT_ASSET
+      when :steem then ChainConfig::NETWORKS_STEEM_DEBT_SYMBOL
+      when :test then ChainConfig::NETWORKS_TEST_DEBT_SYMBOL
+      when :hive then ChainConfig::NETWORKS_HIVE_DEBT_SYMBOL
       else; raise ChainError, "Unknown chain: #{chain}"
       end
     end

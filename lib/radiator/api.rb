@@ -146,27 +146,27 @@ module Radiator
     
     def self.default_url(chain)
       case chain.to_sym
-      when :steem then Radiator::ChainConfig::NETWORKS_STEEM_DEFAULT_NODE
-      when :hive then Radiator::ChainConfig::NETWORKS_HIVE_DEFAULT_NODE
-      when :test then Radiator::ChainConfig::NETWORKS_TEST_DEFAULT_NODE
+      when :steem then ChainConfig::NETWORKS_STEEM_DEFAULT_NODE
+      when :hive then ChainConfig::NETWORKS_HIVE_DEFAULT_NODE
+      when :test then ChainConfig::NETWORKS_TEST_DEFAULT_NODE
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end
     
     def self.default_restful_url(chain)
       case chain.to_sym
-      when :steem then Radiator::ChainConfig::NETWORKS_STEEM_RESTFUL_URL
-      when :hive then Radiator::ChainConfig::NETWORKS_HIVE_RESTFUL_URL
-      when :test then Radiator::ChainConfig::NETWORKS_TEST_RESTFUL_URL
+      when :steem then ChainConfig::NETWORKS_STEEM_RESTFUL_URL
+      when :hive then ChainConfig::NETWORKS_HIVE_RESTFUL_URL
+      when :test then ChainConfig::NETWORKS_TEST_RESTFUL_URL
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end
     
     def self.default_failover_urls(chain)
       case chain.to_sym
-      when :steem then Radiator::ChainConfig::NETWORKS_STEEM_FAILOVER_URLS
-      when :hive then Radiator::ChainConfig::NETWORKS_HIVE_FAILOVER_URLS
-      when :test then Radiator::ChainConfig::NETWORKS_TEST_FAILOVER_URLS
+      when :steem then ChainConfig::NETWORKS_STEEM_FAILOVER_URLS
+      when :hive then ChainConfig::NETWORKS_HIVE_FAILOVER_URLS
+      when :test then ChainConfig::NETWORKS_TEST_FAILOVER_URLS
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end
