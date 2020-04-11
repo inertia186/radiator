@@ -30,14 +30,6 @@ module Radiator
       assert _amount.to_bytes
     end
 
-    def test_add_01
-      _value1 = Type::Amount.new('1.000 STEEM', :steem)
-      _value2 = Type::Amount.new('2.000 STEEM', :steem)
-      _test   = _value1 + _value2
-
-      assert_equal("3.000 STEEM", _test.to_s, "string value should be “3.000 STEEM”")
-    end
-
     def test_new_00
       _test = Type::Amount.new({:amount => 1000, :precision => 3, :nai => "@@000000021"}, :steem)
 
@@ -450,6 +442,341 @@ module Radiator
          {:amount => "123456700", :nai => "@@000000037", :precision => 6},
          _test.to_h,
          "test array should be {:amount => “123456700”, :nai =>  “@@000000037”, :precision =>  6}")
+    end
+
+    def test_add_00
+      _value1 = Type::Amount.new('3.000 STEEM', :steem)
+      _value2 = Type::Amount.new('2.000 STEEM', :steem)
+      _test   = _value1 + _value2
+
+      assert_equal("5.000 STEEM", _test.to_s, "string value should be “5.000 STEEM”")
+    end
+
+    def test_add_01
+      _value1 = Type::Amount.new('7.000 SBD', :steem)
+      _value2 = Type::Amount.new('5.000 SBD', :steem)
+      _test   = _value1 + _value2
+
+      assert_equal("12.000 SBD", _test.to_s, "string value should be “12.000 SDB”")
+    end
+
+    def test_add_02
+      _value1 = Type::Amount.new('47.000 VESTS', :steem)
+      _value2 = Type::Amount.new('3.000 VESTS', :steem)
+      _test   = _value1 + _value2
+
+      assert_equal("50.000000 VESTS", _test.to_s, "string value should be “50.000 VESTS”")
+    end
+
+    def test_add_03
+      _value1 = Type::Amount.new('3.000 HIVE', :hive)
+      _value2 = Type::Amount.new('2.000 HIVE', :hive)
+      _test   = _value1 + _value2
+
+      assert_equal("5.000 HIVE", _test.to_s, "string value should be “5.000 HIVE”")
+    end
+
+    def test_add_04
+      _value1 = Type::Amount.new('7.000 HBD', :hive)
+      _value2 = Type::Amount.new('5.000 HBD', :hive)
+      _test   = _value1 + _value2
+
+      assert_equal("12.000 HBD", _test.to_s, "string value should be “12.000 HBD”")
+    end
+
+    def test_add_05
+      _value1 = Type::Amount.new('47.000 VESTS', :hive)
+      _value2 = Type::Amount.new('3.000 VESTS', :hive)
+      _test   = _value1 + _value2
+
+      assert_equal("50.000000 VESTS", _test.to_s, "string value should be “50.000 VESTS”")
+    end
+
+    def test_add_06
+      _value1 = Type::Amount.new('3.000 STEEM', :steem)
+      _value2 = Type::Amount.new('2.000 HIVE', :hive)
+
+      assert_raises ArgumentError do
+        _test   = _value1 + _value2
+      end
+    end
+
+    def test_add_07
+      _value1 = Type::Amount.new('47.000 VESTS', :hive)
+      _value2 = Type::Amount.new('3.000 VESTS', :steem)
+
+      assert_raises ArgumentError do
+        _test   = _value1 + _value2
+      end
+    end
+
+    def test_add_08
+      _value1 = Type::Amount.new('7.000 STEEM', :steem)
+      _value2 = Type::Amount.new('5.000 VESTS', :steem)
+
+      assert_raises ArgumentError do
+        _test   = _value1 + _value2
+      end
+    end
+
+    def test_add_09
+      _value1 = Type::Amount.new('7.000 HIVE', :hive)
+      _value2 = Type::Amount.new('5.000 HBD', :hive)
+
+      assert_raises ArgumentError do
+        _test   = _value1 + _value2
+      end
+    end
+    def test_subtract_00
+      _value1 = Type::Amount.new('3.000 STEEM', :steem)
+      _value2 = Type::Amount.new('2.000 STEEM', :steem)
+      _test   = _value1 - _value2
+
+      assert_equal("1.000 STEEM", _test.to_s, "string value should be “1.000 STEEM”")
+    end
+
+    def test_subtract_01
+      _value1 = Type::Amount.new('7.000 SBD', :steem)
+      _value2 = Type::Amount.new('5.000 SBD', :steem)
+      _test   = _value1 - _value2
+
+      assert_equal("2.000 SBD", _test.to_s, "string value should be “2.000 SDB”")
+    end
+
+    def test_subtract_02
+      _value1 = Type::Amount.new('47.000 VESTS', :steem)
+      _value2 = Type::Amount.new('3.000 VESTS', :steem)
+      _test   = _value1 - _value2
+
+      assert_equal("44.000000 VESTS", _test.to_s, "string value should be “44.000 VESTS”")
+    end
+
+    def test_subtract_03
+      _value1 = Type::Amount.new('3.000 HIVE', :hive)
+      _value2 = Type::Amount.new('2.000 HIVE', :hive)
+      _test   = _value1 - _value2
+
+      assert_equal("1.000 HIVE", _test.to_s, "string value should be “1.000 HIVE”")
+    end
+
+    def test_subtract_04
+      _value1 = Type::Amount.new('7.000 HBD', :hive)
+      _value2 = Type::Amount.new('5.000 HBD', :hive)
+      _test   = _value1 - _value2
+
+      assert_equal("2.000 HBD", _test.to_s, "string value should be “2.000 HBD”")
+    end
+
+    def test_subtract_05
+      _value1 = Type::Amount.new('47.000 VESTS', :hive)
+      _value2 = Type::Amount.new('3.000 VESTS', :hive)
+      _test   = _value1 - _value2
+
+      assert_equal("44.000000 VESTS", _test.to_s, "string value should be “44.000 VESTS”")
+    end
+
+    def test_subtract_06
+      _value1 = Type::Amount.new('3.000 STEEM', :steem)
+      _value2 = Type::Amount.new('2.000 HIVE', :hive)
+
+      assert_raises ArgumentError do
+        _test   = _value1 - _value2
+      end
+    end
+
+    def test_subtract_07
+      _value1 = Type::Amount.new('47.000 VESTS', :hive)
+      _value2 = Type::Amount.new('3.000 VESTS', :steem)
+
+      assert_raises ArgumentError do
+        _test   = _value1 - _value2
+      end
+    end
+
+    def test_subtract_08
+      _value1 = Type::Amount.new('7.000 STEEM', :steem)
+      _value2 = Type::Amount.new('5.000 VESTS', :steem)
+
+      assert_raises ArgumentError do
+        _test   = _value1 - _value2
+      end
+    end
+
+    def test_subtract_09
+      _value1 = Type::Amount.new('7.000 HIVE', :hive)
+      _value2 = Type::Amount.new('5.000 HBD', :hive)
+
+      assert_raises ArgumentError do
+        _test   = _value1 - _value2
+      end
+    end
+
+    def test_multiply_00
+      _value1 = Type::Amount.new('3.000 STEEM', :steem)
+      _value2 = Type::Amount.new('2.000 STEEM', :steem)
+      _test   = _value1 * _value2
+
+      assert_equal("6.000 STEEM", _test.to_s, "string value should be “6.000 STEEM”")
+    end
+
+    def test_multiply_01
+      _value1 = Type::Amount.new('7.000 SBD', :steem)
+      _value2 = Type::Amount.new('5.000 SBD', :steem)
+      _test   = _value1 * _value2
+
+      assert_equal("35.000 SBD", _test.to_s, "string value should be “35.000 SDB”")
+    end
+
+    def test_multiply_02
+      _value1 = Type::Amount.new('47.000 VESTS', :steem)
+      _value2 = Type::Amount.new('3.000 VESTS', :steem)
+      _test   = _value1 * _value2
+
+      assert_equal("141.000000 VESTS", _test.to_s, "string value should be “141.000 VESTS”")
+    end
+
+    def test_multiply_03
+      _value1 = Type::Amount.new('3.000 HIVE', :hive)
+      _value2 = Type::Amount.new('2.000 HIVE', :hive)
+      _test   = _value1 * _value2
+
+      assert_equal("6.000 HIVE", _test.to_s, "string value should be “6.000 HIVE”")
+    end
+
+    def test_multiply_04
+      _value1 = Type::Amount.new('7.000 HBD', :hive)
+      _value2 = Type::Amount.new('5.000 HBD', :hive)
+      _test   = _value1 * _value2
+
+      assert_equal("35.000 HBD", _test.to_s, "string value should be “35.000 HBD”")
+    end
+
+    def test_multiply_05
+      _value1 = Type::Amount.new('47.000 VESTS', :hive)
+      _value2 = Type::Amount.new('3.000 VESTS', :hive)
+      _test   = _value1 * _value2
+
+      assert_equal("141.000000 VESTS", _test.to_s, "string value should be “141.000 VESTS”")
+    end
+
+    def test_multiply_06
+      _value1 = Type::Amount.new('3.000 STEEM', :steem)
+      _value2 = Type::Amount.new('2.000 HIVE', :hive)
+
+      assert_raises ArgumentError do
+        _test   = _value1 * _value2
+      end
+    end
+
+    def test_multiply_07
+      _value1 = Type::Amount.new('47.000 VESTS', :hive)
+      _value2 = Type::Amount.new('3.000 VESTS', :steem)
+
+      assert_raises ArgumentError do
+        _test   = _value1 * _value2
+      end
+    end
+
+    def test_multiply_08
+      _value1 = Type::Amount.new('7.000 STEEM', :steem)
+      _value2 = Type::Amount.new('5.000 VESTS', :steem)
+
+      assert_raises ArgumentError do
+        _test   = _value1 * _value2
+      end
+    end
+
+    def test_multiply_09
+      _value1 = Type::Amount.new('7.000 HIVE', :hive)
+      _value2 = Type::Amount.new('5.000 HBD', :hive)
+
+      assert_raises ArgumentError do
+        _test   = _value1 * _value2
+      end
+    end
+
+    def test_divide_00
+      _value1 = Type::Amount.new('3.000 STEEM', :steem)
+      _value2 = Type::Amount.new('2.000 STEEM', :steem)
+      _test   = _value1 / _value2
+
+      assert_equal("1.500 STEEM", _test.to_s, "string value should be “1.500 STEEM”")
+    end
+
+    def test_divide_01
+      _value1 = Type::Amount.new('7.000 SBD', :steem)
+      _value2 = Type::Amount.new('5.000 SBD', :steem)
+      _test   = _value1 / _value2
+
+      assert_equal("1.400 SBD", _test.to_s, "string value should be “1.400 SDB”")
+    end
+
+    def test_divide_02
+      _value1 = Type::Amount.new('47.000 VESTS', :steem)
+      _value2 = Type::Amount.new('3.000 VESTS', :steem)
+      _test   = _value1 / _value2
+
+      assert_equal("15.666667 VESTS", _test.to_s, "string value should be “15.666667 VESTS”")
+    end
+
+    def test_divide_03
+      _value1 = Type::Amount.new('3.000 HIVE', :hive)
+      _value2 = Type::Amount.new('2.000 HIVE', :hive)
+      _test   = _value1 / _value2
+
+      assert_equal("1.500 HIVE", _test.to_s, "string value should be “1.500”")
+    end
+
+    def test_divide_04
+      _value1 = Type::Amount.new('7.000 HBD', :hive)
+      _value2 = Type::Amount.new('5.000 HBD', :hive)
+      _test   = _value1 / _value2
+
+      assert_equal("1.400 HBD", _test.to_s, "string value should be “1.400 HBD”")
+    end
+
+    def test_divide_05
+      _value1 = Type::Amount.new('47.000 VESTS', :hive)
+      _value2 = Type::Amount.new('3.000 VESTS', :hive)
+      _test   = _value1 / _value2
+
+      assert_equal("15.666667 VESTS", _test.to_s, "string value should be “15.666667 VESTS”")
+    end
+
+    def test_divide_06
+      _value1 = Type::Amount.new('3.000 STEEM', :steem)
+      _value2 = Type::Amount.new('2.000 HIVE', :hive)
+
+      assert_raises ArgumentError do
+        _test   = _value1 / _value2
+      end
+    end
+
+    def test_divide_07
+      _value1 = Type::Amount.new('47.000 VESTS', :hive)
+      _value2 = Type::Amount.new('3.000 VESTS', :steem)
+
+      assert_raises ArgumentError do
+        _test   = _value1 / _value2
+      end
+    end
+
+    def test_divide_08
+      _value1 = Type::Amount.new('7.000 STEEM', :steem)
+      _value2 = Type::Amount.new('5.000 VESTS', :steem)
+
+      assert_raises ArgumentError do
+        _test   = _value1 / _value2
+      end
+    end
+
+    def test_divide_09
+      _value1 = Type::Amount.new('7.000 HIVE', :hive)
+      _value2 = Type::Amount.new('5.000 HBD', :hive)
+
+      assert_raises ArgumentError do
+        _test   = _value1 / _value2
+      end
     end
   end
 end
