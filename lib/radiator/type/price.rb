@@ -1,12 +1,14 @@
 module Radiator
   module Type
     class Price < Serializer
-      
-      def initialize(value)
+      attr_reader :base, :quote, :chain
+
+      def initialize(value, chain)
         super(:price, value)
-        
-        @base = Amount.new(@value[:base])
-        @quote = Amount.new(@value[:quote])
+
+        @chain = chain
+        @base = Amount.new(value[:base], chain)
+        @quote = Amount.new(value[:quote], chain)
       end
       
       def to_bytes
@@ -19,6 +21,14 @@ module Radiator
       
       def to_s
         to_h.to_json
+      end
+
+      ##
+      # the actual conversion rate between core and
+      # dept.
+      #
+      def to_f
+        return @base.amount.to_f / @quote.amount.to_f
       end
     end
   end

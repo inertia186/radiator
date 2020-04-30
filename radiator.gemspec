@@ -6,8 +6,8 @@ require 'radiator/version'
 Gem::Specification.new do |spec|
   spec.name = 'radiator'
   spec.version = Radiator::VERSION
-  spec.authors = ['Anthony Martin']
-  spec.email = ['radiator@martin-studio.com']
+  spec.authors = ['Anthony Martin', 'Martin Krischik']
+  spec.email = ['radiator@martin-studio.com', 'krischik@users.sourceforge.net']
 
   spec.summary = %q{STEEM RPC Ruby Client}
   spec.description = %q{Client for accessing the STEEM blockchain.}

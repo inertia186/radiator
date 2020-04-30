@@ -5,6 +5,7 @@ require 'hashie/logger'
 require 'openssl'
 require 'open-uri'
 require 'net/http/persistent'
+require 'radiator/chain_config'
 
 module Radiator
   # Radiator::Api allows you to call remote methods to interact with the STEEM
@@ -133,22 +134,7 @@ module Radiator
   #
   class Api
     include Utils
-    
-    DEFAULT_STEEM_URL = 'https://api.steemit.com'
-    
-    DEFAULT_STEEM_FAILOVER_URLS = [
-      DEFAULT_STEEM_URL,
-      'https://appbasetest.timcliff.com',
-      'https://api.steem.house',
-      'https://steemd.minnowsupportproject.org',
-      'https://steemd.privex.io',
-      'https://rpc.steemviz.com',
-      'https://anyx.io',
-      'httpd://rpc.usesteem.com'
-    ]
-    
-    DEFAULT_RESTFUL_URL = 'https://anyx.io/v1'
-    
+
     # @private
     POST_HEADERS = {
       'Content-Type' => 'application/json',
@@ -160,21 +146,27 @@ module Radiator
     
     def self.default_url(chain)
       case chain.to_sym
-      when :steem then DEFAULT_STEEM_URL
+      when :steem then ChainConfig::NETWORKS_STEEM_DEFAULT_NODE
+      when :hive then ChainConfig::NETWORKS_HIVE_DEFAULT_NODE
+      when :test then ChainConfig::NETWORKS_TEST_DEFAULT_NODE
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end
     
     def self.default_restful_url(chain)
       case chain.to_sym
-      when :steem then DEFAULT_RESTFUL_URL
+      when :steem then ChainConfig::NETWORKS_STEEM_RESTFUL_URL
+      when :hive then ChainConfig::NETWORKS_HIVE_RESTFUL_URL
+      when :test then ChainConfig::NETWORKS_TEST_RESTFUL_URL
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end
     
     def self.default_failover_urls(chain)
       case chain.to_sym
-      when :steem then DEFAULT_STEEM_FAILOVER_URLS
+      when :steem then ChainConfig::NETWORKS_STEEM_FAILOVER_URLS
+      when :hive then ChainConfig::NETWORKS_HIVE_FAILOVER_URLS
+      when :test then ChainConfig::NETWORKS_TEST_FAILOVER_URLS
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end
