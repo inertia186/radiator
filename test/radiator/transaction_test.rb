@@ -30,6 +30,9 @@ module Radiator
         when :steem
           transaction = Radiator::Transaction.new(chain: chain, logger: log)
           assert_equal Radiator::Transaction::NETWORKS_STEEM_CHAIN_ID, transaction.chain_id, 'expect steem chain'
+        when :hive
+          transaction = Radiator::Transaction.new(chain: chain, logger: log)
+          assert_equal Radiator::Transaction::NETWORKS_HIVE_CHAIN_ID, transaction.chain_id, 'expect hive chain'
         when :test
           assert_raises ApiError do
             transaction = Radiator::Transaction.new(chain: chain, logger: log)

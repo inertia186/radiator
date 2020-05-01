@@ -16,6 +16,7 @@ module Radiator
   require 'radiator/type/array'
   require 'radiator/type/hash'
   require 'radiator/type/future'
+  require 'radiator/type/reward_fund'
   require 'radiator/logger'
   require 'radiator/chain_config'
   require 'radiator/api'

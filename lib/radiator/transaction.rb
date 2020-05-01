@@ -82,6 +82,7 @@ module Radiator
       case chain.to_s.downcase.to_sym
       when :steem then NETWORKS_STEEM_CHAIN_ID
       when :test then NETWORKS_TEST_CHAIN_ID
+      when :hive then NETWORKS_HIVE_CHAIN_ID
       end
     end
 
@@ -89,6 +90,7 @@ module Radiator
       case chain.to_s.downcase.to_sym
       when :steem then NETWORKS_STEEM_DEFAULT_NODE
       when :test then NETWORKS_TEST_DEFAULT_NODE
+      when :hive then NETWORKS_HIVE_DEFAULT_NODE
       end
     end
 

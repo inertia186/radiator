@@ -50,3 +50,6 @@ Gemfile.lock
 .rvmrc
 hashie.log
 output.mp4
+.backups
+*.swp
+.rakeTasks
