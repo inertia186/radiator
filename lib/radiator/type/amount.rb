@@ -336,6 +336,51 @@ module Radiator
                    else
                      raise TypeError, "NAI «#{@nai}» unknown."
                  end
+	end
+
+        ##
+        # get zero core amount for chain
+        #
+        # @param [Symbol] chain
+        #     The chain for which we want to know the asset
+        # @return [Amount]
+        #     :steem "0.0 STEEM"
+        #     :hive  "0.0 HIVE"
+        #
+        def core_zero(chain)
+          _chain_info = @@chain_infos[chain]
+
+          return Amount.new([0.0, _chain_info.core.precision, _chain_info.core.nai], chain)
+        end
+        ##
+        # get zero dept amount for chain
+        #
+        # @param [Symbol] chain
+        #     The chain for which we want to know the asset
+        # @return [Amount]
+        #   :steem "0.0 SBD"
+        #   :hive  "0.0 HBD"
+        #
+        def debt_zero(chain)
+          _chain_info = @@chain_infos[chain]
+
+          return Amount.new([0.0, _chain_info.debt.precision, _chain_info.debt.nai], chain)
+        end
+
+        ##
+        # get zero vest amount for chain
+        # core symbol for chain
+        #
+        # @param [Symbol] chain
+        #     The chain for which we want to know the asset
+        # @return [Amount]
+        #   :steem "0.0 VESTS"
+        #   :hive  "0.0 VESTS"
+        #
+        def vest_zero(chain)
+          _chain_info = @@chain_infos[chain]
+
+          return Amount.new([0.0, _chain_info.vest.precision, _chain_info.vest.nai], chain)
         end
 
         ##
