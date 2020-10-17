@@ -4,18 +4,18 @@ module Radiator
   module OperationTypes
     TYPES = {
       transfer: {
-        amount: Type::Amount
+        amount: Hive::Type::Amount
       },
       transfer_to_vesting: {
-        amount: Type::Amount
+        amount: Hive::Type::Amount
       },
       withdraw_vesting: {
-        vesting_shares: Type::Amount
+        vesting_shares: Hive::Type::Amount
       },
       limit_order_create: {
         orderid: Type::Uint32,
-        amount_to_sell: Type::Amount,
-        min_to_receive: Type::Amount,
+        amount_to_sell: Hive::Type::Amount,
+        min_to_receive: Hive::Type::Amount,
         expiration: Type::PointInTime
       },
       limit_order_cancel: {
@@ -26,10 +26,10 @@ module Radiator
       },
       convert: {
         requestid: Type::Uint32,
-        amount: Type::Amount
+        amount: Hive::Type::Amount
       },
       account_create: {
-        fee: Type::Amount,
+        fee: Hive::Type::Amount,
         owner: Type::Permission,
         active: Type::Permission,
         posting: Type::Permission,
@@ -51,7 +51,7 @@ module Radiator
         id: Type::Uint16
       },
       comment_options: {
-        max_accepted_payout: Type::Amount,
+        max_accepted_payout: Hive::Type::Amount,
         allow_replies: Type::Future
       },
       set_withdraw_vesting_route: {
@@ -59,7 +59,7 @@ module Radiator
       },
       limit_order_create2: {
         orderid: Type::Uint32,
-        amount_to_sell: Type::Amount,
+        amount_to_sell: Hive::Type::Amount,
         exchange_rate: Type::Price,
         expiration: Type::PointInTime
       },
@@ -71,10 +71,12 @@ module Radiator
         recent_owner_Permission: Type::Permission
       },
       escrow_transfer: {
-        sbd_amount: Type::Amount,
-        steem_amount: Type::Amount,
+        sbd_amount: Steem::Type::Amount,
+        hbd_amount: Hive::Type::Amount,
+        steem_amount: Steem::Type::Amount,
+        hive_amount: Hive::Type::Amount,
         escrow_id: Type::Uint32,
-        fee: Type::Amount,
+        fee: Hive::Type::Amount,
         ratification_deadline: Type::PointInTime,
         escrow_expiration: Type::PointInTime
       },
@@ -83,40 +85,46 @@ module Radiator
       },
       escrow_release: {
         escrow_id: Type::Uint32,
-        sbd_amount: Type::Amount,
-        steem_amount: Type::Amount
+        sbd_amount: Steem::Type::Amount,
+        hbd_amount: Hive::Type::Amount,
+        steem_amount: Steem::Type::Amount,
+        hive_amount: Hive::Type::Amount
       },
       escrow_approve: {
         escrow_id: Type::Uint32
       },
       transfer_to_savings: {
-        amount: Type::Amount
+        amount: Hive::Type::Amount
       },
       transfer_from_savings: {
         request_id: Type::Uint32,
-        amount: Type::Amount
+        amount: Hive::Type::Amount
       },
       cancel_transfer_from_savings: {
         request_id: Type::Uint32
       },
       reset_account: {
-        new_owner_permission: Type::Amount
+        new_owner_permission: Hive::Type::Amount
       },
       set_reset_account: {
-        reward_steem: Type::Amount,
-        reward_sbd: Type::Amount,
-        reward_vests: Type::Amount
+        reward_steem: Steem::Type::Amount,
+        reward_hive: Hive::Type::Amount,
+        reward_sbd: Steem::Type::Amount,
+        reward_hbd: Hive::Type::Amount,
+        reward_vests: Hive::Type::Amount
       },
       claim_reward_balance: {
-        reward_steem: Type::Amount,
-        reward_sbd: Type::Amount,
-        reward_vests: Type::Amount
+        reward_steem: Steem::Type::Amount,
+        reward_hive: Hive::Type::Amount,
+        reward_sbd: Steem::Type::Amount,
+        reward_hbd: Hive::Type::Amount,
+        reward_vests: Hive::Type::Amount
       },
       delegate_vesting_shares: {
-        vesting_shares: Type::Amount
+        vesting_shares: Hive::Type::Amount
       },
       claim_account: {
-        fee: Type::Amount
+        fee: Hive::Type::Amount
       },
       witness_update: {
         block_signing_key: Type::PublicKey,
@@ -127,13 +135,21 @@ module Radiator
       }
     }
     
-    def type(key, param, value)
+    def type(chain, key, param, value)
       return if value.nil?
       
       t = TYPES[key] or return value
       p = t[param] or return value
       
-      p.new(value)
+      if p == Hive::Type::Amount
+        case chain
+        when :steem then Steem::Type::Amount.new(value)
+        else
+          p.new(value)
+        end
+      else
+        p.new(value)
+      end
     end
   end
 end

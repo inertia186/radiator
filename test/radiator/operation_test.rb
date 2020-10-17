@@ -76,10 +76,11 @@ module Radiator
     
     def test_operation_payload
       operation = Radiator::Operation.new(
+        chain: :hive,
         type: :comment_options,
         author: 'xeroc',
         permlink: 'piston',
-        max_accepted_payout: '1000000.000 SBD',
+        max_accepted_payout: '1000000.000 HBD',
         percent_steem_dollars: 10000,
         # allow_replies: true,
         allow_votes: true,
@@ -87,6 +88,7 @@ module Radiator
         extensions: Radiator::Type::Beneficiaries.new('good-karma' => 2000, 'null' => 5000)
       )
       
+      # Note, we still expect `SBD` in bytes from seralization.
       expected_bytes = "\x13\x05xeroc\x06piston\x00\xCA\x9A;\x00\x00\x00\x00\x03SBD\x00\x00\x00\x00\x10'\x01\x01\x01\x00\x02\ngood-karma\xD0\a\x04null\x88\x13"
       expected_bytes = expected_bytes.force_encoding('ASCII-8BIT')
       
@@ -95,7 +97,7 @@ module Radiator
       expected_payload = [:comment_options, {
         author: 'xeroc',
         permlink: 'piston',
-        max_accepted_payout: Radiator::Type::Amount.new('1000000.000 SBD'),
+        max_accepted_payout: Hive::Type::Amount.new('1000000.000 HBD'),
         percent_steem_dollars: 10000,
         allow_votes: true,
         allow_curation_rewards: true,

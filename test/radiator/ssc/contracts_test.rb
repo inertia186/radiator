@@ -25,7 +25,7 @@ module Radiator
           }
           result = @rpc.find_one(params)
           assert result
-          assert_equal 7.8721968, result.balance.to_f
+          assert_equal 36.92931281, result.balance.to_f
         end
       end
       
@@ -40,7 +40,7 @@ module Radiator
           }
           result = @rpc.find(params)
           assert result
-          assert_equal 21, result.size
+          assert_equal 33, result.size
         end
       end
       
@@ -57,7 +57,7 @@ module Radiator
           }
           result = rpc.find(params)
           assert result
-          assert_equal 21, result.size
+          assert_equal 33, result.size
         end
       end
     end

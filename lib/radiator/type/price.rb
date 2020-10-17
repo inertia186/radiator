@@ -5,8 +5,8 @@ module Radiator
       def initialize(value)
         super(:price, value)
         
-        @base = Amount.new(@value[:base])
-        @quote = Amount.new(@value[:quote])
+        @base = Hive::Type::Amount.new(@value[:base])
+        @quote = Hive::Type::Amount.new(@value[:quote])
       end
       
       def to_bytes

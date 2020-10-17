@@ -16,30 +16,37 @@ module Radiator
         end
       }
       
-      @transaction = Radiator::Transaction.new(options.dup)
+      vcr_cassette('transaction_jsonrpc') do
+        @transaction = Radiator::Transaction.new(options.dup)
+      end
     end
     
     def test_valid_chains
-      %w(steem test).each do |chain|
-        io = StringIO.new
-        log = Logger.new(io).tap do |logger|
-          logger.progname = 'test-valid-chains'
-        end
-        
-        case chain.to_sym
-        when :steem
-          transaction = Radiator::Transaction.new(chain: chain, logger: log)
-          assert_equal Radiator::Transaction::NETWORKS_STEEM_CHAIN_ID, transaction.chain_id, 'expect steem chain'
-        when :test
-          assert_raises ApiError do
-            transaction = Radiator::Transaction.new(chain: chain, logger: log)
+      vcr_cassette('valid_chains') do
+        %w(steem test).each do |chain|
+          io = StringIO.new
+          log = Logger.new(io).tap do |logger|
+            logger.progname = 'test-valid-chains'
           end
-        else
-          # :nocov:
-          fail "did not expect chain: #{chain}"
-          # :nocov:
+          
+          case chain.to_sym
+          when :steem
+            transaction = Radiator::Transaction.new(chain: chain, logger: log)
+            assert_equal Radiator::Transaction::NETWORKS_STEEM_CHAIN_ID, transaction.chain_id, 'expect steem chain'
+          when :hive
+            transaction = Radiator::Transaction.new(chain: chain, logger: log)
+            assert_equal Radiator::Transaction::NETWORKS_HIVE_CHAIN_ID, transaction.chain_id, 'expect hive chain'
+          when :test
+            assert_raises ApiError do
+              transaction = Radiator::Transaction.new(chain: chain, logger: log)
+            end
+          else
+            # :nocov:
+            fail "did not expect chain: #{chain}"
+            # :nocov:
+          end
+          assert_equal '', io.string, 'expect empty log'
         end
-        assert_equal '', io.string, 'expect empty log'
       end
     end
     
@@ -57,15 +64,17 @@ module Radiator
     end
     
     def test_unknown_chain_id
-      io = StringIO.new
-      log = Logger.new(io).tap do |logger|
-        logger.progname = 'test-unknown-chain-id'
+      vcr_cassette('unknown_chain_id') do
+        io = StringIO.new
+        log = Logger.new(io).tap do |logger|
+          logger.progname = 'test-unknown-chain-id'
+        end
+        unknown_chain_id = 'F' * (256 / 4)
+        Radiator::Transaction.new(chain_id: unknown_chain_id, logger: log)
+        
+        refute_equal '', io.string, 'did not expect empty log'
+        assert io.string.include?(unknown_chain_id), 'expect log to mention unknown chain id'
       end
-      unknown_chain_id = 'F' * (256 / 4)
-      Radiator::Transaction.new(chain_id: unknown_chain_id, logger: log)
-      
-      refute_equal '', io.string, 'did not expect empty log'
-      assert io.string.include?(unknown_chain_id), 'expect log to mention unknown chain id'
     end
     
     def test_wif_and_private_key
@@ -697,16 +706,20 @@ module Radiator
     end
     
     def test_expiration_initialize
-      exp = Time.now.utc
-      tx = Transaction.new(expiration: exp)
-      
-      assert_equal exp, tx.expiration
+      vcr_cassette('expiration_initialize') do
+        exp = Time.now.utc
+        tx = Transaction.new(expiration: exp)
+        
+        assert_equal exp, tx.expiration
+      end
     end
     
     def test_expiration_initialize_nil
-      tx = Transaction.new
-      
-      assert_nil tx.expiration
+      vcr_cassette('transaction_expiration_initialize_nil') do
+        tx = Transaction.new
+        
+        assert_nil tx.expiration
+      end
     end
     
     def test_payload_persists_until_reprepared

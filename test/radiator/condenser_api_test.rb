@@ -3,8 +3,10 @@ require 'test_helper'
 module Radiator
   class CondenserApiTest < Radiator::Test
     def setup
-      @api = Radiator::CondenserApi.new(chain_options)
-      @silent_api = Radiator::CondenserApi.new(chain_options.merge(logger: LOGGER))
+      vcr_cassette('condenser_api_jsonrpc') do
+        @api = Radiator::CondenserApi.new(chain_options)
+        @silent_api = Radiator::CondenserApi.new(chain_options.merge(logger: LOGGER))
+      end
     end
     
     def test_method_missing
@@ -14,15 +16,23 @@ module Radiator
     end
     
     def test_all_respond_to
-      @api.method_names.each do |key|
-        assert @api.respond_to?(key), "expect rpc respond to #{key}"
+      vcr_cassette('condenser_api_all_respond_to') do
+        @api.method_names.each do |key|
+          assert @api.respond_to?(key), "expect rpc respond to #{key}"
+        end
       end
     end
     
     def test_all_methods
-      vcr_cassette('all_methods') do
+      vcr_cassette('condenser_all_all_methods') do
         @silent_api.method_names.each do |key|
-          assert @silent_api.send key
+          begin
+            assert @silent_api.send key
+          rescue Steem::ArgumentError => e
+            # next
+          rescue Steem::RemoteNodeError => e
+            # next
+          end
         end
       end
     end

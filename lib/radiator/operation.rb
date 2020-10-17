@@ -5,11 +5,12 @@ module Radiator
     include Utils
     
     def initialize(options = {})
+      chain = options.delete(:chain) || :steem
       opt = options.dup
       @type = opt.delete(:type)
       
       opt.each do |k, v|
-        instance_variable_set("@#{k}", type(@type, k, v))
+        instance_variable_set("@#{k}", type(chain, @type, k, v))
       end
       
       @use_condenser_namespace = if options.keys.include? :use_condenser_namespace
@@ -61,7 +62,7 @@ module Radiator
         
         params[p] = case v
         when Radiator::Type::Beneficiaries then [[0, v.to_h]]
-        when Radiator::Type::Amount
+        when Hive::Type::Amount, Steem::Type::Amount
           if use_condenser_namespace?
             v.to_s
           else

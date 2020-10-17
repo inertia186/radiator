@@ -1,4 +1,6 @@
 require 'radiator/version'
+require 'steem'
+require 'hive'
 require 'json'
 require 'awesome_print' if ENV['USE_AWESOME_PRINT'] == 'true'
 
@@ -29,6 +31,7 @@ module Radiator
   require 'radiator/account_history_api'
   require 'radiator/condenser_api'
   require 'radiator/block_api'
+  require 'radiator/bridge'
   require 'radiator/stream'
   require 'radiator/operation_ids'
   require 'radiator/operation_types'
@@ -44,6 +47,5 @@ module Radiator
   require 'radiator/ssc/blockchain'
   require 'radiator/ssc/stream'
   require 'radiator/ssc/contracts'
-  require 'steem' unless defined? Steem
   extend self
 end

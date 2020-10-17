@@ -258,7 +258,7 @@ module Radiator
         break if stop?
         
         catch :sequence do; begin
-          head_block = api.get_dynamic_global_properties do |properties, error|
+          head_block = database_api.get_dynamic_global_properties do |properties, error|
             if !!error
               standby "Node responded with: #{error.message || 'unknown error'}, retrying ...", {
                 error: error,
@@ -268,7 +268,7 @@ module Radiator
             
             break if stop?
             
-            if properties.head_block_number.nil?
+            if properties.nil? || properties.head_block_number.nil?
               # This can happen if a reverse proxy is acting up.
               standby "Bad block sequence after height: #{latest_block_number}", {
                 and: {throw: :sequence}
@@ -281,7 +281,7 @@ module Radiator
             else; raise StreamError, '"mode" has to be "head" or "irreversible"'
             end
           end
-            
+          
           if head_block == latest_block_number
             # This can happen when there's a delay in block production.
             
@@ -390,6 +390,7 @@ module Radiator
       
       @api = nil
       @block_api = nil
+      @database_api = nil if @api.nil? || @block_api.nil?
       GC.start
     end
     
@@ -435,6 +436,14 @@ module Radiator
       else; nil
       end
     end
+    
+    def database_api
+      @database_api ||= case @chain
+      when :steem then Steem::DatabaseApi.new(url: @api.send(:uri).to_s)
+      when :hive then Hive::DatabaseApi.new(url: @api.send(:uri).to_s)
+      else; api
+      end
+    end
   private
     def method_missing(m, *args, &block)
       super unless respond_to_missing?(m)
@@ -445,11 +454,11 @@ module Radiator
         break if stop?
         
         value = if (n = method_params(m)).nil?
-          key_value = api.get_dynamic_global_properties.result[m]
+          key_value = database_api.get_dynamic_global_properties.result[m]
         else
           key = n.keys.first
           if !!n[key]
-            r = api.get_dynamic_global_properties.result
+            r = database_api.get_dynamic_global_properties.result
             key_value = param = r[n[key]]
             result = nil
             loop do
@@ -466,7 +475,7 @@ module Radiator
             reset_timeout
             result
           else
-            key_value = api.get_dynamic_global_properties.result[key]
+            key_value = database_api.get_dynamic_global_properties.result[key]
           end
         end
         unless @latest_values.include? key_value

@@ -138,16 +138,28 @@ module Radiator
     
     DEFAULT_STEEM_FAILOVER_URLS = [
       DEFAULT_STEEM_URL,
-      'https://appbasetest.timcliff.com',
-      'https://api.steem.house',
       'https://steemd.minnowsupportproject.org',
-      'https://steemd.privex.io',
-      'https://rpc.steemviz.com',
-      'https://anyx.io',
-      'httpd://rpc.usesteem.com'
+      'https://api.justyy.com',
+      'https://steem.bts.tw'
     ]
     
-    DEFAULT_RESTFUL_URL = 'https://anyx.io/v1'
+    DEFAULT_STEEM_RESTFUL_URL = nil
+    
+    DEFAULT_HIVE_URL = 'https://api.openhive.network'
+    
+    DEFAULT_HIVE_FAILOVER_URLS = [
+      DEFAULT_HIVE_URL,
+      'https://anyx.io',
+      'https://api.hivekings.com',
+      'https://api.hive.blog',
+      'https://techcoderx.com',
+      'https://rpc.esteem.app',
+      'https://hived.privex.io',
+      'https://api.pharesim.me',
+      'https://rpc.ausbit.dev'
+    ]
+    
+    DEFAULT_HIVE_RESTFUL_URL = 'https://anyx.io/v1'
     
     # @private
     POST_HEADERS = {
@@ -161,22 +173,65 @@ module Radiator
     def self.default_url(chain)
       case chain.to_sym
       when :steem then DEFAULT_STEEM_URL
+      when :hive then DEFAULT_HIVE_URL
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
     end
     
     def self.default_restful_url(chain)
       case chain.to_sym
-      when :steem then DEFAULT_RESTFUL_URL
-      else; raise ApiError, "Unsupported chain: #{chain}"
+      when :steem then DEFAULT_STEEM_RESTFUL_URL
+      when :hive then DEFAULT_HIVE_RESTFUL_URL
       end
     end
     
     def self.default_failover_urls(chain)
       case chain.to_sym
-      when :steem then DEFAULT_STEEM_FAILOVER_URLS
+      when :steem, :hive
+        begin
+          _api = Radiator::Api.new(url: DEFAULT_STEEM_FAILOVER_URLS.sample, failover_urls: DEFAULT_STEEM_FAILOVER_URLS)
+          
+          default_failover_urls = _api.get_accounts(['fullnodeupdate']) do |accounts|
+            fullnodeupdate = accounts.first
+            metadata = (JSON[fullnodeupdate.json_metadata] rescue nil) || {}
+            report = metadata.fetch('report', [])
+            
+            if report.any?
+              report.map do |r|
+                if chain.to_sym == :steem && !r.fetch('hive', false)
+                  r.fetch('node')
+                elsif chain.to_sym == :hive && r.fetch('hive', false)
+                  r.fetch('node')
+                end
+              end.compact
+            end
+          end
+        rescue => e
+          puts e
+        end
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
+      
+      if !!default_failover_urls
+        default_failover_urls
+      else
+        case chain.to_sym
+        when :steem then DEFAULT_STEEM_FAILOVER_URLS
+        when :hive then DEFAULT_HIVE_FAILOVER_URLS
+        else; []
+        end
+      end
+    end
+    
+    def self.network_api(chain, api_name, options = {})
+      api = case chain.to_sym
+      when :steem then Steem::Api.clone(freeze: true) rescue Api.clone
+      when :hive then Hive::Api.clone(freeze: true) rescue Api.clone
+      else; raise ApiError, "Unsupported chain: #{chain}"
+      end
+      
+      api.api_name = api_name
+      api.new(options) rescue nil
     end
     
     # Cretes a new instance of Radiator::Api.
@@ -273,6 +328,7 @@ module Radiator
       @block_api = nil
       @backoff_at = nil
       @jussi_supported = []
+      @network_api = Api::network_api(@chain, api_name, url: @url)
     end
     
     # Get a specific block or range of blocks.
@@ -367,6 +423,8 @@ module Radiator
     
     # @private
     def respond_to_missing?(m, include_private = false)
+      return true if @network_api.respond_to? m.to_sym
+      
       method_names.nil? ? false : method_names.include?(m.to_sym)
     end
     
@@ -419,6 +477,18 @@ module Radiator
               if !!(response = recover_transaction(signatures, current_rpc_id, timestamp - offset))
                 response = Hashie::Mash.new(response)
               end
+            end
+          end
+          
+          @network_api ||= Api::network_api(@chain, api_name, url: @uri)
+          
+          if !!@network_api && @network_api.respond_to?(m)
+            if !!block
+              @network_api.send(m, *args) do |*r|
+                return yield(*r)
+              end
+            else
+              return @network_api.send(m, *args)
             end
           end
           
@@ -506,6 +576,9 @@ module Radiator
         #   warning "Unknown exception from request, retrying ...", method_name, true
         #   warning e
         end
+        
+        # failover latch
+        @network_api = nil if !!@network_api
         
         if !!response
           @persist_error_count = 0
@@ -628,7 +701,7 @@ module Radiator
         http.keep_alive = 30
         http.idle_timeout = idempotent ? 10 : nil
         http.max_requests = @max_requests
-        http.retry_change_requests = idempotent
+        http.retry_change_requests = idempotent if defined? http.retry_change_requests
         http.reuse_ssl_sessions = @reuse_ssl_sessions
         
         http

@@ -3,8 +3,10 @@ require 'test_helper'
 module Radiator
   class NetworkBroadcastApiTest < Radiator::Test
     def setup
-      @api = Radiator::NetworkBroadcastApi.new(chain_options)
-      @silent_api = Radiator::NetworkBroadcastApi.new(chain_options.merge(logger: LOGGER))
+      vcr_cassette('network_broadcast_api_jsonrpc') do
+        @api = Radiator::NetworkBroadcastApi.new(chain_options)
+        @silent_api = Radiator::NetworkBroadcastApi.new(chain_options.merge(logger: LOGGER))
+      end
     end
 
     def test_method_missing
@@ -14,23 +16,31 @@ module Radiator
     end
 
     def test_all_respond_to
-      @api.method_names.each do |key|
-        assert @api.respond_to?(key), "expect rpc respond to #{key}"
+      vcr_cassette('network_broadcast_api_all_respond_to') do
+        @api.method_names.each do |key|
+          assert @api.respond_to?(key), "expect rpc respond to #{key}"
+        end
       end
     end
 
     def test_all_methods
-      vcr_cassette('all_methods') do
+      vcr_cassette('network_broadcast_api_all_methods') do
         @silent_api.method_names.each do |key|
-          assert @silent_api.send key
+          begin
+            assert @silent_api.send key
+          rescue Steem::ArgumentError => e
+            # next
+          rescue Steem::RemoteNodeError => e
+            # next
+          end
         end
       end
     end
 
     def test_broadcast_transaction
       vcr_cassette('broadcast_transaction') do
-        @silent_api.broadcast_transaction do |result|
-          assert_equal NilClass, result.class, result.inspect
+        assert_raises Steem::RemoteNodeError do
+          @silent_api.broadcast_transaction
         end
       end
     end

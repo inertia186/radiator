@@ -6,9 +6,9 @@
 [radiator](https://github.com/inertia186/radiator)
 ========
 
-#### STEEM Ruby API Client
+#### Hive/Steem Ruby API Client
 
-Radiator is an API Client for interaction with the STEEM network using Ruby.
+Radiator is an API Client for interaction with the Hive/Steem network using Ruby.
 
 #### Changes in v0.4.5
 
@@ -123,7 +123,7 @@ If you don't have `bundler`, see the next section.
     
 ### Prerequisites
 
-`minimum ruby version: 2.2`
+`minimum ruby version: 2.5`
 
 #### Linux
 
@@ -190,7 +190,7 @@ end
 
 #### Side Chain Support
 
-Steem Smart Contract side-chains are supported by Radiator.  The default side-chain is Steem Engine.
+Steem Smart Contract side-chains are supported by Radiator.  The default side-chain is Hive/Steem Engine.
 
 This will fetch the latest block from the side-chain ...
 
@@ -441,7 +441,7 @@ Example of the output:
 Streaming side-chain transactions are supported:
 
 ```ruby
-# Default side-chain is Steem Engine.
+# Default side-chain is Hive Engine.
 stream = Radiator::SSC::Stream.new
 stream.transactions do |tx, trx_id|
   puts "[#{trx_id}] #{tx.to_json}"
@@ -623,7 +623,7 @@ https://github.com/inertia186/radiator/issues/12
   * `rake`
 * To run tests with parallelization and local code coverage:
   * `HELL_ENABLED=true rake`
-* To run a stream test on the live STEEM blockchain with debug logging enabled:
+* To run a stream test on the live Hive/Steem blockchain with debug logging enabled:
   * `LOG=DEBUG rake test_live_stream`
 
 ---
@@ -636,7 +636,7 @@ See my previous Ruby How To posts in: [#radiator](https://steemit.com/created/ra
 
 ## Get in touch!
 
-If you're using Radiator, I'd love to hear from you.  Drop me a line and tell me what you think!  I'm @inertia on STEEM.
+If you're using Radiator, I'd love to hear from you.  Drop me a line and tell me what you think!  I'm @inertia on Hive/Steem.
   
 ## License
 

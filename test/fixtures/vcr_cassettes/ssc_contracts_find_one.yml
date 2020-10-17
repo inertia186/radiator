@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.5
+      - radiator/0.4.8.pre.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -27,7 +27,7 @@ http_interactions:
       Server:
       - nginx/1.10.3 (Ubuntu)
       Date:
-      - Thu, 23 May 2019 01:24:03 GMT
+      - Sat, 17 Oct 2020 04:07:52 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -41,8 +41,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","id":2,"result":null}'
-    http_version: 
-  recorded_at: Thu, 23 May 2019 01:24:04 GMT
+    http_version:
+  recorded_at: Sat, 17 Oct 2020 04:07:52 GMT
 - request:
     method: post
     uri: https://api.steem-engine.com/rpc/contracts
@@ -53,7 +53,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.5
+      - radiator/0.4.8.pre.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -70,11 +70,11 @@ http_interactions:
       Server:
       - nginx/1.10.3 (Ubuntu)
       Date:
-      - Thu, 23 May 2019 01:24:04 GMT
+      - Sat, 17 Oct 2020 04:07:52 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '108'
+      - '107'
       Connection:
       - keep-alive
       X-Powered-By:
@@ -83,7 +83,7 @@ http_interactions:
       - "*"
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":1,"result":{"account":"inertia","symbol":"STINGY","balance":"7.87219680","$loki":363}}'
-    http_version: 
-  recorded_at: Thu, 23 May 2019 01:24:04 GMT
-recorded_with: VCR 4.0.0
+      string: '{"jsonrpc":"2.0","id":1,"result":{"_id":363,"account":"inertia","symbol":"STINGY","balance":"36.92931281"}}'
+    http_version:
+  recorded_at: Sat, 17 Oct 2020 04:07:52 GMT
+recorded_with: VCR 5.0.0

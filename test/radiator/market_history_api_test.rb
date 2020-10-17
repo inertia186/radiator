@@ -3,7 +3,9 @@ require 'test_helper'
 module Radiator
   class MarketHistoryApiTest < Radiator::Test
     def setup
-      @api = Radiator::MarketHistoryApi.new(chain_options)
+      vcr_cassette('market_history_api_jsonrpc') do
+        @api = Radiator::MarketHistoryApi.new(chain_options)
+      end
     end
 
     def test_method_missing
@@ -13,15 +15,21 @@ module Radiator
     end
 
     def test_all_respond_to
-      @api.method_names.each do |key|
-        assert @api.respond_to?(key), "expect rpc respond to #{key}"
+      vcr_cassette('market_history_api_all_respond_to') do
+        @api.method_names.each do |key|
+          assert @api.respond_to?(key), "expect rpc respond to #{key}"
+        end
       end
     end
 
     def test_all_methods
-      vcr_cassette('all_methods') do
+      vcr_cassette('market_history_api_all_methods') do
         @api.method_names.each do |key|
-          assert @api.send key
+          begin
+            assert @api.send key
+          rescue Steem::ArgumentError => e
+            # next
+          end
         end
       end
     end
@@ -29,8 +37,8 @@ module Radiator
     def test_get_market_history
       vcr_cassette('get_market_history') do
         @api.get_market_history(nil, nil, nil) do |history|
-          assert_equal NilClass, history.class, history.inspect
-          assert_nil history
+          assert_equal Hashie::Mash, history.class, history.inspect
+          assert_equal history.buckets, []
         end
       end
     end
@@ -38,7 +46,7 @@ module Radiator
     def test_get_market_history_buckets
       vcr_cassette('get_market_history_buckets') do
         @api.get_market_history_buckets do |buckets|
-          assert_equal Hashie::Array, buckets.class, buckets.inspect
+          assert_equal Hashie::Mash, buckets.class, buckets.inspect
           assert buckets
         end
       end
@@ -56,8 +64,8 @@ module Radiator
     def test_get_recent_trades
       vcr_cassette('get_recent_trades') do
         @api.get_recent_trades(limit: 10) do |trades|
-          assert_equal Hashie::Array, trades.class, trades.inspect
-          assert trades
+          assert_equal Hashie::Mash, trades.class, trades.inspect
+          assert trades.trades
         end
       end
     end
@@ -74,8 +82,8 @@ module Radiator
     def test_get_trade_history
       vcr_cassette('get_trade_history') do
         @api.get_trade_history(nil, nil, nil) do |history|
-          assert_equal NilClass, history.class, history.inspect
-          assert_nil history
+          assert_equal Hashie::Mash, history.class, history.inspect
+          assert_equal history.trades, []
         end
       end
     end

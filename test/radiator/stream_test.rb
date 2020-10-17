@@ -3,7 +3,9 @@ require 'test_helper'
 module Radiator
   class StreamTest < Radiator::Test
     def setup
-      @api = Radiator::Stream.new
+      vcr_cassette('stream_jsonrpc') do
+        @api = Radiator::Stream.new
+      end
     end
 
     def test_method_missing
@@ -13,17 +15,23 @@ module Radiator
     end
 
     def test_all_respond_to
-      @api.method_names.each do |key|
-        assert @api.respond_to?(key), "expect rpc respond to #{key}"
+      vcr_cassette('stream_all_respond_to') do
+        @api.method_names.each do |key|
+          assert @api.respond_to?(key), "expect rpc respond to #{key}"
+        end
       end
     end
 
     def test_all_methods
-      skip "cannot execute an asynchronous request in tests"
-      
-      vcr_cassette('all_methods') do
+      vcr_cassette('stream_all_methods') do
+        skip "cannot execute an asynchronous request in tests"
+        
         @api.method_names.each do |key|
-          assert @api.send key
+          begin
+            assert @api.send key
+          rescue Steem::ArgumentError => e
+            # next
+          end
         end
       end
     end

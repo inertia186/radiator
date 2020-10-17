@@ -81,6 +81,11 @@ module Radiator
 
       case chain.to_s.downcase.to_sym
       when :steem then NETWORKS_STEEM_CHAIN_ID
+      when :hive
+        database_api = Hive::DatabaseApi.new(url: @url)
+        database_api.get_config do |config|
+          config['HIVE_CHAIN_ID']
+        end rescue nil || NETWORKS_HIVE_CHAIN_ID
       when :test then NETWORKS_TEST_CHAIN_ID
       end
     end
@@ -88,6 +93,7 @@ module Radiator
     def url
       case chain.to_s.downcase.to_sym
       when :steem then NETWORKS_STEEM_DEFAULT_NODE
+      when :hive then NETWORKS_HIVE_DEFAULT_NODE
       when :test then NETWORKS_TEST_DEFAULT_NODE
       end
     end
@@ -114,6 +120,26 @@ module Radiator
       else
         self
       end
+    rescue OperationError => e
+      trx_builder, network_api = case @chain.to_sym
+      when :steem then [
+        Steem::TransactionBuilder.new(wif: @wif),
+        Steem::NetworkBroadcastApi.new(url: @url)
+      ]
+      when :hive then [
+        Hive::TransactionBuilder.new(wif: @wif),
+        Hive::NetworkBroadcastApi.new(url: @url)
+      ]
+      end
+      
+      raise e if trx_builder.nil?
+      
+      @operations.each do |op|
+        type = op.delete(:type)
+        trx_builder.put({type => op})
+      end
+      
+      network_api.broadcast_transaction_synchronous(trx_builder.transaction)
     ensure
       shutdown
     end
@@ -122,7 +148,7 @@ module Radiator
       @operations = @operations.map do |op|
         case op
         when Operation then op
-        else; Operation.new(op)
+        else; Operation.new(op.merge(chain: @chain))
         end
       end
     end
@@ -251,6 +277,7 @@ module Radiator
         bytes << op.to_bytes
       end
 
+      # FIXME Should pakC(0) instead?
       bytes << 0x00 # extensions
 
       bytes

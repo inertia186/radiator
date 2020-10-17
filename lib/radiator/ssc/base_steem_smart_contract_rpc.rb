@@ -75,7 +75,7 @@ module Radiator
               http.keep_alive = 30
               http.idle_timeout = 10
               http.max_requests = @max_requests
-              http.retry_change_requests = true
+              http.retry_change_requests = true if defined? http.retry_change_requests
               http.reuse_ssl_sessions = @reuse_ssl_sessions
             end
           else

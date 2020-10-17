@@ -1,58 +1,33 @@
+# @deprecated Using Radiator::Type::Amount class provided is deprecated.  Please use: Hive::Type::Amount
 module Radiator
   module Type
-    
-    # See: https://github.com/xeroc/piston-lib/blob/34a7525cee119ec9b24a99577ede2d54466fca0e/steembase/operations.py
-    class Amount < Serializer
-      attr_reader :amount, :precision, :nai, :asset
-      
-      def initialize(value)
-        super(:amount, value)
-        
-        case value
-        when ::Array
-          a, @precision, @nai = value
-          @asset = case @nai
-          when '@@000000013' then 'SBD'
-          when '@@000000021' then 'STEEM'
-          when '@@000000037' then 'VESTS'
-          else; raise TypeError, "Asset #{@asset} unknown."
-          end
-          @amount = "%.#{@precision}f" % (a.to_f / 10 ** @precision)
-        else
-          @amount, @asset = value.strip.split(' ')
-          @precision = case @asset
-          when 'STEEM' then 3
-          when 'VESTS' then 6
-          when 'SBD' then 3
-          when 'CORE' then 3
-          when 'CESTS' then 6
-          when 'TEST' then 3
-          else; raise TypeError, "Asset #{@asset} unknown."
-          end
+    class Amount < Hive::Type::Amount
+      def initialize(options = {})
+        unless defined? @@deprecated_warning_shown
+          warn "[DEPRECATED] Using Radiator::Type::Amount class provided is deprecated.  Please use: Hive::Type::Amount"
+          @@deprecated_warning_shown = true
+          
+          super(options.merge(chain: :steem))
         end
-      end
-      
-      def to_bytes
-        asset = @asset.ljust(7, "\x00")
-        amount = (@amount.to_f * 10 ** @precision).round
-        
-        [amount].pack('q') +
-        [@precision].pack('c') +
-        asset
-      end
-      
-      def to_a
-        case @asset
-        when 'STEEM' then [(@amount.to_f * 1000).to_i.to_s, 3, '@@000000021']
-        when 'VESTS' then [(@amount.to_f * 1000000).to_i.to_s, 6, '@@000000037']
-        when 'SBD' then [(@amount.to_f * 1000).to_i.to_s, 3, '@@000000013']
-        else; raise TypeError, "Asset #{@asset} unknown."
-        end
-      end
-      
-      def to_s
-        "#{@amount} #{@asset}"
       end
     end
+  end
+end
+
+# Patch for legacy serializer.
+class Hive::Type::Amount
+  def to_bytes
+    asset = case @asset
+    when 'HBD' then 'SBD'
+    when 'HIVE' then 'STEEM'
+    else; @asset
+    end
+    
+    asset = asset.ljust(7, "\x00")
+    amount = (@amount.to_f * 10 ** @precision).round
+    
+    [amount].pack('q') +
+    [@precision].pack('c') +
+    asset
   end
 end
