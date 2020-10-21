@@ -189,7 +189,7 @@ module Radiator
     def initialize(options = {})
       @user = options[:user]
       @password = options[:password]
-      @chain = options[:chain] || :steem
+      @chain = options[:chain] # || :steem
       @url = options[:url] || Api::default_url(@chain)
       @restful_url = options[:restful_url] || Api::default_restful_url(@chain)
       @preferred_url = @url.dup

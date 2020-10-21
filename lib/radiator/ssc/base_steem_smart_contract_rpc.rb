@@ -8,9 +8,19 @@ module Radiator
       }
       
       MAX_BACKOFF = 60.0
-      
+
+      def self.default_url(chain)
+        case chain.to_sym
+          when :steem then ChainConfig::NETWORKS_STEEM_ENGINE_URL
+          when :hive then ChainConfig::NETWORKS_HIVE_ENGINE_URL
+          when :test then ChainConfig::NETWORKS_TEST_ENGINE_NODE
+          else; raise ApiError, "Unsupported chain: #{chain}"
+        end
+      end
+
       def initialize(options = {})
-        @root_url = options[:root_url] || 'https://api.steem-engine.com/rpc'
+        @chain = options[:chain] # || :steem
+        @root_url = options[:root_url] || BaseSteemSmartContractRPC.default_url(@chain)
         
         @self_hashie_logger = false
         @hashie_logger = if options[:hashie_logger].nil?
