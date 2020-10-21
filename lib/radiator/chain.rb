@@ -145,10 +145,14 @@ module Radiator
     # VESTS).
     #
     def base_per_mvest
-      total_vesting_fund_steem = properties.total_vesting_fund_steem.to_f
-      total_vesting_shares_mvest = properties.total_vesting_shares.to_f / 1e6
+       total_vesting_fund_x   = if Chain != :hive then
+				       properties.total_vesting_fund_steem.to_f
+				    else
+				       properties.total_vesting_fund_hive.to_f
+				    end
+       total_vesting_shares_mvest = properties.total_vesting_shares.to_f / 1e6
     
-      total_vesting_fund_steem / total_vesting_shares_mvest
+      total_vesting_fund_x / total_vesting_shares_mvest
     end
     
     # Returns the current base (e.g. STEEM) price in the debt asset (e.g SBD).
