@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency('hive-ruby', '~> 1.0', '>= 1.0.1')
   spec.add_dependency('json', '~> 2.0', '>= 2.0.2')
   spec.add_dependency('logging', '~> 2.2', '>= 2.2.0')
-  spec.add_dependency('hashie', '~> 3.5', '>= 3.5.7') # locked by steem-ruby
+  spec.add_dependency('hashie', '~> 4.1', '>= 3.5.7')
   spec.add_dependency('bitcoin-ruby', '0.0.20') # (was 0.0.19)
   spec.add_dependency('ffi', '~> 1.9', '>= 1.9.18') # (was 1.11.2)
   spec.add_dependency('awesome_print', '~> 1.7', '>= 1.7.0')
