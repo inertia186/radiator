@@ -332,7 +332,7 @@ module Radiator
               [block_api, {block_num: n}]
             end
               
-            scoped_api.get_block(n) do |current_block, error|
+            scoped_api.get_block(block_options) do |current_block, error|
               if !!error
                 if error.message == 'Unable to acquire database lock'
                   start = n
@@ -346,7 +346,11 @@ module Radiator
                     and: {throw: :sequence}
                   }
                 end
-              elsif current_block.nil?
+              end
+              
+              current_block = current_block.block unless use_condenser_namespace?
+              
+              if current_block.nil?
                 standby "Node responded with: empty block, retrying ...", {
                   and: {throw: :sequence}
                 }

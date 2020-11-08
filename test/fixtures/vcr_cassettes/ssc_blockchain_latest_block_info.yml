@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.8.pre.1
+      - radiator/0.4.8.pre.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -27,7 +27,7 @@ http_interactions:
       Server:
       - nginx/1.10.3 (Ubuntu)
       Date:
-      - Sat, 17 Oct 2020 04:07:42 GMT
+      - Sat, 07 Nov 2020 19:33:40 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -41,8 +41,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","id":2,"result":null}'
-    http_version:
-  recorded_at: Sat, 17 Oct 2020 04:07:42 GMT
+  recorded_at: Sat, 07 Nov 2020 19:33:40 GMT
 - request:
     method: post
     uri: https://api.steem-engine.com/rpc/blockchain
@@ -53,7 +52,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - radiator/0.4.8.pre.1
+      - radiator/0.4.8.pre.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -70,7 +69,7 @@ http_interactions:
       Server:
       - nginx/1.10.3 (Ubuntu)
       Date:
-      - Sat, 17 Oct 2020 04:07:42 GMT
+      - Sat, 07 Nov 2020 19:33:40 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -85,7 +84,7 @@ http_interactions:
       - "*"
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","id":1,"result":{"_id":8026333,"blockNumber":8026333,"refSteemBlockNumber":47791878,"refSteemBlockId":"02d93f06077b3ce47cab0c9f3802a6e82eef2a57","prevRefSteemBlockId":"02d93f05e9f57b8caf4d30e40146d0ebcd1cf462","previousHash":"70bc589d54704b9938094904cb0880fcd4ec8c1396de805d87678bfc5705c85b","previousDatabaseHash":"a7d8e52d98382ff15bad6983a2002842eea88b436a6e09bf0eed8fbcfc4321b7","timestamp":"2020-10-17T04:07:18","transactions":[{"refSteemBlockNumber":47791878,"transactionId":"fe5f86a9ccc6f540d2a0883ab992618376198e79","sender":"sklara","contract":"tokens","action":"stake","payload":"{\"symbol\":\"DBLOG\",\"to\":\"sklara\",\"quantity\":\"1231.283\",\"isSignedWithActiveKey\":true}","executedCodeHash":"d3ab1afa743f5322eb1b5da7ada99c43f7d26f47cfaab98acb9322c929b23ea6","hash":"4e99a0fb6a7ecbdc95c3f2add26b6f04ac4f77cdcf88372cd0111db42698d0ac","databaseHash":"951d64b5f2161858a74fdb754ae4a062bf1f590037552ca5389b8822b51eaacf","logs":"{\"events\":[{\"contract\":\"tokens\",\"event\":\"stake\",\"data\":{\"account\":\"sklara\",\"symbol\":\"DBLOG\",\"quantity\":\"1231.283\"}}]}"}],"virtualTransactions":[],"hash":"8d7f85158e09e716bbd81fcf5222771d5886f440f366ff5a5b6abe7b50a55b31","databaseHash":"95349cb152f5a05cadb7e76ddcdc02ea50b8da8ed06409ffa2f6f752f2da141c","merkleRoot":"759645a12eff87180a4bf6c80487003a890df9ade69ef5bd897001b8f865b733","round":null,"roundHash":"","witness":"","signingKey":"","roundSignature":""}}'
-    http_version:
-  recorded_at: Sat, 17 Oct 2020 04:07:42 GMT
-recorded_with: VCR 5.0.0
+      string: '{"jsonrpc":"2.0","id":1,"result":{"_id":8146292,"blockNumber":8146292,"refSteemBlockNumber":48403718,"refSteemBlockId":"02e29506946bfc076394598496fef7246b5dd870","prevRefSteemBlockId":"02e29505e4bdabc8dcf75b6152f8cc3c8ba7128b","previousHash":"8f75094d6963b595407954686534721ce369e1b28b226b31fc0be1df5e584bde","previousDatabaseHash":"cc2596aa23d3ff1e9fc1b4a329b31d3dbc7f7d113d806952d33e950a7551e9ad","timestamp":"2020-11-07T19:33:21","transactions":[{"refSteemBlockNumber":48403718,"transactionId":"c9cc5353d0252879adf24643f34c9cc2a54f4919-0","sender":"dliker","contract":"tokens","action":"issue","payload":"{\"symbol\":\"DLIKER\",\"to\":\"dliker\",\"quantity\":\"1008.781\",\"isSignedWithActiveKey\":true}","executedCodeHash":"d3ab1afa743f5322eb1b5da7ada99c43f7d26f47cfaab98acb9322c929b23ea6","hash":"2b6ac59f8166afc09d26e536330a71a0e507214fc81be0cae9a69f9957abe7c8","databaseHash":"1b0f2d22bd00e56afc9015850b40eeb8ba9bb48d440a19308422714d3a21f292","logs":"{\"events\":[{\"contract\":\"tokens\",\"event\":\"transferFromContract\",\"data\":{\"from\":\"tokens\",\"to\":\"dliker\",\"symbol\":\"DLIKER\",\"quantity\":\"1008.781\"}}]}"},{"refSteemBlockNumber":48403718,"transactionId":"c9cc5353d0252879adf24643f34c9cc2a54f4919-1","sender":"dliker","contract":"tokens","action":"stake","payload":"{\"symbol\":\"DLIKER\",\"to\":\"tbnfl4sun\",\"quantity\":\"504.390\",\"isSignedWithActiveKey\":true}","executedCodeHash":"d3ab1afa743f5322eb1b5da7ada99c43f7d26f47cfaab98acb9322c929b23ea6","hash":"2ed37c33bacfc78f9f47a516b2844b275a0b27fd8a7dea14842f8e03cd5bf67f","databaseHash":"9015c3d4c28f81692644e8d2b9aa9c7b30a9891f55c1f4601e6fee6d671c5ecd","logs":"{\"events\":[{\"contract\":\"tokens\",\"event\":\"stake\",\"data\":{\"account\":\"tbnfl4sun\",\"symbol\":\"DLIKER\",\"quantity\":\"504.390\"}}]}"},{"refSteemBlockNumber":48403718,"transactionId":"c9cc5353d0252879adf24643f34c9cc2a54f4919-2","sender":"dliker","contract":"tokens","action":"transfer","payload":"{\"symbol\":\"DLIKER\",\"to\":\"tbnfl4sun\",\"quantity\":\"504.390\",\"memo\":\"Here
+        are your claimed tokens! (504.390500 more DLIKER were added to DLIKER POWER)\",\"isSignedWithActiveKey\":true}","executedCodeHash":"d3ab1afa743f5322eb1b5da7ada99c43f7d26f47cfaab98acb9322c929b23ea6","hash":"33ddd94da3f3adf1666de9adb0151eca81a7b3f98d2863867008747fb42ee9e8","databaseHash":"9463d12a686f2ab4b72f40baf6cda0ffc2ebebf513a8814302d6ffe585f1abc3","logs":"{\"events\":[{\"contract\":\"tokens\",\"event\":\"transfer\",\"data\":{\"from\":\"dliker\",\"to\":\"tbnfl4sun\",\"symbol\":\"DLIKER\",\"quantity\":\"504.390\"}}]}"}],"virtualTransactions":[],"hash":"e2a282778da768190ffa03297562c77bbdfa6a0a1528f70611a82c65811f7c2b","databaseHash":"48e90b0a80ff9e4ace9315e1e2e6773505da1177a7983bb17022fddf79d5be99","merkleRoot":"61fef3286db59ba957f884b083cb08bd852d25512c51fffa38322be5e76199fd","round":null,"roundHash":"","witness":"","signingKey":"","roundSignature":""}}'
+  recorded_at: Sat, 07 Nov 2020 19:33:41 GMT
+recorded_with: VCR 6.0.0

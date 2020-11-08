@@ -33,11 +33,13 @@ Gem::Specification.new do |spec|
   # net-http-persistent has an open-ended dependency because radiator directly
   # supports net-http-persistent-4.0.0 as well as net-http-persistent-2.5.2.
   spec.add_dependency('net-http-persistent', '>= 2.5.2')
-  spec.add_dependency('steem-ruby', '~> 0.9', '>= 0.9.4')
-  spec.add_dependency('hive-ruby', '~> 1.0', '>= 1.0.1')
+  spec.add_dependency('steem-ruby', '~> 0.9', '>= 0.9.5')
+  spec.add_dependency('hive-ruby', '~> 1.0', '>= 1.0.2')
   spec.add_dependency('json', '~> 2.0', '>= 2.0.2')
   spec.add_dependency('logging', '~> 2.2', '>= 2.2.0')
-  spec.add_dependency('hashie', '~> 4.1', '>= 3.5.7')
+  # hashie is floating because we prefer 4.1 or higher, but the official
+  # steem-ruby-0.9.4 gem is stuck on hashie-3.5.7.
+  spec.add_dependency('hashie', '>= 3.5')
   spec.add_dependency('bitcoin-ruby', '0.0.20') # (was 0.0.19)
   spec.add_dependency('ffi', '~> 1.9', '>= 1.9.18') # (was 1.11.2)
   spec.add_dependency('awesome_print', '~> 1.7', '>= 1.7.0')

@@ -31,10 +31,10 @@ module Radiator
         @api.method_names.each do |key|
           begin
             assert @api.send key
-          rescue Steem::ArgumentError => e
-            # next
-          rescue Steem::RemoteNodeError => e
-            # next
+          rescue Steem::ArgumentError
+            next
+          rescue Steem::RemoteNodeError
+            next
           end
         end
       end
@@ -85,7 +85,7 @@ module Radiator
         rescue Steem::UnknownError => e
           raise e unless e.inspect.include? 'condenser_api::get_account_references --- Needs to be refactored for Steem'
           
-          # next
+          assert true
         end
       end
     end

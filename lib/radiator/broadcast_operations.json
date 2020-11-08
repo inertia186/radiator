@@ -195,7 +195,7 @@
       "author",
       "permlink",
       "max_accepted_payout",
-      "percent_steem_dollars",
+      "percent_hbd",
       "allow_replies",
       "allow_votes",
       "allow_curation_rewards",
@@ -278,8 +278,8 @@
       "to",
       "agent",
       "escrow_id",
-      "sbd_amount",
-      "steem_amount",
+      "hbd_amount",
+      "hive_amount",
       "fee",
       "ratification_deadline",
       "escrow_expiration",
@@ -307,8 +307,8 @@
       "who",
       "receiver",
       "escrow_id",
-      "sbd_amount",
-      "steem_amount"
+      "hbd_amount",
+      "hive_amount"
     ]
   },
   {
@@ -399,8 +399,8 @@
     "operation": "claim_reward_balance",
     "params": [
       "account",
-      "reward_steem",
-      "reward_sbd",
+      "reward_hive",
+      "reward_hbd",
       "reward_vests"
     ]
   },

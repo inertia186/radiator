@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":57,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+      string: '{"jsonrpc":"2.0","id":50,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -18,14 +18,14 @@ http_interactions:
       Host:
       - api.steemit.com
       Content-Length:
-      - '80'
+      - '83'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:07:03 GMT
+      - Sat, 07 Nov 2020 19:33:23 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,9 +35,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000756993066763127'
+      - '000758126637877052'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6de7-42f472fc5d89d7ca4ad75b86
+      - Root=1-5fa6f682-2425d81028e39dcc1a43a72d
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -52,35 +52,35 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-10-17T04:07:03"},"format":"false:
-        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":57}'
-  recorded_at: Sat, 17 Oct 2020 04:07:03 GMT
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-07T19:33:23"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":50}'
+  recorded_at: Sat, 07 Nov 2020 19:33:23 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":59,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+      string: '{"jsonrpc":"2.0","id":53,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
-      - '87'
+      - '83'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:09:09 GMT
+      - Sat, 07 Nov 2020 20:13:42 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -90,9 +90,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000335919355305167'
+      - '000960259911049504'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e65-7ee9554e36932fd21e1be583
+      - Root=1-5fa6fff6-0d67b5a301e35df13e211bc4
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -107,35 +107,35 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-10-17T04:09:09"},"format":"false:
-        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":59}'
-  recorded_at: Sat, 17 Oct 2020 04:09:09 GMT
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-07T20:13:42"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":53}'
+  recorded_at: Sat, 07 Nov 2020 20:13:42 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":119,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+      string: '{"jsonrpc":"2.0","id":108,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
-      - '80'
+      - '97'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:13:50 GMT
+      - Sat, 07 Nov 2020 20:22:24 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -145,9 +145,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000162925704246927'
+      - '000081554974187725'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6f7e-3aa2d3b26906fb4e6dbd7252
+      - Root=1-5fa701fe-539068486d6c1e2a028e39e8
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -162,35 +162,35 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-10-17T04:13:50"},"format":"false:
-        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":119}'
-  recorded_at: Sat, 17 Oct 2020 04:13:50 GMT
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-07T20:22:24"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":108}'
+  recorded_at: Sat, 07 Nov 2020 20:22:24 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":142,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+      string: '{"jsonrpc":"2.0","id":107,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
-      - '84'
+      - '81'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:14:53 GMT
+      - Sat, 07 Nov 2020 20:31:58 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -200,9 +200,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000322078292422137'
+      - '000469317050177909'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6fbd-43c13a1a7f3454fa6a1abb8a
+      - Root=1-5fa7043e-3f10bd6f7a8b4e0834692bce
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -217,75 +217,20 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-10-17T04:14:53"},"format":"false:
-        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":142}'
-  recorded_at: Sat, 17 Oct 2020 04:14:53 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":17,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '79'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:18:02 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '499'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000639520660589474'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a707a-0398239e35be2fe072899ffd
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
-        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-10-17T04:18:02"},"format":"false:
-        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":17}'
-  recorded_at: Sat, 17 Oct 2020 04:18:02 GMT
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-07T20:31:58"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":107}'
+  recorded_at: Sat, 07 Nov 2020 20:31:58 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":97,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+      string: '{"jsonrpc":"2.0","id":114,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -293,26 +238,26 @@ http_interactions:
       Host:
       - api.steemitdev.com
       Content-Length:
-      - '87'
+      - '97'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:23:12 GMT
+      - Sat, 07 Nov 2020 20:35:51 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '499'
+      - '500'
       Connection:
       - keep-alive
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000563581825588981'
+      - '000978744363562445'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a71b0-2115bd666be0a23d58d8cfe3
+      - Root=1-5fa70526-50d5d887389979ea20263f65
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -327,20 +272,20 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-10-17T04:23:12"},"format":"false:
-        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":97}'
-  recorded_at: Sat, 17 Oct 2020 04:23:13 GMT
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-07T20:35:51"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":114}'
+  recorded_at: Sat, 07 Nov 2020 20:35:51 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":58,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+      string: '{"jsonrpc":"2.0","id":121,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -348,26 +293,26 @@ http_interactions:
       Host:
       - api.steemitdev.com
       Content-Length:
-      - '93'
+      - '80'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:27:14 GMT
+      - Sat, 07 Nov 2020 20:43:08 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '499'
+      - '500'
       Connection:
       - keep-alive
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000283581972661789'
+      - '000141372230836317'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a72a2-4de1e05c166cc0a00245256c
+      - Root=1-5fa706da-4d109c6877fe028b2ccaeebf
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -382,20 +327,20 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-10-17T04:27:14"},"format":"false:
-        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":58}'
-  recorded_at: Sat, 17 Oct 2020 04:27:14 GMT
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-07T20:43:08"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":121}'
+  recorded_at: Sat, 07 Nov 2020 20:43:08 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":42,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+      string: '{"jsonrpc":"2.0","id":23,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -403,14 +348,14 @@ http_interactions:
       Host:
       - api.steemitdev.com
       Content-Length:
-      - '87'
+      - '86'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:34:16 GMT
+      - Sat, 07 Nov 2020 20:46:36 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -420,9 +365,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000560516559217377'
+      - '000067688391970617'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7448-3376cf2a4b200935477021be
+      - Root=1-5fa707ab-335d3eb34cfc79c571d8e827
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -437,20 +382,20 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-10-17T04:34:16"},"format":"false:
-        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":42}'
-  recorded_at: Sat, 17 Oct 2020 04:34:16 GMT
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-07T20:46:36"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":23}'
+  recorded_at: Sat, 07 Nov 2020 20:46:36 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":54,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+      string: '{"jsonrpc":"2.0","id":77,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -458,14 +403,14 @@ http_interactions:
       Host:
       - api.steemitdev.com
       Content-Length:
-      - '93'
+      - '80'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:39:50 GMT
+      - Sat, 07 Nov 2020 20:54:02 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -475,9 +420,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000639110960277093'
+      - '000002848444500852'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7596-20d089d606a4e5e41d7c9d04
+      - Root=1-5fa70968-73227d6e4100bc260c30ff12
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -492,9 +437,9 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-10-17T04:39:50"},"format":"false:
-        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":54}'
-  recorded_at: Sat, 17 Oct 2020 04:39:50 GMT
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-07T20:54:02"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":77}'
+  recorded_at: Sat, 07 Nov 2020 20:54:02 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
@@ -505,7 +450,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -513,14 +458,14 @@ http_interactions:
       Host:
       - api.steemitdev.com
       Content-Length:
-      - '92'
+      - '80'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:55:42 GMT
+      - Sat, 07 Nov 2020 21:00:48 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -530,9 +475,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000177669445238368'
+      - '000784433669682425'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a794d-6460d51c7e28b17c4f6704bb
+      - Root=1-5fa70aff-63a93a1f70e38f6c016c13b3
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -547,26 +492,81 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-10-17T04:55:42"},"format":"false:
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-07T21:00:48"},"format":"false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":11}'
-  recorded_at: Sat, 17 Oct 2020 04:55:43 GMT
+  recorded_at: Sat, 07 Nov 2020 21:00:48 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":75,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+      string: '{"jsonrpc":"2.0","id":115,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
+      Content-Length:
+      - '97'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 21:11:36 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '500'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000970164959267957'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70d87-485cc0365507e3566b188261
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-07T21:11:36"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":115}'
+  recorded_at: Sat, 07 Nov 2020 21:11:37 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":4,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
       Content-Length:
       - '79'
   response:
@@ -575,19 +575,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 05:03:31 GMT
+      - Sun, 08 Nov 2020 05:35:03 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '499'
+      - '498'
       Connection:
       - keep-alive
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000034242898224810'
+      - '000648408640272070'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7b23-6452739f49700f5f3644acbe
+      - Root=1-5fa78387-01e870e676a46a5631e35733
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -602,7 +602,172 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
         condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
-        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-10-17T05:03:31"},"format":"false:
-        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":75}'
-  recorded_at: Sat, 17 Oct 2020 05:03:31 GMT
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-08T05:35:03"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":4}'
+  recorded_at: Sun, 08 Nov 2020 05:35:03 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":41,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '83'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:39:37 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '499'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000425027602681379'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa78498-4a5ce5502d7cd1711aa2742e
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-08T05:39:37"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":41}'
+  recorded_at: Sun, 08 Nov 2020 05:39:37 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":73,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '80'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:48:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '499'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000763434810138319'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa78693-047a4e3a6151cd3c6d5c9a77
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-08T05:48:04"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":73}'
+  recorded_at: Sun, 08 Nov 2020 05:48:04 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":13,"method":"condenser_api.get_account_references","params":[["2.2.27007"]]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '75'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 06:00:40 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '499'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000967662260406671'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa78986-3862c6da6fc8ccb0200b5622
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":891,"method":"get_account_references","hostname":"","timestamp":"2020-11-08T06:00:40"},"format":"false:
+        condenser_api::get_account_references --- Needs to be refactored for Steem.","data":{}}]}},"id":13}'
+  recorded_at: Sun, 08 Nov 2020 06:00:40 GMT
 recorded_with: VCR 6.0.0

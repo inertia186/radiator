@@ -138,9 +138,8 @@ module Radiator
     
     DEFAULT_STEEM_FAILOVER_URLS = [
       DEFAULT_STEEM_URL,
-      'https://steemd.minnowsupportproject.org',
       'https://api.justyy.com',
-      'https://steem.bts.tw'
+      'https://steem.61bts.com'
     ]
     
     DEFAULT_STEEM_RESTFUL_URL = nil
@@ -153,10 +152,15 @@ module Radiator
       'https://api.hivekings.com',
       'https://api.hive.blog',
       'https://techcoderx.com',
-      'https://rpc.esteem.app',
+      'https://rpc.ecency.com',
+      'https://hive.roelandp.nl',
+      'https://api.c0ff33a.uk',
+      'https://api.deathwing.me',
+      'https://hive-api.arcange.eu',
+      'https://fin.hive.3speak.co',
       'https://hived.privex.io',
       'https://api.pharesim.me',
-      'https://rpc.ausbit.dev'
+      # 'https://rpc.ausbit.dev'
     ]
     
     DEFAULT_HIVE_RESTFUL_URL = 'https://anyx.io/v1'
@@ -189,7 +193,7 @@ module Radiator
       case chain.to_sym
       when :steem, :hive
         begin
-          _api = Radiator::Api.new(url: DEFAULT_STEEM_FAILOVER_URLS.sample, failover_urls: DEFAULT_STEEM_FAILOVER_URLS)
+          _api = Radiator::Api.new(url: DEFAULT_HIVE_FAILOVER_URLS.sample, failover_urls: DEFAULT_HIVE_FAILOVER_URLS)
           
           default_failover_urls = _api.get_accounts(['fullnodeupdate']) do |accounts|
             fullnodeupdate = accounts.first
@@ -252,7 +256,7 @@ module Radiator
     def initialize(options = {})
       @user = options[:user]
       @password = options[:password]
-      @chain = options[:chain] || :steem
+      @chain = (options[:chain] || 'hive').to_sym
       @url = options[:url] || Api::default_url(@chain)
       @restful_url = options[:restful_url] || Api::default_restful_url(@chain)
       @preferred_url = @url.dup

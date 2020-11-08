@@ -2,44 +2,42 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":122,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+      string: '{"jsonrpc":"2.0","id":4,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
-      - '95'
+      - '84'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:08:15 GMT
+      - Sat, 07 Nov 2020 19:44:15 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '181'
+      - '179'
       Connection:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.jsonrpc.get_signature.params={"method":"market_history_api.get_volume"}
       X-Jussi-Request-Id:
-      - '000590519296740501'
+      - '000939435880865721'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e2f-74413c4621dadc92065eecd9
+      - Root=1-5fa6f90f-70045a1906170e2154ac1220
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -52,19 +50,327 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"id":122,"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}}}'
-  recorded_at: Sat, 17 Oct 2020 04:08:15 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":4}'
+  recorded_at: Sat, 07 Nov 2020 19:44:15 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":123,"method":"market_history_api.get_volume","params":{}}'
+      string: '{"jsonrpc":"2.0","id":5,"method":"market_history_api.get_volume","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '109'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 19:44:15 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000804555817233610'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa6f90f-2e05553e0efe20ea52ec54c1
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"15419523","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"2305037","precision":3,"nai":"@@000000013"}},"id":5}'
+  recorded_at: Sat, 07 Nov 2020 19:44:15 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":2,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:12:07 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '179'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000153097145140566'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa6ff96-0c3bab45442af5d96f501948
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":2}'
+  recorded_at: Sat, 07 Nov 2020 20:12:08 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":3,"method":"market_history_api.get_volume","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '109'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:12:08 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '174'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000259051214987912'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa6ff98-47c526aa35a533be53bcf22e
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"16871029","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"2507959","precision":3,"nai":"@@000000013"}},"id":3}'
+  recorded_at: Sat, 07 Nov 2020 20:12:08 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":42,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '78'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:21:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '180'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000118310525032703'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa701c9-66ac63c64367ea353cdc2652
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":42}'
+  recorded_at: Sat, 07 Nov 2020 20:21:30 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":43,"method":"market_history_api.get_volume","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '110'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:21:32 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '175'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000382043840182389'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa701ca-548564050cd6357e0440f718
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"16871029","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"2507959","precision":3,"nai":"@@000000013"}},"id":43}'
+  recorded_at: Sat, 07 Nov 2020 20:21:32 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":121,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '79'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:28:51 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '181'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000635050749024427'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7037f-4d9694ea64ebe84b5bf23c4d
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":121}'
+  recorded_at: Sat, 07 Nov 2020 20:28:51 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":122,"method":"market_history_api.get_volume","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -79,7 +385,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:08:15 GMT
+      - Sat, 07 Nov 2020 20:28:53 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -89,9 +395,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000194352234866313'
+      - '000474600941888973'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e2f-166aea044f52f9b13c309a42
+      - Root=1-5fa70383-3eaa5d651e0969326941979b
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -104,25 +410,25 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"42466862","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"6673680","precision":3,"nai":"@@000000013"}},"id":123}'
-  recorded_at: Sat, 17 Oct 2020 04:08:15 GMT
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"18002766","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"2665599","precision":3,"nai":"@@000000013"}},"id":122}'
+  recorded_at: Sat, 07 Nov 2020 20:28:53 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":96,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+      string: '{"jsonrpc":"2.0","id":68,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
       - '95'
   response:
@@ -131,7 +437,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:09:18 GMT
+      - Sat, 07 Nov 2020 20:31:15 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -141,9 +447,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000771871685006167'
+      - '000569670676751574'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e6e-4e529b84473e3a652e64580d
+      - Root=1-5fa70413-46233b2c451364eb19b56984
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -156,25 +462,25 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":96}'
-  recorded_at: Sat, 17 Oct 2020 04:09:18 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":68}'
+  recorded_at: Sat, 07 Nov 2020 20:31:16 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":97,"method":"market_history_api.get_volume","params":{}}'
+      string: '{"jsonrpc":"2.0","id":69,"method":"market_history_api.get_volume","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
       - '110'
   response:
@@ -183,7 +489,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:09:19 GMT
+      - Sat, 07 Nov 2020 20:31:17 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -193,9 +499,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000638839490196262'
+      - '000910192550246660'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e6f-448d8eff2b7f103e6297706a
+      - Root=1-5fa70414-1de97a7a450e41e32dcbf716
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -208,129 +514,25 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"42467209","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"6673736","precision":3,"nai":"@@000000013"}},"id":97}'
-  recorded_at: Sat, 17 Oct 2020 04:09:19 GMT
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"18003971","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"2665777","precision":3,"nai":"@@000000013"}},"id":69}'
+  recorded_at: Sat, 07 Nov 2020 20:31:17 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":11,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+      string: '{"jsonrpc":"2.0","id":66,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
-      Content-Length:
-      - '94'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:13:18 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '180'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000555911653877626'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a6f5e-4a7eba945614c6c66d59b1b0
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":11}'
-  recorded_at: Sat, 17 Oct 2020 04:13:18 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":12,"method":"market_history_api.get_volume","params":{}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '110'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:13:18 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '175'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000001692848734114'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a6f5e-3c24860e60431575617fa14c
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"42467209","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"6673736","precision":3,"nai":"@@000000013"}},"id":12}'
-  recorded_at: Sat, 17 Oct 2020 04:13:18 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":42,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
       - '78'
   response:
@@ -339,7 +541,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:14:18 GMT
+      - Sat, 07 Nov 2020 20:35:13 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -348,12 +550,10 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.jsonrpc.get_signature.params={"method":"market_history_api.get_volume"}
       X-Jussi-Request-Id:
-      - '000041274081516269'
+      - '000760536387467790'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6f9a-6af478b756ef29db21fec287
+      - Root=1-5fa70501-58a411cb5838618220dbaecb
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -366,25 +566,25 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"id":42,"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}}}'
-  recorded_at: Sat, 17 Oct 2020 04:14:18 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":66}'
+  recorded_at: Sat, 07 Nov 2020 20:35:13 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":43,"method":"market_history_api.get_volume","params":{}}'
+      string: '{"jsonrpc":"2.0","id":67,"method":"market_history_api.get_volume","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
       - '110'
   response:
@@ -393,7 +593,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:14:18 GMT
+      - Sat, 07 Nov 2020 20:35:13 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -402,10 +602,12 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.market_history_api.get_volume.params={}
       X-Jussi-Request-Id:
-      - '001114706104853957'
+      - '001057423921925993'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6f9a-3be905e9620598085140893b
+      - Root=1-5fa70501-31e96c43511a2b7a099a6843
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -418,19 +620,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"42467209","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"6673736","precision":3,"nai":"@@000000013"}},"id":43}'
-  recorded_at: Sat, 17 Oct 2020 04:14:18 GMT
+      string: '{"id":67,"jsonrpc":"2.0","result":{"steem_volume":{"amount":"19168662","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"2828418","precision":3,"nai":"@@000000013"}}}'
+  recorded_at: Sat, 07 Nov 2020 20:35:13 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":65,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+      string: '{"jsonrpc":"2.0","id":58,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -445,7 +647,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:22:43 GMT
+      - Sat, 07 Nov 2020 20:42:03 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -455,9 +657,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000022334096403597'
+      - '000188187801101087'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7193-50f6ad8d50748ccf2695e825
+      - Root=1-5fa7069a-15583e647070f0ea0a32fa44
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -470,19 +672,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":65}'
-  recorded_at: Sat, 17 Oct 2020 04:22:43 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":58}'
+  recorded_at: Sat, 07 Nov 2020 20:42:03 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":66,"method":"market_history_api.get_volume","params":{}}'
+      string: '{"jsonrpc":"2.0","id":59,"method":"market_history_api.get_volume","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -497,7 +699,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:22:43 GMT
+      - Sat, 07 Nov 2020 20:42:05 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -507,9 +709,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '001118731931090272'
+      - '000519015419761500'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7193-74bbb37a47ec744b6e4c12fe
+      - Root=1-5fa7069c-4e09cf856ba9db0035511a0a
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -522,19 +724,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"42467209","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"6673736","precision":3,"nai":"@@000000013"}},"id":66}'
-  recorded_at: Sat, 17 Oct 2020 04:22:43 GMT
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"19164611","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"2827788","precision":3,"nai":"@@000000013"}},"id":59}'
+  recorded_at: Sat, 07 Nov 2020 20:42:05 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":24,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+      string: '{"jsonrpc":"2.0","id":37,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -542,14 +744,14 @@ http_interactions:
       Host:
       - api.steemitdev.com
       Content-Length:
-      - '94'
+      - '95'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:26:50 GMT
+      - Sat, 07 Nov 2020 20:47:07 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -559,9 +761,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000233151212764853'
+      - '000235472682748143'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a728a-6a98199b7c61d7cd69ab3d41
+      - Root=1-5fa707c9-6ee7d6db4eb263eb5b9830ac
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -574,19 +776,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":24}'
-  recorded_at: Sat, 17 Oct 2020 04:26:50 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":37}'
+  recorded_at: Sat, 07 Nov 2020 20:47:07 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":25,"method":"market_history_api.get_volume","params":{}}'
+      string: '{"jsonrpc":"2.0","id":38,"method":"market_history_api.get_volume","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -601,7 +803,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:26:50 GMT
+      - Sat, 07 Nov 2020 20:47:11 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -611,9 +813,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000331829777195199'
+      - '000232204130369931'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a728a-499d553e313a2dad5c35b748
+      - Root=1-5fa707cb-32637fda7e7ab8de33825686
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -626,19 +828,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"42467209","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"6673736","precision":3,"nai":"@@000000013"}},"id":25}'
-  recorded_at: Sat, 17 Oct 2020 04:26:50 GMT
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"19164611","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"2827788","precision":3,"nai":"@@000000013"}},"id":38}'
+  recorded_at: Sat, 07 Nov 2020 20:47:11 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":54,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+      string: '{"jsonrpc":"2.0","id":30,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -646,14 +848,14 @@ http_interactions:
       Host:
       - api.steemitdev.com
       Content-Length:
-      - '93'
+      - '86'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:34:24 GMT
+      - Sat, 07 Nov 2020 20:53:13 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -663,9 +865,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000788447758583178'
+      - '000495657750731702'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7450-676939e2698377fc712661eb
+      - Root=1-5fa70937-6a0a32f407d9c4357ff04e79
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -678,19 +880,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":54}'
-  recorded_at: Sat, 17 Oct 2020 04:34:24 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":30}'
+  recorded_at: Sat, 07 Nov 2020 20:53:13 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":55,"method":"market_history_api.get_volume","params":{}}'
+      string: '{"jsonrpc":"2.0","id":31,"method":"market_history_api.get_volume","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -705,7 +907,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:34:24 GMT
+      - Sat, 07 Nov 2020 20:53:17 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -715,9 +917,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '001051460267680908'
+      - '000416229695438656'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7450-49988a424c49b1dc6434f4a9
+      - Root=1-5fa70939-4521388334d47407613cce6b
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -730,19 +932,227 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"42498272","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"6678737","precision":3,"nai":"@@000000013"}},"id":55}'
-  recorded_at: Sat, 17 Oct 2020 04:34:24 GMT
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"20214570","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"2973112","precision":3,"nai":"@@000000013"}},"id":31}'
+  recorded_at: Sat, 07 Nov 2020 20:53:17 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":39,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+      string: '{"jsonrpc":"2.0","id":26,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '95'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 21:01:14 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '180'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000339371166104082'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70b18-230d63897ef5a6f562894cb7
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":26}'
+  recorded_at: Sat, 07 Nov 2020 21:01:14 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":27,"method":"market_history_api.get_volume","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '110'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 21:01:14 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '175'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '001113484279858346'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70b1a-03ab73c777ea5d7842c675bb
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"20218150","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"2973448","precision":3,"nai":"@@000000013"}},"id":27}'
+  recorded_at: Sat, 07 Nov 2020 21:01:14 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":104,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '79'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 21:08:44 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '181'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000490391992620400'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70cdc-1b35274674c6e83a7acfd893
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":104}'
+  recorded_at: Sat, 07 Nov 2020 21:08:44 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":105,"method":"market_history_api.get_volume","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '111'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 21:08:44 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '176'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000792754784055727'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70cdc-3bb126fe2fce62f610e87389
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"21385178","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"3137735","precision":3,"nai":"@@000000013"}},"id":105}'
+  recorded_at: Sat, 07 Nov 2020 21:08:44 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":43,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -757,7 +1167,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:39:42 GMT
+      - Sat, 07 Nov 2020 21:10:37 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -767,9 +1177,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000517399370418940'
+      - '000467930764268306'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a758e-163956c305ee6e751dd06930
+      - Root=1-5fa70d4d-6bc0bc2d19bb09f23b0c1032
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -782,19 +1192,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":39}'
-  recorded_at: Sat, 17 Oct 2020 04:39:42 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":43}'
+  recorded_at: Sat, 07 Nov 2020 21:10:37 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":40,"method":"market_history_api.get_volume","params":{}}'
+      string: '{"jsonrpc":"2.0","id":44,"method":"market_history_api.get_volume","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -809,7 +1219,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:39:42 GMT
+      - Sat, 07 Nov 2020 21:10:38 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -818,12 +1228,10 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.market_history_api.get_volume.params={}
       X-Jussi-Request-Id:
-      - '000622894142824878'
+      - '000196466739645798'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a758e-41d4067f5da1709c7601ef30
+      - Root=1-5fa70d4e-1077a8394b87c3230fbd5fe4
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -836,19 +1244,227 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"id":40,"jsonrpc":"2.0","result":{"steem_volume":{"amount":"42498272","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"6678737","precision":3,"nai":"@@000000013"}}}'
-  recorded_at: Sat, 17 Oct 2020 04:39:42 GMT
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"21385198","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"3137738","precision":3,"nai":"@@000000013"}},"id":44}'
+  recorded_at: Sat, 07 Nov 2020 21:10:38 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":94,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+      string: '{"jsonrpc":"2.0","id":64,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '86'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:40:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '180'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000087356534289482'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa784b0-3164e1943188745b63ede80f
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":64}'
+  recorded_at: Sun, 08 Nov 2020 05:40:00 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":65,"method":"market_history_api.get_volume","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '110'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:40:02 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '175'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000799707590686328'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa784b0-374b908834e71de37fa28799
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"23976997","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"3487598","precision":3,"nai":"@@000000013"}},"id":65}'
+  recorded_at: Sun, 08 Nov 2020 05:40:02 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":36,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '96'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:47:07 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '180'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000141209752801639'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa78659-09fa782220b082de45bc4639
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":36}'
+  recorded_at: Sun, 08 Nov 2020 05:47:07 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":37,"method":"market_history_api.get_volume","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '110'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:47:07 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '175'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000263613167771499'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7865b-1905278c217a63085f3ac743
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"23976997","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"3487598","precision":3,"nai":"@@000000013"}},"id":37}'
+  recorded_at: Sun, 08 Nov 2020 05:47:07 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":6,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -863,19 +1479,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:56:46 GMT
+      - Sun, 08 Nov 2020 06:00:32 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '180'
+      - '179'
       Connection:
       - keep-alive
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '001109175374577613'
+      - '000537207511898548'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a798e-6b32dbe821a861205642a6b3
+      - Root=1-5fa78980-2deb2f6841f0fef82b033288
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -888,19 +1504,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":94}'
-  recorded_at: Sat, 17 Oct 2020 04:56:46 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}},"id":6}'
+  recorded_at: Sun, 08 Nov 2020 06:00:32 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":95,"method":"market_history_api.get_volume","params":{}}'
+      string: '{"jsonrpc":"2.0","id":7,"method":"market_history_api.get_volume","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -908,26 +1524,26 @@ http_interactions:
       Host:
       - api.steemitdev.com
       Content-Length:
-      - '110'
+      - '109'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:56:46 GMT
+      - Sun, 08 Nov 2020 06:00:32 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '175'
+      - '174'
       Connection:
       - keep-alive
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000394027747662822'
+      - '000473508514348265'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a798e-69befa2f0f5138cb3e88eba8
+      - Root=1-5fa78980-2445d1f12b8f9ce35fb31ffe
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -940,112 +1556,6 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"36570454","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"5752307","precision":3,"nai":"@@000000013"}},"id":95}'
-  recorded_at: Sat, 17 Oct 2020 04:56:46 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":59,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_volume"}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '95'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 05:03:24 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '180'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.jsonrpc.get_signature.params={"method":"market_history_api.get_volume"}
-      X-Jussi-Request-Id:
-      - '000898607327929917'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a7b1c-5cc2240d01e5a2e32a46568e
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"id":59,"jsonrpc":"2.0","result":{"args":{},"ret":{"steem_volume":{"amount":"0","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"0","precision":3,"nai":"@@000000013"}}}}'
-  recorded_at: Sat, 17 Oct 2020 05:03:24 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":60,"method":"market_history_api.get_volume","params":{}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '110'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 05:03:24 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '175'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '001097807284079675'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a7b1c-7456a8f75dc8b98102044ff5
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"36570454","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"5752307","precision":3,"nai":"@@000000013"}},"id":60}'
-  recorded_at: Sat, 17 Oct 2020 05:03:24 GMT
+      string: '{"jsonrpc":"2.0","result":{"steem_volume":{"amount":"23977024","precision":3,"nai":"@@000000021"},"sbd_volume":{"amount":"3487602","precision":3,"nai":"@@000000013"}},"id":7}'
+  recorded_at: Sun, 08 Nov 2020 06:00:32 GMT
 recorded_with: VCR 6.0.0

@@ -2,42 +2,42 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":136,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+      string: '{"jsonrpc":"2.0","id":2,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
-      - '93'
+      - '67'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:08:18 GMT
+      - Sat, 07 Nov 2020 19:44:13 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '137'
+      - '135'
       Connection:
       - keep-alive
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000633300983760392'
+      - '000668065464608958'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e32-7a0ec63d01c5bb6f69baa2b6
+      - Root=1-5fa6f90b-058f219045aed44e1726ddde
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,19 +50,331 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":136}'
-  recorded_at: Sat, 17 Oct 2020 04:08:18 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":2}'
+  recorded_at: Sat, 07 Nov 2020 19:44:13 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":137,"method":"market_history_api.get_trade_history","params":{}}'
+      string: '{"jsonrpc":"2.0","id":3,"method":"market_history_api.get_trade_history","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '116'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 19:44:15 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000516067099335711'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa6f90d-57a9f11d092c38b8109cf131
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":3}'
+  recorded_at: Sat, 07 Nov 2020 19:44:15 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":28,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '95'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:13:01 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '136'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000472447868725486'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa6ffcc-123f8cae6065ce687d69bd12
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":28}'
+  recorded_at: Sat, 07 Nov 2020 20:13:02 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":29,"method":"market_history_api.get_trade_history","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '117'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:13:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '48'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000614735336272243'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa6ffce-3bfcafe14178edba324b2945
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":29}'
+  recorded_at: Sat, 07 Nov 2020 20:13:04 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":30,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '78'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:21:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '136'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000940743177954950'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa701ae-0973fddc04922d5e4634d026
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":30}'
+  recorded_at: Sat, 07 Nov 2020 20:21:04 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":31,"method":"market_history_api.get_trade_history","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '117'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:21:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '48'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000625328231169780'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa701b0-43cba22a4d2963bf2750c98c
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":31}'
+  recorded_at: Sat, 07 Nov 2020 20:21:06 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":101,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '79'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:28:02 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '137'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000775236692656268'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70351-2fb066e04a448af56d2f084d
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":101}'
+  recorded_at: Sat, 07 Nov 2020 20:28:02 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":102,"method":"market_history_api.get_trade_history","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -77,7 +389,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:08:19 GMT
+      - Sat, 07 Nov 2020 20:28:04 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -87,9 +399,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000414294351369023'
+      - '000220219652186500'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e33-64fc69660b469cc37caf0411
+      - Root=1-5fa70352-67c3fa844ba7992e1533efdd
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -102,129 +414,25 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":137}'
-  recorded_at: Sat, 17 Oct 2020 04:08:19 GMT
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":102}'
+  recorded_at: Sat, 07 Nov 2020 20:28:04 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":77,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+      string: '{"jsonrpc":"2.0","id":46,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
-      Content-Length:
-      - '96'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:09:13 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '136'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000916384947209032'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a6e69-02c3c588096227024aa8ce7d
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":77}'
-  recorded_at: Sat, 17 Oct 2020 04:09:13 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":78,"method":"market_history_api.get_trade_history","params":{}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '117'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:09:14 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '48'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000237768330567510'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a6e6a-30d74d0f0dee3dd41de9eaad
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":78}'
-  recorded_at: Sat, 17 Oct 2020 04:09:14 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":35,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
       - '78'
   response:
@@ -233,7 +441,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:13:25 GMT
+      - Sat, 07 Nov 2020 20:30:52 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -242,12 +450,10 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.jsonrpc.get_signature.params={"method":"market_history_api.get_trade_history"}
       X-Jussi-Request-Id:
-      - '000574674606874199'
+      - '000707061782649734'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6f65-06ad0c571a402c817dbe3060
+      - Root=1-5fa703fc-270d227f1398c4812b8169b6
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -260,25 +466,25 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"id":35,"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}}}'
-  recorded_at: Sat, 17 Oct 2020 04:13:25 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":46}'
+  recorded_at: Sat, 07 Nov 2020 20:30:52 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":36,"method":"market_history_api.get_trade_history","params":{}}'
+      string: '{"jsonrpc":"2.0","id":47,"method":"market_history_api.get_trade_history","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
       - '117'
   response:
@@ -287,7 +493,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:13:26 GMT
+      - Sat, 07 Nov 2020 20:30:52 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -297,9 +503,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '001124286080628471'
+      - '000642188693697707'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6f66-64f2f81016b21ac54f5183d0
+      - Root=1-5fa703fc-2ed8c5cd0cb9251d39770a21
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -312,19 +518,435 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":36}'
-  recorded_at: Sat, 17 Oct 2020 04:13:26 GMT
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":47}'
+  recorded_at: Sat, 07 Nov 2020 20:30:52 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":48,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+      string: '{"jsonrpc":"2.0","id":44,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '86'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:34:12 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '136'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000508598494076457'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa704c4-591d7a16417128425145e97d
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":44}'
+  recorded_at: Sat, 07 Nov 2020 20:34:12 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":45,"method":"market_history_api.get_trade_history","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '117'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:34:14 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '48'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000979495646969495'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa704c5-215310a417010f2174fe1661
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":45}'
+  recorded_at: Sat, 07 Nov 2020 20:34:14 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":38,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '78'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:41:24 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '136'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000109424962526390'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70672-47ea331a029104a01114ad91
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":38}'
+  recorded_at: Sat, 07 Nov 2020 20:41:24 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":39,"method":"market_history_api.get_trade_history","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '117'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:41:26 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '48'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000466873574722308'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70674-629fea09553ea78c38e36f83
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":39}'
+  recorded_at: Sat, 07 Nov 2020 20:41:26 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":29,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '150'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:46:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '136'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000113891805071595'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa707b7-5108ca3d23e5f0511783eeb1
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":29}'
+  recorded_at: Sat, 07 Nov 2020 20:46:49 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":30,"method":"market_history_api.get_trade_history","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '117'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:46:51 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '48'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000052575262321395'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa707b9-3311d9a742c4dc8b707a9e8c
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":30}'
+  recorded_at: Sat, 07 Nov 2020 20:46:51 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":6,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '67'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:52:29 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '135'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000875344504501788'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7090d-0ad4b18525f3e15f638e4e7c
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":6}'
+  recorded_at: Sat, 07 Nov 2020 20:52:29 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":7,"method":"market_history_api.get_trade_history","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '116'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:52:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000568304204625053'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7090d-3a2a442835631feb4f3e0050
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":7}'
+  recorded_at: Sat, 07 Nov 2020 20:52:30 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":80,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -339,7 +961,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:14:19 GMT
+      - Sat, 07 Nov 2020 21:08:06 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -349,9 +971,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000069386795273235'
+      - '000275735921109295'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6f9b-585877811db864682a766429
+      - Root=1-5fa70cb2-19c9d3ed47b16abf6e12ba49
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -364,19 +986,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":48}'
-  recorded_at: Sat, 17 Oct 2020 04:14:19 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":80}'
+  recorded_at: Sat, 07 Nov 2020 21:08:06 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":49,"method":"market_history_api.get_trade_history","params":{}}'
+      string: '{"jsonrpc":"2.0","id":81,"method":"market_history_api.get_trade_history","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -391,7 +1013,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:14:20 GMT
+      - Sat, 07 Nov 2020 21:08:08 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -401,9 +1023,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000972261509070389'
+      - '000155235675941707'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6f9c-002c4be91b2ea6f077c17e03
+      - Root=1-5fa70cb6-30cb3c352fe468044b9ca369
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -416,19 +1038,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":49}'
-  recorded_at: Sat, 17 Oct 2020 04:14:20 GMT
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":81}'
+  recorded_at: Sat, 07 Nov 2020 21:08:08 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":57,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+      string: '{"jsonrpc":"2.0","id":37,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -436,14 +1058,14 @@ http_interactions:
       Host:
       - api.steemitdev.com
       Content-Length:
-      - '82'
+      - '68'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:22:39 GMT
+      - Sat, 07 Nov 2020 21:10:28 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -453,9 +1075,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000328071676559247'
+      - '001107463413239713'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a718f-33c34a8c74adffee11aee3c6
+      - Root=1-5fa70d43-4f41432c0e1510f33f5f8174
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -468,19 +1090,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":57}'
-  recorded_at: Sat, 17 Oct 2020 04:22:39 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":37}'
+  recorded_at: Sat, 07 Nov 2020 21:10:28 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":58,"method":"market_history_api.get_trade_history","params":{}}'
+      string: '{"jsonrpc":"2.0","id":38,"method":"market_history_api.get_trade_history","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -495,7 +1117,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:22:40 GMT
+      - Sat, 07 Nov 2020 21:10:29 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -505,9 +1127,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000095595074883956'
+      - '000708851734252572'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7190-7afea2d6412dffd3485c3a27
+      - Root=1-5fa70d45-24f003a073f69d4a200af30f
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -520,8 +1142,8 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":58}'
-  recorded_at: Sat, 17 Oct 2020 04:22:40 GMT
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":38}'
+  recorded_at: Sat, 07 Nov 2020 21:10:29 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
@@ -532,7 +1154,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -540,14 +1162,14 @@ http_interactions:
       Host:
       - api.steemitdev.com
       Content-Length:
-      - '78'
+      - '86'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:26:46 GMT
+      - Sun, 08 Nov 2020 05:35:32 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -556,12 +1178,10 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.jsonrpc.get_signature.params={"method":"market_history_api.get_trade_history"}
       X-Jussi-Request-Id:
-      - '000461097856474761'
+      - '000948640873603931'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7286-4541dabc31398dfc7b3e7196
+      - Root=1-5fa783a3-25d2ba82769d9ac50f9d5f3f
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -574,8 +1194,8 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"id":16,"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}}}'
-  recorded_at: Sat, 17 Oct 2020 04:26:46 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":16}'
+  recorded_at: Sun, 08 Nov 2020 05:35:32 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
@@ -586,7 +1206,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -601,7 +1221,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:26:46 GMT
+      - Sun, 08 Nov 2020 05:35:33 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -611,9 +1231,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000136366844900381'
+      - '000250078156077228'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7286-5e0bbee75c7e2968780949b8
+      - Root=1-5fa783a5-308ba6bc53ca6d203227925c
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -627,18 +1247,18 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":17}'
-  recorded_at: Sat, 17 Oct 2020 04:26:47 GMT
+  recorded_at: Sun, 08 Nov 2020 05:35:33 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":56,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+      string: '{"jsonrpc":"2.0","id":53,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -653,7 +1273,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:34:25 GMT
+      - Sun, 08 Nov 2020 05:39:49 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -663,9 +1283,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000406225815151996'
+      - '000715985049948680'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7450-652a1a476479749d593e56b7
+      - Root=1-5fa784a4-5dea272545c0e0425aecb2c0
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -678,19 +1298,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":56}'
-  recorded_at: Sat, 17 Oct 2020 04:34:25 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":53}'
+  recorded_at: Sun, 08 Nov 2020 05:39:49 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":57,"method":"market_history_api.get_trade_history","params":{}}'
+      string: '{"jsonrpc":"2.0","id":54,"method":"market_history_api.get_trade_history","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -705,7 +1325,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:34:25 GMT
+      - Sun, 08 Nov 2020 05:39:51 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -715,9 +1335,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000509735971341561'
+      - '000183025167778120'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7451-0a56e83400e43335066230b6
+      - Root=1-5fa784a5-24a8535c61eefea2143f11fa
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -730,229 +1350,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":57}'
-  recorded_at: Sat, 17 Oct 2020 04:34:25 GMT
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":54}'
+  recorded_at: Sun, 08 Nov 2020 05:39:51 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":23,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
+      string: '{"jsonrpc":"2.0","id":21,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '92'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:39:25 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '136'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000235258733673035'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a7577-0806729c07f1fec16c16ee97
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":23}'
-  recorded_at: Sat, 17 Oct 2020 04:39:25 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":24,"method":"market_history_api.get_trade_history","params":{}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '117'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:39:31 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '48'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000831097778707414'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a757e-622b544e58d41cb06bf02aea
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":24}'
-  recorded_at: Sat, 17 Oct 2020 04:39:31 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":96,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '78'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:56:47 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '136'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.jsonrpc.get_signature.params={"method":"market_history_api.get_trade_history"}
-      X-Jussi-Request-Id:
-      - '000443287770735009'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a798f-5cb2a5952b57dc667239de6e
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"id":96,"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}}}'
-  recorded_at: Sat, 17 Oct 2020 04:56:47 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":97,"method":"market_history_api.get_trade_history","params":{}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '117'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:56:47 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '48'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000665486297093474'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a798f-7aadc2ed501e7d894a8e2818
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":97}'
-  recorded_at: Sat, 17 Oct 2020 04:56:47 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":67,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_trade_history"}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -960,14 +1370,14 @@ http_interactions:
       Host:
       - api.steemit.com
       Content-Length:
-      - '78'
+      - '95'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 05:03:27 GMT
+      - Sun, 08 Nov 2020 05:47:14 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -977,9 +1387,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000947773293490378'
+      - '000396453477934432'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7b1f-24b72ba5764a3b3f473b121e
+      - Root=1-5fa78662-3e7077793bbe6bc01d0c205f
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -992,19 +1402,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":67}'
-  recorded_at: Sat, 17 Oct 2020 05:03:27 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{"start":"1970-01-01T00:00:00","end":"1970-01-01T00:00:00","limit":1000},"ret":{"trades":[]}},"id":21}'
+  recorded_at: Sun, 08 Nov 2020 05:47:14 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":68,"method":"market_history_api.get_trade_history","params":{}}'
+      string: '{"jsonrpc":"2.0","id":22,"method":"market_history_api.get_trade_history","params":{}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1019,7 +1429,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 05:03:27 GMT
+      - Sun, 08 Nov 2020 05:47:14 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -1029,9 +1439,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000451213367496582'
+      - '000193633814589981'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7b1f-410ad1421d1e576c68fb3b21
+      - Root=1-5fa78662-3a6376a5453890a2720b3b21
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -1044,6 +1454,6 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":68}'
-  recorded_at: Sat, 17 Oct 2020 05:03:28 GMT
+      string: '{"jsonrpc":"2.0","result":{"trades":[]},"id":22}'
+  recorded_at: Sun, 08 Nov 2020 05:47:14 GMT
 recorded_with: VCR 6.0.0

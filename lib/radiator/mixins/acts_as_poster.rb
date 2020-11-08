@@ -20,7 +20,7 @@ module Radiator
       # @option options [String] :parent_permlink (automatic) Parent permlink of the post, defaults to first tag.
       # @option options [String] :parent_author (optional) Parent author of the post (only used if reply).
       # @option options [String] :max_accepted_payout (1000000.000 SBD) Maximum accepted payout, set to '0.000 SBD' to deline payout
-      # @option options [Integer] :percent_steem_dollars (5000) Percent STEEM Dollars is used to set 50/50 or 100% STEEM Power
+      # @option options [Integer] :percent_hbd (5000) Percent HBD is used to set 50/50 or 100% HIVE Power
       # @option options [Integer] :allow_votes (true) Allow votes for this post.
       # @option options [Integer] :allow_curation_rewards (true) Allow curation rewards for this post.
       def post(options = {})
@@ -34,7 +34,7 @@ module Radiator
         body = options[:body]
         parent_author = options[:parent_author] || ''
         max_accepted_payout = options[:max_accepted_payout] || default_max_acepted_payout
-        percent_steem_dollars = options[:percent_steem_dollars]
+        percent_hbd = options[:percent_hbd]
         allow_votes = options[:allow_votes] || true
         allow_curation_rewards = options[:allow_curation_rewards] || true
         self_vote = options[:self_vote]
@@ -60,13 +60,13 @@ module Radiator
         
         if (!!max_accepted_payout &&
             max_accepted_payout != default_max_acepted_payout
-          ) || !!percent_steem_dollars || !allow_votes || !allow_curation_rewards
+          ) || !!percent_hbd || !allow_votes || !allow_curation_rewards
           @operations << {
             type: :comment_options,
             author: account_name,
             permlink: permlink,
             max_accepted_payout: max_accepted_payout,
-            percent_steem_dollars: percent_steem_dollars,
+            percent_hbd: percent_hbd,
             allow_votes: allow_votes,
             allow_curation_rewards: allow_curation_rewards,
             extensions: []

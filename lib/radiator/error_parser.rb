@@ -69,7 +69,7 @@ module Radiator
             stack_formats = stacks.map { |s| s['format'] }
             stack_datum = stacks.map { |s| s['data'] }
             data_call_method = stack_datum.find { |data| data['call.method'] == 'call' }
-            data_name = stack_datum.find { |data| !!data['name'] }
+            # data_name = stack_datum.find { |data| !!data['name'] }
             
             # See if we can recover a transaction id out of this hot mess.
             data_trx_ix = stack_datum.find { |data| !!data['trx_ix'] }

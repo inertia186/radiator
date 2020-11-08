@@ -32,7 +32,7 @@ desc 'Tests the ability to broadcast live data.  This task broadcasts a claim_re
 task :test_live_broadcast, [:account, :wif, :chain] do |t, args|
   account_name = args[:account] || 'social'
   posting_wif = args[:wif] || '5JrvPrQeBBvCRdjv29iDvkwn3EQYZ9jqfAHzrCyUvfbEbRkrYFC'
-  chain = (args[:chain] || 'steem').to_sym
+  chain = (args[:chain] || 'hive').to_sym
   # url = 'https://testnet.steemitdev.com/' # use testnet
   url = nil # use default
   options = {chain: chain, wif: posting_wif, url: url}
@@ -81,7 +81,7 @@ task :test_live_broadcast, [:account, :wif, :chain] do |t, args|
   end
 end
 
-desc 'Tests the ability to stream live data. defaults: chain = steem; persist = true.'
+desc 'Tests the ability to stream live data. defaults: chain = hive; persist = true.'
 task :test_live_stream, [:chain, :persist] do |t, args|
   chain = (args[:chain] || 'hive').to_sym
   persist = (args[:persist] || 'true') == 'true'
@@ -89,7 +89,7 @@ task :test_live_stream, [:chain, :persist] do |t, args|
   # url = 'https://testnet.steemitdev.com/'
   url = chain == :steem ? 'https://api.steemit.com' : 'http://anyx.io'
   # url = nil # use default
-  options = {chain: chain, persist: persist, url: url}
+  options = {chain: chain, persist: persist, url: url, use_condenser_namespace: false}
   total_ops = 0.0
   total_vops = 0.0
   elapsed = 0
@@ -158,7 +158,7 @@ end
 
 desc 'Publish the current version of the radiator gem.'
 task :push do
-  exec "gem push radiator-#{Radiator::VERSION}.gem"
+  exec "gem push pkg/radiator-#{Radiator::VERSION}.gem"
 end
 
 # We're not going to yank on a regular basis, but this is how it's done if you

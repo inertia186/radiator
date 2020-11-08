@@ -20,7 +20,7 @@ module Radiator
   #       body: 'body of my post',
   #       tags: ['tag'],
   #       self_upvote: 10000,
-  #       percent_steem_dollars: 0
+  #       percent_hbd: 0
   #     }
   #     
   #     steem.post!(options)

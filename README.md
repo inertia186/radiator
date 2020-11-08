@@ -10,6 +10,21 @@
 
 Radiator is an API Client for interaction with the Hive/Steem network using Ruby.
 
+#### Changes in v0.4.8
+
+* Eclipse Update
+* Now wrapping [`hive-ruby`](https://gitlab.syncad.com/hive/hive-ruby) and [`steem-ruby`](https://github.com/steemit/steem-ruby)
+
+#### Changes in v0.4.7
+
+* Added `attr_reader` for `Radiator::Type::Amount` [#28](https://github.com/inertia186/radiator/issues/28)
+* Added restful fallback for `get_transaction` during `recover_transactions_on_error`
+* Fix beneficiary serialization (thanks @eonwarped)
+
+#### Changes in v0.4.6
+
+* Added health check and persist option
+
 #### Changes in v0.4.5
 
 * Added support to query and stream a Steem Smart Contract backed side-chains like Steem Engine.
@@ -517,10 +532,10 @@ Radiator supports failover for situations where a node has, for example, become 
 
 ```ruby
 options = {
-  url: 'https://api.steemit.com',
+  url: 'https://api.hive.blog',
   failover_urls: [
-    'https://api.steemitstage.com',
-    'https://api.steem.house'
+    'https://anyx.io',
+    'https://api.hivekings.com',
   ]
 }
 
@@ -629,10 +644,10 @@ https://github.com/inertia186/radiator/issues/12
 ---
 
 <center>
-  <img src="https://steemitimages.com/0x0/http://www.steemimg.com/images/2016/08/19/RadiatorCoolingFan-54in-Webfdcb1.png" />
+  <img src="https://i.imgur.com/9LcZKYD.png" />
 </center>
 
-See my previous Ruby How To posts in: [#radiator](https://steemit.com/created/radiator) [#ruby](https://steemit.com/created/ruby)
+See my previous Ruby How To posts in: [#radiator](https://hive.blog/created/radiator) [#ruby](https://hive.blog/created/ruby)
 
 ## Get in touch!
 

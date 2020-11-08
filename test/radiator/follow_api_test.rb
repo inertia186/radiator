@@ -28,8 +28,8 @@ module Radiator
         @api.method_names.each do |key|
           begin
             assert @api.send key
-          rescue Steem::ArgumentError => e
-            # next
+          rescue Steem::ArgumentError
+            next
           end
         end
       end

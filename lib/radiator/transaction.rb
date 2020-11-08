@@ -25,10 +25,10 @@ module Radiator
         end
       end
 
-      @chain ||= :steem
+      @url = options[:url] || url
+      @chain ||= 'hive'
       @chain = @chain.to_sym
       @chain_id = chain_id options[:chain_id]
-      @url = options[:url] || url
       @operations = options[:operations] || []
       
       @self_logger = false

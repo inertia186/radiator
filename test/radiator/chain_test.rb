@@ -4,7 +4,7 @@ module Radiator
   class ChainTest < Radiator::Test
     def setup
       options = {
-        chain: :steem,
+        chain: :hive,
         account_name: 'social',
         wif: '5JrvPrQeBBvCRdjv29iDvkwn3EQYZ9jqfAHzrCyUvfbEbRkrYFC'
       }
@@ -27,7 +27,7 @@ module Radiator
     end
     
     def test_parse_slug_to_comment_with_comments_anchor
-      url = 'https://steemit.com/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-sbd-contest#comments'
+      url = 'https://hive.blog/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-sbd-contest#comments'
       author, permlink = Radiator::Chain.parse_slug url
       
       assert_equal 'howtostartablog', author
@@ -35,7 +35,7 @@ module Radiator
     end
     
     def test_parse_slug_to_comment_with_apache_slash
-      url = 'https://steemit.com/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-sbd-contest/'
+      url = 'https://hive.blog/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-sbd-contest/'
       author, permlink = Radiator::Chain.parse_slug url
       
       assert_equal 'howtostartablog', author
@@ -43,7 +43,7 @@ module Radiator
     end
     
     def test_parse_slug_to_comment
-      url = 'https://steemit.com/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-sbd-contest#@btcvenom/re-howtostartablog-the-joke-is-always-in-the-comments-8-sbd-contest-20170624t115213474z'
+      url = 'https://hive.blog/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-sbd-contest#@btcvenom/re-howtostartablog-the-joke-is-always-in-the-comments-8-sbd-contest-20170624t115213474z'
       author, permlink = Radiator::Chain.parse_slug url
       
       assert_equal 'btcvenom', author
@@ -134,7 +134,7 @@ module Radiator
         body: 'body of my post (archive: edited)',
         tags: ['tag'],
         self_upvote: 10000,
-        percent_steem_dollars: 0
+        percent_hbd: 0
       }
       
       vcr_cassette('post!') do

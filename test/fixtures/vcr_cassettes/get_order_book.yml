@@ -2,15 +2,327 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":133,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
+      string: '{"jsonrpc":"2.0","id":28,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '78'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 19:45:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '85'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000969882078153640'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa6f93e-375b4d7361616ff4489a17db
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":28}'
+  recorded_at: Sat, 07 Nov 2020 19:45:04 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":29,"method":"market_history_api.get_order_book","params":{"limit":10}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '114'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 19:45:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000811684022924593'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa6f941-7001720763a498257296eea4
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"13270","precision":3,"nai":"@@000000021"}},"real_price":"0.15071590052750566","steem":13270,"sbd":2000,"created":"2020-11-07T19:23:45"},{"order_price":{"base":{"amount":"30000","precision":3,"nai":"@@000000013"},"quote":{"amount":"199074","precision":3,"nai":"@@000000021"}},"real_price":"0.15069773049217880","steem":5076,"sbd":765,"created":"2020-11-07T18:51:42"},{"order_price":{"base":{"amount":"83726","precision":3,"nai":"@@000000013"},"quote":{"amount":"593571","precision":3,"nai":"@@000000021"}},"real_price":"0.14105473481689637","steem":593571,"sbd":83726,"created":"2020-11-07T19:36:33"},{"order_price":{"base":{"amount":"23243","precision":3,"nai":"@@000000013"},"quote":{"amount":"164844","precision":3,"nai":"@@000000021"}},"real_price":"0.14099997573463396","steem":119304,"sbd":16822,"created":"2020-11-06T00:17:57"},{"order_price":{"base":{"amount":"474","precision":3,"nai":"@@000000013"},"quote":{"amount":"3362","precision":3,"nai":"@@000000021"}},"real_price":"0.14098750743604996","steem":3362,"sbd":474,"created":"2020-11-06T00:17:30"},{"order_price":{"base":{"amount":"5000","precision":3,"nai":"@@000000013"},"quote":{"amount":"35483","precision":3,"nai":"@@000000021"}},"real_price":"0.14091254967167377","steem":13313,"sbd":1876,"created":"2020-11-05T19:19:54"},{"order_price":{"base":{"amount":"998","precision":3,"nai":"@@000000013"},"quote":{"amount":"7095","precision":3,"nai":"@@000000021"}},"real_price":"0.14066243833685693","steem":7095,"sbd":998,"created":"2020-11-05T21:25:33"},{"order_price":{"base":{"amount":"9","precision":3,"nai":"@@000000013"},"quote":{"amount":"64","precision":3,"nai":"@@000000021"}},"real_price":"0.14062500000000000","steem":64,"sbd":9,"created":"2020-11-05T20:50:39"},{"order_price":{"base":{"amount":"53391","precision":3,"nai":"@@000000013"},"quote":{"amount":"386583","precision":3,"nai":"@@000000021"}},"real_price":"0.13811005657258596","steem":386583,"sbd":53391,"created":"2020-11-07T19:35:54"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"}],"asks":[{"order_price":{"base":{"amount":"682599","precision":3,"nai":"@@000000021"},"quote":{"amount":"103676","precision":3,"nai":"@@000000013"}},"real_price":"0.15188419555258650","steem":678328,"sbd":103027,"created":"2020-11-07T19:24:39"},{"order_price":{"base":{"amount":"156221","precision":3,"nai":"@@000000021"},"quote":{"amount":"23736","precision":3,"nai":"@@000000013"}},"real_price":"0.15193859980412364","steem":156221,"sbd":23736,"created":"2020-11-07T19:22:18"},{"order_price":{"base":{"amount":"54148","precision":3,"nai":"@@000000021"},"quote":{"amount":"8230","precision":3,"nai":"@@000000013"}},"real_price":"0.15199083992021867","steem":31680,"sbd":4815,"created":"2020-11-07T09:18:12"},{"order_price":{"base":{"amount":"33390","precision":3,"nai":"@@000000021"},"quote":{"amount":"5075","precision":3,"nai":"@@000000013"}},"real_price":"0.15199161425576521","steem":33390,"sbd":5075,"created":"2020-11-07T10:33:12"},{"order_price":{"base":{"amount":"36916","precision":3,"nai":"@@000000021"},"quote":{"amount":"5611","precision":3,"nai":"@@000000013"}},"real_price":"0.15199371546213025","steem":36916,"sbd":5611,"created":"2020-11-07T09:23:06"},{"order_price":{"base":{"amount":"45541","precision":3,"nai":"@@000000021"},"quote":{"amount":"6922","precision":3,"nai":"@@000000013"}},"real_price":"0.15199490568937879","steem":45541,"sbd":6922,"created":"2020-11-07T18:38:21"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"151999","precision":3,"nai":"@@000000013"}},"real_price":"0.15199900000000000","steem":1000000,"sbd":151999,"created":"2020-11-07T15:56:30"},{"order_price":{"base":{"amount":"500000","precision":3,"nai":"@@000000021"},"quote":{"amount":"76000","precision":3,"nai":"@@000000013"}},"real_price":"0.15200000000000000","steem":500000,"sbd":76000,"created":"2020-11-07T08:20:51"},{"order_price":{"base":{"amount":"8651","precision":3,"nai":"@@000000021"},"quote":{"amount":"1315","precision":3,"nai":"@@000000013"}},"real_price":"0.15200554849150388","steem":8651,"sbd":1315,"created":"2020-11-07T09:33:12"},{"order_price":{"base":{"amount":"37814","precision":3,"nai":"@@000000021"},"quote":{"amount":"5748","precision":3,"nai":"@@000000013"}},"real_price":"0.15200719310308353","steem":37814,"sbd":5748,"created":"2020-11-07T09:28:30"}]},"id":29}'
+  recorded_at: Sat, 07 Nov 2020 19:45:06 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":6,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '85'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:12:14 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '84'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000718713617658271'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa6ff9c-45ef3206458a473e79489eca
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":6}'
+  recorded_at: Sat, 07 Nov 2020 20:12:14 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":7,"method":"market_history_api.get_order_book","params":{"limit":10}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '113'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:12:18 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000398116945554132'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa6ff9e-377842700100cc327c64200b
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2001","precision":3,"nai":"@@000000013"},"quote":{"amount":"14474","precision":3,"nai":"@@000000021"}},"real_price":"0.13824789277324859","steem":14474,"sbd":2001,"created":"2020-11-07T20:12:09"},{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14474","precision":3,"nai":"@@000000021"}},"real_price":"0.13817880337156280","steem":14474,"sbd":2000,"created":"2020-11-07T20:11:54"},{"order_price":{"base":{"amount":"39871","precision":3,"nai":"@@000000013"},"quote":{"amount":"288585","precision":3,"nai":"@@000000021"}},"real_price":"0.13816033404369596","steem":288585,"sbd":39871,"created":"2020-11-07T20:11:18"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1578,"sbd":218,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"187180","precision":3,"nai":"@@000000013"},"quote":{"amount":"1355286","precision":3,"nai":"@@000000021"}},"real_price":"0.13811107028332029","steem":1355286,"sbd":187180,"created":"2020-11-07T20:09:33"},{"order_price":{"base":{"amount":"358620","precision":3,"nai":"@@000000013"},"quote":{"amount":"2596607","precision":3,"nai":"@@000000021"}},"real_price":"0.13811100409110813","steem":2151617,"sbd":297162,"created":"2020-11-07T20:05:09"},{"order_price":{"base":{"amount":"53391","precision":3,"nai":"@@000000013"},"quote":{"amount":"386583","precision":3,"nai":"@@000000021"}},"real_price":"0.13811005657258596","steem":386583,"sbd":53391,"created":"2020-11-07T19:35:54"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"},{"order_price":{"base":{"amount":"1059","precision":3,"nai":"@@000000013"},"quote":{"amount":"7780","precision":3,"nai":"@@000000021"}},"real_price":"0.13611825192802057","steem":7780,"sbd":1059,"created":"2020-11-05T13:08:42"}],"asks":[{"order_price":{"base":{"amount":"13518","precision":3,"nai":"@@000000021"},"quote":{"amount":"1997","precision":3,"nai":"@@000000013"}},"real_price":"0.14772895398727623","steem":13518,"sbd":1997,"created":"2020-11-07T20:12:09"},{"order_price":{"base":{"amount":"13518","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14787690486758395","steem":13518,"sbd":1999,"created":"2020-11-07T20:11:54"},{"order_price":{"base":{"amount":"699029","precision":3,"nai":"@@000000021"},"quote":{"amount":"103422","precision":3,"nai":"@@000000013"}},"real_price":"0.14795094338003145","steem":699029,"sbd":103422,"created":"2020-11-07T20:11:33"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"156221","precision":3,"nai":"@@000000021"},"quote":{"amount":"23736","precision":3,"nai":"@@000000013"}},"real_price":"0.15193859980412364","steem":156221,"sbd":23736,"created":"2020-11-07T19:22:18"},{"order_price":{"base":{"amount":"54148","precision":3,"nai":"@@000000021"},"quote":{"amount":"8230","precision":3,"nai":"@@000000013"}},"real_price":"0.15199083992021867","steem":31680,"sbd":4815,"created":"2020-11-07T09:18:12"},{"order_price":{"base":{"amount":"33390","precision":3,"nai":"@@000000021"},"quote":{"amount":"5075","precision":3,"nai":"@@000000013"}},"real_price":"0.15199161425576521","steem":33390,"sbd":5075,"created":"2020-11-07T10:33:12"},{"order_price":{"base":{"amount":"36916","precision":3,"nai":"@@000000021"},"quote":{"amount":"5611","precision":3,"nai":"@@000000013"}},"real_price":"0.15199371546213025","steem":36916,"sbd":5611,"created":"2020-11-07T09:23:06"},{"order_price":{"base":{"amount":"45541","precision":3,"nai":"@@000000021"},"quote":{"amount":"6922","precision":3,"nai":"@@000000013"}},"real_price":"0.15199490568937879","steem":45541,"sbd":6922,"created":"2020-11-07T18:38:21"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"151999","precision":3,"nai":"@@000000013"}},"real_price":"0.15199900000000000","steem":1000000,"sbd":151999,"created":"2020-11-07T15:56:30"}]},"id":7}'
+  recorded_at: Sat, 07 Nov 2020 20:12:18 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":38,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '94'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:21:22 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '85'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000557682561380788'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa701c0-70558136237fdc042a9e63a1
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":38}'
+  recorded_at: Sat, 07 Nov 2020 20:21:22 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":39,"method":"market_history_api.get_order_book","params":{"limit":10}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '114'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:21:26 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000543905869123517'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa701c3-14b56dd80a7a94616e55f1eb
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2","precision":3,"nai":"@@000000013"},"quote":{"amount":"14","precision":3,"nai":"@@000000021"}},"real_price":"0.14285714285714285","steem":14,"sbd":2,"created":"2020-11-07T20:20:09"},{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14322","precision":3,"nai":"@@000000021"}},"real_price":"0.13964530093562352","steem":14322,"sbd":2000,"created":"2020-11-07T20:19:09"},{"order_price":{"base":{"amount":"39871","precision":3,"nai":"@@000000013"},"quote":{"amount":"285537","precision":3,"nai":"@@000000021"}},"real_price":"0.13963514360660789","steem":285537,"sbd":39871,"created":"2020-11-07T20:19:03"},{"order_price":{"base":{"amount":"167512","precision":3,"nai":"@@000000013"},"quote":{"amount":"1200000","precision":3,"nai":"@@000000021"}},"real_price":"0.13959333333333335","steem":1200000,"sbd":167512,"created":"2020-11-07T20:18:06"},{"order_price":{"base":{"amount":"10574","precision":3,"nai":"@@000000013"},"quote":{"amount":"75972","precision":3,"nai":"@@000000021"}},"real_price":"0.13918285684199441","steem":75972,"sbd":10574,"created":"2020-11-07T20:17:03"},{"order_price":{"base":{"amount":"187180","precision":3,"nai":"@@000000013"},"quote":{"amount":"1345176","precision":3,"nai":"@@000000021"}},"real_price":"0.13914907789017944","steem":1345176,"sbd":187180,"created":"2020-11-07T20:14:48"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1578,"sbd":218,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"53391","precision":3,"nai":"@@000000013"},"quote":{"amount":"386583","precision":3,"nai":"@@000000021"}},"real_price":"0.13811005657258596","steem":386583,"sbd":53391,"created":"2020-11-07T19:35:54"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"}],"asks":[{"order_price":{"base":{"amount":"13565","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14736454109841504","steem":13565,"sbd":1999,"created":"2020-11-07T20:20:21"},{"order_price":{"base":{"amount":"699029","precision":3,"nai":"@@000000021"},"quote":{"amount":"103422","precision":3,"nai":"@@000000013"}},"real_price":"0.14795094338003145","steem":699029,"sbd":103422,"created":"2020-11-07T20:11:33"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"39304","precision":3,"nai":"@@000000021"},"quote":{"amount":"5856","precision":3,"nai":"@@000000013"}},"real_price":"0.14899246895990231","steem":39304,"sbd":5856,"created":"2020-11-07T20:13:18"},{"order_price":{"base":{"amount":"156221","precision":3,"nai":"@@000000021"},"quote":{"amount":"23736","precision":3,"nai":"@@000000013"}},"real_price":"0.15193859980412364","steem":156221,"sbd":23736,"created":"2020-11-07T19:22:18"},{"order_price":{"base":{"amount":"54148","precision":3,"nai":"@@000000021"},"quote":{"amount":"8230","precision":3,"nai":"@@000000013"}},"real_price":"0.15199083992021867","steem":31680,"sbd":4815,"created":"2020-11-07T09:18:12"},{"order_price":{"base":{"amount":"33390","precision":3,"nai":"@@000000021"},"quote":{"amount":"5075","precision":3,"nai":"@@000000013"}},"real_price":"0.15199161425576521","steem":33390,"sbd":5075,"created":"2020-11-07T10:33:12"},{"order_price":{"base":{"amount":"36916","precision":3,"nai":"@@000000021"},"quote":{"amount":"5611","precision":3,"nai":"@@000000013"}},"real_price":"0.15199371546213025","steem":36916,"sbd":5611,"created":"2020-11-07T09:23:06"},{"order_price":{"base":{"amount":"45541","precision":3,"nai":"@@000000021"},"quote":{"amount":"6922","precision":3,"nai":"@@000000013"}},"real_price":"0.15199490568937879","steem":45541,"sbd":6922,"created":"2020-11-07T18:38:21"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"151999","precision":3,"nai":"@@000000013"}},"real_price":"0.15199900000000000","steem":1000000,"sbd":151999,"created":"2020-11-07T15:56:30"}]},"id":39}'
+  recorded_at: Sat, 07 Nov 2020 20:21:26 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":125,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +337,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:08:17 GMT
+      - Sat, 07 Nov 2020 20:29:00 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -35,9 +347,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000344657628807110'
+      - '000219554519920962'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e31-111062f163f6e4de1761b3c7
+      - Root=1-5fa7038a-14c7cf771cd945f75516a761
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -50,19 +362,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":133}'
-  recorded_at: Sat, 17 Oct 2020 04:08:17 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":125}'
+  recorded_at: Sat, 07 Nov 2020 20:29:00 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":134,"method":"market_history_api.get_order_book","params":{"limit":10}}'
+      string: '{"jsonrpc":"2.0","id":126,"method":"market_history_api.get_order_book","params":{"limit":10}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -77,7 +389,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:08:18 GMT
+      - Sat, 07 Nov 2020 20:29:02 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -87,9 +399,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '001119897731703764'
+      - '000412828037281850'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e32-79e3b7986fc06cfe232692bb
+      - Root=1-5fa7038c-4050f41b03405aca3ab25c08
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -102,34 +414,34 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"57","precision":3,"nai":"@@000000013"},"quote":{"amount":"354","precision":3,"nai":"@@000000021"}},"real_price":"0.16101694915254236","steem":347,"sbd":56,"created":"2020-10-17T02:26:36"},{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"12432","precision":3,"nai":"@@000000021"}},"real_price":"0.16087516087516088","steem":12432,"sbd":2000,"created":"2020-10-17T04:02:18"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":30096,"sbd":4841,"created":"2020-10-17T02:08:42"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":31091,"sbd":5001,"created":"2020-10-17T02:13:48"},{"order_price":{"base":{"amount":"405","precision":3,"nai":"@@000000013"},"quote":{"amount":"2590","precision":3,"nai":"@@000000021"}},"real_price":"0.15637065637065636","steem":2590,"sbd":405,"created":"2020-10-17T02:02:36"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"639680","precision":3,"nai":"@@000000021"}},"real_price":"0.15632816408204103","steem":639680,"sbd":100000,"created":"2020-10-17T04:03:21"},{"order_price":{"base":{"amount":"7622","precision":3,"nai":"@@000000013"},"quote":{"amount":"48765","precision":3,"nai":"@@000000021"}},"real_price":"0.15630062544857992","steem":48765,"sbd":7622,"created":"2020-10-17T03:50:24"},{"order_price":{"base":{"amount":"46411","precision":3,"nai":"@@000000013"},"quote":{"amount":"296935","precision":3,"nai":"@@000000021"}},"real_price":"0.15630020038055467","steem":296935,"sbd":46411,"created":"2020-10-16T23:58:15"},{"order_price":{"base":{"amount":"5","precision":3,"nai":"@@000000013"},"quote":{"amount":"32","precision":3,"nai":"@@000000021"}},"real_price":"0.15625000000000000","steem":32,"sbd":5,"created":"2020-10-17T02:06:48"},{"order_price":{"base":{"amount":"30312","precision":3,"nai":"@@000000013"},"quote":{"amount":"200000","precision":3,"nai":"@@000000021"}},"real_price":"0.15156000000000000","steem":200000,"sbd":30312,"created":"2020-10-16T23:36:33"}],"asks":[{"order_price":{"base":{"amount":"461461","precision":3,"nai":"@@000000021"},"quote":{"amount":"74684","precision":3,"nai":"@@000000013"}},"real_price":"0.16184249589889504","steem":461461,"sbd":74684,"created":"2020-10-17T04:03:24"},{"order_price":{"base":{"amount":"435997","precision":3,"nai":"@@000000021"},"quote":{"amount":"70618","precision":3,"nai":"@@000000013"}},"real_price":"0.16196900437388331","steem":435997,"sbd":70618,"created":"2020-10-17T01:56:15"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16200","precision":3,"nai":"@@000000013"}},"real_price":"0.16200000000000001","steem":100000,"sbd":16200,"created":"2020-10-16T23:31:54"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162689","precision":3,"nai":"@@000000013"}},"real_price":"0.16268900000000000","steem":1000000,"sbd":162689,"created":"2020-10-16T23:31:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16273","precision":3,"nai":"@@000000013"}},"real_price":"0.16273000000000001","steem":77098,"sbd":12546,"created":"2020-10-16T19:52:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16276","precision":3,"nai":"@@000000013"}},"real_price":"0.16275999999999999","steem":100000,"sbd":16276,"created":"2020-10-16T19:51:18"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162791","precision":3,"nai":"@@000000013"}},"real_price":"0.16279099999999999","steem":995725,"sbd":162095,"created":"2020-10-16T13:37:36"},{"order_price":{"base":{"amount":"36857","precision":3,"nai":"@@000000021"},"quote":{"amount":"6000","precision":3,"nai":"@@000000013"}},"real_price":"0.16279132864856066","steem":36857,"sbd":6000,"created":"2020-10-16T13:05:45"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"163275","precision":3,"nai":"@@000000013"}},"real_price":"0.16327500000000000","steem":1000000,"sbd":163275,"created":"2020-10-16T13:33:06"},{"order_price":{"base":{"amount":"19146","precision":3,"nai":"@@000000021"},"quote":{"amount":"3128","precision":3,"nai":"@@000000013"}},"real_price":"0.16337616212263659","steem":19146,"sbd":3128,"created":"2020-10-16T07:18:09"}]},"id":134}'
-  recorded_at: Sat, 17 Oct 2020 04:08:18 GMT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"5288","precision":3,"nai":"@@000000013"},"quote":{"amount":"37756","precision":3,"nai":"@@000000021"}},"real_price":"0.14005720945015362","steem":37756,"sbd":5288,"created":"2020-11-07T20:29:00"},{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14280","precision":3,"nai":"@@000000021"}},"real_price":"0.14005602240896359","steem":14280,"sbd":2000,"created":"2020-11-07T20:24:57"},{"order_price":{"base":{"amount":"39871","precision":3,"nai":"@@000000013"},"quote":{"amount":"284712","precision":3,"nai":"@@000000021"}},"real_price":"0.14003975947624267","steem":284712,"sbd":39871,"created":"2020-11-07T20:24:45"},{"order_price":{"base":{"amount":"168000","precision":3,"nai":"@@000000013"},"quote":{"amount":"1200000","precision":3,"nai":"@@000000021"}},"real_price":"0.14000000000000001","steem":1200000,"sbd":168000,"created":"2020-11-07T20:24:18"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1578,"sbd":218,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"53391","precision":3,"nai":"@@000000013"},"quote":{"amount":"386583","precision":3,"nai":"@@000000021"}},"real_price":"0.13811005657258596","steem":386583,"sbd":53391,"created":"2020-11-07T19:35:54"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"},{"order_price":{"base":{"amount":"1059","precision":3,"nai":"@@000000013"},"quote":{"amount":"7780","precision":3,"nai":"@@000000021"}},"real_price":"0.13611825192802057","steem":7780,"sbd":1059,"created":"2020-11-05T13:08:42"},{"order_price":{"base":{"amount":"929","precision":3,"nai":"@@000000013"},"quote":{"amount":"6825","precision":3,"nai":"@@000000021"}},"real_price":"0.13611721611721611","steem":6825,"sbd":929,"created":"2020-11-05T14:50:03"}],"asks":[{"order_price":{"base":{"amount":"13518","precision":3,"nai":"@@000000021"},"quote":{"amount":"1997","precision":3,"nai":"@@000000013"}},"real_price":"0.14772895398727623","steem":13518,"sbd":1997,"created":"2020-11-07T20:26:03"},{"order_price":{"base":{"amount":"13518","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14787690486758395","steem":13518,"sbd":1999,"created":"2020-11-07T20:24:57"},{"order_price":{"base":{"amount":"699029","precision":3,"nai":"@@000000021"},"quote":{"amount":"103422","precision":3,"nai":"@@000000013"}},"real_price":"0.14795094338003145","steem":699029,"sbd":103422,"created":"2020-11-07T20:11:33"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"39304","precision":3,"nai":"@@000000021"},"quote":{"amount":"5856","precision":3,"nai":"@@000000013"}},"real_price":"0.14899246895990231","steem":39304,"sbd":5856,"created":"2020-11-07T20:13:18"},{"order_price":{"base":{"amount":"156221","precision":3,"nai":"@@000000021"},"quote":{"amount":"23736","precision":3,"nai":"@@000000013"}},"real_price":"0.15193859980412364","steem":156221,"sbd":23736,"created":"2020-11-07T19:22:18"},{"order_price":{"base":{"amount":"54148","precision":3,"nai":"@@000000021"},"quote":{"amount":"8230","precision":3,"nai":"@@000000013"}},"real_price":"0.15199083992021867","steem":31680,"sbd":4815,"created":"2020-11-07T09:18:12"},{"order_price":{"base":{"amount":"33390","precision":3,"nai":"@@000000021"},"quote":{"amount":"5075","precision":3,"nai":"@@000000013"}},"real_price":"0.15199161425576521","steem":33390,"sbd":5075,"created":"2020-11-07T10:33:12"},{"order_price":{"base":{"amount":"36916","precision":3,"nai":"@@000000021"},"quote":{"amount":"5611","precision":3,"nai":"@@000000013"}},"real_price":"0.15199371546213025","steem":36916,"sbd":5611,"created":"2020-11-07T09:23:06"},{"order_price":{"base":{"amount":"45541","precision":3,"nai":"@@000000021"},"quote":{"amount":"6922","precision":3,"nai":"@@000000013"}},"real_price":"0.15199490568937879","steem":45541,"sbd":6922,"created":"2020-11-07T18:38:21"}]},"id":126}'
+  recorded_at: Sat, 07 Nov 2020 20:29:02 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":81,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
+      string: '{"jsonrpc":"2.0","id":42,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
-      - '85'
+      - '68'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:09:14 GMT
+      - Sat, 07 Nov 2020 20:30:48 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -139,9 +451,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000526888629180916'
+      - '000568087456016918'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e6a-0c7bbbbd2555c1cb1dfb8bfe
+      - Root=1-5fa703f8-48e3d14027a8b1707c2863b3
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -154,25 +466,25 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":81}'
-  recorded_at: Sat, 17 Oct 2020 04:09:14 GMT
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":42}'
+  recorded_at: Sat, 07 Nov 2020 20:30:48 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":82,"method":"market_history_api.get_order_book","params":{"limit":10}}'
+      string: '{"jsonrpc":"2.0","id":43,"method":"market_history_api.get_order_book","params":{"limit":10}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
       - '114'
   response:
@@ -181,7 +493,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:09:14 GMT
+      - Sat, 07 Nov 2020 20:30:49 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -191,9 +503,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000813742230883429'
+      - '001028569849120595'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e6a-70379b4b68a8111f0ffbc81f
+      - Root=1-5fa703f8-077a2d282f8bed0d0e3642b2
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -206,186 +518,34 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"12432","precision":3,"nai":"@@000000021"}},"real_price":"0.16087516087516088","steem":12432,"sbd":2000,"created":"2020-10-17T04:02:18"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":30096,"sbd":4841,"created":"2020-10-17T02:08:42"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":31091,"sbd":5001,"created":"2020-10-17T02:13:48"},{"order_price":{"base":{"amount":"405","precision":3,"nai":"@@000000013"},"quote":{"amount":"2590","precision":3,"nai":"@@000000021"}},"real_price":"0.15637065637065636","steem":2590,"sbd":405,"created":"2020-10-17T02:02:36"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"639680","precision":3,"nai":"@@000000021"}},"real_price":"0.15632816408204103","steem":639680,"sbd":100000,"created":"2020-10-17T04:03:21"},{"order_price":{"base":{"amount":"7622","precision":3,"nai":"@@000000013"},"quote":{"amount":"48765","precision":3,"nai":"@@000000021"}},"real_price":"0.15630062544857992","steem":48765,"sbd":7622,"created":"2020-10-17T03:50:24"},{"order_price":{"base":{"amount":"46411","precision":3,"nai":"@@000000013"},"quote":{"amount":"296935","precision":3,"nai":"@@000000021"}},"real_price":"0.15630020038055467","steem":296935,"sbd":46411,"created":"2020-10-16T23:58:15"},{"order_price":{"base":{"amount":"5","precision":3,"nai":"@@000000013"},"quote":{"amount":"32","precision":3,"nai":"@@000000021"}},"real_price":"0.15625000000000000","steem":32,"sbd":5,"created":"2020-10-17T02:06:48"},{"order_price":{"base":{"amount":"30312","precision":3,"nai":"@@000000013"},"quote":{"amount":"200000","precision":3,"nai":"@@000000021"}},"real_price":"0.15156000000000000","steem":200000,"sbd":30312,"created":"2020-10-16T23:36:33"},{"order_price":{"base":{"amount":"24413","precision":3,"nai":"@@000000013"},"quote":{"amount":"161099","precision":3,"nai":"@@000000021"}},"real_price":"0.15154035717167705","steem":16794,"sbd":2545,"created":"2020-10-07T23:38:33"}],"asks":[{"order_price":{"base":{"amount":"461461","precision":3,"nai":"@@000000021"},"quote":{"amount":"74292","precision":3,"nai":"@@000000013"}},"real_price":"0.16099301999518920","steem":461461,"sbd":74292,"created":"2020-10-17T04:08:48"},{"order_price":{"base":{"amount":"90221","precision":3,"nai":"@@000000021"},"quote":{"amount":"14527","precision":3,"nai":"@@000000013"}},"real_price":"0.16101572804557698","steem":89874,"sbd":14471,"created":"2020-10-17T04:08:39"},{"order_price":{"base":{"amount":"435997","precision":3,"nai":"@@000000021"},"quote":{"amount":"70618","precision":3,"nai":"@@000000013"}},"real_price":"0.16196900437388331","steem":435997,"sbd":70618,"created":"2020-10-17T01:56:15"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16200","precision":3,"nai":"@@000000013"}},"real_price":"0.16200000000000001","steem":100000,"sbd":16200,"created":"2020-10-16T23:31:54"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162689","precision":3,"nai":"@@000000013"}},"real_price":"0.16268900000000000","steem":1000000,"sbd":162689,"created":"2020-10-16T23:31:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16273","precision":3,"nai":"@@000000013"}},"real_price":"0.16273000000000001","steem":77098,"sbd":12546,"created":"2020-10-16T19:52:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16276","precision":3,"nai":"@@000000013"}},"real_price":"0.16275999999999999","steem":100000,"sbd":16276,"created":"2020-10-16T19:51:18"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162791","precision":3,"nai":"@@000000013"}},"real_price":"0.16279099999999999","steem":995725,"sbd":162095,"created":"2020-10-16T13:37:36"},{"order_price":{"base":{"amount":"36857","precision":3,"nai":"@@000000021"},"quote":{"amount":"6000","precision":3,"nai":"@@000000013"}},"real_price":"0.16279132864856066","steem":36857,"sbd":6000,"created":"2020-10-16T13:05:45"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"163275","precision":3,"nai":"@@000000013"}},"real_price":"0.16327500000000000","steem":1000000,"sbd":163275,"created":"2020-10-16T13:33:06"}]},"id":82}'
-  recorded_at: Sat, 17 Oct 2020 04:09:14 GMT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14183","precision":3,"nai":"@@000000021"}},"real_price":"0.14101388986815203","steem":14183,"sbd":2000,"created":"2020-11-07T20:30:24"},{"order_price":{"base":{"amount":"148344","precision":3,"nai":"@@000000013"},"quote":{"amount":"1052085","precision":3,"nai":"@@000000021"}},"real_price":"0.14100001425740316","steem":1052085,"sbd":148344,"created":"2020-11-07T20:30:15"},{"order_price":{"base":{"amount":"5288","precision":3,"nai":"@@000000013"},"quote":{"amount":"37756","precision":3,"nai":"@@000000021"}},"real_price":"0.14005720945015362","steem":37756,"sbd":5288,"created":"2020-11-07T20:29:00"},{"order_price":{"base":{"amount":"168000","precision":3,"nai":"@@000000013"},"quote":{"amount":"1200000","precision":3,"nai":"@@000000021"}},"real_price":"0.14000000000000001","steem":1200000,"sbd":168000,"created":"2020-11-07T20:24:18"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1578,"sbd":218,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"53391","precision":3,"nai":"@@000000013"},"quote":{"amount":"386583","precision":3,"nai":"@@000000021"}},"real_price":"0.13811005657258596","steem":386583,"sbd":53391,"created":"2020-11-07T19:35:54"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"},{"order_price":{"base":{"amount":"1059","precision":3,"nai":"@@000000013"},"quote":{"amount":"7780","precision":3,"nai":"@@000000021"}},"real_price":"0.13611825192802057","steem":7780,"sbd":1059,"created":"2020-11-05T13:08:42"},{"order_price":{"base":{"amount":"929","precision":3,"nai":"@@000000013"},"quote":{"amount":"6825","precision":3,"nai":"@@000000021"}},"real_price":"0.13611721611721611","steem":6825,"sbd":929,"created":"2020-11-05T14:50:03"}],"asks":[{"order_price":{"base":{"amount":"13668","precision":3,"nai":"@@000000021"},"quote":{"amount":"1996","precision":3,"nai":"@@000000013"}},"real_price":"0.14603453321627158","steem":13668,"sbd":1996,"created":"2020-11-07T20:30:48"},{"order_price":{"base":{"amount":"13668","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14625402399765877","steem":13668,"sbd":1999,"created":"2020-11-07T20:30:45"},{"order_price":{"base":{"amount":"13620","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14676945668135097","steem":13620,"sbd":1999,"created":"2020-11-07T20:30:24"},{"order_price":{"base":{"amount":"699029","precision":3,"nai":"@@000000021"},"quote":{"amount":"103422","precision":3,"nai":"@@000000013"}},"real_price":"0.14795094338003145","steem":699029,"sbd":103422,"created":"2020-11-07T20:11:33"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"39304","precision":3,"nai":"@@000000021"},"quote":{"amount":"5856","precision":3,"nai":"@@000000013"}},"real_price":"0.14899246895990231","steem":39304,"sbd":5856,"created":"2020-11-07T20:13:18"},{"order_price":{"base":{"amount":"156221","precision":3,"nai":"@@000000021"},"quote":{"amount":"23736","precision":3,"nai":"@@000000013"}},"real_price":"0.15193859980412364","steem":156221,"sbd":23736,"created":"2020-11-07T19:22:18"},{"order_price":{"base":{"amount":"54148","precision":3,"nai":"@@000000021"},"quote":{"amount":"8230","precision":3,"nai":"@@000000013"}},"real_price":"0.15199083992021867","steem":31680,"sbd":4815,"created":"2020-11-07T09:18:12"},{"order_price":{"base":{"amount":"33390","precision":3,"nai":"@@000000021"},"quote":{"amount":"5075","precision":3,"nai":"@@000000013"}},"real_price":"0.15199161425576521","steem":33390,"sbd":5075,"created":"2020-11-07T10:33:12"},{"order_price":{"base":{"amount":"36916","precision":3,"nai":"@@000000021"},"quote":{"amount":"5611","precision":3,"nai":"@@000000013"}},"real_price":"0.15199371546213025","steem":36916,"sbd":5611,"created":"2020-11-07T09:23:06"}]},"id":43}'
+  recorded_at: Sat, 07 Nov 2020 20:30:49 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":2,"method":"jsonrpc.get_methods","params":{}}'
+      string: '{"jsonrpc":"2.0","id":46,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:13:15 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000082276273440625'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a6f5b-62dd655c79155e39561b4ee2
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":["account_by_key_api.get_key_references","block_api.get_block","block_api.get_block_header","condenser_api.broadcast_block","condenser_api.broadcast_transaction","condenser_api.broadcast_transaction_synchronous","condenser_api.find_proposals","condenser_api.get_account_count","condenser_api.get_account_history","condenser_api.get_account_references","condenser_api.get_account_reputations","condenser_api.get_account_votes","condenser_api.get_accounts","condenser_api.get_active_votes","condenser_api.get_active_witnesses","condenser_api.get_block","condenser_api.get_block_header","condenser_api.get_blog","condenser_api.get_blog_authors","condenser_api.get_blog_entries","condenser_api.get_chain_properties","condenser_api.get_comment_discussions_by_payout","condenser_api.get_config","condenser_api.get_content","condenser_api.get_content_replies","condenser_api.get_conversion_requests","condenser_api.get_current_median_history_price","condenser_api.get_discussions_by_active","condenser_api.get_discussions_by_author_before_date","condenser_api.get_discussions_by_blog","condenser_api.get_discussions_by_cashout","condenser_api.get_discussions_by_children","condenser_api.get_discussions_by_comments","condenser_api.get_discussions_by_created","condenser_api.get_discussions_by_feed","condenser_api.get_discussions_by_hot","condenser_api.get_discussions_by_promoted","condenser_api.get_discussions_by_trending","condenser_api.get_discussions_by_votes","condenser_api.get_dynamic_global_properties","condenser_api.get_escrow","condenser_api.get_expiring_vesting_delegations","condenser_api.get_feed","condenser_api.get_feed_entries","condenser_api.get_feed_history","condenser_api.get_follow_count","condenser_api.get_followers","condenser_api.get_following","condenser_api.get_hardfork_version","condenser_api.get_key_references","condenser_api.get_market_history","condenser_api.get_market_history_buckets","condenser_api.get_next_scheduled_hardfork","condenser_api.get_open_orders","condenser_api.get_ops_in_block","condenser_api.get_order_book","condenser_api.get_owner_history","condenser_api.get_post_discussions_by_payout","condenser_api.get_potential_signatures","condenser_api.get_reblogged_by","condenser_api.get_recent_trades","condenser_api.get_recovery_request","condenser_api.get_replies_by_last_update","condenser_api.get_required_signatures","condenser_api.get_reward_fund","condenser_api.get_savings_withdraw_from","condenser_api.get_savings_withdraw_to","condenser_api.get_state","condenser_api.get_tags_used_by_author","condenser_api.get_ticker","condenser_api.get_trade_history","condenser_api.get_transaction","condenser_api.get_transaction_hex","condenser_api.get_trending_tags","condenser_api.get_version","condenser_api.get_vesting_delegations","condenser_api.get_volume","condenser_api.get_withdraw_routes","condenser_api.get_witness_by_account","condenser_api.get_witness_count","condenser_api.get_witness_schedule","condenser_api.get_witnesses","condenser_api.get_witnesses_by_vote","condenser_api.list_proposal_votes","condenser_api.list_proposals","condenser_api.lookup_account_names","condenser_api.lookup_accounts","condenser_api.lookup_witness_accounts","condenser_api.verify_account_authority","condenser_api.verify_authority","database_api.find_account_recovery_requests","database_api.find_accounts","database_api.find_change_recovery_account_requests","database_api.find_comments","database_api.find_decline_voting_rights_requests","database_api.find_escrows","database_api.find_limit_orders","database_api.find_owner_histories","database_api.find_proposals","database_api.find_savings_withdrawals","database_api.find_sbd_conversion_requests","database_api.find_vesting_delegation_expirations","database_api.find_vesting_delegations","database_api.find_votes","database_api.find_withdraw_vesting_routes","database_api.find_witnesses","database_api.get_active_witnesses","database_api.get_config","database_api.get_current_price_feed","database_api.get_dynamic_global_properties","database_api.get_feed_history","database_api.get_hardfork_properties","database_api.get_order_book","database_api.get_potential_signatures","database_api.get_required_signatures","database_api.get_reward_funds","database_api.get_transaction_hex","database_api.get_version","database_api.get_witness_schedule","database_api.list_account_recovery_requests","database_api.list_accounts","database_api.list_change_recovery_account_requests","database_api.list_comments","database_api.list_decline_voting_rights_requests","database_api.list_escrows","database_api.list_limit_orders","database_api.list_owner_histories","database_api.list_proposal_votes","database_api.list_proposals","database_api.list_savings_withdrawals","database_api.list_sbd_conversion_requests","database_api.list_vesting_delegation_expirations","database_api.list_vesting_delegations","database_api.list_votes","database_api.list_withdraw_vesting_routes","database_api.list_witness_votes","database_api.list_witnesses","database_api.verify_account_authority","database_api.verify_authority","database_api.verify_signatures","jsonrpc.get_methods","jsonrpc.get_signature","market_history_api.get_market_history","market_history_api.get_market_history_buckets","market_history_api.get_order_book","market_history_api.get_recent_trades","market_history_api.get_ticker","market_history_api.get_trade_history","market_history_api.get_volume","network_broadcast_api.broadcast_block","network_broadcast_api.broadcast_transaction","rc_api.find_rc_accounts","rc_api.get_resource_params","rc_api.get_resource_pool","reputation_api.get_account_reputations"],"id":2}'
-  recorded_at: Sat, 17 Oct 2020 04:13:15 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":3,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
-      - '67'
+      - '85'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:13:16 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000058840123489014'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a6f5c-3bdfdca77c3e571d3551bb51
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":3}'
-  recorded_at: Sat, 17 Oct 2020 04:13:16 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":4,"method":"market_history_api.get_order_book","params":{"limit":10}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '113'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:13:16 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000542587947351275'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a6f5c-25bd4f574910c4ea6b5ee816
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"12432","precision":3,"nai":"@@000000021"}},"real_price":"0.16087516087516088","steem":12432,"sbd":2000,"created":"2020-10-17T04:02:18"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":30096,"sbd":4841,"created":"2020-10-17T02:08:42"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":31091,"sbd":5001,"created":"2020-10-17T02:13:48"},{"order_price":{"base":{"amount":"405","precision":3,"nai":"@@000000013"},"quote":{"amount":"2590","precision":3,"nai":"@@000000021"}},"real_price":"0.15637065637065636","steem":2590,"sbd":405,"created":"2020-10-17T02:02:36"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"639680","precision":3,"nai":"@@000000021"}},"real_price":"0.15632816408204103","steem":639680,"sbd":100000,"created":"2020-10-17T04:03:21"},{"order_price":{"base":{"amount":"7622","precision":3,"nai":"@@000000013"},"quote":{"amount":"48765","precision":3,"nai":"@@000000021"}},"real_price":"0.15630062544857992","steem":48765,"sbd":7622,"created":"2020-10-17T03:50:24"},{"order_price":{"base":{"amount":"46411","precision":3,"nai":"@@000000013"},"quote":{"amount":"296935","precision":3,"nai":"@@000000021"}},"real_price":"0.15630020038055467","steem":296935,"sbd":46411,"created":"2020-10-16T23:58:15"},{"order_price":{"base":{"amount":"5","precision":3,"nai":"@@000000013"},"quote":{"amount":"32","precision":3,"nai":"@@000000021"}},"real_price":"0.15625000000000000","steem":32,"sbd":5,"created":"2020-10-17T02:06:48"},{"order_price":{"base":{"amount":"30312","precision":3,"nai":"@@000000013"},"quote":{"amount":"200000","precision":3,"nai":"@@000000021"}},"real_price":"0.15156000000000000","steem":200000,"sbd":30312,"created":"2020-10-16T23:36:33"},{"order_price":{"base":{"amount":"24413","precision":3,"nai":"@@000000013"},"quote":{"amount":"161099","precision":3,"nai":"@@000000021"}},"real_price":"0.15154035717167705","steem":16794,"sbd":2545,"created":"2020-10-07T23:38:33"}],"asks":[{"order_price":{"base":{"amount":"461461","precision":3,"nai":"@@000000021"},"quote":{"amount":"74292","precision":3,"nai":"@@000000013"}},"real_price":"0.16099301999518920","steem":461461,"sbd":74292,"created":"2020-10-17T04:08:48"},{"order_price":{"base":{"amount":"90221","precision":3,"nai":"@@000000021"},"quote":{"amount":"14527","precision":3,"nai":"@@000000013"}},"real_price":"0.16101572804557698","steem":89874,"sbd":14471,"created":"2020-10-17T04:08:39"},{"order_price":{"base":{"amount":"435997","precision":3,"nai":"@@000000021"},"quote":{"amount":"70618","precision":3,"nai":"@@000000013"}},"real_price":"0.16196900437388331","steem":435997,"sbd":70618,"created":"2020-10-17T01:56:15"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16200","precision":3,"nai":"@@000000013"}},"real_price":"0.16200000000000001","steem":100000,"sbd":16200,"created":"2020-10-16T23:31:54"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162689","precision":3,"nai":"@@000000013"}},"real_price":"0.16268900000000000","steem":1000000,"sbd":162689,"created":"2020-10-16T23:31:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16273","precision":3,"nai":"@@000000013"}},"real_price":"0.16273000000000001","steem":77098,"sbd":12546,"created":"2020-10-16T19:52:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16276","precision":3,"nai":"@@000000013"}},"real_price":"0.16275999999999999","steem":100000,"sbd":16276,"created":"2020-10-16T19:51:18"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162791","precision":3,"nai":"@@000000013"}},"real_price":"0.16279099999999999","steem":995725,"sbd":162095,"created":"2020-10-16T13:37:36"},{"order_price":{"base":{"amount":"36857","precision":3,"nai":"@@000000021"},"quote":{"amount":"6000","precision":3,"nai":"@@000000013"}},"real_price":"0.16279132864856066","steem":36857,"sbd":6000,"created":"2020-10-16T13:05:45"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"163275","precision":3,"nai":"@@000000013"}},"real_price":"0.16327500000000000","steem":1000000,"sbd":163275,"created":"2020-10-16T13:33:06"}]},"id":4}'
-  recorded_at: Sat, 17 Oct 2020 04:13:16 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":55,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '86'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:14:21 GMT
+      - Sat, 07 Nov 2020 20:34:17 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -395,9 +555,217 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000092584890214829'
+      - '000545228377127510'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6f9d-5a6798fa5ef3aa201ff50e61
+      - Root=1-5fa704c7-648b811a030874825a8679ac
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":46}'
+  recorded_at: Sat, 07 Nov 2020 20:34:17 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":47,"method":"market_history_api.get_order_book","params":{"limit":10}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '114'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:34:19 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000854161002096961'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa704c9-78bfe756221d3e3a4601e312
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14284","precision":3,"nai":"@@000000021"}},"real_price":"0.14001680201624195","steem":14284,"sbd":2000,"created":"2020-11-07T20:33:24"},{"order_price":{"base":{"amount":"168000","precision":3,"nai":"@@000000013"},"quote":{"amount":"1200000","precision":3,"nai":"@@000000021"}},"real_price":"0.14000000000000001","steem":52035,"sbd":7285,"created":"2020-11-07T20:24:18"},{"order_price":{"base":{"amount":"39871","precision":3,"nai":"@@000000013"},"quote":{"amount":"288587","precision":3,"nai":"@@000000021"}},"real_price":"0.13815937654849317","steem":288587,"sbd":39871,"created":"2020-11-07T20:33:30"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1578,"sbd":218,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"53391","precision":3,"nai":"@@000000013"},"quote":{"amount":"386583","precision":3,"nai":"@@000000021"}},"real_price":"0.13811005657258596","steem":386583,"sbd":53391,"created":"2020-11-07T19:35:54"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"},{"order_price":{"base":{"amount":"1059","precision":3,"nai":"@@000000013"},"quote":{"amount":"7780","precision":3,"nai":"@@000000021"}},"real_price":"0.13611825192802057","steem":7780,"sbd":1059,"created":"2020-11-05T13:08:42"},{"order_price":{"base":{"amount":"929","precision":3,"nai":"@@000000013"},"quote":{"amount":"6825","precision":3,"nai":"@@000000021"}},"real_price":"0.13611721611721611","steem":6825,"sbd":929,"created":"2020-11-05T14:50:03"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"734700","precision":3,"nai":"@@000000021"}},"real_price":"0.13610997686130394","steem":162111,"sbd":22065,"created":"2020-11-04T13:54:42"}],"asks":[{"order_price":{"base":{"amount":"13538","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14765844290146254","steem":13538,"sbd":1999,"created":"2020-11-07T20:33:48"},{"order_price":{"base":{"amount":"699029","precision":3,"nai":"@@000000021"},"quote":{"amount":"103422","precision":3,"nai":"@@000000013"}},"real_price":"0.14795094338003145","steem":699029,"sbd":103422,"created":"2020-11-07T20:11:33"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"39304","precision":3,"nai":"@@000000021"},"quote":{"amount":"5856","precision":3,"nai":"@@000000013"}},"real_price":"0.14899246895990231","steem":39304,"sbd":5856,"created":"2020-11-07T20:13:18"},{"order_price":{"base":{"amount":"156221","precision":3,"nai":"@@000000021"},"quote":{"amount":"23736","precision":3,"nai":"@@000000013"}},"real_price":"0.15193859980412364","steem":156221,"sbd":23736,"created":"2020-11-07T19:22:18"},{"order_price":{"base":{"amount":"54148","precision":3,"nai":"@@000000021"},"quote":{"amount":"8230","precision":3,"nai":"@@000000013"}},"real_price":"0.15199083992021867","steem":31680,"sbd":4815,"created":"2020-11-07T09:18:12"},{"order_price":{"base":{"amount":"33390","precision":3,"nai":"@@000000021"},"quote":{"amount":"5075","precision":3,"nai":"@@000000013"}},"real_price":"0.15199161425576521","steem":33390,"sbd":5075,"created":"2020-11-07T10:33:12"},{"order_price":{"base":{"amount":"36916","precision":3,"nai":"@@000000021"},"quote":{"amount":"5611","precision":3,"nai":"@@000000013"}},"real_price":"0.15199371546213025","steem":36916,"sbd":5611,"created":"2020-11-07T09:23:06"},{"order_price":{"base":{"amount":"45541","precision":3,"nai":"@@000000021"},"quote":{"amount":"6922","precision":3,"nai":"@@000000013"}},"real_price":"0.15199490568937879","steem":45541,"sbd":6922,"created":"2020-11-07T18:38:21"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"151999","precision":3,"nai":"@@000000013"}},"real_price":"0.15199900000000000","steem":1000000,"sbd":151999,"created":"2020-11-07T15:56:30"}]},"id":47}'
+  recorded_at: Sat, 07 Nov 2020 20:34:19 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":56,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '78'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:41:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '85'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000171020037339807'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70695-11dcf2070ce48cd62f77d4f8
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":56}'
+  recorded_at: Sat, 07 Nov 2020 20:41:59 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":57,"method":"market_history_api.get_order_book","params":{"limit":10}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '114'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:42:01 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000507250436340839'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70697-19ab3ac86427aaee7096c6ed
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14284","precision":3,"nai":"@@000000021"}},"real_price":"0.14001680201624195","steem":14284,"sbd":2000,"created":"2020-11-07T20:33:24"},{"order_price":{"base":{"amount":"168000","precision":3,"nai":"@@000000013"},"quote":{"amount":"1200000","precision":3,"nai":"@@000000021"}},"real_price":"0.14000000000000001","steem":52035,"sbd":7285,"created":"2020-11-07T20:24:18"},{"order_price":{"base":{"amount":"39871","precision":3,"nai":"@@000000013"},"quote":{"amount":"288587","precision":3,"nai":"@@000000021"}},"real_price":"0.13815937654849317","steem":288587,"sbd":39871,"created":"2020-11-07T20:33:30"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1578,"sbd":218,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"53391","precision":3,"nai":"@@000000013"},"quote":{"amount":"386583","precision":3,"nai":"@@000000021"}},"real_price":"0.13811005657258596","steem":386583,"sbd":53391,"created":"2020-11-07T19:35:54"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"},{"order_price":{"base":{"amount":"1059","precision":3,"nai":"@@000000013"},"quote":{"amount":"7780","precision":3,"nai":"@@000000021"}},"real_price":"0.13611825192802057","steem":7780,"sbd":1059,"created":"2020-11-05T13:08:42"},{"order_price":{"base":{"amount":"929","precision":3,"nai":"@@000000013"},"quote":{"amount":"6825","precision":3,"nai":"@@000000021"}},"real_price":"0.13611721611721611","steem":6825,"sbd":929,"created":"2020-11-05T14:50:03"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"734700","precision":3,"nai":"@@000000021"}},"real_price":"0.13610997686130394","steem":162111,"sbd":22065,"created":"2020-11-04T13:54:42"}],"asks":[{"order_price":{"base":{"amount":"13613","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14684492764269449","steem":13613,"sbd":1999,"created":"2020-11-07T20:42:00"},{"order_price":{"base":{"amount":"13586","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14713675842779331","steem":13586,"sbd":1999,"created":"2020-11-07T20:41:39"},{"order_price":{"base":{"amount":"6603","precision":3,"nai":"@@000000021"},"quote":{"amount":"974","precision":3,"nai":"@@000000013"}},"real_price":"0.14750870816295622","steem":6603,"sbd":974,"created":"2020-11-07T20:41:03"},{"order_price":{"base":{"amount":"699029","precision":3,"nai":"@@000000021"},"quote":{"amount":"103422","precision":3,"nai":"@@000000013"}},"real_price":"0.14795094338003145","steem":699029,"sbd":103422,"created":"2020-11-07T20:11:33"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"39304","precision":3,"nai":"@@000000021"},"quote":{"amount":"5856","precision":3,"nai":"@@000000013"}},"real_price":"0.14899246895990231","steem":39304,"sbd":5856,"created":"2020-11-07T20:13:18"},{"order_price":{"base":{"amount":"156221","precision":3,"nai":"@@000000021"},"quote":{"amount":"23736","precision":3,"nai":"@@000000013"}},"real_price":"0.15193859980412364","steem":156221,"sbd":23736,"created":"2020-11-07T19:22:18"},{"order_price":{"base":{"amount":"54148","precision":3,"nai":"@@000000021"},"quote":{"amount":"8230","precision":3,"nai":"@@000000013"}},"real_price":"0.15199083992021867","steem":31680,"sbd":4815,"created":"2020-11-07T09:18:12"},{"order_price":{"base":{"amount":"33390","precision":3,"nai":"@@000000021"},"quote":{"amount":"5075","precision":3,"nai":"@@000000013"}},"real_price":"0.15199161425576521","steem":33390,"sbd":5075,"created":"2020-11-07T10:33:12"},{"order_price":{"base":{"amount":"36916","precision":3,"nai":"@@000000021"},"quote":{"amount":"5611","precision":3,"nai":"@@000000013"}},"real_price":"0.15199371546213025","steem":36916,"sbd":5611,"created":"2020-11-07T09:23:06"}]},"id":57}'
+  recorded_at: Sat, 07 Nov 2020 20:42:01 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":55,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '78'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:47:39 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '85'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000096447362643608'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa707e9-302969bb7e95d9ab5a4f1d39
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -411,10 +779,10 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":55}'
-  recorded_at: Sat, 17 Oct 2020 04:14:21 GMT
+  recorded_at: Sat, 07 Nov 2020 20:47:39 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","id":56,"method":"market_history_api.get_order_book","params":{"limit":10}}'
@@ -422,7 +790,215 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '114'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:47:39 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '001051687290826771'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa707eb-1a29595153f9f2981c711ce7
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14284","precision":3,"nai":"@@000000021"}},"real_price":"0.14001680201624195","steem":14284,"sbd":2000,"created":"2020-11-07T20:33:24"},{"order_price":{"base":{"amount":"168020","precision":3,"nai":"@@000000013"},"quote":{"amount":"1200000","precision":3,"nai":"@@000000021"}},"real_price":"0.14001666666666668","steem":1200000,"sbd":168020,"created":"2020-11-07T20:46:51"},{"order_price":{"base":{"amount":"168000","precision":3,"nai":"@@000000013"},"quote":{"amount":"1200000","precision":3,"nai":"@@000000021"}},"real_price":"0.14000000000000001","steem":52035,"sbd":7285,"created":"2020-11-07T20:24:18"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1578,"sbd":218,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"53391","precision":3,"nai":"@@000000013"},"quote":{"amount":"386583","precision":3,"nai":"@@000000021"}},"real_price":"0.13811005657258596","steem":386583,"sbd":53391,"created":"2020-11-07T19:35:54"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"},{"order_price":{"base":{"amount":"1059","precision":3,"nai":"@@000000013"},"quote":{"amount":"7780","precision":3,"nai":"@@000000021"}},"real_price":"0.13611825192802057","steem":7780,"sbd":1059,"created":"2020-11-05T13:08:42"},{"order_price":{"base":{"amount":"929","precision":3,"nai":"@@000000013"},"quote":{"amount":"6825","precision":3,"nai":"@@000000021"}},"real_price":"0.13611721611721611","steem":6825,"sbd":929,"created":"2020-11-05T14:50:03"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"734700","precision":3,"nai":"@@000000021"}},"real_price":"0.13610997686130394","steem":162111,"sbd":22065,"created":"2020-11-04T13:54:42"}],"asks":[{"order_price":{"base":{"amount":"13808","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14477114716106604","steem":13808,"sbd":1999,"created":"2020-11-07T20:46:54"},{"order_price":{"base":{"amount":"6603","precision":3,"nai":"@@000000021"},"quote":{"amount":"974","precision":3,"nai":"@@000000013"}},"real_price":"0.14750870816295622","steem":6603,"sbd":974,"created":"2020-11-07T20:41:03"},{"order_price":{"base":{"amount":"699029","precision":3,"nai":"@@000000021"},"quote":{"amount":"103422","precision":3,"nai":"@@000000013"}},"real_price":"0.14795094338003145","steem":699029,"sbd":103422,"created":"2020-11-07T20:11:33"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"39304","precision":3,"nai":"@@000000021"},"quote":{"amount":"5856","precision":3,"nai":"@@000000013"}},"real_price":"0.14899246895990231","steem":39304,"sbd":5856,"created":"2020-11-07T20:13:18"},{"order_price":{"base":{"amount":"156221","precision":3,"nai":"@@000000021"},"quote":{"amount":"23736","precision":3,"nai":"@@000000013"}},"real_price":"0.15193859980412364","steem":156221,"sbd":23736,"created":"2020-11-07T19:22:18"},{"order_price":{"base":{"amount":"54148","precision":3,"nai":"@@000000021"},"quote":{"amount":"8230","precision":3,"nai":"@@000000013"}},"real_price":"0.15199083992021867","steem":31680,"sbd":4815,"created":"2020-11-07T09:18:12"},{"order_price":{"base":{"amount":"33390","precision":3,"nai":"@@000000021"},"quote":{"amount":"5075","precision":3,"nai":"@@000000013"}},"real_price":"0.15199161425576521","steem":33390,"sbd":5075,"created":"2020-11-07T10:33:12"},{"order_price":{"base":{"amount":"36916","precision":3,"nai":"@@000000021"},"quote":{"amount":"5611","precision":3,"nai":"@@000000013"}},"real_price":"0.15199371546213025","steem":36916,"sbd":5611,"created":"2020-11-07T09:23:06"},{"order_price":{"base":{"amount":"45541","precision":3,"nai":"@@000000021"},"quote":{"amount":"6922","precision":3,"nai":"@@000000013"}},"real_price":"0.15199490568937879","steem":45541,"sbd":6922,"created":"2020-11-07T18:38:21"}]},"id":56}'
+  recorded_at: Sat, 07 Nov 2020 20:47:39 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":8,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '84'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:52:32 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '84'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000808268103730383'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7090f-3f436eed37c9cbf25ea6e141
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":8}'
+  recorded_at: Sat, 07 Nov 2020 20:52:32 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":9,"method":"market_history_api.get_order_book","params":{"limit":10}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '113'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:52:35 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000413913049680511'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70911-718920a05cd3b72772fee1fa
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"398","precision":3,"nai":"@@000000013"},"quote":{"amount":"2841","precision":3,"nai":"@@000000021"}},"real_price":"0.14009151707145370","steem":2841,"sbd":398,"created":"2020-11-07T20:52:27"},{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14277","precision":3,"nai":"@@000000021"}},"real_price":"0.14008545212579673","steem":14277,"sbd":2000,"created":"2020-11-07T20:52:27"},{"order_price":{"base":{"amount":"168090","precision":3,"nai":"@@000000013"},"quote":{"amount":"1200000","precision":3,"nai":"@@000000021"}},"real_price":"0.14007500000000001","steem":1200000,"sbd":168090,"created":"2020-11-07T20:52:15"},{"order_price":{"base":{"amount":"39871","precision":3,"nai":"@@000000013"},"quote":{"amount":"284678","precision":3,"nai":"@@000000021"}},"real_price":"0.14005648487062575","steem":284678,"sbd":39871,"created":"2020-11-07T20:48:30"},{"order_price":{"base":{"amount":"168020","precision":3,"nai":"@@000000013"},"quote":{"amount":"1200000","precision":3,"nai":"@@000000021"}},"real_price":"0.14001666666666668","steem":1200000,"sbd":168020,"created":"2020-11-07T20:46:51"},{"order_price":{"base":{"amount":"168000","precision":3,"nai":"@@000000013"},"quote":{"amount":"1200000","precision":3,"nai":"@@000000021"}},"real_price":"0.14000000000000001","steem":52035,"sbd":7285,"created":"2020-11-07T20:24:18"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1578,"sbd":218,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"53391","precision":3,"nai":"@@000000013"},"quote":{"amount":"386583","precision":3,"nai":"@@000000021"}},"real_price":"0.13811005657258596","steem":386583,"sbd":53391,"created":"2020-11-07T19:35:54"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"}],"asks":[{"order_price":{"base":{"amount":"13613","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14684492764269449","steem":13613,"sbd":1999,"created":"2020-11-07T20:52:27"},{"order_price":{"base":{"amount":"699029","precision":3,"nai":"@@000000021"},"quote":{"amount":"103422","precision":3,"nai":"@@000000013"}},"real_price":"0.14795094338003145","steem":699029,"sbd":103422,"created":"2020-11-07T20:11:33"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"39304","precision":3,"nai":"@@000000021"},"quote":{"amount":"5856","precision":3,"nai":"@@000000013"}},"real_price":"0.14899246895990231","steem":39304,"sbd":5856,"created":"2020-11-07T20:13:18"},{"order_price":{"base":{"amount":"156221","precision":3,"nai":"@@000000021"},"quote":{"amount":"23736","precision":3,"nai":"@@000000013"}},"real_price":"0.15193859980412364","steem":156221,"sbd":23736,"created":"2020-11-07T19:22:18"},{"order_price":{"base":{"amount":"54148","precision":3,"nai":"@@000000021"},"quote":{"amount":"8230","precision":3,"nai":"@@000000013"}},"real_price":"0.15199083992021867","steem":31680,"sbd":4815,"created":"2020-11-07T09:18:12"},{"order_price":{"base":{"amount":"33390","precision":3,"nai":"@@000000021"},"quote":{"amount":"5075","precision":3,"nai":"@@000000013"}},"real_price":"0.15199161425576521","steem":33390,"sbd":5075,"created":"2020-11-07T10:33:12"},{"order_price":{"base":{"amount":"36916","precision":3,"nai":"@@000000021"},"quote":{"amount":"5611","precision":3,"nai":"@@000000013"}},"real_price":"0.15199371546213025","steem":36916,"sbd":5611,"created":"2020-11-07T09:23:06"},{"order_price":{"base":{"amount":"45541","precision":3,"nai":"@@000000021"},"quote":{"amount":"6922","precision":3,"nai":"@@000000013"}},"real_price":"0.15199490568937879","steem":45541,"sbd":6922,"created":"2020-11-07T18:38:21"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"151999","precision":3,"nai":"@@000000013"}},"real_price":"0.15199900000000000","steem":1000000,"sbd":151999,"created":"2020-11-07T15:56:30"}]},"id":9}'
+  recorded_at: Sat, 07 Nov 2020 20:52:35 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":98,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '86'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 21:08:39 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '85'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000635816018177365'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70cd5-1d75bbb668d8ac8441e80e78
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":98}'
+  recorded_at: Sat, 07 Nov 2020 21:08:39 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":99,"method":"market_history_api.get_order_book","params":{"limit":10}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -437,7 +1013,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:14:22 GMT
+      - Sat, 07 Nov 2020 21:08:39 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -447,9 +1023,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000338296547814257'
+      - '000639425894623180'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6f9e-5bb7db6b4c11dfba63608692
+      - Root=1-5fa70cd7-526e93b452cb34fd36a5af1f
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -462,528 +1038,8 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"12432","precision":3,"nai":"@@000000021"}},"real_price":"0.16087516087516088","steem":12432,"sbd":2000,"created":"2020-10-17T04:02:18"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":30096,"sbd":4841,"created":"2020-10-17T02:08:42"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":31091,"sbd":5001,"created":"2020-10-17T02:13:48"},{"order_price":{"base":{"amount":"405","precision":3,"nai":"@@000000013"},"quote":{"amount":"2590","precision":3,"nai":"@@000000021"}},"real_price":"0.15637065637065636","steem":2590,"sbd":405,"created":"2020-10-17T02:02:36"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"639680","precision":3,"nai":"@@000000021"}},"real_price":"0.15632816408204103","steem":639680,"sbd":100000,"created":"2020-10-17T04:03:21"},{"order_price":{"base":{"amount":"7622","precision":3,"nai":"@@000000013"},"quote":{"amount":"48765","precision":3,"nai":"@@000000021"}},"real_price":"0.15630062544857992","steem":48765,"sbd":7622,"created":"2020-10-17T03:50:24"},{"order_price":{"base":{"amount":"46411","precision":3,"nai":"@@000000013"},"quote":{"amount":"296935","precision":3,"nai":"@@000000021"}},"real_price":"0.15630020038055467","steem":296935,"sbd":46411,"created":"2020-10-16T23:58:15"},{"order_price":{"base":{"amount":"5","precision":3,"nai":"@@000000013"},"quote":{"amount":"32","precision":3,"nai":"@@000000021"}},"real_price":"0.15625000000000000","steem":32,"sbd":5,"created":"2020-10-17T02:06:48"},{"order_price":{"base":{"amount":"30312","precision":3,"nai":"@@000000013"},"quote":{"amount":"200000","precision":3,"nai":"@@000000021"}},"real_price":"0.15156000000000000","steem":200000,"sbd":30312,"created":"2020-10-16T23:36:33"},{"order_price":{"base":{"amount":"24413","precision":3,"nai":"@@000000013"},"quote":{"amount":"161099","precision":3,"nai":"@@000000021"}},"real_price":"0.15154035717167705","steem":16794,"sbd":2545,"created":"2020-10-07T23:38:33"}],"asks":[{"order_price":{"base":{"amount":"461461","precision":3,"nai":"@@000000021"},"quote":{"amount":"74292","precision":3,"nai":"@@000000013"}},"real_price":"0.16099301999518920","steem":461461,"sbd":74292,"created":"2020-10-17T04:08:48"},{"order_price":{"base":{"amount":"90221","precision":3,"nai":"@@000000021"},"quote":{"amount":"14527","precision":3,"nai":"@@000000013"}},"real_price":"0.16101572804557698","steem":89874,"sbd":14471,"created":"2020-10-17T04:08:39"},{"order_price":{"base":{"amount":"435997","precision":3,"nai":"@@000000021"},"quote":{"amount":"70618","precision":3,"nai":"@@000000013"}},"real_price":"0.16196900437388331","steem":435997,"sbd":70618,"created":"2020-10-17T01:56:15"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16200","precision":3,"nai":"@@000000013"}},"real_price":"0.16200000000000001","steem":100000,"sbd":16200,"created":"2020-10-16T23:31:54"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162689","precision":3,"nai":"@@000000013"}},"real_price":"0.16268900000000000","steem":1000000,"sbd":162689,"created":"2020-10-16T23:31:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16273","precision":3,"nai":"@@000000013"}},"real_price":"0.16273000000000001","steem":77098,"sbd":12546,"created":"2020-10-16T19:52:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16276","precision":3,"nai":"@@000000013"}},"real_price":"0.16275999999999999","steem":100000,"sbd":16276,"created":"2020-10-16T19:51:18"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162791","precision":3,"nai":"@@000000013"}},"real_price":"0.16279099999999999","steem":995725,"sbd":162095,"created":"2020-10-16T13:37:36"},{"order_price":{"base":{"amount":"36857","precision":3,"nai":"@@000000021"},"quote":{"amount":"6000","precision":3,"nai":"@@000000013"}},"real_price":"0.16279132864856066","steem":36857,"sbd":6000,"created":"2020-10-16T13:05:45"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"163275","precision":3,"nai":"@@000000013"}},"real_price":"0.16327500000000000","steem":1000000,"sbd":163275,"created":"2020-10-16T13:33:06"}]},"id":56}'
-  recorded_at: Sat, 17 Oct 2020 04:14:22 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":63,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '78'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:22:42 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '85'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000813125997066492'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a7192-4b63b5874d890aa648f98e1e
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":63}'
-  recorded_at: Sat, 17 Oct 2020 04:22:42 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":64,"method":"market_history_api.get_order_book","params":{"limit":10}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '114'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:22:42 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000726259709562185'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a7192-595c23565280f1bd0703dc91
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"12432","precision":3,"nai":"@@000000021"}},"real_price":"0.16087516087516088","steem":12432,"sbd":2000,"created":"2020-10-17T04:02:18"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":30096,"sbd":4841,"created":"2020-10-17T02:08:42"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":31091,"sbd":5001,"created":"2020-10-17T02:13:48"},{"order_price":{"base":{"amount":"405","precision":3,"nai":"@@000000013"},"quote":{"amount":"2590","precision":3,"nai":"@@000000021"}},"real_price":"0.15637065637065636","steem":2590,"sbd":405,"created":"2020-10-17T02:02:36"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"639698","precision":3,"nai":"@@000000021"}},"real_price":"0.15632376527673997","steem":639698,"sbd":100000,"created":"2020-10-17T04:22:33"},{"order_price":{"base":{"amount":"7622","precision":3,"nai":"@@000000013"},"quote":{"amount":"48765","precision":3,"nai":"@@000000021"}},"real_price":"0.15630062544857992","steem":48765,"sbd":7622,"created":"2020-10-17T03:50:24"},{"order_price":{"base":{"amount":"46411","precision":3,"nai":"@@000000013"},"quote":{"amount":"296935","precision":3,"nai":"@@000000021"}},"real_price":"0.15630020038055467","steem":296935,"sbd":46411,"created":"2020-10-16T23:58:15"},{"order_price":{"base":{"amount":"5","precision":3,"nai":"@@000000013"},"quote":{"amount":"32","precision":3,"nai":"@@000000021"}},"real_price":"0.15625000000000000","steem":32,"sbd":5,"created":"2020-10-17T02:06:48"},{"order_price":{"base":{"amount":"30312","precision":3,"nai":"@@000000013"},"quote":{"amount":"200000","precision":3,"nai":"@@000000021"}},"real_price":"0.15156000000000000","steem":200000,"sbd":30312,"created":"2020-10-16T23:36:33"},{"order_price":{"base":{"amount":"24413","precision":3,"nai":"@@000000013"},"quote":{"amount":"161099","precision":3,"nai":"@@000000021"}},"real_price":"0.15154035717167705","steem":16794,"sbd":2545,"created":"2020-10-07T23:38:33"}],"asks":[{"order_price":{"base":{"amount":"461461","precision":3,"nai":"@@000000021"},"quote":{"amount":"74292","precision":3,"nai":"@@000000013"}},"real_price":"0.16099301999518920","steem":461461,"sbd":74292,"created":"2020-10-17T04:08:48"},{"order_price":{"base":{"amount":"90221","precision":3,"nai":"@@000000021"},"quote":{"amount":"14527","precision":3,"nai":"@@000000013"}},"real_price":"0.16101572804557698","steem":89874,"sbd":14471,"created":"2020-10-17T04:08:39"},{"order_price":{"base":{"amount":"435997","precision":3,"nai":"@@000000021"},"quote":{"amount":"70618","precision":3,"nai":"@@000000013"}},"real_price":"0.16196900437388331","steem":435997,"sbd":70618,"created":"2020-10-17T01:56:15"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16200","precision":3,"nai":"@@000000013"}},"real_price":"0.16200000000000001","steem":100000,"sbd":16200,"created":"2020-10-16T23:31:54"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162689","precision":3,"nai":"@@000000013"}},"real_price":"0.16268900000000000","steem":1000000,"sbd":162689,"created":"2020-10-16T23:31:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16273","precision":3,"nai":"@@000000013"}},"real_price":"0.16273000000000001","steem":77098,"sbd":12546,"created":"2020-10-16T19:52:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16276","precision":3,"nai":"@@000000013"}},"real_price":"0.16275999999999999","steem":100000,"sbd":16276,"created":"2020-10-16T19:51:18"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162791","precision":3,"nai":"@@000000013"}},"real_price":"0.16279099999999999","steem":995725,"sbd":162095,"created":"2020-10-16T13:37:36"},{"order_price":{"base":{"amount":"36857","precision":3,"nai":"@@000000021"},"quote":{"amount":"6000","precision":3,"nai":"@@000000013"}},"real_price":"0.16279132864856066","steem":36857,"sbd":6000,"created":"2020-10-16T13:05:45"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"163275","precision":3,"nai":"@@000000013"}},"real_price":"0.16327500000000000","steem":1000000,"sbd":163275,"created":"2020-10-16T13:33:06"}]},"id":64}'
-  recorded_at: Sat, 17 Oct 2020 04:22:42 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":26,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '78'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:26:50 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '85'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000275999240219070'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a728a-34f737d90226b9b32ebd882a
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":26}'
-  recorded_at: Sat, 17 Oct 2020 04:26:51 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":27,"method":"market_history_api.get_order_book","params":{"limit":10}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '114'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:26:51 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000389351994764868'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a728b-318c6ca97cc3d07771047640
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"12432","precision":3,"nai":"@@000000021"}},"real_price":"0.16087516087516088","steem":12432,"sbd":2000,"created":"2020-10-17T04:02:18"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":30096,"sbd":4841,"created":"2020-10-17T02:08:42"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":31091,"sbd":5001,"created":"2020-10-17T02:13:48"},{"order_price":{"base":{"amount":"405","precision":3,"nai":"@@000000013"},"quote":{"amount":"2590","precision":3,"nai":"@@000000021"}},"real_price":"0.15637065637065636","steem":2590,"sbd":405,"created":"2020-10-17T02:02:36"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"639698","precision":3,"nai":"@@000000021"}},"real_price":"0.15632376527673997","steem":639698,"sbd":100000,"created":"2020-10-17T04:22:33"},{"order_price":{"base":{"amount":"7622","precision":3,"nai":"@@000000013"},"quote":{"amount":"48765","precision":3,"nai":"@@000000021"}},"real_price":"0.15630062544857992","steem":48765,"sbd":7622,"created":"2020-10-17T03:50:24"},{"order_price":{"base":{"amount":"46411","precision":3,"nai":"@@000000013"},"quote":{"amount":"296935","precision":3,"nai":"@@000000021"}},"real_price":"0.15630020038055467","steem":296935,"sbd":46411,"created":"2020-10-16T23:58:15"},{"order_price":{"base":{"amount":"5","precision":3,"nai":"@@000000013"},"quote":{"amount":"32","precision":3,"nai":"@@000000021"}},"real_price":"0.15625000000000000","steem":32,"sbd":5,"created":"2020-10-17T02:06:48"},{"order_price":{"base":{"amount":"30312","precision":3,"nai":"@@000000013"},"quote":{"amount":"200000","precision":3,"nai":"@@000000021"}},"real_price":"0.15156000000000000","steem":200000,"sbd":30312,"created":"2020-10-16T23:36:33"},{"order_price":{"base":{"amount":"24413","precision":3,"nai":"@@000000013"},"quote":{"amount":"161099","precision":3,"nai":"@@000000021"}},"real_price":"0.15154035717167705","steem":16794,"sbd":2545,"created":"2020-10-07T23:38:33"}],"asks":[{"order_price":{"base":{"amount":"461461","precision":3,"nai":"@@000000021"},"quote":{"amount":"74292","precision":3,"nai":"@@000000013"}},"real_price":"0.16099301999518920","steem":461461,"sbd":74292,"created":"2020-10-17T04:08:48"},{"order_price":{"base":{"amount":"90221","precision":3,"nai":"@@000000021"},"quote":{"amount":"14527","precision":3,"nai":"@@000000013"}},"real_price":"0.16101572804557698","steem":89874,"sbd":14471,"created":"2020-10-17T04:08:39"},{"order_price":{"base":{"amount":"435997","precision":3,"nai":"@@000000021"},"quote":{"amount":"70618","precision":3,"nai":"@@000000013"}},"real_price":"0.16196900437388331","steem":435997,"sbd":70618,"created":"2020-10-17T01:56:15"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16200","precision":3,"nai":"@@000000013"}},"real_price":"0.16200000000000001","steem":100000,"sbd":16200,"created":"2020-10-16T23:31:54"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162689","precision":3,"nai":"@@000000013"}},"real_price":"0.16268900000000000","steem":1000000,"sbd":162689,"created":"2020-10-16T23:31:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16273","precision":3,"nai":"@@000000013"}},"real_price":"0.16273000000000001","steem":77098,"sbd":12546,"created":"2020-10-16T19:52:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16276","precision":3,"nai":"@@000000013"}},"real_price":"0.16275999999999999","steem":100000,"sbd":16276,"created":"2020-10-16T19:51:18"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162791","precision":3,"nai":"@@000000013"}},"real_price":"0.16279099999999999","steem":995725,"sbd":162095,"created":"2020-10-16T13:37:36"},{"order_price":{"base":{"amount":"36857","precision":3,"nai":"@@000000021"},"quote":{"amount":"6000","precision":3,"nai":"@@000000013"}},"real_price":"0.16279132864856066","steem":36857,"sbd":6000,"created":"2020-10-16T13:05:45"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"163275","precision":3,"nai":"@@000000013"}},"real_price":"0.16327500000000000","steem":1000000,"sbd":163275,"created":"2020-10-16T13:33:06"}]},"id":27}'
-  recorded_at: Sat, 17 Oct 2020 04:26:51 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":60,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '86'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:34:26 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '85'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000720426376134379'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a7452-1fce4bcd14e57ce83d3dd961
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":60}'
-  recorded_at: Sat, 17 Oct 2020 04:34:26 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":61,"method":"market_history_api.get_order_book","params":{"limit":10}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '114'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:34:27 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000821149316469027'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a7453-4a8ead5b38f5a73269184aa3
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"12432","precision":3,"nai":"@@000000021"}},"real_price":"0.16087516087516088","steem":12432,"sbd":2000,"created":"2020-10-17T04:02:18"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":30096,"sbd":4841,"created":"2020-10-17T02:08:42"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":31091,"sbd":5001,"created":"2020-10-17T02:13:48"},{"order_price":{"base":{"amount":"405","precision":3,"nai":"@@000000013"},"quote":{"amount":"2590","precision":3,"nai":"@@000000021"}},"real_price":"0.15637065637065636","steem":2590,"sbd":405,"created":"2020-10-17T02:02:36"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"639698","precision":3,"nai":"@@000000021"}},"real_price":"0.15632376527673997","steem":639698,"sbd":100000,"created":"2020-10-17T04:22:33"},{"order_price":{"base":{"amount":"7622","precision":3,"nai":"@@000000013"},"quote":{"amount":"48765","precision":3,"nai":"@@000000021"}},"real_price":"0.15630062544857992","steem":48765,"sbd":7622,"created":"2020-10-17T03:50:24"},{"order_price":{"base":{"amount":"46411","precision":3,"nai":"@@000000013"},"quote":{"amount":"296935","precision":3,"nai":"@@000000021"}},"real_price":"0.15630020038055467","steem":296935,"sbd":46411,"created":"2020-10-16T23:58:15"},{"order_price":{"base":{"amount":"5","precision":3,"nai":"@@000000013"},"quote":{"amount":"32","precision":3,"nai":"@@000000021"}},"real_price":"0.15625000000000000","steem":32,"sbd":5,"created":"2020-10-17T02:06:48"},{"order_price":{"base":{"amount":"30312","precision":3,"nai":"@@000000013"},"quote":{"amount":"200000","precision":3,"nai":"@@000000021"}},"real_price":"0.15156000000000000","steem":200000,"sbd":30312,"created":"2020-10-16T23:36:33"},{"order_price":{"base":{"amount":"24413","precision":3,"nai":"@@000000013"},"quote":{"amount":"161099","precision":3,"nai":"@@000000021"}},"real_price":"0.15154035717167705","steem":16794,"sbd":2545,"created":"2020-10-07T23:38:33"}],"asks":[{"order_price":{"base":{"amount":"461461","precision":3,"nai":"@@000000021"},"quote":{"amount":"74292","precision":3,"nai":"@@000000013"}},"real_price":"0.16099301999518920","steem":430398,"sbd":69291,"created":"2020-10-17T04:08:48"},{"order_price":{"base":{"amount":"90221","precision":3,"nai":"@@000000021"},"quote":{"amount":"14527","precision":3,"nai":"@@000000013"}},"real_price":"0.16101572804557698","steem":89874,"sbd":14471,"created":"2020-10-17T04:08:39"},{"order_price":{"base":{"amount":"435997","precision":3,"nai":"@@000000021"},"quote":{"amount":"70618","precision":3,"nai":"@@000000013"}},"real_price":"0.16196900437388331","steem":435997,"sbd":70618,"created":"2020-10-17T01:56:15"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16200","precision":3,"nai":"@@000000013"}},"real_price":"0.16200000000000001","steem":100000,"sbd":16200,"created":"2020-10-16T23:31:54"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162689","precision":3,"nai":"@@000000013"}},"real_price":"0.16268900000000000","steem":1000000,"sbd":162689,"created":"2020-10-16T23:31:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16273","precision":3,"nai":"@@000000013"}},"real_price":"0.16273000000000001","steem":77098,"sbd":12546,"created":"2020-10-16T19:52:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16276","precision":3,"nai":"@@000000013"}},"real_price":"0.16275999999999999","steem":100000,"sbd":16276,"created":"2020-10-16T19:51:18"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162791","precision":3,"nai":"@@000000013"}},"real_price":"0.16279099999999999","steem":995725,"sbd":162095,"created":"2020-10-16T13:37:36"},{"order_price":{"base":{"amount":"36857","precision":3,"nai":"@@000000021"},"quote":{"amount":"6000","precision":3,"nai":"@@000000013"}},"real_price":"0.16279132864856066","steem":36857,"sbd":6000,"created":"2020-10-16T13:05:45"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"163275","precision":3,"nai":"@@000000013"}},"real_price":"0.16327500000000000","steem":1000000,"sbd":163275,"created":"2020-10-16T13:33:06"}]},"id":61}'
-  recorded_at: Sat, 17 Oct 2020 04:34:27 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":21,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '78'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:39:18 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '85'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000765846298120676'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a7576-184aaeff451cff9053416e08
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":21}'
-  recorded_at: Sat, 17 Oct 2020 04:39:19 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":22,"method":"market_history_api.get_order_book","params":{"limit":10}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '114'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:39:19 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000016742882026294'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a7577-445e49982210b6a964a63a56
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"12432","precision":3,"nai":"@@000000021"}},"real_price":"0.16087516087516088","steem":12432,"sbd":2000,"created":"2020-10-17T04:02:18"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":30096,"sbd":4841,"created":"2020-10-17T02:08:42"},{"order_price":{"base":{"amount":"5001","precision":3,"nai":"@@000000013"},"quote":{"amount":"31091","precision":3,"nai":"@@000000021"}},"real_price":"0.16085040687015534","steem":31091,"sbd":5001,"created":"2020-10-17T02:13:48"},{"order_price":{"base":{"amount":"405","precision":3,"nai":"@@000000013"},"quote":{"amount":"2590","precision":3,"nai":"@@000000021"}},"real_price":"0.15637065637065636","steem":2590,"sbd":405,"created":"2020-10-17T02:02:36"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"639698","precision":3,"nai":"@@000000021"}},"real_price":"0.15632376527673997","steem":639698,"sbd":100000,"created":"2020-10-17T04:22:33"},{"order_price":{"base":{"amount":"7622","precision":3,"nai":"@@000000013"},"quote":{"amount":"48765","precision":3,"nai":"@@000000021"}},"real_price":"0.15630062544857992","steem":48765,"sbd":7622,"created":"2020-10-17T03:50:24"},{"order_price":{"base":{"amount":"46411","precision":3,"nai":"@@000000013"},"quote":{"amount":"296935","precision":3,"nai":"@@000000021"}},"real_price":"0.15630020038055467","steem":296935,"sbd":46411,"created":"2020-10-16T23:58:15"},{"order_price":{"base":{"amount":"5","precision":3,"nai":"@@000000013"},"quote":{"amount":"32","precision":3,"nai":"@@000000021"}},"real_price":"0.15625000000000000","steem":32,"sbd":5,"created":"2020-10-17T02:06:48"},{"order_price":{"base":{"amount":"30312","precision":3,"nai":"@@000000013"},"quote":{"amount":"200000","precision":3,"nai":"@@000000021"}},"real_price":"0.15156000000000000","steem":200000,"sbd":30312,"created":"2020-10-16T23:36:33"},{"order_price":{"base":{"amount":"24413","precision":3,"nai":"@@000000013"},"quote":{"amount":"161099","precision":3,"nai":"@@000000021"}},"real_price":"0.15154035717167705","steem":16794,"sbd":2545,"created":"2020-10-07T23:38:33"}],"asks":[{"order_price":{"base":{"amount":"461461","precision":3,"nai":"@@000000021"},"quote":{"amount":"74292","precision":3,"nai":"@@000000013"}},"real_price":"0.16099301999518920","steem":430398,"sbd":69291,"created":"2020-10-17T04:08:48"},{"order_price":{"base":{"amount":"90221","precision":3,"nai":"@@000000021"},"quote":{"amount":"14527","precision":3,"nai":"@@000000013"}},"real_price":"0.16101572804557698","steem":89874,"sbd":14471,"created":"2020-10-17T04:08:39"},{"order_price":{"base":{"amount":"435997","precision":3,"nai":"@@000000021"},"quote":{"amount":"70618","precision":3,"nai":"@@000000013"}},"real_price":"0.16196900437388331","steem":435997,"sbd":70618,"created":"2020-10-17T01:56:15"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16200","precision":3,"nai":"@@000000013"}},"real_price":"0.16200000000000001","steem":100000,"sbd":16200,"created":"2020-10-16T23:31:54"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162689","precision":3,"nai":"@@000000013"}},"real_price":"0.16268900000000000","steem":1000000,"sbd":162689,"created":"2020-10-16T23:31:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16273","precision":3,"nai":"@@000000013"}},"real_price":"0.16273000000000001","steem":77098,"sbd":12546,"created":"2020-10-16T19:52:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16276","precision":3,"nai":"@@000000013"}},"real_price":"0.16275999999999999","steem":100000,"sbd":16276,"created":"2020-10-16T19:51:18"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162791","precision":3,"nai":"@@000000013"}},"real_price":"0.16279099999999999","steem":995725,"sbd":162095,"created":"2020-10-16T13:37:36"},{"order_price":{"base":{"amount":"36857","precision":3,"nai":"@@000000021"},"quote":{"amount":"6000","precision":3,"nai":"@@000000013"}},"real_price":"0.16279132864856066","steem":36857,"sbd":6000,"created":"2020-10-16T13:05:45"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"163275","precision":3,"nai":"@@000000013"}},"real_price":"0.16327500000000000","steem":1000000,"sbd":163275,"created":"2020-10-16T13:33:06"}]},"id":22}'
-  recorded_at: Sat, 17 Oct 2020 04:39:19 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":74,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '92'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:56:38 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '85'
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000947244905069699'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a7986-6c93e0f96dbf8bcb682c7252
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":74}'
-  recorded_at: Sat, 17 Oct 2020 04:56:39 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":75,"method":"market_history_api.get_order_book","params":{"limit":10}}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '114'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:56:39 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000733939037892366'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a7987-6a0155f4609e6ef115d94626
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"131","precision":3,"nai":"@@000000013"},"quote":{"amount":"818","precision":3,"nai":"@@000000021"}},"real_price":"0.16014669926650366","steem":462,"sbd":74,"created":"2020-10-17T04:52:51"},{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"12789","precision":3,"nai":"@@000000021"}},"real_price":"0.15638439283759481","steem":12789,"sbd":2000,"created":"2020-10-17T04:52:24"},{"order_price":{"base":{"amount":"405","precision":3,"nai":"@@000000013"},"quote":{"amount":"2590","precision":3,"nai":"@@000000021"}},"real_price":"0.15637065637065636","steem":2590,"sbd":405,"created":"2020-10-17T02:02:36"},{"order_price":{"base":{"amount":"7622","precision":3,"nai":"@@000000013"},"quote":{"amount":"48765","precision":3,"nai":"@@000000021"}},"real_price":"0.15630062544857992","steem":48765,"sbd":7622,"created":"2020-10-17T03:50:24"},{"order_price":{"base":{"amount":"5","precision":3,"nai":"@@000000013"},"quote":{"amount":"32","precision":3,"nai":"@@000000021"}},"real_price":"0.15625000000000000","steem":32,"sbd":5,"created":"2020-10-17T02:06:48"},{"order_price":{"base":{"amount":"30312","precision":3,"nai":"@@000000013"},"quote":{"amount":"200000","precision":3,"nai":"@@000000021"}},"real_price":"0.15156000000000000","steem":200000,"sbd":30312,"created":"2020-10-16T23:36:33"},{"order_price":{"base":{"amount":"24413","precision":3,"nai":"@@000000013"},"quote":{"amount":"161099","precision":3,"nai":"@@000000021"}},"real_price":"0.15154035717167705","steem":16794,"sbd":2545,"created":"2020-10-07T23:38:33"},{"order_price":{"base":{"amount":"14858","precision":3,"nai":"@@000000013"},"quote":{"amount":"98113","precision":3,"nai":"@@000000021"}},"real_price":"0.15143762804113625","steem":98113,"sbd":14858,"created":"2020-10-12T13:10:00"},{"order_price":{"base":{"amount":"35445","precision":3,"nai":"@@000000013"},"quote":{"amount":"234562","precision":3,"nai":"@@000000021"}},"real_price":"0.15111143322447795","steem":234562,"sbd":35445,"created":"2020-10-07T23:43:15"},{"order_price":{"base":{"amount":"15100","precision":3,"nai":"@@000000013"},"quote":{"amount":"100000","precision":3,"nai":"@@000000021"}},"real_price":"0.15100000000000000","steem":100000,"sbd":15100,"created":"2020-10-08T08:27:51"}],"asks":[{"order_price":{"base":{"amount":"6352","precision":3,"nai":"@@000000021"},"quote":{"amount":"1021","precision":3,"nai":"@@000000013"}},"real_price":"0.16073677581863979","steem":6352,"sbd":1021,"created":"2020-10-17T04:54:18"},{"order_price":{"base":{"amount":"461461","precision":3,"nai":"@@000000021"},"quote":{"amount":"74292","precision":3,"nai":"@@000000013"}},"real_price":"0.16099301999518920","steem":422895,"sbd":68083,"created":"2020-10-17T04:08:48"},{"order_price":{"base":{"amount":"90221","precision":3,"nai":"@@000000021"},"quote":{"amount":"14527","precision":3,"nai":"@@000000013"}},"real_price":"0.16101572804557698","steem":89874,"sbd":14471,"created":"2020-10-17T04:08:39"},{"order_price":{"base":{"amount":"435997","precision":3,"nai":"@@000000021"},"quote":{"amount":"70618","precision":3,"nai":"@@000000013"}},"real_price":"0.16196900437388331","steem":435997,"sbd":70618,"created":"2020-10-17T01:56:15"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16200","precision":3,"nai":"@@000000013"}},"real_price":"0.16200000000000001","steem":100000,"sbd":16200,"created":"2020-10-16T23:31:54"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162689","precision":3,"nai":"@@000000013"}},"real_price":"0.16268900000000000","steem":1000000,"sbd":162689,"created":"2020-10-16T23:31:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16273","precision":3,"nai":"@@000000013"}},"real_price":"0.16273000000000001","steem":77098,"sbd":12546,"created":"2020-10-16T19:52:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16276","precision":3,"nai":"@@000000013"}},"real_price":"0.16275999999999999","steem":100000,"sbd":16276,"created":"2020-10-16T19:51:18"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162791","precision":3,"nai":"@@000000013"}},"real_price":"0.16279099999999999","steem":995725,"sbd":162095,"created":"2020-10-16T13:37:36"},{"order_price":{"base":{"amount":"36857","precision":3,"nai":"@@000000021"},"quote":{"amount":"6000","precision":3,"nai":"@@000000013"}},"real_price":"0.16279132864856066","steem":36857,"sbd":6000,"created":"2020-10-16T13:05:45"}]},"id":75}'
-  recorded_at: Sat, 17 Oct 2020 04:56:39 GMT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14168","precision":3,"nai":"@@000000021"}},"real_price":"0.14116318464144550","steem":14168,"sbd":2000,"created":"2020-11-07T21:08:15"},{"order_price":{"base":{"amount":"40140","precision":3,"nai":"@@000000013"},"quote":{"amount":"284391","precision":3,"nai":"@@000000021"}},"real_price":"0.14114370707933796","steem":284391,"sbd":40140,"created":"2020-11-07T21:08:03"},{"order_price":{"base":{"amount":"53391","precision":3,"nai":"@@000000013"},"quote":{"amount":"378367","precision":3,"nai":"@@000000021"}},"real_price":"0.14110902906437400","steem":378367,"sbd":53391,"created":"2020-11-07T21:06:24"},{"order_price":{"base":{"amount":"169290","precision":3,"nai":"@@000000013"},"quote":{"amount":"1200000","precision":3,"nai":"@@000000021"}},"real_price":"0.14107500000000001","steem":1200000,"sbd":169290,"created":"2020-11-07T21:04:42"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1578,"sbd":218,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"},{"order_price":{"base":{"amount":"1059","precision":3,"nai":"@@000000013"},"quote":{"amount":"7780","precision":3,"nai":"@@000000021"}},"real_price":"0.13611825192802057","steem":7780,"sbd":1059,"created":"2020-11-05T13:08:42"},{"order_price":{"base":{"amount":"929","precision":3,"nai":"@@000000013"},"quote":{"amount":"6825","precision":3,"nai":"@@000000021"}},"real_price":"0.13611721611721611","steem":6825,"sbd":929,"created":"2020-11-05T14:50:03"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"734700","precision":3,"nai":"@@000000021"}},"real_price":"0.13610997686130394","steem":162111,"sbd":22065,"created":"2020-11-04T13:54:42"}],"asks":[{"order_price":{"base":{"amount":"13684","precision":3,"nai":"@@000000021"},"quote":{"amount":"1996","precision":3,"nai":"@@000000013"}},"real_price":"0.14586378251973106","steem":13684,"sbd":1996,"created":"2020-11-07T21:08:33"},{"order_price":{"base":{"amount":"13684","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14608301666179480","steem":13684,"sbd":1999,"created":"2020-11-07T21:08:15"},{"order_price":{"base":{"amount":"12514","precision":3,"nai":"@@000000021"},"quote":{"amount":"1829","precision":3,"nai":"@@000000013"}},"real_price":"0.14615630493846893","steem":12514,"sbd":1829,"created":"2020-11-07T21:04:33"},{"order_price":{"base":{"amount":"699029","precision":3,"nai":"@@000000021"},"quote":{"amount":"103422","precision":3,"nai":"@@000000013"}},"real_price":"0.14795094338003145","steem":697212,"sbd":103153,"created":"2020-11-07T20:11:33"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"39304","precision":3,"nai":"@@000000021"},"quote":{"amount":"5856","precision":3,"nai":"@@000000013"}},"real_price":"0.14899246895990231","steem":39304,"sbd":5856,"created":"2020-11-07T20:13:18"},{"order_price":{"base":{"amount":"156221","precision":3,"nai":"@@000000021"},"quote":{"amount":"23736","precision":3,"nai":"@@000000013"}},"real_price":"0.15193859980412364","steem":156221,"sbd":23736,"created":"2020-11-07T19:22:18"},{"order_price":{"base":{"amount":"54148","precision":3,"nai":"@@000000021"},"quote":{"amount":"8230","precision":3,"nai":"@@000000013"}},"real_price":"0.15199083992021867","steem":31680,"sbd":4815,"created":"2020-11-07T09:18:12"},{"order_price":{"base":{"amount":"33390","precision":3,"nai":"@@000000021"},"quote":{"amount":"5075","precision":3,"nai":"@@000000013"}},"real_price":"0.15199161425576521","steem":33390,"sbd":5075,"created":"2020-11-07T10:33:12"},{"order_price":{"base":{"amount":"36916","precision":3,"nai":"@@000000021"},"quote":{"amount":"5611","precision":3,"nai":"@@000000013"}},"real_price":"0.15199371546213025","steem":36916,"sbd":5611,"created":"2020-11-07T09:23:06"}]},"id":99}'
+  recorded_at: Sat, 07 Nov 2020 21:08:39 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
@@ -994,22 +1050,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
-      - api.steemit.com
+      - api.steemitdev.com
       Content-Length:
-      - '78'
+      - '94'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 05:03:24 GMT
+      - Sat, 07 Nov 2020 21:11:02 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -1019,9 +1075,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '001100477379331677'
+      - '000440548769015176'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7b1c-3aea3b9d522f1dca35e9a02a
+      - Root=1-5fa70d66-017f294e00107756576c4518
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -1035,7 +1091,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":61}'
-  recorded_at: Sat, 17 Oct 2020 05:03:25 GMT
+  recorded_at: Sat, 07 Nov 2020 21:11:02 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
@@ -1046,7 +1102,215 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '114'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 21:11:04 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000069924872080203'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70d67-3e86e1865b898b26484820bb
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14168","precision":3,"nai":"@@000000021"}},"real_price":"0.14116318464144550","steem":14168,"sbd":2000,"created":"2020-11-07T21:10:18"},{"order_price":{"base":{"amount":"138977","precision":3,"nai":"@@000000013"},"quote":{"amount":"984514","precision":3,"nai":"@@000000021"}},"real_price":"0.14116305100790846","steem":984514,"sbd":138977,"created":"2020-11-07T21:10:54"},{"order_price":{"base":{"amount":"40140","precision":3,"nai":"@@000000013"},"quote":{"amount":"284391","precision":3,"nai":"@@000000021"}},"real_price":"0.14114370707933796","steem":284391,"sbd":40140,"created":"2020-11-07T21:10:09"},{"order_price":{"base":{"amount":"53391","precision":3,"nai":"@@000000013"},"quote":{"amount":"378367","precision":3,"nai":"@@000000021"}},"real_price":"0.14110902906437400","steem":378367,"sbd":53391,"created":"2020-11-07T21:06:24"},{"order_price":{"base":{"amount":"169290","precision":3,"nai":"@@000000013"},"quote":{"amount":"1200000","precision":3,"nai":"@@000000021"}},"real_price":"0.14107500000000001","steem":1200000,"sbd":169290,"created":"2020-11-07T21:04:42"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1578,"sbd":218,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"},{"order_price":{"base":{"amount":"1059","precision":3,"nai":"@@000000013"},"quote":{"amount":"7780","precision":3,"nai":"@@000000021"}},"real_price":"0.13611825192802057","steem":7780,"sbd":1059,"created":"2020-11-05T13:08:42"},{"order_price":{"base":{"amount":"929","precision":3,"nai":"@@000000013"},"quote":{"amount":"6825","precision":3,"nai":"@@000000021"}},"real_price":"0.13611721611721611","steem":6825,"sbd":929,"created":"2020-11-05T14:50:03"}],"asks":[{"order_price":{"base":{"amount":"13684","precision":3,"nai":"@@000000021"},"quote":{"amount":"1996","precision":3,"nai":"@@000000013"}},"real_price":"0.14586378251973106","steem":13684,"sbd":1996,"created":"2020-11-07T21:11:03"},{"order_price":{"base":{"amount":"13684","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14608301666179480","steem":13684,"sbd":1999,"created":"2020-11-07T21:10:42"},{"order_price":{"base":{"amount":"12514","precision":3,"nai":"@@000000021"},"quote":{"amount":"1829","precision":3,"nai":"@@000000013"}},"real_price":"0.14615630493846893","steem":12514,"sbd":1829,"created":"2020-11-07T21:04:33"},{"order_price":{"base":{"amount":"699029","precision":3,"nai":"@@000000021"},"quote":{"amount":"103422","precision":3,"nai":"@@000000013"}},"real_price":"0.14795094338003145","steem":697212,"sbd":103153,"created":"2020-11-07T20:11:33"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"39304","precision":3,"nai":"@@000000021"},"quote":{"amount":"5856","precision":3,"nai":"@@000000013"}},"real_price":"0.14899246895990231","steem":39304,"sbd":5856,"created":"2020-11-07T20:13:18"},{"order_price":{"base":{"amount":"156221","precision":3,"nai":"@@000000021"},"quote":{"amount":"23736","precision":3,"nai":"@@000000013"}},"real_price":"0.15193859980412364","steem":156221,"sbd":23736,"created":"2020-11-07T19:22:18"},{"order_price":{"base":{"amount":"54148","precision":3,"nai":"@@000000021"},"quote":{"amount":"8230","precision":3,"nai":"@@000000013"}},"real_price":"0.15199083992021867","steem":31680,"sbd":4815,"created":"2020-11-07T09:18:12"},{"order_price":{"base":{"amount":"33390","precision":3,"nai":"@@000000021"},"quote":{"amount":"5075","precision":3,"nai":"@@000000013"}},"real_price":"0.15199161425576521","steem":33390,"sbd":5075,"created":"2020-11-07T10:33:12"},{"order_price":{"base":{"amount":"36916","precision":3,"nai":"@@000000021"},"quote":{"amount":"5611","precision":3,"nai":"@@000000013"}},"real_price":"0.15199371546213025","steem":36916,"sbd":5611,"created":"2020-11-07T09:23:06"}]},"id":62}'
+  recorded_at: Sat, 07 Nov 2020 21:11:05 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":57,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '94'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:39:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '85'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000099974100160244'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa784ae-442f94c144e9539a22db7b9f
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":57}'
+  recorded_at: Sun, 08 Nov 2020 05:39:59 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":58,"method":"market_history_api.get_order_book","params":{"limit":10}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '114'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:40:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000414557370667497'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa784b0-44c9f7fe20edc48b2b2a37a8
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"327","precision":3,"nai":"@@000000013"},"quote":{"amount":"2258","precision":3,"nai":"@@000000021"}},"real_price":"0.14481842338352524","steem":2209,"sbd":320,"created":"2020-11-08T03:56:48"},{"order_price":{"base":{"amount":"15","precision":3,"nai":"@@000000013"},"quote":{"amount":"104","precision":3,"nai":"@@000000021"}},"real_price":"0.14423076923076922","steem":104,"sbd":15,"created":"2020-11-08T01:11:09"},{"order_price":{"base":{"amount":"1","precision":3,"nai":"@@000000013"},"quote":{"amount":"7","precision":3,"nai":"@@000000021"}},"real_price":"0.14285714285714285","steem":7,"sbd":1,"created":"2020-11-08T04:25:57"},{"order_price":{"base":{"amount":"21024","precision":3,"nai":"@@000000013"},"quote":{"amount":"149013","precision":3,"nai":"@@000000021"}},"real_price":"0.14108836141813130","steem":149013,"sbd":21024,"created":"2020-11-08T05:24:27"},{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14179","precision":3,"nai":"@@000000021"}},"real_price":"0.14105367092178575","steem":14179,"sbd":2000,"created":"2020-11-08T02:20:33"},{"order_price":{"base":{"amount":"10077","precision":3,"nai":"@@000000013"},"quote":{"amount":"71441","precision":3,"nai":"@@000000021"}},"real_price":"0.14105345669853445","steem":71441,"sbd":10077,"created":"2020-11-08T03:53:36"},{"order_price":{"base":{"amount":"13787","precision":3,"nai":"@@000000013"},"quote":{"amount":"97780","precision":3,"nai":"@@000000021"}},"real_price":"0.14100020454080589","steem":97780,"sbd":13787,"created":"2020-11-08T01:09:39"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1281,"sbd":177,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"}],"asks":[{"order_price":{"base":{"amount":"1318","precision":3,"nai":"@@000000021"},"quote":{"amount":"191","precision":3,"nai":"@@000000013"}},"real_price":"0.14491654021244310","steem":1318,"sbd":191,"created":"2020-11-08T05:37:30"},{"order_price":{"base":{"amount":"13676","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14616847031295702","steem":9247,"sbd":1351,"created":"2020-11-08T02:34:33"},{"order_price":{"base":{"amount":"13568","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14733195754716982","steem":13568,"sbd":1999,"created":"2020-11-08T02:34:57"},{"order_price":{"base":{"amount":"750000","precision":3,"nai":"@@000000021"},"quote":{"amount":"110932","precision":3,"nai":"@@000000013"}},"real_price":"0.14790933333333334","steem":750000,"sbd":110932,"created":"2020-11-08T05:39:42"},{"order_price":{"base":{"amount":"692000","precision":3,"nai":"@@000000021"},"quote":{"amount":"102367","precision":3,"nai":"@@000000013"}},"real_price":"0.14792919075144509","steem":692000,"sbd":102367,"created":"2020-11-08T04:54:51"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"147964","precision":3,"nai":"@@000000013"}},"real_price":"0.14796400000000001","steem":1000000,"sbd":147964,"created":"2020-11-08T04:31:06"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"39304","precision":3,"nai":"@@000000021"},"quote":{"amount":"5856","precision":3,"nai":"@@000000013"}},"real_price":"0.14899246895990231","steem":39304,"sbd":5856,"created":"2020-11-07T20:13:18"},{"order_price":{"base":{"amount":"15073","precision":3,"nai":"@@000000021"},"quote":{"amount":"2246","precision":3,"nai":"@@000000013"}},"real_price":"0.14900816028660518","steem":15073,"sbd":2246,"created":"2020-11-08T01:38:00"},{"order_price":{"base":{"amount":"7206","precision":3,"nai":"@@000000021"},"quote":{"amount":"1080","precision":3,"nai":"@@000000013"}},"real_price":"0.14987510407993340","steem":7206,"sbd":1080,"created":"2020-11-08T04:37:18"}]},"id":58}'
+  recorded_at: Sun, 08 Nov 2020 05:40:00 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":23,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '85'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:47:36 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '85'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000911691005219954'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa78674-2a20807e628f426570f48fae
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":23}'
+  recorded_at: Sun, 08 Nov 2020 05:47:36 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":24,"method":"market_history_api.get_order_book","params":{"limit":10}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1061,7 +1325,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 05:03:25 GMT
+      - Sun, 08 Nov 2020 05:47:36 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -1071,9 +1335,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000533532820457931'
+      - '000314452038130931'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7b1d-644af208622e8ce52d763ded
+      - Root=1-5fa78678-5eadbb920f0942607446af13
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -1086,6 +1350,110 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"131","precision":3,"nai":"@@000000013"},"quote":{"amount":"818","precision":3,"nai":"@@000000021"}},"real_price":"0.16014669926650366","steem":462,"sbd":74,"created":"2020-10-17T04:52:51"},{"order_price":{"base":{"amount":"15880","precision":3,"nai":"@@000000013"},"quote":{"amount":"99254","precision":3,"nai":"@@000000021"}},"real_price":"0.15999355189715275","steem":99254,"sbd":15880,"created":"2020-10-17T05:00:48"},{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"12627","precision":3,"nai":"@@000000021"}},"real_price":"0.15839074998020117","steem":12627,"sbd":2000,"created":"2020-10-17T05:00:24"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000013"},"quote":{"amount":"631374","precision":3,"nai":"@@000000021"}},"real_price":"0.15838472917795157","steem":631374,"sbd":100000,"created":"2020-10-17T05:00:57"},{"order_price":{"base":{"amount":"15719","precision":3,"nai":"@@000000013"},"quote":{"amount":"99254","precision":3,"nai":"@@000000021"}},"real_price":"0.15837145102464384","steem":99254,"sbd":15719,"created":"2020-10-17T04:58:27"},{"order_price":{"base":{"amount":"15737","precision":3,"nai":"@@000000013"},"quote":{"amount":"100000","precision":3,"nai":"@@000000021"}},"real_price":"0.15737000000000001","steem":100000,"sbd":15737,"created":"2020-10-17T04:58:06"},{"order_price":{"base":{"amount":"405","precision":3,"nai":"@@000000013"},"quote":{"amount":"2590","precision":3,"nai":"@@000000021"}},"real_price":"0.15637065637065636","steem":2590,"sbd":405,"created":"2020-10-17T02:02:36"},{"order_price":{"base":{"amount":"7622","precision":3,"nai":"@@000000013"},"quote":{"amount":"48765","precision":3,"nai":"@@000000021"}},"real_price":"0.15630062544857992","steem":48765,"sbd":7622,"created":"2020-10-17T03:50:24"},{"order_price":{"base":{"amount":"5","precision":3,"nai":"@@000000013"},"quote":{"amount":"32","precision":3,"nai":"@@000000021"}},"real_price":"0.15625000000000000","steem":32,"sbd":5,"created":"2020-10-17T02:06:48"},{"order_price":{"base":{"amount":"30312","precision":3,"nai":"@@000000013"},"quote":{"amount":"200000","precision":3,"nai":"@@000000021"}},"real_price":"0.15156000000000000","steem":200000,"sbd":30312,"created":"2020-10-16T23:36:33"}],"asks":[{"order_price":{"base":{"amount":"6352","precision":3,"nai":"@@000000021"},"quote":{"amount":"1021","precision":3,"nai":"@@000000013"}},"real_price":"0.16073677581863979","steem":6352,"sbd":1021,"created":"2020-10-17T04:54:18"},{"order_price":{"base":{"amount":"461461","precision":3,"nai":"@@000000021"},"quote":{"amount":"74292","precision":3,"nai":"@@000000013"}},"real_price":"0.16099301999518920","steem":422895,"sbd":68083,"created":"2020-10-17T04:08:48"},{"order_price":{"base":{"amount":"90221","precision":3,"nai":"@@000000021"},"quote":{"amount":"14527","precision":3,"nai":"@@000000013"}},"real_price":"0.16101572804557698","steem":89874,"sbd":14471,"created":"2020-10-17T04:08:39"},{"order_price":{"base":{"amount":"10766","precision":3,"nai":"@@000000021"},"quote":{"amount":"1743","precision":3,"nai":"@@000000013"}},"real_price":"0.16189856957087126","steem":10766,"sbd":1743,"created":"2020-10-17T04:59:51"},{"order_price":{"base":{"amount":"435997","precision":3,"nai":"@@000000021"},"quote":{"amount":"70618","precision":3,"nai":"@@000000013"}},"real_price":"0.16196900437388331","steem":435997,"sbd":70618,"created":"2020-10-17T01:56:15"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16200","precision":3,"nai":"@@000000013"}},"real_price":"0.16200000000000001","steem":100000,"sbd":16200,"created":"2020-10-16T23:31:54"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162689","precision":3,"nai":"@@000000013"}},"real_price":"0.16268900000000000","steem":1000000,"sbd":162689,"created":"2020-10-16T23:31:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16273","precision":3,"nai":"@@000000013"}},"real_price":"0.16273000000000001","steem":77098,"sbd":12546,"created":"2020-10-16T19:52:27"},{"order_price":{"base":{"amount":"100000","precision":3,"nai":"@@000000021"},"quote":{"amount":"16276","precision":3,"nai":"@@000000013"}},"real_price":"0.16275999999999999","steem":100000,"sbd":16276,"created":"2020-10-16T19:51:18"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"162791","precision":3,"nai":"@@000000013"}},"real_price":"0.16279099999999999","steem":995725,"sbd":162095,"created":"2020-10-16T13:37:36"}]},"id":62}'
-  recorded_at: Sat, 17 Oct 2020 05:03:25 GMT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"327","precision":3,"nai":"@@000000013"},"quote":{"amount":"2258","precision":3,"nai":"@@000000021"}},"real_price":"0.14481842338352524","steem":2209,"sbd":320,"created":"2020-11-08T03:56:48"},{"order_price":{"base":{"amount":"15","precision":3,"nai":"@@000000013"},"quote":{"amount":"104","precision":3,"nai":"@@000000021"}},"real_price":"0.14423076923076922","steem":104,"sbd":15,"created":"2020-11-08T01:11:09"},{"order_price":{"base":{"amount":"1","precision":3,"nai":"@@000000013"},"quote":{"amount":"7","precision":3,"nai":"@@000000021"}},"real_price":"0.14285714285714285","steem":7,"sbd":1,"created":"2020-11-08T04:25:57"},{"order_price":{"base":{"amount":"21024","precision":3,"nai":"@@000000013"},"quote":{"amount":"149013","precision":3,"nai":"@@000000021"}},"real_price":"0.14108836141813130","steem":149013,"sbd":21024,"created":"2020-11-08T05:24:27"},{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14179","precision":3,"nai":"@@000000021"}},"real_price":"0.14105367092178575","steem":14179,"sbd":2000,"created":"2020-11-08T02:20:33"},{"order_price":{"base":{"amount":"10077","precision":3,"nai":"@@000000013"},"quote":{"amount":"71441","precision":3,"nai":"@@000000021"}},"real_price":"0.14105345669853445","steem":71441,"sbd":10077,"created":"2020-11-08T03:53:36"},{"order_price":{"base":{"amount":"13787","precision":3,"nai":"@@000000013"},"quote":{"amount":"97780","precision":3,"nai":"@@000000021"}},"real_price":"0.14100020454080589","steem":97780,"sbd":13787,"created":"2020-11-08T01:09:39"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1281,"sbd":177,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"}],"asks":[{"order_price":{"base":{"amount":"1318","precision":3,"nai":"@@000000021"},"quote":{"amount":"191","precision":3,"nai":"@@000000013"}},"real_price":"0.14491654021244310","steem":1318,"sbd":191,"created":"2020-11-08T05:37:30"},{"order_price":{"base":{"amount":"13676","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14616847031295702","steem":9247,"sbd":1351,"created":"2020-11-08T02:34:33"},{"order_price":{"base":{"amount":"13568","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14733195754716982","steem":13568,"sbd":1999,"created":"2020-11-08T02:34:57"},{"order_price":{"base":{"amount":"750000","precision":3,"nai":"@@000000021"},"quote":{"amount":"110932","precision":3,"nai":"@@000000013"}},"real_price":"0.14790933333333334","steem":750000,"sbd":110932,"created":"2020-11-08T05:39:42"},{"order_price":{"base":{"amount":"692000","precision":3,"nai":"@@000000021"},"quote":{"amount":"102367","precision":3,"nai":"@@000000013"}},"real_price":"0.14792919075144509","steem":692000,"sbd":102367,"created":"2020-11-08T04:54:51"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"147964","precision":3,"nai":"@@000000013"}},"real_price":"0.14796400000000001","steem":1000000,"sbd":147964,"created":"2020-11-08T04:31:06"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"39304","precision":3,"nai":"@@000000021"},"quote":{"amount":"5856","precision":3,"nai":"@@000000013"}},"real_price":"0.14899246895990231","steem":39304,"sbd":5856,"created":"2020-11-07T20:13:18"},{"order_price":{"base":{"amount":"15073","precision":3,"nai":"@@000000021"},"quote":{"amount":"2246","precision":3,"nai":"@@000000013"}},"real_price":"0.14900816028660518","steem":15073,"sbd":2246,"created":"2020-11-08T01:38:00"},{"order_price":{"base":{"amount":"7206","precision":3,"nai":"@@000000021"},"quote":{"amount":"1080","precision":3,"nai":"@@000000013"}},"real_price":"0.14987510407993340","steem":7206,"sbd":1080,"created":"2020-11-08T04:37:18"}]},"id":24}'
+  recorded_at: Sun, 08 Nov 2020 05:47:36 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":18,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_order_book"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '78'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 06:00:34 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '85'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000952407545913392'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa78981-36b8b20b58b84fe93cf49a64
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":500},"ret":{"bids":[],"asks":[]}},"id":18}'
+  recorded_at: Sun, 08 Nov 2020 06:00:34 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":19,"method":"market_history_api.get_order_book","params":{"limit":10}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '114'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 06:00:35 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000848686954149766'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa78982-7d15ff9102e5e17d5d7a3146
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"bids":[{"order_price":{"base":{"amount":"327","precision":3,"nai":"@@000000013"},"quote":{"amount":"2258","precision":3,"nai":"@@000000021"}},"real_price":"0.14481842338352524","steem":2209,"sbd":320,"created":"2020-11-08T03:56:48"},{"order_price":{"base":{"amount":"15","precision":3,"nai":"@@000000013"},"quote":{"amount":"104","precision":3,"nai":"@@000000021"}},"real_price":"0.14423076923076922","steem":104,"sbd":15,"created":"2020-11-08T01:11:09"},{"order_price":{"base":{"amount":"1","precision":3,"nai":"@@000000013"},"quote":{"amount":"7","precision":3,"nai":"@@000000021"}},"real_price":"0.14285714285714285","steem":7,"sbd":1,"created":"2020-11-08T04:25:57"},{"order_price":{"base":{"amount":"21024","precision":3,"nai":"@@000000013"},"quote":{"amount":"149013","precision":3,"nai":"@@000000021"}},"real_price":"0.14108836141813130","steem":149013,"sbd":21024,"created":"2020-11-08T05:24:27"},{"order_price":{"base":{"amount":"2000","precision":3,"nai":"@@000000013"},"quote":{"amount":"14179","precision":3,"nai":"@@000000021"}},"real_price":"0.14105367092178575","steem":14179,"sbd":2000,"created":"2020-11-08T02:20:33"},{"order_price":{"base":{"amount":"10077","precision":3,"nai":"@@000000013"},"quote":{"amount":"71441","precision":3,"nai":"@@000000021"}},"real_price":"0.14105345669853445","steem":71441,"sbd":10077,"created":"2020-11-08T03:53:36"},{"order_price":{"base":{"amount":"13787","precision":3,"nai":"@@000000013"},"quote":{"amount":"97780","precision":3,"nai":"@@000000021"}},"real_price":"0.14100020454080589","steem":97780,"sbd":13787,"created":"2020-11-08T01:09:39"},{"order_price":{"base":{"amount":"218","precision":3,"nai":"@@000000013"},"quote":{"amount":"1578","precision":3,"nai":"@@000000021"}},"real_price":"0.13814955640050697","steem":1281,"sbd":177,"created":"2020-11-07T20:07:09"},{"order_price":{"base":{"amount":"1160","precision":3,"nai":"@@000000013"},"quote":{"amount":"8468","precision":3,"nai":"@@000000021"}},"real_price":"0.13698630136986301","steem":8468,"sbd":1160,"created":"2020-11-05T14:15:12"},{"order_price":{"base":{"amount":"68","precision":3,"nai":"@@000000013"},"quote":{"amount":"497","precision":3,"nai":"@@000000021"}},"real_price":"0.13682092555331993","steem":497,"sbd":68,"created":"2020-11-05T23:14:09"}],"asks":[{"order_price":{"base":{"amount":"13676","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14616847031295702","steem":9247,"sbd":1351,"created":"2020-11-08T02:34:33"},{"order_price":{"base":{"amount":"13568","precision":3,"nai":"@@000000021"},"quote":{"amount":"1999","precision":3,"nai":"@@000000013"}},"real_price":"0.14733195754716982","steem":13568,"sbd":1999,"created":"2020-11-08T02:34:57"},{"order_price":{"base":{"amount":"750000","precision":3,"nai":"@@000000021"},"quote":{"amount":"110932","precision":3,"nai":"@@000000013"}},"real_price":"0.14790933333333334","steem":750000,"sbd":110932,"created":"2020-11-08T05:39:42"},{"order_price":{"base":{"amount":"692000","precision":3,"nai":"@@000000021"},"quote":{"amount":"102367","precision":3,"nai":"@@000000013"}},"real_price":"0.14792919075144509","steem":692000,"sbd":102367,"created":"2020-11-08T04:54:51"},{"order_price":{"base":{"amount":"1000000","precision":3,"nai":"@@000000021"},"quote":{"amount":"147964","precision":3,"nai":"@@000000013"}},"real_price":"0.14796400000000001","steem":1000000,"sbd":147964,"created":"2020-11-08T04:31:06"},{"order_price":{"base":{"amount":"80000","precision":3,"nai":"@@000000021"},"quote":{"amount":"11840","precision":3,"nai":"@@000000013"}},"real_price":"0.14799999999999999","steem":80000,"sbd":11840,"created":"2020-11-07T20:08:15"},{"order_price":{"base":{"amount":"39304","precision":3,"nai":"@@000000021"},"quote":{"amount":"5856","precision":3,"nai":"@@000000013"}},"real_price":"0.14899246895990231","steem":39304,"sbd":5856,"created":"2020-11-07T20:13:18"},{"order_price":{"base":{"amount":"15073","precision":3,"nai":"@@000000021"},"quote":{"amount":"2246","precision":3,"nai":"@@000000013"}},"real_price":"0.14900816028660518","steem":15073,"sbd":2246,"created":"2020-11-08T01:38:00"},{"order_price":{"base":{"amount":"7206","precision":3,"nai":"@@000000021"},"quote":{"amount":"1080","precision":3,"nai":"@@000000013"}},"real_price":"0.14987510407993340","steem":7206,"sbd":1080,"created":"2020-11-08T04:37:18"},{"order_price":{"base":{"amount":"156221","precision":3,"nai":"@@000000021"},"quote":{"amount":"23736","precision":3,"nai":"@@000000013"}},"real_price":"0.15193859980412364","steem":156221,"sbd":23736,"created":"2020-11-07T19:22:18"}]},"id":19}'
+  recorded_at: Sun, 08 Nov 2020 06:00:35 GMT
 recorded_with: VCR 6.0.0

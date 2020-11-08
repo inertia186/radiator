@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":74,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+      string: '{"jsonrpc":"2.0","id":53,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -18,14 +18,14 @@ http_interactions:
       Host:
       - api.steemit.com
       Content-Length:
-      - '86'
+      - '75'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:07:38 GMT
+      - Sat, 07 Nov 2020 19:33:30 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -37,9 +37,9 @@ http_interactions:
       X-Jussi-Cache-Hit:
       - appbase.condenser_api.get_dynamic_global_properties.params=[]
       X-Jussi-Request-Id:
-      - '000173815005091382'
+      - '000999441679381040'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e0a-28784eb12a9086553897ea26
+      - Root=1-5fa6f68a-16ec2cb747b44f0e0271f8a3
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -52,25 +52,25 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"id":74,"jsonrpc":"2.0","result":{"head_block_number":47791884,"head_block_id":"02d93f0c5b87faeeb341dd157aa7b71a538363fb","time":"2020-10-17T04:07:36","current_witness":"steem.history","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"405320281.625
-        STEEM","current_supply":"368937121.833 STEEM","confidential_supply":"0.000
-        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5784922.407 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"110211242.321 STEEM","total_vesting_shares":"212008729512.729936
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"718098709.583235
-        VESTS","pending_rewarded_vesting_steem":"362476.534 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48024152,"recent_slots_filled":"340282366920938463463374044481814790143","participation_count":127,"last_irreversible_block_num":47791869,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":16612322,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-10-17T04:41:48","last_budget_time":"2020-10-17T03:41:48","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"24.480
+      string: '{"id":53,"jsonrpc":"2.0","result":{"head_block_number":48403720,"head_block_id":"02e29508a21fa527197dbc0f3c6d1235a4314931","time":"2020-11-07T19:33:27","current_witness":"steemchiller","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411540432.511
+        STEEM","current_supply":"370827282.054 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5781267.365 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110623819.964 STEEM","total_vesting_shares":"212264547750.750632
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"688898046.681557
+        VESTS","pending_rewarded_vesting_steem":"347510.601 STEEM","sbd_interest_rate":0,"sbd_print_rate":1100,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48647469,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":48403704,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":17321464,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-07T19:43:33","last_budget_time":"2020-11-07T18:43:33","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"42.097
         SBD","downvote_pool_percent":2500}}'
-  recorded_at: Sat, 17 Oct 2020 04:07:38 GMT
+  recorded_at: Sat, 07 Nov 2020 19:33:30 GMT
 - request:
     method: post
-    uri: https://api.steemit.com/
+    uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":75,"method":"condenser_api.get_block","params":[47791884]}'
+      string: '{"jsonrpc":"2.0","id":54,"method":"condenser_api.get_block","params":[48403720]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -85,7 +85,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:07:38 GMT
+      - Sat, 07 Nov 2020 19:33:32 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -94,12 +94,10 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.condenser_api.get_block.params=[47791884]
       X-Jussi-Request-Id:
-      - '000284283701018210'
+      - '000668338685447635'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a6e0a-70035bd617a0829e0820230c
+      - Root=1-5fa6f68a-398507d038fee93804779a4e
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -112,480 +110,19 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"id":75,"jsonrpc":"2.0","result":{"previous":"02d93f0b7925ade41e07617dbed138f0d27e194b","timestamp":"2020-10-17T04:07:36","witness":"steem.history","transaction_merkle_root":"25956bf4e54d26e73ca74c16caabfbda105c3d36","extensions":[],"witness_signature":"20937578167186ccf4bb14bff535a547443fd6c2a49e73b23bc21fa3714d7b01ca56d7830c2b14b1ed62e24efcc014e5946d81567adfa72c41be4008d10adcda0e","transactions":[{"ref_block_num":16122,"ref_block_prefix":3851926655,"expiration":"2020-10-17T04:17:30","operations":[["vote",{"voter":"roundblocknew","author":"donekim","permlink":"sandbox-nft-defi-2","weight":2500}]],"extensions":[],"signatures":["1f131aca81849f8a748d3018e1a67b270c79f2b3659f5650ceee474b9a8e4ed2a515ae279cbdf4a371a2f347a39e2418dd28257b415d55e90f00ecb4f79d2ba68d"],"transaction_id":"444dae6236b9938c0a3394e84ea2e8c65b428f8b","block_num":47791884,"transaction_num":0},{"ref_block_num":16109,"ref_block_prefix":1336080732,"expiration":"2020-10-17T04:17:09","operations":[["vote",{"voter":"rosatravels","author":"donekim","permlink":"sandbox-nft-defi-2","weight":1100}]],"extensions":[],"signatures":["1f6c9cc22354b6c3d4854bd3971609275172faa3c22aebf14e8f85aff2d09f509113b8ab1025231dc2d0efd454e6be1bd630df4a64bec897a63e3a501df8e3423c"],"transaction_id":"3e9d563c99b09b092dbc517721de56324892cd72","block_num":47791884,"transaction_num":1},{"ref_block_num":16109,"ref_block_prefix":1336080732,"expiration":"2020-10-17T04:17:09","operations":[["vote",{"voter":"wilhb82","author":"donekim","permlink":"sandbox-nft-defi-2","weight":1100}]],"extensions":[],"signatures":["2073156fbb895b6f8f71837b674dca14b2a38a9acdb8a6b8af3c1354e27da23cd50e65110fca982393324ba2e6decb68470796296b1effa4f4f6d0a2b54f700027"],"transaction_id":"45461a6cebbcfbf938f069a1e712c4729283e1b6","block_num":47791884,"transaction_num":2},{"ref_block_num":16122,"ref_block_prefix":3851926655,"expiration":"2020-10-17T04:17:30","operations":[["vote",{"voter":"pluepark","author":"donekim","permlink":"sandbox-nft-defi-2","weight":2500}]],"extensions":[],"signatures":["1f628e8da93e4012b06a9cf3538aacd05ced642294295bb917fd259f6d603e3c7e2d21b39f8facd9d43f072cbb97b88b74fee63368beab243336bb457b85291fe5"],"transaction_id":"3e5f9dff121da544741f42edb3107f60cab74530","block_num":47791884,"transaction_num":3},{"ref_block_num":16122,"ref_block_prefix":3851926655,"expiration":"2020-10-17T04:17:30","operations":[["vote",{"voter":"projectw","author":"donekim","permlink":"sandbox-nft-defi-2","weight":2500}]],"extensions":[],"signatures":["1f3658c2634811ed9787975deea5759e70635c535e2362388606ed7948a02ba9770f6a6d961c3eca9026902ddd1e58abda9bc0227782c168c0071c2eeab680932b"],"transaction_id":"f12b51fc6320d1389830dc5cc880d41919c785c8","block_num":47791884,"transaction_num":4},{"ref_block_num":16122,"ref_block_prefix":3851926655,"expiration":"2020-10-17T04:17:30","operations":[["vote",{"voter":"virus707","author":"donekim","permlink":"sandbox-nft-defi-2","weight":1700}]],"extensions":[],"signatures":["1f0cd1d984e96e9b4c924eab4bc3847994efe394d81ee1c1a3327bd52b352f4ef07c590f4abe4310540a4727055924728edf1ad109515a321cbf39eed694819089"],"transaction_id":"28090de01631adb46bb55defc1f5a17b8adae88d","block_num":47791884,"transaction_num":5},{"ref_block_num":16122,"ref_block_prefix":3851926655,"expiration":"2020-10-17T04:17:30","operations":[["custom_json",{"required_auths":[],"required_posting_auths":["hridoy99"],"id":"community","json":"[\"subscribe\",{\"community\":\"hive-142140\"}]"}]],"extensions":[],"signatures":["1f3b71eded2a278dd790aaef0b0dd6fcbff47ba78ae6e1a15e576e8bc0914ced2e1eb2b9110d0e09abf2824c5db72299ce63b179eb1394d71f04337e8ac69fbf0b"],"transaction_id":"827c6df033bcf6514e68512d5dfab7700db6956e","block_num":47791884,"transaction_num":6},{"ref_block_num":16122,"ref_block_prefix":3851926655,"expiration":"2020-10-17T04:17:30","operations":[["vote",{"voter":"juddsmith079","author":"donekim","permlink":"sandbox-nft-defi-2","weight":2500}]],"extensions":[],"signatures":["1f0901a7ca52fe9c00409be457b6eda3086ce54c5b63783ed8867c16c856a6d5d67078c9a8f56d22fe3f3da2b729351c22a4da8c6cdcb13ca3d9f3bac080f7b35e"],"transaction_id":"d12a8880f5b4acfcd3364403f15c7202e1799837","block_num":47791884,"transaction_num":7},{"ref_block_num":16122,"ref_block_prefix":3851926655,"expiration":"2020-10-17T04:17:30","operations":[["delegate_vesting_shares",{"delegator":"warren.buffett","delegatee":"alphacore","vesting_shares":"618086.446879
-        VESTS"}]],"extensions":[],"signatures":["2016d38545f849ff3b164d86a1792af5d59ae36a6e99dfeb1203a9bea2c668737b2846d2279a90c06f075826cb7c6c2a57d86ece5e4a99aafe573fc552347f95ca"],"transaction_id":"650fb7055646779e02b268522db02a9bafb0fe2c","block_num":47791884,"transaction_num":8},{"ref_block_num":16124,"ref_block_prefix":3005557824,"expiration":"2020-10-17T04:08:03","operations":[["vote",{"voter":"gerber","author":"steemzzang","permlink":"4dnhnz","weight":610}]],"extensions":[],"signatures":["20465512afbb928f3e8cfa03a4c6072d70e10c9402a5d3df297afba2996c2ab29257d6283c3187da53fb04607662015dc29d1f18c1f3066c4b282d53b8355eefc3"],"transaction_id":"1bdee55233b3daa8ae10cfe4f39d10ef9c714a13","block_num":47791884,"transaction_num":9},{"ref_block_num":16124,"ref_block_prefix":3005557824,"expiration":"2020-10-17T04:08:03","operations":[["vote",{"voter":"nealmcspadden","author":"steemzzang","permlink":"4dnhnz","weight":610}]],"extensions":[],"signatures":["1f2967c050417b10b7e1574ca9e4aead09e133eeadcd08a9270c53547a86acb27908c251cd0b347d6cd2f97a2d5ad7c3beefec322c3080cfc7e7d19c71780fba75"],"transaction_id":"fea1cefb1df35edc7b4f1dd1e705efd3775ee439","block_num":47791884,"transaction_num":10}],"block_id":"02d93f0c5b87faeeb341dd157aa7b71a538363fb","signing_key":"STM5vKFuWzknVmhRtTeYPPCphYg2fGcB9J3wTa7hRMoUwCshKx7zT","transaction_ids":["444dae6236b9938c0a3394e84ea2e8c65b428f8b","3e9d563c99b09b092dbc517721de56324892cd72","45461a6cebbcfbf938f069a1e712c4729283e1b6","3e5f9dff121da544741f42edb3107f60cab74530","f12b51fc6320d1389830dc5cc880d41919c785c8","28090de01631adb46bb55defc1f5a17b8adae88d","827c6df033bcf6514e68512d5dfab7700db6956e","d12a8880f5b4acfcd3364403f15c7202e1799837","650fb7055646779e02b268522db02a9bafb0fe2c","1bdee55233b3daa8ae10cfe4f39d10ef9c714a13","fea1cefb1df35edc7b4f1dd1e705efd3775ee439"]}}'
-  recorded_at: Sat, 17 Oct 2020 04:07:38 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":113,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '93'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:13:49 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.condenser_api.get_dynamic_global_properties.params=[]
-      X-Jussi-Request-Id:
-      - '000275284247210949'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a6f7d-52a96931782d839d23dc38e5
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"id":113,"jsonrpc":"2.0","result":{"head_block_number":47792007,"head_block_id":"02d93f879b6329e7c57b191227dd6e4a1d38957f","time":"2020-10-17T04:13:48","current_witness":"justyy","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"405320653.711
-        STEEM","current_supply":"368937433.812 STEEM","confidential_supply":"0.000
-        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5784931.964 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"110211613.254 STEEM","total_vesting_shares":"212009335462.897776
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"717783146.092672
-        VESTS","pending_rewarded_vesting_steem":"362312.515 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48024276,"recent_slots_filled":"339950059921992234495148655666698125311","participation_count":127,"last_irreversible_block_num":47791992,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":16640039,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-10-17T04:41:48","last_budget_time":"2020-10-17T03:41:48","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"30.384
-        SBD","downvote_pool_percent":2500}}'
-  recorded_at: Sat, 17 Oct 2020 04:13:49 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":114,"method":"condenser_api.get_block","params":[47792007]}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '93'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:13:49 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.condenser_api.get_block.params=[47792007]
-      X-Jussi-Request-Id:
-      - '001059000602367272'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a6f7d-05df08280cff3fb8330005fb
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"id":114,"jsonrpc":"2.0","result":{"previous":"02d93f86dcfe00ccc3fbdd8b05cb0e6a6edfc6b7","timestamp":"2020-10-17T04:13:48","witness":"justyy","transaction_merkle_root":"754cb437f7b3020f32c4dba57a031eb58bd9380f","extensions":[],"witness_signature":"20a419e1b3eaff7c2378fc38c1e2668e016887f726f0c573f3f7b7f16c562e21b01e48fdfbddc88f4bdaf9ef3032b2ce33ad317f7fd71aad9a9bf6020705450f5b","transactions":[{"ref_block_num":16258,"ref_block_prefix":586702267,"expiration":"2020-10-17T04:14:42","operations":[["transfer",{"from":"epicdice","to":"epictoken","amount":"0.001
-        STEEM","memo":"[Epicdice] Server Seed Reveal {\"prevServerSeed\": \"1aae4a0e5d2e4a7bcf21b8285e25f17ba5921f539862f9775dc90636450d403d\",
-        \"prevServerHash\": \"02e6e76da6dd1e7e8f515529b201411033e56fa716c3db76ee00cc91d4822c21\",
-        \"newServerHash\": \"d73f0a3fd0b9b6fe5941abfbb4ff34bb06b2aa59ec159787ab142700cdefd7cf\"}"}]],"extensions":[],"signatures":["204dd20ef5e01c72e375fe926c9d34dbd107b308bd8b9df6a8a93393838c388b0707c1a60118072f5ea6feb09831502376fd9d9c476d46c1777e20b956c8986b77"],"transaction_id":"e41dbb677c14cf97f82f2edcf0a254d3654a6706","block_num":47792007,"transaction_num":0}],"block_id":"02d93f879b6329e7c57b191227dd6e4a1d38957f","signing_key":"STM6ZQ3EQR2aP5e7CLMDmnnCXschWbA8bPcADSL7xeumZDeGz5oLd","transaction_ids":["e41dbb677c14cf97f82f2edcf0a254d3654a6706"]}}'
-  recorded_at: Sat, 17 Oct 2020 04:13:49 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":135,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '88'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:14:51 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.condenser_api.get_dynamic_global_properties.params=[]
-      X-Jussi-Request-Id:
-      - '000440394665360708'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a6fbb-718cd686304bdc1e6fc0cc9b
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"id":135,"jsonrpc":"2.0","result":{"head_block_number":47792028,"head_block_id":"02d93f9c76c819a324462cce0eff46ca1088d31b","time":"2020-10-17T04:14:51","current_witness":"future.witness","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"405320717.383
-        STEEM","current_supply":"368937454.012 STEEM","confidential_supply":"0.000
-        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5784938.876 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"110211629.319 STEEM","total_vesting_shares":"212009347985.932332
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"717985659.652208
-        VESTS","pending_rewarded_vesting_steem":"362417.780 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48024297,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":47792013,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":16655012,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-10-17T04:41:48","last_budget_time":"2020-10-17T03:41:48","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"31.392
-        SBD","downvote_pool_percent":2500}}'
-  recorded_at: Sat, 17 Oct 2020 04:14:51 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":136,"method":"condenser_api.get_block","params":[47792028]}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '93'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:14:52 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.condenser_api.get_block.params=[47792028]
-      X-Jussi-Request-Id:
-      - '000599135263103097'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a6fbc-0f946e3737fa20c4010521d4
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"id":136,"jsonrpc":"2.0","result":{"previous":"02d93f9b5f72d52c927b66bccb80282d9d55ef22","timestamp":"2020-10-17T04:14:51","witness":"future.witness","transaction_merkle_root":"534065811f40b51d0f772aefb790ecda2bb6d3cd","extensions":[],"witness_signature":"205b4987bc65b72a478ea54585ff21305394aac71331b19f1db44c14ad0afb80be524bc113ae75da659151f1cfe0cdf6b512bc95bf29a9a01fdb6ca5a7a788334c","transactions":[{"ref_block_num":16266,"ref_block_prefix":2819716926,"expiration":"2020-10-17T04:24:45","operations":[["claim_reward_balance",{"account":"jkramer","reward_steem":"0.000
-        STEEM","reward_sbd":"0.000 SBD","reward_vests":"84.651200 VESTS"}]],"extensions":[],"signatures":["1f7b793d1ea29d577ae025f9f030f2d79dbde5021563cdb68e46046257539fc74349ca183c23be3cf6933cb7b9c4151c05b3d514f5b4f48e842d15db3d91236c5b"],"transaction_id":"aae53cbdd70a80132936c977e5e188f0c1a72182","block_num":47792028,"transaction_num":0},{"ref_block_num":16282,"ref_block_prefix":606183731,"expiration":"2020-10-17T04:15:45","operations":[["limit_order_cancel",{"owner":"bnk","orderid":1621217}]],"extensions":[],"signatures":["2023e095f423895bc5d79b5abf1175ffeb76c3faf0960d40970534b9a0019a513a2feb3c60d5842c20521a902f9fe7746ab992276c5d79739548f09cd8ff4adfd3"],"transaction_id":"d8f02c5f1a980140c11be6d6d4ef0ede4d1479d4","block_num":47792028,"transaction_num":1},{"ref_block_num":16266,"ref_block_prefix":2819716926,"expiration":"2020-10-17T04:24:45","operations":[["vote",{"voter":"wonsama.aaa","author":"steemzzang","permlink":"4dnhnz","weight":10000}]],"extensions":[],"signatures":["2016c0f4bf5bb37d226aa91751944306274a6dc60e631dbe13733fc6efc1919fed2920400be0e21fad82fc2ee451d9190c32f2c01d881d20b0a12656ca3caf7a53"],"transaction_id":"b12deea7dd8b2136cc683d6e135ed65bab8cd4e8","block_num":47792028,"transaction_num":2},{"ref_block_num":16266,"ref_block_prefix":2819716926,"expiration":"2020-10-17T04:24:45","operations":[["vote",{"voter":"nishan01","author":"andreanerazzurro","permlink":"appics-v1-appics-im-307475","weight":500}]],"extensions":[],"signatures":["2036e2187d711c31397eec57c1a5e70451be0a287cb6b578f1025fc92b0de6f4e670b97ff3d285a69e07516156514b72d7da5bd9b6999912f87286d3525f81e254"],"transaction_id":"0db8e25969f57e78978f5fc9c30a8fa29407b9b5","block_num":47792028,"transaction_num":3}],"block_id":"02d93f9c76c819a324462cce0eff46ca1088d31b","signing_key":"STM8VEQene12D5uLS1VZYkr22cA1hYEmm4NzL41LvqK5xKzHTgbRP","transaction_ids":["aae53cbdd70a80132936c977e5e188f0c1a72182","d8f02c5f1a980140c11be6d6d4ef0ede4d1479d4","b12deea7dd8b2136cc683d6e135ed65bab8cd4e8","0db8e25969f57e78978f5fc9c30a8fa29407b9b5"]}}'
-  recorded_at: Sat, 17 Oct 2020 04:14:52 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":20,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '98'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:18:02 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.condenser_api.get_dynamic_global_properties.params=[]
-      X-Jussi-Request-Id:
-      - '000385871476823832'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a707a-77fa6c6559d930b847d3a05c
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"id":20,"jsonrpc":"2.0","result":{"head_block_number":47792090,"head_block_id":"02d93fdaad24a15b9ef01aed6dcc7e38d13f9061","time":"2020-10-17T04:18:00","current_witness":"steem.history","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"405320904.406
-        STEEM","current_supply":"368937601.136 STEEM","confidential_supply":"0.000
-        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5784945.220 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"110211603.733 STEEM","total_vesting_shares":"212009244501.711827
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"718082950.386522
-        VESTS","pending_rewarded_vesting_steem":"362468.351 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48024360,"recent_slots_filled":"340282366920938463463374607429620727807","participation_count":127,"last_irreversible_block_num":47792075,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":16679218,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-10-17T04:41:48","last_budget_time":"2020-10-17T03:41:48","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"34.368
-        SBD","downvote_pool_percent":2500}}'
-  recorded_at: Sat, 17 Oct 2020 04:18:02 GMT
-- request:
-    method: post
-    uri: https://api.steemit.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":21,"method":"condenser_api.get_block","params":[47792090]}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemit.com
-      Content-Length:
-      - '92'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:18:03 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.condenser_api.get_block.params=[47792090]
-      X-Jussi-Request-Id:
-      - '001044935914165656'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a707b-74031119272a958110a5ad27
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"id":21,"jsonrpc":"2.0","result":{"previous":"02d93fd9737ed4926a7a3e854ec45068269e02b5","timestamp":"2020-10-17T04:18:00","witness":"steem.history","transaction_merkle_root":"3e5c07e4a303a9692bd53db1ae5b3f86b5ebcf88","extensions":[],"witness_signature":"20c8737e529c49cc8716796ef84d4f803af89deca9c64530abf5953f9f4719515b08e2faf94c985cf7abec3f86005a7ed4af669a18f19c07687ca26b24385f9cc1","transactions":[{"ref_block_num":16341,"ref_block_prefix":2063252051,"expiration":"2020-10-17T04:18:55","operations":[["vote",{"voter":"vuelovista","author":"vapenation","permlink":"serious-people-who-enter-other-peoples39-homes-as-a-part-of-your-job","weight":10000}]],"extensions":[],"signatures":["200610b04ee4ed3cf5a8a16e2ad02eb8025c7dcc88f88fafbb69d5665c7e28e9ed506a73314b8f0244ec04a0f321bed8ee7c55e7d3620ca53b89c10b358f28ee38"],"transaction_id":"7a054463369d9f06ed1dc8ac613a658a6e12cf5f","block_num":47792090,"transaction_num":0},{"ref_block_num":16323,"ref_block_prefix":3524461760,"expiration":"2020-10-17T04:27:54","operations":[["vote",{"voter":"goldbloger-2","author":"pedrobrito2004","permlink":"40-la-lenta-vida-en-prision-de-la-villana-noble-comenzo-con-su-compromiso-roto","weight":10000}]],"extensions":[],"signatures":["2043b4e2c135664661527e300a0e2ec2057f52d0803889e3cb187f410a241c66a7337601716cd13999c0a3e3baf267e8b25713148fa8cfd91bc8f00ff0a63134b6"],"transaction_id":"9ff5d640ee4704387120fc6590dbc9cb58ddfa62","block_num":47792090,"transaction_num":1},{"ref_block_num":16323,"ref_block_prefix":3524461760,"expiration":"2020-10-17T04:27:54","operations":[["comment",{"parent_author":"crissanch","parent_permlink":"wherein-1602756523029","author":"leotex","permlink":"qibvxs","title":"","body":"Hola
-        amigo gracias por visitar mi post,si estaba s\u00faper rica la torta.\nSaludos..","json_metadata":"{\"app\":\"steemit\/0.2\"}"}]],"extensions":[],"signatures":["204b499e04bc2d3a6bcf2f0e24a9da4468fd834687312512986d397f3d4a0f5e057cb30badec2e8f0b40a366115762b4696b06f243ae050cacce638cb5502c319a"],"transaction_id":"8a178c5cebc643f859782772ed1551853d33c628","block_num":47792090,"transaction_num":2},{"ref_block_num":16341,"ref_block_prefix":2063252051,"expiration":"2020-10-17T04:18:57","operations":[["vote",{"voter":"waggy6","author":"vapenation","permlink":"serious-people-who-enter-other-peoples39-homes-as-a-part-of-your-job","weight":10000}]],"extensions":[],"signatures":["20444d03deef2d4b9a4238146f626a0c1ff8fde39ffca9f92d41a0d2089a4c3b0c289b1941daa5142dd38721b1e415b4720ab9fd087e3f4d0ff4e5b23331c74e91"],"transaction_id":"3b0ac9110acea7ada114ceb60e69490f706c8a47","block_num":47792090,"transaction_num":3}],"block_id":"02d93fdaad24a15b9ef01aed6dcc7e38d13f9061","signing_key":"STM5vKFuWzknVmhRtTeYPPCphYg2fGcB9J3wTa7hRMoUwCshKx7zT","transaction_ids":["7a054463369d9f06ed1dc8ac613a658a6e12cf5f","9ff5d640ee4704387120fc6590dbc9cb58ddfa62","8a178c5cebc643f859782772ed1551853d33c628","3b0ac9110acea7ada114ceb60e69490f706c8a47"]}}'
-  recorded_at: Sat, 17 Oct 2020 04:18:03 GMT
+      string: '{"jsonrpc":"2.0","result":{"previous":"02e29507828345ea5b685e340cd7ad01c2bba8f8","timestamp":"2020-11-07T19:33:27","witness":"steemchiller","transaction_merkle_root":"3dfa124c4aea41466b351afc5deadbbb1ddba2fb","extensions":[],"witness_signature":"2060d12d3ff87790825149881a866c79874df9660883dd737d4090fc11fce842db359b6b3f07ff51be3e393c43c74d1d9473f230f7c88ea27c3eaff7379e1b3921","transactions":[{"ref_block_num":38134,"ref_block_prefix":4234032085,"expiration":"2020-11-07T19:43:21","operations":[["vote",{"voter":"tammyfit95","author":"andreanerazzurro","permlink":"appics-v1-appics-im-321782","weight":10000}]],"extensions":[],"signatures":["2033c829984a4b8e60437f694b8d2be6071bf81457abf68fb6784c2de6cd224c0e13b880b02873910d55453e834947c8e06f61a261802069af5118f987621ff141"],"transaction_id":"2d0497a28054f36cc5808e358bc22d0a226cbe58","block_num":48403720,"transaction_num":0},{"ref_block_num":38134,"ref_block_prefix":4234032085,"expiration":"2020-11-07T19:43:21","operations":[["vote",{"voter":"don-t","author":"kinessenz","permlink":"appics-v1-appics-im-321932","weight":700}]],"extensions":[],"signatures":["1f57182fdd75d9430f40c16834fb7924115cc17ed8187ec631a3e82689dac8788975d6b1067c58c3d5a993102ffa4207479c8e9e0fead933ad1f1266f5bd80bb47"],"transaction_id":"822ec0079267eeacb3f2de78a210eb97dacb4801","block_num":48403720,"transaction_num":1},{"ref_block_num":38147,"ref_block_prefix":310363174,"expiration":"2020-11-07T19:34:23","operations":[["vote",{"voter":"ipoeltripa","author":"steemengineteam","permlink":"russia-its-time-to-hop-aboard-the-steemengine-2020-11-07","weight":10000}]],"extensions":[],"signatures":["1f41a14d10b9ea045c2cce6c0f3ec1dd819561e36e1d670b7e13d733dfcb2b1130779793314b12472d72086f240553edbf89b05df1060a7551460bec88318fddfa"],"transaction_id":"7ec60e67707153a33fdf4da5ecec86043769d275","block_num":48403720,"transaction_num":2},{"ref_block_num":38134,"ref_block_prefix":4234032085,"expiration":"2020-11-07T19:43:21","operations":[["vote",{"voter":"micaelacf","author":"minimalpris","permlink":"20201107t133556037z-post","weight":10000}]],"extensions":[],"signatures":["1f1f75ad23c24074c86ec04a0292855dbf7fafb851535e41956b4e9e26b92c9e40113fc9637b88f5ad7dc74f297aec9227bd7f60fe892d36e66d7653a503c7dc54"],"transaction_id":"3572a6d1ac76572a2492c9de02c68fec85cadad0","block_num":48403720,"transaction_num":3}],"block_id":"02e29508a21fa527197dbc0f3c6d1235a4314931","signing_key":"STM8mugcHt8nDtw61LXL26cTZn8N5TqyPJCmELT2Ks3xtVbMYxYsQ","transaction_ids":["2d0497a28054f36cc5808e358bc22d0a226cbe58","822ec0079267eeacb3f2de78a210eb97dacb4801","7ec60e67707153a33fdf4da5ecec86043769d275","3572a6d1ac76572a2492c9de02c68fec85cadad0"]},"id":54}'
+  recorded_at: Sat, 07 Nov 2020 19:33:32 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":93,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+      string: '{"jsonrpc":"2.0","id":57,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '96'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:23:11 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000287066440584697'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a71af-21e66c6e0f8691786d229c64
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"head_block_number":47792192,"head_block_id":"02d940408361fd392ef8772c850a8995c04b3102","time":"2020-10-17T04:23:09","current_witness":"protoss20","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"405321212.818
-        STEEM","current_supply":"368937808.441 STEEM","confidential_supply":"0.000
-        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5784961.296 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"110211747.882 STEEM","total_vesting_shares":"212009432530.734910
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"718349448.882437
-        VESTS","pending_rewarded_vesting_steem":"362606.875 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48024463,"recent_slots_filled":"340282366920938462873078797073062559743","participation_count":127,"last_irreversible_block_num":47792172,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":16671944,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-10-17T04:41:48","last_budget_time":"2020-10-17T03:41:48","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"39.264
-        SBD","downvote_pool_percent":2500},"id":93}'
-  recorded_at: Sat, 17 Oct 2020 04:23:11 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":94,"method":"condenser_api.get_block","params":[47792192]}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '92'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:23:11 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000821041381745838'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a71af-74a104d26f6c374030712dfb
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"previous":"02d9403f80a776b441ef64ba9be58fb402302e94","timestamp":"2020-10-17T04:23:09","witness":"protoss20","transaction_merkle_root":"d4f454651afb6029f338c281476b0f659dd210ca","extensions":[],"witness_signature":"20f8ada728b48735bef06bd771b622a9adf534394311efa2e22b5e48aab6dff2b71d202a1969851de0ca4e4f85d8f1dd0dc6a0d57aeee925bd681ba22a6d27c320","transactions":[{"ref_block_num":16446,"ref_block_prefix":330789437,"expiration":"2020-10-17T04:23:36","operations":[["vote",{"voter":"elizacheng","author":"wilhb81","permlink":"20201017t040744410z","weight":548}]],"extensions":[],"signatures":["2061419d08773ed850a2eb40032fcaa80d47ab44898b5e802d6107d2f998cb17ce6d064398920d75881350d1e2ba47f3133592eb52f87c340f564ae144ef7dfa1f"],"transaction_id":"fbcf5fbf16702c4bb22682eb84ec89e634da21fb","block_num":47792192,"transaction_num":0},{"ref_block_num":16442,"ref_block_prefix":3392708601,"expiration":"2020-10-17T04:24:03","operations":[["custom_json",{"required_auths":["epicblackjack"],"required_posting_auths":[],"id":"","json":"{\"prevServerSeed\":
-        \"07cef3c9a293343f6d6b36cc10b34e747c5fb75ab7cea0a608d39d9f39b6494d\", \"prevServerHash\":
-        \"0ce01f78594b02447b657c15ae1bf401de0cd0156755236e0ea6e8ed865f915b\", \"newServerHash\":
-        \"9ed504d730cf9babf04bf13a7aed9e195a1ceb3c7b0bd1efc891188531632438\"}"}]],"extensions":[],"signatures":["201c685670012cfdc0c7eace3c6ae664f90a8ee2b6a129bd5803e1154ca31054a31feeab54c20f642c9d19d089ed0a714230c939501a1638d73d9389a77b752237"],"transaction_id":"4ecb7c86cd7816d9beb29b1dab155667d76c26a1","block_num":47792192,"transaction_num":1}],"block_id":"02d940408361fd392ef8772c850a8995c04b3102","signing_key":"STM7jx3S2EfdcoAjL8eC9HJunHhifMMSxf12HmEYrrVJZJXGzr8QG","transaction_ids":["fbcf5fbf16702c4bb22682eb84ec89e634da21fb","4ecb7c86cd7816d9beb29b1dab155667d76c26a1"]},"id":94}'
-  recorded_at: Sat, 17 Oct 2020 04:23:11 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":60,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -600,7 +137,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:27:15 GMT
+      - Sat, 07 Nov 2020 20:13:44 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -609,12 +146,10 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.condenser_api.get_dynamic_global_properties.params=[]
       X-Jussi-Request-Id:
-      - '000161604820419730'
+      - '000954654980792798'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a72a3-13920b7b4150760203af0d75
+      - Root=1-5fa6fff8-1e76dda86a529f4755a9b36c
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -627,25 +162,25 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"id":60,"jsonrpc":"2.0","result":{"head_block_number":47792273,"head_block_id":"02d94091404579575ea04a39f781feb8a43c738e","time":"2020-10-17T04:27:12","current_witness":"matreshka","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"405321457.570
-        STEEM","current_supply":"368938026.916 STEEM","confidential_supply":"0.000
-        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5784965.474 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"110211809.481 STEEM","total_vesting_shares":"212009480129.853023
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"718445958.487986
-        VESTS","pending_rewarded_vesting_steem":"362657.040 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48024544,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":47792249,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":16709697,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-10-17T04:41:48","last_budget_time":"2020-10-17T03:41:48","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"43.152
-        SBD","downvote_pool_percent":2500}}'
-  recorded_at: Sat, 17 Oct 2020 04:27:15 GMT
+      string: '{"jsonrpc":"2.0","result":{"head_block_number":48404510,"head_block_id":"02e2981e5d822ac12fbca6a3f649b63e192c9ad1","time":"2020-11-07T20:13:42","current_witness":"future.witness","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411542830.101
+        STEEM","current_supply":"370829427.693 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5781303.142 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110625106.430 STEEM","total_vesting_shares":"212266319150.566183
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"689286635.468311
+        VESTS","pending_rewarded_vesting_steem":"347713.158 STEEM","sbd_interest_rate":0,"sbd_print_rate":1100,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48648274,"recent_slots_filled":"338953138281424727162073057423943270399","participation_count":125,"last_irreversible_block_num":48404495,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":17152631,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-07T20:43:33","last_budget_time":"2020-11-07T19:43:33","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"25.413
+        SBD","downvote_pool_percent":2500},"id":57}'
+  recorded_at: Sat, 07 Nov 2020 20:13:44 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":61,"method":"condenser_api.get_block","params":[47792273]}'
+      string: '{"jsonrpc":"2.0","id":58,"method":"condenser_api.get_block","params":[48404510]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -660,7 +195,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:27:15 GMT
+      - Sat, 07 Nov 2020 20:13:44 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -669,12 +204,10 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
-      X-Jussi-Cache-Hit:
-      - appbase.condenser_api.get_block.params=[47792273]
       X-Jussi-Request-Id:
-      - '001071214560429294'
+      - '000165439009623603'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a72a3-03f64ddb636de6b70187b1cf
+      - Root=1-5fa6fff8-0f4e522c58efaf656c159d34
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -687,20 +220,702 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"id":61,"jsonrpc":"2.0","result":{"previous":"02d94090c3bd8216aebe90172a2644a74ef23764","timestamp":"2020-10-17T04:27:12","witness":"matreshka","transaction_merkle_root":"d14bc46369312f12f57e3ccb0a4d8939427ecd29","extensions":[],"witness_signature":"203213f437ae5d7c9f6c37c83ca44f40731d61300ef571b473295d43c39c386bc71b4746dc3ecd70963479a1027513b0f617870bc0dd3e9f365c1fc1e4468f8fe4","transactions":[{"ref_block_num":16527,"ref_block_prefix":896098333,"expiration":"2020-10-17T04:28:08","operations":[["vote",{"voter":"ramco","author":"hafiz34","permlink":"actifit-hafiz34-20201012t190131446z","weight":10000}]],"extensions":[],"signatures":["2027751f470b3e6468fd6e365758e0a107d72127bcf105274c1711f0aad3b6ae5a23f8b3631a140a0aa788aab54ccf43c324c961e22856d48c5f35b0eb820c7649"],"transaction_id":"6dfd6653d720a8fab181c4178a0bb720417d1937","block_num":47792273,"transaction_num":0},{"ref_block_num":16504,"ref_block_prefix":4215976491,"expiration":"2020-10-17T04:37:09","operations":[["feed_publish",{"publisher":"leverfile","exchange_rate":{"base":"0.157
-        SBD","quote":"1.000 STEEM"}}]],"extensions":[],"signatures":["1f0759ce912143a0cc82c55476bbc2c09f1e816bd789659d6d1e1deb392c2c9ac95ec9ce5ce911ce4c20c58bf47d7002d65e7d957bfaf30c9e1bd12d90c2e3f670"],"transaction_id":"f4cd5c8b03773f9caeade0bc78ab6342efdff5c9","block_num":47792273,"transaction_num":1}],"block_id":"02d94091404579575ea04a39f781feb8a43c738e","signing_key":"STM7Sv8q1YasxzP57BsU6jtyN2FpDqJ6aNkX3UGsrXQQG2JV99khK","transaction_ids":["6dfd6653d720a8fab181c4178a0bb720417d1937","f4cd5c8b03773f9caeade0bc78ab6342efdff5c9"]}}'
-  recorded_at: Sat, 17 Oct 2020 04:27:15 GMT
+      string: '{"jsonrpc":"2.0","result":{"previous":"02e2981d33f062e3ce70e19e6dd00553c12dafe3","timestamp":"2020-11-07T20:13:42","witness":"future.witness","transaction_merkle_root":"b17f45e0ef3fcb74629379775587496818b75fbe","extensions":[],"witness_signature":"208b83f1ae8d89788334d2eb20f6c2b78fd3c8144b27883d38d0b9ac6dbd5de62808d202399c0b1f9e1975596eef26533e713d2c8dd955a9879837210bfb283b96","transactions":[{"ref_block_num":38923,"ref_block_prefix":2913345570,"expiration":"2020-11-07T20:23:36","operations":[["vote",{"voter":"sayeeda","author":"elitogold","permlink":"appics-v1-appics-im-321542","weight":4600}]],"extensions":[],"signatures":["1f760169ec5ae6ecfc07605ce9bde3a7d73e96d25273f9fefab0a00a8777740bb17ce37d606420376a3216af6008faa152e58fe37f424c11f837c55b29cbc581a4"],"transaction_id":"4597943de21b2b0c2a5f7b799a651b317aa77f77","block_num":48404510,"transaction_num":0},{"ref_block_num":38923,"ref_block_prefix":2913345570,"expiration":"2020-11-07T20:23:36","operations":[["vote",{"voter":"double-u","author":"sumon02","permlink":"the-diary-game-07-11-2020-or-or-normal-day-weekend","weight":10000}]],"extensions":[],"signatures":["207b9fea8e3a77c61e7f7cadf009e27a70663b438ebf65b3f11e5b5d4d634b87457457af29dd26a91c81c03ca5e33349b5d787bff37aa829db238add3667cf8cdd"],"transaction_id":"dd599cc5c4bea40ce5c5cd57df6cb0151d99d92c","block_num":48404510,"transaction_num":1},{"ref_block_num":38923,"ref_block_prefix":2913345570,"expiration":"2020-11-07T20:14:03","operations":[["limit_order_cancel",{"owner":"alanyao","orderid":486886769}]],"extensions":[],"signatures":["204c35db0afe602ea2fa31fd74905f22fdb86a66b38b4fada8116e29c4b56658da7f496b28e54b9a3e649e52ad05fe779864ad49524dc490ebf1dc757bd35f9c8a"],"transaction_id":"b75d70d87e95d4c7f6b3e10f6ddedba6b9cf5552","block_num":48404510,"transaction_num":2},{"ref_block_num":38936,"ref_block_prefix":1285530884,"expiration":"2020-11-07T20:14:35","operations":[["vote",{"voter":"celinavisaez","author":"vapenation","permlink":"serious-people-who-enter-other-peoples39-homes-as-a-part-of-your-job","weight":10000}]],"extensions":[],"signatures":["1f5a4dee0d10d22ca4ff47c3831c6478170f4c53d13c2cb4191d6fe63c221259785a6fb2b6dcdac2520a5acb3d9968cf0f6672f95f68e0d2db3840dd82b4e76036"],"transaction_id":"a84e58d31747b7e91f31721b452c992bdefef69e","block_num":48404510,"transaction_num":3},{"ref_block_num":38940,"ref_block_prefix":970411751,"expiration":"2020-11-07T20:14:39","operations":[["vote",{"voter":"flamingirl","author":"crisangel","permlink":"el-juego-del-diario-06-11-20-or-lv5-un-dia-en-casa","weight":646}]],"extensions":[],"signatures":["2015dd1a836471c37d469200092a1bd9387c9a6c53aca33b9669293f039c959da11181a742d06c1bde60e711b91f4d21573921ae4c84c1bc8ea8a76cb196518b35"],"transaction_id":"4e19ce889e82278b0124775c4c2400ab81aab5c8","block_num":48404510,"transaction_num":4},{"ref_block_num":38924,"ref_block_prefix":979471366,"expiration":"2020-11-07T20:14:06","operations":[["custom_json",{"required_auths":["appics-pool"],"required_posting_auths":[],"id":"ssc-mainnet1","json":"{\"contractName\":\"tokens\",\"contractAction\":\"stake\",\"contractPayload\":{\"symbol\":\"APX\",\"to\":\"jon24jon24\",\"quantity\":\"158.7790\"}}"}]],"extensions":[],"signatures":["1f462c4753b70d4841c0351e5882e4887ca9040202cae36d0a7f4b56c84ca8eca04f49bedeceb9f0586426d8100693c0ad4a9509fc02f79291a37ec207db6e89af"],"transaction_id":"b265f9e825fad6a518202ea8b5d9e983f72cf81e","block_num":48404510,"transaction_num":5},{"ref_block_num":38924,"ref_block_prefix":979471366,"expiration":"2020-11-07T20:23:39","operations":[["comment",{"parent_author":"","parent_permlink":"gtfrghffggffbh","author":"jeniya","permlink":"gfdgfdgfhb","title":"gfdgfdgfhb","body":"https:\/\/www.game.tv\/tournaments\/Watch-Cincinnati-vs-Houston-2020-Live-Stream-NCAA-Football--97038cb5a2be487ab7b1adc30dda77c2","json_metadata":"{\"tags\":[\"gtfrghffggffbh\"],\"links\":[\"https:\/\/www.game.tv\/tournaments\/Watch-Cincinnati-vs-Houston-2020-Live-Stream-NCAA-Football--97038cb5a2be487ab7b1adc30dda77c2\"],\"app\":\"steemit\/0.2\",\"format\":\"markdown\"}"}]],"extensions":[],"signatures":["1f04f17a3733b5b357ecb75eca3ee2de89aa3c27caa8c82c838379e5ecfedee0aa0a99570afffcc901c8ccdb49f4312da8766d39f74bc756e091fd1cf60811e597"],"transaction_id":"add0f7bab36c1f8a7a9a798b8d8d8249c0d011e9","block_num":48404510,"transaction_num":6},{"ref_block_num":38941,"ref_block_prefix":3814912051,"expiration":"2020-11-07T20:14:39","operations":[["vote",{"voter":"chishti","author":"steemisthebest","permlink":"6rkuwj-universal-remote-control","weight":10000}]],"extensions":[],"signatures":["204561e873cfd41650a0b670b5c7b7c716a62bce10fc7ccffc2d002f53169f4e786993038e7c2ff432746eefe211c52e482fbfb3e65f03e4ed68d7fae4b84ea17c"],"transaction_id":"5418d66f48b60203c91fc8f3037760e8c46bf47a","block_num":48404510,"transaction_num":7}],"block_id":"02e2981e5d822ac12fbca6a3f649b63e192c9ad1","signing_key":"STM8VEQene12D5uLS1VZYkr22cA1hYEmm4NzL41LvqK5xKzHTgbRP","transaction_ids":["4597943de21b2b0c2a5f7b799a651b317aa77f77","dd599cc5c4bea40ce5c5cd57df6cb0151d99d92c","b75d70d87e95d4c7f6b3e10f6ddedba6b9cf5552","a84e58d31747b7e91f31721b452c992bdefef69e","4e19ce889e82278b0124775c4c2400ab81aab5c8","b265f9e825fad6a518202ea8b5d9e983f72cf81e","add0f7bab36c1f8a7a9a798b8d8d8249c0d011e9","5418d66f48b60203c91fc8f3037760e8c46bf47a"]},"id":58}'
+  recorded_at: Sat, 07 Nov 2020 20:13:44 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":36,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+      string: '{"jsonrpc":"2.0","id":114,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '81'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:22:34 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '001047994810687534'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7020a-10f920e14fe49077326e08b7
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":114,"jsonrpc":"2.0","result":{"head_block_number":48404683,"head_block_id":"02e298cbe273f89beca994bc97665be5ae669dcb","time":"2020-11-07T20:22:33","current_witness":"dev.supporters","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411543351.482
+        STEEM","current_supply":"370829895.982 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5781310.681 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110625440.366 STEEM","total_vesting_shares":"212266807355.658548
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"688933743.602311
+        VESTS","pending_rewarded_vesting_steem":"347529.320 STEEM","sbd_interest_rate":0,"sbd_print_rate":1100,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48648451,"recent_slots_filled":"297747071055743784259550701161906438015","participation_count":124,"last_irreversible_block_num":48404668,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":17105634,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-07T20:43:33","last_budget_time":"2020-11-07T19:43:33","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"32.852
+        SBD","downvote_pool_percent":2500}}'
+  recorded_at: Sat, 07 Nov 2020 20:22:34 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":115,"method":"condenser_api.get_block","params":[48404683]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '93'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:22:41 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000450172318319347'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7020a-28b6d9216ee2a7856226d6a4
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"previous":"02e298ca70b04845dc42ea18ae2b4cc05cb8577b","timestamp":"2020-11-07T20:22:33","witness":"dev.supporters","transaction_merkle_root":"f4fbe43a201da6118f693a4bcb37623204e78fbd","extensions":[],"witness_signature":"1f1760a3e83a5adbd6a26603ef90d3f3f3b1885bba0e752a18705a9f99bf740445449f8172d8b29109b2550d12befab7a03953bdd6560a409fac7bac6f61690ab5","transactions":[{"ref_block_num":39109,"ref_block_prefix":2594021845,"expiration":"2020-11-07T20:23:27","operations":[["vote",{"voter":"vampirgarfield","author":"steemengineteam","permlink":"russia-its-time-to-hop-aboard-the-steemengine-2020-11-07","weight":10000}]],"extensions":[],"signatures":["2008433bf2c84639cedaefd6008206536c8042edaec4a8fd37763980a04be27b0e059b95f4862512d8b30339aade5bf34f0e4f770f27ebe3b4f8d2b43f66642947"],"transaction_id":"1f8e1164842152a8ce369734365c6ee96c2fee79","block_num":48404683,"transaction_num":0},{"ref_block_num":39097,"ref_block_prefix":2013310500,"expiration":"2020-11-07T20:32:27","operations":[["vote",{"voter":"beproudlyunique","author":"sagittarius","permlink":"appics-v1-appics-im-322008","weight":2900}]],"extensions":[],"signatures":["205b8a06a113cdb66158a1c1d8dad7ad528e16b147c35c88db577899c7abffeb3e6565f9cff4d808278179beef613240fc556c7f29a1a907e1f3d20dabd7307944"],"transaction_id":"b9b1658f811cbb21b80091414a1d8badf3eb8cc7","block_num":48404683,"transaction_num":1},{"ref_block_num":39097,"ref_block_prefix":2013310500,"expiration":"2020-11-07T20:32:27","operations":[["transfer",{"from":"topfivefamily","to":"esclavos75","amount":"2.000
+        STEEM","memo":"Anunciando los ganadores del concurso. Observa Piensa Escribe.
+        "}]],"extensions":[],"signatures":["204622639172389a5c3f87d909d3cbdb7e99631fa8dda2486d2fb178010a6622650452f9d150fc676950e80ed8af29a22424ce401b8a42f70290632b5c86d1430d"],"transaction_id":"8f766735cd072430ef69dae2e8ef931ddebb8ba9","block_num":48404683,"transaction_num":2},{"ref_block_num":39114,"ref_block_prefix":1162391664,"expiration":"2020-11-07T20:23:31","operations":[["claim_account",{"creator":"steem","fee":"0.000
+        STEEM","extensions":[]}]],"extensions":[],"signatures":["200e9b41cc2a5b4972237e699fd5696832c9acb730c682af7d09aef3f2a121d7b13735ea10542faa2a759e3350371334cbe220a5cb88687fce926377969bf5e70c"],"transaction_id":"504cc3ed909f98ab5c6a7d2ebd2c1217a96b90a1","block_num":48404683,"transaction_num":3}],"block_id":"02e298cbe273f89beca994bc97665be5ae669dcb","signing_key":"STM5sAkhBD13dp63eE89MxvC9147rYBtjf2VP7CTLygWAuKEV31RP","transaction_ids":["1f8e1164842152a8ce369734365c6ee96c2fee79","b9b1658f811cbb21b80091414a1d8badf3eb8cc7","8f766735cd072430ef69dae2e8ef931ddebb8ba9","504cc3ed909f98ab5c6a7d2ebd2c1217a96b90a1"]},"id":115}'
+  recorded_at: Sat, 07 Nov 2020 20:22:41 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":52,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '68'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:27:11 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '001086155060931053'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7031f-0cfba4d201a3fd830cc02422
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":52,"jsonrpc":"2.0","result":{"head_block_number":48404773,"head_block_id":"02e29925b08a8ac6b38403c3385c73c8314ec269","time":"2020-11-07T20:27:09","current_witness":"hinomaru-jp","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411543625.242
+        STEEM","current_supply":"370830142.250 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5781314.585 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110625516.421 STEEM","total_vesting_shares":"212266873853.979460
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"688931973.395819
+        VESTS","pending_rewarded_vesting_steem":"347528.398 STEEM","sbd_interest_rate":0,"sbd_print_rate":1100,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48648543,"recent_slots_filled":"340282366286958420844349234149054218175","participation_count":125,"last_irreversible_block_num":48404755,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":17109624,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-07T20:43:33","last_budget_time":"2020-11-07T19:43:33","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"36.722
+        SBD","downvote_pool_percent":2500}}'
+  recorded_at: Sat, 07 Nov 2020 20:27:11 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":53,"method":"condenser_api.get_block","params":[48404773]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '92'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:27:11 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '001041369391660645'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7031f-4a5e4de7231e648a68bf585f
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"previous":"02e29924b7ab77e639ae40adf06f2f4e5ce4f20e","timestamp":"2020-11-07T20:27:09","witness":"hinomaru-jp","transaction_merkle_root":"593b308a9517c81b9fce45c57db9d2e9e0e45232","extensions":[],"witness_signature":"1fafd062201dca0abe82b5c413706264d88cfc683383b45ebac6221c1cf5b8e5c44efb01f3f0d876e166e8559a3d8a3bf71f2a3f7df53b0eccff417316b46a8ae4","transactions":[{"ref_block_num":39199,"ref_block_prefix":4024716057,"expiration":"2020-11-07T20:28:03","operations":[["vote",{"voter":"artiommatvienko","author":"steemengineteam","permlink":"russia-its-time-to-hop-aboard-the-steemengine-2020-11-07","weight":10000}]],"extensions":[],"signatures":["1f1a0836ef4f9b029e020dd6b0afbcf45000179bb56ffa1e24554e82d031ad97d9313e191074372e51a9b10cff28fe6a44f8cd4b2a0a2f6545cdb8f06917e0e8b3"],"transaction_id":"6321b2bf3011fce77da481f7a3041097ca55db2a","block_num":48404773,"transaction_num":0},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"witnesstools","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["2005878b010521f0e4dfa43f99e25fab079d6eed0e8f38df8d9d8adacca8769bab151d053f58054c7a796450135ba70a962180522b85e8530f4a119776cd1fe528"],"transaction_id":"947e2f51dc04766e6a1767e478ce73a801150e93","block_num":48404773,"transaction_num":1},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"baymaxos","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["2064f52f073ca50d06c8c7433c30dd326077cc021af7e2feb0e0ac7c52ee0541da573ff57d08a7065d612f493988bf98ec02079e5ee479cbd76163fb908c2ddca6"],"transaction_id":"7dc2c569c3b1bfd5be25b0ea5a628bf08c1b7980","block_num":48404773,"transaction_num":2},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"woolfe19861008","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f065779356378f818639ff2c93aebbacb178a0edf773861ad860047027acb4834365aba7193a2c893a77f9f94488c9aa193aa88358f5580321ce7c133cfbc5a37"],"transaction_id":"a58d06a67df31643b7af0bf1f53aa374e2c5c73c","block_num":48404773,"transaction_num":3},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"aaronstar","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["203e56d6e2ffe39e0cfbb5b9baad3b3842caabca6921af08635f4e92efe1fc1d65335db7be36e15a465eb6b92bc1fb15fd2806ede5635b555e428d960efc0b8623"],"transaction_id":"a27bc5d4bee6b674f058591d4d74dbc97f95e594","block_num":48404773,"transaction_num":4},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"lilypang22","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f73a6d31b4e24374e955bee386c6b18cd4ce7036a460a6d6716875a99a474575a033f9d0820dd4cad22279f54e6e31561defa7977e9d02ebe46ae98896a3c1bf1"],"transaction_id":"237f45a3a574940c537d4d1f9a503eb093520565","block_num":48404773,"transaction_num":5},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"turtlegraphics","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["20447b553f6e148dbc011a92bb0efaa1c244fb38aba7dbee81f56208adc703993c78712878e23762af7e0fb7d7c81355f7331a25da810cf342f67c7729366c95dd"],"transaction_id":"3ba827ea3ff4af946e2a5a41a964ae53dd708ffd","block_num":48404773,"transaction_num":6},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"wilhb82","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f3176a0593091ab3e51cfba88b449cb0ba21fe585f5a1e2b4738d88adaffdf8346025124cc643516a486d97031007025eeb8c9a948e88bfb6846dffaa97988b83"],"transaction_id":"d5f165c8a8dc69968dfb4fe26dd26fbe9c98a63b","block_num":48404773,"transaction_num":7},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"kikima","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f0816e3273e024a22318d2acda18cf1488b296730f5ff53120a420bf02a519af5083fb19eed2d47a2487d02768bc48561590df394fe740ec421aeb475f565404e"],"transaction_id":"edb5c58ca433f2a06341df6854a7d0310ca61e2b","block_num":48404773,"transaction_num":8},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"ayanamoon","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f68e0a6da2ba7cd4925741e963088a854d61466c6eab1573bd88f4757507d3d0055e4ee47a3743c24a951fdde7f078be6049147f33a20721c59852dff0306621f"],"transaction_id":"89fc492347af61f243766900d7f0044fba0bb34a","block_num":48404773,"transaction_num":9},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"nean","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f39a720d1f9212003b0e271a65b456c117c97afdfde8b5f3a8fc72b52064b56d56633fc3534ab47a87a4f631eb81b3c5282e90d7812ee659ea64639681c5dc93e"],"transaction_id":"2417217666bf4fd97e103d4bf7ebf16df98d356a","block_num":48404773,"transaction_num":10},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"yuxuan","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["201d421829e99c0657cdfa9233ff3602f99830372ddbccf0155b98f85876ec75c751fdb566d1c2af2d945d6738f5a490f58f74c3e5a4d30eadb40a9492af24f6b9"],"transaction_id":"949a05eded4a825e826bd96dc9949a7b086aaa95","block_num":48404773,"transaction_num":11},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"rainyapril","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f7af4ddd7a2314c8d7723a1b22effc2db67e1bdcb6a97d42b8345edc64cf80207544f25ef2f616aefc20d6f5a90d703d948f14edfdbd7956df7998898d0364289"],"transaction_id":"e48ac0547d7aa74116e81778fc808b2e8e87a1c7","block_num":48404773,"transaction_num":12},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"daxiang","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f46ffe58444d931861a7bb6cb52c0088df5e2f12ce22ee509aef0581b1ea95fc25fbe2db1f695c5d142ff0aedf1857fa70cf6953f06c719841a3fb27e50d7d8ca"],"transaction_id":"82aef35b8c30950d357228121365cbb009935459","block_num":48404773,"transaction_num":13},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"twinsnicole","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["203dd8c0f1579cb7783c0e285286a460b35f356430d8dd67d15d8d91d4e75203a834d41523b70b183882de42a615923de4b7935a4ab7aa797978bc664dd976671e"],"transaction_id":"5193c06b30a0aec2cc9e562ac38fe16bd3ec164d","block_num":48404773,"transaction_num":14},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"longhash","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f74000aad23f47cb0baf9dfca6802466f48f6502b0f404d6ee3622f58e6f829802b80b145f717f211a1f5060692f3ce9bf63dbffc972eece2c5af0483cbcdcaf7"],"transaction_id":"3dafa728abd6f4fbd8b1fdd463cff6acb11405a1","block_num":48404773,"transaction_num":15},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"deepthinking","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["207a1dc0021c7276fd72b1e5c08937c4a357458ec87a27f5cc0c99c96274bb668169ea85c631ecaf3678d13ef29f66be87238503b60ac6a62e63f9bd516250578d"],"transaction_id":"72637577ccaf7a181587d6a73d86ca169759a62d","block_num":48404773,"transaction_num":16},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"anxin","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["2055aac0ee9e3552dc80a8c943ebad471aa5ecfd8544ffc723c6f249c8b14dad8251ba84563270910257da8b9f3ad5400093c96688ec1ed73d67277211a6d40bc0"],"transaction_id":"1cdbb81aef05102862149b3ff7e9a61c8b6ee680","block_num":48404773,"transaction_num":17},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"dailystats","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["2046c1c4beecaad799c697e421d5ef5bd1a7ab0bcbb77bf7a81f509b6246972c437f00d6a475a99b468340257d6bb0f125b404239b483c9c765dcf093d53900c99"],"transaction_id":"7754960cb38ecff9fef20b633c8e0fb76dd6ccfe","block_num":48404773,"transaction_num":18},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"kangnajiang","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f16e7237b2eb342ae849261979e550e17b441ea309f3aae0c12b82e34f2c420154cbc2e45cce249200f3cecde3bcbfedba9636e07545f83bbca57442147481c4f"],"transaction_id":"dd7be16dec0d02a29bf8164c69b9e5de82bdb742","block_num":48404773,"transaction_num":19},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"foodielifestyle","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f7c1cb6a6c8530b1d9c8a0bbf8677f22415fb67f90c39020e287da1f7d5cbd22f3db748bf4150839be3485fde12d2768505e6e14617614afdc782438c12804309"],"transaction_id":"60af65403307f862e67534bdd61ebbdf9ad32586","block_num":48404773,"transaction_num":20},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"geass","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f523f849e4d02b06b96efe61476a3a0db1e4788f6772d54191e01c8b149cec6b722f0618cda3cea7db4703769c50b418e65e85c3cc234ecf6fddcd7f72d702339"],"transaction_id":"2d52af30bde5aab91bd0ea92ab435bd08a24016c","block_num":48404773,"transaction_num":21},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"dailyfortune","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f2adeadcbf369c3bdee89bf0b5580765956c3ad90034d77585a7cf29c9c350d09492f7327d79b5c91addba87d784cc79f997548cfee84f070a4d9727d5caae4bf"],"transaction_id":"f1b935af5f935b149f955e61747f54d81b074281","block_num":48404773,"transaction_num":22},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"robinlee","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["20017be78214946096512e47047874815a8f3058a3abf10fd25b2105bf2ed9b2477f713c15a23237592eecc045ed78147a297c3d405607dbfb15b9d9aa41fb8f4f"],"transaction_id":"a8d681163a004327b4de44ce1e7e4910e3d97911","block_num":48404773,"transaction_num":23},{"ref_block_num":39201,"ref_block_prefix":821028589,"expiration":"2020-11-07T20:28:06","operations":[["transfer",{"from":"xiguang","to":"suanky","amount":"0.069
+        STEEM","memo":"Hi, @suanky Thanks for your support to @xiguang! Reward Today
+        for your delegatation of 101.1 SP is :0.069 Steem (Equivalent APR: 25.0%,
+        2020-11-07 )"}]],"extensions":[],"signatures":["205bd8efef702dd614b38698da7378ab48372ddbe080597216521c4ef9ba7284870d9cd827617fd963efe4763b0faa961acb9f3d16c6e25c6893ebe873ad8e83e9"],"transaction_id":"3289cb65529f36142baf0f201493a68f188249e1","block_num":48404773,"transaction_num":24},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"justsoso","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f10a7f5ae792b843bcd42609a8a465c5206cdb9883ca56716476c3aa4a0394a016b372816d335572c71aaf98a02fec9e59c3e3e40bdab9e9a656de32c670be69e"],"transaction_id":"e02b04cfe16fb06bffa58fd9ee192833f945ecd5","block_num":48404773,"transaction_num":25},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"ethanlee","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f4fece59b474c2611878d61a0425b9866eccf30325c2fbe30e850c4f4bdf7cfbe7b537bef3e9f4a0ce94ea81817de915b99d3fa71c2ee4bbdd4955e15d6c2e01f"],"transaction_id":"73ea42411988be1c2d8507e7f4ce6bff73b2bd20","block_num":48404773,"transaction_num":26},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"splinterislands","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f5049ddc6c314ffee1a76eded5d20b5d03e2bc6f1c917e44aae41f9a4a10c1b4e6e5b77cf6214aa22869ea4d4ddb6d069b83e2e6b65fb9b10b5814e4a154c8133"],"transaction_id":"133782805bf9ad89834bf352e3e32b592b021c9d","block_num":48404773,"transaction_num":27},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"nokeh","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f1b5fd104c099ed75767955fbdd543cea5e332daf1b3b5e34db0e22bee76dc7f11d956a1305719f3807a6907696865c7caf487f8659becebece62e838f4b72401"],"transaction_id":"6206b45f1d0e12eec4f11ed6a041813215450475","block_num":48404773,"transaction_num":28},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"atinna","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f2088d37f25e9c1789189cbc1ce21aece0572e7c90503d99bf9836c48eff5fd227962174ddf84f0ffc91c7d30ec7be79b7e53dc00ba2b7cc6bf200d51c064ec90"],"transaction_id":"00e516e5b684e52577cf0ee08bf19013a960ceed","block_num":48404773,"transaction_num":29},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"serenazz","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["200c688f35dfc70aa795849d2160672b805dfe2f92262157ef7222fc15801cee533c5e1f363f115d84f51a882ab3b4b252500599c9df9b5f57d5624dccfaafe595"],"transaction_id":"0ff06e7bae74fae218e5b54ece08b5db2e7966dd","block_num":48404773,"transaction_num":30},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"leodec","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["2078ff2b174981d34f35157a5a9e9c7a76025ebb699c584de5a8f3257cc80e8b157ae9879b429462eb644cb8b499f03ceb9cc8eca91e3ea653cb7307e8f64e2d7e"],"transaction_id":"0b904786af21ce8f46ca0da32f19a161bd4579dc","block_num":48404773,"transaction_num":31},{"ref_block_num":39183,"ref_block_prefix":3292185649,"expiration":"2020-11-07T20:36:51","operations":[["vote",{"voter":"moobear","author":"shenchensucc","permlink":"wherein-1604780219143-s","weight":923}]],"extensions":[],"signatures":["1f40ae8e76a0e32afabd81e1d1d41974b07e8a142e78fe5749d69429b55d0e530110fd1b398585869896115e26f7020709875e97ed8e13231c5e65ffb31f7fdd80"],"transaction_id":"0027ca291183447d301ae19bf2712c68c63aafa2","block_num":48404773,"transaction_num":32}],"block_id":"02e29925b08a8ac6b38403c3385c73c8314ec269","signing_key":"STM5sd6ZM2moJC3ecLZNmKZQQFvEqWS6PE3RvFbeymueTW83TnCuE","transaction_ids":["6321b2bf3011fce77da481f7a3041097ca55db2a","947e2f51dc04766e6a1767e478ce73a801150e93","7dc2c569c3b1bfd5be25b0ea5a628bf08c1b7980","a58d06a67df31643b7af0bf1f53aa374e2c5c73c","a27bc5d4bee6b674f058591d4d74dbc97f95e594","237f45a3a574940c537d4d1f9a503eb093520565","3ba827ea3ff4af946e2a5a41a964ae53dd708ffd","d5f165c8a8dc69968dfb4fe26dd26fbe9c98a63b","edb5c58ca433f2a06341df6854a7d0310ca61e2b","89fc492347af61f243766900d7f0044fba0bb34a","2417217666bf4fd97e103d4bf7ebf16df98d356a","949a05eded4a825e826bd96dc9949a7b086aaa95","e48ac0547d7aa74116e81778fc808b2e8e87a1c7","82aef35b8c30950d357228121365cbb009935459","5193c06b30a0aec2cc9e562ac38fe16bd3ec164d","3dafa728abd6f4fbd8b1fdd463cff6acb11405a1","72637577ccaf7a181587d6a73d86ca169759a62d","1cdbb81aef05102862149b3ff7e9a61c8b6ee680","7754960cb38ecff9fef20b633c8e0fb76dd6ccfe","dd7be16dec0d02a29bf8164c69b9e5de82bdb742","60af65403307f862e67534bdd61ebbdf9ad32586","2d52af30bde5aab91bd0ea92ab435bd08a24016c","f1b935af5f935b149f955e61747f54d81b074281","a8d681163a004327b4de44ce1e7e4910e3d97911","3289cb65529f36142baf0f201493a68f188249e1","e02b04cfe16fb06bffa58fd9ee192833f945ecd5","73ea42411988be1c2d8507e7f4ce6bff73b2bd20","133782805bf9ad89834bf352e3e32b592b021c9d","6206b45f1d0e12eec4f11ed6a041813215450475","00e516e5b684e52577cf0ee08bf19013a960ceed","0ff06e7bae74fae218e5b54ece08b5db2e7966dd","0b904786af21ce8f46ca0da32f19a161bd4579dc","0027ca291183447d301ae19bf2712c68c63aafa2"]},"id":53}'
+  recorded_at: Sat, 07 Nov 2020 20:27:11 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":105,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '81'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:31:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000348489564308383'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7043b-10e9ae2a4c78f9297e9474d2
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"head_block_number":48404867,"head_block_id":"02e29983ef9478b05551428ab1a25d090114d010","time":"2020-11-07T20:31:54","current_witness":"maiyude","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411543912.098
+        STEEM","current_supply":"370830390.901 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5781320.010 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110625868.404 STEEM","total_vesting_shares":"212267466325.257968
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"688959124.142868
+        VESTS","pending_rewarded_vesting_steem":"347542.550 STEEM","sbd_interest_rate":0,"sbd_print_rate":1100,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48648638,"recent_slots_filled":"340282364384399322967630424163462676479","participation_count":126,"last_irreversible_block_num":48404852,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":17096458,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-07T20:43:33","last_budget_time":"2020-11-07T19:43:33","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"40.764
+        SBD","downvote_pool_percent":2500},"id":105}'
+  recorded_at: Sat, 07 Nov 2020 20:31:56 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":106,"method":"condenser_api.get_block","params":[48404867]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '93'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:31:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_block.params=[48404867]
+      X-Jussi-Request-Id:
+      - '000769129911775911'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7043d-3e2b3804276563c24728c5e0
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":106,"jsonrpc":"2.0","result":{"previous":"02e2998237e5eae1f8f74216b911b7e3c263a6e6","timestamp":"2020-11-07T20:31:54","witness":"maiyude","transaction_merkle_root":"210dda0ac7899b509e8b9bc69755174ab31528d8","extensions":[],"witness_signature":"20709587252cf2bdcaeeff615f3a1998191af653df42e8cca1b4127c002668c5b32eb56001f5cd627da7a021cff770e49e232d4bd3ef05c5ba1bb77b01ae0306c7","transactions":[{"ref_block_num":39293,"ref_block_prefix":1932803166,"expiration":"2020-11-07T20:32:49","operations":[["vote",{"voter":"juancho10","author":"steemengineteam","permlink":"russia-its-time-to-hop-aboard-the-steemengine-2020-11-07","weight":10000}]],"extensions":[],"signatures":["1f0f9e8e785d3b861aeb66fac231d7bdf77de1d833486d60c4723845774826106b2133bc467c00b2e8d22a6430252a96b55bbecf77e1f60b68f00278b7bc79d66d"],"transaction_id":"1ddbaaff6b057d7bf9ec2bae18a6013d963bc179","block_num":48404867,"transaction_num":0},{"ref_block_num":39297,"ref_block_prefix":1124434997,"expiration":"2020-11-07T20:32:51","operations":[["vote",{"voter":"pricelezz","author":"steemisthebest","permlink":"6rkuwj-universal-remote-control","weight":10000}]],"extensions":[],"signatures":["207517717bc6a252614c0e15544ca885b12f2f294ecf740ffcffd3aec513f28c7d31310d56ce76111180e9e50d12773829a9341b9a1a47e912432dce3bbf23c7c6"],"transaction_id":"a3a816c08db9014cf35f2bb53b87feac4b3daf1f","block_num":48404867,"transaction_num":1}],"block_id":"02e29983ef9478b05551428ab1a25d090114d010","signing_key":"STM5LUStjcZdHfvK8PbsZxdjaE6Akd55UrjMH6Xiu4pSKWdgBDuWx","transaction_ids":["1ddbaaff6b057d7bf9ec2bae18a6013d963bc179","a3a816c08db9014cf35f2bb53b87feac4b3daf1f"]}}'
+  recorded_at: Sat, 07 Nov 2020 20:31:57 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":120,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '97'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:35:55 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '000429022744210343'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7052b-39d5f4d8678fa55e3b083fea
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":120,"jsonrpc":"2.0","result":{"head_block_number":48404946,"head_block_id":"02e299d2c902319ca5031bc6b282bfa0bd9bd194","time":"2020-11-07T20:35:54","current_witness":"protoss20","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411544150.675
+        STEEM","current_supply":"370830605.168 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5781323.462 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110626009.228 STEEM","total_vesting_shares":"212267666810.361074
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"688956468.145049
+        VESTS","pending_rewarded_vesting_steem":"347541.166 STEEM","sbd_interest_rate":0,"sbd_print_rate":1100,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48648718,"recent_slots_filled":"340282366920938425684442744474606501887","participation_count":127,"last_irreversible_block_num":48404927,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":17092627,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-07T20:43:33","last_budget_time":"2020-11-07T19:43:33","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"44.161
+        SBD","downvote_pool_percent":2500}}'
+  recorded_at: Sat, 07 Nov 2020 20:35:55 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":121,"method":"condenser_api.get_block","params":[48404946]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '93'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:35:55 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000088115099139913'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7052b-7e63134d441a0c5728ff1d39
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"previous":"02e299d138b91b72536bd1c41ae5342954ee168e","timestamp":"2020-11-07T20:35:54","witness":"protoss20","transaction_merkle_root":"1eed6e3e9be4966100d714c00e2f8be9f658a21b","extensions":[],"witness_signature":"1f06d2e0da7c52cf73d58a779d7e48798c685f9f3edcc93564c3e62769804825ac22208a64417711ed9e109de6f5b1e909d959bc34087c70b41acced42202b0de3","transactions":[{"ref_block_num":39356,"ref_block_prefix":946315686,"expiration":"2020-11-07T20:45:48","operations":[["vote",{"voter":"eye-of-the-storm","author":"murliwala","permlink":"the-problem-of-immoral-attitude-to-nature","weight":1875}]],"extensions":[],"signatures":["202939fd7e1126dc3b0559ab4d2f96137bc30b8f37482628c799cbcc3e18af6b37236ba19877e96e360bebf3e4ad11250dd5b96e35eab2058ac9b5ab5eeffbc1fa"],"transaction_id":"fd24aa20821a9bcbf54d8f739421b31d81080800","block_num":48404946,"transaction_num":0},{"ref_block_num":39376,"ref_block_prefix":599554126,"expiration":"2020-11-07T20:36:19","operations":[["vote",{"voter":"toni.sand","author":"saskamua","permlink":"appics-v1-appics-im-322098","weight":270}]],"extensions":[],"signatures":["20362677ffae65ff22b0d7dd47a5ffe2cb9c1f0b43392f7ac8373094ec00c8d8e514d529a66e22d23b22cdac11bb5ef9a06b3ecec41acbbc1ee7167f5bdae45378"],"transaction_id":"334fdd90c49a08a0d6155c8de39e8a9855253553","block_num":48404946,"transaction_num":1},{"ref_block_num":39376,"ref_block_prefix":599554126,"expiration":"2020-11-07T20:36:19","operations":[["vote",{"voter":"apx","author":"saskamua","permlink":"appics-v1-appics-im-322098","weight":300}]],"extensions":[],"signatures":["201c60b9b9733a6abd7c186d289f3f3af3175a10f0c59873526a982dceb05357fb0d4053d3e081d27b409916102dc30248e543b891d3935e18e46e927ca1b883de"],"transaction_id":"1624bd385e4cd1bbb324249e3bfc445c0675630e","block_num":48404946,"transaction_num":2},{"ref_block_num":39356,"ref_block_prefix":946315686,"expiration":"2020-11-07T20:45:48","operations":[["vote",{"voter":"praise-phoenix","author":"murliwala","permlink":"the-problem-of-immoral-attitude-to-nature","weight":2000}]],"extensions":[],"signatures":["1f51e823cec6d291d15b7e127b80c3c2739019dc9d47ed8da5c9859450b2d78f1b128dacb3066f302c6e496cc5f217289f1eecea3c292ee5bcc3a6ae6c6a42246f"],"transaction_id":"63c7253f85e1aa58d159b008daccf1853517115e","block_num":48404946,"transaction_num":3},{"ref_block_num":39376,"ref_block_prefix":599554126,"expiration":"2020-11-07T20:36:48","operations":[["vote",{"voter":"actifit.mmplayer","author":"pedrobrito2004","permlink":"120-el-regreso-de-la-mujer-caballero","weight":1667}]],"extensions":[],"signatures":["202a5036c465f14bcd7de000fecc0c6674778898f07dbe2fd2f556054655b4e1f314f36219ca0539762d0a641a68a0b7d9c8176f1236203447261138addaea2112"],"transaction_id":"d7e4d68b4b731b7c7b2e66a11b5c5851ea54b945","block_num":48404946,"transaction_num":4},{"ref_block_num":39356,"ref_block_prefix":946315686,"expiration":"2020-11-07T20:45:48","operations":[["vote",{"voter":"skybreaker","author":"murliwala","permlink":"the-problem-of-immoral-attitude-to-nature","weight":2500}]],"extensions":[],"signatures":["1f3fd6debc788e3f8509ade94222e708cd05f730634e5d63265607e3f05589b0886c4271cb644b2079a410fde961293312d53ed5f884e8681459e6e0ac524591f8"],"transaction_id":"e59295f2616c593236968372fb1fe80c6e9d653f","block_num":48404946,"transaction_num":5},{"ref_block_num":39356,"ref_block_prefix":946315686,"expiration":"2020-11-07T20:45:48","operations":[["vote",{"voter":"megalithic","author":"murliwala","permlink":"the-problem-of-immoral-attitude-to-nature","weight":2500}]],"extensions":[],"signatures":["1f0b99a6bba87e92b0bc1ae514ab3a8547b62f5d508c2eb5798de89183fce5b06d626453719f52db6823419c31441d6ec3b8c8ccb1cf4522f25e0b276597046f73"],"transaction_id":"2ebf604be956c8d571b8735ebd8edddadd713b77","block_num":48404946,"transaction_num":6},{"ref_block_num":39356,"ref_block_prefix":946315686,"expiration":"2020-11-07T20:45:48","operations":[["vote",{"voter":"ryancoretotstceo","author":"murliwala","permlink":"the-problem-of-immoral-attitude-to-nature","weight":2250}]],"extensions":[],"signatures":["1f4cb0f392c76c0c74baedb6a1a391b9c4ae438ece7dcc97bc6be3c8bc056eac3078460cbfc13b61a3575ad629fa971c7400ec62fa696bdf6990d31f08cb39d0f7"],"transaction_id":"9d535987f55099ff11f689be70af9552ed354af1","block_num":48404946,"transaction_num":7},{"ref_block_num":39354,"ref_block_prefix":4020538899,"expiration":"2020-11-07T20:35:57","operations":[["vote",{"voter":"limka","author":"saskamua","permlink":"appics-v1-appics-im-322098","weight":10000}]],"extensions":[],"signatures":["201d76eff01a1c53cbb0ca33a3e74b3179c4347451e6b53ec381bfe28118d2763a3ef5a6cccab4639d381b3fe9efb7151c6b56d41521f856d105fb9653f95fe73a"],"transaction_id":"c6603022ed60540784690e00441e3106a8e98654","block_num":48404946,"transaction_num":8},{"ref_block_num":39356,"ref_block_prefix":946315686,"expiration":"2020-11-07T20:45:48","operations":[["vote",{"voter":"psicore","author":"murliwala","permlink":"the-problem-of-immoral-attitude-to-nature","weight":2500}]],"extensions":[],"signatures":["1f0c50e0edbb3d3f871a0b742b9d9de78116217631af7c81e02998f459f46ca3c875c895e06e2b905295ffb9329642d1da8a8db178b51118e46e5c912a5cb5632b"],"transaction_id":"3612653fcc08d7cb2179ae0039544b97c0f60130","block_num":48404946,"transaction_num":9},{"ref_block_num":39357,"ref_block_prefix":4177945985,"expiration":"2020-11-07T20:36:18","operations":[["limit_order_create",{"owner":"alanyao","orderid":3634543140,"amount_to_sell":"13.518
+        STEEM","min_to_receive":"1.997 SBD","fill_or_kill":false,"expiration":"2020-11-14T20:36:13"}]],"extensions":[],"signatures":["1f17d4dc4e7fb9edebc64e3160183cdd0f64b365f1a14734b0bb4b0251482afb365cfb3820b406cd801b93181f186f92be9b617ffe38d5dd186900acbe40eb2925"],"transaction_id":"3d35ef19f4a037daeac2d8d3aabf362b6a5a878e","block_num":48404946,"transaction_num":10},{"ref_block_num":39356,"ref_block_prefix":946315686,"expiration":"2020-11-07T20:45:48","operations":[["vote",{"voter":"bogdenceo","author":"murliwala","permlink":"the-problem-of-immoral-attitude-to-nature","weight":2500}]],"extensions":[],"signatures":["1f76d2ac45d161e163c6a0795d3d8cf0d255a347e19819721f8653358a2ee759783b814917b0f2f390f3beaceb0910435656b775fa395ceb4b43e9036fdf9a020e"],"transaction_id":"5a0f21e7bef1f757d20276bc20a2ddd3dce759c0","block_num":48404946,"transaction_num":11},{"ref_block_num":39356,"ref_block_prefix":946315686,"expiration":"2020-11-07T20:45:48","operations":[["vote",{"voter":"chaostheory","author":"murliwala","permlink":"the-problem-of-immoral-attitude-to-nature","weight":2500}]],"extensions":[],"signatures":["1f5e23f75ae29ae56625bcc0d4059924bc6de4c27604996a299b50b82c43f1d06870f2d39842dd4d69e72edf6f0bbc865b3326d9cd89f08e481d8fd6a36ba86c41"],"transaction_id":"636ed8889692f80344c1534e7c3a4f357b982b89","block_num":48404946,"transaction_num":12},{"ref_block_num":39356,"ref_block_prefix":946315686,"expiration":"2020-11-07T20:45:48","operations":[["vote",{"voter":"audiosiren","author":"murliwala","permlink":"the-problem-of-immoral-attitude-to-nature","weight":2500}]],"extensions":[],"signatures":["2054500946ac6b513cf56b1e2c0ec3ebaead331f10856dff3df5bd599f2dd0ece06105177622c105931081af7976b0a3317a113d824c495dee71a42f2c19d97653"],"transaction_id":"ae1999023e33cc1dd1a2524d26d2ea2c12e19ae7","block_num":48404946,"transaction_num":13},{"ref_block_num":39372,"ref_block_prefix":3030520192,"expiration":"2020-11-07T20:36:48","operations":[["vote",{"voter":"kirushqa","author":"steemengineteam","permlink":"russia-its-time-to-hop-aboard-the-steemengine-2020-11-07","weight":10000}]],"extensions":[],"signatures":["2047081bf11756f183493c26d837010c164d0f8a9b8dd4d5624f6329b600db3aa448fd9262ff83ccd1b405e846a3986f8f2351c3e289c36c47a795fdac9e165418"],"transaction_id":"2b5ba936b3488d642609313d626356caa7053d36","block_num":48404946,"transaction_num":14},{"ref_block_num":39356,"ref_block_prefix":946315686,"expiration":"2020-11-07T20:45:48","operations":[["vote",{"voter":"beware-the-queen","author":"murliwala","permlink":"the-problem-of-immoral-attitude-to-nature","weight":2375}]],"extensions":[],"signatures":["200bc4e49e17317573865156fd2d1ee5f842d891483a51f10ea5efda420565de6d7133620f96c1fbc324a44fcd4d067c93dc4dc3608283c22bce386be674b65ae1"],"transaction_id":"918b18dfcb49ab7abbd68302cf0781601ca6cb94","block_num":48404946,"transaction_num":15},{"ref_block_num":39356,"ref_block_prefix":946315686,"expiration":"2020-11-07T20:45:51","operations":[["vote",{"voter":"betacore","author":"murliwala","permlink":"the-problem-of-immoral-attitude-to-nature","weight":2500}]],"extensions":[],"signatures":["1f1456c88d784b6cf89ca26cff77e3cb8c86a569aedf561960efa9bdc9dd9e2e5b4fb12227d9bf7313829ee33509a1c59a11b0e6de2427d8da54397c5c6bd0a329"],"transaction_id":"8929890c36f8aa01c66dc67a2bc74b1089277117","block_num":48404946,"transaction_num":16},{"ref_block_num":39356,"ref_block_prefix":946315686,"expiration":"2020-11-07T20:45:51","operations":[["vote",{"voter":"chess-evolved","author":"murliwala","permlink":"the-problem-of-immoral-attitude-to-nature","weight":2500}]],"extensions":[],"signatures":["1f2a463d52102c79ab2c8f559fcab5dd46e6a1cc7533d57d5cfff70800d7bead8e4f49d28386161a794c322a2227ee0798d128bb20f34d5bcb36603b1f79081728"],"transaction_id":"c79b8f8e6d57431c20e91eeef5e3e664b97c2f60","block_num":48404946,"transaction_num":17}],"block_id":"02e299d2c902319ca5031bc6b282bfa0bd9bd194","signing_key":"STM7jx3S2EfdcoAjL8eC9HJunHhifMMSxf12HmEYrrVJZJXGzr8QG","transaction_ids":["fd24aa20821a9bcbf54d8f739421b31d81080800","334fdd90c49a08a0d6155c8de39e8a9855253553","1624bd385e4cd1bbb324249e3bfc445c0675630e","63c7253f85e1aa58d159b008daccf1853517115e","d7e4d68b4b731b7c7b2e66a11b5c5851ea54b945","e59295f2616c593236968372fb1fe80c6e9d653f","2ebf604be956c8d571b8735ebd8edddadd713b77","9d535987f55099ff11f689be70af9552ed354af1","c6603022ed60540784690e00441e3106a8e98654","3612653fcc08d7cb2179ae0039544b97c0f60130","3d35ef19f4a037daeac2d8d3aabf362b6a5a878e","5a0f21e7bef1f757d20276bc20a2ddd3dce759c0","636ed8889692f80344c1534e7c3a4f357b982b89","ae1999023e33cc1dd1a2524d26d2ea2c12e19ae7","2b5ba936b3488d642609313d626356caa7053d36","918b18dfcb49ab7abbd68302cf0781601ca6cb94","8929890c36f8aa01c66dc67a2bc74b1089277117","c79b8f8e6d57431c20e91eeef5e3e664b97c2f60"]},"id":121}'
+  recorded_at: Sat, 07 Nov 2020 20:35:55 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":122,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '99'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:43:09 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '000314035907603360'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa706dd-44c38fde4a0e8f0120d55f71
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":122,"jsonrpc":"2.0","result":{"head_block_number":48405087,"head_block_id":"02e29a5f57eab2adc6a42748ef08a4a36c1a7d47","time":"2020-11-07T20:43:09","current_witness":"scissor.sisters","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411544570.393
+        STEEM","current_supply":"370830980.689 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5781329.738 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110626136.946 STEEM","total_vesting_shares":"212267787450.356174
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"689022482.010749
+        VESTS","pending_rewarded_vesting_steem":"347575.580 STEEM","sbd_interest_rate":0,"sbd_print_rate":1100,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48648863,"recent_slots_filled":"340282366920938454014029955674016841727","participation_count":125,"last_irreversible_block_num":48405069,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":17052878,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-07T20:43:33","last_budget_time":"2020-11-07T19:43:33","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"50.224
+        SBD","downvote_pool_percent":2500}}'
+  recorded_at: Sat, 07 Nov 2020 20:43:09 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":123,"method":"condenser_api.get_block","params":[48405087]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '93'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:43:11 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000730181640951525'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa706dd-5773b67a083f50ed03bde37c
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"previous":"02e29a5e5850c790b7e6ef7aaad0325dd01f9ea4","timestamp":"2020-11-07T20:43:09","witness":"scissor.sisters","transaction_merkle_root":"f69a8096862e5be3edf5e27ba4a387cc2a075e11","extensions":[],"witness_signature":"20081a84af62edeb2b418f08aee31db3d6da6487ea4fa680f9841efac135ca814d0dc0912ab18673646a0db48ff206ea9c8dc75b2cfa53297271389b8cfc66539e","transactions":[{"ref_block_num":39500,"ref_block_prefix":2691923522,"expiration":"2020-11-07T20:53:00","operations":[["vote",{"voter":"lilia737","author":"seo-boss","permlink":"raven-feather","weight":10000}]],"extensions":[],"signatures":["206fb37205951d86ea4781527b01b790a630169475df99946d71710caf719bc39f7f06cce5a1f486babef39a0be5a137192f2dc6c294f5d8067d77f2ef0c35531a"],"transaction_id":"7e60c7448bc253b8d17e25d8f9b6886ea9cac7cc","block_num":48405087,"transaction_num":0},{"ref_block_num":39501,"ref_block_prefix":4069979347,"expiration":"2020-11-07T20:43:33","operations":[["transfer",{"from":"executive-board","to":"zbnbscharge1","amount":"0.001
+        STEEM","memo":"\u2757 Hello zbnbscharge1, welcome to the STEEM ecosystem.
+        The Executive Board hereby invites you to https:\/\/discord.gg\/KyBbmhh where
+        you will get some insider infos on how you will earn the most coins. It''s
+        easy, just follow the instructions. Warm regards, The Executive Board."}]],"extensions":[],"signatures":["1f7d5cffe1786698afd83f030503e3501a37f5381c836662510ae1f3d49a6a72c8386605d4e088f8706b5d2f4f12e3c4d36406ed37ec0b94814a5973bfbb5f80bf"],"transaction_id":"a512a367d557cc13ffa84c97c34f53b05c789e2c","block_num":48405087,"transaction_num":1},{"ref_block_num":39517,"ref_block_prefix":1249629387,"expiration":"2020-11-07T20:44:04","operations":[["vote",{"voter":"voxter","author":"steemisthebest","permlink":"6rkuwj-universal-remote-control","weight":10000}]],"extensions":[],"signatures":["1f3684bf4ae59a4d434110bad676646bcb81a36bbccc5912ece4a0a46ff8db9c864bd45bba408a462bb48e08b45218c639c1cee7be70b9b185a948e44516c98b65"],"transaction_id":"e1bec4fa1ce406d5d6a8945dc8c747eea311777c","block_num":48405087,"transaction_num":2},{"ref_block_num":39514,"ref_block_prefix":1318070184,"expiration":"2020-11-07T20:44:05","operations":[["vote",{"voter":"certerus","author":"steemengineteam","permlink":"russia-its-time-to-hop-aboard-the-steemengine-2020-11-07","weight":10000}]],"extensions":[],"signatures":["207b1fae5cb1cf1fa0ab092cc41dc025dabb170c6823bfd1e53c9c4bd7c6e8fefe34a417c8d122bd7962b481196fac8a600830449832ddba19751cac90a05da60e"],"transaction_id":"f230fcd893527f1e5403b9ef029bfd2fc7b79834","block_num":48405087,"transaction_num":3},{"ref_block_num":39501,"ref_block_prefix":4069979347,"expiration":"2020-11-07T20:43:33","operations":[["limit_order_cancel",{"owner":"alanyao","orderid":77489970}]],"extensions":[],"signatures":["1f47e2e51376fc19cc2b308f13219b04fc539f58956014e3ed7c71df8b32f30a4e3e5839d2d397a0244a13df7adaf10f4b01907add0e2ff4832d347f54aaa106ad"],"transaction_id":"acbee334597d9606de3811d6214ef6cd680bf1d8","block_num":48405087,"transaction_num":4}],"block_id":"02e29a5f57eab2adc6a42748ef08a4a36c1a7d47","signing_key":"STM57ACN7dVLaxCjRcvFNj6ALMUderJXVVEANWEhZgeyriuBA6yER","transaction_ids":["7e60c7448bc253b8d17e25d8f9b6886ea9cac7cc","a512a367d557cc13ffa84c97c34f53b05c789e2c","e1bec4fa1ce406d5d6a8945dc8c747eea311777c","f230fcd893527f1e5403b9ef029bfd2fc7b79834","acbee334597d9606de3811d6214ef6cd680bf1d8"]},"id":123}'
+  recorded_at: Sat, 07 Nov 2020 20:43:11 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":15,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '83'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:46:13 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '000058444908400219'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70795-1e957720443e65402f4ed791
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":15,"jsonrpc":"2.0","result":{"head_block_number":48405146,"head_block_id":"02e29a9ab5422e5afa7acab91c8a164de8a904e4","time":"2020-11-07T20:46:12","current_witness":"dlike","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411544746.539
+        STEEM","current_supply":"370831138.441 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5781332.350 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110626180.864 STEEM","total_vesting_shares":"212267819643.880206
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"689048710.615857
+        VESTS","pending_rewarded_vesting_steem":"347589.248 STEEM","sbd_interest_rate":0,"sbd_print_rate":1100,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48648924,"recent_slots_filled":"329648542954581765227688779497972166655","participation_count":124,"last_irreversible_block_num":48405131,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":17034827,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-07T21:43:33","last_budget_time":"2020-11-07T20:43:33","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"2.193
+        SBD","downvote_pool_percent":2500}}'
+  recorded_at: Sat, 07 Nov 2020 20:46:13 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":16,"method":"condenser_api.get_block","params":[48405146]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '92'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 20:46:19 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000708480416758071'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70796-48076939139757663baeb033
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"previous":"02e29a997996c8fad15c876d8b2e1af05e61ad36","timestamp":"2020-11-07T20:46:12","witness":"dlike","transaction_merkle_root":"e4191a65f9cb41f4eba7b8e333168901c3977b96","extensions":[],"witness_signature":"20e7a6f1130d8278787bca23630eb7ab351825b6af486a86cd1132094c8807695e29a9950f970c568a443e5ed5872b01343b12166dd45d8dc0708c435906811342","transactions":[{"ref_block_num":39576,"ref_block_prefix":2650031918,"expiration":"2020-11-07T20:47:08","operations":[["vote",{"voter":"endurance1","author":"steemisthebest","permlink":"6rkuwj-universal-remote-control","weight":10000}]],"extensions":[],"signatures":["1f73150199366ece1c318aab88b9ae00056f075a8d32873697db836505bd5044bc4be607239e815a65e2d668387c0763b10fa291bc8704db290884d7be1c0d90ca"],"transaction_id":"47561bf7895a9a22281d590c0bb65af70599d85f","block_num":48405146,"transaction_num":0},{"ref_block_num":39561,"ref_block_prefix":2109775761,"expiration":"2020-11-07T20:46:33","operations":[["limit_order_cancel",{"owner":"alanyao","orderid":2420605790}]],"extensions":[],"signatures":["1f196d8d0be3374b859bb02aef189585fa25933d0a91165d5afa294c28302b3014425cbf010822afad0326a60f8f52d4910d1b2ddde02dab58c48b397859ceffbc"],"transaction_id":"e9efa8994fcc5a713c1b7ea07be438d6269e8449","block_num":48405146,"transaction_num":1},{"ref_block_num":39561,"ref_block_prefix":2109775761,"expiration":"2020-11-07T20:56:09","operations":[["vote",{"voter":"aakash-garg","author":"minimalpris","permlink":"20201107t203555382z-post","weight":10000}]],"extensions":[],"signatures":["1f55929871f8341e78d062680cc5bf2c7cbc0a17460f2b85f83c03668f259a8ef612963af20e43401b5aef28a1ce18a126c9befb4e6273444d63e53456f21fa767"],"transaction_id":"a3317e68734a817a2cf084352e15d2479bd0e3b5","block_num":48405146,"transaction_num":2}],"block_id":"02e29a9ab5422e5afa7acab91c8a164de8a904e4","signing_key":"STM8EGofyF8urv3RM7bHGsCQoNu3pVvn4LYss7ASTGzCJiQGKeHdh","transaction_ids":["47561bf7895a9a22281d590c0bb65af70599d85f","e9efa8994fcc5a713c1b7ea07be438d6269e8449","a3317e68734a817a2cf084352e15d2479bd0e3b5"]},"id":16}'
+  recorded_at: Sat, 07 Nov 2020 20:46:19 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":75,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -715,7 +930,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:34:08 GMT
+      - Sat, 07 Nov 2020 20:53:57 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -727,9 +942,9 @@ http_interactions:
       X-Jussi-Cache-Hit:
       - appbase.condenser_api.get_dynamic_global_properties.params=[]
       X-Jussi-Request-Id:
-      - '000015090251009012'
+      - '001045725610173052'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7440-234d1e2d0a83af5300beb4b4
+      - Root=1-5fa70965-3242e0513c4c7aaa16d5ee0d
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -742,25 +957,25 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"id":36,"jsonrpc":"2.0","result":{"head_block_number":47792408,"head_block_id":"02d94118aba5aad6ff875750dca584fa9ef7c96a","time":"2020-10-17T04:34:06","current_witness":"inwi","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"405321864.409
-        STEEM","current_supply":"368938355.567 STEEM","confidential_supply":"0.000
-        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5784977.906 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"110211820.635 STEEM","total_vesting_shares":"212009383440.540190
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"718528237.843411
-        VESTS","pending_rewarded_vesting_steem":"362699.810 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48024682,"recent_slots_filled":"340281068846104859736824784653056475135","participation_count":125,"last_irreversible_block_num":47792393,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":16745952,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-10-17T04:41:48","last_budget_time":"2020-10-17T03:41:48","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"49.632
+      string: '{"id":75,"jsonrpc":"2.0","result":{"head_block_number":48405298,"head_block_id":"02e29b32ff786f0eb8f0d44617c5e158dc1ebcd6","time":"2020-11-07T20:53:54","current_witness":"justyy","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411545207.533
+        STEEM","current_supply":"370831551.526 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5781339.153 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110626247.055 STEEM","total_vesting_shares":"212267812491.558942
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"689116484.403978
+        VESTS","pending_rewarded_vesting_steem":"347624.566 STEEM","sbd_interest_rate":0,"sbd_print_rate":1100,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48649078,"recent_slots_filled":"340282366920938463463374607363048734703","participation_count":126,"last_irreversible_block_num":48405280,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":17012913,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-07T21:43:33","last_budget_time":"2020-11-07T20:43:33","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"8.729
         SBD","downvote_pool_percent":2500}}'
-  recorded_at: Sat, 17 Oct 2020 04:34:09 GMT
+  recorded_at: Sat, 07 Nov 2020 20:53:57 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":37,"method":"condenser_api.get_block","params":[47792408]}'
+      string: '{"jsonrpc":"2.0","id":76,"method":"condenser_api.get_block","params":[48405298]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -775,7 +990,59 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:34:09 GMT
+      - Sat, 07 Nov 2020 20:54:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000368350497826524'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70965-3189767459d8e3391d13348e
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"previous":"02e29b31a8b7ed77ac00a9f1f04e30f377f08ff8","timestamp":"2020-11-07T20:53:54","witness":"justyy","transaction_merkle_root":"5f00d59761e74db5ba161d88217e5d6f36a8738e","extensions":[],"witness_signature":"20158d1406d18c693c69dfc26ab064407a3307a41c86d0c4a2e1626235f2601c80182a429f4d4b3b31d23a2a68f543b1c33bc4d9ff953b44a86f95b7313d5271e7","transactions":[{"ref_block_num":39711,"ref_block_prefix":214222940,"expiration":"2020-11-07T21:03:48","operations":[["vote",{"voter":"htikehtike00734","author":"minimalpris","permlink":"20201107t203555382z-post","weight":10000}]],"extensions":[],"signatures":["1f7c971590748ce710d48092cf3c437efbf733eaa8e2ff189e6886f0e432c4437a038450b71830e67099501b12b3a60479e8aebc9c4773a0f59ef9817e4edfa276"],"transaction_id":"fd343157768845c06924c79da868910cf0d5bba1","block_num":48405298,"transaction_num":0},{"ref_block_num":39711,"ref_block_prefix":214222940,"expiration":"2020-11-07T21:03:48","operations":[["vote",{"voter":"ruhrsearch","author":"andreanerazzurro","permlink":"appics-v1-appics-im-321935","weight":100}]],"extensions":[],"signatures":["1f605d1093f474b5ceee944e2c46dcc03b3b90d95b05ca4f528060cbbbafc40c567d7d3fd3bddbb538d79828b4c8882c2a87369ecac0b4018b13ab34892765176e"],"transaction_id":"3b6998e7ad62e23dd0c1bc69ee9e6530a5a1fb25","block_num":48405298,"transaction_num":1}],"block_id":"02e29b32ff786f0eb8f0d44617c5e158dc1ebcd6","signing_key":"STM6ZQ3EQR2aP5e7CLMDmnnCXschWbA8bPcADSL7xeumZDeGz5oLd","transaction_ids":["fd343157768845c06924c79da868910cf0d5bba1","3b6998e7ad62e23dd0c1bc69ee9e6530a5a1fb25"]},"id":76}'
+  recorded_at: Sat, 07 Nov 2020 20:54:00 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":9,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '78'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 21:00:45 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -785,11 +1052,11 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Cache-Hit:
-      - appbase.condenser_api.get_block.params=[47792408]
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
       X-Jussi-Request-Id:
-      - '000076785878974823'
+      - '001096364954806111'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7441-0612eea75a4b75e03827a23e
+      - Root=1-5fa70afc-18c1eef91900fe151e34cdc0
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -802,25 +1069,25 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"id":37,"jsonrpc":"2.0","result":{"previous":"02d94117628f8672ab5eb3c034ca1b87e176db5f","timestamp":"2020-10-17T04:34:06","witness":"inwi","transaction_merkle_root":"b4a6e864e7746f8bad635b01ba274b24527f57f7","extensions":[],"witness_signature":"20e3514f7f85b3f5d3693cc6bac1ec4fddaa32cf7b2bd99d1a1eb40676bc96ea0873102eae9a70ee8ce6ffe005eec18ace4cabebc440357000fb97674d93a7e95d","transactions":[{"ref_block_num":16646,"ref_block_prefix":3223466471,"expiration":"2020-10-17T04:44:00","operations":[["vote",{"voter":"robin26","author":"samstonehill","permlink":"disord-deletes-iceagefarmer-server-for-spread-of-misinformation-proving-themselves-to-be-corrupt","weight":400}]],"extensions":[],"signatures":["1f47cd7062d1c0eb715f3e1b2cb52c30f9102956266cfe4d07c231c3d4d1cc13d1230507da014fe9ebe65ebb3eb5a77371a979832b7bc5d046458cf9d97062f035"],"transaction_id":"3c38211cfdc089eec937e4df529cb1459657389f","block_num":47792408,"transaction_num":0},{"ref_block_num":16646,"ref_block_prefix":3223466471,"expiration":"2020-10-17T04:44:00","operations":[["vote",{"voter":"gysmo","author":"samstonehill","permlink":"disord-deletes-iceagefarmer-server-for-spread-of-misinformation-proving-themselves-to-be-corrupt","weight":300}]],"extensions":[],"signatures":["1f2a1febe5b9e02c8e228acd16014deb9e1d68a895e75469c053ea2d977f7feaf478620af5a9d24bd015b7237d0db1a26caea5abf0e1b9815529249279010a3e67"],"transaction_id":"91d157edc30f81394deaaf03b623da925b2eaddc","block_num":47792408,"transaction_num":1},{"ref_block_num":16646,"ref_block_prefix":3223466471,"expiration":"2020-10-17T04:44:00","operations":[["claim_reward_balance",{"account":"carilinger","reward_steem":"0.000
-        STEEM","reward_sbd":"0.000 SBD","reward_vests":"427.093232 VESTS"}]],"extensions":[],"signatures":["1f1c5820758285d19c70a726a073ad55736a86d357ba8dbdce7d864d4c7a3cff450aec9a1f6933bcae8414c0ba7f6208e91891d66bcf38767721f216c43becb049"],"transaction_id":"eb8b133dc40c9552c55f808df99572bf0cf5a142","block_num":47792408,"transaction_num":2},{"ref_block_num":16646,"ref_block_prefix":3223466471,"expiration":"2020-10-17T04:44:00","operations":[["vote",{"voter":"phyokyaw","author":"aboulsoud","permlink":"5pwa2u","weight":10000}]],"extensions":[],"signatures":["2076c64a6cb36c7ac91cfb4a3dc5648b71bc04f96c8f93eb486a22529f2f63b62f3cf39539473d55ca8615f12c743532768855c06ab3f4d357d9a7b9d13a2572d5"],"transaction_id":"fccec2d68964a7b26746bb4a2419b412efe9fe44","block_num":47792408,"transaction_num":3},{"ref_block_num":16647,"ref_block_prefix":328603654,"expiration":"2020-10-17T04:44:03","operations":[["claim_reward_balance",{"account":"ctime","reward_steem":"0.000
-        STEEM","reward_sbd":"0.000 SBD","reward_vests":"2966.567572 VESTS"}]],"extensions":[],"signatures":["1f62222e6fce726f97c562a66dfb3008902dbc272f35eacd33370335191018592b29d7735d973e4adf0c98dcff845ae3015a9c2382cc07ccbf2b62c8a4ce0e733a"],"transaction_id":"d210fd56eb675ccbd075a7fdc88450f7e8698d6e","block_num":47792408,"transaction_num":4},{"ref_block_num":16660,"ref_block_prefix":25159922,"expiration":"2020-10-17T04:35:00","operations":[["transfer",{"from":"tipu","to":"suramax","amount":"0.513
-        STEEM","memo":"@tipU investor payout - check out https:\/\/tipu.online for
-        detailed info - thank you!"}]],"extensions":[],"signatures":["1f4cf17bd7895ffb29e67a19d3a1118fb8a2cb16266ae066b23bcfeaf662292bb45813388425f43a6bbbaa65e09b2b197c59918e52b788eb63d8891ac8f4820564"],"transaction_id":"ac74462c832bcd27141b016e0bcf0f809e41bac7","block_num":47792408,"transaction_num":5},{"ref_block_num":16647,"ref_block_prefix":328603654,"expiration":"2020-10-17T04:44:03","operations":[["claim_reward_balance",{"account":"mmmmkkkk311","reward_steem":"0.000
-        STEEM","reward_sbd":"0.000 SBD","reward_vests":"3037.749803 VESTS"}]],"extensions":[],"signatures":["204493d44947e026a4320d012d48685d067a3c157862428efee61267de977fde4d189ba29cfa6cba8dad292078f7b7406b96b57704afd6d6f52ab6b8fa020361a9"],"transaction_id":"45e7bcfd9633403f6df8d8ad69ca4f2a30ea8b9c","block_num":47792408,"transaction_num":6},{"ref_block_num":16647,"ref_block_prefix":328603654,"expiration":"2020-10-17T04:44:03","operations":[["claim_reward_balance",{"account":"fredkese","reward_steem":"0.000
-        STEEM","reward_sbd":"0.089 SBD","reward_vests":"1083.123410 VESTS"}]],"extensions":[],"signatures":["1f33cd1a88932d5e32a3920e3233c42bb750665fda0e203725b7758311e88d688c35b747dacb415e9d1b96729f15e870568c242bff0e92f73665e64024485584e0"],"transaction_id":"bf588e8b069c5d00769f53875e16fecd0ae2e97a","block_num":47792408,"transaction_num":7}],"block_id":"02d94118aba5aad6ff875750dca584fa9ef7c96a","signing_key":"STM5PT81nf85nZ3tDrbpfxvSFaxJjdDSZobhCmnWPBuHCP52fEYVC","transaction_ids":["3c38211cfdc089eec937e4df529cb1459657389f","91d157edc30f81394deaaf03b623da925b2eaddc","eb8b133dc40c9552c55f808df99572bf0cf5a142","fccec2d68964a7b26746bb4a2419b412efe9fe44","d210fd56eb675ccbd075a7fdc88450f7e8698d6e","ac74462c832bcd27141b016e0bcf0f809e41bac7","45e7bcfd9633403f6df8d8ad69ca4f2a30ea8b9c","bf588e8b069c5d00769f53875e16fecd0ae2e97a"]}}'
-  recorded_at: Sat, 17 Oct 2020 04:34:09 GMT
+      string: '{"id":9,"jsonrpc":"2.0","result":{"head_block_number":48405431,"head_block_id":"02e29bb72c4bb3e937cc1bd0d287f59d325140ce","time":"2020-11-07T21:00:42","current_witness":"dev.supporters","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411545609.080
+        STEEM","current_supply":"370831909.961 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5781345.275 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110628619.345 STEEM","total_vesting_shares":"212272250292.570525
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"684947057.441786
+        VESTS","pending_rewarded_vesting_steem":"345453.315 STEEM","sbd_interest_rate":0,"sbd_print_rate":1100,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48649214,"recent_slots_filled":"340282366920938463463356593033256632319","participation_count":126,"last_irreversible_block_num":48405413,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":16987578,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-07T21:43:33","last_budget_time":"2020-11-07T20:43:33","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"14.448
+        SBD","downvote_pool_percent":2500}}'
+  recorded_at: Sat, 07 Nov 2020 21:00:45 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":21,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+      string: '{"jsonrpc":"2.0","id":10,"method":"condenser_api.get_block","params":[48405431]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -828,14 +1095,14 @@ http_interactions:
       Host:
       - api.steemitdev.com
       Content-Length:
-      - '79'
+      - '91'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 04:56:01 GMT
+      - Sat, 07 Nov 2020 21:00:46 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -845,9 +1112,9 @@ http_interactions:
       Server:
       - nginx
       X-Jussi-Request-Id:
-      - '000080557716618968'
+      - '000576801185064112'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a795b-27309aea269effd204035a73
+      - Root=1-5fa70afd-4908011b4bb82df9571ff85c
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -860,147 +1127,140 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"head_block_number":47792840,"head_block_id":"02d942c8823015db5e5db52983836a9c2dd84507","time":"2020-10-17T04:56:00","current_witness":"steem-supporter","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"405323167.734
-        STEEM","current_supply":"368939461.986 STEEM","confidential_supply":"0.000
-        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5785009.214 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"110212515.423 STEEM","total_vesting_shares":"212010341921.594353
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"718372390.049989
-        VESTS","pending_rewarded_vesting_steem":"362618.808 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48025120,"recent_slots_filled":"340282366604025813406245199463554482175","participation_count":126,"last_irreversible_block_num":47792820,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":16803968,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-10-17T05:41:51","last_budget_time":"2020-10-17T04:41:51","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"13.392
-        SBD","downvote_pool_percent":2500},"id":21}'
-  recorded_at: Sat, 17 Oct 2020 04:56:01 GMT
+      string: '{"jsonrpc":"2.0","result":{"previous":"02e29bb6717ac955a1b23404d0b98f13e7eac33a","timestamp":"2020-11-07T21:00:42","witness":"dev.supporters","transaction_merkle_root":"c6aabdb5721e4c483a089cca3c8cc221b7ccde14","extensions":[],"witness_signature":"1f0e741c17cde2f1bb6b8cbe1b8ebd1ce4d6a83d34c0b69ee76e1b0f23cd44570760379b5a415a40a8adb4301fd610cb88d50c1943073818ef37dd1383ba8c67c7","transactions":[{"ref_block_num":39843,"ref_block_prefix":1068738440,"expiration":"2020-11-07T21:10:36","operations":[["custom_json",{"required_auths":[],"required_posting_auths":["lecharles"],"id":"follow","json":"[\"follow\",{\"follower\":\"lecharles\",\"following\":\"negrow\",\"what\":[\"blog\"]}]"}]],"extensions":[],"signatures":["1f4c12d3d97d9b5e340013ad5148878c1ab4e9adee48c0dc8f446391ceb39f5d6f472b2c9e1dcb4977b744e80e2642f6464128846528accaaeb4ae9c68357d3533"],"transaction_id":"02b82b6ef8514451c4b7aafa96ea205cb66051b3","block_num":48405431,"transaction_num":0},{"ref_block_num":39843,"ref_block_prefix":1068738440,"expiration":"2020-11-07T21:10:36","operations":[["vote",{"voter":"udabeu","author":"mima2606","permlink":"appics-v1-appics-im-321981","weight":4200}]],"extensions":[],"signatures":["206bd3d24c5425176bac8711c1446b7eeea94d0896d5a3ad551982b8897b70c120141cf291ba627a5624abf6c6758bad2623ba3a67811fd9f41f2fefdb4a6fab2d"],"transaction_id":"8655443678f720cb619faa19bfcb2ff1ae359eff","block_num":48405431,"transaction_num":1},{"ref_block_num":39843,"ref_block_prefix":1068738440,"expiration":"2020-11-07T21:10:36","operations":[["vote",{"voter":"olayinkasnr","author":"minimalpris","permlink":"20201107t203555382z-post","weight":10000}]],"extensions":[],"signatures":["1f4254b2d7d640cef9a5ba022d4641b14931e8128e627f79318fe03e0e3432e5267b5676e577466f5133d9520eb6cd1bc4529587c5e9e439680c2ed11d013ecadf"],"transaction_id":"141fb44917b6c609c4e8468778885d199f69c911","block_num":48405431,"transaction_num":2}],"block_id":"02e29bb72c4bb3e937cc1bd0d287f59d325140ce","signing_key":"STM5sAkhBD13dp63eE89MxvC9147rYBtjf2VP7CTLygWAuKEV31RP","transaction_ids":["02b82b6ef8514451c4b7aafa96ea205cb66051b3","8655443678f720cb619faa19bfcb2ff1ae359eff","141fb44917b6c609c4e8468778885d199f69c911"]},"id":10}'
+  recorded_at: Sat, 07 Nov 2020 21:00:46 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":22,"method":"condenser_api.get_block","params":[47792840]}'
+      string: '{"jsonrpc":"2.0","id":115,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      Host:
-      - api.steemitdev.com
-      Content-Length:
-      - '92'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 17 Oct 2020 04:56:07 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - nginx
-      X-Jussi-Request-Id:
-      - '000262929832706059'
-      X-Amzn-Trace-Id:
-      - Root=1-5f8a7961-45b708cb78fa7b324ec0b37a
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-      Strict-Transport-Security:
-      - max-age=31557600; includeSubDomains; preload
-      Content-Security-Policy:
-      - upgrade-insecure-requests
-    body:
-      encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"previous":"02d942c784a37ea5af6320997bd77ef5991a9880","timestamp":"2020-10-17T04:56:00","witness":"steem-supporter","transaction_merkle_root":"5bd8be8a91632a24f5f550234a322d4141637b29","extensions":[],"witness_signature":"20ee8eaf0c9e1cadff8241db419fe806a1107c1c619b4de7294bca75d69cee71146f975e71ae64168989208cbf0b60aee4e43fd92ef048449fa45f06fbb46e5eb0","transactions":[{"ref_block_num":17072,"ref_block_prefix":284521805,"expiration":"2020-10-17T05:05:54","operations":[["comment",{"parent_author":"","parent_permlink":"an","author":"anfeng","permlink":"6bw6u6-an-feng","title":"an
-        feng","body":"https:\/\/images.hive.blog\/DQmVCgCkpYeWETzF8SpdoZeJXxdfW8LiFWkiAgwsBdZynQd\/489c283171e5d06c24.jpg\n\u5f9e\u5f6d\u535a
-        \u66ff\u4e00\u4e9b\u56e0\u70ba \u6c92\u6709\u7e73\u4ea4\u7f70\u6b3e\u800c\u88ab\u53d6\u6d88\u9078\u8209\u8cc7\u683c
-        \u5605 \u7d10\u7d04\u9ed1\u4eba\u7e73\u4ea4\u7f70\u6b3e \u8b8a\u76f8\u5728\u67d0\u4e00\u500b\u7a0b\u5ea6
-        \u4e0a\u9593\u63a5\u8cc4\u9078 \u5462\u4e00\u4ef6\u4e8b\u7576\u4e2d \u5c31\u53ef\u4ee5\u7747\u5f97\u51fa
-        \u7f8e\u570b\u4e00\u4eba\u4e00\u7968\u9078\u8209\u5236\u5ea6\u5605\u53ef\u7b11\u4e4b\u8655
-        \u540c\u9999\u6e2f\u6c11\u5efa\u806f\u5605\u86c7\u9f4b\u9905\u7cc9\u8cc4\u9078
-        \u65b9\u6cd5 \u985e\u4f3c \u4e00\u4eba\u4e00\u7968 \u9078\u8209\u5236\u5ea6\u6700\u5927\u5605\u554f\u984c\u5c31\u4fc2\u7aae\u4eba\u4e0d\u52de\u800c\u7a6b
-        \u7121\u7aef\u7aef\u7372\u5f97\u4e86 \u8207\u4e4b\u80fd\u529b\u4e0d\u76f8\u7a31\u5605
-        \u9078\u8209\u6b0a\u529b \u7c21\u55ae\u4f86\u8aaa \u5c31\u662f\u7aae\u4eba\u9019\u4e00\u500b\u7fa4\u9ad4\u7121\u7aef\u7aef
-        \u4e0d\u52de\u800c\u7372\u5730 \u7372\u5f97\u4e86\u5927\u91cf\u9078\u7968
-        \u7531\u65bc\u7aae\u4eba\u7684\u6536\u5165\u8207\u5176 \u5728\u4e00\u4eba\u4e00\u7968\u9078\u8209\u5236\u5ea6\u4e4b\u4e0b\u6240\u7372\u5f97\u7684\u6b0a\u529b\u4e26\u4e0d\u76f8\u7a31
-        \u76f8\u5c0d\u65bc\u7372\u5f97\u6b0a\u529b \u7aae\u4eba\u66f4\u52a0\u5e0c\u671b\u7372\u5f97\u91d1\u9322
-        \u6240\u4ee5\u9019\u5c31\u4fc3\u4f7f\u4e86\u7aae\u4eba\u5728\u4e00\u4eba\u4e00\u7968\u9078\u8209\u5236\u5ea6\u4e4b\u4e0b\u7279\u5225\u5bb9\u6613\u5411\u6709\u9322\u4eba\u51fa\u552e\u624b\u4e2d\u7684\u6b0a\u529b\u4ee5\u7372\u5f97\u91d1\u9322
-        \u7576\u7136 \u76f8\u5c0d\u65bc\u6c11\u5efa\u806f\u76f4\u63a5\u8cc2\u9078\u7528\u86c7\u9f4b\u9905\u7cc9\u569f\u8cc4\u8cc2\u7aae\u4eba
-        \u81e8\u9078\u8209\u524d\u8eca\u7aae\u4eba\u53bb\u5404\u5927\u9152\u5bb6\u5404\u5927\u9152\u6a13\u5ea6\u98df\u9b91\u53c3\u7fc5\u809a
-        \u5f6d\u535a\u66ff\u7aae\u4eba\u9ed1\u4eba \u9078\u6c11\u7e73\u4ea4\u7f70\u6b3e\u5605\u5462\u4e00\u500b\u884c\u70ba\u76f8\u5c0d\u569f\u8b1b
-        \u4fc2\u5c6c\u65bc\u9593\u63a5\u8cc4\u9078 \u6240\u4ee5\u9019\u5c31\u8b49\u660e\u4e86\u70ba\u4ec0\u9ebc\u6211\u5011\u9700\u8981\u4e00\u5957\u66f4\u52a0\u597d\u7684\u9078\u8209\u5236\u5ea6\u9999\u6e2f\u516c\u8b58\u9078\u8209\u516c\u5f0fvoting
-        power=2^log e asset you own \u800c\u4e0d\u662f\u7e7c\u7e8c\u9078\u64c7\u53bb\u7528\u4e00\u5957\u721b\u900f\u4e86\u7684
-        \u9078\u8209\u5236\u5ea6 \u83ef\u76db\u9813\u5171\u8b58 \u7f8e\u570b\u4e00\u4eba\u4e00\u7968\u5f0f\u6c11\u4e3b
-        \u7136\u5f8c \u60f3\u76e1\u8fa6\u6cd5\u900f\u904e\u6cd5\u5f8b \u7528\u5343\u65b9\u767e\u8a08\u53bb\u5835\u585e\u4f4f\u5462\u4e00\u5957\u5236\u5ea6\u80cc\u5f8c\u5605\u6f0f\u6d1e
-        \u56e0\u70ba\u7528\u6cd5\u5f8b \u53bb\u5230\u5835\u585e \u4e00\u5957\u4e0d\u516c\u5e73\u5605\u9078\u8209\u5236\u5ea6\u5605\u6f0f\u6d1e
-        \u5c31\u597d\u4f3c\u7528\u4e00\u5957\u6709\u9650\u5605\u8cc7\u6e90 \u53bb\u5835\u585e\u7121\u9650\u6f0f\u6d1e\u5605\u65b9\u6cd5\u4e00\u6a23
-        \u4fc2\u6839\u672c\u6c92\u6709\u8fa6\u6cd5\u5835\u585e\u7684 \u56e0\u70ba\u7576\u4f60\u7528\u6cd5\u5f8b\u5835\u585e\u4f4f\u4e00\u500b\u6d1e\u7684\u6642\u5019
-        \u58d3\u529b\u5c31\u6703\u5f80\u5176\u4ed6\u6d1e\u8d70 \u5c0e\u81f4\u4f60\u6c38\u9060\u5187\u8fa6\u6cd5\u7528\u6cd5\u5f8b\u5835\u585e\u4f4f\u6240\u6709\u6d1e
-        \u53ea\u8981\u4e00\u4eba\u4e00\u7968\u7684\u6c11\u4e3b\u9078\u8209\u7e7c\u7e8c\u5b58\u5728
-        \u6709\u9322\u4eba \u8cc4\u8cc2\u7aae\u4eba\u4ee5\u7372\u5f97\u9078\u7968\u7684\u60c5\u6cc1\u5fc5\u7136\u7e7c\u7e8c\u5b58\u5728
-        \u8981\u89e3\u6c7a\u8cc4\u9078\u5c31\u50cf\u9632\u6d2a\u6cbb\u6c34\u4e00\u6a23
-        \u8981\u758f\u5c0e\u800c\u4e0d\u662f\u5835\u585e \u6211\u5011\u5728\u5efa\u7acb\u4e00\u5957\u9078\u8209\u5236\u5ea6
-        \u4e4b\u524d\u5fc5\u9808\u5047\u8a2d\u66ec\u6240\u6709\u53ef\u80fd \u767c\u751f\u7684\u60c5\u6cc1
-        \u7576\u4e2d\u5fc5\u7136\u5305\u62ec\u5728\u9019\u5957\u9078\u8209\u5236\u5ea6\u4e0b
-        \u767c\u751f\u56b4\u91cd\u8cc4\u9078 \u9019\u500b\u6700\u56b4\u91cd\u7684\u60c5\u6cc1
-        \u6211\u5011\u8981\u505a\u7684\u4e0d\u662f\u505a\u5230 \u96f6\u8cc4\u9078
-        \u76f8\u53cd \u6211\u5011\u61c9\u8a72 \u76e1\u53ef\u80fd \u5305\u5bb9\u8cc4\u9078
-        \u5bb9\u7d0d\u8cc4\u9078\u6b63\u6240\u8b02\u6d77\u7d0d\u767e\u5ddd\u6709\u5bb9\u4e43\u5927
-        \u5728\u5141\u8a31\u6709\u9322\u4eba\u900f\u904e\u91d1\u9322 \u8cfc\u8cb7\u7aae\u4eba\u9078\u7968\u7684\u60c5\u6cc1\u4e0b\u5427
-        \u9019\u500b\u5f71\u97ff\u6e1b\u5230\u6700\u4f4e \u6240\u4ee5\u9999\u6e2f\u5171\u8b58\u9078\u8209\u516c\u5f0fvoting
-        power=2^log e asset you own \u7684\u53b2\u5bb3\u4e4b\u8655\u5c31\u5728\u65bc
-        \u5b83\u80fd\u5920 \u5728\u6709\u9322\u4eba\u7528\u76e1\u5168\u526f\u8eab\u5bb6
-        \u50be\u5bb6\u8569\u7522 \u5730\u9032\u884c\u8cc4\u9078\u4e7e\u64fe\u7f8e\u570b\u5927\u9078\u5605\u6642\u5019
-        \u4f9d\u7136\u80fd\u5920\u4fdd\u6301\u9078\u8209\u5605\u516c\u5e73\u6027 \u78ba\u4fdd\u9078\u8209\u51fa\u569f\u5605\u7f8e\u570b\u7e3d\u7d71\u4e0d\u6703\u662f\u73a9
-        \u8822\u4eba\u653f\u6cbb\u7aae\u4eba\u653f\u6cbb \u7528\u9322\u53bb\u8cb7\u9078\u7968
-        \u4ea6\u90fd\u5514\u6703\u597d\u4f3c \u7f8e\u570b\u6c11\u4e3b\u9ee8\u5605\u7e3d\u7d71
-        \u4e00\u76f4\u6dea\u70ba\u6709\u9322\u4eba \u5927\u5b56\u6c99 \u83ef\u723e\u8857\u5605\u5080\u5121
-        \u597d\u4f3c\u4e2d\u570b\u570b\u5bb6\u4e3b\u5e2d\u7fd2\u8fd1\u5e73\u5481\u6a23
-        \u4e00\u76f4\u6dea\u70ba\u674e\u5609\u8aa0\u5605\u5080\u5121\u5481\u6a23 \u570b\u5bb6\u4e00\u76f4\u88ab\u6709\u9322\u4eba\u628a\u6301
-        \u570b\u5bb6\u88ab\u6709\u9322\u4eba\u7576\u5bb6\u4f5c\u4e3b \u53c8\u6216\u8005
-        \u570b\u5bb6\u88ab\u7aae\u4eba\u9a0e\u52ab\u4e0d\u505c\u6d3e\u798f\u5229 \u597d\u4f3c\u59d4\u5167\u745e\u62c9\u5605\u99ac\u9053\u7f85
-        \u5c0e\u81f4\u570b\u5bb6\u9023\u5e74\u8d64\u5b57 \u50b5\u81fa\u9ad8\u7bc9\u5481\u6a23
-        \u9999\u6e2f\u516c\u5f0f\u9078\u8209\u516c\u5f0fvoting power=2^log e asset
-        you own\u5605\u53b2\u5bb3\u4e4b\u8655\u5c31\u5728\u65bc \u5b83\u80fd\u5920\u5728
-        \u6548\u7387 \u540c\u57cb\u53bb\u4e2d\u5fc3\u6cd5\u4e4b\u9593\u53d6\u5f97\u4e86
-        \u6700\u7d42\u5e73\u8861 \u540c\u6642\u5728\u5bb9\u8a31\u8cc4\u9078 \u884c\u70ba\u767c\u751f\u7684\u60c5\u6cc1
-        \u4e4b\u4e0b \u4f9d\u7136\u59cb\u7d42\u80fd\u5920\u4fdd\u6301 \u9078\u8209\u5605
-        \u516c\u5e73\u6027 \u56e0\u70ba \u653f\u5e9c\u7684 \u552f\u4e00\u4f5c\u7528
-        \u5c31\u662f\u4f5c\u51fa\u8ca1\u5bcc\u7684\u7b2c\u4e8c\u6b21\u5206\u914d \u800c\u5728\u8cc4\u9078\u5605\u904e\u7a0b\u7576\u4e2d
-        \u5176\u5be6 \u6709\u9322\u4eba \u5df2\u7d93\u4ee3\u66ff\u5497\u653f\u5e9c\u5462\u4e00\u500b\u89d2\u8272
-        \u63d0\u524d\u5e6b \u653f\u5e9c\u9032\u884c\u4e86 \u8ca1\u5bcc\u5605\u7b2c\u4e8c\u6b21\u5206\u914d
-        \u6240\u4ee5\u5373\u4f7f\u5c07\u4f86\u9078\u51fa\u569f\u5605\u653f\u5e9c \u504f\u5e6b\u6709\u9322\u4eba\u504f\u5e6b\u8ca1\u5718
-        \u5176\u5be6\u90fd\u5df2\u7d93\u4e0d\u91cd\u8981 \u56e0\u70ba\u653f\u5e9c\u6700\u91cd\u8981\u5605\u76ee\u7684
-        \u4f5c\u51fa\u8ca1\u5bcc\u7b2c\u4e8c\u6b21\u5206\u914d \u5df2\u7d93\u4e00\u65e9\u5b8c\u6210
-        \u800c\u4e14 \u9999\u6e2f\u5171\u8b58\u9078\u8209\u516c\u5f0fvoting power=2^log
-        e asset you own\u80fd\u5920\u5728 \u570b\u5bb6\u767c\u751f\u5927\u91cf\u8cc4\u9078\u884c\u70ba
-        \u6709\u9322\u4eba \u7528\u5168\u526f\u8eab\u5bb6\u50be\u5bb6\u8569\u7522
-        \u6536\u8cb7 \u7aae\u4eba\u9078\u7968\u5605\u60c5\u6cc1 \u4e4b\u4e0b \u5c07\u8cc4\u9078\u5605\u58de\u8655\u6e1b\u5230\u6700\u4f4e","json_metadata":"{\"tags\":[\"feng\"],\"image\":[\"https:\/\/images.hive.blog\/DQmVCgCkpYeWETzF8SpdoZeJXxdfW8LiFWkiAgwsBdZynQd\/489c283171e5d06c24.jpg\"],\"app\":\"steemit\/0.2\",\"format\":\"markdown\"}"}]],"extensions":[],"signatures":["206031059a3a45399d25e60b39ea7d9415868eebdfdd8bde762ffbb1d19c19a4a37c98da7c3464ed6e16bb09a6eaef68e2fc9fc695584f7c87f261f1de105dfa6b"],"transaction_id":"40b38be31e7519bf30780009c15cc55a446deb38","block_num":47792840,"transaction_num":0},{"ref_block_num":17072,"ref_block_prefix":284521805,"expiration":"2020-10-17T05:05:54","operations":[["custom_json",{"required_auths":[],"required_posting_auths":["wakeupkitty"],"id":"follow","json":"[\"reblog\",{\"account\":\"wakeupkitty\",\"author\":\"wakeupkitty\",\"permlink\":\"contest-looking-back-look-forward-3-19\"}]"}]],"extensions":[],"signatures":["1f6bd71337337a16b528e1e32a5148b10316caf44c7c77e7e0704b0f045e0a5f3d316542d84daa030a5e6b6a4c40bc53b0ca90004ab07bd65ae782de5d04972955"],"transaction_id":"4ecd04320f8a55ff8a9737ebcedba0b09fe78d3f","block_num":47792840,"transaction_num":1},{"ref_block_num":17072,"ref_block_prefix":284521805,"expiration":"2020-10-17T05:05:54","operations":[["vote",{"voter":"pixelfan","author":"voclab","permlink":"want-to-seek-thy-face-oh-lord","weight":310}]],"extensions":[],"signatures":["2054b06c5a780f6f84e33fd838fabf84baf2248d98f1f36db2c53bcf2beed7ba2e6a2aa2dfa1b63b8d6599f3bf2703b29ad3b8612df6af46ccc05cce904b3ff4fb"],"transaction_id":"c3077b557822ad48483264907733efc824d70c15","block_num":47792840,"transaction_num":2}],"block_id":"02d942c8823015db5e5db52983836a9c2dd84507","signing_key":"STM5dPN4gqVbFyTwerBZKm36Vc2TtMJriKNcsbyvh7qVonwzA1CVR","transaction_ids":["40b38be31e7519bf30780009c15cc55a446deb38","4ecd04320f8a55ff8a9737ebcedba0b09fe78d3f","c3077b557822ad48483264907733efc824d70c15"]},"id":22}'
-  recorded_at: Sat, 17 Oct 2020 04:56:07 GMT
-- request:
-    method: post
-    uri: https://api.steemitdev.com/
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":85,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       Host:
       - api.steemit.com
+      Content-Length:
+      - '84'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 21:08:53 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '000955536501111175'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70ce5-2399f5c54e33c98046c57569
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":115,"jsonrpc":"2.0","result":{"head_block_number":48405593,"head_block_id":"02e29c593a56c5235f51d49fd571b126fb15b2e7","time":"2020-11-07T21:08:51","current_witness":"scissor.sisters","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411546105.337
+        STEEM","current_supply":"370832352.408 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5781352.916 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110628197.741 STEEM","total_vesting_shares":"212271298395.595260
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"684840348.013942
+        VESTS","pending_rewarded_vesting_steem":"345397.720 STEEM","sbd_interest_rate":0,"sbd_print_rate":1100,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48649377,"recent_slots_filled":"340282366920938463426481119284349108223","participation_count":127,"last_irreversible_block_num":48405575,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":16962922,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-07T21:43:33","last_budget_time":"2020-11-07T20:43:33","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"21.414
+        SBD","downvote_pool_percent":2500}}'
+  recorded_at: Sat, 07 Nov 2020 21:08:53 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":116,"method":"condenser_api.get_block","params":[48405593]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '93'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 21:08:54 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_block.params=[48405593]
+      X-Jussi-Request-Id:
+      - '001097042793191442'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70ce6-75293943563f4b9e092080d7
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":116,"jsonrpc":"2.0","result":{"previous":"02e29c5859519297ebff3d9a680f54888805e5a5","timestamp":"2020-11-07T21:08:51","witness":"scissor.sisters","transaction_merkle_root":"76e864835c4e4af2fd4b1a49ba09b012f2fee6bb","extensions":[],"witness_signature":"1f20fccdb0d15df8a55b07790d5167277ea8c00efafed118b04a67b60910ecdfd80f0799925cccab89b1955a6833b3ebfdfa857d1ff09a49be9b6aea77a3c9a231","transactions":[{"ref_block_num":40005,"ref_block_prefix":17110719,"expiration":"2020-11-07T21:09:15","operations":[["custom_json",{"required_auths":["ufmmine"],"required_posting_auths":[],"id":"ssc-mainnet1","json":"{\"contractName\":\"tokens\",\"contractAction\":\"transfer\",\"contractPayload\":{\"symbol\":\"UFM\",\"to\":\"melinda010100\",\"quantity\":\"55.00000000\",\"memo\":\"\"}}"}]],"extensions":[],"signatures":["200facab3e90332d180a29c0801c26bdeda89222f4d0251f79296a809c019d635a65a557cefc891ea88b587814d433243fd3cb55c5dc0bc9144bd3ac54cdb13a18"],"transaction_id":"c9e57a3fa0758cd02195d4e25d3884697924249d","block_num":48405593,"transaction_num":0},{"ref_block_num":40005,"ref_block_prefix":17110719,"expiration":"2020-11-07T21:09:12","operations":[["limit_order_create",{"owner":"alanyao","orderid":1884878010,"amount_to_sell":"13.711
+        STEEM","min_to_receive":"1.994 SBD","fill_or_kill":false,"expiration":"2020-11-14T21:09:08"}]],"extensions":[],"signatures":["20432eb7e5bbbabb02ef492b172639dff06ad6e79beafdfa0bf1d641b0f58665a818fe9e6ff42562c6bf517b8966429428432c32c5616d2bcd60957f904a76ad1a"],"transaction_id":"347549f53fab5bb45fdda4ef7396230ec35aba2a","block_num":48405593,"transaction_num":1},{"ref_block_num":40004,"ref_block_prefix":1215610937,"expiration":"2020-11-07T21:18:48","operations":[["vote",{"voter":"khainglaeyee","author":"minimalpris","permlink":"20201107t203555382z-post","weight":10000}]],"extensions":[],"signatures":["1f1cba2b6da0b0ab9cd143316b15d896e803835acc67980e8c488f2d1680663f887b0b7cd72a18ac06c43c79d5fc2a9f80419168f3edeaab35a254b5ca140185eb"],"transaction_id":"5f16a9e51febc8e73b9fe6b61419745510c4ffbc","block_num":48405593,"transaction_num":2}],"block_id":"02e29c593a56c5235f51d49fd571b126fb15b2e7","signing_key":"STM57ACN7dVLaxCjRcvFNj6ALMUderJXVVEANWEhZgeyriuBA6yER","transaction_ids":["c9e57a3fa0758cd02195d4e25d3884697924249d","347549f53fab5bb45fdda4ef7396230ec35aba2a","5f16a9e51febc8e73b9fe6b61419745510c4ffbc"]}}'
+  recorded_at: Sat, 07 Nov 2020 21:08:54 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":117,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
       Content-Length:
       - '87'
   response:
@@ -1009,7 +1269,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 05:03:37 GMT
+      - Sat, 07 Nov 2020 21:11:39 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -1021,9 +1281,9 @@ http_interactions:
       X-Jussi-Cache-Hit:
       - appbase.condenser_api.get_dynamic_global_properties.params=[]
       X-Jussi-Request-Id:
-      - '000540777933601764'
+      - '000309603354428685'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7b29-732524f806e11839718bc13d
+      - Root=1-5fa70d8b-6698acdf0ea32c9b27d355d6
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -1036,25 +1296,363 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"id":85,"jsonrpc":"2.0","result":{"head_block_number":47792990,"head_block_id":"02d9435e1e13ec293ff29710234cfe72c90e6adf","time":"2020-10-17T05:03:36","current_witness":"hinomaru-jp","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"405323620.375
-        STEEM","current_supply":"368939780.004 STEEM","confidential_supply":"0.000
-        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5785030.619 SBD","confidential_sbd_supply":"0.000
-        SBD","total_vesting_fund_steem":"110212558.781 STEEM","total_vesting_shares":"212010294056.385346
-        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"718662781.603882
-        VESTS","pending_rewarded_vesting_steem":"362769.752 STEEM","sbd_interest_rate":0,"sbd_print_rate":10000,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48025272,"recent_slots_filled":"297746989926182740923771085713792040959","participation_count":126,"last_irreversible_block_num":47792972,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":16820849,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-10-17T05:41:51","last_budget_time":"2020-10-17T04:41:51","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"20.592
+      string: '{"id":117,"jsonrpc":"2.0","result":{"head_block_number":48405646,"head_block_id":"02e29c8ea2501e04eb080188ac90edb324f86c66","time":"2020-11-07T21:11:36","current_witness":"future.witness","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411546265.315
+        STEEM","current_supply":"370832494.097 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5781355.513 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110628236.097 STEEM","total_vesting_shares":"212271325211.340658
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"684952521.976804
+        VESTS","pending_rewarded_vesting_steem":"345456.175 STEEM","sbd_interest_rate":0,"sbd_print_rate":1100,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48649432,"recent_slots_filled":"338953138925153547590470795972367613951","participation_count":125,"last_irreversible_block_num":48405631,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":16960658,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-07T21:43:33","last_budget_time":"2020-11-07T20:43:33","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"23.693
         SBD","downvote_pool_percent":2500}}'
-  recorded_at: Sat, 17 Oct 2020 05:03:37 GMT
+  recorded_at: Sat, 07 Nov 2020 21:11:39 GMT
 - request:
     method: post
     uri: https://api.steemitdev.com/
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","id":86,"method":"condenser_api.get_block","params":[47792990]}'
+      string: '{"jsonrpc":"2.0","id":118,"method":"condenser_api.get_block","params":[48405646]}'
     headers:
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - steem-ruby/0.9.4
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '93'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Nov 2020 21:11:39 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '553'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_block.params=[48405646]
+      X-Jussi-Request-Id:
+      - '001122348399428379'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa70d8b-554cb9e45819429059afcf57
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"id":118,"jsonrpc":"2.0","result":{"previous":"02e29c8dbc89f499a44ceab1442272fe12582afd","timestamp":"2020-11-07T21:11:36","witness":"future.witness","transaction_merkle_root":"0000000000000000000000000000000000000000","extensions":[],"witness_signature":"1ff0c59afaabfd0a3de691a6a49f55aecae1707134792cc8a9d3704d1e9baad5442ec683a7e87994ebbcb6cd1146a6222671ba1a1c62405bd127cb857f7a2b3bdd","transactions":[],"block_id":"02e29c8ea2501e04eb080188ac90edb324f86c66","signing_key":"STM8VEQene12D5uLS1VZYkr22cA1hYEmm4NzL41LvqK5xKzHTgbRP","transaction_ids":[]}}'
+  recorded_at: Sat, 07 Nov 2020 21:11:39 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":2,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '67'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:35:01 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '000376886428916989'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa78385-02d4d4a3160da0be07192c6c
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":2,"jsonrpc":"2.0","result":{"head_block_number":48415498,"head_block_id":"02e2c30a41e8e087744dc8cb4c3b95c8fdf9d5df","time":"2020-11-08T05:35:00","current_witness":"dev.supporters","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411010923.731
+        STEEM","current_supply":"370874899.940 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5779587.426 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110628741.640 STEEM","total_vesting_shares":"212263603110.141015
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"693952844.483425
+        VESTS","pending_rewarded_vesting_steem":"350147.005 STEEM","sbd_interest_rate":0,"sbd_print_rate":2300,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48659500,"recent_slots_filled":"340282366918462583384803811697564319743","participation_count":125,"last_irreversible_block_num":48415483,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":14670844,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-08T05:43:39","last_budget_time":"2020-11-08T04:43:39","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"44.220
+        SBD","downvote_pool_percent":2500}}'
+  recorded_at: Sun, 08 Nov 2020 05:35:01 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":3,"method":"condenser_api.get_block","params":[48415498]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '91'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:35:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000379871314575561'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa78386-44ed20b3709f625b07b7b61e
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"previous":"02e2c3090ac0a828d1e924978149b210d6347f07","timestamp":"2020-11-08T05:35:00","witness":"dev.supporters","transaction_merkle_root":"9771818f40a4b3278d5e1957ddc6c79ce9c9e9c4","extensions":[],"witness_signature":"1fd3e5abc32a2254658bbbd7e3cd94cde6bf5c863ca3cb6db6cdb38b03cad69f506537401d3b5549dddfa131910ca89578869c954e3ad05477703c87c502ced280","transactions":[{"ref_block_num":49925,"ref_block_prefix":3864247697,"expiration":"2020-11-08T05:35:54","operations":[["vote",{"voter":"givemeyoursteem","author":"vapenation","permlink":"serious-people-who-enter-other-peoples39-homes-as-a-part-of-your-job","weight":10000}]],"extensions":[],"signatures":["1f308016140bbc153f368ba31e3321d6637ab7eb61dcd4f9f8b00e03e47d59603d2df4bad9c7f5feaddb0898f106aa69ec93a59c4b84319a0d71f1dc193fcbf4f5"],"transaction_id":"c2bee2c3bc5a525dd4e1c34e5bff814809d173c5","block_num":48415498,"transaction_num":0},{"ref_block_num":49912,"ref_block_prefix":666373229,"expiration":"2020-11-08T05:44:54","operations":[["vote",{"voter":"sklara","author":"jhy2246","permlink":"34fdkf","weight":3000}]],"extensions":[],"signatures":["1f5a9c94242c3afc309d3b2c63f25a0f350286ffaf9a706878cf33d3ae88b2d5a6334fde5b499814054b99077b9a79e1a6708b9404debecad9f94b3d9d1c3dc581"],"transaction_id":"d382d350d9293c0ff022094531e75be6f50deec1","block_num":48415498,"transaction_num":1},{"ref_block_num":49912,"ref_block_prefix":666373229,"expiration":"2020-11-08T05:44:54","operations":[["vote",{"voter":"goldenmyanmar","author":"fredkese","permlink":"diarygame-1030-2020-11-5","weight":10000}]],"extensions":[],"signatures":["1f40de0d5ed44d4018b384dd7a856298e8d3d68b29855dadf3223c8a0605c26ceb1ec4c461ab7f4ad87c3ae80c5bc557ec6ac1c9063b44e2848c3bc94bf5124b43"],"transaction_id":"ac973a376783a369cb5f1e5d9bfd0aaef5ce1287","block_num":48415498,"transaction_num":2},{"ref_block_num":49925,"ref_block_prefix":3864247697,"expiration":"2020-11-08T05:35:56","operations":[["vote",{"voter":"dugan","author":"vapenation","permlink":"serious-people-who-enter-other-peoples39-homes-as-a-part-of-your-job","weight":10000}]],"extensions":[],"signatures":["1f3451d5041d11d5b5433ece3a8a8eb3dfdb416f32c634f4a0da7abdbe0cfe6f582d664d1de0118ce1f180de9aac89004b8bbff893b6394746571ae5cba3b184ce"],"transaction_id":"9e710202e2cd405e4587e16ed20ac1dbb22213cd","block_num":48415498,"transaction_num":3},{"ref_block_num":49912,"ref_block_prefix":666373229,"expiration":"2020-11-08T05:44:54","operations":[["vote",{"voter":"ravenkim","author":"jhy2246","permlink":"34fdkf","weight":3000}]],"extensions":[],"signatures":["2037dd09d3a075cca33997b3d9a75f38148d2c7fe57c73fd38b239f76153c17100106e9f630f5ca807787e57e55d5e1ece32607a79283bef46197f1d54566ba6eb"],"transaction_id":"233508902900c31ca3535c8d40837202f30430d1","block_num":48415498,"transaction_num":4},{"ref_block_num":49913,"ref_block_prefix":575967784,"expiration":"2020-11-08T05:44:57","operations":[["vote",{"voter":"successgr","author":"jhy2246","permlink":"34fdkf","weight":1000}]],"extensions":[],"signatures":["2060bd6c88abb0749b3880d2019a8834ad07779b04f4fe8627176a36edaab379ba30c11cda670737ff703021e19cae9e10032a3b91b902cf804b5179835af73c4b"],"transaction_id":"771faac774f7ca87e9a9f2d7688d08d77e256583","block_num":48415498,"transaction_num":5},{"ref_block_num":49928,"ref_block_prefix":4196696440,"expiration":"2020-11-08T05:35:57","operations":[["vote",{"voter":"dartistdreams","author":"liudasbutkus","permlink":"how-to-get-usd0-01-views-for-your-videos-using-youtube-ads","weight":10000}]],"extensions":[],"signatures":["1f3932f8e3283fb44a5603907f8f293b79925d2ded61788fe1d9d5850ad9ecbdb8273c4cb72323d70a85c1958c8c2edb605eae3c6bfce2166e6a0fc90e7c9013b8"],"transaction_id":"30687d25ec5d34b9f2806f9dd6d9ec59bb83a066","block_num":48415498,"transaction_num":6},{"ref_block_num":49912,"ref_block_prefix":666373229,"expiration":"2020-11-08T05:44:54","operations":[["vote",{"voter":"ph-fund","author":"mccoy02","permlink":"poloniex-spotlight-security-features","weight":0}]],"extensions":[],"signatures":["1f150e919d2d4e6898565c829f0b103502d570ca8ccf7c57a018ec6aff433346d47eecba930464333f4e3f3e0a4fe4317ee0a08eac10256a0113704c1738debd84"],"transaction_id":"198add393a6104ebc19711de5b045c8e56a65e91","block_num":48415498,"transaction_num":7}],"block_id":"02e2c30a41e8e087744dc8cb4c3b95c8fdf9d5df","signing_key":"STM5sAkhBD13dp63eE89MxvC9147rYBtjf2VP7CTLygWAuKEV31RP","transaction_ids":["c2bee2c3bc5a525dd4e1c34e5bff814809d173c5","d382d350d9293c0ff022094531e75be6f50deec1","ac973a376783a369cb5f1e5d9bfd0aaef5ce1287","9e710202e2cd405e4587e16ed20ac1dbb22213cd","233508902900c31ca3535c8d40837202f30430d1","771faac774f7ca87e9a9f2d7688d08d77e256583","30687d25ec5d34b9f2806f9dd6d9ec59bb83a066","198add393a6104ebc19711de5b045c8e56a65e91"]},"id":3}'
+  recorded_at: Sun, 08 Nov 2020 05:35:03 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":48,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '92'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:39:38 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '000207273567182927'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7849a-1ad745a53cb67e15211bc7e2
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":48,"jsonrpc":"2.0","result":{"head_block_number":48415590,"head_block_id":"02e2c366b1edd8f7f23506f300e9a5bd7c97a698","time":"2020-11-08T05:39:36","current_witness":"symbionts","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411011205.554
+        STEEM","current_supply":"370875132.249 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5779594.556 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110628824.028 STEEM","total_vesting_shares":"212263679996.532709
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"694630788.730035
+        VESTS","pending_rewarded_vesting_steem":"350500.306 STEEM","sbd_interest_rate":0,"sbd_print_rate":2300,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48659592,"recent_slots_filled":"340116213421465348979261631549233168383","participation_count":127,"last_irreversible_block_num":48415569,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":14687360,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-08T05:43:39","last_budget_time":"2020-11-08T04:43:39","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"48.268
+        SBD","downvote_pool_percent":2500}}'
+  recorded_at: Sun, 08 Nov 2020 05:39:38 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":49,"method":"condenser_api.get_block","params":[48415590]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '92'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:39:38 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000777132440215479'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa7849a-44f1af6464d246c615612f19
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"previous":"02e2c36520b1392bbbe871c3d56fe1c26fed6a77","timestamp":"2020-11-08T05:39:36","witness":"symbionts","transaction_merkle_root":"9b5c1a5349ced42f939445a24893f042322b3841","extensions":[],"witness_signature":"20656e2e69ea4a05fff76f038d3f1e29e0e2ff3ada4bb5427a982fe3e40de183b42c143151fa2109ab0d98395250e33c3b04a477e5bf243767bc8aecee0debe4d0","transactions":[{"ref_block_num":50000,"ref_block_prefix":3799260935,"expiration":"2020-11-08T05:49:30","operations":[["vote",{"voter":"aticeh","author":"valchiz","permlink":"it-is-perfectly-okay-to-have-bad-moments-in-business","weight":3600}]],"extensions":[],"signatures":["207aa5760f6ebaf57fcf4e6a083682c091cb88c7a0e77d191db34ea74863ff6f981890b83275e3334f7bdb2fcb6db4029a2217cfa0772252436635073edc7e87d5"],"transaction_id":"bd257aae20470158d138015323157e76f2804518","block_num":48415590,"transaction_num":0},{"ref_block_num":50000,"ref_block_prefix":3799260935,"expiration":"2020-11-08T05:49:30","operations":[["vote",{"voter":"danielse","author":"valchiz","permlink":"it-is-perfectly-okay-to-have-bad-moments-in-business","weight":3600}]],"extensions":[],"signatures":["200f7ae2eafd16e27a0f1b52a55dffc43f18e68d300145aff4ae4db6580376074f26e87753b7e271647e45ea122614e72296003d085d23dfaff76346c61f2aed20"],"transaction_id":"ef6b6e23961df45a9bad3e2aaf20ba29fa5fd9cb","block_num":48415590,"transaction_num":1},{"ref_block_num":50021,"ref_block_prefix":725201184,"expiration":"2020-11-08T05:40:33","operations":[["custom_json",{"required_auths":["steemmonsters"],"required_posting_auths":[],"id":"ssc-mainnet1","json":"{\"contractName\":\"tokens\",\"contractAction\":\"issue\",\"contractPayload\":{\"symbol\":\"DEC\",\"to\":\"steemmonsters\",\"quantity\":\"77715.497\"}}"}]],"extensions":[],"signatures":["202c9dd0d2da72debed3a7003fa51167de35b7ee9a6e710ba69f4cc9f9b76b661f38a8597a43343d248467b053eabbdd95f25ece9208e93881e4f386b745512067"],"transaction_id":"16f8e3a5d2f430275bcb4326d25b196b038d4d2f","block_num":48415590,"transaction_num":2},{"ref_block_num":50000,"ref_block_prefix":3799260935,"expiration":"2020-11-08T05:49:33","operations":[["vote",{"voter":"braham","author":"valchiz","permlink":"it-is-perfectly-okay-to-have-bad-moments-in-business","weight":3600}]],"extensions":[],"signatures":["2003c8d75411a7b1194d820209de39a0fcc36c46d4e8249c69ea838b35c481496b6bd3c150bdfbcee4101606c7f875fe8d3d451f27128798d3d936e25abf2a25a6"],"transaction_id":"953f00615b557c2dd335b51e8e471aa5440e01f1","block_num":48415590,"transaction_num":3},{"ref_block_num":50000,"ref_block_prefix":3799260935,"expiration":"2020-11-08T05:49:33","operations":[["vote",{"voter":"steem.rise","author":"valchiz","permlink":"it-is-perfectly-okay-to-have-bad-moments-in-business","weight":3600}]],"extensions":[],"signatures":["1f7370e9344ff7eb76f106db128b5153b6ba2a68dbf9a45ae8ffbbf922d182a4373f09a0f82d73d7895e3260d207ec2dd31d307887dd4664486af229786ab44826"],"transaction_id":"0d9ad100bdaf16862e2e2fb95065b3f7efbe389d","block_num":48415590,"transaction_num":4},{"ref_block_num":50000,"ref_block_prefix":3799260935,"expiration":"2020-11-08T05:49:27","operations":[["vote",{"voter":"nirob192199","author":"progressivechef","permlink":"appics-v1-appics-im-322252","weight":300}]],"extensions":[],"signatures":["20180edbd691b7b65a7da7b3dfd3bca4863c01331ede5207fd3bb00411d456f96c7336bfb8fd9d695eefdc9576ae7b11056ef7a3c2d15331f62cd82797ab330806"],"transaction_id":"e3a9936190ed1e0809d7af632fb9a21fb6710cb6","block_num":48415590,"transaction_num":5}],"block_id":"02e2c366b1edd8f7f23506f300e9a5bd7c97a698","signing_key":"STM6Ka1v11sEa5S6htW5K73kcD91PcEcWSyS7T9HFvfYgjL3mzmhv","transaction_ids":["bd257aae20470158d138015323157e76f2804518","ef6b6e23961df45a9bad3e2aaf20ba29fa5fd9cb","16f8e3a5d2f430275bcb4326d25b196b038d4d2f","953f00615b557c2dd335b51e8e471aa5440e01f1","0d9ad100bdaf16862e2e2fb95065b3f7efbe389d","e3a9936190ed1e0809d7af632fb9a21fb6710cb6"]},"id":49}'
+  recorded_at: Sun, 08 Nov 2020 05:39:38 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":43,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '83'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 05:48:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '000694547269486397'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa78692-216aab285dc958866d48cf4b
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":43,"jsonrpc":"2.0","result":{"head_block_number":48415755,"head_block_id":"02e2c40b90e82b701ad0ddce644947cd278b96fb","time":"2020-11-08T05:48:00","current_witness":"symbionts","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411011708.770
+        STEEM","current_supply":"370875554.423 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5779606.226 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110629337.076 STEEM","total_vesting_shares":"212264518847.880218
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"694736592.706588
+        VESTS","pending_rewarded_vesting_steem":"350555.453 STEEM","sbd_interest_rate":0,"sbd_print_rate":2300,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48659760,"recent_slots_filled":"319014718988379809496913694329843744767","participation_count":126,"last_irreversible_block_num":48415737,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":14676655,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-08T06:43:39","last_budget_time":"2020-11-08T05:43:39","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"3.784
+        SBD","downvote_pool_percent":2500}}'
+  recorded_at: Sun, 08 Nov 2020 05:48:02 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":44,"method":"condenser_api.get_block","params":[48415755]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1069,7 +1667,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Oct 2020 05:03:37 GMT
+      - Sun, 08 Nov 2020 05:48:02 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -1078,10 +1676,12 @@ http_interactions:
       - keep-alive
       Server:
       - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_block.params=[48415755]
       X-Jussi-Request-Id:
-      - '001061648023598913'
+      - '001022635252566485'
       X-Amzn-Trace-Id:
-      - Root=1-5f8a7b29-489dd2200bc5487d76462810
+      - Root=1-5fa78692-641a7471429b4ab86ce1dac1
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -1094,6 +1694,122 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":{"previous":"02d9435d7e8cf752eec1d446e2c78ff2d19600f5","timestamp":"2020-10-17T05:03:36","witness":"hinomaru-jp","transaction_merkle_root":"370b47162d0daba13898415489facdcd536e40d9","extensions":[],"witness_signature":"1fd18e1cede4b5e3e3228862351bc47f0d7c20096162fdb8df00051e249a74351d591e935e5bd70fae842232effaef4d4f69bcbe5ba55a3a95a897f934e5f294cd","transactions":[{"ref_block_num":17244,"ref_block_prefix":3557041077,"expiration":"2020-10-17T05:04:32","operations":[["vote",{"voter":"amirhayat","author":"steemisthebest","permlink":"if-2020-was-a-toilet","weight":10000}]],"extensions":[],"signatures":["1f2b510ca5d770b1add801dee9fe719ceede14ec5f23d1fd00f9eb89ca216c61270f75bdb617b5b081490749d09a7fa58ce6877228ce7bf34cbd16d2ac84dd5327"],"transaction_id":"4551675d3e123ac915c7c1c958f4f1f0328dd515","block_num":47792990,"transaction_num":0},{"ref_block_num":17221,"ref_block_prefix":3459037766,"expiration":"2020-10-17T05:13:30","operations":[["vote",{"voter":"happy33","author":"cryptocoinkb","permlink":"coins-with-growing-price-and-volume---10-17-2020","weight":10000}]],"extensions":[],"signatures":["1f111d50d9416157ed3cc636fc8c1964790eb45d9e5b4ea0e8ee40907dc4b9505d6fdde042ee92ca866162eeb11425685a8696d4831b31fc42e8ce8327b8a1aa8d"],"transaction_id":"533c2af3362f1b47cc0df7ffbf6fb1b2badb674a","block_num":47792990,"transaction_num":1},{"ref_block_num":17221,"ref_block_prefix":3459037766,"expiration":"2020-10-17T05:13:30","operations":[["vote",{"voter":"dsc-r2cornell","author":"dianag28","permlink":"16-10-2020-the-diary-game-season-3-or-dia-agotador","weight":3500}]],"extensions":[],"signatures":["20757dafb479de7c5fc654ade5eca8a54a7468574b48de39db755b8d49fa0fbb5e1acb0abb21b22c7f1659384e7f7087a762b922abc2efb66f43d1572850646b6b"],"transaction_id":"2cc593410a5650504a042e7e460e0c360ebde535","block_num":47792990,"transaction_num":2},{"ref_block_num":17242,"ref_block_prefix":2548524753,"expiration":"2020-10-17T05:04:33","operations":[["vote",{"voter":"korsah","author":"creativepingu","permlink":"cityscape-photography-and-art-contest-week-048","weight":8000}]],"extensions":[],"signatures":["20214294428295ca94c671d7c60cc4ae0d19e5760e5e741e0916d4af348f7b89f00273fdeda849d821de170fc0b8ef2da1dc56fd0471cd9dc21608201925ec2a4e"],"transaction_id":"bf8dd52d544d19ac7cd77577b0800f1656c12807","block_num":47792990,"transaction_num":3}],"block_id":"02d9435e1e13ec293ff29710234cfe72c90e6adf","signing_key":"STM5sd6ZM2moJC3ecLZNmKZQQFvEqWS6PE3RvFbeymueTW83TnCuE","transaction_ids":["4551675d3e123ac915c7c1c958f4f1f0328dd515","533c2af3362f1b47cc0df7ffbf6fb1b2badb674a","2cc593410a5650504a042e7e460e0c360ebde535","bf8dd52d544d19ac7cd77577b0800f1656c12807"]},"id":86}'
-  recorded_at: Sat, 17 Oct 2020 05:03:37 GMT
+      string: '{"id":44,"jsonrpc":"2.0","result":{"previous":"02e2c40a8e2e96d5e09cb0be70ae59c8dc23cf7c","timestamp":"2020-11-08T05:48:00","witness":"symbionts","transaction_merkle_root":"6fc44888791a830c061b41b36d07f0394bd84fd9","extensions":[],"witness_signature":"20a58abf190e0484c15fdf91b37375130ab9844d4f9d118ab35c6311be714f191e5bdfab6068ed71afa8e5948fbd1fce70667c8a96d55186dc0a0e1a2832b94302","transactions":[{"ref_block_num":50168,"ref_block_prefix":3442308157,"expiration":"2020-11-08T05:57:54","operations":[["claim_reward_balance",{"account":"apoloo1","reward_steem":"0.000
+        STEEM","reward_sbd":"0.000 SBD","reward_vests":"573.751155 VESTS"}]],"extensions":[],"signatures":["1f560ee753d1de64e194b1162252465fa98411b69c652ea0911cb4f6f96ac6a3792175fb5861435a7b2ddc8d14834cd92a6ef9bfbd6a902821a692f4b512f9cadd"],"transaction_id":"4a531441e37be3dd1dc7cabbad9c9adc659eba42","block_num":48415755,"transaction_num":0},{"ref_block_num":50169,"ref_block_prefix":3134861698,"expiration":"2020-11-08T05:48:24","operations":[["custom_json",{"required_auths":["photo-token"],"required_posting_auths":[],"id":"ssc-mainnet1","json":"[{\"contractName\":\"tokens\",\"contractAction\":\"issue\",\"contractPayload\":{\"symbol\":\"PHOTO\",\"to\":\"photo-token\",\"quantity\":\"1.01512\"}},{\"contractName\":\"tokens\",\"contractAction\":\"stake\",\"contractPayload\":{\"symbol\":\"PHOTO\",\"to\":\"nazmul-islam\",\"quantity\":\"0.50756\"}},{\"contractName\":\"tokens\",\"contractAction\":\"transfer\",\"contractPayload\":{\"symbol\":\"PHOTO\",\"to\":\"nazmul-islam\",\"quantity\":\"0.50756\",\"memo\":\"Here
+        are your claimed tokens! (0.507560 more PHOTO were added to PHOTO POWER)\"}}]"}]],"extensions":[],"signatures":["206b92dc80979103d158e146240fc5ca32cb684a5d21668827812d0f61719ead696a844ce33bded3849b0ea05c400aa196685bdceb0507f14abe38f63cbc5d9e86"],"transaction_id":"3a49d5559459a0240f831e3c5051188bbfb8d5e6","block_num":48415755,"transaction_num":1}],"block_id":"02e2c40b90e82b701ad0ddce644947cd278b96fb","signing_key":"STM6Ka1v11sEa5S6htW5K73kcD91PcEcWSyS7T9HFvfYgjL3mzmhv","transaction_ids":["4a531441e37be3dd1dc7cabbad9c9adc659eba42","3a49d5559459a0240f831e3c5051188bbfb8d5e6"]}}'
+  recorded_at: Sun, 08 Nov 2020 05:48:02 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":20,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '92'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 06:00:36 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '000226011097923912'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa78984-2064bb142fc0131e1709b283
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":20,"jsonrpc":"2.0","result":{"head_block_number":48416003,"head_block_id":"02e2c503fdd82d480cc9fc152477c12f3bef44d2","time":"2020-11-08T06:00:33","current_witness":"steem.history","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"411012466.650
+        STEEM","current_supply":"370876213.887 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"5779620.398 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"110629756.392 STEEM","total_vesting_shares":"212265104550.396766
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"695071104.105971
+        VESTS","pending_rewarded_vesting_steem":"350729.781 STEEM","sbd_interest_rate":0,"sbd_print_rate":2300,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48660011,"recent_slots_filled":"340282366911034943149091565228280250367","participation_count":126,"last_irreversible_block_num":48415988,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":14655959,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-08T06:43:39","last_budget_time":"2020-11-08T05:43:39","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"14.696
+        SBD","downvote_pool_percent":2500}}'
+  recorded_at: Sun, 08 Nov 2020 06:00:36 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":21,"method":"condenser_api.get_block","params":[48416003]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '92'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Nov 2020 06:00:38 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000281494329164212'
+      X-Amzn-Trace-Id:
+      - Root=1-5fa78985-40bd3d3408d9707057b6a4a8
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"previous":"02e2c502247c43fea784f1f524db98f6ebf857ae","timestamp":"2020-11-08T06:00:33","witness":"steem.history","transaction_merkle_root":"819ae42d3d735f8880e937be3f1183c9e14a1e86","extensions":[],"witness_signature":"1f44bebd692d5c586997af4ef49ae3f0e7c999738c76da259f5048879b5bca2b6328fd4301d3bda98dfbbfe9643e8462c151e8b04544868f229509df9a85788a2a","transactions":[{"ref_block_num":50415,"ref_block_prefix":2029652125,"expiration":"2020-11-08T06:10:21","operations":[["claim_reward_balance",{"account":"realmankwon.scot","reward_steem":"0.000
+        STEEM","reward_sbd":"0.000 SBD","reward_vests":"44.134822 VESTS"}]],"extensions":[],"signatures":["205781b830921345c6700ddcc07dec785ec50202509701e7cf83da63e82d231b230d952e1b5452e90cd9f9f293f0fad34e046ae1dd1cb226d0f367727030b0c2be"],"transaction_id":"7ecca15b8698642646791d6ac1cbaaddcd21ae4f","block_num":48416003,"transaction_num":0},{"ref_block_num":50418,"ref_block_prefix":1079943443,"expiration":"2020-11-08T06:00:57","operations":[["transfer",{"from":"coin-doubler","to":"dlease","amount":"0.451
+        STEEM","memo":"renew 5f4da3a33344d5001835b482"}]],"extensions":[],"signatures":["207f1f2411226455718e6089007bf6335e259b9ff67bd072a424e137560f183d212a27e410457d939c373038432e87470c740b9204fe911dd68bf663e859f74611"],"transaction_id":"738b13c35e978334ec0c6477ddb0f172a67cfd7b","block_num":48416003,"transaction_num":1},{"ref_block_num":50418,"ref_block_prefix":1079943443,"expiration":"2020-11-08T06:10:30","operations":[["vote",{"voter":"ganastha","author":"cryptocoinkb","permlink":"coins-with-growing-price-and-volume---11-08-2020","weight":10000}]],"extensions":[],"signatures":["205e2b7a0462f1f5bf3988c682e9d3dcfa8c3521a85e320053b0801cdc6f8064d0695f447aeaacfafa8ed462544d21604489fa314a65b434246bd79c567c7b06d8"],"transaction_id":"adfd93cff5288b4c76abe5adeca01a298c361254","block_num":48416003,"transaction_num":2}],"block_id":"02e2c503fdd82d480cc9fc152477c12f3bef44d2","signing_key":"STM5vKFuWzknVmhRtTeYPPCphYg2fGcB9J3wTa7hRMoUwCshKx7zT","transaction_ids":["7ecca15b8698642646791d6ac1cbaaddcd21ae4f","738b13c35e978334ec0c6477ddb0f172a67cfd7b","adfd93cff5288b4c76abe5adeca01a298c361254"]},"id":21}'
+  recorded_at: Sun, 08 Nov 2020 06:00:38 GMT
 recorded_with: VCR 6.0.0

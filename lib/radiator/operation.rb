@@ -5,7 +5,7 @@ module Radiator
     include Utils
     
     def initialize(options = {})
-      chain = options.delete(:chain) || :steem
+      chain = (options.delete(:chain) || 'hive').to_sym
       opt = options.dup
       @type = opt.delete(:type)
       

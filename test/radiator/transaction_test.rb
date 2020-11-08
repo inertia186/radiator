@@ -154,13 +154,13 @@ module Radiator
       # The only thing that should remain if we remove the second example is the
       # chain_id.
       remaining_hex = hex.gsub example_hex2, ''
-      assert_equal '0000000000000000000000000000000000000000000000000000000000000000',
+      assert_equal Radiator::ChainConfig::NETWORKS_HIVE_CHAIN_ID,
         remaining_hex, 'expect nothing but the chain_id'
       
       # Here, we're going to take apart our contrived serialization so we can
       # verify each substring.
       
-      assert_equal '0000000000000000000000000000000000000000000000000000000000000000',
+      assert_equal Radiator::ChainConfig::NETWORKS_HIVE_CHAIN_ID,
         hex_segments[:chain_id], 'expect chain_id'
       assert_equal 'bd8c', hex_segments[:ref_block_num], 'expect ref_block_num'
       assert_equal '5fe26f45', hex_segments[:ref_block_prefix], 'expect ref_block_prefix'
@@ -194,12 +194,12 @@ module Radiator
       # https://gist.github.com/xeroc/9bda11add796b603d83eb4b41d38532b
       example_bytes = @transaction.send(:to_bytes).chop
       example_digest = Digest::SHA256.digest example_bytes
-      assert_equal 'ccbcb7d64444356654febe83b8010ca50d99edd0389d273b63746ecaf21adb92', hexlify(example_digest),
+      assert_equal '094f2c1a15ef441014c58f8cdc1a84fcab11bd617b33507167e1798e9f1923d2', hexlify(example_digest),
         'epect example output from digest'
       refute_equal hexlify(digest), hexlify(example_digest),
         'did not expect example output to match normal output'
       
-      assert_equal '582176b1daf89984bc8b4fdcb24ff1433d1eb114a8c4bf20fb22ad580d035889', hexlify(digest)
+      assert_equal '0e5dbd979f4f2387c5d5a1b649ef06589630faf7c065dea0da8e592b03da06bc', hexlify(digest)
         'expect normal output from digest'
     end
     
@@ -434,8 +434,8 @@ module Radiator
         type: :feed_publish,
         publisher: 'xeroc',
         exchange_rate: {
-          base: '1.000 SBD',
-          quote: '4.123 STEEM'
+          base: '1.000 HBD',
+          quote: '4.123 HIVE'
         }
       }
       
@@ -454,10 +454,10 @@ module Radiator
       
       assert_equal '07', hex_segments[:op_id], 'expect op_id'
       assert_equal '057865726f63', hex_segments[:publisher], 'expect publisher'
-      assert_equal 'e80300000000000003534244000000001b1000000000000003535445454d', hex_segments[:exchange_rate], 'expect exchange_rate'
+      assert_equal 'e80300000000000003484244000000001b10000000000000034849564500', hex_segments[:exchange_rate], 'expect exchange_rate'
       
       compare = 'f68585abf4dce7c804570107057865726f63e803000000000' +
-        '00003534244000000001b1000000000000003535445454d00' +
+        '00003484244000000001b1000000000000003484956450000' +
         '000001203847a02aa76964cacfb41565c23286cc64b18f6bb' +
         '9260832823839b3b90dff18738e1b686ad22f79c42fca73e6' +
         '1bf633505a2a66cac65555b0ac535ca5ee5a61'
@@ -556,8 +556,8 @@ module Radiator
         type: :comment_options,
         author: 'xeroc',
         permlink: 'piston',
-        max_accepted_payout: '1000000.000 SBD',
-        percent_steem_dollars: 10000,
+        max_accepted_payout: '1000000.000 HBD',
+        percent_hbd: 10000,
         allow_votes: true,
         allow_curation_rewards: true,
         extensions: []
@@ -571,7 +571,7 @@ module Radiator
         author: hex[88..99],
         permlink: hex[100..113],
         max_accepted_payout: hex[114..145],
-        percent_steem_dollars: hex[146..149],
+        percent_hbd: hex[146..149],
         allow_votes: hex[150..151],
         allow_curation_rewards: hex[152..153],
         op_extensions: hex[154..155]
@@ -584,14 +584,14 @@ module Radiator
       assert_equal '13', hex_segments[:op_id], 'expect op_id'
       assert_equal '057865726f63', hex_segments[:author], 'expect author'
       assert_equal '06706973746f6e', hex_segments[:permlink], 'expect permlink'
-      assert_equal '00ca9a3b000000000353424400000000', hex_segments[:max_accepted_payout], 'expect max_accepted_payout'
-      assert_equal '1027', hex_segments[:percent_steem_dollars], 'expect percent_steem_dollars'
+      assert_equal '00ca9a3b000000000348424400000000', hex_segments[:max_accepted_payout], 'expect max_accepted_payout'
+      assert_equal '1027', hex_segments[:percent_hbd], 'expect percent_hbd'
       assert_equal '01', hex_segments[:allow_votes], 'expect allow_votes'
       assert_equal '01', hex_segments[:allow_curation_rewards], 'expect allow_curation_rewards'
       assert_equal '00', hex_segments[:op_extensions], 'expect op_extensions'
 
       compare = 'f68585abf4dce7c804570113057865726f6306706973746f6e' +
-        '00ca9a3b000000000353424400000000102701010000011f20' +
+        '00ca9a3b000000000348424400000000102701010000011f20' +
         'feacc3f917dfa2d6082afb5ab5aab82d7df1428130c7b7eec4' +
         '56d259e59fc54ee582a5a86073508f69ffebea4283f13d1a89' +
         '6243754a4a82fa18077f832225'
@@ -606,8 +606,8 @@ module Radiator
         type: :comment_options,
         author: 'xeroc',
         permlink: 'piston',
-        max_accepted_payout: '1000000.000 SBD',
-        percent_steem_dollars: 10000,
+        max_accepted_payout: '1000000.000 HBD',
+        percent_hbd: 10000,
         allow_replies: true,
         allow_votes: true,
         allow_curation_rewards: true,
@@ -622,7 +622,7 @@ module Radiator
         author: hex[88..99],
         permlink: hex[100..113],
         max_accepted_payout: hex[114..145],
-        percent_steem_dollars: hex[146..149],
+        percent_hbd: hex[146..149],
         allow_replies: hex[150..151],
         allow_votes: hex[152..153],
         allow_curation_rewards: hex[154..155],
@@ -636,8 +636,8 @@ module Radiator
       assert_equal '13', hex_segments[:op_id], 'expect op_id'
       assert_equal '057865726f63', hex_segments[:author], 'expect author'
       assert_equal '06706973746f6e', hex_segments[:permlink], 'expect permlink'
-      assert_equal '00ca9a3b000000000353424400000000', hex_segments[:max_accepted_payout], 'expect max_accepted_payout'
-      assert_equal '1027', hex_segments[:percent_steem_dollars], 'expect percent_steem_dollars'
+      assert_equal '00ca9a3b000000000348424400000000', hex_segments[:max_accepted_payout], 'expect max_accepted_payout'
+      assert_equal '1027', hex_segments[:percent_hbd], 'expect percent_hbd'
       assert_equal '01', hex_segments[:allow_replies], 'expect allow_replies'
       assert_equal '01', hex_segments[:allow_votes], 'expect allow_votes'
       assert_equal '01', hex_segments[:allow_curation_rewards], 'expect allow_curation_rewards'
@@ -645,7 +645,7 @@ module Radiator
         hex_segments[:op_extensions], 'expect op_extensions'
       
       compare = 'f68585abf4dce7c804570113057865726f6306706973746f6e' +
-        '00ca9a3b00000000035342440000000010270101010100020a676f6f64' +
+        '00ca9a3b00000000034842440000000010270101010100020a676f6f64' +
         '2d6b61726d61d007046e756c6c8800011f59634e65' +
         '55fec7c01cb7d4921601c37c250c6746022cc35eaefdd90405' +
         'd7771b2f65b44e97b7f3159a6d52cb20640502d2503437215f' +
@@ -658,8 +658,8 @@ module Radiator
     def test_chronicle_comment_options
       op = {
         type: :comment_options,
-        max_accepted_payout: '1000000.000 SBD',
-        percent_steem_dollars: 10000,
+        max_accepted_payout: '1000000.000 HBD',
+        percent_hbd: 10000,
         allow_replies: true,
         allow_votes: true,
         allow_curation_rewards: true,
@@ -677,7 +677,7 @@ module Radiator
         author: hex[88..101],
         permlink: hex[102..127],
         max_accepted_payout: hex[128..159],
-        percent_steem_dollars: hex[160..163],
+        percent_hbd: hex[160..163],
         allow_replies: hex[164..165],
         allow_votes: hex[166..167],
         allow_curation_rewards: hex[168..169],
@@ -691,8 +691,8 @@ module Radiator
       assert_equal '13', hex_segments[:op_id], 'expect op_id'
       assert_equal '06736f6369616c', hex_segments[:author], 'expect author'
       assert_equal '0c6c6f72656d2d697073756d34', hex_segments[:permlink], 'expect permlink'
-      assert_equal '00ca9a3b000000000353424400000000', hex_segments[:max_accepted_payout], 'expect max_accepted_payout'
-      assert_equal '1027', hex_segments[:percent_steem_dollars], 'expect percent_steem_dollars'
+      assert_equal '00ca9a3b000000000348424400000000', hex_segments[:max_accepted_payout], 'expect max_accepted_payout'
+      assert_equal '1027', hex_segments[:percent_hbd], 'expect percent_hbd'
       assert_equal '01', hex_segments[:allow_replies], 'expect allow_replies'
       assert_equal '01', hex_segments[:allow_votes], 'expect allow_votes'
       assert_equal '01', hex_segments[:allow_curation_rewards], 'expect allow_curation_rewards'
@@ -738,7 +738,7 @@ module Radiator
       }
       
       seg.tap do |s|
-        assert_equal '0' * 64, s[:chain_id], 'expect chain_id'
+        assert_equal Radiator::ChainConfig::NETWORKS_HIVE_CHAIN_ID, s[:chain_id], 'expect chain_id'
         assert_equal 'bd8c', s[:ref_block_num], 'expect ref_block_num'
         assert_equal '5fe26f45', s[:ref_block_prefix], 'expect ref_block_prefix'
         assert_equal 'f179a857', s[:exp], 'expect exp'

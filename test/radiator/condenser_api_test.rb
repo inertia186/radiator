@@ -28,10 +28,10 @@ module Radiator
         @silent_api.method_names.each do |key|
           begin
             assert @silent_api.send key
-          rescue Steem::ArgumentError => e
-            # next
-          rescue Steem::RemoteNodeError => e
-            # next
+          rescue Steem::ArgumentError
+            next
+          rescue Steem::RemoteNodeError
+            next
           end
         end
       end

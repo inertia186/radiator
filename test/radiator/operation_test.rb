@@ -81,15 +81,14 @@ module Radiator
         author: 'xeroc',
         permlink: 'piston',
         max_accepted_payout: '1000000.000 HBD',
-        percent_steem_dollars: 10000,
+        percent_hbd: 10000,
         # allow_replies: true,
         allow_votes: true,
         allow_curation_rewards: true,
         extensions: Radiator::Type::Beneficiaries.new('good-karma' => 2000, 'null' => 5000)
       )
       
-      # Note, we still expect `SBD` in bytes from seralization.
-      expected_bytes = "\x13\x05xeroc\x06piston\x00\xCA\x9A;\x00\x00\x00\x00\x03SBD\x00\x00\x00\x00\x10'\x01\x01\x01\x00\x02\ngood-karma\xD0\a\x04null\x88\x13"
+      expected_bytes = "\x13\x05xeroc\x06piston\x00\xCA\x9A;\x00\x00\x00\x00\x03HBD\x00\x00\x00\x00\x10'\x01\x01\x01\x00\x02\ngood-karma\xD0\a\x04null\x88\x13"
       expected_bytes = expected_bytes.force_encoding('ASCII-8BIT')
       
       assert_equal expected_bytes, operation.to_bytes
@@ -98,7 +97,7 @@ module Radiator
         author: 'xeroc',
         permlink: 'piston',
         max_accepted_payout: Hive::Type::Amount.new('1000000.000 HBD'),
-        percent_steem_dollars: 10000,
+        percent_hbd: 10000,
         allow_votes: true,
         allow_curation_rewards: true,
         extensions: [[0, {beneficiaries: [{
