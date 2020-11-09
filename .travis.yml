@@ -2,12 +2,7 @@ language: ruby
 rvm:
   # You can enable more than one ruby version target at the same time, but doing
   # so will disable code coverage reporting.
-  # - "2.0.0"
-  # - "2.1.5"
-  # - "2.2.1"
-  # - "2.3.0"
-  - "2.4.2"
-  # - "2.5.0" # dev
+  - "2.5.0" # dev
 env:
   global:
     - CC_TEST_REPORTER_ID=fcda177928c42c93fd981f671305519ffb98b98c479198340ea67bc892ffd028
