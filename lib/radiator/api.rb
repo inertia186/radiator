@@ -157,9 +157,9 @@ module Radiator
       'https://api.c0ff33a.uk',
       'https://api.deathwing.me',
       'https://hive-api.arcange.eu',
-      'https://fin.hive.3speak.co',
       'https://hived.privex.io',
       'https://api.pharesim.me',
+      'https://hived.emre.sh',
       # 'https://rpc.ausbit.dev'
     ]
     
