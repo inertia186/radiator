@@ -535,7 +535,7 @@ options = {
   url: 'https://api.hive.blog',
   failover_urls: [
     'https://anyx.io',
-    'https://api.hivekings.com',
+    'https://rpc.ecency.com'
   ]
 }
 
