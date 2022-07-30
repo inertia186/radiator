@@ -890,4 +890,62 @@ http_interactions:
         VESTS","pending_rewarded_vesting_steem":"350801.918 STEEM","sbd_interest_rate":0,"sbd_print_rate":2300,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":48660014,"recent_slots_filled":"340282366841710300949110269803864522751","participation_count":126,"last_irreversible_block_num":48415989,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":14658128,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2020-11-08T06:43:39","last_budget_time":"2020-11-08T05:43:39","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"14.828
         SBD","downvote_pool_percent":2500}}'
   recorded_at: Sun, 08 Nov 2020 06:00:43 GMT
-recorded_with: VCR 6.0.0
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":106,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '80'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:28:49 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000824161165216897'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5beb1-77cf29ae442822553d8ddb9a
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"head_block_number":66379828,"head_block_id":"03f4e0342521746494a3b7bebcba185bf15e8343","time":"2022-07-30T23:28:48","current_witness":"steem-agora","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"457008178.160
+        STEEM","current_supply":"411307361.373 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"11491347.302 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"157102910.021 STEEM","total_vesting_shares":"283918139943.616774
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"1185721245.317807
+        VESTS","pending_rewarded_vesting_steem":"627486.228 STEEM","sbd_interest_rate":0,"sbd_print_rate":0,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":66796176,"recent_slots_filled":"340282366920899777837146939298177613823","participation_count":127,"last_irreversible_block_num":66379811,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":19822621,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2022-07-31T00:15:30","last_budget_time":"2022-07-30T23:15:30","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"20.405
+        SBD","downvote_pool_percent":2500},"id":106}'
+  recorded_at: Sat, 30 Jul 2022 23:28:49 GMT
+recorded_with: VCR 6.1.0

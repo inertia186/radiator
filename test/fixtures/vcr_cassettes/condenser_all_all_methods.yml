@@ -13767,4 +13767,169 @@ http_interactions:
       string: '{"jsonrpc":"2.0","id":21,"error":{"code":-32603,"message":"Internal
         Error","data":{"error_id":"c1a12c6e-5326-40da-adc2-2c66d6ce623c","jussi_request_id":"000399124310312768"}}}'
   recorded_at: Sun, 08 Nov 2020 06:00:50 GMT
-recorded_with: VCR 6.0.0
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":61,"method":"condenser_api.broadcast_block","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '91'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:22:44 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '433'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000811191976101231'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5bd44-64cf91c9644abcb5590eea11
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:args.size()
+        == 1: Expected #s argument(s), was 0","data":{"code":10,"name":"assert_exception","message":"Assert
+        Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":1744,"method":"broadcast_block","hostname":"","timestamp":"2022-07-30T23:22:44"},"format":"args.size()
+        == 1: Expected #s argument(s), was ${n}","data":{"n":0}}]}},"id":61}'
+  recorded_at: Sat, 30 Jul 2022 23:22:44 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":62,"method":"condenser_api.broadcast_transaction","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '78'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:22:44 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '175'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Error-Id:
+      - 921af047-eb35-4996-afc4-37c51d77148c
+      X-Jussi-Request-Id:
+      - '000683984676887642'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5bd44-555b77fa1b6fe6fb182e4334
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":62,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"921af047-eb35-4996-afc4-37c51d77148c","jussi_request_id":"000391122329997238"}}}'
+  recorded_at: Sat, 30 Jul 2022 23:22:44 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":63,"method":"condenser_api.broadcast_transaction_synchronous","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '84'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:22:44 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '175'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Error-Id:
+      - a50bb9dc-324a-4705-9977-e06a6a808b16
+      X-Jussi-Request-Id:
+      - '000234266630582383'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5bd44-3a199b272d23c419335a3b38
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":63,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"a50bb9dc-324a-4705-9977-e06a6a808b16","jussi_request_id":"000393478999228830"}}}'
+  recorded_at: Sat, 30 Jul 2022 23:22:44 GMT
+recorded_with: VCR 6.1.0

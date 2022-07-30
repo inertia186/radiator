@@ -828,4 +828,56 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","result":["a-0","a-h","a-pile-of-steem","a-z","a001","a01.cshrem","a02.cshrem","a0de6qzchbut","a1i-00ba0eb5","a1i-01e13986","a1i-03a7078f","a1i-04a70788","a1i-04ba0eb1","a1i-05a70789","a1i-06a7078a","a1i-06ba0eb3","a1i-06e13981","a1i-07a7078b","a1i-07ba0eb2"],"id":27}'
   recorded_at: Sun, 08 Nov 2020 06:00:52 GMT
-recorded_with: VCR 6.0.0
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":60,"method":"condenser_api.lookup_witness_accounts","params":["",19]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '98'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:22:43 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '285'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '001020875501094014'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5bd43-6f4041f86de0930218c4ed05
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":["a-0","a-h","a-pile-of-steem","a-z","a001","a01.cshrem","a02.cshrem","a0de6qzchbut","a1i-00ba0eb5","a1i-01e13986","a1i-03a7078f","a1i-04a70788","a1i-04ba0eb1","a1i-05a70789","a1i-06a7078a","a1i-06ba0eb3","a1i-06e13981","a1i-07a7078b","a1i-07ba0eb2"],"id":60}'
+  recorded_at: Sat, 30 Jul 2022 23:22:43 GMT
+recorded_with: VCR 6.1.0

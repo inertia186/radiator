@@ -5,7 +5,7 @@ module Radiator
     # See: https://github.com/harpagon210/steemsmartcontracts/wiki/JSON-RPC-server#3-the-contracts-endpoint-httplocalhost5000contracts
     class Contracts < BaseSteemSmartContractRPC
       # @param options [::Hash] The attributes
-      # @option options [String] :url Specify the full node end-point.  Default: https://api.steem-engine.com/rpc/contracts
+      # @option options [String] :url Specify the full node end-point.  Default: https://api.steem-engine.net/rpc/contracts
       def initialize(options = {})
         super
         @url = options[:url] || "#{@root_url}/contracts"

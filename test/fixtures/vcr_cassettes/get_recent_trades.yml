@@ -1456,4 +1456,212 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"jsonrpc":"2.0","result":{"trades":[{"date":"2020-11-08T05:53:45","current_pays":{"amount":"4","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"27","precision":3,"nai":"@@000000021"}},{"date":"2020-11-08T05:38:18","current_pays":{"amount":"49","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"7","precision":3,"nai":"@@000000013"}},{"date":"2020-11-08T05:35:12","current_pays":{"amount":"1","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"6","precision":3,"nai":"@@000000021"}},{"date":"2020-11-08T05:23:09","current_pays":{"amount":"11","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"75","precision":3,"nai":"@@000000021"}},{"date":"2020-11-08T05:15:18","current_pays":{"amount":"2","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"13","precision":3,"nai":"@@000000021"}},{"date":"2020-11-08T05:04:09","current_pays":{"amount":"6","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"41","precision":3,"nai":"@@000000021"}},{"date":"2020-11-08T05:04:03","current_pays":{"amount":"1","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"6","precision":3,"nai":"@@000000021"}},{"date":"2020-11-08T05:01:36","current_pays":{"amount":"1","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"6","precision":3,"nai":"@@000000021"}},{"date":"2020-11-08T05:00:36","current_pays":{"amount":"1","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"6","precision":3,"nai":"@@000000021"}},{"date":"2020-11-08T04:56:21","current_pays":{"amount":"261","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"1787","precision":3,"nai":"@@000000021"}}]},"id":5}'
   recorded_at: Sun, 08 Nov 2020 06:00:20 GMT
-recorded_with: VCR 6.0.0
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":93,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_recent_trades"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '78'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:23:08 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '78'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000753143756430346'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5bd5c-1d556c8f3d43613354f584c9
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":1000},"ret":{"trades":[]}},"id":93}'
+  recorded_at: Sat, 30 Jul 2022 23:23:08 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":94,"method":"market_history_api.get_recent_trades","params":{"limit":10}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '117'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:23:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '001059943009540532'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5bd5c-3009e43b28be4afa7fa1ef21
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"trades":[{"date":"2022-07-30T22:29:48","current_pays":{"amount":"1195","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"14784","precision":3,"nai":"@@000000021"}},{"date":"2022-07-30T22:29:48","current_pays":{"amount":"666","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"8240","precision":3,"nai":"@@000000021"}},{"date":"2022-07-30T22:28:18","current_pays":{"amount":"7636","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"617","precision":3,"nai":"@@000000013"}},{"date":"2022-07-30T22:28:12","current_pays":{"amount":"7884","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"637","precision":3,"nai":"@@000000013"}},{"date":"2022-07-30T22:27:45","current_pays":{"amount":"445","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"5508","precision":3,"nai":"@@000000021"}},{"date":"2022-07-30T22:27:45","current_pays":{"amount":"2091","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"169","precision":3,"nai":"@@000000013"}},{"date":"2022-07-30T21:25:27","current_pays":{"amount":"6370","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"78968","precision":3,"nai":"@@000000021"}},{"date":"2022-07-30T21:25:27","current_pays":{"amount":"271","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"3361","precision":3,"nai":"@@000000021"}},{"date":"2022-07-30T21:25:18","current_pays":{"amount":"297","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"3682","precision":3,"nai":"@@000000021"}},{"date":"2022-07-30T21:14:51","current_pays":{"amount":"4090","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"330","precision":3,"nai":"@@000000013"}}]},"id":94}'
+  recorded_at: Sat, 30 Jul 2022 23:23:08 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":74,"method":"jsonrpc.get_signature","params":{"method":"market_history_api.get_recent_trades"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '78'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:28:22 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '78'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000978649681574675'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5be96-71f900d9238dd63f2a57f6f5
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":{"args":{"limit":1000},"ret":{"trades":[]}},"id":74}'
+  recorded_at: Sat, 30 Jul 2022 23:28:22 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":75,"method":"market_history_api.get_recent_trades","params":{"limit":10}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '117'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:28:23 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000996189930843328'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5be97-5f51163d134e40bf7f7fcb81
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"trades":[{"date":"2022-07-30T22:29:48","current_pays":{"amount":"1195","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"14784","precision":3,"nai":"@@000000021"}},{"date":"2022-07-30T22:29:48","current_pays":{"amount":"666","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"8240","precision":3,"nai":"@@000000021"}},{"date":"2022-07-30T22:28:18","current_pays":{"amount":"7636","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"617","precision":3,"nai":"@@000000013"}},{"date":"2022-07-30T22:28:12","current_pays":{"amount":"7884","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"637","precision":3,"nai":"@@000000013"}},{"date":"2022-07-30T22:27:45","current_pays":{"amount":"445","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"5508","precision":3,"nai":"@@000000021"}},{"date":"2022-07-30T22:27:45","current_pays":{"amount":"2091","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"169","precision":3,"nai":"@@000000013"}},{"date":"2022-07-30T21:25:27","current_pays":{"amount":"6370","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"78968","precision":3,"nai":"@@000000021"}},{"date":"2022-07-30T21:25:27","current_pays":{"amount":"271","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"3361","precision":3,"nai":"@@000000021"}},{"date":"2022-07-30T21:25:18","current_pays":{"amount":"297","precision":3,"nai":"@@000000013"},"open_pays":{"amount":"3682","precision":3,"nai":"@@000000021"}},{"date":"2022-07-30T21:14:51","current_pays":{"amount":"4090","precision":3,"nai":"@@000000021"},"open_pays":{"amount":"330","precision":3,"nai":"@@000000013"}}]},"id":75}'
+  recorded_at: Sat, 30 Jul 2022 23:28:23 GMT
+recorded_with: VCR 6.1.0

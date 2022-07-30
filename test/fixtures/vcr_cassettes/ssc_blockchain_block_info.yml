@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.steem-engine.com/rpc/blockchain
+    uri: https://api.steem-engine.net/rpc/blockchain
     body:
       encoding: UTF-8
       string: '{"method":"getBlockInfo","params":{"blockNumber":-1},"jsonrpc":"2.0","id":2}'
@@ -44,7 +44,7 @@ http_interactions:
   recorded_at: Sat, 07 Nov 2020 19:33:43 GMT
 - request:
     method: post
-    uri: https://api.steem-engine.com/rpc/blockchain
+    uri: https://api.steem-engine.net/rpc/blockchain
     body:
       encoding: UTF-8
       string: '{"method":"getBlockInfo","params":{"blockNumber":1},"jsonrpc":"2.0","id":1}'
@@ -87,4 +87,91 @@ http_interactions:
       string: '{"jsonrpc":"2.0","id":1,"result":{"_id":1,"blockNumber":1,"refSteemBlockNumber":29866321,"refSteemBlockId":"01c7b951771a28e904c55940dde3dd014e075884","prevRefSteemBlockId":"01c7b95075caed4c2276010d87a555105f720b82","previousHash":"c1dee96a6b7a0cc9408ccb407ab641f444c26f6859ba33b9c9ba2c0a368d20b2","previousDatabaseHash":"a3daa72622eb02abd0b1614943f45500633dc10789477e8ee538a8398e61f976","timestamp":"2019-01-29T01:18:03","transactions":[{"refSteemBlockNumber":29866321,"transactionId":"df846ffdbd87f3fae2a60993dae9d16d44c814e3","sender":"yabapmatt","contract":"sscstore","action":"buy","payload":"{\"recipient\":\"steemsc\",\"amountSTEEMSBD\":\"100.000
         STEEM\",\"isSignedWithActiveKey\":true}","executedCodeHash":"2189984c5648194eb352aad01bb5b8235367a4c040c42b7d5bac107270e94c49986d043b17a3da825157d3edaec1f23d2cecb2637a1f1bbbdb4c66caa958797a","hash":"07bf1380f6339aa692009028376b3ca685f8b7d9a5a73893bf599f8612c99c2b","databaseHash":"bb464a0df58fa01162120bd37e64157495188d070ee4710d71488e9381a4156b","logs":"{\"events\":[{\"contract\":\"tokens\",\"event\":\"transfer\",\"data\":{\"from\":\"steemsc\",\"to\":\"yabapmatt\",\"symbol\":\"ENG\",\"quantity\":100}}]}"}],"virtualTransactions":[],"hash":"9268b81c5b1503c7a0d87011030d3e25f630648a085fd349279e72b29a653ff3","databaseHash":"fd6f6fecea389797046dad441498d220498741b3ff23e91fde73d8c183bf232b","merkleRoot":"776a70789b83aed023eee0c7e77c29da43f97e226cbedf16bbb22664a13ad5d2","signature":"1f3f15e7b97d768e37ffffa8e8666db1302e77cc98415534e5f259b263f3db30c64147bfa18e0b5ffb23badd3d4a07b6c4fb2324d20591c3d581fea4c9c18a18b4"}}'
   recorded_at: Sat, 07 Nov 2020 19:33:43 GMT
-recorded_with: VCR 6.0.0
+- request:
+    method: post
+    uri: https://api.steem-engine.net/rpc/blockchain
+    body:
+      encoding: UTF-8
+      string: '{"method":"getBlockInfo","params":{"blockNumber":-1},"jsonrpc":"2.0","id":2}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Date:
+      - Sat, 30 Jul 2022 23:22:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '38'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":2,"result":null}'
+  recorded_at: Sat, 30 Jul 2022 23:22:38 GMT
+- request:
+    method: post
+    uri: https://api.steem-engine.net/rpc/blockchain
+    body:
+      encoding: UTF-8
+      string: '{"method":"getBlockInfo","params":{"blockNumber":1},"jsonrpc":"2.0","id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Date:
+      - Sat, 30 Jul 2022 23:22:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","id":1,"result":{"_id":1,"blockNumber":1,"refSteemBlockNumber":29866321,"refSteemBlockId":"01c7b951771a28e904c55940dde3dd014e075884","prevRefSteemBlockId":"01c7b95075caed4c2276010d87a555105f720b82","previousHash":"c1dee96a6b7a0cc9408ccb407ab641f444c26f6859ba33b9c9ba2c0a368d20b2","previousDatabaseHash":"a3daa72622eb02abd0b1614943f45500633dc10789477e8ee538a8398e61f976","timestamp":"2019-01-29T01:18:03","transactions":[{"refSteemBlockNumber":29866321,"transactionId":"df846ffdbd87f3fae2a60993dae9d16d44c814e3","sender":"yabapmatt","contract":"sscstore","action":"buy","payload":"{\"recipient\":\"steemsc\",\"amountSTEEMSBD\":\"100.000
+        STEEM\",\"isSignedWithActiveKey\":true}","executedCodeHash":"2189984c5648194eb352aad01bb5b8235367a4c040c42b7d5bac107270e94c49986d043b17a3da825157d3edaec1f23d2cecb2637a1f1bbbdb4c66caa958797a","hash":"07bf1380f6339aa692009028376b3ca685f8b7d9a5a73893bf599f8612c99c2b","databaseHash":"bb464a0df58fa01162120bd37e64157495188d070ee4710d71488e9381a4156b","logs":"{\"events\":[{\"contract\":\"tokens\",\"event\":\"transfer\",\"data\":{\"from\":\"steemsc\",\"to\":\"yabapmatt\",\"symbol\":\"ENG\",\"quantity\":100}}]}"}],"virtualTransactions":[],"hash":"9268b81c5b1503c7a0d87011030d3e25f630648a085fd349279e72b29a653ff3","databaseHash":"fd6f6fecea389797046dad441498d220498741b3ff23e91fde73d8c183bf232b","merkleRoot":"776a70789b83aed023eee0c7e77c29da43f97e226cbedf16bbb22664a13ad5d2","signature":"1f3f15e7b97d768e37ffffa8e8666db1302e77cc98415534e5f259b263f3db30c64147bfa18e0b5ffb23badd3d4a07b6c4fb2324d20591c3d581fea4c9c18a18b4"}}'
+  recorded_at: Sat, 30 Jul 2022 23:22:38 GMT
+recorded_with: VCR 6.1.0
