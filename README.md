@@ -10,6 +10,10 @@
 
 Radiator is an API Client for interaction with the Hive/Steem network using Ruby.
 
+#### Changes in v0.4.9
+
+* Tweaks for Ruby 3 support
+
 #### Changes in v0.4.8
 
 * Eclipse Update
