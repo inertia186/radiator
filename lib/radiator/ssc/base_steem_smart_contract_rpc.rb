@@ -10,7 +10,7 @@ module Radiator
       MAX_BACKOFF = 60.0
       
       def initialize(options = {})
-        @root_url = options[:root_url] || 'https://api.steem-engine.com/rpc'
+        @root_url = options[:root_url] || 'https://api.steem-engine.net/rpc'
         
         @self_hashie_logger = false
         @hashie_logger = if options[:hashie_logger].nil?

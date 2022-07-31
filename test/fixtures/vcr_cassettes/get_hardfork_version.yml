@@ -832,4 +832,56 @@ http_interactions:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","result":"0.23.0","id":18}'
   recorded_at: Sun, 08 Nov 2020 06:00:47 GMT
-recorded_with: VCR 6.0.0
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":58,"method":"condenser_api.get_hardfork_version","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '86'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:22:35 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000626956450625026'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5bd3b-54c59b10641f651b757b3d94
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":"0.23.0","id":58}'
+  recorded_at: Sat, 30 Jul 2022 23:22:35 GMT
+recorded_with: VCR 6.1.0

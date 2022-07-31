@@ -915,4 +915,65 @@ http_interactions:
         VESTS","vesting_withdraw_rate":"0.000000 VESTS","next_vesting_withdrawal":"1969-12-31T23:59:59","withdrawn":"114414073419582","to_withdraw":"114414073419582","withdraw_routes":0,"curation_rewards":4641427,"posting_rewards":23182130,"proxied_vsf_votes":["29584575143530",0,0,0],"witnesses_voted_for":30,"last_post":"2020-10-30T00:54:15","last_root_post":"2020-10-06T17:09:33","last_vote_time":"2020-11-05T17:31:42","post_bandwidth":13323,"pending_claimed_accounts":6,"vesting_balance":"0.000
         STEEM","reputation":"228558359905202","transfer_history":[],"market_history":[],"post_history":[],"vote_history":[],"other_history":[],"witness_votes":["abit","adsactly-witness","aggroed","anyx","arcange","ausbitbank","beerbot","bue","coingecko","cryptopassion","drakos","emrebeyler","enginewitty","gridcoin.science","gulfwaves.net","ihashfury","lux-witness","pcste","r0nd0n","satren","someguy123","sp-group-witness","steemcreative","steempress","swisswitness","techcoderx","thecryptodrive","thekitchenfairy","travelfeed","whiterosecoffee"],"tags_usage":[],"guest_bloggers":[]}],"id":25}'
   recorded_at: Sun, 08 Nov 2020 06:00:46 GMT
-recorded_with: VCR 6.0.0
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":57,"method":"condenser_api.get_accounts","params":[["inertia"]]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemit.com
+      Content-Length:
+      - '75'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:22:34 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000713118987050727'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5bd3a-2dad989a37cb4023208a11a0
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":[{"id":19155,"name":"inertia","owner":{"weight_threshold":1,"account_auths":[],"key_auths":[["STM6qpwgqwzaF8E1GsKh28E8HVRzbBdewcimKzLmn1Rjgq7SQoNUa",1]]},"active":{"weight_threshold":1,"account_auths":[],"key_auths":[["STM5ZDoNyBdQbsv44ySnAfNPX8NonL8w8wd97H2r9EGXVhsWN76SP",1]]},"posting":{"weight_threshold":1,"account_auths":[["busy.app",1],["smartsteem",1],["steempeak.app",1],["vimm.app",1]],"key_auths":[["STM5kMzqqFgErmdJvzHBfVyLCsLpGCVkAopdUDL7xcms3PB3VEaF6",1]]},"memo_key":"STM7S7hpaNdDAYM7vqXHQgW5qg5mVKChcAYAdQQfJnfF1rCUG5zQm","json_metadata":"{\"profile\":{\"profile_image\":\"https:\/\/i.imgur.com\/LbTz5yg.jpg\",\"cover_image\":\"https:\/\/i.imgur.com\/0ccC6UH.png\",\"name\":\"inertia
+        \u24b6\u00b3\",\"about\":\"I can see the fnords.\",\"location\":\"California\",\"website\":\"https:\/\/steemit.com\/@inertia\/profile\",\"dtube_pub\":\"jTizao5TdzSQKi4t9dGgeSE9FZTT5VuxoY14yXLy49tt\"}}","posting_json_metadata":"{\"profile\":{\"profile_image\":\"https:\/\/i.imgur.com\/LbTz5yg.jpg\",\"cover_image\":\"https:\/\/cdn.steemitimages.com\/DQmaj2jQoJKLAb8jcNB2ZzmqVfq9j2qnVppud1u6f7De5Rb\/hive-talent.png\",\"name\":\"inertia
+        \u24b6\u00b3\",\"about\":\"I can see the fnords.\",\"location\":\"California\",\"website\":\"https:\/\/hiveonboard.com?ref=inertia\",\"dtube_pub\":\"jTizao5TdzSQKi4t9dGgeSE9FZTT5VuxoY14yXLy49tt\",\"version\":2,\"switchHive\":\"true\"}}","proxy":"","last_owner_update":"2019-04-03T21:49:18","last_account_update":"2021-04-26T17:36:42","created":"2016-07-13T06:44:33","mined":false,"recovery_account":"steempeak","last_account_recovery":"2016-07-21T05:49:33","reset_account":"null","comment_count":0,"lifetime_vote_count":0,"post_count":5016,"can_vote":true,"voting_manabar":{"current_mana":"289685842766","last_update_time":1659220767},"downvote_manabar":{"current_mana":"514810174456","last_update_time":1659220767},"voting_power":1406,"balance":"22.332
+        STEEM","savings_balance":"0.000 STEEM","sbd_balance":"0.020 SBD","sbd_seconds":"0","sbd_seconds_last_update":"2021-10-30T07:50:06","sbd_last_interest_payment":"2021-10-30T07:50:06","savings_sbd_balance":"0.000
+        SBD","savings_sbd_seconds":"0","savings_sbd_seconds_last_update":"2019-11-02T14:29:45","savings_sbd_last_interest_payment":"2019-11-02T14:29:45","savings_withdraw_requests":0,"reward_sbd_balance":"0.000
+        SBD","reward_steem_balance":"0.000 STEEM","reward_vesting_balance":"56167.465221
+        VESTS","reward_vesting_steem":"30.722 STEEM","vesting_shares":"117295.640891
+        VESTS","delegated_vesting_shares":"93867.151911 VESTS","received_vesting_shares":"2035812.208844
+        VESTS","vesting_withdraw_rate":"0.000000 VESTS","next_vesting_withdrawal":"1969-12-31T23:59:59","withdrawn":"165754634150","to_withdraw":"165754634150","withdraw_routes":0,"curation_rewards":4795639,"posting_rewards":23205272,"proxied_vsf_votes":["838060826799",0,0,0],"witnesses_voted_for":30,"last_post":"2021-08-20T15:56:33","last_root_post":"2021-08-20T15:56:33","last_vote_time":"2022-07-30T22:39:27","post_bandwidth":13323,"pending_claimed_accounts":6,"vesting_balance":"0.000
+        STEEM","reputation":"227525885010794","transfer_history":[],"market_history":[],"post_history":[],"vote_history":[],"other_history":[],"witness_votes":["abit","adsactly-witness","aggroed","anyx","arcange","ausbitbank","beerbot","bue","coingecko","cryptopassion","drakos","emrebeyler","enginewitty","gridcoin.science","gulfwaves.net","ihashfury","lux-witness","pcste","r0nd0n","satren","someguy123","sp-group-witness","steemcreative","steempress","swisswitness","techcoderx","thecryptodrive","thekitchenfairy","travelfeed","whiterosecoffee"],"tags_usage":[],"guest_bloggers":[]}],"id":57}'
+  recorded_at: Sat, 30 Jul 2022 23:22:34 GMT
+recorded_with: VCR 6.1.0

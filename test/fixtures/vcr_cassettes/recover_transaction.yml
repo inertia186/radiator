@@ -1812,4 +1812,114 @@ http_interactions:
         STEEM","reward_sbd":"0.000 SBD","reward_vests":"44.134822 VESTS"}]],"extensions":[],"signatures":["205781b830921345c6700ddcc07dec785ec50202509701e7cf83da63e82d231b230d952e1b5452e90cd9f9f293f0fad34e046ae1dd1cb226d0f367727030b0c2be"],"transaction_id":"7ecca15b8698642646791d6ac1cbaaddcd21ae4f","block_num":48416003,"transaction_num":0},{"ref_block_num":50418,"ref_block_prefix":1079943443,"expiration":"2020-11-08T06:00:57","operations":[["transfer",{"from":"coin-doubler","to":"dlease","amount":"0.451
         STEEM","memo":"renew 5f4da3a33344d5001835b482"}]],"extensions":[],"signatures":["207f1f2411226455718e6089007bf6335e259b9ff67bd072a424e137560f183d212a27e410457d939c373038432e87470c740b9204fe911dd68bf663e859f74611"],"transaction_id":"738b13c35e978334ec0c6477ddb0f172a67cfd7b","block_num":48416003,"transaction_num":1},{"ref_block_num":50418,"ref_block_prefix":1079943443,"expiration":"2020-11-08T06:10:30","operations":[["vote",{"voter":"ganastha","author":"cryptocoinkb","permlink":"coins-with-growing-price-and-volume---11-08-2020","weight":10000}]],"extensions":[],"signatures":["205e2b7a0462f1f5bf3988c682e9d3dcfa8c3521a85e320053b0801cdc6f8064d0695f447aeaacfafa8ed462544d21604489fa314a65b434246bd79c567c7b06d8"],"transaction_id":"adfd93cff5288b4c76abe5adeca01a298c361254","block_num":48416003,"transaction_num":2}],"block_id":"02e2c503fdd82d480cc9fc152477c12f3bef44d2","signing_key":"STM5vKFuWzknVmhRtTeYPPCphYg2fGcB9J3wTa7hRMoUwCshKx7zT","transaction_ids":["7ecca15b8698642646791d6ac1cbaaddcd21ae4f","738b13c35e978334ec0c6477ddb0f172a67cfd7b","adfd93cff5288b4c76abe5adeca01a298c361254"]},"id":21}'
   recorded_at: Sun, 08 Nov 2020 06:00:38 GMT
-recorded_with: VCR 6.0.0
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":113,"method":"condenser_api.get_dynamic_global_properties","params":[]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '76'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:28:53 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000631973168341538'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5beb5-48b3b4497652b54713600514
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"head_block_number":66379830,"head_block_id":"03f4e036b538598e6d529f75fdd417d991236f2e","time":"2022-07-30T23:28:54","current_witness":"etainclub","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"457008184.253
+        STEEM","current_supply":"411307366.853 STEEM","confidential_supply":"0.000
+        STEEM","init_sbd_supply":"0.000 SBD","current_sbd_supply":"11491347.456 SBD","confidential_sbd_supply":"0.000
+        SBD","total_vesting_fund_steem":"157102911.473 STEEM","total_vesting_shares":"283918140890.595442
+        VESTS","total_reward_fund_steem":"0.000 STEEM","total_reward_shares2":"0","pending_rewarded_vesting_shares":"1185721245.317807
+        VESTS","pending_rewarded_vesting_steem":"627486.228 STEEM","sbd_interest_rate":0,"sbd_print_rate":0,"maximum_block_size":65536,"required_actions_partition_percent":0,"current_aslot":66796178,"recent_slots_filled":"340282366920783720958463934897405820927","participation_count":127,"last_irreversible_block_num":66379811,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":300,"available_account_subsidies":19824015,"sbd_stop_percent":1000,"sbd_start_percent":900,"next_maintenance_time":"2022-07-31T00:15:30","last_budget_time":"2022-07-30T23:15:30","content_reward_percent":6500,"vesting_reward_percent":1500,"sps_fund_percent":1000,"sps_interval_ledger":"20.559
+        SBD","downvote_pool_percent":2500},"id":113}'
+  recorded_at: Sat, 30 Jul 2022 23:28:54 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":114,"method":"condenser_api.get_block","params":[66379830]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - steem-ruby/0.9.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - api.steemitdev.com
+      Content-Length:
+      - '93'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Jul 2022 23:28:54 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '001076366897404239'
+      X-Amzn-Trace-Id:
+      - Root=1-62e5beb6-772c55ab3fedb12720d1d824
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":{"previous":"03f4e035f5b7a0cfcf8e782f621df0e7f83804c5","timestamp":"2022-07-30T23:28:54","witness":"etainclub","transaction_merkle_root":"3603fe053cb0e830a4bb6b3d19d2839c73c66bc1","extensions":[],"witness_signature":"20059c59411a6c7e75c6d80e898352bd8d586bed1e0b4de8c428deafa2334dd4ed41f884a20112014bbed2d8009b0ec1369f78127699d2a31600e74e39d6e9e13e","transactions":[{"ref_block_num":57378,"ref_block_prefix":1632478216,"expiration":"2022-07-30T23:38:48","operations":[["vote",{"voter":"vhhau","author":"upvotebank","permlink":"daily-upvotebank-report-1764-20220730t220356296z-post","weight":10000}]],"extensions":[],"signatures":["1f15e4d63b20f0c951426849cfb4bfd36832a8971c38b502f73e96d38c71c3db430668b6cc8bac2eaf42680e26d5fb13af1f6ed4c4590e987e325dd18dcb5da9eb"],"transaction_id":"ee7aefe7e62c1605551968d0c9c38c8c0dcffdf7","block_num":66379830,"transaction_num":0},{"ref_block_num":57378,"ref_block_prefix":1632478216,"expiration":"2022-07-30T23:38:48","operations":[["vote",{"voter":"glorimar","author":"upvotebank","permlink":"daily-upvotebank-report-1764-20220730t220356296z-post","weight":10000}]],"extensions":[],"signatures":["20709dcddec39739e55e5bdc58eebadaf661162aabc1671e80d99250a4b451002817d382e7996b290e88572f9cec2b6852b52504a7bc0e043462abbd7271482f8d"],"transaction_id":"d64a97d36d092cec7f570e92d02ca7e4b4013f6c","block_num":66379830,"transaction_num":1},{"ref_block_num":57378,"ref_block_prefix":1632478216,"expiration":"2022-07-30T23:38:48","operations":[["vote",{"voter":"criptomoneta","author":"upvotebank","permlink":"daily-upvotebank-report-1764-20220730t220356296z-post","weight":10000}]],"extensions":[],"signatures":["2022d940a4be3ae9e5b8c99ea3550f169cd01f23b6ff926abe6e196a29ff9fd6bc0aa955af9e095defdcc032bbb2ddc409223de4fda5bd34f15c985c03185df24d"],"transaction_id":"68993842a7900f5d93feb3db8223fffed23f3268","block_num":66379830,"transaction_num":2},{"ref_block_num":57397,"ref_block_prefix":3483416565,"expiration":"2022-07-30T23:29:51","operations":[["custom_json",{"required_auths":[],"required_posting_auths":["kinojun"],"id":"drugwars","json":"{\"date\":\"2022-07-30T23:28:51.451Z\"}"}]],"extensions":[],"signatures":["202686d9fa75275d90aef0edd8e6d325e9c63c126bd6af677145360bf71b4dec7b5ae91356a43e09af3de7eeb44f8bb128f26def9dbd3b0ee357551d65a63feace"],"transaction_id":"a585d82c4e9b5a7059674471babae99becd885ee","block_num":66379830,"transaction_num":3},{"ref_block_num":57378,"ref_block_prefix":1632478216,"expiration":"2022-07-30T23:38:48","operations":[["vote",{"voter":"saipax","author":"upvotebank","permlink":"daily-upvotebank-report-1764-20220730t220356296z-post","weight":10000}]],"extensions":[],"signatures":["207cf92db51fec6b6901681d8a6c17cbac12a2c3b2a6a7eabcf528c376219ba7c407276de1f3931e2283b7bf88ed82e4a716ab20102751f2e8d0096c877748c487"],"transaction_id":"1587379fe5811798ce47c326efcbd167d521e5a0","block_num":66379830,"transaction_num":4},{"ref_block_num":57378,"ref_block_prefix":1632478216,"expiration":"2022-07-30T23:38:51","operations":[["vote",{"voter":"sobrietystuntin","author":"upvotebank","permlink":"daily-upvotebank-report-1764-20220730t220356296z-post","weight":10000}]],"extensions":[],"signatures":["201c46e33783fce3d4ee8f088dc29a0fe670e2ae072fda9c98d38ad03097b9752067c5b43f2492235d950ada382a7b2cb5c0ba3ea0de9f2c49b909ac5455279b5d"],"transaction_id":"6b5979b6ff40542207e324c4e9cfd47c14043697","block_num":66379830,"transaction_num":5},{"ref_block_num":57378,"ref_block_prefix":1632478216,"expiration":"2022-07-30T23:38:51","operations":[["vote",{"voter":"angry0historian","author":"upvotebank","permlink":"daily-upvotebank-report-1764-20220730t220356296z-post","weight":10000}]],"extensions":[],"signatures":["1f05456453718f5bf9a66b1b395e3705e7735dfcede596265c6a6dfea026759f671a01820eb3060879de6f64e4c129015e42465b3e796242e7a89e296d8d3c74be"],"transaction_id":"e4cc59d4ac5dc1174c790f94be794c66153b25e6","block_num":66379830,"transaction_num":6}],"block_id":"03f4e036b538598e6d529f75fdd417d991236f2e","signing_key":"STM5bJVcuxb4fzyKeXQ7nEBpcP4eHpDJvVuakWHdfCygf6Bq9NE2f","transaction_ids":["ee7aefe7e62c1605551968d0c9c38c8c0dcffdf7","d64a97d36d092cec7f570e92d02ca7e4b4013f6c","68993842a7900f5d93feb3db8223fffed23f3268","a585d82c4e9b5a7059674471babae99becd885ee","1587379fe5811798ce47c326efcbd167d521e5a0","6b5979b6ff40542207e324c4e9cfd47c14043697","e4cc59d4ac5dc1174c790f94be794c66153b25e6"]},"id":114}'
+  recorded_at: Sat, 30 Jul 2022 23:28:54 GMT
+recorded_with: VCR 6.1.0

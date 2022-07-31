@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.steem-engine.com/rpc/contracts
+    uri: https://api.steem-engine.net/rpc/contracts
     body:
       encoding: UTF-8
       string: '{"method":"find","params":{"contract":"tokens","table":"transfers","query":{"symbol":""},"limit":0},"jsonrpc":"2.0","id":2}'
@@ -44,7 +44,7 @@ http_interactions:
   recorded_at: Sat, 07 Nov 2020 20:13:32 GMT
 - request:
     method: post
-    uri: https://api.steem-engine.com/rpc/contracts
+    uri: https://api.steem-engine.net/rpc/contracts
     body:
       encoding: UTF-8
       string: '{"method":"getContract","params":{"name":"tokens"},"jsonrpc":"2.0","id":1}'
@@ -361,4 +361,365 @@ http_interactions:
         else {\n                  done(''invalid action'');\n                }\n              }
         catch (error) {\n                done(error);\n              }\n            }\n  \n            execute();\n          }\n\n          wrapper();\n        ","codeHash":"d3ab1afa743f5322eb1b5da7ada99c43f7d26f47cfaab98acb9322c929b23ea6","tables":{"tokens_tokens":{"size":0,"hash":"251584a3308868ff468c0c9e47bdd8cbdf74a5e2d5e220e80f3f65fb05dc7f1c","nbIndexes":1},"tokens_balances":{"size":0,"hash":"884388cc2b9215cfacfcbb1ad81568c7676a51bf2138f1fd09cba58002f4bb1c","nbIndexes":1},"tokens_contractsBalances":{"size":0,"hash":"e70b037936001ff7a4f90253d76e39679ce0f800e58801e1ce267361fafb2f74","nbIndexes":1},"tokens_params":{"size":0,"hash":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","nbIndexes":0},"tokens_pendingUnstakes":{"size":0,"hash":"2c5f6685d85dc68d4d7c02d7266b620b97990583d90900e1cef93da9070b4f5b","nbIndexes":2},"tokens_delegations":{"size":0,"hash":"3897f12cf8c4bec58b5ea4b78de879dda0fd978de12324876b4cb38b112b2449","nbIndexes":2},"tokens_pendingUndelegations":{"size":0,"hash":"0fbc3ab4616bd76948c846454383e2d0f8fd5da012134193672685cc23e6131a","nbIndexes":2}},"version":17}}'
   recorded_at: Sat, 07 Nov 2020 20:13:32 GMT
-recorded_with: VCR 6.0.0
+- request:
+    method: post
+    uri: https://api.steem-engine.net/rpc/contracts
+    body:
+      encoding: UTF-8
+      string: '{"method":"find","params":{"contract":"tokens","table":"transfers","query":{"symbol":""},"limit":0},"jsonrpc":"2.0","id":2}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Date:
+      - Sat, 30 Jul 2022 23:22:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '38'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":2,"result":null}'
+  recorded_at: Sat, 30 Jul 2022 23:22:57 GMT
+- request:
+    method: post
+    uri: https://api.steem-engine.net/rpc/contracts
+    body:
+      encoding: UTF-8
+      string: '{"method":"getContract","params":{"name":"tokens"},"jsonrpc":"2.0","id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Date:
+      - Sat, 30 Jul 2022 23:22:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","id":1,"result":{"_id":"tokens","owner":"steemsc","code":"\n          function
+        wrapper () {\n            RegExp.prototype.constructor = function () { };\n            RegExp.prototype.exec
+        = function () {  };\n            RegExp.prototype.test = function () {  };\n  \n            let
+        actions = {};\n  \n            const ACCOUNT_BLACKLIST={gateiodeposit:1,deepcrypto8:1,bittrex:1,poloniex:1,\"huobi-pro\":1,\"honey-swap\":1,\"binance-hot\":1,bitvavo:1,blocktrades:1,probitsteem:1,probithive:1,ionomy:1};actions.createSSC=async()=>{let
+        tableExists=await api.db.tableExists(\"tokens\");if(!1===tableExists){await
+        api.db.createTable(\"tokens\",[\"symbol\"]),await api.db.createTable(\"balances\",[\"account\"]),await
+        api.db.createTable(\"contractsBalances\",[\"account\"]),await api.db.createTable(\"params\");const
+        params={tokenCreationFee:\"0\"};await api.db.insert(\"params\",params)}else{const
+        params=await api.db.findOne(\"params\",{});params.enableDelegationFee=\"1000\",params.enableStakingFee=\"1000\",await
+        api.db.update(\"params\",params)}tableExists=await api.db.tableExists(\"pendingUnstakes\"),!1===tableExists&&await
+        api.db.createTable(\"pendingUnstakes\",[\"account\",\"unstakeCompleteTimestamp\"]),tableExists=await
+        api.db.tableExists(\"delegations\"),!1===tableExists&&(await api.db.createTable(\"delegations\",[\"from\",\"to\"]),await
+        api.db.createTable(\"pendingUndelegations\",[\"account\",\"completeTimestamp\"]));let
+        token=await api.db.findOne(\"tokens\",{symbol:\"STEEMP\"});token&&token.precision<8&&(token.precision=8,await
+        api.db.update(\"tokens\",token)),token=await api.db.findOne(\"tokens\",{symbol:\"ENG\"}),void
+        0!==token.stakingEnabled&&!1!==token.stakingEnabled||(token.stakingEnabled=!0,token.totalStaked=\"0\",token.unstakingCooldown=40,token.numberTransactions=4,token.delegationEnabled=!0,token.undelegationCooldown=7,await
+        api.db.update(\"tokens\",token))};const balanceTemplate={account:null,symbol:null,balance:\"0\",stake:\"0\",pendingUnstake:\"0\",delegationsIn:\"0\",delegationsOut:\"0\",pendingUndelegations:\"0\"},calculateBalance=(balance,quantity,precision,add)=>add?api.BigNumber(balance).plus(quantity).toFixed(precision):api.BigNumber(balance).minus(quantity).toFixed(precision),countDecimals=value=>api.BigNumber(value).dp(),addStake=async(account,token,quantity)=>{let
+        balance=await api.db.findOne(\"balances\",{account:account,symbol:token.symbol});null===balance&&(balance=balanceTemplate,balance.account=account,balance.symbol=token.symbol,balance=await
+        api.db.insert(\"balances\",balance)),void 0===balance.stake&&(balance.stake=\"0\",balance.pendingUnstake=\"0\");const
+        originalStake=balance.stake;return balance.stake=calculateBalance(balance.stake,quantity,token.precision,!0),!!api.assert(api.BigNumber(balance.stake).gt(originalStake),\"cannot
+        add\")&&(await api.db.update(\"balances\",balance),void 0===token.totalStaked&&(token.totalStaked=\"0\"),token.totalStaked=calculateBalance(token.totalStaked,quantity,token.precision,!0),await
+        api.db.update(\"tokens\",token),!0)},subStake=async(account,token,quantity)=>{const
+        balance=await api.db.findOne(\"balances\",{account:account,symbol:token.symbol});if(api.assert(null!==balance,\"balance
+        does not exist\")&&api.assert(api.BigNumber(balance.stake).gte(quantity),\"overdrawn
+        stake\")){const originalStake=balance.stake,originalPendingStake=balance.pendingUnstake;if(balance.stake=calculateBalance(balance.stake,quantity,token.precision,!1),balance.pendingUnstake=calculateBalance(balance.pendingUnstake,quantity,token.precision,!0),api.assert(api.BigNumber(balance.stake).lt(originalStake)&&api.BigNumber(balance.pendingUnstake).gt(originalPendingStake),\"cannot
+        subtract\"))return await api.db.update(\"balances\",balance),!0}return!1},subBalance=async(account,token,quantity,table)=>{const
+        balance=await api.db.findOne(table,{account:account,symbol:token.symbol});if(api.assert(null!==balance,\"balance
+        does not exist\")&&api.assert(api.BigNumber(balance.balance).gte(quantity),\"overdrawn
+        balance\")){const originalBalance=balance.balance;if(balance.balance=calculateBalance(balance.balance,quantity,token.precision,!1),api.assert(api.BigNumber(balance.balance).lt(originalBalance),\"cannot
+        subtract\"))return await api.db.update(table,balance),!0}return!1},addBalance=async(account,token,quantity,table)=>{let
+        balance=await api.db.findOne(table,{account:account,symbol:token.symbol});if(null===balance)return
+        balance=balanceTemplate,balance.account=account,balance.symbol=token.symbol,balance.balance=quantity,await
+        api.db.insert(table,balance),!0;const originalBalance=balance.balance;return
+        balance.balance=calculateBalance(balance.balance,quantity,token.precision,!0),!!api.assert(api.BigNumber(balance.balance).gt(originalBalance),\"cannot
+        add\")&&(await api.db.update(table,balance),!0)};actions.updateParams=async
+        payload=>{if(api.sender!==api.owner)return;const{tokenCreationFee:tokenCreationFee}=payload,params=await
+        api.db.findOne(\"params\",{});params.tokenCreationFee=tokenCreationFee,await
+        api.db.update(\"params\",params)},actions.updateUrl=async payload=>{const{url:url,symbol:symbol}=payload;if(api.assert(symbol&&\"string\"==typeof
+        symbol&&url&&\"string\"==typeof url,\"invalid params\")&&api.assert(url.length<=255,\"invalid
+        url: max length of 255\")){const token=await api.db.findOne(\"tokens\",{symbol:symbol});if(token&&api.assert(token.issuer===api.sender,\"must
+        be the issuer\"))try{const metadata=JSON.parse(token.metadata);api.assert(metadata&&metadata.url,\"an
+        error occured when trying to update the url\")&&(metadata.url=url,token.metadata=JSON.stringify(metadata),await
+        api.db.update(\"tokens\",token))}catch(e){}}},actions.updateMetadata=async
+        payload=>{const{metadata:metadata,symbol:symbol}=payload;if(api.assert(symbol&&\"string\"==typeof
+        symbol&&metadata&&\"object\"==typeof metadata,\"invalid params\")){const token=await
+        api.db.findOne(\"tokens\",{symbol:symbol});if(token&&api.assert(token.issuer===api.sender,\"must
+        be the issuer\"))try{const finalMetadata=JSON.stringify(metadata);api.assert(finalMetadata.length<=1e3,\"invalid
+        metadata: max length of 1000\")&&(token.metadata=finalMetadata,await api.db.update(\"tokens\",token))}catch(e){}}},actions.updatePrecision=async
+        payload=>{const{symbol:symbol,precision:precision,isSignedWithActiveKey:isSignedWithActiveKey}=payload;if(api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(symbol&&\"string\"==typeof
+        symbol)&&api.assert(precision>0&&precision<=8&&Number.isInteger(precision),\"invalid
+        precision\")){const token=await api.db.findOne(\"tokens\",{symbol:symbol});token&&api.assert(token.issuer===api.sender,\"must
+        be the issuer\")&&api.assert(precision>token.precision,\"precision can only
+        be increased\")&&(token.precision=precision,await api.db.update(\"tokens\",token))}},actions.transferOwnership=async
+        payload=>{const{symbol:symbol,to:to,isSignedWithActiveKey:isSignedWithActiveKey}=payload;if(api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(symbol&&\"string\"==typeof
+        symbol&&to&&\"string\"==typeof to,\"invalid params\")){const token=await api.db.findOne(\"tokens\",{symbol:symbol});if(token&&api.assert(token.issuer===api.sender,\"must
+        be the issuer\")){const finalTo=to.trim();api.assert(api.isValidAccountName(finalTo),\"invalid
+        to\")&&(token.issuer=finalTo,await api.db.update(\"tokens\",token))}}},actions.create=async
+        payload=>{const{name:name,symbol:symbol,url:url,precision:precision,maxSupply:maxSupply,isSignedWithActiveKey:isSignedWithActiveKey}=payload,params=await
+        api.db.findOne(\"params\",{}),{tokenCreationFee:tokenCreationFee}=params,utilityTokenBalance=await
+        api.db.findOne(\"balances\",{account:api.sender,symbol:\"ENG\"}),authorizedCreation=!!api.BigNumber(tokenCreationFee).lte(0)||utilityTokenBalance&&api.BigNumber(utilityTokenBalance.balance).gte(tokenCreationFee);if(api.assert(authorizedCreation,\"you
+        must have enough tokens to cover the creation fees\")&&api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(name&&\"string\"==typeof
+        name&&symbol&&\"string\"==typeof symbol&&(void 0===url||url&&\"string\"==typeof
+        url)&&(precision&&\"number\"==typeof precision||0===precision)&&maxSupply&&\"string\"==typeof
+        maxSupply&&!api.BigNumber(maxSupply).isNaN(),\"invalid params\")&&api.assert(api.validator.isAlpha(symbol)&&api.validator.isUppercase(symbol)&&symbol.length>0&&symbol.length<=10,\"invalid
+        symbol: uppercase letters only, max length of 10\")&&api.assert(api.validator.isAlphanumeric(api.validator.blacklist(name,\"
+        \"))&&name.length>0&&name.length<=50,\"invalid name: letters, numbers, whitespaces
+        only, max length of 50\")&&api.assert(void 0===url||url.length<=255,\"invalid
+        url: max length of 255\")&&api.assert(precision>=0&&precision<=8&&Number.isInteger(precision),\"invalid
+        precision\")&&api.assert(api.BigNumber(maxSupply).gt(0),\"maxSupply must be
+        positive\")&&api.assert(api.BigNumber(maxSupply).lte(Number.MAX_SAFE_INTEGER),\"maxSupply
+        must be lower than \"+Number.MAX_SAFE_INTEGER)){const token=await api.db.findOne(\"tokens\",{symbol:symbol});if(api.assert(null===token,\"symbol
+        already exists\")){let metadata={url:void 0===url?\"\":url};metadata=JSON.stringify(metadata);const
+        newToken={issuer:api.sender,symbol:symbol,name:name,metadata:metadata,precision:precision,maxSupply:api.BigNumber(maxSupply).toFixed(precision),supply:\"0\",circulatingSupply:\"0\",stakingEnabled:!1,unstakingCooldown:1,delegationEnabled:!1,undelegationCooldown:0};await
+        api.db.insert(\"tokens\",newToken),api.BigNumber(tokenCreationFee).gt(0)&&await
+        actions.transfer({to:\"null\",symbol:\"ENG\",quantity:tokenCreationFee,isSignedWithActiveKey:isSignedWithActiveKey})}}},actions.issue=async
+        payload=>{const{to:to,symbol:symbol,quantity:quantity,isSignedWithActiveKey:isSignedWithActiveKey}=payload;if(api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(to&&\"string\"==typeof
+        to&&symbol&&\"string\"==typeof symbol&&quantity&&\"string\"==typeof quantity&&!api.BigNumber(quantity).isNaN(),\"invalid
+        params\")){const finalTo=to.trim(),token=await api.db.findOne(\"tokens\",{symbol:symbol});if(api.assert(null!==token,\"symbol
+        does not exist\")&&api.assert(token.issuer===api.sender,\"not allowed to issue
+        tokens\")&&api.assert(countDecimals(quantity)<=token.precision,\"symbol precision
+        mismatch\")&&api.assert(api.BigNumber(quantity).gt(0),\"must issue positive
+        quantity\")&&api.assert(api.BigNumber(token.maxSupply).minus(token.supply).gte(quantity),\"quantity
+        exceeds available supply\")&&api.assert(api.isValidAccountName(finalTo),\"invalid
+        to\")){let res=await addBalance(token.issuer,token,quantity,\"balances\");!0===res&&finalTo!==token.issuer&&await
+        subBalance(token.issuer,token,quantity,\"balances\")&&(res=await addBalance(finalTo,token,quantity,\"balances\"),!1===res&&await
+        addBalance(token.issuer,token,quantity,\"balances\")),!0===res&&(token.supply=calculateBalance(token.supply,quantity,token.precision,!0),\"null\"!==finalTo&&(token.circulatingSupply=calculateBalance(token.circulatingSupply,quantity,token.precision,!0)),await
+        api.db.update(\"tokens\",token),api.emit(\"transferFromContract\",{from:\"tokens\",to:finalTo,symbol:symbol,quantity:quantity}))}}},actions.issueToContract=async
+        payload=>{const{to:to,symbol:symbol,quantity:quantity,isSignedWithActiveKey:isSignedWithActiveKey}=payload;if(api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(to&&\"string\"==typeof
+        to&&symbol&&\"string\"==typeof symbol&&quantity&&\"string\"==typeof quantity&&!api.BigNumber(quantity).isNaN(),\"invalid
+        params\")){const finalTo=to.trim(),token=await api.db.findOne(\"tokens\",{symbol:symbol});if(api.assert(null!==token,\"symbol
+        does not exist\")&&api.assert(token.issuer===api.sender,\"not allowed to issue
+        tokens\")&&api.assert(countDecimals(quantity)<=token.precision,\"symbol precision
+        mismatch\")&&api.assert(api.BigNumber(quantity).gt(0),\"must issue positive
+        quantity\")&&api.assert(api.BigNumber(token.maxSupply).minus(token.supply).gte(quantity),\"quantity
+        exceeds available supply\")&&api.assert(finalTo.length>=3&&finalTo.length<=50,\"invalid
+        to\")){!0===await addBalance(finalTo,token,quantity,\"contractsBalances\")&&(token.supply=calculateBalance(token.supply,quantity,token.precision,!0),\"null\"!==finalTo&&(token.circulatingSupply=calculateBalance(token.circulatingSupply,quantity,token.precision,!0)),await
+        api.db.update(\"tokens\",token),api.emit(\"issueToContract\",{from:\"tokens\",to:finalTo,symbol:symbol,quantity:quantity}))}}},actions.transfer=async
+        payload=>{const{to:to,symbol:symbol,quantity:quantity,isSignedWithActiveKey:isSignedWithActiveKey}=payload;if(api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(to&&\"string\"==typeof
+        to&&symbol&&\"string\"==typeof symbol&&quantity&&\"string\"==typeof quantity&&!api.BigNumber(quantity).isNaN(),\"invalid
+        params\")){const finalTo=to.trim();if(api.assert(finalTo!==api.sender,\"cannot
+        transfer to self\")&&api.assert(api.isValidAccountName(finalTo),\"invalid
+        to\")&&api.assert(void 0===ACCOUNT_BLACKLIST[finalTo],\"not allowed to send
+        to \"+finalTo)){const token=await api.db.findOne(\"tokens\",{symbol:symbol});if(api.assert(null!==token,\"symbol
+        does not exist\")&&api.assert(countDecimals(quantity)<=token.precision,\"symbol
+        precision mismatch\")&&api.assert(api.BigNumber(quantity).gt(0),\"must transfer
+        positive quantity\")&&await subBalance(api.sender,token,quantity,\"balances\")){return!1===await
+        addBalance(finalTo,token,quantity,\"balances\")?(await addBalance(api.sender,token,quantity,\"balances\"),!1):(\"null\"===finalTo&&(token.circulatingSupply=calculateBalance(token.circulatingSupply,quantity,token.precision,!1),await
+        api.db.update(\"tokens\",token)),api.emit(\"transfer\",{from:api.sender,to:finalTo,symbol:symbol,quantity:quantity}),!0)}}}return!1},actions.transferToContract=async
+        payload=>{const{from:from,to:to,symbol:symbol,quantity:quantity,isSignedWithActiveKey:isSignedWithActiveKey}=payload,finalFrom=void
+        0===from||\"null\"!==api.sender?api.sender:from;if(api.assert(!0===isSignedWithActiveKey||\"null\"===api.sender,\"you
+        must use a custom_json signed with your active key\")&&api.assert(to&&\"string\"==typeof
+        to&&symbol&&\"string\"==typeof symbol&&quantity&&\"string\"==typeof quantity&&!api.BigNumber(quantity).isNaN(),\"invalid
+        params\")){const finalTo=to.trim().toLowerCase();if(api.assert(finalTo!==finalFrom,\"cannot
+        transfer to self\")&&api.assert(finalTo.length>=3&&finalTo.length<=50,\"invalid
+        to\")){const token=await api.db.findOne(\"tokens\",{symbol:symbol});if(api.assert(null!==token,\"symbol
+        does not exist\")&&api.assert(countDecimals(quantity)<=token.precision,\"symbol
+        precision mismatch\")&&api.assert(api.BigNumber(quantity).gt(0),\"must transfer
+        positive quantity\")&&await subBalance(finalFrom,token,quantity,\"balances\")){!1===await
+        addBalance(finalTo,token,quantity,\"contractsBalances\")?await addBalance(finalFrom,token,quantity,\"balances\"):(\"null\"===finalTo&&(token.circulatingSupply=calculateBalance(token.circulatingSupply,quantity,token.precision,!1),await
+        api.db.update(\"tokens\",token)),api.emit(\"transferToContract\",{from:finalFrom,to:finalTo,symbol:symbol,quantity:quantity}))}}}},actions.transferFromContract=async
+        payload=>{if(api.assert(\"null\"===api.sender,\"not authorized\")){const{from:from,to:to,symbol:symbol,quantity:quantity,type:type}=payload,types=[\"user\",\"contract\"];if(api.assert(to&&\"string\"==typeof
+        to&&from&&\"string\"==typeof from&&symbol&&\"string\"==typeof symbol&&type&&types.includes(type)&&quantity&&\"string\"==typeof
+        quantity&&!api.BigNumber(quantity).isNaN(),\"invalid params\")){const finalTo=to.trim(),table=\"user\"===type?\"balances\":\"contractsBalances\";if(api.assert(\"user\"===type||\"contract\"===type&&finalTo!==from,\"cannot
+        transfer to self\")){const toValid=\"user\"===type?api.isValidAccountName(finalTo):finalTo.length>=3&&finalTo.length<=50;if(api.assert(!0===toValid,\"invalid
+        to\")){const token=await api.db.findOne(\"tokens\",{symbol:symbol});if(api.assert(null!==token,\"symbol
+        does not exist\")&&api.assert(countDecimals(quantity)<=token.precision,\"symbol
+        precision mismatch\")&&api.assert(api.BigNumber(quantity).gt(0),\"must transfer
+        positive quantity\")&&await subBalance(from,token,quantity,\"contractsBalances\")){!1===await
+        addBalance(finalTo,token,quantity,table)?await addBalance(from,token,quantity,\"contractsBalances\"):(\"null\"===finalTo&&(token.circulatingSupply=calculateBalance(token.circulatingSupply,quantity,token.precision,!1),await
+        api.db.update(\"tokens\",token)),api.emit(\"transferFromContract\",{from:from,to:finalTo,symbol:symbol,quantity:quantity}))}}}}}};const
+        processUnstake=async unstake=>{const{account:account,symbol:symbol,quantity:quantity,quantityLeft:quantityLeft,numberTransactionsLeft:numberTransactionsLeft}=unstake,newUnstake=unstake,balance=await
+        api.db.findOne(\"balances\",{account:account,symbol:symbol}),token=await api.db.findOne(\"tokens\",{symbol:symbol});let
+        tokensToRelease=0;if(api.assert(null!==balance,\"balance does not exist\")&&(1===numberTransactionsLeft?(tokensToRelease=quantityLeft,await
+        api.db.remove(\"pendingUnstakes\",unstake)):(tokensToRelease=api.BigNumber(quantity).dividedBy(token.numberTransactions).toFixed(token.precision,api.BigNumber.ROUND_DOWN),newUnstake.quantityLeft=api.BigNumber(newUnstake.quantityLeft).minus(tokensToRelease).toFixed(token.precision),newUnstake.numberTransactionsLeft-=1,newUnstake.nextTransactionTimestamp=api.BigNumber(newUnstake.nextTransactionTimestamp).plus(newUnstake.millisecPerPeriod).toNumber(),await
+        api.db.update(\"pendingUnstakes\",newUnstake)),api.BigNumber(tokensToRelease).gt(0))){const
+        originalBalance=balance.balance,originalPendingStake=balance.pendingUnstake;balance.balance=calculateBalance(balance.balance,tokensToRelease,token.precision,!0),balance.pendingUnstake=calculateBalance(balance.pendingUnstake,tokensToRelease,token.precision,!1),api.assert(api.BigNumber(balance.pendingUnstake).lt(originalPendingStake)&&api.BigNumber(balance.balance).gt(originalBalance),\"cannot
+        subtract\")&&(await api.db.update(\"balances\",balance),token.totalStaked=calculateBalance(token.totalStaked,tokensToRelease,token.precision,!1),await
+        api.db.update(\"tokens\",token),api.emit(\"unstake\",{account:account,symbol:symbol,quantity:tokensToRelease}),\"ENG\"===symbol&&await
+        api.executeSmartContract(\"witnesses\",\"updateWitnessesApprovals\",{account:account}))}};actions.checkPendingUnstakes=async()=>{if(api.assert(\"null\"===api.sender,\"not
+        authorized\")){const timestamp=new Date(api.steemBlockTimestamp+\".000Z\").getTime();let
+        pendingUnstakes=await api.db.find(\"pendingUnstakes\",{nextTransactionTimestamp:{$lte:timestamp}}),nbPendingUnstakes=pendingUnstakes.length;for(;nbPendingUnstakes>0;){for(let
+        index=0;index<nbPendingUnstakes;index+=1){const pendingUnstake=pendingUnstakes[index];await
+        processUnstake(pendingUnstake)}pendingUnstakes=await api.db.find(\"pendingUnstakes\",{nextTransactionTimestamp:{$lte:timestamp}}),nbPendingUnstakes=pendingUnstakes.length}}},actions.enableStaking=async
+        payload=>{const{symbol:symbol,unstakingCooldown:unstakingCooldown,numberTransactions:numberTransactions,isSignedWithActiveKey:isSignedWithActiveKey}=payload,params=await
+        api.db.findOne(\"params\",{}),{enableStakingFee:enableStakingFee}=params,utilityTokenBalance=await
+        api.db.findOne(\"balances\",{account:api.sender,symbol:\"ENG\"}),enoughFunds=utilityTokenBalance&&api.BigNumber(utilityTokenBalance.balance).gte(enableStakingFee),authorized=void
+        0===enableStakingFee||api.BigNumber(enableStakingFee).lte(0)||enoughFunds;if(api.assert(authorized,\"you
+        must have enough tokens to cover  fees\")&&api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(symbol&&\"string\"==typeof
+        symbol,\"invalid symbol\")&&api.assert(unstakingCooldown&&Number.isInteger(unstakingCooldown)&&unstakingCooldown>0&&unstakingCooldown<=18250,\"unstakingCooldown
+        must be an integer between 1 and 18250\")&&api.assert(numberTransactions&&Number.isInteger(numberTransactions)&&numberTransactions>0&&numberTransactions<=18250,\"numberTransactions
+        must be an integer between 1 and 18250\")){const token=await api.db.findOne(\"tokens\",{symbol:symbol});api.assert(null!==token,\"symbol
+        does not exist\")&&api.assert(token.issuer===api.sender,\"must be the issuer\")&&api.assert(void
+        0===token.stakingEnabled||!1===token.stakingEnabled,\"staking already enabled\")&&(token.stakingEnabled=!0,token.totalStaked=\"0\",token.unstakingCooldown=unstakingCooldown,token.numberTransactions=numberTransactions,await
+        api.db.update(\"tokens\",token),api.BigNumber(enableStakingFee).gt(0)&&await
+        actions.transfer({to:\"null\",symbol:\"ENG\",quantity:enableStakingFee,isSignedWithActiveKey:isSignedWithActiveKey}))}},actions.stake=async
+        payload=>{const{symbol:symbol,quantity:quantity,to:to,isSignedWithActiveKey:isSignedWithActiveKey}=payload;if(api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(symbol&&\"string\"==typeof
+        symbol&&to&&\"string\"==typeof to&&quantity&&\"string\"==typeof quantity&&!api.BigNumber(quantity).isNaN(),\"invalid
+        params\")){const token=await api.db.findOne(\"tokens\",{symbol:symbol}),finalTo=to.trim();if(api.assert(api.isValidAccountName(finalTo),\"invalid
+        to\")&&api.assert(null!==token,\"symbol does not exist\")&&api.assert(countDecimals(quantity)<=token.precision,\"symbol
+        precision mismatch\")&&api.assert(!0===token.stakingEnabled,\"staking not
+        enabled\")&&api.assert(api.BigNumber(quantity).gt(0),\"must stake positive
+        quantity\")&&await subBalance(api.sender,token,quantity,\"balances\")){!1===await
+        addStake(finalTo,token,quantity)?await addBalance(api.sender,token,quantity,\"balances\"):(api.emit(\"stake\",{account:finalTo,symbol:symbol,quantity:quantity}),\"ENG\"===symbol&&await
+        api.executeSmartContract(\"witnesses\",\"updateWitnessesApprovals\",{account:api.sender}))}}},actions.stakeFromContract=async
+        payload=>{const{symbol:symbol,quantity:quantity,to:to,callingContractInfo:callingContractInfo}=payload;if(callingContractInfo&&api.assert(symbol&&\"string\"==typeof
+        symbol&&to&&\"string\"==typeof to&&quantity&&\"string\"==typeof quantity&&!api.BigNumber(quantity).isNaN(),\"invalid
+        params\")){const token=await api.db.findOne(\"tokens\",{symbol:symbol}),finalTo=to.trim();if(api.assert(api.isValidAccountName(finalTo),\"invalid
+        to\")&&api.assert(null!==token,\"symbol does not exist\")&&api.assert(countDecimals(quantity)<=token.precision,\"symbol
+        precision mismatch\")&&api.assert(!0===token.stakingEnabled,\"staking not
+        enabled\")&&api.assert(api.BigNumber(quantity).gt(0),\"must stake positive
+        quantity\")&&await subBalance(callingContractInfo.name,token,quantity,\"contractsBalances\")){!1===await
+        addStake(finalTo,token,quantity)?await addBalance(callingContractInfo.name,token,quantity,\"balances\"):(api.emit(\"stakeFromContract\",{account:finalTo,symbol:symbol,quantity:quantity}),\"ENG\"===symbol&&await
+        api.executeSmartContract(\"witnesses\",\"updateWitnessesApprovals\",{account:finalTo}))}}};const
+        startUnstake=async(account,token,quantity)=>{const blockDate=new Date(api.steemBlockTimestamp+\".000Z\"),cooldownPeriodMillisec=24*token.unstakingCooldown*3600*1e3,millisecPerPeriod=api.BigNumber(cooldownPeriodMillisec).dividedBy(token.numberTransactions).integerValue(api.BigNumber.ROUND_DOWN),nextTransactionTimestamp=api.BigNumber(blockDate.getTime()).plus(millisecPerPeriod).toNumber(),unstake={account:account,symbol:token.symbol,quantity:quantity,quantityLeft:quantity,nextTransactionTimestamp:nextTransactionTimestamp,numberTransactionsLeft:token.numberTransactions,millisecPerPeriod:millisecPerPeriod,txID:api.transactionId};await
+        api.db.insert(\"pendingUnstakes\",unstake)};actions.unstake=async payload=>{const{symbol:symbol,quantity:quantity,isSignedWithActiveKey:isSignedWithActiveKey}=payload;if(api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(symbol&&\"string\"==typeof
+        symbol&&quantity&&\"string\"==typeof quantity&&!api.BigNumber(quantity).isNaN(),\"invalid
+        params\")){const token=await api.db.findOne(\"tokens\",{symbol:symbol});api.assert(null!==token,\"symbol
+        does not exist\")&&api.assert(!0===token.stakingEnabled,\"staking not enabled\")&&api.assert(countDecimals(quantity)<=token.precision,\"symbol
+        precision mismatch\")&&api.assert(api.BigNumber(quantity).gt(0),\"must unstake
+        positive quantity\")&&await subStake(api.sender,token,quantity)&&(await startUnstake(api.sender,token,quantity),api.emit(\"unstakeStart\",{account:api.sender,symbol:symbol,quantity:quantity}))}};const
+        processCancelUnstake=async unstake=>{const{account:account,symbol:symbol,quantityLeft:quantityLeft}=unstake,balance=await
+        api.db.findOne(\"balances\",{account:account,symbol:symbol}),token=await api.db.findOne(\"tokens\",{symbol:symbol});if(api.assert(null!==balance,\"balance
+        does not exist\")&&api.assert(api.BigNumber(balance.pendingUnstake).gte(quantityLeft),\"overdrawn
+        pendingUnstake\")){const originalStake=balance.stake,originalPendingStake=balance.pendingUnstake;if(balance.stake=calculateBalance(balance.stake,quantityLeft,token.precision,!0),balance.pendingUnstake=calculateBalance(balance.pendingUnstake,quantityLeft,token.precision,!1),api.assert(api.BigNumber(balance.pendingUnstake).lt(originalPendingStake)&&api.BigNumber(balance.stake).gt(originalStake),\"cannot
+        subtract\"))return await api.db.update(\"balances\",balance),api.emit(\"unstake\",{account:account,symbol:symbol,quantity:quantityLeft}),!0}return!1};actions.cancelUnstake=async
+        payload=>{const{txID:txID,isSignedWithActiveKey:isSignedWithActiveKey}=payload;if(api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(txID&&\"string\"==typeof
+        txID,\"invalid params\")){const unstake=await api.db.findOne(\"pendingUnstakes\",{account:api.sender,txID:txID});api.assert(unstake,\"unstake
+        does not exist\")&&await processCancelUnstake(unstake)&&await api.db.remove(\"pendingUnstakes\",unstake)}},actions.enableDelegation=async
+        payload=>{const{symbol:symbol,undelegationCooldown:undelegationCooldown,isSignedWithActiveKey:isSignedWithActiveKey}=payload,params=await
+        api.db.findOne(\"params\",{}),{enableDelegationFee:enableDelegationFee}=params,utilityTokenBalance=await
+        api.db.findOne(\"balances\",{account:api.sender,symbol:\"ENG\"}),enoughFunds=utilityTokenBalance&&api.BigNumber(utilityTokenBalance.balance).gte(enableDelegationFee),authorized=void
+        0===enableDelegationFee||api.BigNumber(enableDelegationFee).lte(0)||enoughFunds;if(api.assert(authorized,\"you
+        must have enough tokens to cover  fees\")&&api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(symbol&&\"string\"==typeof
+        symbol,\"invalid symbol\")&&api.assert(undelegationCooldown&&Number.isInteger(undelegationCooldown)&&undelegationCooldown>0&&undelegationCooldown<=18250,\"undelegationCooldown
+        must be an integer between 1 and 18250\")){const token=await api.db.findOne(\"tokens\",{symbol:symbol});api.assert(null!==token,\"symbol
+        does not exist\")&&api.assert(token.issuer===api.sender,\"must be the issuer\")&&api.assert(!0===token.stakingEnabled,\"staking
+        not enabled\")&&api.assert(void 0===token.delegationEnabled||!1===token.delegationEnabled,\"delegation
+        already enabled\")&&(token.delegationEnabled=!0,token.undelegationCooldown=undelegationCooldown,await
+        api.db.update(\"tokens\",token),api.BigNumber(enableDelegationFee).gt(0)&&await
+        actions.transfer({to:\"null\",symbol:\"ENG\",quantity:enableDelegationFee,isSignedWithActiveKey:isSignedWithActiveKey}))}},actions.delegate=async
+        payload=>{const{symbol:symbol,quantity:quantity,to:to,isSignedWithActiveKey:isSignedWithActiveKey}=payload;if(api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(symbol&&\"string\"==typeof
+        symbol&&to&&\"string\"==typeof to&&quantity&&\"string\"==typeof quantity&&!api.BigNumber(quantity).isNaN(),\"invalid
+        params\")){const finalTo=to.trim();if(api.assert(api.isValidAccountName(finalTo),\"invalid
+        to\")){const token=await api.db.findOne(\"tokens\",{symbol:symbol});if(api.assert(null!==token,\"symbol
+        does not exist\")&&api.assert(countDecimals(quantity)<=token.precision,\"symbol
+        precision mismatch\")&&api.assert(!0===token.delegationEnabled,\"delegation
+        not enabled\")&&api.assert(finalTo!==api.sender,\"cannot delegate to yourself\")&&api.assert(api.BigNumber(quantity).gt(0),\"must
+        delegate positive quantity\")){const balanceFrom=await api.db.findOne(\"balances\",{account:api.sender,symbol:symbol});if(api.assert(null!==balanceFrom,\"balanceFrom
+        does not exist\")&&api.assert(api.BigNumber(balanceFrom.stake).gte(quantity),\"overdrawn
+        stake\")){void 0===balanceFrom.stake?(balanceFrom.stake=\"0\",balanceFrom.pendingUnstake=\"0\",balanceFrom.delegationsIn=\"0\",balanceFrom.delegationsOut=\"0\",balanceFrom.pendingUndelegations=\"0\"):void
+        0===balanceFrom.delegationsIn&&(balanceFrom.delegationsIn=\"0\",balanceFrom.delegationsOut=\"0\",balanceFrom.pendingUndelegations=\"0\",balanceFrom.delegatedStake&&(delete
+        balanceFrom.delegatedStake,delete balanceFrom.receivedStake));let balanceTo=await
+        api.db.findOne(\"balances\",{account:finalTo,symbol:symbol});null===balanceTo?(balanceTo=balanceTemplate,balanceTo.account=finalTo,balanceTo.symbol=symbol,balanceTo=await
+        api.db.insert(\"balances\",balanceTo)):void 0===balanceTo.stake?(balanceTo.stake=\"0\",balanceTo.pendingUnstake=\"0\",balanceTo.delegationsIn=\"0\",balanceTo.delegationsOut=\"0\",balanceTo.pendingUndelegations=\"0\"):void
+        0===balanceTo.delegationsIn&&(balanceTo.delegationsIn=\"0\",balanceTo.delegationsOut=\"0\",balanceTo.pendingUndelegations=\"0\",balanceTo.delegatedStake&&(delete
+        balanceTo.delegatedStake,delete balanceTo.receivedStake));let delegation=await
+        api.db.findOne(\"delegations\",{to:finalTo,from:api.sender,symbol:symbol});const
+        timestamp=new Date(api.steemBlockTimestamp+\".000Z\").getTime();null==delegation?(balanceFrom.stake=calculateBalance(balanceFrom.stake,quantity,token.precision,!1),balanceFrom.delegationsOut=calculateBalance(balanceFrom.delegationsOut,quantity,token.precision,!0),await
+        api.db.update(\"balances\",balanceFrom),balanceTo.delegationsIn=calculateBalance(balanceTo.delegationsIn,quantity,token.precision,!0),await
+        api.db.update(\"balances\",balanceTo),delegation={},delegation.from=api.sender,delegation.to=finalTo,delegation.symbol=symbol,delegation.quantity=quantity,delegation.created=timestamp,delegation.updated=timestamp,await
+        api.db.insert(\"delegations\",delegation),api.emit(\"delegate\",{to:finalTo,symbol:symbol,quantity:quantity}),\"ENG\"===symbol&&(await
+        api.executeSmartContract(\"witnesses\",\"updateWitnessesApprovals\",{account:api.sender}),await
+        api.executeSmartContract(\"witnesses\",\"updateWitnessesApprovals\",{account:finalTo}))):(balanceFrom.stake=calculateBalance(balanceFrom.stake,quantity,token.precision,!1),balanceFrom.delegationsOut=calculateBalance(balanceFrom.delegationsOut,quantity,token.precision,!0),await
+        api.db.update(\"balances\",balanceFrom),balanceTo.delegationsIn=calculateBalance(balanceTo.delegationsIn,quantity,token.precision,!0),await
+        api.db.update(\"balances\",balanceTo),delegation.quantity=calculateBalance(delegation.quantity,quantity,token.precision,!0),delegation.updated=timestamp,await
+        api.db.update(\"delegations\",delegation),api.emit(\"delegate\",{to:finalTo,symbol:symbol,quantity:quantity}),\"ENG\"===symbol&&(await
+        api.executeSmartContract(\"witnesses\",\"updateWitnessesApprovals\",{account:api.sender}),await
+        api.executeSmartContract(\"witnesses\",\"updateWitnessesApprovals\",{account:finalTo})))}}}}},actions.undelegate=async
+        payload=>{const{symbol:symbol,quantity:quantity,from:from,isSignedWithActiveKey:isSignedWithActiveKey}=payload;if(api.assert(!0===isSignedWithActiveKey,\"you
+        must use a custom_json signed with your active key\")&&api.assert(symbol&&\"string\"==typeof
+        symbol&&from&&\"string\"==typeof from&&quantity&&\"string\"==typeof quantity&&!api.BigNumber(quantity).isNaN(),\"invalid
+        params\")){const finalFrom=from.trim();if(api.assert(finalFrom.length>=3&&finalFrom.length<=16,\"invalid
+        from\")){const token=await api.db.findOne(\"tokens\",{symbol:symbol});if(api.assert(null!==token,\"symbol
+        does not exist\")&&api.assert(countDecimals(quantity)<=token.precision,\"symbol
+        precision mismatch\")&&api.assert(!0===token.delegationEnabled,\"delegation
+        not enabled\")&&api.assert(finalFrom!==api.sender,\"cannot undelegate from
+        yourself\")&&api.assert(api.BigNumber(quantity).gt(0),\"must undelegate positive
+        quantity\")){const balanceTo=await api.db.findOne(\"balances\",{account:api.sender,symbol:symbol});if(api.assert(null!==balanceTo,\"balanceTo
+        does not exist\")&&api.assert(api.BigNumber(balanceTo.delegationsOut).gte(quantity),\"overdrawn
+        delegation\")){const balanceFrom=await api.db.findOne(\"balances\",{account:finalFrom,symbol:symbol});if(api.assert(null!==balanceFrom,\"balanceFrom
+        does not exist\")){const delegation=await api.db.findOne(\"delegations\",{to:finalFrom,from:api.sender,symbol:symbol});if(api.assert(null!==delegation,\"delegation
+        does not exist\")&&api.assert(api.BigNumber(delegation.quantity).gte(quantity),\"overdrawn
+        delegation\")){balanceTo.pendingUndelegations=calculateBalance(balanceFrom.pendingUndelegations,quantity,token.precision,!0),balanceTo.delegationsOut=calculateBalance(balanceTo.delegationsOut,quantity,token.precision,!1),await
+        api.db.update(\"balances\",balanceTo),balanceFrom.delegationsIn=calculateBalance(balanceFrom.delegationsIn,quantity,token.precision,!1),await
+        api.db.update(\"balances\",balanceFrom),delegation.quantity=calculateBalance(delegation.quantity,quantity,token.precision,!1),api.BigNumber(delegation.quantity).gt(0)?await
+        api.db.update(\"delegations\",delegation):await api.db.remove(\"delegations\",delegation);const
+        blockDate=new Date(api.steemBlockTimestamp+\".000Z\"),cooldownPeriodMillisec=24*token.undelegationCooldown*3600*1e3,completeTimestamp=blockDate.getTime()+cooldownPeriodMillisec,undelegation={account:api.sender,symbol:token.symbol,quantity:quantity,completeTimestamp:completeTimestamp,txID:api.transactionId};await
+        api.db.insert(\"pendingUndelegations\",undelegation),api.emit(\"undelegateStart\",{from:finalFrom,symbol:symbol,quantity:quantity}),\"ENG\"===symbol&&await
+        api.executeSmartContract(\"witnesses\",\"updateWitnessesApprovals\",{account:finalFrom})}}}}}}};const
+        processUndelegation=async undelegation=>{const{account:account,symbol:symbol,quantity:quantity}=undelegation,balance=await
+        api.db.findOne(\"balances\",{account:account,symbol:symbol}),token=await api.db.findOne(\"tokens\",{symbol:symbol});if(api.assert(null!==balance,\"balance
+        does not exist\")){const originalStake=balance.stake,originalPendingUndelegations=balance.pendingUndelegations;balance.stake=calculateBalance(balance.stake,quantity,token.precision,!0),balance.pendingUndelegations=calculateBalance(balance.pendingUndelegations,quantity,token.precision,!1),api.assert(api.BigNumber(balance.pendingUndelegations).lt(originalPendingUndelegations)&&api.BigNumber(balance.stake).gt(originalStake),\"cannot
+        subtract\")&&(await api.db.update(\"balances\",balance),await api.db.remove(\"pendingUndelegations\",undelegation),api.emit(\"undelegateDone\",{account:account,symbol:symbol,quantity:quantity}),\"ENG\"===symbol&&await
+        api.executeSmartContract(\"witnesses\",\"updateWitnessesApprovals\",{account:account}))}};actions.checkPendingUndelegations=async()=>{if(api.assert(\"null\"===api.sender,\"not
+        authorized\")){const timestamp=new Date(api.steemBlockTimestamp+\".000Z\").getTime();let
+        pendingUndelegations=await api.db.find(\"pendingUndelegations\",{completeTimestamp:{$lte:timestamp}}),nbPendingUndelegations=pendingUndelegations.length;for(;nbPendingUndelegations>0;){for(let
+        index=0;index<nbPendingUndelegations;index+=1){const pendingUndelegation=pendingUndelegations[index];await
+        processUndelegation(pendingUndelegation)}pendingUndelegations=await api.db.find(\"pendingUndelegations\",{completeTimestamp:{$lte:timestamp}}),nbPendingUndelegations=pendingUndelegations.length}}};\n  \n            const
+        execute = async function () {\n              try {\n                if (api.action
+        && typeof api.action === ''string'' && typeof actions[api.action] === ''function'')
+        {\n                  if (api.action !== ''createSSC'') {\n                    actions.createSSC
+        = null;\n                  }\n                  await actions[api.action](api.payload);\n                  done(null);\n                }
+        else {\n                  done(''invalid action'');\n                }\n              }
+        catch (error) {\n                done(error);\n              }\n            }\n  \n            execute();\n          }\n\n          wrapper();\n        ","codeHash":"d3ab1afa743f5322eb1b5da7ada99c43f7d26f47cfaab98acb9322c929b23ea6","tables":{"tokens_tokens":{"size":0,"hash":"fa99c96c04b41ec8efc70c3521ff42240b7322c4a130e260da3a69dfd317df1c","nbIndexes":1},"tokens_balances":{"size":0,"hash":"5dff496d3d70b5b60b3137cd2637162ea354e7c08e4e5376695805b06a4a0018","nbIndexes":1},"tokens_contractsBalances":{"size":0,"hash":"9b81b17a7ba695e35bc62c7a48f811cbcf182676bc3f8f9d88967a5e2a06e212","nbIndexes":1},"tokens_params":{"size":0,"hash":"cd372fb85148700fa88095e3492d3f9f5beb43e555e5ff26d95f5a6adc36f8e6","nbIndexes":0},"tokens_pendingUnstakes":{"size":0,"hash":"28d69d6b5110ec4850d1d37c975691cca41588ae7716b36a77c48e5278cfd44d","nbIndexes":2},"tokens_delegations":{"size":0,"hash":"f4739c72c1015df4feefe272a184823cf0d362d6eb0e6d1963ea55a5406f44d1","nbIndexes":2},"tokens_pendingUndelegations":{"size":0,"hash":"c39d9706ff037b43a9566b7ddf3fc2679bd84301d343369db2413e9c801be1ea","nbIndexes":2}},"version":17}}'
+  recorded_at: Sat, 30 Jul 2022 23:22:58 GMT
+recorded_with: VCR 6.1.0

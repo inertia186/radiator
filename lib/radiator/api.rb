@@ -149,15 +149,15 @@ module Radiator
     DEFAULT_HIVE_FAILOVER_URLS = [
       DEFAULT_HIVE_URL,
       'https://anyx.io',
-      'https://api.hivekings.com',
+      #'https://api.hivekings.com',
       'https://api.hive.blog',
       'https://techcoderx.com',
-      'https://rpc.ecency.com',
+      #'https://rpc.ecency.com',
       'https://hive.roelandp.nl',
       'https://api.c0ff33a.uk',
       'https://api.deathwing.me',
       'https://hive-api.arcange.eu',
-      'https://hived.privex.io',
+      #'https://hived.privex.io',
       'https://api.pharesim.me',
       'https://hived.emre.sh',
       # 'https://rpc.ausbit.dev'
@@ -229,8 +229,8 @@ module Radiator
     
     def self.network_api(chain, api_name, options = {})
       api = case chain.to_sym
-      when :steem then Steem::Api.clone(freeze: true) rescue Api.clone
-      when :hive then Hive::Api.clone(freeze: true) rescue Api.clone
+      when :steem then Steem::Api.clone(freeze: false) rescue Api.clone
+      when :hive then Hive::Api.clone(freeze: false) rescue Api.clone
       else; raise ApiError, "Unsupported chain: #{chain}"
       end
       
@@ -877,7 +877,7 @@ module Radiator
         if @recover_transactions_on_error
           begin
             if !!@restful_url
-              JSON[open("#{@restful_url}/account_history_api/get_transaction?id=#{parser.trx_id}").read].tap do |tx|
+              JSON[Uri::open("#{@restful_url}/account_history_api/get_transaction?id=#{parser.trx_id}").read].tap do |tx|
                 response[:result][:block_num] = tx['block_num']
                 response[:result][:trx_num] = tx['transaction_num']
               end
@@ -913,7 +913,7 @@ module Radiator
         
         # Also note, this check is done **without** net-http-persistent.
         
-        response = open(url + HEALTH_URI)
+        response = Uri::open(url + HEALTH_URI)
         response = JSON[response.read]
         
         if !!response['error']
