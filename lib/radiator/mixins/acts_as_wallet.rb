@@ -14,16 +14,26 @@ module Radiator
       # @option options [String] :reward_sbd The amount of SBD to claim, like: `100.000 SBD`
       # @option options [String] :reward_vests The amount of VESTS to claim, like: `100.000000 VESTS`
       def claim_reward_balance(options)
-        reward_steem = options[:reward_steem] || '0.000 STEEM'
-        reward_sbd = options[:reward_sbd] || '0.000 SBD'
-        reward_vests = options[:reward_vests] || '0.000000 VESTS'
+        rewards =
+          case chain
+          when :steem
+            {
+              reward_steem: options[:reward_steem] || '0.000 STEEM',
+              reward_sbd: options[:reward_sbd] || '0.000 SBD',
+              reward_vests: options[:reward_vests] || '0.000000 VESTS'
+            }
+          else
+            {
+              reward_hive: options[:reward_hive] || '0.000 HIVE',
+              reward_hbd: options[:reward_hbd] || '0.000 HBD',
+              reward_vests: options[:reward_vests] || '0.000000 VESTS'
+            }
+          end
         
         @operations << {
           type: :claim_reward_balance,
           account: account_name,
-          reward_steem: reward_steem,
-          reward_sbd: reward_sbd,
-          reward_vests: reward_vests
+          **rewards
         }
         
         self
