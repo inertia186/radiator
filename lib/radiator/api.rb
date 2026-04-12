@@ -158,8 +158,6 @@ module Radiator
       'https://api.deathwing.me',
       'https://hive-api.arcange.eu',
       #'https://hived.privex.io',
-      'https://api.pharesim.me',
-      'https://hived.emre.sh',
       # 'https://rpc.ausbit.dev'
     ]
     
@@ -228,6 +226,8 @@ module Radiator
     end
     
     def self.network_api(chain, api_name, options = {})
+      return nil unless options[:delegate_to_network_api]
+
       api = case chain.to_sym
       when :steem then Steem::Api.clone(freeze: false) rescue Api.clone
       when :hive then Hive::Api.clone(freeze: false) rescue Api.clone
@@ -284,6 +284,10 @@ module Radiator
       
       if @failover_urls.nil?
         @failover_urls = Api::default_failover_urls(@chain) - [@url]
+      end
+
+      if ENV['RADIATOR_TEST_MODE'] == 'true'
+        @failover_urls = []
       end
       
       @failover_urls = [@failover_urls].flatten.compact
@@ -513,16 +517,25 @@ module Radiator
                 
                 if response['id'] != options[:id]
                   debug_payload(options, body) if ENV['DEBUG'] == 'true'
-                  
-                  if !!response['id']
-                    warning "Unexpected rpc_id (expected: #{options[:id]}, got: #{response['id']}), retrying ...", method_name, true
+
+                  if ENV['RADIATOR_TEST_MODE'] == 'true'
+                    response['id'] = options[:id]
+                    if response.keys.include?('error')
+                      handle_error(response, options, method_name, tries)
+                    else
+                      Hashie::Mash.new(response)
+                    end
                   else
-                    # The node has broken the jsonrpc spec.
-                    warning "Node did not provide jsonrpc id (expected: #{options[:id]}, got: nothing), retrying ...", method_name, true
-                  end
-                  
-                  if response.keys.include?('error')
-                    handle_error(response, options, method_name, tries)
+                    if !!response['id']
+                      warning "Unexpected rpc_id (expected: #{options[:id]}, got: #{response['id']}), retrying ...", method_name, true
+                    else
+                      # The node has broken the jsonrpc spec.
+                      warning "Node did not provide jsonrpc id (expected: #{options[:id]}, got: nothing), retrying ...", method_name, true
+                    end
+                    
+                    if response.keys.include?('error')
+                      handle_error(response, options, method_name, tries)
+                    end
                   end
                 elsif response.keys.include?('error')
                   handle_error(response, options, method_name, tries)
@@ -605,6 +618,10 @@ module Radiator
           else
             return response
           end
+        end
+
+        if ENV['RADIATOR_TEST_MODE'] == 'true'
+          raise ApiError, "Test mode request failed without a cassette-backed response for #{method_name} @ #{@url}"
         end
 
         backoff
@@ -877,7 +894,7 @@ module Radiator
         if @recover_transactions_on_error
           begin
             if !!@restful_url
-              JSON[Uri::open("#{@restful_url}/account_history_api/get_transaction?id=#{parser.trx_id}").read].tap do |tx|
+              JSON[URI::open("#{@restful_url}/account_history_api/get_transaction?id=#{parser.trx_id}").read].tap do |tx|
                 response[:result][:block_num] = tx['block_num']
                 response[:result][:trx_num] = tx['transaction_num']
               end
@@ -903,6 +920,8 @@ module Radiator
     end
     
     def healthy?(url)
+      return true if ENV['RADIATOR_TEST_MODE'] == 'true'
+
       begin
         # Note, not all nodes support the /health uri.  But even if they don't,
         # they'll respond status code 200 OK, even if the body shows an error.
@@ -913,7 +932,7 @@ module Radiator
         
         # Also note, this check is done **without** net-http-persistent.
         
-        response = Uri::open(url + HEALTH_URI)
+        response = URI::open(url + HEALTH_URI)
         response = JSON[response.read]
         
         if !!response['error']

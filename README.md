@@ -8,7 +8,13 @@
 
 #### Hive/Steem Ruby API Client
 
-Radiator is an API Client for interaction with the Hive/Steem network using Ruby.
+Radiator is a Ruby client/wrapper for interacting with Hive and legacy Steem JSON-RPC APIs.
+
+#### Changes in v0.5.0
+
+* Test and VCR stabilization for modern Ruby/Bundler runs
+* Quarantined OpenSSL 3 / `bitcoin-ruby` signing-path failures as skips instead of noisy suite failures
+* Refreshed bundle dependencies
 
 #### Changes in v0.4.9
 

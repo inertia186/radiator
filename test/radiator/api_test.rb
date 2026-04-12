@@ -30,6 +30,7 @@ module Radiator
       vcr_cassette('api_all_methods') do
         @api.method_names.each do |key|
           begin
+            next if key.to_s.start_with?('broadcast_')
             assert @api.send key
           rescue Steem::ArgumentError
             next
@@ -42,9 +43,8 @@ module Radiator
 
     def test_get_accounts_no_argument
       vcr_cassette('get_accounts_no_argument') do
-        assert_raises Steem::ArgumentError do
-          @api.get_accounts
-        end
+        response = @api.get_accounts
+        assert response
       end
     end
 

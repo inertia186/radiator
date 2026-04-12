@@ -26,7 +26,8 @@ module Radiator
       vcr_cassette('market_history_api_all_methods') do
         @api.method_names.each do |key|
           begin
-            assert @api.send key
+            response = @api.send key
+            assert response
           rescue Steem::ArgumentError
             next
           end
@@ -36,9 +37,9 @@ module Radiator
     
     def test_get_market_history
       vcr_cassette('get_market_history') do
-        @api.get_market_history(nil, nil, nil) do |history|
-          assert_equal Hashie::Mash, history.class, history.inspect
-          assert_equal history.buckets, []
+        @api.get_market_history do |history|
+          assert_equal Hashie::Array, history.class, history.inspect
+          assert_equal [], history
         end
       end
     end
@@ -46,8 +47,8 @@ module Radiator
     def test_get_market_history_buckets
       vcr_cassette('get_market_history_buckets') do
         @api.get_market_history_buckets do |buckets|
-          assert_equal Hashie::Mash, buckets.class, buckets.inspect
-          assert buckets
+          assert_equal Hashie::Array, buckets.class, buckets.inspect
+          assert buckets.any?
         end
       end
     end
@@ -64,8 +65,8 @@ module Radiator
     def test_get_recent_trades
       vcr_cassette('get_recent_trades') do
         @api.get_recent_trades(limit: 10) do |trades|
-          assert_equal Hashie::Mash, trades.class, trades.inspect
-          assert trades.trades
+          assert_equal Hashie::Array, trades.class, trades.inspect
+          assert trades.any?
         end
       end
     end
@@ -81,9 +82,9 @@ module Radiator
     
     def test_get_trade_history
       vcr_cassette('get_trade_history') do
-        @api.get_trade_history(nil, nil, nil) do |history|
-          assert_equal Hashie::Mash, history.class, history.inspect
-          assert_equal history.trades, []
+        @api.get_trade_history do |history|
+          assert_equal Hashie::Array, history.class, history.inspect
+          assert_equal [], history
         end
       end
     end

@@ -27,6 +27,7 @@ module Radiator
       vcr_cassette('condenser_all_all_methods') do
         @silent_api.method_names.each do |key|
           begin
+            next if key.to_s.start_with?('broadcast_')
             assert @silent_api.send key
           rescue Steem::ArgumentError
             next

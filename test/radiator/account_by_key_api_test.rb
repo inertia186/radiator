@@ -38,7 +38,8 @@ module Radiator
       vcr_cassette('get_key_references') do
         keys = ['STM71f6yWztimJuREVyyMXNqAVbx1FzPVW6LLXNoQ35dHwKuszmHX']
         @api.get_key_references(keys: keys) do |account_names|
-          assert_equal Hashie::Mash, account_names.class, account_names.inspect
+          assert_equal Hashie::Array, account_names.class, account_names.inspect
+          assert_equal 'steemit1', account_names.first.first
         end
       end
     end
