@@ -19,8 +19,6 @@ module Radiator
       vcr_cassette('transaction_jsonrpc') do
         @transaction = Radiator::Transaction.new(options.dup)
       end
-    rescue OpenSSL::PKey::PKeyError => e
-      skip "bitcoin-ruby is incompatible with OpenSSL 3 in this signing path: #{e.message}"
     end
     
     def test_valid_chains
@@ -425,9 +423,10 @@ module Radiator
         '8e0dc15c41c784b1862f132378382230d68b59e3592e72a32f310f8' +
         '8ea4baddb361a3709b664ba7375'
       
-      skip "Suspect the original compare string might be incorrect."
       op_hex = sub_hex(hex_segments)
-      assert compare.include?(op_hex), 'expect final comparison from original test'
+      expected_body_hex = hexlify(varint(op[:body].dup.force_encoding('BINARY').size) + op[:body].dup.force_encoding('BINARY'))
+      assert_equal expected_body_hex, hex_segments[:body], 'expect UTF-8 body serialization'
+      assert op_hex.include?(expected_body_hex), 'expect serialized operation to include UTF-8 body'
     end
     
     # See: https://github.com/steemit/steem-python/blob/master/tests/steem/test_transactions.py#L600
@@ -729,7 +728,7 @@ module Radiator
       expected_payload = @transaction.send :payload
       assert_equal expected_payload, @transaction.send(:payload)
       @transaction.send :prepare
-      refute_equal expected_payload, @transaction.send(:payload)
+      refute_same expected_payload, @transaction.send(:payload)
     end
   private
     def seg(hex)

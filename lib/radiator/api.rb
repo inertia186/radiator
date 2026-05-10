@@ -282,12 +282,14 @@ module Radiator
         options[:hashie_logger]
       end
       
-      if @failover_urls.nil?
-        @failover_urls = Api::default_failover_urls(@chain) - [@url]
-      end
+      @failover_urls = if ENV['RADIATOR_TEST_MODE'] == 'true'
+        raise ApiError, "Unsupported chain: #{@chain}" unless %i(steem hive).include?(@chain)
 
-      if ENV['RADIATOR_TEST_MODE'] == 'true'
-        @failover_urls = []
+        []
+      elsif @failover_urls.nil?
+        Api::default_failover_urls(@chain) - [@url]
+      else
+        @failover_urls
       end
       
       @failover_urls = [@failover_urls].flatten.compact

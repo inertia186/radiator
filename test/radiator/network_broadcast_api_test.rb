@@ -41,7 +41,13 @@ module Radiator
     end
 
     def test_broadcast_transaction
-      skip 'broadcast_transaction is currently signing/recovery-path adjacent; quarantine until broadcast request shape is stabilized under test mode'
+      vcr_cassette('broadcast_transaction') do
+        error = assert_raises ApiError do
+          @silent_api.broadcast_transaction({})
+        end
+
+        assert_includes error.to_s, 'network_broadcast_api.broadcast_transaction'
+      end
     end
   end
 end

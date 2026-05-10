@@ -48,7 +48,11 @@ module Radiator
       end
 
       if !!wif
-        @private_key = Bitcoin::Key.from_base58 wif
+        @private_key = if ENV['RADIATOR_USE_LEGACY_BITCOIN_RUBY_SIGNER'] == '1'
+          Bitcoin::Key.from_base58 wif
+        else
+          Hive::SigningKey.from_base58 wif
+        end
       end
 
       @ref_block_num ||= nil
@@ -289,6 +293,8 @@ module Radiator
 
     # May not find all non-canonicals, see: https://github.com/lian/bitcoin-ruby/issues/196
     def signature
+      return compact_signature unless ENV['RADIATOR_USE_LEGACY_BITCOIN_RUBY_SIGNER'] == '1'
+
       public_key_hex = @private_key.pub
       ec = Bitcoin::OpenSSL_EC
       digest_hex = digest.freeze
@@ -303,6 +309,15 @@ module Radiator
 
         return sig if canonical? sig
       end
+    end
+
+    def compact_signature
+      Hive::CompactSigner.default.sign_compact(
+        digest.freeze,
+        @private_key.private_key_hex,
+        @private_key.pub,
+        @private_key.compressed
+      )
     end
     
     # See: https://github.com/steemit/steem/issues/1944
