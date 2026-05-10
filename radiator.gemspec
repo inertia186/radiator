@@ -19,11 +19,11 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 2.0', '>= 2.0.1'
   spec.add_development_dependency 'rake', '~> 13.0', '>= 13.0.1'
-  spec.add_development_dependency 'minitest', '~> 5.10', '>= 5.10.3'
+  spec.add_development_dependency 'minitest', '>= 5.10.3', '< 7'
   spec.add_development_dependency 'minitest-line', '~> 0.6.3'
   spec.add_development_dependency 'minitest-proveit', '~> 1.0', '>= 1.0.0'
   spec.add_development_dependency 'webmock', '~> 3.6', '>= 3.6.0'
-  spec.add_development_dependency 'simplecov', '~> 0.21.2'
+  spec.add_development_dependency 'simplecov', '~> 0.22.0'
   spec.add_development_dependency 'vcr', '~> 6.0', '>= 6.0.0'
   spec.add_development_dependency 'yard', '~> 0.9.20'
   spec.add_development_dependency 'pry', '~> 0.11', '>= 0.11.3'
@@ -41,6 +41,5 @@ Gem::Specification.new do |spec|
   # steem-ruby-0.9.4 gem is stuck on hashie-3.5.7.
   spec.add_dependency('hashie', '>= 3.5')
   spec.add_dependency('bitcoin-ruby', '0.0.20') # (was 0.0.19)
-  spec.add_dependency('ffi', '~> 1.9', '>= 1.9.18') # (was 1.11.2)
   spec.add_dependency('awesome_print', '~> 1.7', '>= 1.7.0')
 end

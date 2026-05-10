@@ -285,7 +285,7 @@ module Radiator
       @failover_urls = if ENV['RADIATOR_TEST_MODE'] == 'true'
         raise ApiError, "Unsupported chain: #{@chain}" unless %i(steem hive).include?(@chain)
 
-        []
+        options[:failover_urls] || []
       elsif @failover_urls.nil?
         Api::default_failover_urls(@chain) - [@url]
       else
@@ -857,7 +857,9 @@ module Radiator
     # Note, this methods only removes the uri.to_s if present but it does not
     # call bump_failover, in order to avoid a race condition.
     def drop_current_failover_url(prefix)
-      if @preferred_failover_urls.size == 1
+      if @preferred_failover_urls.none?
+        debug "Node #{uri} appears to be misconfigured but no failover urls are configured.", prefix
+      elsif @preferred_failover_urls.size == 1
         warning "Node #{uri} appears to be misconfigured but no other node is available, retrying ...", prefix
       else
         warning "Removing misconfigured node from failover urls: #{uri}, retrying ...", prefix
