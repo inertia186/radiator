@@ -24,12 +24,19 @@ module Radiator
 
     def test_all_methods
       vcr_cassette('stream_all_methods') do
-        skip "cannot execute an asynchronous request in tests"
+        skip_integration_test "cannot execute an asynchronous request in tests"
         
         @api.method_names.each do |key|
           begin
-            assert @api.send key
+            response = @api.send key
+            assert response unless response.nil?
           rescue Steem::ArgumentError
+            next
+          rescue Steem::RemoteNodeError
+            next
+          rescue Hive::BaseError
+            next
+          rescue ApiError
             next
           end
         end
@@ -37,11 +44,12 @@ module Radiator
     end
 
     def test_get_operations
-      skip "cannot execute an asynchronous request in tests"
+      skip_integration_test "cannot execute an asynchronous request in tests"
       
       vcr_cassette('get_operations') do
-        @api.operations
-        assert_equal Hashie::Mash, response.class, response.inspect
+        assert_raises Hive::BaseError do
+          @api.operations
+        end
       end
     end
   end

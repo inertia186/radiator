@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"follow_api.get_followers","params":{"account":"inertia","start":0,"type":"blog","limit":100},"id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 May 2026 21:14:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '188'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=wH4j56zLnH2RrslOjWaPat/A6jDFU+Ai0On6JJ4FYtizQf7vx34dxmt21hYMn78q6O2klYM0f4ManOgWAImcuw0i9t2v2LLbUt/z+Jc4CYqE4LcwDJtYjenF4c8M;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/
+      - AWSALBCORS=wH4j56zLnH2RrslOjWaPat/A6jDFU+Ai0On6JJ4FYtizQf7vx34dxmt21hYMn78q6O2klYM0f4ManOgWAImcuw0i9t2v2LLbUt/z+Jc4CYqE4LcwDJtYjenF4c8M;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/; SameSite=None; Secure
+      Server:
+      - openresty/1.27.1.2
+      X-Jussi-Error-Id:
+      - 234ca2b6-6eed-475e-a453-e43e21bcf090
+      X-Jussi-Request-Id:
+      - f691b5e1de4c1ac8f0fc50ec6ed7ffc6
+      X-Amzn-Trace-Id:
+      - Root=1-6a00f51d-26b4ffc61112483c7bbf8d74
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":1,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"234ca2b6-6eed-475e-a453-e43e21bcf090","jussi_request_id":"f691b5e1de4c1ac8f0fc50ec6ed7ffc6"}}}'
+  recorded_at: Sun, 10 May 2026 21:14:05 GMT
+recorded_with: VCR 6.4.0

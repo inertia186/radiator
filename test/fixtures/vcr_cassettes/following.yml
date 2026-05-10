@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openhive.network/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"follow_api.get_following","params":{"account":"inertia","start":null,"type":"blog","limit":100},"id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 10 May 2026 21:14:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '578'
+      Connection:
+      - keep-alive
+      X-Jussi-Method:
+      - get_following
+      X-Jussi-Upstream-Method:
+      - follow_api.get_following
+      X-Jussi-Param-Hash:
+      - 78a19291c50f511169564b00e3f2d9f1642a85426077b89bd445c3abe8e0f89c
+      Drone-Version:
+      - 0.3.0
+      X-Request-Id:
+      - b61035b6-93a9-469f-a9ec-75c0bb768fe5
+      X-Jussi-Cache-Hit:
+      - 'false'
+      X-Jussi-Backend-Url:
+      - http://haproxy:7008
+      X-Jussi-Namespace:
+      - appbase
+      X-Jussi-Api:
+      - follow_api
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    body:
+      encoding: UTF-8
+      string: '{"error":{"code":-32002,"data":{"assert_hash":"13750519470524334703","code":10,"extension":{"assertion_expression":"api_itr
+        != data._registered_apis.end()"},"message":"Assert Exception","name":"assert_exception","stack":[{"context":{"file":"json_rpc_plugin.cpp","hostname":"","level":"error","line":346,"method":"find_api_method","thread_name":"th_89","timestamp":"2026-05-10T21:14:30"},"data":{"api":"follow_api"},"format":"Could
+        not find API ${api}"}]},"message":"Assert Exception:api_itr != data._registered_apis.end():
+        Could not find API follow_api"},"id":1,"jsonrpc":"2.0"}'
+  recorded_at: Sun, 10 May 2026 21:14:30 GMT
+recorded_with: VCR 6.4.0

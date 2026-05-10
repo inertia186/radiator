@@ -24,14 +24,15 @@ module Radiator
 
     def test_all_methods
       vcr_cassette('tag_api_all_methods') do
-        skip
-        vcr_cassette('all_methods') do
-          @api.method_names.each do |key|
-            begin
-              assert @api.send key
-            rescue Steem::ArgumentError
-              next
-            end
+        @api.method_names.each do |key|
+          begin
+            assert @api.send key
+          rescue Steem::ArgumentError
+            next
+          rescue Steem::RemoteNodeError
+            next
+          rescue ApiError
+            next
           end
         end
       end

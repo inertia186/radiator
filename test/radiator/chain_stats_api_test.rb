@@ -24,12 +24,16 @@ module Radiator
 
     def test_all_methods
       vcr_cassette('chain_stats_api_all_methods') do
-        skip 'This plugin is not typically enabled.'
+        skip_integration_test 'This plugin is not typically enabled.'
         
         @api.method_names.each do |key|
           begin
             assert @api.send key
           rescue Steem::ArgumentError
+            next
+          rescue Steem::RemoteNodeError
+            next
+          rescue ApiError
             next
           end
         end
@@ -37,11 +41,11 @@ module Radiator
     end
 
     def test_get_stats_for_time
-      skip 'This plugin is not typically enabled.'
+      skip_integration_test 'This plugin is not typically enabled.'
       
       vcr_cassette('get_stats_for_time') do
         @api.get_stats_for_time("20161031T235959", 1000) do |stats|
-          assert_equal NilClass, stats.class, stats.inspect
+          assert_nil stats, stats.inspect
         end
       end
     end

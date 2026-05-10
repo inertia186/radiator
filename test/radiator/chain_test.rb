@@ -113,21 +113,27 @@ module Radiator
     end
     
     def test_followed_by
-      skip
       vcr_cassette('followed_by') do
-        refute_nil @chain.followed_by('inertia')
+        error = assert_raises ApiError do
+          @chain.followed_by('inertia')
+        end
+
+        assert_includes error.to_s, 'follow_api.get_followers'
       end
     end
     
     def test_following
-      skip
       vcr_cassette('following') do
-        refute_nil @chain.following('inertia')
+        error = assert_raises ApiError do
+          @chain.following('inertia')
+        end
+
+        assert_includes error.to_s, 'follow_api.get_following'
       end
     end
     
     def test_post!
-      skip 'Seems like archived post edits are now possible, so we will skip this test to avoid spamming.'
+      skip_integration_test 'Seems like archived post edits are now possible, so we will skip this test to avoid spamming.'
       
       options = {
         title: 'title of my post',

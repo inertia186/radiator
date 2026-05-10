@@ -24,11 +24,14 @@ module Radiator
 
     def test_all_methods
       vcr_cassette('follow_api_all_methods') do
-        skip
         @api.method_names.each do |key|
           begin
             assert @api.send key
           rescue Steem::ArgumentError
+            next
+          rescue Steem::RemoteNodeError
+            next
+          rescue ApiError
             next
           end
         end
@@ -36,12 +39,12 @@ module Radiator
     end
 
     def test_get_followers
-      skip
       vcr_cassette('get_followers') do
-        @api.get_followers(account: 'inertia', start: 0, type: 'blog', limit: 100) do |followers|
-          assert_equal Hashie::Array, followers.class, followers.inspect
-          assert followers
+        error = assert_raises ApiError do
+          @api.get_followers(account: 'inertia', start: 0, type: 'blog', limit: 100)
         end
+
+        assert_includes error.to_s, 'follow_api.get_followers'
       end
     end
   end

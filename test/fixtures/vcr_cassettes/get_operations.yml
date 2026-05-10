@@ -1,0 +1,184 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openhive.network/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":50,"method":"jsonrpc.get_methods","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - hive-ruby/1.0.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 10 May 2026 21:19:13 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '7571'
+      Connection:
+      - keep-alive
+      Drone-Version:
+      - 0.3.0
+      X-Request-Id:
+      - ed7d1c27-0d81-4644-8594-82864aaf6855
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    body:
+      encoding: UTF-8
+      string: '{"id":50,"jsonrpc":"2.0","result":["account_by_key_api.get_key_references","block_api.get_block","block_api.get_block_header","block_api.get_block_range","condenser_api.broadcast_transaction","condenser_api.broadcast_transaction_synchronous","condenser_api.find_proposals","condenser_api.find_rc_accounts","condenser_api.find_recurrent_transfers","condenser_api.get_account_count","condenser_api.get_account_history","condenser_api.get_account_references","condenser_api.get_account_reputations","condenser_api.get_account_votes","condenser_api.get_accounts","condenser_api.get_active_votes","condenser_api.get_active_witnesses","condenser_api.get_block","condenser_api.get_block_header","condenser_api.get_blog","condenser_api.get_blog_entries","condenser_api.get_chain_properties","condenser_api.get_collateralized_conversion_requests","condenser_api.get_comment_discussions_by_payout","condenser_api.get_config","condenser_api.get_content","condenser_api.get_content_replies","condenser_api.get_conversion_requests","condenser_api.get_current_median_history_price","condenser_api.get_discussions_by_active","condenser_api.get_discussions_by_author_before_date","condenser_api.get_discussions_by_blog","condenser_api.get_discussions_by_cashout","condenser_api.get_discussions_by_children","condenser_api.get_discussions_by_comments","condenser_api.get_discussions_by_created","condenser_api.get_discussions_by_feed","condenser_api.get_discussions_by_hot","condenser_api.get_discussions_by_promoted","condenser_api.get_discussions_by_trending","condenser_api.get_discussions_by_votes","condenser_api.get_dynamic_global_properties","condenser_api.get_escrow","condenser_api.get_expiring_vesting_delegations","condenser_api.get_feed","condenser_api.get_feed_entries","condenser_api.get_feed_history","condenser_api.get_follow_count","condenser_api.get_followers","condenser_api.get_following","condenser_api.get_hardfork_version","condenser_api.get_key_references","condenser_api.get_market_history","condenser_api.get_market_history_buckets","condenser_api.get_next_scheduled_hardfork","condenser_api.get_open_orders","condenser_api.get_ops_in_block","condenser_api.get_order_book","condenser_api.get_owner_history","condenser_api.get_post_discussions_by_payout","condenser_api.get_potential_signatures","condenser_api.get_reblogged_by","condenser_api.get_recent_trades","condenser_api.get_recovery_request","condenser_api.get_replies_by_last_update","condenser_api.get_required_signatures","condenser_api.get_reward_fund","condenser_api.get_savings_withdraw_from","condenser_api.get_savings_withdraw_to","condenser_api.get_state","condenser_api.get_tags_used_by_author","condenser_api.get_ticker","condenser_api.get_trade_history","condenser_api.get_transaction","condenser_api.get_transaction_hex","condenser_api.get_trending_tags","condenser_api.get_version","condenser_api.get_vesting_delegations","condenser_api.get_volume","condenser_api.get_withdraw_routes","condenser_api.get_witness_by_account","condenser_api.get_witness_count","condenser_api.get_witness_schedule","condenser_api.get_witnesses","condenser_api.get_witnesses_by_vote","condenser_api.is_known_transaction","condenser_api.list_proposal_votes","condenser_api.list_proposals","condenser_api.list_rc_accounts","condenser_api.list_rc_direct_delegations","condenser_api.lookup_account_names","condenser_api.lookup_accounts","condenser_api.lookup_witness_accounts","condenser_api.verify_account_authority","condenser_api.verify_authority","database_api.find_account_recovery_requests","database_api.find_accounts","database_api.find_change_recovery_account_requests","database_api.find_collateralized_conversion_requests","database_api.find_comments","database_api.find_decline_voting_rights_requests","database_api.find_escrows","database_api.find_hbd_conversion_requests","database_api.find_limit_orders","database_api.find_owner_histories","database_api.find_proposals","database_api.find_recurrent_transfers","database_api.find_savings_withdrawals","database_api.find_vesting_delegation_expirations","database_api.find_vesting_delegations","database_api.find_votes","database_api.find_withdraw_vesting_routes","database_api.find_witnesses","database_api.get_active_witnesses","database_api.get_comment_pending_payouts","database_api.get_config","database_api.get_current_price_feed","database_api.get_dynamic_global_properties","database_api.get_feed_history","database_api.get_hardfork_properties","database_api.get_order_book","database_api.get_potential_signatures","database_api.get_required_signatures","database_api.get_reward_funds","database_api.get_transaction_hex","database_api.get_version","database_api.get_witness_schedule","database_api.is_known_transaction","database_api.list_account_recovery_requests","database_api.list_accounts","database_api.list_change_recovery_account_requests","database_api.list_collateralized_conversion_requests","database_api.list_decline_voting_rights_requests","database_api.list_escrows","database_api.list_hbd_conversion_requests","database_api.list_limit_orders","database_api.list_owner_histories","database_api.list_proposal_votes","database_api.list_proposals","database_api.list_savings_withdrawals","database_api.list_vesting_delegation_expirations","database_api.list_vesting_delegations","database_api.list_votes","database_api.list_withdraw_vesting_routes","database_api.list_witness_votes","database_api.list_witnesses","database_api.verify_account_authority","database_api.verify_authority","database_api.verify_signatures","jsonrpc.get_methods","jsonrpc.get_signature","market_history_api.get_market_history","market_history_api.get_market_history_buckets","market_history_api.get_order_book","market_history_api.get_recent_trades","market_history_api.get_ticker","market_history_api.get_trade_history","market_history_api.get_volume","network_broadcast_api.broadcast_transaction","node_status_api.get_node_status","rc_api.find_rc_accounts","rc_api.get_rc_operation_stats","rc_api.get_rc_stats","rc_api.get_resource_params","rc_api.get_resource_pool","rc_api.list_rc_accounts","rc_api.list_rc_direct_delegations","transaction_status_api.find_transaction","wallet_bridge_api.broadcast_transaction","wallet_bridge_api.broadcast_transaction_synchronous","wallet_bridge_api.find_proposals","wallet_bridge_api.find_rc_accounts","wallet_bridge_api.find_recurrent_transfers","wallet_bridge_api.get_account","wallet_bridge_api.get_account_history","wallet_bridge_api.get_accounts","wallet_bridge_api.get_active_witnesses","wallet_bridge_api.get_block","wallet_bridge_api.get_chain_properties","wallet_bridge_api.get_collateralized_conversion_requests","wallet_bridge_api.get_conversion_requests","wallet_bridge_api.get_current_median_history_price","wallet_bridge_api.get_dynamic_global_properties","wallet_bridge_api.get_feed_history","wallet_bridge_api.get_hardfork_version","wallet_bridge_api.get_open_orders","wallet_bridge_api.get_ops_in_block","wallet_bridge_api.get_order_book","wallet_bridge_api.get_owner_history","wallet_bridge_api.get_reward_fund","wallet_bridge_api.get_transaction","wallet_bridge_api.get_version","wallet_bridge_api.get_withdraw_routes","wallet_bridge_api.get_witness","wallet_bridge_api.get_witness_schedule","wallet_bridge_api.is_known_transaction","wallet_bridge_api.list_accounts","wallet_bridge_api.list_my_accounts","wallet_bridge_api.list_proposal_votes","wallet_bridge_api.list_proposals","wallet_bridge_api.list_rc_accounts","wallet_bridge_api.list_rc_direct_delegations","wallet_bridge_api.list_witnesses"]}'
+  recorded_at: Sun, 10 May 2026 21:19:14 GMT
+- request:
+    method: post
+    uri: https://api.openhive.network/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":51,"method":"jsonrpc.get_signature","params":{"method":"database_api.get_dynamic_global_properties"}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - hive-ruby/1.0.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 10 May 2026 21:19:14 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1788'
+      Connection:
+      - keep-alive
+      Drone-Version:
+      - 0.3.0
+      X-Request-Id:
+      - 8eb3b036-1bb7-4401-85a4-8e5f998c3e9d
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    body:
+      encoding: UTF-8
+      string: '{"id":51,"jsonrpc":"2.0","result":{"args":{},"ret":{"available_account_subsidies":0,"content_reward_percent":0,"current_aslot":0,"current_hbd_supply":{"amount":"0","nai":"@@000000021","precision":3},"current_remove_threshold":0,"current_supply":{"amount":"0","nai":"@@000000021","precision":3},"current_witness":"","delegation_return_period":0,"dhf_interval_ledger":{"amount":"0","nai":"@@000000021","precision":3},"downvote_pool_percent":0,"early_voting_seconds":0,"hbd_interest_rate":0,"hbd_print_rate":0,"hbd_start_percent":0,"hbd_stop_percent":0,"head_block_id":"0000000000000000000000000000000000000000","head_block_number":0,"id":0,"init_hbd_supply":{"amount":"0","nai":"@@000000021","precision":3},"last_budget_time":"1970-01-01T00:00:00","last_irreversible_block_num":0,"max_consecutive_recurrent_transfer_failures":10,"max_open_recurrent_transfers":255,"max_recurrent_transfer_end_date":730,"maximum_block_size":0,"mid_voting_seconds":0,"min_recurrent_transfers_recurrence":24,"next_daily_maintenance_time":"1970-01-01T00:00:00","next_maintenance_time":"1970-01-01T00:00:00","num_pow_witnesses":0,"participation_count":0,"pending_rewarded_vesting_hive":{"amount":"0","nai":"@@000000021","precision":3},"pending_rewarded_vesting_shares":{"amount":"0","nai":"@@000000021","precision":3},"proposal_fund_percent":0,"recent_slots_filled":"0","reverse_auction_seconds":0,"time":"1970-01-01T00:00:00","total_pow":0,"total_reward_fund_hive":{"amount":"0","nai":"@@000000021","precision":3},"total_reward_shares2":"0","total_vesting_fund_hive":{"amount":"0","nai":"@@000000021","precision":3},"total_vesting_shares":{"amount":"0","nai":"@@000000021","precision":3},"vesting_reward_percent":0,"virtual_supply":{"amount":"0","nai":"@@000000021","precision":3},"vote_power_reserve_rate":0}}}'
+  recorded_at: Sun, 10 May 2026 21:19:14 GMT
+- request:
+    method: post
+    uri: https://api.openhive.network/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":52,"method":"database_api.get_dynamic_global_properties","params":{}}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - hive-ruby/1.0.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 10 May 2026 21:19:15 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1985'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - 1e924a6f-d1c0-4b20-b7eb-24487fef4612
+      Drone-Version:
+      - 0.3.0
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    body:
+      encoding: UTF-8
+      string: '{"id":52,"jsonrpc":"2.0","result":{"available_account_subsidies":9323752,"content_reward_percent":6500,"current_aslot":106537584,"current_hbd_supply":{"amount":"33212671733","nai":"@@000000013","precision":3},"current_remove_threshold":200,"current_supply":{"amount":"542340909015","nai":"@@000000021","precision":3},"current_witness":"stoodkev","delegation_return_period":432000,"dhf_interval_ledger":{"amount":"19968","nai":"@@000000013","precision":3},"downvote_pool_percent":2500,"early_voting_seconds":86400,"hbd_interest_rate":1200,"hbd_print_rate":0,"hbd_start_percent":2000,"hbd_stop_percent":2000,"head_block_id":"06558e9d65c250058dab218fed87bbe93f23a4ae","head_block_number":106270365,"id":0,"init_hbd_supply":{"amount":"0","nai":"@@000000013","precision":3},"last_budget_time":"2026-05-10T20:37:36","last_irreversible_block_num":106270365,"max_consecutive_recurrent_transfer_failures":10,"max_open_recurrent_transfers":255,"max_recurrent_transfer_end_date":730,"maximum_block_size":65536,"mid_voting_seconds":172800,"min_recurrent_transfers_recurrence":24,"next_daily_maintenance_time":"2026-05-11T19:31:33","next_maintenance_time":"2026-05-10T21:37:36","num_pow_witnesses":172,"participation_count":128,"pending_rewarded_vesting_hive":{"amount":"676371392","nai":"@@000000021","precision":3},"pending_rewarded_vesting_shares":{"amount":"1215285407725489","nai":"@@000000037","precision":6},"proposal_fund_percent":1000,"recent_slots_filled":"340282366920938463463374607431768211455","reverse_auction_seconds":0,"time":"2026-05-10T21:19:12","total_pow":514415,"total_reward_fund_hive":{"amount":"0","nai":"@@000000021","precision":3},"total_reward_shares2":"0","total_vesting_fund_hive":{"amount":"207593924682","nai":"@@000000021","precision":3},"total_vesting_shares":{"amount":"337708904114103332","nai":"@@000000037","precision":6},"vesting_reward_percent":1500,"virtual_supply":{"amount":"1045563207999","nai":"@@000000021","precision":3},"vote_power_reserve_rate":10}}'
+  recorded_at: Sun, 10 May 2026 21:19:15 GMT
+- request:
+    method: post
+    uri: https://api.openhive.network/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"condenser_api.get_block","params":[106270365],"id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 10 May 2026 21:19:15 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '11555'
+      Connection:
+      - keep-alive
+      Drone-Version:
+      - 0.3.0
+      X-Request-Id:
+      - '08942b4c-f4e9-4b8e-9dd0-9a90f5856bed'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"jsonrpc":"2.0","result":{"block_id":"06558e9d65c250058dab218fed87bbe93f23a4ae","extensions":[],"previous":"06558e9c890de0f4c873f537fed0189b62dbd9b8","signing_key":"STM6EaFi43kW6CqYUDZizEPNDfyAztWqBt1QDbdZSKiRbbqwK5QSx","timestamp":"2026-05-10T21:19:12","transaction_ids":["4d49e5c68f1765293328de3ee00058655f4c11b6","4259b7579014a3295041b1d9420d79c804c4980e","88cf40e49916b2e6097c25959b15f5f9d3992302","3152cf40fd386c9b803aedc8bc88a4e086f06829","814afb7fcbc54adcade88543bd5604d7fa3d9e99","bc7638947b5e2377fe126754d1d7cd960375941d","f7544eb4d2062b903ee12cf5b723d934ca0cb9e4","d8b29999164c23d3429dd73f8f6e69ca76bb2cf6","638447e01ca297662a1a95633e34de36b799a2ea","e514c050b1369a4f9cfb08f94b44cbb6e8c02bc9","864d6598c2a126c7b0ce22c21dafaf0f4c78447d","5c03d66e7f1174b4ed5503b034507fc2c7fd6a17","3e3604cc567c4c8c44c9d9673d0be5318bd3b37a","5eeabbe9da83ef4f897c487a9260bc5663002f7b","905535c5c5d82d4d45fb067298ccb49f78c6c39b","6e9df99286fcc6a2a34c18ee6e31947fbb1d220f"],"transaction_merkle_root":"2986f30a53b5677494c04d9d80f748df6c0a61fc","transactions":[{"block_num":106270365,"expiration":"2026-05-10T21:27:39","extensions":[],"operations":[["custom_json",{"id":"sm_claim_daily","json":"{\"use_gold_potions\":false,\"use_legendary_potions\":false,\"format\":\"foundation\",\"app\":\"splinterlands/0.7.177\",\"n\":\"sY5c1uhM6Z\"}","required_auths":[],"required_posting_auths":["rupdogg"]}]],"ref_block_num":36477,"ref_block_prefix":3643784273,"signatures":["1f3a2661c5cc1d648d965561216e8bf00c338f14b6b01a83b94f9ff6c557543c2500eedc711c7357e6652ea5b28e5161d02078945ba5f76f2b3844ac08d5232c5a"],"transaction_id":"4d49e5c68f1765293328de3ee00058655f4c11b6","transaction_num":0},{"block_num":106270365,"expiration":"2026-05-10T21:19:30","extensions":[],"operations":[["custom_json",{"id":"pp_podcast_update","json":"{\"version\":\"1.1\",\"medium\":\"podcast\",\"reason\":\"update\",\"iris\":[\"https://feeds.godcaster.fm/player_484.xml1\",\"https://rss.buzzsprout.com/2312099.rss\"],\"timestampNs\":1778447938104737024,\"sessionId\":11001523581858075962}","required_auths":[],"required_posting_auths":["podping.eee"]}],["custom_json",{"id":"pp_podcast_update","json":"{\"version\":\"1.1\",\"medium\":\"podcast\",\"reason\":\"update\",\"iris\":[\"https://www.spreaker.com/show/4392521/episodes/feed\"],\"timestampNs\":1778447932480956160,\"sessionId\":11001523581858075962}","required_auths":[],"required_posting_auths":["podping.eee"]}]],"ref_block_num":36502,"ref_block_prefix":628372125,"signatures":["201d3fe7ed362064fd3db00cc96d6e283d96563cd2e8a7491aa10101bcf299370a3857475c00563eab25c46d76105cd87abf631dc425d71bfa45f88f24d05a9237"],"transaction_id":"4259b7579014a3295041b1d9420d79c804c4980e","transaction_num":1},{"block_num":106270365,"expiration":"2026-05-10T21:28:18","extensions":[],"operations":[["custom_json",{"id":"sm_token_award","json":"{\"n\":\"4JaCUHNC\",\"to\":\"baalamyum\",\"qty\":0.33,\"from\":\"$TOKEN_STAKING_REWARDS\",\"type\":\"claim_staking_rewards_staking_rewards\",\"token\":\"VOUCHER\"}","required_auths":["sl-admin-2"],"required_posting_auths":[]}]],"ref_block_num":36491,"ref_block_prefix":922292212,"signatures":["204f5524e54fba0909b7f03e9fa61c5e7b51e506144a45ad735b3fa0c537ad9d7b17ceccb60137151d26a6693c671f7037a9f3501dc4b98e3b758bd1bd854f9a03"],"transaction_id":"88cf40e49916b2e6097c25959b15f5f9d3992302","transaction_num":2},{"block_num":106270365,"expiration":"2026-05-10T21:29:06","extensions":[],"operations":[["custom_json",{"id":"actifit","json":"{\"transaction\":
+        \"activate-gadget\" , \"gadget\": \"5dfbf5cefb3ce020982828e8\"}","required_auths":[],"required_posting_auths":["cohlson"]}]],"ref_block_num":36506,"ref_block_prefix":3407701041,"signatures":["202ccb09fc69f61dcc3921373c42e7b1d1a72b1436cb77dd8575867bfa6dd0e51703013821ed567c5a477556f2d2e42402e1676b12bb76874d67c7b37fd8ddad16"],"transaction_id":"3152cf40fd386c9b803aedc8bc88a4e086f06829","transaction_num":3},{"block_num":106270365,"expiration":"2026-05-10T21:29:09","extensions":[],"operations":[["custom_json",{"id":"ssc-mainnet-hive","json":"{\"contractName\":\"market\",\"contractAction\":\"cancel\",\"contractPayload\":{\"type\":\"buy\",\"id\":\"137c3690686c14ba83b3b606fa1b6da2c0f32110\"}}","required_auths":["scr00ge"],"required_posting_auths":[]}]],"ref_block_num":36507,"ref_block_prefix":903809225,"signatures":["1f2390ccf551e016614c84237170e9839ae035496a7e904cf6b194d4609d27c71e0753c3a01d3052ae7618813fb28fe56f071f49d8f029603c822a3f130eb971d9"],"transaction_id":"814afb7fcbc54adcade88543bd5604d7fa3d9e99","transaction_num":4},{"block_num":106270365,"expiration":"2026-05-10T21:28:00","extensions":[],"operations":[["custom_json",{"id":"sm_claim_staking_rewards","json":"{\"token\":\"SPS\",\"app\":\"splinterlands/0.7.177\",\"n\":\"68cI5YGyO8\"}","required_auths":["rajkooooo"],"required_posting_auths":[]}]],"ref_block_num":36484,"ref_block_prefix":3700335641,"signatures":["204b01ad4330a232d22290680eedf00f443cdb1cfeba122773f442238cca53ad6356a7cf535a38aca896bd7961b37f3a91c3a413b0fff16cd4e42be5fd4c703261"],"transaction_id":"bc7638947b5e2377fe126754d1d7cd960375941d","transaction_num":5},{"block_num":106270365,"expiration":"2026-05-10T21:28:18","extensions":[],"operations":[["custom_json",{"id":"sm_token_award","json":"{\"n\":\"IgrWH2ti\",\"to\":\"archmage.billing\",\"qty\":0.002,\"from\":\"$TOKEN_STAKING_REWARDS\",\"type\":\"claim_staking_rewards_staking_rewards\",\"token\":\"VOUCHER\"}","required_auths":["sl-admin-3"],"required_posting_auths":[]}]],"ref_block_num":36491,"ref_block_prefix":922292212,"signatures":["207bb95c58c8cfd48e4e6c3353531963b02d42cc3160f0f9fd121ebbed70e63a3a09307bf4885236bb47d2977025ff00378545b30c436a81aa69f7c736f7445871"],"transaction_id":"f7544eb4d2062b903ee12cf5b723d934ca0cb9e4","transaction_num":6},{"block_num":106270365,"expiration":"2026-05-10T21:29:09","extensions":[],"operations":[["custom_json",{"id":"sm_claim_daily","json":"{\"use_gold_potions\":false,\"use_legendary_potions\":false,\"format\":\"wild\",\"app\":\"splinterlands/0.7.177\",\"n\":\"sHzeaur1qJ\"}","required_auths":[],"required_posting_auths":["hanzhamon"]}]],"ref_block_num":36507,"ref_block_prefix":903809225,"signatures":["1f77ec1967190fb13c445b1bd503089253286c6b82723ae4ae36dac59a0ae3ade7133815f95056e695f5c51fc72407beaebb23a053a96d0ae155de848b616a6acc"],"transaction_id":"d8b29999164c23d3429dd73f8f6e69ca76bb2cf6","transaction_num":7},{"block_num":106270365,"expiration":"2026-05-10T21:29:09","extensions":[],"operations":[["custom_json",{"id":"ssc-mainnet-hive","json":"{\"contractName\":\"market\",\"contractAction\":\"sell\",\"contractPayload\":{\"symbol\":\"TGLD\",\"quantity\":\"0.393\",\"price\":\"47.7777777\"}}","required_auths":["elector"],"required_posting_auths":[]}]],"ref_block_num":36507,"ref_block_prefix":903809225,"signatures":["1f712c7621f64c758dc667a68c8980ddb0b295b2b13677c9bca78847f358360c441ee1b195e0a416a5477d0e7002ce74e3d962ddf77fe037a0b1d0ca7e4de71508"],"transaction_id":"638447e01ca297662a1a95633e34de36b799a2ea","transaction_num":8},{"block_num":106270365,"expiration":"2026-05-10T21:29:09","extensions":[],"operations":[["custom_json",{"id":"sm_market_purchase","json":"{\"items\":[\"61dbc76c39d2d4633de4e8202619bb5edb92879b-41\"],\"price\":\"3.962\",\"currency\":\"DEC\",\"market\":\"monstermarket\",\"app\":\"monstermarket/2.6.9\"}","required_auths":["laaca"],"required_posting_auths":[]}]],"ref_block_num":36508,"ref_block_prefix":4108324233,"signatures":["1f14e3d630a06bd4c1e6d03b4cae5053d0578f6b022600c4bfc02d5f2badc9e2c7720534d6c3cfb065cc96339532777c9ee299729c3ea52708caaf1c3d600b72b5"],"transaction_id":"e514c050b1369a4f9cfb08f94b44cbb6e8c02bc9","transaction_num":9},{"block_num":106270365,"expiration":"2026-05-10T21:19:39","extensions":[],"operations":[["custom_json",{"id":"pp_podcast_update","json":"{\"version\":\"1.1\",\"medium\":\"podcast\",\"reason\":\"update\",\"iris\":[\"https://rss.buzzsprout.com/116924.rss\"],\"timestampNs\":1778447940478962944,\"sessionId\":10361840472830969092}","required_auths":[],"required_posting_auths":["podping.aaa"]}],["custom_json",{"id":"pp_podcast_update","json":"{\"version\":\"1.1\",\"medium\":\"podcast\",\"reason\":\"update\",\"iris\":[\"https://www.spreaker.com/show/6205899/episodes/feed\"],\"timestampNs\":1778447937396823040,\"sessionId\":10361840472830969092}","required_auths":[],"required_posting_auths":["podping.aaa"]}]],"ref_block_num":36505,"ref_block_prefix":998637836,"signatures":["1f49b694bc87b58987e38c02da83e278272cc96827d91e4da9098fd6ee2f0c069f21faf53eda7f2e6579915673030ee540db342760aab08d64ba2a8b33194c91cf"],"transaction_id":"864d6598c2a126c7b0ce22c21dafaf0f4c78447d","transaction_num":10},{"block_num":106270365,"expiration":"2026-05-10T21:20:10","extensions":[],"operations":[["vote",{"author":"juancar347","permlink":"santillana-and-the-threshold-of-mystery","voter":"patronpass","weight":280}]],"ref_block_num":36508,"ref_block_prefix":4108324233,"signatures":["20a449fe2418bef3e381591b5e594cfbc303a6bcdb0d302030cf8155261ada96a021da69baa506801745f705b61cced347f3b86c3182aaf7c89a82c90e333738b0"],"transaction_id":"5c03d66e7f1174b4ed5503b034507fc2c7fd6a17","transaction_num":11},{"block_num":106270365,"expiration":"2026-05-10T21:20:10","extensions":[],"operations":[["vote",{"author":"juancar347","permlink":"santillana-and-the-threshold-of-mystery","voter":"castri-ja","weight":467}]],"ref_block_num":36508,"ref_block_prefix":4108324233,"signatures":["20c72e2452ec305d7980535b0bc86b7a2e7920c75871b68632ea7c21cc3d3ae07571edb06d0a7d95ebc3e4473cd45e7dfbf432bfdf9559b94682f2ec0be5aefdca"],"transaction_id":"3e3604cc567c4c8c44c9d9673d0be5318bd3b37a","transaction_num":12},{"block_num":106270365,"expiration":"2026-05-10T21:29:09","extensions":[],"operations":[["custom_json",{"id":"ssc-mainnet-hive","json":"{\"contractName\":\"market\",\"contractAction\":\"sell\",\"contractPayload\":{\"symbol\":\"SPS\",\"quantity\":\"1340.270738\",\"price\":\"0.06500491\"}}","required_auths":["spshards"],"required_posting_auths":[]}]],"ref_block_num":36507,"ref_block_prefix":903809225,"signatures":["1f6ce1af1de898f8a4f19ba3b5da4948150077c92aa2bb16f0feeaac5ade3fcc845ac8a0dbd122373bac01f222f1b62e152f6c3c7da424d7b21f52145b2d90cc46"],"transaction_id":"5eeabbe9da83ef4f897c487a9260bc5663002f7b","transaction_num":13},{"block_num":106270365,"expiration":"2026-05-10T21:20:09","extensions":[],"operations":[["custom_json",{"id":"ssc-mainnet-hive","json":"{\"contractName\":\"market\",\"contractAction\":\"sell\",\"contractPayload\":{\"symbol\":\"SWAP.BLURT\",\"quantity\":\"5\",\"price\":\"0.01722775\"}}","required_auths":["sagarkothari88"],"required_posting_auths":[]}]],"ref_block_num":36508,"ref_block_prefix":4108324233,"signatures":["20509cab149183801a3da97c985f47864f14b54e0d8c9ea20bece2ceb5f96512112d0c01885e00126dbb29a4a27d8991508b93356ab0803e9ea5ee070f3dc966e4"],"transaction_id":"905535c5c5d82d4d45fb067298ccb49f78c6c39b","transaction_num":14},{"block_num":106270365,"expiration":"2026-05-10T21:29:09","extensions":[],"operations":[["custom_json",{"id":"sm_stake_tokens","json":"{\"token\":\"SPS\",\"qty\":2.177}","required_auths":[],"required_posting_auths":["seattlea"]}]],"ref_block_num":36507,"ref_block_prefix":903809225,"signatures":["2026a5232470dbfa74f05ba6755110131c67b460026721972a964d9bcb3cc73c9136a9c498db9d7dbbbc9239fe391c6a80f3a88e3c2813a98d397b95c720bd5db4"],"transaction_id":"6e9df99286fcc6a2a34c18ee6e31947fbb1d220f","transaction_num":15}],"witness":"stoodkev","witness_signature":"205c41113bc723972a5ebf51e1ceeef9e95401c91e904ca4651f5b4923aeedf5ff2f5de0c494e1b80b14ecae0b7539f286f4afa7b07c2bc7740398e415d2d03e4c"}}'
+  recorded_at: Sun, 10 May 2026 21:19:15 GMT
+recorded_with: VCR 6.4.0

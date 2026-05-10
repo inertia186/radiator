@@ -1,0 +1,603 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"follow_api.get_followers","params":{},"id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 May 2026 21:14:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '188'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=q6j47CYlPdfeuLtfBbnDyGWSdoMbu+S872892X6aBlnEyHJrN+uowS+2sWjiinUxNaShEKlAVc+b7/0xKBEv0xx8BQzNrWosiXl79F+kCo5bAHS8O89TK94N5LMX;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/
+      - AWSALBCORS=q6j47CYlPdfeuLtfBbnDyGWSdoMbu+S872892X6aBlnEyHJrN+uowS+2sWjiinUxNaShEKlAVc+b7/0xKBEv0xx8BQzNrWosiXl79F+kCo5bAHS8O89TK94N5LMX;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/; SameSite=None; Secure
+      Server:
+      - openresty/1.27.1.2
+      X-Jussi-Error-Id:
+      - dc6c2b8f-ba86-49ae-9e71-ad06d195d94f
+      X-Jussi-Request-Id:
+      - e738acb49b5e96873b55642882044518
+      X-Amzn-Trace-Id:
+      - Root=1-6a00f51d-77e8599e30729d5a7c632f90
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":1,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"dc6c2b8f-ba86-49ae-9e71-ad06d195d94f","jussi_request_id":"e738acb49b5e96873b55642882044518"}}}'
+  recorded_at: Sun, 10 May 2026 21:14:05 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"follow_api.get_following","params":{},"id":2}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 May 2026 21:14:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '188'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=EU40XwuV57zeM6NyCjRFY3nucnhNU2ulDb3NiSoQlz4ScVxyWGAx2k46N65P5aoBI19mA8WAf7GiOnD4AYAmOddj93ssrv+LvwzGYDqG592zfK+JXblPiW6+Iodx;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/
+      - AWSALBCORS=EU40XwuV57zeM6NyCjRFY3nucnhNU2ulDb3NiSoQlz4ScVxyWGAx2k46N65P5aoBI19mA8WAf7GiOnD4AYAmOddj93ssrv+LvwzGYDqG592zfK+JXblPiW6+Iodx;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/; SameSite=None; Secure
+      Server:
+      - openresty/1.27.1.2
+      X-Jussi-Error-Id:
+      - abbf1fd5-b2e8-4aea-9e7a-bf59cc45a0ba
+      X-Jussi-Request-Id:
+      - bb7bac5516e12365993f570c3ccd1c3d
+      X-Amzn-Trace-Id:
+      - Root=1-6a00f51d-76bee91c0090bf3d08e40f92
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":2,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"abbf1fd5-b2e8-4aea-9e7a-bf59cc45a0ba","jussi_request_id":"bb7bac5516e12365993f570c3ccd1c3d"}}}'
+  recorded_at: Sun, 10 May 2026 21:14:05 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"follow_api.get_follow_count","params":{},"id":3}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 May 2026 21:14:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '188'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=QN3ufm+yUxEAoJyAfYbY3piCiCEJFyFh337xBeedQgIJwOQ5sDmO1heg38wdCCEgqaW9IQ75GrfhMhSDHh2G4fKzTVuOXbttpqSBJVF8/j9CTKWZY3cGMhHMz4uG;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/
+      - AWSALBCORS=QN3ufm+yUxEAoJyAfYbY3piCiCEJFyFh337xBeedQgIJwOQ5sDmO1heg38wdCCEgqaW9IQ75GrfhMhSDHh2G4fKzTVuOXbttpqSBJVF8/j9CTKWZY3cGMhHMz4uG;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/; SameSite=None; Secure
+      Server:
+      - openresty/1.27.1.2
+      X-Jussi-Error-Id:
+      - d8f11484-3069-408f-afaf-1baacc3b35e8
+      X-Jussi-Request-Id:
+      - e9adde23a4b3ee90d0361ebe95c2e932
+      X-Amzn-Trace-Id:
+      - Root=1-6a00f51d-0e73848b77cabcfd661283b4
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":3,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"d8f11484-3069-408f-afaf-1baacc3b35e8","jussi_request_id":"e9adde23a4b3ee90d0361ebe95c2e932"}}}'
+  recorded_at: Sun, 10 May 2026 21:14:05 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"follow_api.get_feed_entries","params":{},"id":4}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 May 2026 21:14:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '188'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=p9ZDVVZVXxrfSjYi3GBTeNANJDfPOboG8j+ugFpiQWNJ/FMKXbQ67E7KIDqEagR9zkKpEuAsdv+cC+kdN1ohLFq2Wz16sB3oKF/v/hi+LmwxK2pza3o0oHeQ+gLH;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/
+      - AWSALBCORS=p9ZDVVZVXxrfSjYi3GBTeNANJDfPOboG8j+ugFpiQWNJ/FMKXbQ67E7KIDqEagR9zkKpEuAsdv+cC+kdN1ohLFq2Wz16sB3oKF/v/hi+LmwxK2pza3o0oHeQ+gLH;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/; SameSite=None; Secure
+      Server:
+      - openresty/1.27.1.2
+      X-Jussi-Error-Id:
+      - f15a3640-2c64-4554-99f8-9e66a84d8bba
+      X-Jussi-Request-Id:
+      - 38efbcb7151aaa87e8e2a225a2031caa
+      X-Amzn-Trace-Id:
+      - Root=1-6a00f51d-12b773cc1d86b3846e4ae905
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":4,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"f15a3640-2c64-4554-99f8-9e66a84d8bba","jussi_request_id":"38efbcb7151aaa87e8e2a225a2031caa"}}}'
+  recorded_at: Sun, 10 May 2026 21:14:05 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"follow_api.get_feed","params":{},"id":5}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 May 2026 21:14:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '188'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=mmVNpepo6PzZHo9SwmgjToL4hSKy+LCKXne1LZzWshLqHZ1YRMAWcxVZrnNdSdTOx0Z/bHlJOHhxNTPzM8FbI56d7hZKnwP2x+IlGRl3XacQG4o5y0P/QEpicVFU;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/
+      - AWSALBCORS=mmVNpepo6PzZHo9SwmgjToL4hSKy+LCKXne1LZzWshLqHZ1YRMAWcxVZrnNdSdTOx0Z/bHlJOHhxNTPzM8FbI56d7hZKnwP2x+IlGRl3XacQG4o5y0P/QEpicVFU;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/; SameSite=None; Secure
+      Server:
+      - openresty/1.27.1.2
+      X-Jussi-Error-Id:
+      - 169fe946-f0bb-491b-91a9-de13bea44a9b
+      X-Jussi-Request-Id:
+      - 2b1640610c6f4ddf52025250fe55afc6
+      X-Amzn-Trace-Id:
+      - Root=1-6a00f51d-180ca74f4f6c1f6d35de800b
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":5,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"169fe946-f0bb-491b-91a9-de13bea44a9b","jussi_request_id":"2b1640610c6f4ddf52025250fe55afc6"}}}'
+  recorded_at: Sun, 10 May 2026 21:14:05 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"follow_api.get_blog_entries","params":{},"id":6}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 May 2026 21:14:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '188'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=54Hh/02n0OBFlOs4Pjp6OtOJNrNwThSBJe36WtHx9OS+ektc5tV/91DW/QfF8YPQMz3mPEogmMsp1J2ER1qBmj1k5jf0fU8MkWmspefrt/eWQY4Yg5UaukkWZgLH;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/
+      - AWSALBCORS=54Hh/02n0OBFlOs4Pjp6OtOJNrNwThSBJe36WtHx9OS+ektc5tV/91DW/QfF8YPQMz3mPEogmMsp1J2ER1qBmj1k5jf0fU8MkWmspefrt/eWQY4Yg5UaukkWZgLH;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/; SameSite=None; Secure
+      Server:
+      - openresty/1.27.1.2
+      X-Jussi-Error-Id:
+      - 40e2202a-b0d6-4442-abea-34a872a9e305
+      X-Jussi-Request-Id:
+      - ebfe45d77c0b44f68862da74d8489e2d
+      X-Amzn-Trace-Id:
+      - Root=1-6a00f51d-054b92014c612da54d93647f
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":6,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"40e2202a-b0d6-4442-abea-34a872a9e305","jussi_request_id":"ebfe45d77c0b44f68862da74d8489e2d"}}}'
+  recorded_at: Sun, 10 May 2026 21:14:05 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"follow_api.get_blog","params":{},"id":7}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 May 2026 21:14:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '188'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=2pjlpGwwIhi8YgKZpOQymd+YUPO+6rJipGSHywOfWHo8LPeHUGKXDisnZFrIkmZBhZJq8pssn5HbBNnVRJaqQckf+jMBJRPB09AZifZWvvNUtWLc0jXeafdQt+vo;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/
+      - AWSALBCORS=2pjlpGwwIhi8YgKZpOQymd+YUPO+6rJipGSHywOfWHo8LPeHUGKXDisnZFrIkmZBhZJq8pssn5HbBNnVRJaqQckf+jMBJRPB09AZifZWvvNUtWLc0jXeafdQt+vo;
+        Expires=Sun, 17 May 2026 21:14:05 GMT; Path=/; SameSite=None; Secure
+      Server:
+      - openresty/1.27.1.2
+      X-Jussi-Error-Id:
+      - 10b32dc2-c8db-4a8b-af56-b4667afa856a
+      X-Jussi-Request-Id:
+      - eaac7ba2f9f9110716286488ee51b5df
+      X-Amzn-Trace-Id:
+      - Root=1-6a00f51d-2cb488e83484759327888b97
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":7,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"10b32dc2-c8db-4a8b-af56-b4667afa856a","jussi_request_id":"eaac7ba2f9f9110716286488ee51b5df"}}}'
+  recorded_at: Sun, 10 May 2026 21:14:05 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"follow_api.get_account_reputations","params":{},"id":8}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 May 2026 21:14:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '188'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=5TQ03z149PENkpuVZVEY6QczrC4NMVRP+D0p3XXlUFl0z4q9ouAsN8jvqrFzxvAdBWwFK/3qpa+J+aV18W5pxRYoZ4eYgg9lXF1hwa08CwpLItcyXhYhpJVX0MKM;
+        Expires=Sun, 17 May 2026 21:14:06 GMT; Path=/
+      - AWSALBCORS=5TQ03z149PENkpuVZVEY6QczrC4NMVRP+D0p3XXlUFl0z4q9ouAsN8jvqrFzxvAdBWwFK/3qpa+J+aV18W5pxRYoZ4eYgg9lXF1hwa08CwpLItcyXhYhpJVX0MKM;
+        Expires=Sun, 17 May 2026 21:14:06 GMT; Path=/; SameSite=None; Secure
+      Server:
+      - openresty/1.27.1.2
+      X-Jussi-Error-Id:
+      - b8a6981e-787c-4f90-82e7-0c6f262d819d
+      X-Jussi-Request-Id:
+      - 6a858e24356e92c7b54e3e3c034d6c34
+      X-Amzn-Trace-Id:
+      - Root=1-6a00f51e-76d1c628365f85bb52a8a38f
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":8,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"b8a6981e-787c-4f90-82e7-0c6f262d819d","jussi_request_id":"6a858e24356e92c7b54e3e3c034d6c34"}}}'
+  recorded_at: Sun, 10 May 2026 21:14:06 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"follow_api.get_reblogged_by","params":{},"id":9}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 May 2026 21:14:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '188'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=Qzuu3fRBVWsmxw7JHFQz3CjAbMVSRdQYfFIq9WR6iqf/Lo0FfSS82VZOCYQqdudzt/eTLOn0bTHGU7VI6kkPArG9/HYLUCKIpX8WPBfCnU//g+xFr62JC7aZmmcZ;
+        Expires=Sun, 17 May 2026 21:14:06 GMT; Path=/
+      - AWSALBCORS=Qzuu3fRBVWsmxw7JHFQz3CjAbMVSRdQYfFIq9WR6iqf/Lo0FfSS82VZOCYQqdudzt/eTLOn0bTHGU7VI6kkPArG9/HYLUCKIpX8WPBfCnU//g+xFr62JC7aZmmcZ;
+        Expires=Sun, 17 May 2026 21:14:06 GMT; Path=/; SameSite=None; Secure
+      Server:
+      - openresty/1.27.1.2
+      X-Jussi-Error-Id:
+      - 49de3090-510b-4642-9c6f-ee77c81eb881
+      X-Jussi-Request-Id:
+      - 45b8b7500c0df6273142776737bdb019
+      X-Amzn-Trace-Id:
+      - Root=1-6a00f51e-1f05c9dc2b95c2bc084aabbb
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":9,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"49de3090-510b-4642-9c6f-ee77c81eb881","jussi_request_id":"45b8b7500c0df6273142776737bdb019"}}}'
+  recorded_at: Sun, 10 May 2026 21:14:06 GMT
+- request:
+    method: post
+    uri: https://api.steemitdev.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"follow_api.get_blog_authors","params":{},"id":10}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 May 2026 21:14:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '189'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=kSnfRUbHLvUyqGTBGPnXozoA6yt3q7bCwRL/xOmBQmjlary+zZ5fCFWZ3TJ1l8/gEBzkMfM9npkilmverqRF6KdUCaO3576JKgQth5lpkYdsylc4hpZzoCrBkxi/;
+        Expires=Sun, 17 May 2026 21:14:06 GMT; Path=/
+      - AWSALBCORS=kSnfRUbHLvUyqGTBGPnXozoA6yt3q7bCwRL/xOmBQmjlary+zZ5fCFWZ3TJ1l8/gEBzkMfM9npkilmverqRF6KdUCaO3576JKgQth5lpkYdsylc4hpZzoCrBkxi/;
+        Expires=Sun, 17 May 2026 21:14:06 GMT; Path=/; SameSite=None; Secure
+      Server:
+      - openresty/1.27.1.2
+      X-Jussi-Error-Id:
+      - 2ce83c01-8c47-4f4f-93c3-8498ccdd8abb
+      X-Jussi-Request-Id:
+      - 3cca305d3aa5ec2ad25389fc7e89f6bb
+      X-Amzn-Trace-Id:
+      - Root=1-6a00f51e-576f76013cf0fa3b47d4e79b
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":10,"error":{"code":-32603,"message":"Internal
+        Error","data":{"error_id":"2ce83c01-8c47-4f4f-93c3-8498ccdd8abb","jussi_request_id":"3cca305d3aa5ec2ad25389fc7e89f6bb"}}}'
+  recorded_at: Sun, 10 May 2026 21:14:06 GMT
+recorded_with: VCR 6.4.0

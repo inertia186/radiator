@@ -15,6 +15,14 @@ Rake::TestTask.new(:test) do |t|
   end
 end
 
+namespace :test do
+  desc 'Run integration-style cassette tests that are skipped by default.'
+  task :integration do
+    warning = ENV['HELL_ENABLED'] ? '-W2' : '-W1'
+    sh({ 'RADIATOR_TEST_SUITE' => 'integration' }, "ruby #{warning} -Itest -Ilib test/radiator/chain_stats_api_test.rb test/radiator/stream_test.rb")
+  end
+end
+
 YARD::Rake::YardocTask.new do |t|
   t.files = ['lib/**/*.rb']
 end

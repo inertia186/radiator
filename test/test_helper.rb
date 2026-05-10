@@ -1,6 +1,7 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
 ENV['RADIATOR_TEST_MODE'] ||= 'true'
+ENV['RADIATOR_TEST_SUITE'] ||= 'default'
 
 if ENV["HELL_ENABLED"]
   require 'simplecov'
@@ -81,6 +82,14 @@ class Radiator::Test < Minitest::Test
     VCR.use_cassette(name, record: VCR_RECORD_MODE, match_requests_on: [:method, :uri, :jsonrpc_body]) do
       yield
     end
+  end
+
+  def integration_test?
+    ENV['RADIATOR_TEST_SUITE'] == 'integration'
+  end
+
+  def skip_integration_test(message)
+    skip message unless integration_test?
   end
 
   LOGGER = Logger.new(nil).tap do |logger|
