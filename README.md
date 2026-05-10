@@ -10,11 +10,24 @@
 
 Radiator is a Ruby client/wrapper for interacting with Hive and legacy Steem JSON-RPC APIs.
 
+#### Changes in v0.5.1
+
+* Default transaction signing now uses `hive-ruby`'s `rbsecp256k1` compact signer, avoiding the legacy `bitcoin-ruby` OpenSSL EC signing path on OpenSSL 3.
+* Legacy `bitcoin-ruby` signing is still available with `RADIATOR_USE_LEGACY_BITCOIN_RUBY_SIGNER=1`.
+* Bumped the `hive-ruby` dependency to require the signing backend support introduced in `hive-ruby` v1.0.6.
+* Removed Radiator's direct `ffi` dependency; any remaining `ffi` usage is transitive legacy dependency behavior.
+* Added `rake test:integration` for optional/cassette-backed API coverage that is skipped by the default deterministic test suite.
+* Reduced default-suite skip count by unquarantining transaction, broadcast, UTF-8 serialization, tag, follow, and chain social coverage where safe.
+* Avoid default failover discovery in test mode and suppress misleading failover-removal warnings when no failover URLs are configured.
+* Refreshed selected runtime/development dependencies, including `json`, `multi_json`, `ffi-compiler`, and `simplecov`.
+
 #### Changes in v0.5.0
 
-* Test and VCR stabilization for modern Ruby/Bundler runs
-* Quarantined OpenSSL 3 / `bitcoin-ruby` signing-path failures as skips instead of noisy suite failures
-* Refreshed bundle dependencies
+* Test and VCR stabilization for modern Ruby/Bundler runs.
+* Default VCR record mode is now `:once`, so ordinary test runs do not silently mutate cassettes.
+* Added JSON-RPC request matching that ignores request `id` values to reduce cassette churn.
+* Quarantined OpenSSL 3 / `bitcoin-ruby` signing-path failures as skips instead of noisy suite failures.
+* Refreshed bundle dependencies.
 
 #### Changes in v0.4.9
 
